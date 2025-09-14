@@ -1,0 +1,12 @@
+
+.DS_Store
+
+*.log
+
+.vscode/*
+!.vscode/tasks.json
+!.vscode/settings.json
+
+notes/**/*.pdf
+
+!pdf/**

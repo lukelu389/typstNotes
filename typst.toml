@@ -1,0 +1,5 @@
+[project]
+root = "."
+
+[tool.mybuild]
+pdf_out_dir = "pdf"

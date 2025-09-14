@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "files.associations": { "*.typ": "typst" },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "tinymist.preview.engine": "pdf",
+  "tinymist.preview.partialRendering": false,
+  "tinymist.preview.fullRecompileOnSave": true
+}
