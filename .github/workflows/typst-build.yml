@@ -3,33 +3,25 @@ name: Build Typst PDFs
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - "pdf/**"           # avoid running when only PDFs change
   pull_request:
+    paths-ignore:
+      - "pdf/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Install a Typst CLI binary
       - name: Install Typst
-        run: |
-          set -eux
-          arch="$(uname -m)"
-          # grab latest linux-gnu binary for this CPU
-          url="$(curl -s https://api.github.com/repos/typst/typst/releases/latest \
-                 | grep browser_download_url \
-                 | grep linux-gnu \
-                 | grep -i "$arch" \
-                 | cut -d '"' -f 4)"
-          curl -L "$url" -o typst.tar.xz
-          mkdir t && tar -xJf typst.tar.xz -C t --strip-components=1
-          sudo mv t/typst /usr/local/bin/typst
-          typst --version
+        uses: typst-community/setup-typst@v3
+        # You can pin a specific version:
+        # with:
+        #   typst-version: v0.12.0
 
-      # Build every notes/**/*.typ to pdf/**/<same tree>.pdf
       - name: Compile PDFs into pdf/
         run: |
           set -eux
@@ -41,7 +33,6 @@ jobs:
             typst compile --root . "$f" "$out"
           done
 
-      # Save the PDFs on the run for easy download
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
