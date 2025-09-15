@@ -197,7 +197,7 @@ Then $m = 7 dot 2 dot k = 7 dot 2k$\
 Since $k in ZZ$, so is $2k in ZZ$\
 $therefore 7 divides m$ 
 
-=== 1. Transivity of Divisibility (TD)
+== 1. Transivity of Divisibility (TD)
 #important[
 $forall a, b, c, in ZZ$, if $a divides b$ and $b divides c$, then $a divides c$
 ]

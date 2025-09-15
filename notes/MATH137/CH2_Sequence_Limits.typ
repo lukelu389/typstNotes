@@ -217,3 +217,9 @@ Prove the SUm of Sequences Rule
   $forall epsilon > 0, exists M , N in RR, forall n > M, n > N, |a_n-a|<epsilon, |b_n-b|< epsilon$\
   $|(a_n+b_n)-(a+b)| = |(a_n-a)+(b_n-b)| <= |a_n-a| + |b_n+b|< epsilon/2 + epsilon/2 = epsilon$
 ]
+
+#important[
+  Tandem Convergence Theorem: \
+  If $lim_(n->oo) frac(a_n, b_n)$ exists and $lim_(n->oo) b_n = 0$, 
+  then $lim_(n->oo) a_n = 0$
+]

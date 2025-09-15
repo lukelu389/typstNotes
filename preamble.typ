@@ -80,14 +80,35 @@
   )
 ]
 
-#let taccount = (title, rows) => [
-  *#title*
-  #v(4pt)
-  #table(
-    columns: 2,
-    align: (left, right),
-    inset: 6pt,
-    [*Debit*], [*Credit*],
-    ..rows.map(r => ([r.at(0)], [r.at(1)])),
-  )
-]
+#let tcard = (title, entries, blank-zeros: true) => {
+
+  let fmt = v => if blank-zeros and v == 0 { "" } else { v }
+
+  // build rows: header + data
+  let rows = ([*"Date"*, *"Explanation"*, *"Debit"*, *"Credit"*])
+    for e in rows {[#e.at(0)][#e.at(1)][#fmt(e.at(2))][#fmt(e.at(3))]
+  }
+
+  box(
+    fill: luma(99%),
+    stroke: (paint: luma(70%), thickness: 0.8pt),
+    radius: 10pt,
+    inset: 10pt,
+    width: 100%,
+  )[
+    #align(center)[*#title*]
+    #v(4pt)
+
+    #table(
+      columns: (auto, 1fr, auto, auto),
+      align: (left, left, right, right),
+      gutter: 10pt,
+      stroke: (x: 0pt, y: 0.5pt),
+    )[
+      #for r in rows {
+        [#r.at(0)][#r.at(1)][#fmt(r.at(2))][#fmt(r.at(3))]
+
+      }
+    ]
+  ]
+}
