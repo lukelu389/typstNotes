@@ -13,38 +13,37 @@
    - Net income: $ "Revenues" + "Gains" - "Expenses" - "Losses" $
 
    _Example — mini format_
-#align(center)[
-  #table(
-    columns:1,
+#box(stroke: 0.8pt, inset: 8pt)[
+    #table(
+    columns: (1fr),
     align: center,
-    inset: 6pt,
-    [*ABC Corporation*], 
+    stroke: 0pt,
+    inset: 2pt,
+    [*ABC Corporation*],
     [*Income Statement*],
+    [For the Year Ended December 31, 20XX],
+  )
+  #table(
+    columns: (100mm, 2fr),
+    align: (auto, auto),
+    stroke: 1pt,
+    inset: 6pt,
+    [Net sales],                                      [XX,XXX],
+    [Other revenue],                                [+X,XXX],
+    [*Total revenues*],                             [XX,XXX],
+
+    [Cost of goods sold],                              [(XX,XXX)],
+    [*Gross margin*],                               [XX,XXX],
+    [Selling, general, and administrative expenses],[(XX,XXX)],
+    [Income from operations],                       [XX,XXX],
+    [Interest expense],                             [(X,XXX)],
+    [Income before income taxes],                   [XX,XXX],
+    [Income tax expense],                           [(X,XXX)],
+    [*Net Income*],                                 [*#text("$XX,XXX")*],
   )
 ]
-  #align(center)[
-     #table(
-       columns: 2,
-       align: (left, right),
-       inset: 6pt, 
-       [Net sales],                [XX,XXX],
-       [Other revenue],            [+X,XXX],
-       [*Total revenues*],         [XX,XXX],
 
-       [Cost of goods sold],       [(XX,XXX)],
-       [*Gross margin*],           [XX,XXX],
-
-       [Selling, general, and administrative], [(XX,XXX)],
-       [Income from operations],   [XX,XXX],
-
-       [Interest expense],         [(X,XXX)],
-       [Income before income taxes],[XX,XXX],
-       [Income tax expense],       [(X,XXX)],
-       [*Total Income*],            [*(X, XXX)*]
-     )
-   ]
-
-2) Statement of Retained Earnings (during the year)
+ tatement of Retained Earnings (during the year)
 
    - Positive balance indicates cumulative revenues exceeded expenses
    - Negative suggests a problem
@@ -53,15 +52,20 @@
    - End. RE carries to equity section of the balance sheet
 
    _Example — mini format_
-
-   #align(center)[
+#box(stroke: 0.8pt, inset: 8pt)[
+    #table(
+    columns: (1fr),
+    align: center,
+    stroke: 0pt,
+    inset: 2pt,
+    [*ABC Corporation*],
+    [*Income Statement*] 
+    )
      #table(
-       columns: 2,
-       align: (left, right),
+       columns: (100mm, 2fr),
+       align: (auto, auto),
+       stroke: 1pt,
        inset: 6pt,
-
-       [*ABC Corporation*], [ ],
-       [*Statement of Retained Earnings*], [ ],
        [For the Year Ended December 31, 20X2], [ ],
        [ ], [ ],
        [Retained earnings, December 31, 20X1], [XX,XXX],
