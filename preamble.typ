@@ -32,9 +32,9 @@
   #body
 ]
 
-#let therefore(body) = block[
+#let important(body) = block[
   #v(8pt)
-  #strong[Therefore]
+  #strong[IMPORTANT]
   #v(4pt)
   #body
 ]

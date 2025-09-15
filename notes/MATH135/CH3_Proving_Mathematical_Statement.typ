@@ -123,7 +123,7 @@ i.e. $not\,(exists x in RR, cos(2x) + sin(2x) = 3)$
 
 == Prove/Disprove Nested Quantified Statement
 
-Consider. 
+Consider examples
 
 1. $forall x in RR, exists y in RR, x^3 - y^3 = 1$
 
@@ -140,7 +140,7 @@ Consider.
 
    $forall x in RR, exists y in RR, x^3 - y^3 = 1$
 
-
+\
 2. False
 
 
@@ -153,3 +153,63 @@ Consider.
 
    $not (exists x in RR, forall y in RR, x^3 - y^3 = 1)$
 
+
+== Prove/Disprove Implication
+#important[
+1. To prove the implication $A ⇒ B$, assume that the hypothesis A is true, and use this assumption to show that the conclusion B is true. The hypothesis A is what you start with. The conclusion B is where you must end up.
+2. To prove the universally quantified implication $∀x∈S, P(x) => Q(x)$:
+Let $x$ be an arbitrary element of $S$, assume that the hypothesis $P(x)$ is true, and use this assumption to show that the conclusion Q(x) is true.
+]
+
+Example: \
+Prove that $forall$ integers $K$, if $K^5$ is a perfect square, then $9K^19$ is a perfect square. 
+
+#proof[
+   Let $K in ZZ$. \
+   Assume that $K^5$ is a perfect square. \
+   Then $exists l in ZZ$ such that $K^5 = l^2$. \
+   Now, $9K^19 = 9(K^5)^3K^4 = 9(l^2)^3K^4 = 3^2(l^3)^2(K^2)^2 = (3l^3K^2)^2$
+
+   Since 3, $l$, and $K$ are integers, we have $3l^3K^2 in ZZ$ so $(3l^3K^2)^2$ is a perfect square, that is, $9K^19$ is a perfect square. \ 
+
+   $therefore K in ZZ$, if $K^5$ is a perfect square, then $(9K^19)$ is a perfect square.
+]
+
+== Divisibility of Integers
+#important[
+An integer $m$ *divides* an integer $n$, and we write $m divides n$, if there exists an integer $k$ so that $n = k dot m$
+
+If $m divides n$ then we say that $m$ is a *divisor* of $n$, $n$ is the multiple of $m$
+]
+
+\
+Examples\
+$7 divides 56$ since $56 = 7 dot 8$ \ 
+$7 divides -56$ since $-56 = 7 dot. -8$ \ 
+$56 divides.not 7$ we need to write $7 = 56k, k in RR$\ 
+$a divides 0$ where $a in ZZ$ since $0 = a dot 0, forall z in ZZ$
+$0 divides.not a forall a in ZZ$ except $a = 0$, we can write $0 = 0 dot 0$
+
+
+Prove $forall m in ZZ$, if $14 divides m$, then $7 divides m$ \
+Assume $14 divides n$, Then (by definition), $exists k in ZZ, n = 14k$ \
+Then $m = 7 dot 2 dot k = 7 dot 2k$\
+Since $k in ZZ$, so is $2k in ZZ$\
+$therefore 7 divides m$ 
+
+=== 1. Transivity of Divisibility (TD)
+#important[
+$forall a, b, c, in ZZ$, if $a divides b$ and $b divides c$, then $a divides c$
+]
+Something maybe useful \ 
+$forall a, b, c in ZZ$, if $a divides b$ or $a divides c$, then $a divides b c$
+
+#proof[
+   Let $a, b, c, in ZZ$\
+   Suppose $a divides b$, $b divides c$ \
+   Then, \
+   $exists n in ZZ, b = a dot n$ \
+   $exists n in ZZ, b = c dot m$\
+   Now, $c = b dot m = a dot n dot m = a(n m)$ 
+   Since $n, m in ZZ$ then $n dot m in ZZ$, and so $a divides c$
+]
