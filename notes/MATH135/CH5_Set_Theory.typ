@@ -59,7 +59,7 @@ For non empty sets $A$ and $B$
 
 
 == Set Difference
-The *set difference* of two sets $S$ and $T$, written $S - T$ or $ S without T$ is the set of all elements belongingto $S$ but not $T$.
+The *set difference* of two sets $S$ and $T$, written $S - T$ or $ S without T$ is the set of all elements belonging to $S$ but not $T$.
 \
 Symbolically: $S - T = {x:(x in S) and x( in.not TT)}$
 
