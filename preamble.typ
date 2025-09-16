@@ -18,6 +18,13 @@
   #v(12pt)
 ]
 
+#let note-box(body) = box(
+  fill: luma(98%),
+  stroke: (paint: luma(70%), thickness: 0.7pt),
+  inset: 10pt,
+  radius: 8pt,
+)[#body]
+
 #let discovery(body) = block[
   #v(8pt)
   #strong[Discovery]
@@ -69,7 +76,6 @@
 #let info(body) = callout(body, kind: "info")
 #show raw: block.with(inset: 6pt, fill: luma(97%), radius: 6pt)
 
-// ——— Simple tables ———
 #let simple-table = (lhead, rhead, rows) => [
   #table(
     columns: 2,
@@ -79,36 +85,41 @@
     ..rows.map(r => ([r.at(0)], [r.at(1)])),
   )
 ]
+#let t-account(
+  name: none,
+  debits: (),
+  credits: (),
+  show-balance: true,
+  width: 12em
+) = {
+  // Calculate totals with handling for empty arrays
+  let credit-total = if credits.len() > 0 { credits.sum() } else { 0 }
+  let debit-total = if debits.len() > 0 { debits.sum() } else { 0 }
+  let balance = debit-total - credit-total
+  let balance-type = if balance > 0 ["Dr. " + str(balance)] else if balance < 0 ["Cr. " + str(-balance)] else ["Balance: 0"]
 
-#let tcard = (title, entries, blank-zeros: true) => {
+  // Header
+  box(width: width, stroke: (bottom: 1pt + black))[ #text(size: 10pt, weight: "bold")[#name] #v(0.5em) ]
 
-  let fmt = v => if blank-zeros and v == 0 { "" } else { v }
-
-  // build rows: header + data
-  let rows = ([*"Date"*, *"Explanation"*, *"Debit"*, *"Credit"*])
-    for e in rows {[#e.at(0)][#e.at(1)][#fmt(e.at(2))][#fmt(e.at(3))]
-  }
-
-  box(
-    fill: luma(99%),
-    stroke: (paint: luma(70%), thickness: 0.8pt),
-    radius: 10pt,
-    inset: 10pt,
-    width: 100%,
-  )[
-    #align(center)[*#title*]
-    #v(4pt)
-
-    #table(
-      columns: (auto, 1fr, auto, auto),
-      align: (left, left, right, right),
-      gutter: 10pt,
-      stroke: (x: 0pt, y: 0.5pt),
-    )[
-      #for r in rows {
-        [#r.at(0)][#r.at(1)][#fmt(r.at(2))][#fmt(r.at(3))]
-
-      }
+  // T Structure using grid
+  grid(
+    gutter: 0pt,
+    columns: (1fr, 1fr),
+    box(width: width / 2.0, stroke: (right: 1pt + black), inset: 6pt)[
+      [*Debits*] \
+      #for dr in debits [Dr. #dr #v(0.3em)] \
+      #if show-balance and balance > 0 [#line(length: 100%) #v(0.3em) #balance-type]
+    ],
+    box(width: width / 2.0, stroke: (left: 1pt + black), inset: 6pt)[
+      [*Credits*] \
+      #for cr in credits [Cr. #cr #v(0.3em)] \
+      #if show-balance and balance < 0 [#line(length: 100%) #v(0.3em) #balance-type]
     ]
-  ]
+  )
+
+  // Footer balance if needed (for zero balance case)
+  if show-balance and balance == 0 {
+    v(0.5em)
+    balance-type
+  }
 }

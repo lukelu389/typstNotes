@@ -149,49 +149,66 @@ $A = L + S E$  (Owns = Owes)
   )
 ]
 
-== Ledgers (clean cards)
+// Converted T-Accounts using the t-account function
+#t-account(
+  name: "Cash",
+  debits: (25000, 5000, 1500, 1000),
+  credits: (20000, 100, 1500),
+  show-balance: true
+)
 
-#tcard("Cash", [
-  ["Oct  1", "Common shares issued", 25000, 0],
-  ["Oct  4", "Land", 0, 20000],
-  ["Oct  6", "Service revenue (cash sale)", 5000, 0],
-  ["Oct  9", "Paid on account (A/P)", 0, 100],
-  ["Oct 17", "Service on account (record A/R)", 1500, 0],
-  ["Oct 23", "Collected on A/R", 1000, 0],
-  ["Oct 31", "Salaries and rent", 0, 1500],
-])
+#t-account(
+  name: "Accounts Receivable",
+  debits: (1500,),
+  credits: (1000,),
+  show-balance: true
+)
 
-#tcard("Accounts Receivable", [
-  ["Oct 17", "Service on account", 1500, 0],
-  ["Oct 23", "Collection from customer", 0, 1000],
-])
+#t-account(
+  name: "Accounts Payable",
+  debits: (100,),
+  credits: (800,),
+  show-balance: true
+)
 
-#tcard("Accounts Payable", [
-  ["Oct  2", "Office supplies (on account)", 0, 800],
-  ["Oct  9", "Payment on account", 100, 0],
-])
+#t-account(
+  name: "Office Supplies",
+  debits: (800,),
+  credits: (),
+  show-balance: true
+)
 
-#tcard("Office Supplies", [
-  ["Oct  2", "Purchase on account", 800, 0],
-])
+#t-account(
+  name: "Land",
+  debits: (20000,),
+  credits: (),
+  show-balance: true
+)
 
-#tcard("Land", [
-  ["Oct  4", "Purchase for cash", 20000, 0],
-])
+#t-account(
+  name: "Common Shares",
+  debits: (),
+  credits: (25000,),
+  show-balance: true
+)
 
-#tcard("Common Shares", [
-  ["Oct  1", "Issue for cash", 0, 25000],
-])
+#t-account(
+  name: "Service Revenue",
+  debits: (),
+  credits: (5000, 1500),
+  show-balance: true
+)
 
-#tcard("Service Revenue", [
-  ["Oct  6", "Cash sale", 0, 5000],
-  ["Oct 17", "On account (to A/R)", 0, 1500],
-])
+#t-account(
+  name: "Salary Expense",
+  debits: (1000,),
+  credits: (),
+  show-balance: true
+)
 
-#tcard("Salary Expense", [
-  ["Oct 31", "Wages", 1000, 0],
-])
-
-#tcard("Rent Expense", [
-  ["Oct 31", "Monthly rent", 500, 0],
-])
+#t-account(
+  name: "Rent Expense",
+  debits: (500,),
+  credits: (),
+  show-balance: true
+)
