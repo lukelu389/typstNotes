@@ -38,3 +38,6 @@ If $x-z$ is even, then $y$ must be odd, since the product of two numbers remains
 
 Hence, in order for the expression $7x^2-3y-z+5x y+y^2x$ be odd, either $y$ must be odd, or $x-z$ must be odd.
 ]
+
+Q3
+Uses DIC?

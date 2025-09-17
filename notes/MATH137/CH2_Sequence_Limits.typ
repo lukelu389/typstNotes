@@ -95,7 +95,7 @@ Then $n > N => | frac(1, root(3, n)) | < epsilon$ \
 
 Estimate $| frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) | <= frac(5, 16n + 4)$
 
-Pick $N > frac(5, 16 epsilon) - frac(1, 4)$ \ 
+Pick $N = frac(5, 16 epsilon) - frac(1, 4)$ \ 
 
 
 === Theorem (Equivalent definitions of the limit of a sequence)
@@ -140,7 +140,7 @@ $ | frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) |
   = frac(5, 16n + 4) $
 
 #proof[
-Given $epsilon > 0$, pick $N > frac(5, 16 epsilon) - frac(1, 4)$
+Given $epsilon > 0$, pick $N = frac(5, 16 epsilon) - frac(1, 4)$
 
 Then for $n > N$
 

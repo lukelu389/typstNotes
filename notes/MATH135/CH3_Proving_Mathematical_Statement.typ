@@ -3,7 +3,7 @@
 #let Title = "CH 3 - Proving Mathematical Statements"
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
-== Definitions
+= Definitions
 
 1. *Proposition* — a statement to be proved true
 
@@ -14,7 +14,7 @@
 4. *Corollary* — a proposition that follows almost immediately from a theorem
 
 
-== Proving Universally Quantified Statements
+= Proving Universally Quantified Statements
 
 1. Choose a representative object $x in S$ (let $x$ be arbitrary in $S$)
 
@@ -46,7 +46,7 @@ $forall x, y in RR, x^4 + x^2 y + y^2 >= 5 x^2 y - 3 y^2$
 ]
 
 
-== Disprove Universally Quantified Statement
+= Disprove Universally Quantified Statement
 
 To disprove $forall x in S, P(x)$, find $x in S$ with $not\, P(x)$
 
@@ -62,7 +62,7 @@ $exists x in RR$ with $x^2 != 5$, so $forall x in RR, x^2 = 5$ is false
 ]
 
 \
-== Prove Existentially Quantified Statement
+= Prove Existentially Quantified Statement
 
 Find a specific $x in S$ that makes the sentence true
 
@@ -99,7 +99,7 @@ Then $k^2 - frac(31, 2) k = 256 - 248 = 8$
 There exists a perfect square $k$ with $k^2 - frac(31, 2) k = 8$
 ]
 
-== Disprove Existentially Quantified Statement
+= Disprove Existentially Quantified Statement
 
 To disprove $exists x in S, P(x)$, prove $forall x in S, not\, P(x)$
 
@@ -121,7 +121,7 @@ i.e. $not\,(exists x in RR, cos(2x) + sin(2x) = 3)$
 
 
 
-== Prove/Disprove Nested Quantified Statement
+= Prove/Disprove Nested Quantified Statement
 
 Consider examples
 
@@ -154,7 +154,7 @@ Consider examples
    $not (exists x in RR, forall y in RR, x^3 - y^3 = 1)$
 
 
-== Prove/Disprove Implication
+= Prove/Disprove Implication
 #important[
 1. To prove the implication $A ⇒ B$, assume that the hypothesis A is true, and use this assumption to show that the conclusion B is true. The hypothesis A is what you start with. The conclusion B is where you must end up.
 2. To prove the universally quantified implication $∀x∈S, P(x) => Q(x)$:
@@ -175,7 +175,7 @@ Prove that $forall$ integers $K$, if $K^5$ is a perfect square, then $9K^19$ is 
    $therefore K in ZZ$, if $K^5$ is a perfect square, then $(9K^19)$ is a perfect square.
 ]
 
-== Divisibility of Integers
+= Divisibility of Integers
 #important[
 An integer $m$ *divides* an integer $n$, and we write $m divides n$, if there exists an integer $k$ so that $n = k dot m$
 
@@ -199,9 +199,10 @@ $therefore 7 divides m$
 
 == 1. Transivity of Divisibility (TD)
 #important[
-$forall a, b, c, in ZZ$, if $a divides b$ and $b divides c$, then $a divides c$
+*Proposition:
+$forall a, b, c, in ZZ$, if $a divides b$ and $b divides c$, then $a divides c$*
 ]
-Something maybe useful \ 
+Some similar proposition \ 
 $forall a, b, c in ZZ$, if $a divides b$ or $a divides c$, then $a divides b c$
 
 #proof[
@@ -213,3 +214,33 @@ $forall a, b, c in ZZ$, if $a divides b$ or $a divides c$, then $a divides b c$
    Now, $c = b dot m = a dot n dot m = a(n m)$ 
    Since $n, m in ZZ$ then $n dot m in ZZ$, and so $a divides c$
 ]
+
+== 2. Divisibility of Integer Combination (DIC)
+
+#important[
+*Proposition: $forall a, b, c in ZZ$, if $a divides b$ and $a divides c$, then for all integers $x$ and $y$, $a divides (b x+ c y)$*
+]
+#proof[
+Let $a, b, c in ZZ$ \
+Assume $a divides b "and" a divides c$. \
+Then $exists k, l in ZZ, b = k a "and" c = l a$
+Let $x, y in ZZ$ \
+Then $b x + c y = k a x + l a y = a(k x + l y)$
+Since $k, x, l, y in ZZ$, we have $k x + l y in ZZ$. 
+By definition, it means $a divides (b x + c y)$ \
+Q.E.D.
+]
+
+= Prove of Contrapositive
+Example:
+$forall x in ZZ$ if $x^2+4x-2$ is odd, then $x$ is odd
+
+#proof[
+   Let $x in ZZ$, we prove the implication by proving the contrapositive.\
+   Assume $x$ is even.\
+   Then $k in ZZ, x = 2k$\
+   $x^2+4x-2 = (2k)^2+4(2k)+2 = 2(2k^2+4k-1)$ \
+   Since $k in ZZ$, $2(2k^2+4k-1) in ZZ$, so the contrapositive is true.\
+   Q.E.D.
+]
+
