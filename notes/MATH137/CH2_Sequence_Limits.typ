@@ -95,7 +95,7 @@ Then $n > N => | frac(1, root(3, n)) | < epsilon$ \
 
 Estimate $| frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) | <= frac(5, 16n + 4)$
 
-Pick $N = frac(5, 16 epsilon) - frac(1, 4)$ \ 
+Pick $N > frac(5, 16 epsilon) - frac(1, 4)$ \ 
 
 
 === Theorem (Equivalent definitions of the limit of a sequence)
@@ -186,7 +186,7 @@ Thinking questions:
 
 
 Examples:
-Prove that $lim_{n->infinity$
+Prove that $lim_(n->infinity)$
 Let $m>0$ and consider the interval $m, infinity$. If $n>root(3, m)$ then $n^3>m$ and ao $n^3 in (m, infinity)$. So choose $k = ceil(root(3, m))+1$, then the tails lies in $(m, infinity)$
 
 = Limit Laws
@@ -213,3 +213,59 @@ Prove the Sum of Sequences Rule
   If $lim_(n->oo) frac(a_n, b_n)$ exists and $lim_(n->oo) b_n = 0$, 
   then $lim_(n->oo) a_n = 0$
 ]
+
+Examples: \
+Evaluate the following limits 
+
+1) $lim_(n->oo) frac(3n^2+2n, 4n^2+n+1)$ \
+
+$=lim_(n->oo) frac(n^2(3+2/n), n^2(4+1/n+1/n^2)) = lim_(n->oo) frac(3 + 2/n, 4+ 1/n+1/n^2) = frac(lim_(n->oo)3+ lim_(n->oo) 2/n, lim_(n->oo) 4 + lim_(n->oo) 1/n + lim_(n->oo)1/n^2) 
+= frac(3 + 0, 4+0+0) = 3/4$
+
+
+2) $lim_(n->oo)sqrt(n^2+n)-n$, We have indeterminate form $[infinity-infinity]$\
+
+$=lim_(n->oo)sqrt(n^2+n)-n dot frac(sqrt(n^2+n)+n, sqrt(n^2+n)+n) = lim_(n->oo) frac(n^2+n-n^2, sqrt(n^2+n)+n) = lim_(n->oo) frac(n, n(sqrt(1+1/n)+1)) = lim_(n->oo) 1/(sqrt(1+1/n)+1) = 1/(sqrt(1+lim_(n->oo)1/n)+1) = 1/(1+0+1)=1/2$
+
+3) Let the sequence ${a_n}$ be defined recursively by $a_1=16$ and for all $n>2, a_n = 1/2(a_(n-1)+260/a_(n-1))$. Given that $lim_(n->oo) a_n$ exists, compute is value
+
+$lim_(n->oo) a_n = lim_(n->oo) 1/2(a_(n-1)+260/a_(n-1)) = 1/2(lim_(n->oo)a_(n-1)+ 260/lim_(n->oo) a_(n-1))$
+
+$= 1/2(lim_(n->oo)a_(n)+ 260/lim_(n->oo) a_n)$
+
+Let $L = lim_(n->oo) a_n$, then $L = 1/2(L+260/L) <=>L^2= 1/2L^2+260<=> L plus.minus sqrt(260)$
+
+Since $a_n$ consists of non-negative terms, thus its limit converges to a value that is non-negative. Thus, $lim_(n->oo) a_n = sqrt(260)$
+\
+
+
+\
+\
+#important[
+  *Squeeze Theorem*:\
+   If $a_n>= b_n>=c_n$ for all $n in NN$ with $n >= M$ for some $M in RR$ and $lim_(n->oo) a_n = L = lim_(n->oo)c_n$ for some $L in RR$, then $lim_(n->oo) b_n = L$ 
+  ]
+
+#proof[
+  Since $lim_(n->oo) a_n = L = lim_(n->oo)c_n$ for any $epsilon > 0, exists N_a, N_c in RR: n > N_a, n> N_c. |a_n - L| < epsilon, |c_n-L|< epsilon.$ Let $N = max(N_a, N_c)$ but $a_n>=b_n>=c_n$, so $a_n in (L-epsilon, L+epsilon), b_n in (L-epsilon, L+epsilon), c_n in (L-epsilon, L+epsilon)$ \
+  $therefore lim_(n->oo) b_n = L$
+]
+\
+4) $lim_(n->oo) frac(sin(n), n)$ \
+
+$-1<= sin(n) <= 1$ for any $n in NN$, so $-1/n <= sin(n)/n <= 1/n, forall n in NN$ \
+$lim_(n->oo) -1/n = lim_(n->oo) 1/n = 0$ \
+
+By Squeeze Theorem,  $lim_(n->oo)sin(n)/n = 0$
+
+\
+5) $lim_(n->oo) frac(4+(-1)^n, n^3+n^2-1)$ \
+\
+$3/(n^3+n^2-1) <= frac(4+(-1)^n, n^3+n^2-1)<= frac(5, n^3+n^2-1)$\
+
+$lim_(n->oo) 3/(n^3+n^2-1) = lim_(n->oo) 5/(n^3+n^2-1) = 0$ \
+
+By Squeeze Theorem, $lim_(n->oo) frac(4+(-1)^n, n^3+n^2-1) = 0$
+
+
+$lim_(n->oo) frac(4+(-1)^n+(-1)^(n^2+n+2), n^3+n^2-1)$ can be solved similarlt
