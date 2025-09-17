@@ -70,20 +70,20 @@ Consider regions $(-∞,-2)$, $(-2,2)$, $(2,∞)$ and track signs of $x+2$ and $
 
 == Infinite Sequences
 
-A sequence is an ordered list $a_1, a_2, a_3, dots$; write $(a_n)_{n=1}^{∞}$
+A sequence is an ordered list $a_1, a_2, a_3, dots$; write ${a_n}_(n=1)^(infinity)$
 
-A subsequence chooses indices $n_1 < n_2 < dots$, yielding $a_{n_1}, a_{n_2}, dots$
+A subsequence chooses indices $n_1 < n_2 < dots$, yielding $a_(n_1), a_(n_2), dots$
 
-The tail with cutoff $k$ is $a_k, a_{k+1}, a_{k+2}, dots$
+The tail with cutoff $k$ is $a_k, a_(k+1), a_(k+2), dots$
 
 === Convergence (definition)
 #important[
-We say $lim_{n->∞} a_n = L$ if for every $epsilon > 0$ there exists $N$ such that
+We say $lim_(n->∞) a_n = L$ if for every $epsilon > 0$ there exists $N$ such that
 $n > N => |a_n - L| < epsilon$
 ]
 Equivalent formulations:
 
-- Every interval $(L - epsilon, L + epsilon)$ contains a tail of $(a_n)$
+- Every interval $(L - epsilon, L + epsilon)$ contains a tail of ${a_n}$
 
 - Only finitely many terms lie outside $(L - epsilon, L + epsilon)$
 
@@ -91,7 +91,7 @@ Equivalent formulations:
 
 === Examples
 
-1) Show $lim_{n->∞} frac(1, root(3, n)) = 0$
+1) Show $lim_(n->∞) frac(1, root(3, n)) = 0$
 
 Choose $N = frac(1, epsilon^3)$
 
@@ -99,7 +99,7 @@ Then $n > N => | frac(1, root(3, n)) | < epsilon$ \
 
 
 
-2) Show $lim_{n->∞} frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
+2) Show $lim_(n->∞}) frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
 
 Estimate $| frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) | <= frac(5, 16n + 4)$
 
@@ -110,20 +110,20 @@ Pick $N > frac(5, 16 epsilon) - frac(1, 4)$ \
 #important[
 For a sequence $(a_n)$ and a number $L$, the following are equivalent
 
-1) $lim_{n->∞} a_n = L$
+1) $lim_(n->∞) a_n = L$
 
-2) For every $epsilon > 0$, the interval $(L - epsilon, L + epsilon)$ contains a tail of $(a_n)$
+2) For every $epsilon > 0$, the interval $(L - epsilon, L + epsilon)$ contains a tail of ${a_n}$
 
 3) For every $epsilon > 0$, only finitely many $n$ satisfy $|a_n - L| >= epsilon$
 
-4) Every interval $(a,b)$ containing $L$ contains a tail of $(a_n)$
+4) Every interval $(a,b)$ containing $L$ contains a tail of ${a_n}$
 
-5) Given any interval $(a,b)$ containing $L$, only finitely many terms of $(a_n)$ lie outside $(a,b)$
+5) Given any interval $(a,b)$ containing $L$, only finitely many terms of ${a_n}$ lie outside $(a,b)$
 ]
 \
 *Example 1*
 
-Show $lim_{n->∞} frac(1, root(3, n)) = 0$
+Show $lim_(n->∞) frac(1, root(3, n)) = 0$
 
 Side work:
 
@@ -135,10 +135,10 @@ Let $epsilon > 0$ and choose $N = frac(1, epsilon^3)$
 
 If $n > N$ then $| frac(1, root(3, n)) | < frac(1, root(3, N)) = frac(1, root(3, frac(1, epsilon^3))) = epsilon$
 ]
+\
+*Example 2*
 
-*Example 2)*
-
-Prove $lim_{n->∞} frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
+Prove $lim_(n->∞) frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
 
 Rough work
 
@@ -157,11 +157,13 @@ $ | frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) |
   <= frac(5, 16N + 4)
   < epsilon $
 ]
-
-
+\
+\
 == Limits
 \
-Thinking quesiton: can a sequence converge to two different limits $L != M$?\
+Thinking quesiton: \
+Can a sequence converge to two different limits $L != M$?\
+\
 No, we are saying then $epsilon < frac(|L-M|, 2)$\
 If $a_n -> L$ a tail of the sequence lies in $(L-epsilon, L+epsilon)$ so only finite many terms can lie in the interval $(M-epsilon, M+epsilon)$, that is $a_n arrow.r.not M$
 
@@ -204,14 +206,19 @@ Examples:
 Prove that $lim_{n->infinity$
 Let $m>0$ and consider the interval $m, infinity$. If $n>root(3, m)$ then $n^3>m$ and ao $n^3 in (m, infinity)$. So choose $k = ceil(root(3, m))+1$, then the tails lies in $(m, infinity)$
 
-=== Limit Laws
+= Limit Laws
 #important[
   Let ${a_n}, {b_n}$ be sequences with $lim_(n->oo) a_n = a$, $lim_(n->oo) b_n = b$ for some $a, b in RR$ then:
   1. For any $c in RR$, if $a_n = c$ for all $n$ then $c=a$
   2. For any $c in RR$, if $lim_(n->oo) c a_n = c a$
+  3. $lim_(n->oo) (a_n+b_n) = a + b$
+  4. $lim_(n->oo) a_n b_n = a b$
+  5. $lim_(n->oo) frac(a_n, b_n) = a/b "if " b!=0$
+  6. If $a_n >=0$ for all $n$ and $alpha > 0$, then $lim_(n->oo) a^alpha_n = a^alpha$
+  7. For any $k in NN$, $lim_(n->infinity) a_(n+k) = a$
 ]
 
-Prove the SUm of Sequences Rule
+Prove the Sum of Sequences Rule
 #proof[
   $a_n -> a, b_n->b$\
   $forall epsilon > 0, exists M , N in RR, forall n > M, n > N, |a_n-a|<epsilon, |b_n-b|< epsilon$\
