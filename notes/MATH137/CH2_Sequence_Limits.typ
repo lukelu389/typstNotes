@@ -91,7 +91,7 @@ Then $n > N => | frac(1, root(3, n)) | < epsilon$ \
 
 
 
-2) Show $lim_(n->∞}) frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
+2) Show $lim_(n->∞) frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
 
 Estimate $| frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) | <= frac(5, 16n + 4)$
 
