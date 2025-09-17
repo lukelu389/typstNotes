@@ -81,14 +81,6 @@ The tail with cutoff $k$ is $a_k, a_(k+1), a_(k+2), dots$
 We say $lim_(n->∞) a_n = L$ if for every $epsilon > 0$ there exists $N$ such that
 $n > N => |a_n - L| < epsilon$
 ]
-Equivalent formulations:
-
-- Every interval $(L - epsilon, L + epsilon)$ contains a tail of ${a_n}$
-
-- Only finitely many terms lie outside $(L - epsilon, L + epsilon)$
-
-- More generally, any open interval $(a,b)$ containing $L$ contains a tail
-
 === Examples
 
 1) Show $lim_(n->∞) frac(1, root(3, n)) = 0$
@@ -157,8 +149,7 @@ $ | frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) |
   <= frac(5, 16N + 4)
   < epsilon $
 ]
-\
-\
+
 == Limits
 \
 Thinking quesiton: \
@@ -183,7 +174,6 @@ If $a_n -> L$ a tail of the sequence lies in $(L-epsilon, L+epsilon)$ so only fi
    We say that a sequence *diverges to $-infinity$* if any interval of the form $(m, epsilon)$ for some $m < 0$ contains a tail of ${a_n}$. We write that $lim_(n->oo) a_n = -infinity$\
 
   ]
-\
 
 Thinking questions: 
 1. If a seuqnce consists of non-negative terms, is the limit non-negative? \
@@ -192,13 +182,6 @@ Thinking questions:
 2. If a sequence consists of positive terms, is the limit positive? \
     ANS: NO,
     consider the sequence ${1/n}$, $lim_(n->oo) 1/n = 0$
-
-3. $lim_(n->oo) a_n + b_n = a + b$
-4. $lim_(n->oo) a_n b_n = a b$
-5. $lim_(n->oo) a_n / b_n = a / b, b!= 0$
-6. If $a_n>=0 forall n, alpha>0$, then $lim_{n-> infinity} a_n^alpha = a^alpha$
-7. For any $k in NN, lim_(n->oo) = a_n$
-
 
 
 
