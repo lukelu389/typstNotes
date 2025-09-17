@@ -268,4 +268,4 @@ $lim_(n->oo) 3/(n^3+n^2-1) = lim_(n->oo) 5/(n^3+n^2-1) = 0$ \
 By Squeeze Theorem, $lim_(n->oo) frac(4+(-1)^n, n^3+n^2-1) = 0$
 
 
-$lim_(n->oo) frac(4+(-1)^n+(-1)^(n^2+n+2), n^3+n^2-1)$ can be solved similarlt
+$lim_(n->oo) frac(4+(-1)^n+(-1)^(n^2+n+2), n^3+n^2+100)$ can be solved similarly
