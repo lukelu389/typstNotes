@@ -39,5 +39,39 @@ If $x-z$ is even, then $y$ must be odd, since the product of two numbers remains
 Hence, in order for the expression $7x^2-3y-z+5x y+y^2x$ be odd, either $y$ must be odd, or $x-z$ must be odd.
 ]
 
-Q3
-Uses DIC?
+Q3 \
+Let $r, s in ZZ$
+Given the expression:
+$7 divides (3r^2(r-5)+15s^2)$ \ 
+
+$(3r^2(4-5)+15s^2) = 3r^3 - 15r^2 + 15s^2 = 3r^3+15[(r+s)^2-2s(r+s)]$
+
+By the Transivity of Divisibility, $7 divides (r+s)$ and $7 divides r^3$
+By the Divisibility of Integer Combination, since $7 divides (r+s)$ and $7 divides r^3$, $7 divides 3r^3+15[(r+s)^2-2s(r+s)]$ 
+
+#align(right)[$square$]
+Q4
+\
+Let $x in ZZ$ \
+Consider the contrapositive of the implication: \
+$exists z in ZZ, forall y in ZZ, x-7 = (z-y+5)(z^2+1)-4 => 2x=6$ \
+is same as $ x-3 = (z-y+5)(z^2+1) => 2x = 6$ \
+
+Choose $y = z + 5, => x-3 = (z-(y+5)-5)((y+5)^2+1) "becomes" x-3 = 0 dot ((y+5)^2+1) = 0$ \
+Therefore, $x = 3 => 2x=6$ is true\
+Since the contrapositive is true, thus the implication is true, \
+$therefore forall x in ZZ, [(2x!=6) =>forall z in ZZ, exists y in ZZ, x-7 != (z-y+5)(z^2+1)-4]$ is true has been proven to be true
+#align(right)[$square$]
+
+
+
+Q5 \ 
+a) False \
+b) True
+
+
+Q6) \
+a) $forall x, y in RR, P(x, y)$ with domain $K : {7k:k in ZZ}$ and open sentence $P_3(x, y) : x+ y in S$ \
+b) $forall x in RR, exists y in RR, P(x, y)$ with domain $J : {j in ZZ: 4 divides.not j^2}$ and open sentence $P_4(x, y):x>y$ \
+c) $exists x in RR, forall y in RR, P(x, y)$ with domain ${l in RR: |l-7|<1}$ and open sentence $P_1(x, y) : y <= x$ \
+d) $exists x, y in RR, P(x, y)$ with domain $M: {m in NN: 10 divides m-2 }$and open sentence $P_2(x, y)$ \

@@ -75,6 +75,8 @@
 #let warn(body) = callout(body, kind: "warn")
 #let info(body) = callout(body, kind: "info")
 #show raw: block.with(inset: 6pt, fill: luma(97%), radius: 6pt)
+#let note(body) = box(fill: luma(98%), stroke: (paint: luma(70%), thickness: 0.7pt), inset: 10pt, radius: 8pt)[#body]
+
 
 #let simple-table = (lhead, rhead, rows) => [
   #table(

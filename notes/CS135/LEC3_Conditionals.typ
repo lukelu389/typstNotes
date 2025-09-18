@@ -4,9 +4,6 @@
 #let author = "Luke Lu"
 #meta(title: Title, author: author)
 
-// =====================================================
-// Piecewise Logic with `cond`
-// =====================================================
 = Piecewise Logic with `cond`
 
 Use `cond` for multiple, ordered conditions with a final `else`.
@@ -38,10 +35,6 @@ If you are nesting `if`, try `cond` with clear [question → answer] pairs; it i
 ]
 
 #v(8pt)
-
-// =====================================================
-// Symbols (Sym) — Use Names, Not Magic Numbers
-// =====================================================
 = Symbols (Sym) — Use Names, Not Magic Numbers
 
 Symbols are self-documenting values written with a leading quote.
@@ -64,10 +57,6 @@ Symbols are self-documenting values written with a leading quote.
 ```
 
 #v(8pt)
-
-// =====================================================
-// Testing Strategy — Exact vs Inexact, and Coverage
-// =====================================================
 = Testing Strategy — Exact vs Inexact, and Coverage
 
 Write tests early; include boundary/extreme cases.
@@ -93,9 +82,6 @@ When you add a new branch, add at least one new test that *forces* it to run.
 
 #v(8pt)
 
-// =====================================================
-// Contracts & Requires
-// =====================================================
 = Contracts & Requires
 
 Contracts document input/output *kinds* (checked by course tools/graders).  
@@ -130,9 +116,6 @@ Design tests near boundaries (if allowed) to check behavior is sensible.
 
 #v(8pt)
 
-// =====================================================
-// Illustrated Example — Safe Square Root
-// =====================================================
 = Illustrated Example — Safe Square Root
 
 We will design `safe-sqrt` that returns `0` for negative inputs and `sqrt(x)` otherwise.
@@ -150,20 +133,6 @@ We will design `safe-sqrt` that returns `0` for negative inputs and `sqrt(x)` ot
 (check-expect (safe-sqrt 0) 0)
 ```
 
-// =====================================================
-// Submission Checklist (Post-L03)
-// =====================================================
-= Submission Checklist (Post-L03)
-
-- For each function: *Purpose*, *Contract*, *Definition*, *Tests* (with branch coverage).  
-- Label parts clearly; follow the assignment’s allowed-constructs list.  
-- Keep your file clean: header block, reasonable line lengths, organized tests.
-
-#v(8pt)
-
-// =====================================================
-// Extra Practice
-// =====================================================
 = Extra Practice
 
 Write and test each function with boundary cases:
