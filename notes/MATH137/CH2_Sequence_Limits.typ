@@ -269,3 +269,70 @@ By Squeeze Theorem, $lim_(n->oo) frac(4+(-1)^n, n^3+n^2-1) = 0$
 
 
 $lim_(n->oo) frac(4+(-1)^n+(-1)^(n^2+n+2), n^3+n^2+100)$ can be solved similarly
+\
+
+== Definitions
+\
+A sequence ${a_n}$ is 
+1. increasing if $a_n<=a_(n+1) forall n in NN$
+2. decreasing if $a_n>=a_(n+1) forall n in NN$
+3. monotoinc if it is increasing or decreasing
+\
+A set $S subset RR$ is 
+1. bounded above it there exists some $alpha in RR$ with $a<= alpha forall x in S$, and we call such an $alpha$ an upper bound for $S$. The least upper bound is the smallest such $alpha$
+2. bounded below it there exists some $beta in RR$ with $a>= beta forall x in S$, and we call such an $beta$ an upper bound for $S$. The greatest lower bound is the largest such $beta$
+3. bounded if it is both bounded above and bounded below
+
+If a set $S subset RR$ is bounded above, it has a least upper bound. If it is bounded below, it has a greatest lower bound. 
+
+Greatest lower bound and least upper bound do not have be in part of the set
+
+#important[
+  *Theorem(Monotone Convergence Theorem)*: Let ${a_n}$ be an increasing sequence. If ${a_n} "is bounded above, it converges to its least upper bound, otherwise to" infinity$
+]
+
+
+#proof[
+  Let ${a_n}$ be increasing, bounded above. Then it has a lowest upper bound say $L$. Suppose $lim_(n->oo) a_n != L$. So there is some bad $epsilon$ s.t. no tail of ${a_n}$ lies in $(L - epsilon, L+epsilon)$. But then no term from $a_n.$ lies in $(L-epsilon, L+epsilon)$ since $a_n$ is increasing. Hence $L- epsilon$ is an upper bound for ${a_n}$, but $L-epsilon < L$ and $L$ is the least upper bound of ${a_n}$is  a contradiction. The assumption of $lim_(n->oo) a_n != L$ is false. $therefore lim_(n->oo)a_n = L$ 
+]
+
+\
+Let ${a_n}$ be a decreasing sequence. If ${a_n}$is bounded below, it converges to its greatest lower bound, otherwise it diverges to $-infinity$
+
+#proof[
+  Let $L = "greatest lower bound of" {a_n}$ since ${a_n}$ is decreasing, ${-a_n}$ is increasing with lowest upper bound is $-L$. By the Monotone Convergence Theorem, it is true.
+]
+
+Proof by Induction \
+
+Idea: Let $P(n)$ be a statement over the natural numbers $NN$
+
+1) Prove the basic case $P(1)$ is true \
+2) Prove that if $P(n)$ is true, then $P(n+1)$ is true $forall n in NN$ \
+3) Apply 2) repeatedly starteing at $P(1)$
+
+
+Prove a recursive sequence ${a_n}$ converges:
+1) Show that ${a_n}$ is monotone 
+2) Show that ${a_n}$ is bounded above if increasing or bounded below if decreasing.
+3) By the Monotone Convergence Theorem, $lim_(n→∞) a_n$ exists. Use limit laws to solve for it, keeping in mind that the initial term and whether {an} is increasing or decreasing will tell you which solution is admissible if there are multiple.
+
+
+Example: Find the limit of the sequence ${a_n}$ given by $a_1 = 1, a_n = √(3 + 2a_(n - 1)) "for" n ≥ 2$
+
+Step1: Let $P(n)$ be the statement that $a_n <= a_(n+1)$ \
+Base Case: $P(1), a_1 = 1, a_2 = sqrt(5)$, so $a_1 < a_2$ \
+Inductive Hypothesis: $(P(a)->P(a+1))$ suppose $P(n)$ is true for some $n$. Then $a_n < a_(n+1)$, we want to show that $a_(n+1) <= a_(n+2)$, so $a_n <= a_(n+1) -> 2a_n <= 2a_(n+1)$ \
+$-> 3+2a_n <= 3+2a_(n+1) -> sqrt(3+2a_n) <= sqrt(3+2a_(n+1)) -> a_(n+1) <= a_(n+2)$
+
+By inducion, $P(n)$ is true for all $n in NN$, so ${a_n}$ is increasing.
+
+
+Step2: Choose upper bound to be big to make proof easier
+
+Let $P(n)$ be the statement that $a_n<= 100$. $P(1)$ is true since $a_1 = 1 < 100$. Suppose $P(n)$ is true for some $n$. Then $a_n <= 100$. We want to show $a_(n+1) <= 100$. $a_(n+1) = sqrt(3+2a_n) <= sqrt(3+2(100))< sqrt(10000) = 100$. \
+By induction $P(n)$ ...
+
+Since ${a_n}$ is increasing and bounded above. By MCT, $a$ converges to least upper bound. So, let $a_n -> L, a_(n+1) = sqrt(3+2a_n)$
+$lim_(n->oo) a_(n+1) = sqrt(3+2 lim_(n->oo)a_n)$ so $L = sqrt(3+2L) => L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L = 3$
+

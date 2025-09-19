@@ -26,23 +26,23 @@
 )[#body]
 
 #let discovery(body) = block[
-  #v(8pt)
-  #strong[Discovery]
   #v(4pt)
+  #strong[Discovery]
+  #v(1pt)
   #body
 ]
 
 #let proof(body) = block[
-  #v(8pt)
-  #strong[Proof]
   #v(4pt)
+  #strong[Proof]
+  #v(1pt)
   #body
 ]
 
 #let important(body) = block[
-  #v(8pt)
-  #strong[IMPORTANT]
   #v(4pt)
+  #strong[IMPORTANT]
+  #v(2pt)
   #body
 ]
 
