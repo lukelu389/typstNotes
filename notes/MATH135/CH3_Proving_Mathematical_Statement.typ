@@ -231,6 +231,8 @@ By definition, it means $a divides (b x + c y)$ \
 Q.E.D.
 ]
 
+\
+
 = Prove of Contrapositive
 Example:
 $forall x in ZZ$ if $x^2+4x-2$ is odd, then $x$ is odd
@@ -241,6 +243,74 @@ $forall x in ZZ$ if $x^2+4x-2$ is odd, then $x$ is odd
    Then $k in ZZ, x = 2k$\
    $x^2+4x-2 = (2k)^2+4(2k)+2 = 2(2k^2+4k-1)$ \
    Since $k in ZZ$, $2(2k^2+4k-1) in ZZ$, so the contrapositive is true.\
-   Q.E.D.
+]
+#align(right)[$square$]
+
+\
+#important[
+   $A => (B or C) equiv ((A and not(B)) => C)$
+]
+Example: 
+
+$forall x in RR$, if $x^2-7x+12>=0$, then $x <=3$ or $x>4$
+
+#proof[
+   Proof 1: \
+   Let $x in RR$. \
+   Assume $x^2-7x+12>=0 and x > 3$. \
+   Notice $x^2-7x+12 (x-3)(x-4)$, so the inequality can be rewritten as $(x-3)(x-4) >= 0$.\
+   Since $x>=3$, then $x-3>0$, so $(x-3)(x-4)>=0$, we must have $x - 4>=0$. Thus $x>=4$.
+   We have shown $forall x n RR$, if $x^2-7x+12>=0$ and $x>3$ then $x>=4$, which is logically equivalent to the original statement.
+]
+#align(right)[$square$]
+
+#proof[
+   Proof 2: \
+   The contrapostive is $forall x in RR, ((x>3) and (x<4)) => x^2-7x+12<0$
+   The inequality becomes $(x-3)(x-4)<0$. The solution set is $(3, 4)$. The contrapositive is true, thus the original statement is true.
+]
+#align(right)[$square$]
+
+== Proof by Contradiction
+\
+Let $A$ be a statement, Note that either $A "or" not A$ must be false, so the compound statement $A and (not A)$ is always false. The statement $A and (not A)$ is true is called a contradiction.
+
+Example: \
+Proof that there is no largest integer
+#proof[
+   In order to obtain a contradiction, let us assume that there is a largest integer. Call this integer N. Then, $forall n in ZZ, N >= n$. \* \
+   Now let $n = N+1$, since $N, i in ZZ$, we have $N+1 in ZZ$,
+   so by \*, $N>=N+1$, this implies $ 0 >= 1$. 
+   This is an contradiction. So the assumption that there is a largest integer must be false. \
+   $therefore$ There is no largest integer. 
+]
+#align(right)[$square$]
+
+Proof that $sqrt(2)$ is irrational: \
+#proof[
+   Assume, for the sake of contradiction, that $sqrt(2)$ is rational, we have $sqrt(2) in QQ$ and $sqrt(2) = a / b$ where $a, b in ZZ$ and $b != 0$. We also can assume $sqrt(2)$ is positive. It also safe to say that $a "and" b$ cannot be both even.
+   [Proof of $a$ is always even and $b$ is always even is omitted]
+   Contradiction. Thus $sqrt(2)$ must be irrational
 ]
 
+=== Proving Uniqueness
+\ 
+There is a unique element $x in S$ s.t. $P(x)$ is true.
+
+Prove that there is at least one element $x in S$ s.t. $P(x)$ is true. 
+
+1. Assume that $P(x)$ and $P(y)$ are true for $x, y in S$ and prove that this assumption leads to the conclusion $x=y$
+2. Assume that are true for distinct $x, y in S$ and prove this assumption leads to a contradiciton
+
+Example:
+
+$forall a, b in ZZ$, if $a != 0$ and $a divides b$, then there is a unique integer $k$ s.t. $b = k a$
+
+#proof[
+Let $a, b in ZZ$, and assume $a!=0$ and $a divides b$. \
+By defintion, $exists y in ZZ, b = k a$.
+Now, to prove uniqueness, assume $exists, k, l in ZZ, b = k a "and" b = l a$
+Then $a(k-l) = 0$, given $a!=0$, then $k - l = 0 => k = l$. $therefore k$ is unique.
+]
+
+#align(right)[$square$]

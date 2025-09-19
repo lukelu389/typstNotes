@@ -67,8 +67,15 @@ $therefore forall x in ZZ, [(2x!=6) =>forall z in ZZ, exists y in ZZ, x-7 != (z-
 
 Q5 \ 
 a) False \
-b) True
 
+
+b) True \
+Let $x in ZZ$. \
+We assume $h = 24(x-8)$, and we have $h = g = f$ since if $x in H, x in F inter G$
+We know that $h = 24(x-8) => 3 divides (h-1) <=> 3 divides (24(x-9))$
+Similarily, $4 divides 24(x-8)$. 
+Thus we have proven that $forall x in ZZ, "if" x in H "then" x in F inter G$. 
+#align(right)[$square$]
 
 Q6) \
 a) $forall x, y in RR, P(x, y)$ with domain $K : {7k:k in ZZ}$ and open sentence $P_3(x, y) : x+ y in S$ \
