@@ -316,11 +316,11 @@ Let $P(n)$ be a statement over the natural numbers $NN$
 
 1) Prove the basic case $P(1)$ is true \
 2) Prove that if $P(n)$ is true, then $P(n+1)$ is true $forall n in NN$ \
-3) Apply 2) repeatedly starteing at $P(1)$
+3) Apply 2) repeatedly starting at $P(1)$
 
-Prove a recursive sequence $(a_n)$ converges: \
-1) Show that $(a_n)$ is monotone \
-2) Show that $(a_n)$ is bounded above if increasing or bounded below if decreasing. \
+Prove a recursive sequence ${a_n}$ converges: \
+1) Show that ${a_n}$ is monotone \
+2) Show that ${a_n}$ is bounded above if increasing or bounded below if decreasing. \
 3) By the Monotone Convergence Theorem, $lim_(n->oo) a_n$ exists. Use limit laws to solve for it, keeping in mind that the initial term and whether {an} is increasing or decreasing will tell you which solution is admissible if there are multiple.
 ]
 
@@ -328,15 +328,15 @@ Example:
 
 *1)* Find the limit of the sequence $(a_n)$ given by
 #align(left)[$
-a_1 = 1, quad a_n = sqrt(3 + 2 a_(n - 1)) \ text("for") \ n >= 2.
+a_1 = 1, quad a_n = sqrt(3 + 2 a_(n - 1)) text("for")  n >= 2.
 $]
 
 #proof[
 Let $P(n)$ be the statement that $a_n <= a_(n+1)$.
 
-*Base Case:* $P(1)$, $a_1 = 1, \ a_2 = sqrt(5)$, so $a_1 < a_2$.
+*Base Case:* $P(1)$, $a_1 = 1,  a_2 = sqrt(5)$, so $a_1 < a_2$.
 
-*Inductive Hypothesis:* $(P(a) -> P(a+1))$ suppose $P(n)$ is true for some $n$.
+*Inductive Hypothesis:* $P(a) -> P(a+1)$ suppose $P(n)$ is true for some $n$.
 
 Then $a_n < a_(n+1)$; we want to show that $a_(n+1) <= a_(n+2)$. From $a_n <= a_(n+1)$:
 $ 2 a_n <= 2 a_(n+1) $
@@ -357,7 +357,9 @@ $ a_(n+1) = sqrt(3 + 2 a_n) <= sqrt(3 + 2 * 100) < sqrt(10000) = 100. $
 
 By induction $P(n)$ ...
 
-Since $(a_n)$ is increasing and bounded above. By MCT, $a$ converges to least upper bound. So, let $a_n -> L, \ a_(n+1) = sqrt(3 + 2 a_n)$.
+Since $(a_n)$ is increasing and bounded above. By MCT, $a$ converges to least upper bound. So, let
+
+$ a_n -> L,  a_(n+1) = sqrt(3 + 2 a_n) $.
 $ lim_(n->oo) a_(n+1) = sqrt(3 + 2 lim_(n->oo) a_n) -> L = sqrt(3 + 2 L). $
 So $L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L = 3$
 ]
@@ -365,20 +367,20 @@ So $L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L
 #align(right)[$square$]
 \
 
-*2)* Find the limit of the sequence $(b_n)$ given by
+*2)* Find the limit of the sequence ${b_n}$ given by
 #align(left)[$
-b_1 = 4, quad b_n = frac(7 + b_(n-1), 22) \ text("for") \ n >= 2.
+b_1 = 4, quad b_n = frac(7 + b_(n-1), 22) text("for") n >= 2.
 $]
 
 Notice that the sequence is a decreasing sequence. \
 Let $P(n)$ be the statement that $b_n > b_(n+1) forall n in NN$ and $b_n >= 1/3 forall n$.
 
-Base case: $n = 1, \ b_1 = 4 >= 1/3$ and $b_2 = 1/2 < 4 = b_1$.
+Base case: $ b_1 = 4 >= 1/3$ and $b_2 = 1/2 < 4 = b_1$.
 
-Inductive hypothesis: suuppose $P(n)$ is true for some $n = k$. Then
+Inductive hypothesis: suppose $P(n)$ is true for some $n = k$. Then
 $ b_(n+1) = frac(7 + b_k, 22) >= frac(7 + 1/3, 22) > 1/3. $
 
-We have to show $b_k >= b_(k+1) <-> 22 b_k >= 7 + b_k <-> 21 b_k >= 7 <-> b_k > 1/3$, so $P(k+1)$ holds.
+We want to show $b_k >= b_(k+1) <-> 22 b_k >= 7 + b_k <-> 21 b_k >= 7 <-> b_k > 1/3$, so $P(k+1)$ holds. \
 By Induction, $P(n)$ holds for all $n$. 
 
 By MCT, $(b_n)$ converges to $L$, since $b_n = frac(7 + b_(n-1), 22)$, so
