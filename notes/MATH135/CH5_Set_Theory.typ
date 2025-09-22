@@ -88,3 +88,77 @@ $A inter B = {2}$
 4. If $|A inter B| = |A|$ and $B inter C = #sym.nothing$, then $A inter C = #sym.nothing$: True
 
 5. If $|A inter B| = |A|$ and $|A inter C| = |A|$, then $B inter C = #sym.nothing$: False
+
+\
+== Subsets
+\
+
+A set $S$ is called a *subset* of a set $T$, denoted $S subset.eq T$ when every element of $S$ belongs to $T$. $T$ is *superset* of $S$
+
+A set is called a *proper subset* a set $T$, denoted $S subset.neq T$, meaning $S$ is a subset of $T$ and there exissts an element in $T$ which does no tbelong to $T$. $T$ is a *proper superset* of $S$
+
+\
+Examples:
+
+1)$ {5, 15, 25} subset.eq {5, 10, 15, 20, 25} $ 
+$ {5, 15, 25} subset.neq {5, 10, 15, 20, 25} $
+\
+2)
+$ {2, 4, 6} subset.eq.not {2025} $ \
+$ {2, 4, 6} subset.eq.not {1, 2, 3, 4, 5} $
+
+3)
+$ NN subset.eq ZZ, ZZ subset.eq QQ, QQ subset.eq RR $
+
+4)
+$ #sym.nothing subset.eq S "for all sets" S $ 
+$ S subset.eq S "for all sets" S, "but" S "is never a proper subset of" S $
+
+5)
+$ "For all sets" S "and" T, S inter T subset.eq T "and" S subset.eq S union T $
+
+
+#important[
+  Subset can be expressed as an implication \
+  To prove $S subset.eq T$, we need to prove the universally quantified implication
+  $ forall x in cal(U), (x in S) ==> (x in T) $
+  \
+  Equal notation:
+  $ S subset.eq T "and" T subset.eq S <==> S = T $
+
+]
+\
+
+Example:\
+
+1. Let $A = {n in NN: 4 divides (n-3)}$ and let $B = {2k+1:k in ZZ}$, prove that $A subset.eq B$
+
+Let $n in ZZ, (n in A) ==> (n in B)$ \
+$A equiv "a set of natural numbers in form" 4q+3$ \
+$B equiv "a set of integers that are odd"$ \
+$"Since" 4q+3 = 2(2q+1)+1, "which is always odd"$. \
+$therefore A subset.eq B "and also" A subset.neq B$
+
+2. Prove $S = T <==> S inter T = S union T$
+
+$ (S = T ==> S union T = S inter T) and (S union T = S inter T ==> S = T) $
+
+$(==>)$ 
+
+$"Suppose" S = T, "we need to show" S inter T subset.eq S union T "and" S union T subset.eq S inter T$ \
+If $x in S inter T, "then" x in S, x in S union T$. \
+Assume $x in S union T$, then without loss of generality, we may suppose that $x in S$.\
+Then since $S = T$, it follows that $x in T.$ \
+$therefore x in S and x in T ==> x in S inter T$
+
+\
+
+
+$(<==)$
+
+Suppose $S inter T = S union T$, we must show $S subset.eq T and T subset.eq S$ \
+If $x in S "then" x in S union T.$\
+$"Furthermore", S inter T = S union T ==> x in S inter T ==> x in S and x in T$
+$x in T ==> S subset.eq T. "The proof of" T subset.eq S "is similar and will be omitted"$
+
+#align(right)[$square$]
