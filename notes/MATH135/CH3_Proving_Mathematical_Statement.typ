@@ -48,7 +48,7 @@ $forall x, y in RR, x^4 + x^2 y + y^2 >= 5 x^2 y - 3 y^2$
 
 = Disprove Universally Quantified Statement
 
-To disprove $forall x in S, P(x)$, find $x in S$ with $not\, P(x)$
+To disprove $forall x in S, P(x)$, find $x in S$ with $not P(x)$
 
 Example
 
@@ -271,7 +271,7 @@ $forall x in RR$, if $x^2-7x+12>=0$, then $x <=3$ or $x>4$
 ]
 #align(right)[$square$]
 
-== Proof by Contradiction
+= Proof by Contradiction
 \
 Let $A$ be a statement, Note that either $A "or" not A$ must be false, so the compound statement $A and (not A)$ is always false. The statement $A and (not A)$ is true is called a contradiction.
 
@@ -293,7 +293,7 @@ Proof that $sqrt(2)$ is irrational: \
    Contradiction. Thus $sqrt(2)$ must be irrational
 ]
 
-=== Proving Uniqueness
+== Proving Uniqueness
 \ 
 There is a unique element $x in S$ s.t. $P(x)$ is true.
 
@@ -314,3 +314,42 @@ Then $a(k-l) = 0$, given $a!=0$, then $k - l = 0 => k = l$. $therefore k$ is uni
 ]
 
 #align(right)[$square$]
+
+
+= Prove If and Only If Statements
+\
+To prove the an if and only if statment, we have this logical equivalence. Proving two implication will result the proof of the if and only if statement.
+$ (A <==> B) equiv ((A ==> B) and (B ==> A)) $
+
+Example:  \
+Prove $forall x, in RR, "with "x, y >=0, x =y <==> (x+y)/2 = sqrt(x y)$
+
+#proof[
+$"Let" x, y "be arbitrary non-negative real numbers."$ 
+
+$ quad ("i")  (==>) "Assume" x = y, "then" (x+y)/2 = (2x)/2 = 2, "and" sqrt(x y) = sqrt(x x) = x "as" x>= 0$
+
+$quad $Therefore $(x+y)/2 = sqrt(x y) "we have shown the implication: if" x = y "then" (x+y)/2 = sqrt(x y) $
+
+$quad ("ii") (<==) "Assume" (x+y)/2 &= sqrt(x y)$ \
+$quad "then" frac((x+y)^2, 4) &= x y$ \
+$quad "This implies" frac(x^2+2x y+y^2, 4) &= x y$ \
+$quad "then" x^2+2x y = y^2 = 4x y$ \
+$quad x^2 -2x y + y^2 = 0, "means" (x-y)^2 = 0, "so", x-y = 0, "implies" x = y$
+We have proved $"if" (x+y)/2 = sqrt(x y) "then" x = y$.\
+
+Therefore we have shown that $forall x, in RR, "with "x, y >=0, x =y <==> (x+y)/2 = sqrt(x y)$ 
+#align(right)[$square$]
+]
+
+
+Consider a triangle \
+In $triangle A B C$, prove that $b = c cos A <==> angle C= 90 degree$.
+#proof[
+   (i) $(==>)$ Assume $b = cos A$ then $angle C = 90 degree$. \ 
+   $quad a^2 = b^2+c^2 - 2a b cos C$\
+   $quad a^2 = b^2 + c^2 - 2a b => a^2 - b^2 - c^2 c^2 - b^2 $ \
+   $quad c^2 = a^2 + b^2, "implies the triangle is must be a right triagle"$\
+   (ii) $(<==)$ Assume $angle C = 90 degree$ then $b = c cos A$
+   $quad "Then" a^2 + b^2 = c^2, a^2 + c^2 cos^2 A = c^2 $
+]

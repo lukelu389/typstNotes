@@ -303,9 +303,9 @@ Let ${a_n}$ be a decreasing sequence. If ${a_n}$is bounded below, it converges t
   Let $L = "greatest lower bound of" {a_n}$ since ${a_n}$ is decreasing, ${-a_n}$ is increasing with lowest upper bound is $-L$. By the Monotone Convergence Theorem, it is true.
 ]
 
-Proof by Induction \
-
-Idea: Let $P(n)$ be a statement over the natural numbers $NN$
+== Proof by Induction
+#important[
+Let $P(n)$ be a statement over the natural numbers $NN$
 
 1) Prove the basic case $P(1)$ is true \
 2) Prove that if $P(n)$ is true, then $P(n+1)$ is true $forall n in NN$ \
@@ -316,13 +316,22 @@ Prove a recursive sequence ${a_n}$ converges:
 1) Show that ${a_n}$ is monotone 
 2) Show that ${a_n}$ is bounded above if increasing or bounded below if decreasing.
 3) By the Monotone Convergence Theorem, $lim_(n→∞) a_n$ exists. Use limit laws to solve for it, keeping in mind that the initial term and whether {an} is increasing or decreasing will tell you which solution is admissible if there are multiple.
+]
 
 
-Example: Find the limit of the sequence ${a_n}$ given by $a_1 = 1, a_n = √(3 + 2a_(n - 1)) "for" n ≥ 2$
+Example: 
 
-Step1: Let $P(n)$ be the statement that $a_n <= a_(n+1)$ \
-Base Case: $P(1), a_1 = 1, a_2 = sqrt(5)$, so $a_1 < a_2$ \
-Inductive Hypothesis: $(P(a)->P(a+1))$ suppose $P(n)$ is true for some $n$. Then $a_n < a_(n+1)$, we want to show that $a_(n+1) <= a_(n+2)$, so $a_n <= a_(n+1) -> 2a_n <= 2a_(n+1)$ \
+*1)* Find the limit of the sequence ${a_n}$ given by $a_1 = 1, a_n = √(3 + 2a_(n - 1)) "for" n ≥ 2$
+
+#proof[
+Let $P(n)$ be the statement that $a_n <= a_(n+1)$ 
+
+Base Case: $P(1), a_1 = 1, a_2 = sqrt(5)$, so $a_1 < a_2$ 
+
+Inductive Hypothesis:
+$(P(a)->P(a+1))$ suppose $P(n)$ is true for some $n$. 
+
+Then $a_n < a_(n+1)$, we want to show that $a_(n+1) <= a_(n+2)$, so $a_n <= a_(n+1) -> 2a_n <= 2a_(n+1)$ \
 $-> 3+2a_n <= 3+2a_(n+1) -> sqrt(3+2a_n) <= sqrt(3+2a_(n+1)) -> a_(n+1) <= a_(n+2)$
 
 By inducion, $P(n)$ is true for all $n in NN$, so ${a_n}$ is increasing.
@@ -330,9 +339,32 @@ By inducion, $P(n)$ is true for all $n in NN$, so ${a_n}$ is increasing.
 
 Step2: Choose upper bound to be big to make proof easier
 
-Let $P(n)$ be the statement that $a_n<= 100$. $P(1)$ is true since $a_1 = 1 < 100$. Suppose $P(n)$ is true for some $n$. Then $a_n <= 100$. We want to show $a_(n+1) <= 100$. $a_(n+1) = sqrt(3+2a_n) <= sqrt(3+2(100))< sqrt(10000) = 100$. \
+Let $P(n)$ be the statement that $a_n<= 100$. $P(1)$ is true since $a_1 = 1 < 100$. 
+
+Suppose $P(n)$ is true for some $n$. \
+Then $a_n <= 100$. 
+
+We want to show $a_(n+1) <= 100$. $a_(n+1) = sqrt(3+2a_n) <= sqrt(3+2(100))< sqrt(10000) = 100$. \
+
 By induction $P(n)$ ...
 
 Since ${a_n}$ is increasing and bounded above. By MCT, $a$ converges to least upper bound. So, let $a_n -> L, a_(n+1) = sqrt(3+2a_n)$
 $lim_(n->oo) a_(n+1) = sqrt(3+2 lim_(n->oo)a_n)$ so $L = sqrt(3+2L) => L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L = 3$
+]
 
+#align(right)[$square$]
+\
+
+*2)*Find the limit of the sequence ${b_n}$ given by $b_1 = 4, b_n = frac(7+b_(n-1), 22)$ for $n>= 2$
+
+Notice that the sequence is a decreasing sequence.\
+Let $P(n)$ be the statement that $b_n > b_(n+1) forall n in NN$ and $b_n >=1/3 forall n$
+
+Base case: $n=1, b_1 - 4>=1/3$ and $b_2 = 1/2<4 = b_1$
+Inductive hypothesis: suuppose $P(n)$ is true for some $n = k$. Then $b_(n+1) = frac(7+b_k, 22) >= (7+1/3)/22 > 1/3$ \
+We have to show $b_k >= b_(k+1) <-> 22b_k >= 7+b_k<->21b_k>=7<->b_k > 1/3$
+so $P(k+1)$ holds.
+By Induction, $P(n)$ holds for all $n$. 
+
+By MCT, ${b_n}$ converges to $L$, since $ b_n = frac(7+b_(n-1), 22) -> lim_(n->oo) b_n = frac(7+lim_(n->oo) b_(n-1), 22)$
+$L = 7+L/22 -> 22L = 7+L -> L = 1/3$
