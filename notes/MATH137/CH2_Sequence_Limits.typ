@@ -183,11 +183,12 @@ Thinking questions:
     ANS: NO,
     consider the sequence ${1/n}$, $lim_(n->oo) 1/n = 0$
 
-
+\
 
 Examples:
 Prove that $lim_(n->infinity)$
 Let $m>0$ and consider the interval $m, infinity$. If $n>root(3, m)$ then $n^3>m$ and ao $n^3 in (m, infinity)$. So choose $k = ceil(root(3, m))+1$, then the tails lies in $(m, infinity)$
+\
 
 = Limit Laws
 #important[
@@ -207,7 +208,7 @@ Prove the Sum of Sequences Rule
   $forall epsilon > 0, exists M , N in RR, forall n > M, n > N, |a_n-a|<epsilon, |b_n-b|< epsilon$\
   $|(a_n+b_n)-(a+b)| = |(a_n-a)+(b_n-b)| <= |a_n-a| + |b_n+b|< epsilon/2 + epsilon/2 = epsilon$
 ]
-
+\
 #important[
   Tandem Convergence Theorem: \
   If $lim_(n->oo) frac(a_n, b_n)$ exists and $lim_(n->oo) b_n = 0$, 
@@ -237,8 +238,8 @@ Let $L = lim_(n->oo) a_n$, then $L = 1/2(L+260/L) <=>L^2= 1/2L^2+260<=> L plus.m
 
 Since $a_n$ consists of non-negative terms, thus its limit converges to a value that is non-negative. Thus, $lim_(n->oo) a_n = sqrt(260)$
 \
-
-
+\
+\
 \
 \
 #important[
@@ -286,6 +287,11 @@ A set $S subset RR$ is
 If a set $S subset RR$ is bounded above, it has a least upper bound. If it is bounded below, it has a greatest lower bound. 
 
 Greatest lower bound and least upper bound do not have be in part of the set
+\
+\
+\
+\
+\
 
 #important[
   *Theorem(Monotone Convergence Theorem)*: Let ${a_n}$ be an increasing sequence. If ${a_n} "is bounded above, it converges to its least upper bound, otherwise to" infinity$
@@ -304,6 +310,7 @@ Let ${a_n}$ be a decreasing sequence. If ${a_n}$is bounded below, it converges t
 ]
 
 == Proof by Induction
+
 #important[
 Let $P(n)$ be a statement over the natural numbers $NN$
 
@@ -311,60 +318,68 @@ Let $P(n)$ be a statement over the natural numbers $NN$
 2) Prove that if $P(n)$ is true, then $P(n+1)$ is true $forall n in NN$ \
 3) Apply 2) repeatedly starteing at $P(1)$
 
-
-Prove a recursive sequence ${a_n}$ converges:
-1) Show that ${a_n}$ is monotone 
-2) Show that ${a_n}$ is bounded above if increasing or bounded below if decreasing.
-3) By the Monotone Convergence Theorem, $lim_(n→∞) a_n$ exists. Use limit laws to solve for it, keeping in mind that the initial term and whether {an} is increasing or decreasing will tell you which solution is admissible if there are multiple.
+Prove a recursive sequence $(a_n)$ converges: \
+1) Show that $(a_n)$ is monotone \
+2) Show that $(a_n)$ is bounded above if increasing or bounded below if decreasing. \
+3) By the Monotone Convergence Theorem, $lim_(n->oo) a_n$ exists. Use limit laws to solve for it, keeping in mind that the initial term and whether {an} is increasing or decreasing will tell you which solution is admissible if there are multiple.
 ]
-
 
 Example: 
 
-*1)* Find the limit of the sequence ${a_n}$ given by $a_1 = 1, a_n = √(3 + 2a_(n - 1)) "for" n ≥ 2$
+*1)* Find the limit of the sequence $(a_n)$ given by
+#align(left)[$
+a_1 = 1, quad a_n = sqrt(3 + 2 a_(n - 1)) \ text("for") \ n >= 2.
+$]
 
 #proof[
-Let $P(n)$ be the statement that $a_n <= a_(n+1)$ 
+Let $P(n)$ be the statement that $a_n <= a_(n+1)$.
 
-Base Case: $P(1), a_1 = 1, a_2 = sqrt(5)$, so $a_1 < a_2$ 
+*Base Case:* $P(1)$, $a_1 = 1, \ a_2 = sqrt(5)$, so $a_1 < a_2$.
 
-Inductive Hypothesis:
-$(P(a)->P(a+1))$ suppose $P(n)$ is true for some $n$. 
+*Inductive Hypothesis:* $(P(a) -> P(a+1))$ suppose $P(n)$ is true for some $n$.
 
-Then $a_n < a_(n+1)$, we want to show that $a_(n+1) <= a_(n+2)$, so $a_n <= a_(n+1) -> 2a_n <= 2a_(n+1)$ \
-$-> 3+2a_n <= 3+2a_(n+1) -> sqrt(3+2a_n) <= sqrt(3+2a_(n+1)) -> a_(n+1) <= a_(n+2)$
+Then $a_n < a_(n+1)$; we want to show that $a_(n+1) <= a_(n+2)$. From $a_n <= a_(n+1)$:
+$ 2 a_n <= 2 a_(n+1) $
+$ 3 + 2 a_n <= 3 + 2 a_(n+1) $
+$ sqrt(3 + 2 a_n) <= sqrt(3 + 2 a_(n+1)) $
+$ a_(n+1) <= a_(n+2) $
 
-By inducion, $P(n)$ is true for all $n in NN$, so ${a_n}$ is increasing.
+By inducion, $P(n)$ is true for all $n in NN$, so $(a_n)$ is increasing.
 
+*Step2:* Choose upper bound to be big to make proof easier.
 
-Step2: Choose upper bound to be big to make proof easier
+Let $P(n)$ be the statement that $a_n <= 100$. $P(1)$ is true since $a_1 = 1 < 100$.
 
-Let $P(n)$ be the statement that $a_n<= 100$. $P(1)$ is true since $a_1 = 1 < 100$. 
+Suppose $P(n)$ is true for some $n$. Then $a_n <= 100$.
 
-Suppose $P(n)$ is true for some $n$. \
-Then $a_n <= 100$. 
-
-We want to show $a_(n+1) <= 100$. $a_(n+1) = sqrt(3+2a_n) <= sqrt(3+2(100))< sqrt(10000) = 100$. \
+We want to show $a_(n+1) <= 100$:
+$ a_(n+1) = sqrt(3 + 2 a_n) <= sqrt(3 + 2 * 100) < sqrt(10000) = 100. $
 
 By induction $P(n)$ ...
 
-Since ${a_n}$ is increasing and bounded above. By MCT, $a$ converges to least upper bound. So, let $a_n -> L, a_(n+1) = sqrt(3+2a_n)$
-$lim_(n->oo) a_(n+1) = sqrt(3+2 lim_(n->oo)a_n)$ so $L = sqrt(3+2L) => L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L = 3$
+Since $(a_n)$ is increasing and bounded above. By MCT, $a$ converges to least upper bound. So, let $a_n -> L, \ a_(n+1) = sqrt(3 + 2 a_n)$.
+$ lim_(n->oo) a_(n+1) = sqrt(3 + 2 lim_(n->oo) a_n) -> L = sqrt(3 + 2 L). $
+So $L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L = 3$
 ]
 
 #align(right)[$square$]
 \
 
-*2)*Find the limit of the sequence ${b_n}$ given by $b_1 = 4, b_n = frac(7+b_(n-1), 22)$ for $n>= 2$
+*2)* Find the limit of the sequence $(b_n)$ given by
+#align(left)[$
+b_1 = 4, quad b_n = frac(7 + b_(n-1), 22) \ text("for") \ n >= 2.
+$]
 
-Notice that the sequence is a decreasing sequence.\
-Let $P(n)$ be the statement that $b_n > b_(n+1) forall n in NN$ and $b_n >=1/3 forall n$
+Notice that the sequence is a decreasing sequence. \
+Let $P(n)$ be the statement that $b_n > b_(n+1) forall n in NN$ and $b_n >= 1/3 forall n$.
 
-Base case: $n=1, b_1 - 4>=1/3$ and $b_2 = 1/2<4 = b_1$
-Inductive hypothesis: suuppose $P(n)$ is true for some $n = k$. Then $b_(n+1) = frac(7+b_k, 22) >= (7+1/3)/22 > 1/3$ \
-We have to show $b_k >= b_(k+1) <-> 22b_k >= 7+b_k<->21b_k>=7<->b_k > 1/3$
-so $P(k+1)$ holds.
+Base case: $n = 1, \ b_1 = 4 >= 1/3$ and $b_2 = 1/2 < 4 = b_1$.
+
+Inductive hypothesis: suuppose $P(n)$ is true for some $n = k$. Then
+$ b_(n+1) = frac(7 + b_k, 22) >= frac(7 + 1/3, 22) > 1/3. $
+
+We have to show $b_k >= b_(k+1) <-> 22 b_k >= 7 + b_k <-> 21 b_k >= 7 <-> b_k > 1/3$, so $P(k+1)$ holds.
 By Induction, $P(n)$ holds for all $n$. 
 
-By MCT, ${b_n}$ converges to $L$, since $ b_n = frac(7+b_(n-1), 22) -> lim_(n->oo) b_n = frac(7+lim_(n->oo) b_(n-1), 22)$
-$L = 7+L/22 -> 22L = 7+L -> L = 1/3$
+By MCT, $(b_n)$ converges to $L$, since $b_n = frac(7 + b_(n-1), 22)$, so
+$ lim_(n->oo) b_n = frac(7 + lim_(n->oo) b_(n-1), 22) -> L = frac(7 + L, 22) -> 22 L = 7 + L -> L = 1/3. $
