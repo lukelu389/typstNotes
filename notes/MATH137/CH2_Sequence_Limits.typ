@@ -293,11 +293,16 @@ Greatest lower bound and least upper bound do not have be in part of the set
 \
 \
 
-#info[
-  *Theorem(Monotone Convergence Theorem)*: Let ${a_n}$ be an increasing sequence. If ${a_n} "is bounded above, it converges to its least upper bound, otherwise to" infinity$
+#info[ \
+
+  *Theorem(Monotone Convergence Theorem)*: \
+  Let ${a_n}$ be an increasing sequence. If ${a_n} "is bounded above, it converges to its least upper bound, otherwise to" infinity$
+  That is, if a sequence is bounded and monotonic, the sequence converges.
 ]
 
-
+#warn[
+  We say a sequence $S$ is bounded if it is bounded by both sides.
+]
 #proof[
   Let ${a_n}$ be increasing, bounded above. Then it has a lowest upper bound say $L$. Suppose $lim_(n->oo) a_n != L$. So there is some bad $epsilon$ s.t. no tail of ${a_n}$ lies in $(L - epsilon, L+epsilon)$. But then no term from $a_n.$ lies in $(L-epsilon, L+epsilon)$ since $a_n$ is increasing. Hence $L- epsilon$ is an upper bound for ${a_n}$, but $L-epsilon < L$ and $L$ is the least upper bound of ${a_n}$is  a contradiction. The assumption of $lim_(n->oo) a_n != L$ is false. $therefore lim_(n->oo)a_n = L$ 
 ]
@@ -309,9 +314,9 @@ Let ${a_n}$ be a decreasing sequence. If ${a_n}$is bounded below, it converges t
   Let $L = "greatest lower bound of" {a_n}$ since ${a_n}$ is decreasing, ${-a_n}$ is increasing with lowest upper bound is $-L$. By the Monotone Convergence Theorem, it is true.
 ]
 
-== Proof by Induction
 
-#tip[
+
+#tip[ *Proof By Induction* \
 Let $P(n)$ be a statement over the natural numbers $NN$
 
 1) Prove the basic case $P(1)$ is true \
@@ -365,8 +370,6 @@ So $L = -1, 3 = lim_(n->oo) a_n$. Since the sequence is increasing, we choose $L
 ]
 
 #align(right)[$square$]
-\
-
 *2)* Find the limit of the sequence ${b_n}$ given by
 #align(left)[$
 b_1 = 4, quad b_n = frac(7 + b_(n-1), 22) text("for") n >= 2.
@@ -383,5 +386,5 @@ $ b_(n+1) = frac(7 + b_k, 22) >= frac(7 + 1/3, 22) > 1/3. $
 We want to show $b_k >= b_(k+1) <-> 22 b_k >= 7 + b_k <-> 21 b_k >= 7 <-> b_k > 1/3$, so $P(k+1)$ holds. \
 By Induction, $P(n)$ holds for all $n$. 
 
-By MCT, $(b_n)$ converges to $L$, since $b_n = frac(7 + b_(n-1), 22)$, so
+By MCT, ${b_n}$ converges to $L$, since $b_n = frac(7 + b_(n-1), 22)$, so
 $ lim_(n->oo) b_n = frac(7 + lim_(n->oo) b_(n-1), 22) -> L = frac(7 + L, 22) -> 22 L = 7 + L -> L = 1/3. $
