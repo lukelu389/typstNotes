@@ -191,7 +191,7 @@ Let $m>0$ and consider the interval $m, infinity$. If $n>root(3, m)$ then $n^3>m
 \
 
 = Limit Laws
-#important[
+#info[
   Let ${a_n}, {b_n}$ be sequences with $lim_(n->oo) a_n = a$, $lim_(n->oo) b_n = b$ for some $a, b in RR$ then:
   1. For any $c in RR$, if $a_n = c$ for all $n$ then $c=a$
   2. For any $c in RR$, if $lim_(n->oo) c a_n = c a$
@@ -242,7 +242,7 @@ Since $a_n$ consists of non-negative terms, thus its limit converges to a value 
 \
 \
 \
-#important[
+#info[
   *Squeeze Theorem*:\
    If $a_n>= b_n>=c_n$ for all $n in NN$ with $n >= M$ for some $M in RR$ and $lim_(n->oo) a_n = L = lim_(n->oo)c_n$ for some $L in RR$, then $lim_(n->oo) b_n = L$ 
   ]
@@ -293,7 +293,7 @@ Greatest lower bound and least upper bound do not have be in part of the set
 \
 \
 
-#important[
+#info[
   *Theorem(Monotone Convergence Theorem)*: Let ${a_n}$ be an increasing sequence. If ${a_n} "is bounded above, it converges to its least upper bound, otherwise to" infinity$
 ]
 
@@ -311,7 +311,7 @@ Let ${a_n}$ be a decreasing sequence. If ${a_n}$is bounded below, it converges t
 
 == Proof by Induction
 
-#important[
+#tip[
 Let $P(n)$ be a statement over the natural numbers $NN$
 
 1) Prove the basic case $P(1)$ is true \
