@@ -158,7 +158,7 @@ $(<==)$
 
 Suppose $S inter T = S union T$, we must show $S subset.eq T and T subset.eq S$ \
 If $x in S "then" x in S union T.$\
-$"Furthermore", S inter T = S union T ==> x in S inter T ==> x in S and x in T$
+$"Furthermore", S inter T = S union T ==> x in S inter T ==> x in S and x in T$ \
 $x in T ==> S subset.eq T. "The proof of" T subset.eq S "is similar and will be omitted"$
 
 #align(right)[$square$]

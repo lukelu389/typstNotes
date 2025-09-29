@@ -145,3 +145,5 @@ $therefore x_(k+1) = 2(-3)^(k+1) + 10 5^k "so the claim holds for" n = k+1$
 $therefore "by strong induction the claim holds" forall n in NN$
 ]
 #align(right)[$square$]
+
+2. 

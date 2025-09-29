@@ -150,3 +150,55 @@ $ -x^2 <= x^2 cos(1/x) <= x^2 $
 Notice that $x^2$ are polynomial function that is defined in $x in RR$.
 $ lim_(x->0) -x^2 = lim_(x->0) x^2 = 0 $
 By Squeeze Theorem, $lim_(x->0) x^2 cos(1/x) = 0$
+
+= One Sided  Limits and the Fundamental Trig Limit
+\
+1. We say that $L$ is the *right side limit* of $f$ at $a$, and write $lim_(x->a^+) f(x) = L$ if $forall epsilon > 0, exists delta >0$ s.t. if $|x-a|<delta$ and $x>a$ then $|f(x)-L|< epsilon$ 
+
+2. We say that $L$ is the *left side limit* of $f$ at $a$, and write $lim_(x->a^-) f(x) = L$ if $forall epsilon > 0, exists delta >0$ s.t. if $|x-a|<delta$ and $x<a$ then $|f(x)-L|< epsilon$ 
+\
+#info[*Theorem* \
+$lim_(x->a) f(x) = L <==> lim_(x->a^-) f(x) = lim_(x->a^+) f(x) = L$
+]
+
+Example:\
+Show that $lim_(x->0) sin(x) = 0, lim_(x->0) cos(x) = 1, "and" lim_(x->0) tan(x) = 0$
+
+1. $lim_(x->0) sin(x)$:  \
+Construct a unit circle with a triangle that lies in the first quadrant and an arbitrary point, say $P(x, y)$. Then $P(x, y) = P(cos(x), sin(y))$. The area of the triangle can be represented as $1/2 sin(x)$. \
+
+Contruct another unit circle and draw $P(x, y)$ at the same location as the previous triangle, however, contruct an sector. The area of this new sector is $1/2 x$. 
+
+Notice that the area bounded by the sector is bigger than the triangle. 
+
+We then have $0<= 1/2 sin(x) <= 1/2 x ==> 0<= sin(x) <= x$. Since $lim_(x->0^+) 0 = lim_(x->0^+) x = 0$, by Squeeze Theorem, $lim_(x->0^+) sin(x) = 0$ 
+
+$lim_(x->0^-) sin(x) = 0$ can be achieved similarly to the prove of right side limit and will be omitted. 
+
+Thus $lim_(x->0) sin(x) = 0$
+
+2. $lim_(x->0) cos(x) = 1$ :
+$lim_(x->0) cos(x) = lim_(x->0) sqrt(1 - sin^2(x)) = 1$
+
+3. $lim_(x->0) tan(x) = lim_(x->0) sin(x)/cos(x) = 1$
+
+#warn[\
+*The Fundamental Trig Limit*: $ lim_(x->0) sin(x)/x = 1 $
+]
+
+#image("../../pictures/fundamental_trig.png")
+
+We have that $1/2 cos(x)sin(x) <= 1/2 x <= 1/2 tan(x) ==> cos(x) <= sin(x)/x <= 1/cos(x)$.
+
+By Squeeze Theorem, $lim_(x->0^+) sin(x)/x = 1$.
+
+Since $sin(x)$ is a even function, then $(sin(-x))/(-x) = (-sin(x))/(-x) = sin(x)/x$ so $lim_(x->0^-) sin(x)/x = 1$ \
+$ therefore lim_(x->0)sin(x)/x = 1 $
+
+Examples:
+
+1. $lim_(x->0) tan(x)/x = lim_(x->0) sin(x)/x dot 1/cos(s) = lim_(x->0)sin(x)/x dot lim_(x->0)1/cos(x) = 1 dot 1 = 1$
+
+2. $lim_(x->0) sin(72x)/tan(9x) = lim_(x->0) sin(72x)/(72x) dot (9x)/tan(9x) dot 8 = lim_(x->0) sin(72x)/(72x) dot lim_(x->0) (9x)/tan(9x) dot 8 = 1 dot 1 dot 8 $
+
+3. $lim_(x->0) frac(sin(x^2-1), sin(x-1)) = lim_(x->0) frac(sin(x^2-1), sin(x-1)) dot (x^2-1)/(x^2-1) dot (x-1)/(x-1) = lim_(x->0) sin(x^2-1)/(x^2-1) dot lim_(x->0) (x-1)/(sin(x-1)) dot \ lim_(x->0) (x+1) = 1 dot 1 dot 1 = 1$
