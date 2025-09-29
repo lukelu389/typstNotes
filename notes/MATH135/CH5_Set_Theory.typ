@@ -95,7 +95,7 @@ $A inter B = {2}$
 
 A set $S$ is called a *subset* of a set $T$, denoted $S subset.eq T$ when every element of $S$ belongs to $T$. $T$ is *superset* of $S$
 
-A set is called a *proper subset*, denoted $S subset.neq T$, meaning $S$ is a subset of $T$ and there exists an element in $T$ which does no belong to $T$. $T$ is a *proper superset* of $S$
+A set is called a *proper subset*, denoted $S subset.neq T$, meaning $S$ is a subset of $T$ and there exists an element in $T$ which does no belong to $S$. $T$ is a *proper superset* of $S$
 
 \
 Examples:
