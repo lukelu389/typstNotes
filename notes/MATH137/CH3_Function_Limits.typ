@@ -54,12 +54,12 @@ Take $delta < min(1, epsilon/6)$
   *Sequential Characterization of Limits Theorem* \
   Let $a in RR$. let the function $f(x)$ be defined on an open interval containing $a$, expect possibly at $x = a$ itself. Then the following are equivailent:
   1. $lim_(x->a)f(x) = L$
-  2. For all sequences ${x_n}$ satisfying $lim_(n->oo) x_n = a$ and $x_n!=a forall n in NN,$ we have that $lim_(n->oo)f(x_n) = L$
+  2. For all sequences ${x_n}$ satisfying $lim_(n->oo) x_n = a$ and $x_n!=a, forall n in NN,$ we have that $lim_(n->oo)f(x_n) = L$
 ]
 
 #tip[ Usage of Sequential Characterization of Limits
 1. Find a sequence ${x_n}$ with $x_n->a$
-2. Find two sequences ${x_n}, {y_n}$ with $x_n, y_n -> a "and" x_n, y_n !=a forall n in NN "but which" {f(x_n)}, {f(y-n)}$ converge to different values
+2. Find two sequences ${x_n}, {y_n}$ with $x_n, y_n -> a "and" x_n, y_n !=a, forall n in NN "but which" {f(x_n)}, {f(y_n)}$ converge to different values
 ]
 #proof[
    $==>$ : $lim_(x->a)f(x) = L$ means $forall epsilon > 0, exists delta > 0: |x-a|<delta$, then $|f(x)-L|< epsilon$. \
@@ -91,11 +91,63 @@ Let $x_n = 1/2n pi$ and $y_n = 1/(2n+1)pi$. Then $x_n, y_n -> 0, x_n, y_n !=0 fo
   2. For any $c in RR$, if $lim_(x->a) c f(x) = c L$
   3. $lim_(x->a) (f(x)+g(x)) = L+M$
   4. $lim_(x->) f(x) dot g(x) = L M$
-  5. $lim_(n->oo) frac(f(x), g(x)) = L / M "if " M=0$
+  5. $lim_(n->oo) frac(f(x), g(x)) = L / M "if " M!=0$
   6. If $alpha>0$ and $L > 0$, then $lim_(x>a) f(x)^alpha = L^alpha$
 
 ]
 
+#proof[
+  We assume functions $f,g$ are defined on a punctured neighborhood of $a$ and
+$lim_(x->a) f(x) = L$, $lim_(x->a) g(x) = M$. In the quotient law we also
+assume $M != 0$.
+
+1. Product law
+*Claim.* $lim_(x->a) (f(x) g(x)) = L M$.
+
+*Proof.* Let $epsilon > 0$. Then
+$|f(x) g(x) - L M|
+  = |f(x) (g(x) - M) + M (f(x) - L)|
+  <= |f(x)| · |g(x) - M| + |M| · |f(x) - L|.$
+
+Since $f(x) -> L$, choose $delta_0 > 0$ with
+$|x - a| < delta_0 => |f(x) - L| < 1$, hence $|f(x)| <= |L| + 1$ there.
+
+Choose $delta_1, delta_2 > 0$ so that
+$|x - a| < delta_1 => |g(x) - M| < epsilon / (2 (|L| + 1))$
+and
+$|x - a| < delta_2 => |f(x) - L| < epsilon / (2 (|M| + 1))$.
+
+Let $delta = min(delta_0, delta_1, delta_2)$. For $0 < |x - a| < delta$,
+$|f(x) g(x) - L M|
+  <= (|L| + 1) · epsilon / (2 (|L| + 1)) + |M| · epsilon / (2 (|M| + 1))
+  <= epsilon/2 + epsilon/2 = epsilon.$
+
+Thus $lim_(x->a) (f g) = L M$.
+
+2. Quotient law (with $M != 0$)
+*Claim.* $lim_(x->a) f(x)/g(x) = L/M$.
+
+*Proof.* Let $epsilon > 0$. Because $g(x) -> M != 0$, there exists $delta_0 > 0$
+such that $|x - a| < delta_0 => |g(x) - M| < |M|/2$, hence $|g(x)| >= |M|/2$.
+
+Now
+$| f(x)/g(x) - L/M |
+  = | M f(x) - L g(x) | / ( |M| · |g(x)| )
+  <= ( |M| · |f(x) - L| + |L| · |g(x) - M| ) / ( |M| · |g(x)| )
+  <= (2/|M|) · |f(x) - L| + (2 |L| / |M|^2) · |g(x) - M|.$
+
+Choose $delta_1, delta_2 > 0$ with
+$|x - a| < delta_1 => |f(x) - L| < (|M|/4) · epsilon$
+and
+$|x - a| < delta_2 => |g(x) - M| < (|M|^2 / (4 (|L| + 1))) · epsilon$.
+
+Let $delta = min(delta_0, delta_1, delta_2)$. Then for $0 < |x - a| < delta$,
+$| f(x)/g(x) - L/M |
+  <= (2/|M|) · (|M|/4) · epsilon + (2 |L| / |M|^2) · (|M|^2 / (4 (|L| + 1))) · epsilon
+  <= epsilon/2 + epsilon/2 = epsilon.$
+
+Therefore $lim_(x->a) f(x)/g(x) = L/M$.
+]
 
 #info[
 *Limit of Polynomial Functions*
@@ -111,8 +163,9 @@ Then $lim_(x->a)p(x) =  p(a)$
 ]
 ]
 
+
 \
-#info[ *Limit of Rational Functios* \
+#info[ *Limit of Rational Functions* \
 
 Let $f(x) = p(x)/q(x)$ when $p, q$ be polynomial functions and $a in RR$
 1. If $q(a) !=0 "then" lim_(x->a) p(x)/q(x) = p(a)/q(a)$
@@ -150,7 +203,9 @@ $ -x^2 <= x^2 cos(1/x) <= x^2 $
 Notice that $x^2$ are polynomial function that is defined in $x in RR$.
 $ lim_(x->0) -x^2 = lim_(x->0) x^2 = 0 $
 By Squeeze Theorem, $lim_(x->0) x^2 cos(1/x) = 0$
-
+\
+\
+\
 = One Sided  Limits and the Fundamental Trig Limit
 \
 1. We say that $L$ is the *right side limit* of $f$ at $a$, and write $lim_(x->a^+) f(x) = L$ if $forall epsilon > 0, exists delta >0$ s.t. if $|x-a|<delta$ and $x>a$ then $|f(x)-L|< epsilon$ 
