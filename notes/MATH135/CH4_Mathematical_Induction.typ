@@ -6,7 +6,7 @@
 
 = Notations
 \
- $ sum_(i = m)^n x_i = x_m^2+ x_(m+1) = x_(m+2) + ... + x_(n-1) + x_n $
+ $ sum_(i = m)^n x_i = x_m+ x_(m+1) + x_(m+2) + ... + x_(n-1) + x_n $
 
  $ product_(i = m)^n x_i  = x_m dot x_(m+1) dot x_(m+2) dot ... dot x_(n-1) dot x_n $
 

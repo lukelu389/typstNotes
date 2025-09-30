@@ -20,13 +20,13 @@ Example:
 $A = {n in NN: n divides 12} = {1, 2, 3, 4, 6, 12}$
 
 === Set Builder Notation -Type 2
-The notation *$f(x):x in cal(U)$* \
+The notation *${f(x):x in cal(U)}$* \
 Describes the set consisting of all objects of the form $f(x)$ such that $x$ is an element of $cal(U)$
 
 Example: $B = {2k:k in ZZ} = $ all even numbers
 
 === Set Builder Notation - Type 3
-The notation *$f(x):x in cal(U), P(x)$* or *$f(x): P(x) , x in cal(U)$*
+The notation *${f(x):x in cal(U), P(x)}$* or *${f(x): P(x) , x in cal(U)}$*
 Both describes the set consisting of all objects of the form $f(x)$ such that $x$ is an element $cal(U)$ and $P(x)$ is true
 
 Example: $C = {a/b: a, b in ZZ, b != 0}$

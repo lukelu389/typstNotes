@@ -26,8 +26,8 @@ Prove $forall x, y in RR, x^4 + x^2 y + y^2 >= 5 x^2 y - 3 y^2$
 
 #discovery[
 If $x^4 + x^2 y + y^2 >= 5 x^2 y - 3 y^2$
-=> $x^4 - 4 x^2 y + 4 y^2 >= 0$
-=> $(x^2 - 2y)^2 >= 0$
+$=>$ $x^4 - 4 x^2 y + 4 y^2 >= 0$
+$=>$ $(x^2 - 2y)^2 >= 0$
 
 This is a discovery, not a proof
 ]
@@ -72,9 +72,9 @@ Prove $exists m in ZZ$ s.t. $frac(m - 7, 2 m + 4) = 5$
 
 #proof[
 $m - 7 = 5(2m + 4)$
-=> $m - 7 = 10m + 10$
-=> $-27 = 9m$
-=> $m = -3$
+$=>$ $m - 7 = 10m + 10$
+$=>$ $-27 = 9m$
+$=>$ $m = -3$
 ]
 
 
@@ -101,7 +101,7 @@ There exists a perfect square $k$ with $k^2 - frac(31, 2) k = 8$
 
 = Disprove Existentially Quantified Statement
 
-To disprove $exists x in S, P(x)$, prove $forall x in S, not\, P(x)$
+To disprove $exists x in S, P(x)$, prove $forall x in S, not P(x)$
 
 Example
 
@@ -243,6 +243,7 @@ $forall x in ZZ$ if $x^2+4x-2$ is odd, then $x$ is odd
    Then $k in ZZ, x = 2k$\
    $x^2+4x-2 = (2k)^2+4(2k)+2 = 2(2k^2+4k-1)$ \
    Since $k in ZZ$, $2(2k^2+4k-1) in ZZ$, so the contrapositive is true.\
+   Therefore the original statement is also true
 ]
 #align(right)[$square$]
 
