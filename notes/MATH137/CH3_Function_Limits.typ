@@ -237,8 +237,7 @@ $lim_(x->0) cos(x) = lim_(x->0) sqrt(1 - sin^2(x)) = 1$
 
 3. $lim_(x->0) tan(x) = lim_(x->0) sin(x)/cos(x) = 1$
 
-#warn[\
-*The Fundamental Trig Limit*: $ lim_(x->0) sin(x)/x = 1 $
+#warn[*The Fundamental Trig Limit*: $ lim_(x->0) sin(x)/x = 1 $
 ]
 
 #image("../../pictures/fundamental_trig.png")
@@ -257,3 +256,60 @@ Examples:
 2. $lim_(x->0) sin(72x)/tan(9x) = lim_(x->0) sin(72x)/(72x) dot (9x)/tan(9x) dot 8 = lim_(x->0) sin(72x)/(72x) dot lim_(x->0) (9x)/tan(9x) dot 8 = 1 dot 1 dot 8 $
 
 3. $lim_(x->0) frac(sin(x^2-1), sin(x-1)) = lim_(x->0) frac(sin(x^2-1), sin(x-1)) dot (x^2-1)/(x^2-1) dot (x-1)/(x-1) = lim_(x->0) sin(x^2-1)/(x^2-1) dot lim_(x->0) (x-1)/(sin(x-1)) dot \ lim_(x->0) (x+1) = 1 dot 1 dot 1 = 1$
+
+\
+
+= Horizontal Asymptotes and the Fundamental Log Limit
+\
+#info[*Limit at $plus.minus infinity$* \
+Let $L in RR$. We say that $lim_(x->infinity)$ if $forall epsilon > 0, exists N in RR "s.t. if " x> N, "then" |f(x)-L|< epsilon.$
+
+Similarly, $lim_(x->-infinity)$ if $forall epsilon > 0, exists N in RR "s.t. if " x < N, "then" |f(x)-L|< epsilon.$
+]
+
+#info[*Horizontal Asymptotes* \
+If $lim_(x->infinity) f(x) = L "or" lim_(x->-oo)f(x) = L$ for some $L in RR$ then we way $y = L$ is a *Horizontal Asymptote* of $f$ \
+
+*Note*: you can cross horizontal asymptotes multiple times
+]
+
+
+#info[*Divergence of Limits* \
+1. We say that $lim_(x->oo) f(x) = oo$ if, $forall M > 0, exists N in RR$ s.t. if $x>N$ we have $f(x)>M$.
+2. We say that $lim_(x->-oo) f(x) = oo$ if, $forall M > 0, exists N in RR$ s.t. if $x<N$ we have $f(x)>M$.
+3. We say that $lim_(x->oo) f(x) = -oo$ if, $forall M < 0, exists N in RR$ s.t. if $x>N$ we have $f(x)<M$.
+4. We say that $lim_(x->-oo) f(x) = -oo$ if, $forall M < 0, exists N in RR$ s.t. if $x<N$ we have $f(x)<M$.
+]
+
+#info[*Squeeze Theorem at $plus.minus oo$*\
+If $g(x)<= f(x)<=h(x) forall x >= N$ for some $N in RR$, and if $lim_(x->oo) g(x) = L = lim_(x->oo) h(x), "then" lim_(x->oo) f(x) = L$
+
+]
+
+#warn[*The Fundamental Log Limit* $ lim_(x->oo) ln(x)/x = 0 $]
+
+#proof[
+  $0 <= ln(x)/x$ true whenever $x>=1$. Since $x-> oo$, assume $x>=1$. \
+
+  $ln(x)/x = frac(ln(sqrt(x) dot sqrt(x)), sqrt(x) dot sqrt(x)) = frac(2 ln(sqrt(x)), sqrt(x) dot sqrt(x)) = 2/(sqrt(x)) dot ln(sqrt(x))/sqrt(x) <= 1 <= 2/sqrt(x) $ (since $ln(z)<= z, forall z "arbitrarily large"$) \
+
+  $0 <= ln(x)/x <= 2/sqrt(x)$. By Squeeze Theorem $lim_(x->oo) ln(x)/x = 0$
+]
+
+Examples:
+
+1. Show that $lim_(x->oo) ln(x)/x^p = 0, forall p > 0$ \
+$lim_(x->oo) ln(x)/x^p = lim_(x->oo) ln(x^p)/x^p dot 1/p$ $quad quad "Let" u = x^p, x-> oo, u -> oo$ \
+
+$lim_(u->oo) ln(u)/u dot 1/p = 0 dot 1/p = 0$
+
+2. Show that $lim_(x->oo) ln(x^p)/x = 0, forall p > 0$\
+$lim_(x->oo) ln(x^p)/x = lim_(x->oo)p dot lim_(x->oo) ln(x)/x = p dot 0 = 0$
+
+3. Show that $lim_(x->oo) x^p/e^x = 0, forall p > 0$
+$lim_(x->oo) x^p/e^x quad quad "Let" x = ln u <=> u = e^x, x-> oo, u -> oo$ \
+$lim_(u->oo) ln(u)^p/u = lim_(u->oo)  (ln(u)/u^(1/p))^p = 0^p = 0 $
+
+4. Show that $lim_(x->0^+) x^p/ln(x), forall p > 0$ \
+$lim_(x->0^+) x^p/ln(x) quad quad ("Let" u = 1/x)$ \
+$lim_(u->oo) 1/(u^p) dot ln(1/u)$
