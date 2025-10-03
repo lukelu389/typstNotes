@@ -64,7 +64,7 @@
 #let callout(body, kind: "info", title: none) = [
   #let bg = if kind == "warn" { luma(92%) } else if kind == "tip" { luma(96%) } else { luma(94%) }
   #let accent = if kind == "warn" { rgb("#f59e0b") } else if kind == "tip" { rgb("#10b981") } else { rgb("#3b82f6") }
-  #let ico = if kind == "warn" { "⚠️" } else if kind == "tip" { "💡" }
+  #let ico = if kind == "warn" { "⚠️" } else if kind == "tip" { "💡" } else {"🐳"}
   #let label = if title == none { if kind == "warn" { "Warning" } else if kind == "tip" { "Tip" } else { "Info" } } else { title }
 
   #box(fill: bg, inset: 10pt, radius: 8pt, stroke: (paint: accent, thickness: 0.8pt), width: 100%)[

@@ -282,7 +282,7 @@ If $lim_(x->infinity) f(x) = L "or" lim_(x->-oo)f(x) = L$ for some $L in RR$ the
 ]
 
 #info[*Squeeze Theorem at $plus.minus oo$*\
-If $g(x)<= f(x)<=h(x) forall x >= N$ for some $N in RR$, and if $lim_(x->oo) g(x) = L = lim_(x->oo) h(x), "then" lim_(x->oo) f(x) = L$
+If $g(x)<= f(x)<=h(x) forall x >= N$ for some $N in RR$, and if \ $lim_(x->oo) g(x) = L = lim_(x->oo) h(x), "then" lim_(x->oo) f(x) = L$
 
 ]
 
@@ -310,6 +310,57 @@ $lim_(x->oo) ln(x^p)/x = lim_(x->oo)p dot lim_(x->oo) ln(x)/x = p dot 0 = 0$
 $lim_(x->oo) x^p/e^x quad quad "Let" x = ln u <=> u = e^x, x-> oo, u -> oo$ \
 $lim_(u->oo) ln(u)^p/u = lim_(u->oo)  (ln(u)/u^(1/p))^p = 0^p = 0 $
 
-4. Show that $lim_(x->0^+) x^p/ln(x), forall p > 0$ \
+4. Show that $lim_(x->0^+) x^p/ln(x) =0, forall p > 0$ \
 $lim_(x->0^+) x^p/ln(x) quad quad ("Let" u = 1/x)$ \
-$lim_(u->oo) 1/(u^p) dot ln(1/u)$
+$lim_(u->oo) 1/(u^p) dot ln(1/u) = 0$
+
+#info[*Vertical Asymptotes*\
+1. $lim_(x->a^+) f(x) = infinity$ if for every $m>0, exists delta > 0$ s.t. if $a<x<a+d+delta$ then $f(x) > m$
+2. $lim_(x->a^-) f(x) = infinity$ if for every $m<0, exists delta > 0$ s.t. if $a<x<a+d+delta$ then $f(x) < m$
+3. $lim_(x->a^+) f(x) = lim_(x->a^-) f(x) = infinity ==> lim_(x->a) f(x) = infinity$
+4. If $lim_(x->a^plus.minus) f(x) = plus.minus infinity$ then there is a vertical asymptote at $x = a$
+]
+
+
+#info[*Continuity*\
+We say that a function $f$ *is continuous* at $a$ if $f$ is defined at $a$ and \
+1. $lim_(x->a) f(x) = f(a)$\
+2. For every $epsilon > 0, exists delta >0$ s.t. if $|x-a|<delta$, then $|f(x)-f(a)|< epsilon$
+3. for every sequence ${x_n}$ with $x_n -> a$, we have $f(x_n) -> f(a)$
+4. If $f$ is not continuous at $a$, then it is called *discountinous at* $a$
+]
+
+Example:
+1. $f(x) = |x|$ is continuous at $a$
+$f(x)= cases(x "if" x > 0, -x "if" x <= 0)$\
+
+$lim_(x->0^-) |x| = lim_(x->0^-) -x = 0$\
+$lim_(x->0^+) |x| = lim_(x->0^+) x = 0$\
+Thus $lim_(x->0) |x| = 0$
+
+#tip[*Polynomials are continuous at all points*
+\
+$ lim_(x->a) p(x) = p(a) $
+]
+
+#info[ Alternative way of Proving Continuity
+$ lim_(x->a) f(x) = f(a) equiv lim_(h->0) f(a+h) = f(a) $
+]
+
+Example: \
+1. Prove $sin(x)$ is continuous at $x in RR$
+
+$sin(a+h)= sin(a)cos(h) + sin(h)cos(a)$ \
+
+$lim_(x->a) sin(x) = lim_(h->0) sin(a+h) \
+= lim_(h->0) sin(a) dot lim_(h->0) cos(h) + lim_(h->0) sin(h) dot lim_(h->0) cos(a)$ \
+$= sin(a) dot 1 + 0 dot cos(a) = sin(a)$
+\
+\
+
+2. Given that $e^x$ is continuous at $x = 0$, prove that it is continuous on all of $RR$
+
+$lim_(x->a) e^x = lim_(h->0) e^(a+h) = e^a dot 1 = lim_(h->0)$
+
+3. Prove that $ln(x)$ is continuous
+
