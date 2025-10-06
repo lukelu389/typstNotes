@@ -362,5 +362,48 @@ $= sin(a) dot 1 + 0 dot cos(a) = sin(a)$
 
 $lim_(x->a) e^x = lim_(h->0) e^(a+h) = e^a dot 1 = lim_(h->0)$
 
-3. Prove that $ln(x)$ is continuous
+#tip[*Continuity of Inverse* \
+Let $f(x)$ be invertible at $x=a$ with $f(a) = b$. Then $f^(-1)(y)$ is continuous at $y=b$] \
 
+#info[*Arithmetic Rules for Continuous Functions* \
+Let $f, g$ be continuous at x = a.
+1. For any constant $c in RR$, cf(x) is continuous at $x=a$
+2. $f(x)plus.minus g(x)$ remain continuous
+3. $f(x)g(x)$ remain continuous
+4. If $g(x) != 0, f(x)/g(x)$ remain continuous
+]
+#info[*Composition of Continuous Function*\
+If $f$ is continuous at $x = a$, and $g$ is continuous at $x=f(a)$, then \
+$h = g compose f$ is continuous at $x=a$ 
+]
+
+Proof:\
+$"Given" f "is continuous at" a, "then for any" {x_n}, x_n -> a, f(x_n) -> f(a)$ But $g$ is continuous at $f(a)$, so for any ${y_n}$ with $y_n -> f(a), g(y_n)->g(f(a))$. Let $y_n = f(x_n)$. Then $g(f(x_n))->g(f(a))$ since $x_n$ is aribitrary, $g compose f$ is continuous at $x=a$
+ \
+ \
+#tip[*Continuity on Invervals*\
+
+1. We say that a function $f$ is continuous on $(a, b)$ if it is continuous at each $x in (a, b)$
+2. We say that a function $f$ is continuous on $[a, b]$ if it is continuous on $(a, b)$ and we have $lim_(x->a^-) f(x) = f(a)$ and $lim_(x->b^+) f(x) = f(b)$
+]
+\
+
+
+Example:\
+Find the largest interval on which $f(x) = x^(1/4)$ is continuous.\
+For $(0, oo)$ given $a in (0, oo), f$ is continous at $a^-$ beacuse it is the inverse of $x^4$, which is continuous at $RR$.
+
+For $a= 0, lim_(x->0^+) x^(1/4) = 0$, so $f$ is continuous at 0 as well.
+
+$therefore f "is continuous on" [0, oo) $
+
+#info[*Types of Discountinuity*\
+
+1. A discontinuity is a removable discontinuity if $lim_(x→a) f (x)$ exists but does not equal $f(a)$. All discontinuities not of this type are non-removable.
+
+2. A discontinuity is a jump discontinuity if $lim_(x→a^-) f(x)$ and $lim_(x→a^+) f(x)$ exist but do not agree.
+
+3. A discontinuity is infinite if either $lim_(x→a^-) f(x) = ±∞$ or $lim_(x→a^+) f(x) = ±∞$. 
+
+4. A discontinuity is oscillatory if $lim_(x→a) f(x)$ does not exist, but $f$ is bounded and oscillates infinitely often near $x = a$.
+]
