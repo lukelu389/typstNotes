@@ -52,13 +52,13 @@ To disprove $forall x in S, P(x)$, find $x in S$ with $not P(x)$
 
 Example
 
-Disprove $forall x in RR, x^2 = 5$
+Disprove $forall x in ZZ, x^2 = 5$
 #proof[
 Let $x = 0$
 
 Then $x^2 = 0 != 5$
 
-$exists x in RR$ with $x^2 != 5$, so $forall x in RR, x^2 = 5$ is false
+$exists x in RR$ with $x^2 != 5$, so $forall x in ZZ, x^2 = 5$ is false
 ]
 
 \

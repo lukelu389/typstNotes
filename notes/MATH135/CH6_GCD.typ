@@ -104,10 +104,89 @@ Option 2: Use GCD Characterization Theorem\
 Let $a = n, b = n+1, d = 1$.\
 
 $d divides a "and" d divides b$ because $d=1$ divides every integer\
-Let $s =-1, t = 1$ these will be provide the certificate of correctness to verify that $d = 1$ is the GCD we are looking for.
+Let $s =-1, t = 1$ \
+These will be provide the certificate of correctness to verify that $d = 1$ is the GCD we are looking for.
 
 $a s + b t = n(-1) + (n+1) 1 = 1$ \
 $therefore "by GCD CT" 1 = gcd(n, n+1)$
 
 Option 3: Use GCDWR\
 $n+1 = 1 dot n + 1$
+\
+\
+
+#info[*Bézout's Lemma* \
+$forall a, b in ZZ, exists s, t in ZZ "s.t." a s + b t = d, d = gcd(a, b)$
+]
+\
+\
+
+#info[*Extended Euclidean Algorithm*
+#align(center)[
+  #table(
+    columns: 5,
+    align: (center, center, center, center, center),
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$i$], [$x$], [$y$], [$r$], [$q$],
+    [$i=1$], [1], [0], [$a$], [0],
+    [$i=2$], [0], [1], [$b$], [0], 
+    [$i=3$], [$x_i = x_(i-2)-q_i x_(i-1)$], [$y_i = y_(i-2)-q_i y_(i-1)$], [$r_i = r_(i-2)-q_i r_(i-1)$], [$floor(r_(i-2)/r_(i-1))$]
+    )
+  ]
+  We stop when $r_i=0$\
+
+  Note that the last $r != 0$ value is the $gcd(a, b)$\
+
+  Remember at each row we have $a x_i + b y_i = r_i$\
+
+  Let $n = i-1$, Then $gcd(a, b) = r_n "and" s=x_n "and" t = y_n$ are certificate of correctness
+]
+\
+\
+\
+\
+\
+\
+Numerical Examples:\
+
+1. Find $gcd(56, 35)$ and solve for $s, y in ZZ "for" 56x+35y = gcd(56, 35)$ \
+\
+#align(center)[
+  #table(
+    columns: 5,
+    align: (center, center, center, center, center),
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$i$], [$x$], [$y$], [$r$], [$q$],
+    [$i=1$], [1], [0], [56], [0],
+    [$i=2$], [0], [1], [35], [0], 
+    [$i=3$], [1], [-1], [21], [1],
+    [$i=4$], [-1], [2], [14], [1],
+    [$i=5$], [2], [-3], [7], [1],
+    [$i=6$], [-5], [8], [0], [2]
+  )
+]
+So $gcd(56, 35) = 7$. According to EEA, $s = x_5 = 2$ and $t = y_5 = -3$ are certificate of correctness\
+
+Check $56 (2) + 35(-3) = 112 - 105 = 7$ which is true\
+
+2. Find integers $x, y, d$ s.t. $408x + 170y=d = gcd(408, 170)$\
+#align(center)[
+  #table(
+    columns: 5,
+    align: (center, center, center, center, center),
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$i$], [$x$], [$y$], [$r$], [$q$],
+    [$i=1$], [1], [0], [408], [0],
+    [$i=2$], [0], [1], [170], [0], 
+    [$i=3$], [1], [-2], [68], [2],
+    [$i=4$], [-2], [5], [34], [2],
+    [$i=5$], [5], [-12], [0], [2],
+  )
+]
+
+So $gcd(408, 170) = 34$. According to EEA, $s = x_4 = -2$ and $t = y_4 = 5$ are certificate of correctness\
+
+Check $408 (-2) + 170(5) = 34$ which is true
