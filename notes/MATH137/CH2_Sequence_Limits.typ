@@ -388,3 +388,5 @@ By Induction, $P(n)$ holds for all $n$.
 
 By MCT, ${b_n}$ converges to $L$, since $b_n = frac(7 + b_(n-1), 22)$, so
 $ lim_(n->oo) b_n = frac(7 + lim_(n->oo) b_(n-1), 22) -> L = frac(7 + L, 22) -> 22 L = 7 + L -> L = 1/3. $
+
+== CHAPTER ENDS

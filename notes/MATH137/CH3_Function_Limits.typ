@@ -391,7 +391,7 @@ $"Given" f "is continuous at" a, "then for any" {x_n}, x_n -> a, f(x_n) -> f(a)$
 
 Example:\
 Find the largest interval on which $f(x) = x^(1/4)$ is continuous.\
-For $(0, oo)$ given $a in (0, oo), f$ is continous at $a^-$ beacuse it is the inverse of $x^4$, which is continuous at $RR$.
+For $(0, oo)$ given $a in (0, oo), f$ is continuous at $a^-$ beacuse it is the inverse of $x^4$, which is continuous at $RR$.
 
 For $a= 0, lim_(x->0^+) x^(1/4) = 0$, so $f$ is continuous at 0 as well.
 
@@ -407,3 +407,39 @@ $therefore f "is continuous on" [0, oo) $
 
 4. A discontinuity is oscillatory if $lim_(x→a) f(x)$ does not exist, but $f$ is bounded and oscillates infinitely often near $x = a$.
 ]
+
+\
+
+#info[*Intermediate Value Theorem (IVT)*\
+If $f$ is continuous on a closed interval $[a, b]$ and $alpha in RR$ is such that either $f(a) < alpha < f(b)$ or $f(a) > alpha > f(b)$, then $exists c in (a, b)$ s.t. $f(c) = alpha$
+]
+
+Examples:
+1. Show that $sin(x)$ and $1-x^2$ intersects on $(0, 1)$ \
+Since $sin(x) "and" 1-x^2$ are continuous on $RR$ therefore continuous on $[0, 1]$ \
+For $x = 1, sin(1)-1+(1)^2 = 1^2-1 > 1$ \
+For $x = 0, sin(0)-1+(0)^2 = -1 < 1$ \
+$f(0) < 0 < f(1)$ \
+By IVT, $exists c in (0, 1), f(c) = 0$, meaning the given function intersect
+
+2. Show that $x^3+3x^2-x-3$ has a root in the interval $(-5, -2)$
+Since $x^3+3x^2-x-3$ is continuous on $RR$ therefore continuous on $[-5, -2]$ \
+For $x = -5, (-5)^3 + 3(-5)^2 -(-5)-3 = -48 < 0$\
+For $x = -2, (-2)^3 + 3(-2)^2 -(-2)-3 = 3 > 0$ \
+$-48 < 0 < 3$\
+By IVT, $exists c in (-5, -2), f(c) = 0$, meaning there is a point where the given function has a root
+
+#info[*Bisection Method*\
+Let $F$ be a continuous function. \
+To approximate a value $c$ s.t. $F(c) = 0$ with an error of at most $epsilon$
+
+1. We need to find $a, b$ s.t. $F(a)$ and $F(b)$ have opposite signs
+2. IVT gives that $c in (a, b)$ 
+3. Look at the mid-point $a+ (b-a)/2$. Is $F(a + (b-a)/2)$ positive or negative? 
+$cases(1. "If it has the same sigh as" F(a) \, "then it has the opposite sign with" F(b) ==> "IVT gives" c in (a+(b-a)/2 \, b),
+
+ 2. "If it has the opposite sigh as" F(a) \, "then it has the same sign with" F(b) ==> "IVT gives" c in (a, a+(b-a)/2 \)))$
+4.  Repeat Step 3 until $|b-a| < epsilon$
+]
+
+ == CHAPTER ENDS

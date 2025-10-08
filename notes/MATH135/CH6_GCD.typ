@@ -190,3 +190,40 @@ Check $56 (2) + 35(-3) = 112 - 105 = 7$ which is true\
 So $gcd(408, 170) = 34$. According to EEA, $s = x_4 = -2$ and $t = y_4 = 5$ are certificate of correctness\
 
 Check $408 (-2) + 170(5) = 34$ which is true
+
+\
+#info[
+  *Common Divisor Divides GCD*\
+  $ forall a, b, c in ZZ, "if" c divides a "and" c divides, "then" c divides gcd(a, b) $
+  ]
+
+Examples:\
+
+1. Prove $forall a, b, c, in ZZ$, if $gcd(a b, c) = 1, "then" gcd(a, c) = gcd(b, c) = 1$
+
+#proof[
+  Let $a, b, c in ZZ$. Assume that $gcd(a b, c) = 1$.\
+  By BL, $exists s, t in ZZ$ s.t. $a b dot s + c dot t = 1$\
+  $a (b s) + c t = 1$ \
+  $b(a s) + c t = 1$ \
+  Since $a, b, s, t in ZZ, b s in ZZ "and" a s in ZZ$, 1 can be expressed as an integer combination of $a$ and $c$, as well as an integer combination of $b$ and $c$.\
+  Meanwhile, 1 is clearly a common divisor of $a, c$ and $b, c$. Since $1 divides x forall z in ZZ$. \
+  $therefore "By GCDCT", gcd(a, b) = 1 "and" gcd(b, c) = 1$
+]
+#align(right)[$square$]
+
+2. Is converse of 1. true?
+\
+== Prime Numbers
+\
+#tip[ Two integers $a, b$ are *comprime* if $gcd(a, b) = 1$] \
+
+#info[*Coprimeness Characterization Theorem*\
+$ forall a, b in ZZ, gcd(a, b) = 1 <==> exists s, t in ZZ "s.t." a s + b t = 1 $]
+
+#info[*Division by the GCD*\
+$ forall a, b in ZZ, "not both zero", gcd(a/d, b/d) = 1 "where" d = gcd(a, b) $]
+
+#info[*Comprimeness and Divisibility*\
+$ forall a, b, c in ZZ, "if" c divides a b "and" gcd(a, c) = 1, "then" c divides b $]
+
