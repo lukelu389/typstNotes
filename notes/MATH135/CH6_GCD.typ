@@ -227,3 +227,31 @@ $ forall a, b in ZZ, "not both zero", gcd(a/d, b/d) = 1 "where" d = gcd(a, b) $]
 #info[*Comprimeness and Divisibility*\
 $ forall a, b, c in ZZ, "if" c divides a b "and" gcd(a, c) = 1, "then" c divides b $]
 
+#info[Evey natural number $n > 1$ can be written as a product of primes] 
+
+#proof[
+  We will prove that the open setnence $P(n):$ the number $n$ can be wirtten as a product of primes is true for all naturanl numbers $n>$ 1 by strong induction. \
+  
+  Base case: $n=2 ==> 2=2$, so $P(2)$ is true. \
+
+  Induction Step: \
+  Let $k in NN, k >= 2$, assume that $P(2) and P(3) and ... and P(k)$ is true. That is $forall i in 2, ..., k, i$ can be expressed as a product of primes.\
+  Consider $k+1$: \
+  If $k+1$ is prime, then $k+1$ is already a product of primes, so $P(k+1)$ is true. \
+  If $k+1$ is composite, meaning $exists s, r in NN$ with $2<=s, r < k+1 ==> 2 <= s, r <= k$ s.t. $k+1 = r dot s$. By I.H., both $s, r$ can be written as a product or primes. That is $P(k+1)$is true. \
+  By Principle of Strong Induciton, $P(n)$ is true $forall n in NN, n >= 2$
+]
+#align(right)[$square$]
+\
+
+#info[*Euclid's Lemma*\
+$forall a, b in ZZ, "and prime numbers" p, p divides a b ==> p divides a or p divides b $  \ 
+\
+*Generalized Euclid's Lemma*\
+$"Let" p "be a prime number", n in NN, "and" a_1, a_2, ..., a_n in ZZ, p divides (a_1 a_2 ... a_n) ==> p divides a_i "for some" i = 1, 2, ..., n $
+
+]
+
+
+
+
