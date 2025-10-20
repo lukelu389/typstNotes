@@ -198,7 +198,7 @@ Check $408 (-2) + 170(5) = 34$ which is true
 \
 #info[
   *Common Divisor Divides GCD*\
-  $ forall a, b, c in ZZ, "if" c divides a "and" c divides, "then" c divides gcd(a, b) $
+  $ forall a, b, c in ZZ, "if" c divides a "and" c divides b, "then" c divides gcd(a, b) $
 ]
 
 Examples:\
