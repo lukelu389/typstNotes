@@ -1,7 +1,7 @@
 #import "../../preamble.typ": *
 
 #let Title = "CS135 L05 — Lists & Composite Data"
-#let author = "Your Name"
+#let author = "Luke Lu"
 #meta(title: Title, author: author)
 
 = #Title

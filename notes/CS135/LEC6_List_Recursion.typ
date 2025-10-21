@@ -1,7 +1,7 @@
 #import "../../preamble.typ": *
 
 #let Title = "CS135 L06 — Recursion on Lists"
-#let author = "Your Name"
+#let author = "Luke Lu"
 #meta(title: Title, author: author)
 
 = #Title
