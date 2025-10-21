@@ -1,65 +1,105 @@
-#import "../../preamble.typ": meta, set-title
+#import "../../preamble.typ": *
 
-#let Title = "CH 5 — Inventory and Cost of Goods"
+#let Title = "CH 5 — Inventory & Cost of Goods Sold (Integrated Notes)"
 #set-title(Title)
-#meta(title: Title, author: "Luke Lu")
+#meta(title: Title, author: "Your Name")
 
-== I. Financial Statements for Merchandising Companies
+#v(8pt)
 
-*Key differences from service companies*
-- *Balance Sheet:* Merchandising companies report *Inventory* as a *Current Asset* (a “somewhat liquid” asset).
-- *Income Statement:* Includes *Sales Revenue*, *Cost of Goods Sold (COGS)*, and *Gross Profit* (Gross Margin).
-  - $ text("Gross Profit") = text("Sales Revenue") - text("Cost of Goods Sold") $
-  - *COGS* is classified as an *expense*.
+= Summary
+Inventory: perpetual vs periodic systems, costing methods (Specific ID, FIFO, Weighted-Average), sales returns/allowances/discounts, LCNRV, analysis metrics, errors, ethics, and Excel XLOOKUP for multi-file analysis.  :contentReference[oaicite:11]{index=11}
 
-*Merchandise inventory fundamentals*
-- *Inventory:* Cost of inventory still on hand; *Asset* on the Balance Sheet.
-- *Cost of Goods Sold (COGS):* Cost of inventory that has been sold; *Expense* on the Income Statement.
+= Learning Objectives
+• *Perpetual system* mechanics (two entries per sale) \
+• *Costing methods* and comparisons \
+• *Standards*: comparability; LCNRV \
+• *Metrics*: gross profit %, turnover, days' inventory \
+• *Error effects* on FS; ethics \
+• *XLOOKUP* for inventory analytics \
+• *Periodic system* (appendix)
 
-*Determining inventory cost*
+= Perpetual Inventory System
+Bar codes enable real-time updates. Each sale requires *two* entries: \
+1) Record revenue and cash/A/R \
+2) Record COGS and reduce Inventory \
+*Gross profit (margin)* = Sales revenue - COGS.  :contentReference[oaicite:12]{index=12}
 
-$text("Inventory Cost")
-= text("Basic Purchase Price")
-+ text("Freight-in, insurance in transit, and ready-to-sell costs")
-- text("Returns, allowances, and discounts")$
+= Determining Quantities & Costs
+
+== Shipping terms (ownership & cost)
+#table(
+  columns: (auto, auto, auto, auto),
+  align: (left, left, left, left),
+  table.header([*Terms*], [*Title passes*], [*Counted by*], [*Freight paid by*]),
+  [FOB Shipping Point], [When goods leave seller], [Purchaser], [Purchaser],
+  [FOB Destination], [When goods reach buyer], [Seller], [Seller],
+)
+Inventory cost includes purchase price + freight-in + insurance + ready-to-sell costs - returns/allowances/discounts.  :contentReference[oaicite:13]{index=13}
+
+= Costing Methods
+
+#table(
+  columns: (auto, auto, auto, auto),
+  align: (left, left, left, left),
+  table.header([*Method*], [*Description*], [*Best for*], [*Key trait*]),
+  [Specific ID], [Track actual item cost], [Unique items], [Precise; costly for common goods],
+  [FIFO], [Oldest costs to COGS first], [Most businesses], [Ending inventory at recent costs],
+  [Weighted-Average], [Avg cost for all units], [Homogeneous items], [Smoothes price swings],
+)
+
+*When costs rise:* FIFO → lower COGS, higher ending inventory & GP; Weighted-Average → higher COGS, lower ending inventory & GP.  :contentReference[oaicite:14]{index=14}
+
+= Worked Costing Illustration (FIFO vs WA)
+Data (Leon's lamps): Begin 10\@ \$11; buy 50 (assorted); sell 40; end 20. \
+*FIFO idea:* the 40 sold draw from earliest layers; ending inventory = most recent layers. \
+*Weighted-average idea:* compute average cost per unit over goods available; apply to COGS and ending inventory.  :contentReference[oaicite:15]{index=15}
+
+= Sales Returns, Allowances, Discounts
+Right of return → record: \
+• *Sales Refund Payable* (liability) for expected returns (sales side) \
+• *Estimated Inventory Returns* (asset) and adjust COGS (cost side) \
+*Sales discounts* like 2/10, n/30 incentivize prompt payment.  :contentReference[oaicite:16]{index=16}
+
+= Reporting & Standards
+*Comparability*: use consistent inventory methods across periods; if changed, justify and restate prior periods. \
+*LCNRV*: report inventory at min(cost, NRV). If NRV < cost → *write down* inventory (affects COGS / separate loss; disclose).  :contentReference[oaicite:17]{index=17}
+
+= Example — LCNRV (sketch)
+If NRV for ending inventory is \$49,000 and cost is higher: report *Inventory = 49,000* on BS and recognize write-down (often via COGS). Disclose policy and the change's impact for users.  :contentReference[oaicite:18]{index=18}
+
+= Inventory Metrics
+• *Gross Profit %* = (Gross Profit / Sales) \* 100 \
+• *Inventory Turnover* = COGS ÷ Avg Inventory \
+• *Days' Inventory Outstanding* = 365 ÷ Turnover \
+Interpretation: higher turnover / lower days → faster movement; watch for stockouts vs obsolescence.  :contentReference[oaicite:19]{index=19}
+
+= Effects of Inventory Errors
+If *ending inventory overstated*: COGS understated → GP & NI overstated; carries to next period reversals. Net sales typically unchanged.  :contentReference[oaicite:20]{index=20}
+
+= Ethics
+Pressure to “cook the books”: overstating ending inventory or creating fictitious sales. Uphold faithful representation; follow disclosure requirements.  :contentReference[oaicite:21]{index=21}
 
 
-*Goods in transit (shipping terms)* — determines who owns inventory while shipped.
 
+= Excel XLOOKUP (Analysis)
+Pull item costs/attributes from reference files into a main analysis workbook to compute margins, turnover, and LCNRV flags quickly.  :contentReference[oaicite:23]{index=23}
 
-== II. Perpetual Inventory System (LO 1)
+= Examples
 
-*Characteristics*
-- Used for all types of goods.
-- Keeps a *running total* of goods bought, sold, and on hand.
-- Often uses bar codes to record sales and update inventory automatically.
+*Example A — Perpetual sale entry (numbers illustrative)* \
+1) DR Cash 1,000; CR Sales Rev 1,000 \
+2) DR COGS 640; CR Inventory 640
 
-*Recording inventory transactions*
+*Example B — Returns estimate* \
+1) DR Sales Returns & Allowances 3,000; CR Sales Refund Payable 3,000 \
+2) DR Estimated Inventory Returns 1,800; CR COGS 1,800
 
+*Example C — FIFO layer pick (outline)* \
+Sold 40 units: draw 10 \@ \$11, then 20 \@ \$14, then 10\@ \$16 → COGS layers sum to \$550; Ending inventory from most recent layers (e.g., 5\@ \$16 + 15 \@ \$18 = \$350).  :contentReference[oaicite:24]{index=24}
 
-*Calculations*
-- $text("Net Purchases") = text("Purchase Price") + text("Freight-in") - text("Purchase Returns") - text("Purchase Allowances") - text("Purchase Discounts") $
-- $text("Net Sales") = text("Sales Revenue") - text("Sales Returns and Allowances") - text("Sales Discounts") $
-
-*Sales adjustments (returns and discounts)*
-1. *Sales Returns & Allowances:* If returns are expected, record:
-   - *Accrued liability:* *Sales Refund Payable* for sales price of expected returns.
-   - *Asset adjustment:* *Estimated Inventory Returns* to adjust inventory and COGS for expected returns.
-   - *Example (both price & cost effects):*  
-     - Price side: Debit *Cash/A/R*; Credit *Sales Revenue* & *Sales Refund Payable*.  
-     - Cost side: Debit *COGS* & *Inventory Returns Estimated*; Credit *Inventory*.
-2. *Sales Discounts:* e.g., *2/10, n/30* → 2% discount if paid within 10 days; otherwise net in 30 days.  
-   - If buyer takes the discount, *Sales Discounts* is *debited*.
-
-== III. Inventory Costing Methods (LO 2)
-
-*Purpose:* Determine *COGS* (income statement) and *Ending Inventory* (balance sheet).
-
-1. *Specific Identification:* Unique items (e.g., automobiles, antiques). Each unit at its specific cost.
-2. *FIFO (First-in, First-out):*
-   - Assumes *oldest* items are sold first.
-   - Ending inventory is the *most recent* costs.
-3. *Weighted-Average Cost:* Uses average cost of all units available during the period for sales and ending inventory.
-
-*Impact when inventory costs are increasing*
-
+= One-Page Reference
+• Perpetual: *two entries per sale* \
+• Ownership by *shipping terms* \
+• FIFO vs Weighted-Average effects when costs rise \
+• LCNRV and disclosures \
+• Watch error propagation across periods
