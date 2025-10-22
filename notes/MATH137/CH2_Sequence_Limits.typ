@@ -81,22 +81,6 @@ The tail with cutoff $k$ is $a_k, a_(k+1), a_(k+2), dots$
 We say $lim_(n->∞) a_n = L$ if for every $epsilon > 0$ there exists $N$ such that
 $n > N => |a_n - L| < epsilon$
 ]
-=== Examples
-
-1) Show $lim_(n->∞) frac(1, root(3, n)) = 0$
-
-Choose $N = frac(1, epsilon^3)$
-
-Then $n > N => | frac(1, root(3, n)) | < epsilon$ \
-
-
-
-2) Show $lim_(n->∞) frac(3n^2 + 2n, 4n^2 + n + 1) = frac(3, 4)$
-
-Estimate $| frac(3n^2 + 2n, 4n^2 + n + 1) - frac(3, 4) | <= frac(5, 16n + 4)$
-
-Pick $N > frac(5, 16 epsilon) - frac(1, 4)$ \ 
-
 
 === Theorem (Equivalent definitions of the limit of a sequence)
 #important[
@@ -176,7 +160,7 @@ If $a_n -> L$ a tail of the sequence lies in $(L-epsilon, L+epsilon)$ so only fi
   ]
 
 Thinking questions: 
-1. If a seuqnce consists of non-negative terms, is the limit non-negative? \
+1. If a sequence consists of non-negative terms, is the limit non-negative? \
     ANS: YES
     Suppose not, then $a_n -> L$, $a_n > 0, forall n$. Consider $epsilon < frac(|L|, 2)$. Then $(L-epsilon, L+epsilon)$ only contains negative numbers, so it can't include a tail of $a_n$, contradiction. 
 2. If a sequence consists of positive terms, is the limit positive? \
@@ -293,10 +277,9 @@ Greatest lower bound and least upper bound do not have be in part of the set
 \
 \
 
-#info[ \
-
+#info[
   *Theorem(Monotone Convergence Theorem)*: \
-  Let ${a_n}$ be an increasing sequence. If ${a_n} "is bounded above, it converges to its least upper bound, otherwise to" infinity$
+  Let ${a_n}$ be an increasing sequence. If ${a_n}$ is bounded above, it converges to its least upper bound, otherwise to $infinity$
   That is, if a sequence is bounded and monotonic, the sequence converges.
 ]
 

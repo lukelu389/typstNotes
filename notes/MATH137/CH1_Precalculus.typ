@@ -8,17 +8,17 @@
 
 === Real-Valued Functions
 Let $X$ and $Y$ be sets. A function $f$ assigns to each $x \in X$ exactly one $y = f(x) \in Y$:
-$ f: X \to Y,\; x ↦ f(x). $
-/* alternative to ↦:  $ f: X \to Y,\; x #sym.mapsto f(x). $ */
+$ f: X -> Y, x -> f(x). $
+
 
 === Domain and Range
-For $f: X \to Y$:
-- *Domain* $D(f) = \{ x : f(x) "is well-defined" \}$.
-- *Range*  $R(f) = \{ f(x) : x \in X \}$.
+For $f: X -> Y$:
+- *Domain* $D(f) = { x : f(x) "is well-defined" }$.
+- *Range*  $R(f) = { f(x) : x in X }$.
 
 === Parity
-- $f$ is *even* if $f(-x) = f(x)$ for all $x \in D(f)$ (y-axis symmetry).
-- $g$ is *odd*  if $g(-x) = -g(x)$ for all $x \in D(g)$ (180° rotation).
+- $f$ is *even* if $f(-x) = f(x)$ for all $x in D(f)$ (y-axis symmetry).
+- $g$ is *odd*  if $g(-x) = -g(x)$ for all $x in D(g)$ (180° rotation).
 
 === Examples (domains & ranges)
 #align(center)[
@@ -32,7 +32,7 @@ For $f: X \to Y$:
     [$y = sqrt(x)$],       [$[0,infinity)$],                       [$[0,infinity)$],
     [$y = 1/x$],           [$RR \\ {0}$],               [$RR  \\ {0}$],
     [$e^x$],               [$RR$],                               [$ (0,infinity) $],
-    [$\ln(x)$],            [$ (0,infinity) $],                     [$RR$],
+    [$ln(x)$],            [$ (0,infinity) $],                     [$RR$],
     [$sin(x)$],           [$RR$],                               [$[-1,1]$],
     [$cos(x)$],           [$RR$],                               [$[-1,1]$],
     [$tan(x)$],           [$RR \\ \{ frac((2k+1)pi, 2) : k in ZZ \}$], [$RR$],
@@ -52,7 +52,7 @@ $(g compose f): X -> Z,  (g compose f)(x) = g(f(x))$
 \
 ==== Inverse
 $f: X -> Y$ is invertible if there exists $f^{-1}: Y -> X$ with
-$ f^(-1)(f(x)) = x\ "for" x in X, f(f^(-1)(y)) = y  ("for") y in Y. $
+$ f^(-1)(f(x)) = x "for" x in X, f(f^(-1)(y)) = y  "for" y in Y. $
 
 ==== Piecewise (absolute value)
 $ |x| = cases( x "if" x >= 0, -x "if" x < 0 ) $
@@ -60,7 +60,7 @@ $ |x| = cases( x "if" x >= 0, -x "if" x < 0 ) $
 === Examples:
 1. Find the domain of this function:
 $ f(x) = x/(x^2 - x) = x/((x-1)x); x!=0, 1
-\ "Domain" = RR \\ \{0,1\} = (-infinity,0) union (0,1) union (1,infinity)$.
+\ "Domain" = RR \\ {0,1} = (-infinity,0) union (0,1) union (1,infinity)$.
 
 2. The domain of $cos(x)$ is $RR$ with range of $[-1, 1]$ 
 		Its inverse is $arccos(x)$ will have domain $[-1, 1]$ and range of $[0, pi]$ 
