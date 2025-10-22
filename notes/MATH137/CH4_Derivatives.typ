@@ -68,32 +68,76 @@ We say that $f$ is *differentiable* on an interval $I "if" f'(a) "exists" forall
 
 We define the derivative funciton $f'(x) = lim_(h->0) frac(f(x+h)-f(x), h)$
 
-We sometimes also write $f'(x) "as" d/(d x) f(x), "and" f'(a) = dv(f, x, eval: a)$
+We sometimes also write $f'(x) "as" d/(d x) f(x), "and" f'(a) = dvs(f(x), x, eval: a)$
 ]
 
 #info[ Constant Function \
 $f(x) = c$\
 
-$f'(a) = lim_(h->0) frac(f(a+h) - f(a), h) = lim_(h->0) (c-c)/h = lim_(h->0)0/h = 0$]
+$f'(x) = lim_(h->0) frac(f(x+h) - f(x), h) = lim_(h->0) (c-c)/h = lim_(h->0)0/h = 0$]
 
 #info[ Linear Function\ 
 $f(x) = m x + b$\
 
-$f'(a) = lim_(h->0) frac(f(a+h) - f(a), h) = lim_(h->0)frac(f(m(a+h)+b) - f(m a + b), h) = lim_(h->0) m h / h = m$]
+$f'(x) = lim_(h->0) frac(f(x+h) - f(x), h) = lim_(h->0)frac(f(m(x+h)+b) - f(m x + b), h) = lim_(h->0) m h / h = m$]
 
 #info[ Quadratic Function \
 $f(x) = p x ^2 + s x + c $
 
-$f'(a) = lim_(h->0) frac(f(a+h) - f(a), h) = lim_(h->0) frac([p(a+h)^2 + s (a+h) + c] - [p a^2 + s a + c], h) = lim_(h->0) (2a p h + a h^2 + s h)/h = lim_(h->0) 2 a p + a h + s = 2 a p + s$
+$f'(x) = lim_(h->0) frac(f(x+h) - f(x), h) = lim_(h->0) frac([p(x+h)^2 + s (x+h) + c] - [p x^2 + s x + c], h) = lim_(h->0) (2x p h + x h^2 + s h)/h = lim_(h->0) 2 x p + x h + s = 2 x p + s$
 ]
 
 #info[ Basic Trig\
 $f(x) = sin x$ \
 
-$f'(a) = lim_(h->0) frac(f(a+h) - f(a), h) = lim_(h->0) frac(sin(a+h) - sin(a), h) = lim_(h->0) (sin a cos h + cos a sin h - sin a)/h = 
+$f'(x) = lim_(h->0) frac(f(x+h) - f(x), h) = lim_(h->0) frac(sin(x+h) - sin(x), h) = lim_(h->0) (sin x cos h + cos x sin h - sin x)/h = 
 
-\ lim_(h->0) [sin a (cos h - 1)]/h+ lim_(h->0) cos a (sin h) / h = sin a dot lim_(h->0) (cos^2 h - 1)/ (h dot (cos h + 1)) + cos a = 
+\ lim_(h->0) [sin x (cos h - 1)]/h+ lim_(h->0) cos x (sin h) / h = sin x dot lim_(h->0) (cos^2 h - 1)/ (h dot (cos h + 1)) + cos x = 
 
-\ sin a dot lim_(h->0) (sin^2 h) / (h dot (cos h + 1))  =sin a dot lim_(h->0) (sin h)/h dot lim_(h->0) frac(sin h, cos h + 1) + cos a = cos a
+\ sin x dot lim_(h->0) (sin^2 h) / (h dot (cos h + 1))  =sin x dot lim_(h->0) (sin h)/h dot lim_(h->0) frac(sin h, cos h + 1) + cos x = cos x
 $
+]
+
+We define $e$ to be the unique base of an exponential function with slope 1 through (0, 1)
+
+#info[*Derivative Rules*\
+
+Let $f(x) "and" g(x)$ be differentiable at $x = a$
+1. $w(x) = c f(x) ==> w'(x) = c f'(x)$
+
+2. $w(x) = f(x) plus.minus g(x) ==> w'(x) = f'(x) plus.minus g'(x)$
+
+3. $w(x) = f(x)g(x) ==> w'(x) = f'(x)g(x) + f(x)g'(x)$
+
+4. If $g(x) != 0, w'(x) = f(x)/g(x) ==> w'(x) = frac(f'(x)g(x) - f(x)g'(x), g^2(x))$
+
+5. If $f(x) = x^alpha$ for some $alpha in RR \\ {0} ==> f'(x) = alpha x ^ (alpha -1)$
+6. $w(x) = (g compose f) (x) = g(f(x)) ==> w'(x) = g'(f(x)) dot f'(x) ~ dv(z, x) = dv(z, y) dot dv(y, x)$
+]
+
+#warn[Power Rule\
+If $x = 0, x^-1$ does not make sense so that is why $alpha in RR \\ {0}$ 
+]
+
+#proof[
+We suppose that $f(x), g(x)$ are differentiable, so that the limits:\
+
+$lim_(h->0) frac(f(x+h)-f(x), h), lim_(h->0) frac(g(x+h)-g(x), h)$ exists 
+
+1. Product rule:
+$lim_(h->0) frac(w(x+h)-w(x), h) = lim_(h->0) frac(f(x+h) g(x+h) - f(x) g(x), h) =$ \ 
+
+$lim_(h->0) frac(f(x+h)g(x+h) - f(x)g(x+h) + f(x)g(x+h)-f(x)g(x), h) = lim_(h->0) frac((f(x+h) - f(x)) g(x+h), h) + frac((g(x+h)-g(x)) f(x), h)$\
+
+$= lim_(h->0) frac(f(x+h)-f(x), h) dot lim_(h->0)g(x+h) + lim_(h->0) frac(g(x+h)-g(x), h) dot lim_(h->0) f(x) $\
+
+$= f'(x)g(x) + f(x)g'(x)$
+
+2. Quotient rule
+$lim_(h->0) frac(w(x+h)-w(x), h) = lim_(h->0) frac(f(x+h)/g(x+h) - f(x)/g(x), h)=$
+$lim_(h->0) frac((f(x+h)g(x))/(g(x+h)g(x)) - (f(x)g(x+h))/(g(x+h)g(x)), h) = lim_(h->0) frac((f(x+h)g(x)-f(x)g(x+h))/ (g(x)g(x+h)), h)$\
+
+$= lim_(h->0) frac(f(x+h)g(x)-f(x)g(x)+f(x)g(x)-f(x)g(x+h), h g(x+h)g(x)) = lim_(h->0) frac(g(x)(f(x+h)-f(x)), h/(g(x)g(x+h))) - frac(f(x)(g(x+h)-g(x)), h/(g(x)g(x+h)))$ \
+
+$= frac(lim_(h->0) frac(f(x+h)-f(x), h) dot lim_(h->)g(x) - lim_(h->0) f(x) dot lim_(h->0) frac(g(x+h)-g(x), h), lim_(h->0)g(x+h)g(x)) = frac(f'(x)g(x) - g'(x)f(x), g^2(x))$
 ]
