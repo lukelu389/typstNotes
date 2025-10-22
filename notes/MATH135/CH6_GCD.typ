@@ -283,3 +283,14 @@ $quad quad quad quad therefore exists l in ZZ, b^2 = 0 dot l ==> b^2 = 0 ==> b =
 - Case 3: If $a != 0, b != 0$, then $|a| > 0, |b| > 0$.\
 $ quad quad quad quad |b| = p_1^beta_1 ... p_k^beta_k$ and $|a| = p_1^alpha_1 ... p_k^alpha_k, p_1, ... p_k$ is a list of all distinct primes that are factors of $ quad quad quad quad |a| "and" |b|$. then $b^2 =  p_1^(2beta_1) ... p_k^(2beta_k), a^2 = p_1^(2alpha_1) ... p_k^(2alpha_k)$.\
 $quad quad quad quad "Now, since" a^2 divides b^2,  "by DFPF" ,0<= 2 alpha_i <= 2beta_i forall = 1, ..., k$. \ $ quad quad quad quad "Dividing" "by" 2,  0 <= alpha_i <= beta_i$. By DFPF, $a divides b$
+
+#info[*GCD From Prime Factorization*\
+Let $a, b in NN$ and let $ a = p_1^alpha_1 p_2^alpha_2 ... p_k^alpha_k quad "and" quad  b = p_1^beta_1 p_2^beta_2 ... p_k^beta_k $ be ways to express $a$ and $b$ as products of the distinct primes $p_1, p_2, ..., p_k$ where all of the exponenets may be zero. We have $ gcd(a, b) = p_1^gamma_1 p_2^gamma_2...p_k^gamma_k "where" gamma_i = min{alpha_i, beta_i} "for" i = 1, 2, ..., k $
+]
+
+Example: \
+
+Find the $gcd(20000, 30000)$ \
+
+ANS:\ $20000 = 2 dot 10^4 = 2^5 dot 5^4 = 2^5 dot 3^0 dot 5^4, 30000 = 3 dot 10^4 = 2^4 dot 3 dot 5 ^4$\
+By GCDPF: $gcd(20000, 30000) = 2^4 dot 3^0 dot 5^4 = 10^4 = 10000$
