@@ -4,7 +4,6 @@
 #set-title(Title)
 #meta(title: Title, author: "Your Name")
 
-Website: #link("student.cs.uwaterloo.ca/~cs135")
 #v(8pt)
 
 = Summary
@@ -22,7 +21,7 @@ Every transaction touches at least two accounts so the equation stays balanced.
   table.header([*Type*], [*Increases with*], [*Typical examples*]),
   [Assets], [Debit], [Cash, Accounts Receivable, Supplies, Inventory, Prepaids, Equipment],
   [Liabilities], [Credit], [Accounts Payable, Salaries Payable, Notes Payable, Unearned Revenue],
-  [Shareholders’ Equity], [Credit], [Common Shares, Retained Earnings],
+  [Shareholders' Equity], [Credit], [Common Shares, Retained Earnings],
 )
 
 = Debits, Credits, and Normal Balances
@@ -39,10 +38,10 @@ Every transaction touches at least two accounts so the equation stays balanced.
 A T-Account is a two-column running balance for a single account. You *post* each journal entry line into the target T-Account (left = debits, right = credits), then read the ending balance.
 
 *Example: T-Account layout (Cash)* \
-[ Debit | Credit ] \
-[ 10,000 |        ] \
-[   500 |        ] \
-[       |   300 ] \
+[ Debit $space$| $space$Credit ] \
+[ 10,000 $space$| $quad quad quad$] \
+[  $quad$ 500 |   $quad quad quad$     ] \
+[   $quad quad quad$  |  $quad$ 300 ] \
 Ending balance = 10,200 Debit
 
 = Journal Entries (Formal Record)

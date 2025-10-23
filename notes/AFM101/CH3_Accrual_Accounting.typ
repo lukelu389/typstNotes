@@ -135,11 +135,11 @@ Interpretation: accrual better reflects performance because it recognizes events
 • Salaries accrued (Dec 30–31, 1,000/day, Tue–Fri pay cycle): DR Salaries Expense 2,000; CR Salaries Payable 2,000. \
 • Supplies used (on hand 800, unadjusted 3,100): DR Supplies Expense 2,300; CR Supplies 2,300. \
 • Depreciation (60,000 cost, 5 years, no residual): DR Depreciation Expense 12,000; CR Accumulated Depreciation 12,000. \
-Carrying amount after year 1: 60,000 − 12,000 = *48,000*.
+Carrying amount after year 1: 60,000 - 12,000 = *48,000*.
 
 == Example D — Statement order and flow
 1) IS → compute *NI*. \
-2) RE → Beg RE + NI − Div = End RE. \
+2) RE → Beg RE + NI - Div = End RE. \
 3) BS → Equity shows *End RE* (plus share capital). \
 Check headings: IS & RE are *for the year ended*; BS is *as at* date.
 

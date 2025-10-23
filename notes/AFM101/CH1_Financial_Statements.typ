@@ -6,10 +6,6 @@
 
 #v(8pt)
 
-#info[
-These notes combine the *CH1 PPT*, your written *chapter summary*, and additional worked details/examples in the same “math/GCD-style” layout: concise statements, structured derivations, and targeted mini-exercises. 
-]
-
 = Why Accounting is the Language of Business
 
 - Financial statements are how businesses *communicate* performance & position to users (managers, investors, creditors, government, individuals, NPOs).
