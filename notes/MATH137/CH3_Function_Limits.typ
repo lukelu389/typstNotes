@@ -188,7 +188,7 @@ $=>  =^[frac(0, 0)] lim_(x->-3) frac((x+3)(x-1)(x+8), (x+3)(x-7)) = lim_(x->-3) 
 
    If $g(x)<=f(x)<=h(x)$ be functions defined in an open interval $I$ around $a$ except possibly at $a$. 
 
-   If $forall a in I \\ {a}$ we have $g(x) < f(x)<=h(x)$ and $lim_(x->a) g(x) = lim_(x->a)h(x) = L$, then $lim_(x->a) f(x) = L$]
+   If $forall a in I \\ {a}$ we have $g(x) <= f(x)<=h(x)$ and $lim_(x->a) g(x) = lim_(x->a)h(x) = L$, then $lim_(x->a) f(x) = L$]
 
 \
 #tip[When to apply Squeeze Theorem
@@ -242,7 +242,7 @@ $lim_(x->0) cos(x) = lim_(x->0) sqrt(1 - sin^2(x)) = 1$
 
 #image("../../pictures/fundamental_trig.png")
 
-We have that $1/2 cos(x)sin(x) <= 1/2 x <= 1/2 tan(x) ==> cos(x) <= sin(x)/x <= 1/cos(x)$.
+We have that $1/2 cos(x)sin(x) <= 1/2 x <= 1/2 tan(x) ==> cos(x) <= x/sin(x) <= 1/cos(x)$.
 
 By Squeeze Theorem, $lim_(x->0^+) sin(x)/x = 1$.
 
