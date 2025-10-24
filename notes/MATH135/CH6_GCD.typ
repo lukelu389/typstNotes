@@ -228,7 +228,7 @@ Examples:\
 #info[*Division by the GCD*\
   $ forall a, b in ZZ, "not both zero", gcd(a/d, b/d) = 1 "where" d = gcd(a, b) $]
 
-#info[*Comprimeness and Divisibility*\
+#info[*Coprimeness and Divisibility*\ 
   $ forall a, b, c in ZZ, "if" c divides a b "and" gcd(a, c) = 1, "then" c divides b $]
 
 #info[Evey natural number $n > 1$ can be written as a product of primes]
