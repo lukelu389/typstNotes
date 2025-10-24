@@ -141,3 +141,42 @@ $= lim_(h->0) frac(f(x+h)g(x)-f(x)g(x)+f(x)g(x)-f(x)g(x+h), h g(x+h)g(x)) = lim_
 
 $= frac(lim_(h->0) frac(f(x+h)-f(x), h) dot lim_(h->)g(x) - lim_(h->0) f(x) dot lim_(h->0) frac(g(x+h)-g(x), h), lim_(h->0)g(x+h)g(x)) = frac(f'(x)g(x) - g'(x)f(x), g^2(x))$
 ]
+#align(right)[$square$]
+
+== Basic Derivatives
+\
+#info[ *Basic Trig Derivatives* \
+
+$dvs(tan x, x) = dvs((sin x)/cos x, x)= frac(sin'x cos x - sin x cos' x, cos^2 x) = frac(1, cos^2x) = sec^2x$\
+
+$dvs(csc x, x) = dvs(1/(sin x), x) = frac(0 dot sin x - 1 dot cos x, sin^2 x) = frac(- cos x, sin^2x) = - csc x cot x$\
+
+$dvs(sec x, x) = dvs(1/(cos x), x) = frac(0 dot cos x - 1 dot (- sin x), cos^2x) = (sin x)/(cos^2x) = sec x tan x$\
+
+$dvs(cot x, x) = dvs((cos x)/(sin x), x) = frac(cos'x sin x- cos x sin' x, sin^2x) = (- (sin^2x + cos^2x))/(sin^2x) = - csc^2 x$
+]
+
+#info[*Exponential/Logarithmic Derivatives*\
+For $a^x, x >0$:\
+
+$dvs(a^x, x) = dvs(e^(x  ln(a)), x) = e^(x ln a) dot ln a = a^x ln a$
+
+$dvs(log_a x, x) = dvs(ln(x)/ln(a), x) = 1/x dot 1/(ln a) = 1/(x ln a)$
+]\
+
+Example: \
+
+1. $dvs(x^3 e^(2x) cos x, x) = 3x^2e^(2x)cos x+ 2x^3e^(2x)cos x - x^3e^(2x)sin x $
+
+2. $dvs(3^(csc x), x) = 3^(csc x) ln 3 dot - csc x cot x = -3^(csc x) csc x cot x ln 3$
+
+3. $dvs(sin x, x, deg:67)$. Note that $sin'x = cos x, sin''x = -sin x, sin''' -cos x, dvs(sin x, x, deg: 4) = sin x$/
+
+$67 mod 4 equiv 3$, that is $dvs(sin x, x, deg:67) = -cos x$
+
+4. $dvs(frac(x, (1+e^x^2)^3), x) = dvs(x dot (1+e^x^2)^(-3), x) = 1/(1+e^x^2)^3 -3 ((1+e^x^2)^(-4) dot x^2 e^x^2dot 2x = 1/(1+e^x^2)^3 -(6x^3e^x^2) / ((1+e^x^2)^(4)$ \
+
+5. $dvs(x^x^x, x)$\
+$dvs(x^x, x) = x^x ln x dot (ln x + 1)$ \
+
+$dvs(x^f(x), x) = x^f(x) dot (ln x dot f'(x) +x) = x^x^x dot x^x (ln^2(x) + ln(x) +x^(x-1))$
