@@ -65,7 +65,8 @@ Evaluate the *innermost, leftmost* reducible part each step.
 ```
 
 #warn[
-Do *not* partially substitute. Replace *all* occurrences of a parameter in one step for that call.
+Do *not* partially substitute. Replace *all* occurrences of a parameter in one step for that call for functions.\
+Subsitute paritially for predefined constants.
 ]
 
 #v(8pt)

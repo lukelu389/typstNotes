@@ -287,6 +287,10 @@ $quad quad quad quad "Now, since" a^2 divides b^2,  "by DFPF" ,0<= 2 alpha_i <= 
 #info[*GCD From Prime Factorization*\
 Let $a, b in NN$ and let $ a = p_1^alpha_1 p_2^alpha_2 ... p_k^alpha_k quad "and" quad  b = p_1^beta_1 p_2^beta_2 ... p_k^beta_k $ be ways to express $a$ and $b$ as products of the distinct primes $p_1, p_2, ..., p_k$ where all of the exponenets may be zero. We have $ gcd(a, b) = p_1^gamma_1 p_2^gamma_2...p_k^gamma_k "where" gamma_i = min{alpha_i, beta_i} "for" i = 1, 2, ..., k $
 ]
+\
+#tip[*Mumber of Factors*\
+If $n = product(p_i^alpha_i) $ the number of factors $n$ has is $product(alpha_i + 1)$
+]
 
 Example: \
 

@@ -180,3 +180,45 @@ $67 mod 4 equiv 3$, that is $dvs(sin x, x, deg:67) = -cos x$
 $dvs(x^x, x) = x^x ln x dot (ln x + 1)$ \
 
 $dvs(x^f(x), x) = x^f(x) dot (ln x dot f'(x) +x) = x^x^x dot x^x (ln^2(x) + ln(x) +x^(x-1))$
+\
+\
+
+== Linear Approximation
+
+With the assumption of $f(x)$ is continuous ay $x=a$, we can derive \
+$ f'(a) = lim_(x->a frac(f(x)-f(a), x - a)) <-> f'(a) (x-a) = f(x)-f(a) <-> f(x) = f'(a)(x-a) + f(a) $
+Which is the linear approximation of $f(x)$ near $x=a$
+
+
+#info[*Linear Approximation*\
+Let $f(x)$ be differentiable at $x=a$. The *linear approximation* to $f(x)$ at $x=a$ is given by $ L_a^f (x) = f'(a)(x-a) + f(a) $ If it is clear what function $f$ we are talking about, we sometimes denote $L_a (x)$ instead.
+]
+\
+#info[*Upper Bound Error of Linear Approximation*\
+The error of linear approximation is defined as: 
+$ "error" = |f(x) - L_a^f (x)| $ \
+Assume that $f(x)$ is such that $|f''(x)| <= M$ for each $x$ in an interval $I$ containing $x=a$. Then, $ "error" = |f(x) - L_a^f (x)| <= M/2 (x-a)^2 $ forr each $x in I$
+]
+
+Examples:\
+
+1. Find the linearization of $sqrt(x)$ at $x=4$ and use it ti estimate $sqrt(4.01)$\
+
+  $L_a^f (x) = f'(a)(x-a) + f(a)$ where $f(x) = sqrt(x) ==> f'(x) = 1/(2 sqrt(x))$\
+
+  $L_a^f (x)= 1/(2 sqrt(x))(x-4) + 2 ==> L_a^f (0.01) = 1/(2 sqrt(0.01))(0.1)+2 approx 2.0024984$\
+  
+2. What factors could affect the error in linear  approximation?
+ - The distance from $x$ to $a$. (e.g. $f(x) = sin(x), x = 3pi/2, a = pi/4$.)
+ #align(center)[#image("../../pictures/derivative1.png", width: 8cm)]
+ - The curvature (e.g. $f(x)= e^x, g(x)=e^(x/10)$)
+
+3. Find a upper bound on the error in using $L_9$ to appriximate $f(x) = sqrt(x)$ on $[5, 13]$\
+ If $|f''(x)| <= M "on" I$ then: $"error" <= M/2 (x-a)^2 forall x in I$ \
+
+ $f(x) = sqrt(x); f'(x) = 1/(2sqrt(x)); f''(x) = -1/(4x^(3/2))
+ $ \
+
+ $|f''(x)| = 1/(4x^(3/2)) <= = 1/(4(5)^(3/2)) = 1/(20 sqrt(5))$\
+
+ So the error $<= 1/(40 sqrt(5)) (x-9)^2 = 1/(40 sqrt(5)) (13-9)^2 = 2/(5 sqrt(5))$
