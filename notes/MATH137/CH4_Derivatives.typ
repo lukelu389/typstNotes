@@ -222,3 +222,63 @@ Examples:\
  $|f''(x)| = 1/(4x^(3/2)) <= = 1/(4(5)^(3/2)) = 1/(20 sqrt(5))$\
 
  So the error $<= 1/(40 sqrt(5)) (x-9)^2 = 1/(40 sqrt(5)) (13-9)^2 = 2/(5 sqrt(5))$
+\
+\
+\
+
+Example:\
+
+A poor group of students is writing a midterm. A nefarious professor decides
+to make things harder by cranking up the thermostat to uncomfortable levels. To make things as uncomfortable as possible, the professor increases the temperature according to an equation of the form $T(t) = 2t + c$ for some constant $c in R$, where t is the time elapsed in minutes. Initially, at t = 0, the room is a cool $21^compose$ C. Estimate the change in the room's
+temperature 90 seconds after the professor alters the thermostat. 
+
+ANS:\
+$T'(t) = 2^t ln 2$\
+$triangle T = T'(0) dot triangle t = ln 2 dot 1.5 = (3(ln 2)/2) ^ compose "C"$
+\
+\
+
+ == Newton's Method
+\
+ #info[*Newton's Method*\
+ 1. Make an initial guess, $x_1$, of where the root of $f(x)$. IVT can be helpful.
+ 2. Take the linear appoximation, $L_(x_1)^f (x)$ and find its root and call it $x_2$\
+ 3. Repeat Step 3 at $x_2$ to find $x_3$
+
+Note that NM converges faster than Bisection Method
+ ]
+
+The Visualization of the procedure
+\
+ #align(center)[#image("../../pictures/derivative2.png", width: 8cm)]
+\
+ #tip[*Root Finding Formula for NM*\
+ $ x_(n+1) = x_n-f(x_n)/(f'(x_n)) $
+ ]
+
+#warn[*Flaws of Newton's Method*\
+
+1. NM requires differentiability of at $x_n$
+2. Not always converges
+  1. Consider where $f'(x_n) = 0$. The formula is not computable, and this is the case of a horizontal tangent line - which would not have a root for the next iteration.
+  2. Consider $f(x) = root(x, 5)$ for which Newton's Method will not work for any guess of root $x_1 != 0$, as the formula gives $x_(n+1) = -6x_n$
+  3. Consider $f(x) = x^3 + x^2 -3x+3$ for which guess of $x_1 = 0, x_2 = 1, x_3 = 0, ...$ falls into an alternating cycle and unable to find a root.
+  4. Some choices of $x_1$ might lead to convergence to a different root than desired.
+]
+
+#info[Comparison BM vs NM\
+1. Bisection requires continuity, Newton requires differentiability
+2. Bisection is guarenteed to converge, Newton does not guarentee
+3. Newtons is faster if it works
+]
+
+\
+ Example:\
+
+1. $x^2-4x-7$ at $x=5$ to nearest thousandth\
+  ANS: \
+    Let $x_1 = 5$, given $f'(x)= 2x-4$\
+
+    $x_2 = x_1 - frac(f(5),f'(5)) = 5 -(-1/3) = 16/3$ \
+
+    $x_3 = x_2 - frac(f(16/3), f'(16/3)) = 16/3 - 1/60$
