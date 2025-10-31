@@ -275,10 +275,66 @@ The Visualization of the procedure
 \
  Example:\
 
-1. $x^2-4x-7$ at $x=5$ to nearest thousandth\
+$x^2-4x-7$ at $x=5$ to nearest thousandth\
   ANS: \
     Let $x_1 = 5$, given $f'(x)= 2x-4$\
 
     $x_2 = x_1 - frac(f(5),f'(5)) = 5 -(-1/3) = 16/3$ \
 
     $x_3 = x_2 - frac(f(16/3), f'(16/3)) = 16/3 - 1/60$
+
+\
+
+== Derivatives of Inverse Functions
+#info[*Inverse Function Theorem*\
+Assume that $f(x)$ is a continuous and invertible with inverse $f^(-1) (x)$ on $[c, d]$ and differentiable at $a in (c, d)$, where $f'(a) != 0$. Then $f^(-1)(x)$ is differentiable at $b = f(a)$ and 
+$ (f^(-1))'(b) = 1/(f'(a)) = 1/(f'(f^(-1)(b))) $
+
+Furthermore, $L^f_a (x)$ is also invertible and $ (L^f_a)^(-1) (x) = L^(f-1)_b (x) = L^(f^(-1))_f(a) (x)$
+]
+
+#tip[*Linearization of Inverse* \
+$  L^(f^(-1))_b = (f^(-1))'(b)(x-b) + a $
+$ L^(f^(-1))_b = 1/(f'(a))(x-b) + a $
+]
+
+\
+Example:\
+
+$f(x) = 5 sqrt(x)$ \
+  $f(x)$ is continous and differentiable in $(0, oo)$\
+  $b = f(a) <==> 5 = f(a) <==> a = 1$
+  $f'(x) = 5/2 x ^(-1/2)$ \
+  $(f^(-1))'(5) = 1/(f'(1)) = 1/(5/2) = 2/5$
+
+#info[*$ln x$*\
+$ f(x) = e^x, f^(-1)(x) = ln x $
+
+$ (f^(-1))'(x) = 1/ (f'(f^(-1)(x))) $
+
+$ (ln(x))'  = 1/(f'(ln(x))) $
+$ = e^(1/ln(x)) $
+$ dvs(ln x, x) = 1/x $
+]
+
+== Inverse Trigonometric Functions
+\
+
+1. $dvs(arccos x, x) = 1/ (cos'(arccos x)) = -1/(sin(arccos x)) = -1/(sqrt(1-x^2))$ \
+
+  $arccos(x) = theta ==> cos(theta) = x/1$\
+  
+  $sin(arccos(x)) = sin(theta) = sqrt(1-x^2)/1$
+
+  -Domain $arccos x in (-1, 1)$
+ -Range $arccos x in (0, pi)$ 
+
+2. $dvs(arcsin x, x) = 1/sqrt(1-x^2)$
+
+  -Domain $arcsin x in (-1, 1)$
+  -Range $arcsin x in (-pi/2, pi/2)$ 
+
+3. $dvs(arctan x, x) = 1/(x^2+1)$
+
+  -Domain $arctan x in (-pi/2, pi/2)$
+  -Range $arctan x in (-oo, oo)$

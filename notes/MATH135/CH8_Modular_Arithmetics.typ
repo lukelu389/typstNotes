@@ -124,6 +124,52 @@ Examples:\
 
   By CTR $3 equiv -1 space (mod 4)$, the remainder is 3
 
-  #tip[*Divisibility by 3*\
+#tip[*Divisibility by 3*\
   For all non-negative integers $a$, $a$ is divisible by 3 if and only if the sum of the digits in the decimal representation of $a$ is divisible by 3
-  ]
+]
+
+#proof[
+Let $a$ be non-negative integer and expressed as \
+
+$a = d_k 10^k + d_(k-1)10^(d-1)+...+d_1 10 + d_0$ where $0<= d_i<=9$ are the digit $forall i in NN union {0}$
+
+Notice $10 equiv 1 space (mod 3)$\
+
+$a equiv d_k 1^k + d_(k-1)1^(d-1)+...+d_1 1^1+ d_0 space (mod 3)$ \
+
+$a equiv sum_(i=0)^k d_i space (mod 3)$
+
+ Assume $a$ is divisible by 3, then $3 divides (a-0) <==>  a equiv 0 space (mod 3)$.\
+
+Since $a equiv sum_(i=0)^k d_i space (mod 3) <==>^("by CER") sum_(i=0)^k d_i equiv 0 space (mod 3) space$ \
+
+
+Hence $3 divides  sum_(i=0)^k d_i$
+]
+
+#align(right)[$square$]
+
+
+#tip[*Divisbility by 11*\
+For all non-negative integers $a$, $11 divides a$ if and only if $11 divides (S_e - S_o)$ where
+
+- $S_e$ is the sum of all even digits of $a$ in the decimal representation
+
+- $S_o$ is the sum of all odd digits of $a$ in the decimal representation
+]
+\
+
+== Linear Congruences
+
+#info[*Definition or Linear Congruences*\
+A relation of the form $ a x equiv c space (mod m) $ 
+is called a *linear congruence* in the variable $x$. A solution to such linear congruence is an integer $x_0$ s.t. $ a x_0 equiv c space (mod m) $
+]
+
+#info[*Linear Congruence Theorem*\
+For all integers $a, c$ where $a!=0$, the linear congruence $ a x equiv c space (mod m) $ 
+has a solution if and only if $d divides c$, where $d = gcd(a, m)$. Moreover, if $x=x_0$ is one particular solution to this congruence, then the set of all solutions \is given by $ {x in ZZ: x equiv x_0 space (mod m/d)} $
+
+or alternatively $ {x in ZZ: x equiv x_0, x_0+m/d, x_0+2m/d, ..., x_0+(d-1)m/d space (mod m)} $
+]
+
