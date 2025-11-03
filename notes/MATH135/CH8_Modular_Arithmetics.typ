@@ -35,7 +35,7 @@ $forall a, b, c in ZZ$
 3. $a equiv b space (mod m) and b equiv c space (mod m) ==> a equiv c space (mod m)$
 ]
 
-#info[*Modular Arithmetics*\
+#info[*Basic Modular Operations*\
 $forall a_1, a_2, b_1, b_2 in ZZ$ and $ forall n in NN$, if $a_1 equiv b_1 space (mod m)$ and $ a_2 equiv b_2 space (mod m)$ then 
 1. $a_1 + a_2 equiv b_1 + b_2 space (mod m)$
 2. $a_1 - a_2 equiv b_1 - b_2 space (mod m)$
@@ -159,6 +159,10 @@ For all non-negative integers $a$, $11 divides a$ if and only if $11 divides (S_
 ]
 \
 
+#tip[*Mod 7 or 13*\
+7. Remove last digit $d$, subtract $2d$, repeat.
+13. Remove last digit $d$, add $4d$, repeat. ]
+
 == Linear Congruences
 
 #info[*Definition or Linear Congruences*\
@@ -172,4 +176,99 @@ has a solution if and only if $d divides c$, where $d = gcd(a, m)$. Moreover, if
 
 or alternatively $ {x in ZZ: x equiv x_0, x_0+m/d, x_0+2m/d, ..., x_0+(d-1)m/d space (mod m)} $
 ]
+\
+\
+\
+Examples: \
+
+1. $4x equiv 5 space (mod 3)$\
+  $gcd(a, m) = gcd(4, 3) = 1, 1 divides 5$ \
+  By LCT, there is a solution\
+  $4x equiv 5 equiv 2 equiv 8 space (mod 3) ==> 4x = 8 ==> x = 2$\
+  and $3 divides (8-5) $\
+  By LCT, all solutions are ${x in ZZ, x equiv 2 space (mod 3)}$.
+
+
+2. $4x equiv 8 space (mod 12)$\
+  $gcd(a, m)= gcd(4, 12) = 4, 4 divides 8$\
+  By LCT, there is a solution\
+  $4x equiv 8 equiv 4(2) space (mod 12) ==> 4x = 8 ==> x = 2$\
+  and $4 divides 4 divides (8-8)$\
+  By LCT, all solutions are ${x in ZZ, x equiv 2 space (mod 3)}$\
+  or ${x in ZZ, x equiv 2, 5, 8, 11 space (mod 12)}$
+
+== Non-linear Congruences
+
+#tip[Non-linear congruences do not have theorems that directly helps solving. The solutiosn
+generally are by brute force]\
+
+Examples:\
+
+$x^2  equiv 6 space (mod 10)$\
+
+$#table(
+  columns: 11,
+  align: center,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [$x space (mod 10)$], [0], [1], [2], [3], [4], [5], [6], [7], [8], [9],
+  [$x^2 space (mod 10)$], [0], [1], [2], [9], [6], [5], [6], [9], [4], [1],
+  )$\
+
+  Hence $x equiv 4, 6 space (mod 10)$
+
+
+== Congruence Classes and Modular Arithmetic
+\
+
+#info[*Congruence class*\
+
+The *congruence class* modulo $m$ of the integer $a$ is the set of integers $ [a] = {x in ZZ: x equiv a space (mod m)} $
+]
+#info[*Modular Arithmetic*\
+
+We define $ZZ_m$ to be the set of $m$ congruence classes $ ZZ_m = {[0], [1], [2], ..., [m-1]} $
+
+and we define two operations on $ZZ_m$, *addition* and *multiplication*, as follows: $ [a] + [b] = [a+b)] $
+$ [a][b] = [a b] $
+
+When we apply these operations on the set $ZZ_m$, we are doing that is known as *modular arithmetic*
+]
+#info[*Basic Properties*\
+
+For all $[a] in ZZ_m$
+
+1. $[a] +[0] = [a]$\
+2. $[a][0] = [0]$\
+3. $[a] + [-a] = [0]$
+4. $[a][1] = [a]$ 
+]
+
+Examples:
+
+1. Construct a table for $ZZ_4$\
+  That is $ZZ_4 = {[0], [1], [2], [3]}$\
+
+  Addition table
+  #table(
+    columns: 5, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$+$], [[0]], [[1]], [[2]], [[3]],
+    [[0]], [[0]], [[1]], [[2]], [[3]], 
+    [[1]], [[1]], [[2]], [[3]], [[0]],
+    [[2]], [[2]], [[3]], [[0]], [[1]],
+    [[3]], [[3]], [[0]], [[1]], [[2]])
+  Multiplicaiton table
+  #table(
+    columns: 5, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$*$], [[0]], [[1]], [[2]], [[3]],
+    [[0]], [[0]], [[0]], [[0]], [[0]], 
+    [[1]], [[0]], [[1]], [[2]], [[3]],
+    [[2]], [[0]], [[2]], [[0]], [[2]],
+    [[3]], [[0]], [[3]], [[2]], [[1]])
 

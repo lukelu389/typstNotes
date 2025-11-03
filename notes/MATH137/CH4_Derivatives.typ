@@ -319,6 +319,7 @@ $ dvs(ln x, x) = 1/x $
 
 == Inverse Trigonometric Functions
 \
+(Inverse Trigonotmetric Function can be also can be proven by implicit differentiation)\
 
 1. $dvs(arccos x, x) = 1/ (cos'(arccos x)) = -1/(sin(arccos x)) = -1/(sqrt(1-x^2))$ \
 
@@ -326,15 +327,107 @@ $ dvs(ln x, x) = 1/x $
   
   $sin(arccos(x)) = sin(theta) = sqrt(1-x^2)/1$
 
-  -Domain $arccos x in (-1, 1)$
+  -Domain $arccos x in (-1, 1)$\
  -Range $arccos x in (0, pi)$ 
 
 2. $dvs(arcsin x, x) = 1/sqrt(1-x^2)$
 
-  -Domain $arcsin x in (-1, 1)$
+  -Domain $arcsin x in (-1, 1)$\
   -Range $arcsin x in (-pi/2, pi/2)$ 
 
 3. $dvs(arctan x, x) = 1/(x^2+1)$
 
-  -Domain $arctan x in (-pi/2, pi/2)$
+  -Domain $arctan x in (-pi/2, pi/2)$\
   -Range $arctan x in (-oo, oo)$
+
+
+Examples: \
+
+1. $dvs(arcsin(2^(5x)), x) = (2^(5x) dot ln 2 dot 5)/(sqrt(1-(2^(5x))^2))$\
+
+2. $dvs(ln(arctan(e^(sin(x)))), x) = frac(e^(sin(x)) dot cos(x),e^(2sin(x)) (arctan(e^(sin(x)))))$
+\
+
+== Implicit Differentiation
+
+We can split a relation into individual pieces that are functions. The key to understanding implicit differentiation is that $y$ is implicitly a function of $x$, even if the actual equation of the function changes depending on which piece we choose.
+
+#info[*Implicit Differentiation*\
+Given $y = f(x)$, 
+$ dvs(y, x) = dvs(f(x), x) $
+$ dv(y, x) = dv(f, x) $ 
+
+]
+
+Examples: \
+
+1. For circle $x^2 + y^2 = 25$\
+
+  $dvs(x^2+y^2, x) = dvs(25, x) ==> 2x + 2y dv(y, x) = 0$\
+
+  $dv(y, x) = -x/y$
+
+2. $x^3 y^5 + 2x = y^3 +4$\
+
+  $dvs(x^3 y^5 + 2x, x) = dvs(y^3 +4, x) ==> 3x^2y^5 + 5x^3y^4 dv(y, x) = 3y^2 dv(y, x)$\
+
+  $5x^3y^4 dv(y, x) -  3y^2 dv(y, x) = - 3x^2y^5$\
+
+  $dv(y, x)(5x^3y^4 - 3y^2) = -3x^2y^5 ==> dv(y, x) = frac(-3x^2y^5, (5x^3y^4 - 3y^2))$
+
+3. $dvs(e^(x y), x) = dvs(e^u, u) dot dv(u, x) = e^u dot dv(u, x) = e^(x y) dot dvs(x y, x) = e^(x y) (y+x dv(y, x))$
+\
+#warn[*Non-sense relations*\
+
+For Implicit Differentiation to make sense, the relation has to exist for some pairs $(x, y)$\
+
+i.e. $x^2 + y^2 = -9$
+]
+\
+\
+== Logarithmic Differentiation
+
+#info[*Logarithmic Differentiation*\
+
+Notice that $ y = f(x) <--> ln(y) = ln(f(x)) $
+Then we can differentiate the relation implicitly 
+]
+
+#tip[*When to Use Logaritmic Differentiation*\
+
+1. If we have a function of the form $g(x)^f(x), g(x) >0$
+2. If the numerator and denominator of function are both products of several functions
+]
+
+Examples: \
+
+1. $dvs(x^x, x)$\
+  $y =x^x ==> ln y = x ln x ==> dvs(ln y, x) = dvs(x ln x, x) ==> 1/y y' = ln x + x dot 1/x$\
+
+  $y' = y (ln x + 1) = x^x (ln x +1 )$
+
+2. $dvs(x^x^x, x)$
+  $y = x^x^x ==> ln y = x ln x ==> dvs(ln y, x) - dvs(x^x ln x, x)$ \
+
+  $==> 1/y y' = dvs(x^x, x) ln x + x^(x-1) ==> 1/y y' = x^x (ln x +1) ln x + x^(x-1) $\
+
+  $y' = x^x^x (x^x ln x(ln x +1) + x^(x-1))$\
+
+
+3. $dvs(frac((x-3)^3 (x+4)^2 (x-1), (x+1)^2(x^2+x+1)^3), x)$\
+
+  $y = frac((x-3)^3 (x+4)^2 (x-1), (x+1)^2(x^2+x+1)^3) ==> $\
+  
+  $ln y =3ln(x-3)+2ln(x+4)+ln(x-1)-2ln(x+1)-3ln(x^2+x+1)$\
+
+  $dvs(ln y, x) = dvs(3ln(x-3)+2ln(x+4)+ln(x-1)-2ln(x+1)-3ln(x^2+x+1), x)$\
+
+  $1/y y' = 3/(x-3) +2/(x+4) + 1/(x-1)-2/(x+1) -(6x+3)/(x^2+x+1)$\
+
+  $y' = frac((x-3)^3 (x+4)^2 (x-1), (x+1)^2(x^2+x+1)^3) dot (3/(x-3) +2/(x+4) + 1/(x-1)-2/(x+1) -(6x+3)/(x^2+x+1))$
+
+  
+
+  \
+
+  *END OF CHAPTER*
