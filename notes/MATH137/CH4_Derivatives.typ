@@ -186,7 +186,7 @@ $dvs(x^f(x), x) = x^f(x) dot (ln x dot f'(x) +x) = x^x^x dot x^x (ln^2(x) + ln(x
 == Linear Approximation
 
 With the assumption of $f(x)$ is continuous ay $x=a$, we can derive \
-$ f'(a) = lim_(x->a frac(f(x)-f(a), x - a)) <-> f'(a) (x-a) = f(x)-f(a) <-> f(x) = f'(a)(x-a) + f(a) $
+$ f'(a) = lim_(x->a) frac(f(x)-f(a), x - a) <-> f'(a) (x-a) = f(x)-f(a) <-> f(x) = f'(a)(x-a) + f(a) $
 Which is the linear approximation of $f(x)$ near $x=a$
 
 
