@@ -234,7 +234,7 @@ $ [a][b] = [a b] $
 
 When we apply these operations on the set $ZZ_m$, we are doing that is known as *modular arithmetic*
 ]
-#info[*Basic Properties*\
+#info[*Basic Properties of Congruence Classes*\
 
 For all $[a] in ZZ_m$
 
@@ -244,12 +244,13 @@ For all $[a] in ZZ_m$
 4. $[a][1] = [a]$ 
 ]
 
-Examples:
+Example:
 
-1. Construct a table for $ZZ_4$\
+Construct a table for $ZZ_4$\
   That is $ZZ_4 = {[0], [1], [2], [3]}$\
 
   Addition table
+  #align(center)[
   #table(
     columns: 5, 
     align: center,
@@ -259,16 +260,54 @@ Examples:
     [[0]], [[0]], [[1]], [[2]], [[3]], 
     [[1]], [[1]], [[2]], [[3]], [[0]],
     [[2]], [[2]], [[3]], [[0]], [[1]],
-    [[3]], [[3]], [[0]], [[1]], [[2]])
+    [[3]], [[3]], [[0]], [[1]], [[2]])]
   Multiplicaiton table
-  #table(
-    columns: 5, 
-    align: center,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [$*$], [[0]], [[1]], [[2]], [[3]],
-    [[0]], [[0]], [[0]], [[0]], [[0]], 
-    [[1]], [[0]], [[1]], [[2]], [[3]],
-    [[2]], [[0]], [[2]], [[0]], [[2]],
-    [[3]], [[0]], [[3]], [[2]], [[1]])
+  #align(center)[
+    #table(
+      columns: 5, 
+      align: center,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [$*$], [[0]], [[1]], [[2]], [[3]],
+      [[0]], [[0]], [[0]], [[0]], [[0]], 
+      [[1]], [[0]], [[1]], [[2]], [[3]],
+      [[2]], [[0]], [[2]], [[0]], [[2]],
+      [[3]], [[0]], [[3]], [[2]], [[1]])]
 
+#info[*Modular Arithmetic Theorem*\
+
+For all integers $a$ and $c$, with $a$ non-zero, the equation $ [a][x] = [c] $ in $ZZ_m$ has a solution if and only if $d divides c$, where $d = gcd(a, m)$. Moreover, when $d divides c$, there are $d$ solutions, given by 
+$ [x_0], [x_0+m/d], [x_0+2m/d], ... , [x_0+(d-1)m/d] $
+where $x = [x_0]$ is one particular solution
+]
+
+#info[*Inverse to $ZZ_m$*\
+
+Let $a$ be an integer with $1<=a<= m-1$. The element $[a]$ in $ZZ_m$ has a multiplicative inverse if and only if $gcd(a, m) = 1$. Moreover, when $gcd(a, m) = 1$, the multiplicative inverse is unique. 
+]
+
+#info[*Inverse to $ZZ_p$*\
+
+For all prime numbers $p$ and non-zero element $[a]$ $ZZ_p$ the multiplicative inverse $[a]^-1$ exists and is unique
+]
+
+Examples:\
+
+In $ZZ_10$, solve the following: \
+
+ 1. $[12][x]+[3]=[8] = [2][x]+[3]=[8] ==> [2][x]=[5] ==>^("by MAT") "No solutions"$
+
+ 2. $[15][x]+[7]=[12] = [5][x]=[5] ==>^("by MAT") [x]=[1]$\
+
+    Also by MAT, there are 5 solutions: ${[1], [3], [5], [7], [9]}$
+
+#info[*Fermat's Little Theorem*\
+
+For all prime numbers $p$ and integers $a$ not divisible by $p$, we have $ a^(p-1) equiv 1 space (mod p) $
+]
+
+#tip[Additional Corollaries\
+
+1. By F$cal(l)$T, $[a]^-1 = [a]^(p-2)$
+2. For all prime numbers $p$ and integers $a$, we have $ a^p equiv a space (mod p) $
+]
