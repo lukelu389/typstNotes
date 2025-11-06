@@ -115,3 +115,19 @@ In 20X2, the company declares a \$500,000 dividend.
 
 == Summary
 #align(center)[#image("../../pictures/equity7.png", width: 12cm)]
+
+== Ratio 
+
+
+1. Return on Asset $= "Net Income"/"Average Total Asset" =  "Net Income"/(("Jan1 Asset + Dec31 Asset")/2) $\
+
+  General Benchmark: The higher the better, $~10%$ indicates a good return. \
+
+
+2. Return on Equity $= ("Net Income"-"Preferred Dividends")/"Average Common Shareholder's Equity" = ("Net Income"-"Preferred Dividends")/ (("Jan1 Common Equity + Dec31 Common Equity")/2) $
+
+  General Benchmark: The higher the better $~15%$ indicates a good return
+
+  
+
+
