@@ -303,11 +303,63 @@ In $ZZ_10$, solve the following: \
 
 #info[*Fermat's Little Theorem*\
 
-For all prime numbers $p$ and integers $a$ not divisible by $p$, we have $ a^(p-1) equiv 1 space (mod p) $
+For all prime numbers $p$, integers $a$ not divisible by $p$ and $a!=0$, we have $ a^(p-1) equiv 1 space (mod p) $
 ]
 
 #tip[Additional Corollaries\
 
-1. By F$cal(l)$T, $[a]^-1 = [a]^(p-2)$
+1. By F$cal(l)$T, $[a]^(-1) = [a]^(p-2)$
 2. For all prime numbers $p$ and integers $a$, we have $ a^p equiv a space (mod p) $
 ]
+
+Examples:\
+
+1. Find the remainder when $7^92$ is divided by 11\
+  In $ZZ_11, [7]^10 = [1] "by F"cal(l)"T"$\
+
+  $7^92 = (7^10)^9 7^2 = [1]^9[7^2] = [49] = [5]$\
+
+  So the reimainder upon dividing $7^92$ by 11 is 5 
+
+2. If $p$ is prime, $p divides.not a$ and $r equiv s space (mod (p-1))$, then $a^r equiv a^s space (mod p)$\
+
+  Let $p$ be prime, $a in ZZ$ with $p divides.not a$\
+
+  Suppose $r equiv s space (mod (p-1)) ==> r-s = k (p-1)$ for some $k in ZZ$\
+
+  $r = k(p-1) + s ==> a^r equiv a^(k (p-1)+s) equiv a^s (a^(p-1))^k equiv^("by F"cal(l)"T") a^s (1)^k equiv a^s space (mod p)$
+
+3. If $r = s + k p$, then $a^r equiv a^(s+k) space (mod p)$
+
+#info[*Chinese Remainder Theorem*\
+
+For all integers $a_1$ and $a_2$, and positive integers $m_1$ and $m_2$, if $gcd(m_1, m_2) = 1$, then the simultaneous linear congruences 
+$ n equiv a_1 space (mod m_1) $ $ n equiv a_2 space (mod m_2) $
+have a unique solution modulo $m_1 m_2$. Thus, if $n=n_0$ is one particular solution, then the solutions are given by the set of all integers $n$ such that $ n = n_0 space (mod m_1 m_2) $
+]
+
+#info[*Generalized CRT*\
+
+For all positive integers $k$ and $m_1, m_2, ..., m_k$ and integers $a_1, a_2, ..., a_k$, if $gcd(m_i, m_j) = 1$ for all $i != j$, then the simultaneous congruences $ n equiv a_1 space (mod m_1) $ $ n equiv a_2 space (mod m_2) $ $ ... $ $ n equiv a_k space (mod m_k) $ have a unique solution modulo $m_1 m_2 ... m_k$. Thus, if $n = n_0$ is one particular solution, then the solutions are given by the set of all integers $n$ s.t. $ n equiv n_0 space (mod m_1 m_2 ... m_k) $
+]
+
+Examples:\
+
+1. Find all $x$ s.t. $x equiv 2 space (mod 13)$ and $ x equiv 17 space (mod 29)$ \
+
+  From $x equiv 17 space (mod 29)$, we have $x-17 = 29k$ for some $k in ZZ$. Then $x = 17+29k$\
+
+  So, $17+29k equiv 2 space (mod 13) ==> 4 + 3k equiv 2 space (mod 13)$\
+
+  $3k equiv 11 space (mod 13)$ because 2-4 = -2, which is congruent to 11 (mod 13)\
+
+  $3k-11 =13j$ for some $j in ZZ, ==> 3k-13j = 11 ==> k_0 = 8, j_0 = 1$.\
+
+  $x = 17 + 29 (8) = 249, {x in ZZ: x equiv 249 (mod 377)}$ 
+
+2. Find all $x$ satisfying
+  1. $x equiv 5 space (mod 6) $
+  2. $x equiv 2 space (mod 7) $
+  3. $x equiv 3 space (mod 11) $
+
+  $x equiv 58 space (mod 77) ==> x equiv 443 space (mod 462)$
