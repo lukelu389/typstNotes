@@ -102,7 +102,7 @@ If $c$ is an endpoint of the domain of $f$, c can never be a local extremum, eve
 
 #info[*Fermat's Theorem*\
 
-If there is a local extremum for $f(x)$ at $x=c$ and $f'(c)$ exists, hen $f'(c)= 0$. That is we cannot put an open interval around the point.
+If there is a local extremum for $f(x)$ at $x=c$ and $f'(c)$ exists, hence $f'(c)= 0$. That is we cannot put an open interval around the point.
 ]
 
 Examples:\
@@ -115,8 +115,73 @@ Examples:\
   It is important because it is like saying $f(x)$ is differentiable at $x = c$. If not, let $f(x) = |x|$. $f(x)$ is continuous. It has a local minimum at $x = 0$ but $f'(0)$ DNE as it is not differentiable. 
 
 #info[*Critical Points*\
-We say that a function $f$ has a *critical point* at $x = c$ if $f'(c) = 0$ or $f'(c) = $ DNE. These are our candidates for local extrema.
+We say that a function $f$ has a *critical point* at $x = c$ if $f'(c) = 0$ or $f'(c) = $ DNE for $c in$ the domain of $f$. These are our candidates for local extrema.
+]
+\
+\
+#tip[*Closed Interval Method*\
+Let $f(x)$ be continuous function on $[a, b]$.
+1. Calculate $f(a)$ and $f(b)$
+2. Find $f'(x)$
+3. Find all the critical points of $f$ on $[a, b]$
+4. Calculate $f(c)$
+
 ]
 
+Example:\
 
+$f(x)=1/3 x^3- 3 root(3, x)$ on [-8, 1]
 
+  $f(-8) = -512/3 -3(-2) = -496/3$\
+  $f(1) = 1/3 - 3 = -8/3$
+
+  $f'(x) = x^2 - x^(-2/3)$
+
+  $f'(c) = 0 ==> c^2 - c^(-2/3) = 0 ==> c^(8/3) = 1 ==> c = -1, 1$. 
+  $f'(c) = "DNE" ==> c = 0$
+
+  $f(0) = 0 $\
+
+  $f(-1) = -1/3 + 3 = 8/3$
+  Global maximum at $x = -1$, global minimum at $f(-8)$
+\
+\
+
+#info[*Rolle's Theorem (Existence Thm)*\
+\
+If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$ and $f(a)=f(b) = k in RR$, then there exists $c in (a, b)$ s.t. $f'(c) = 0$
+]
+\
+\
+
+#proof[
+If $f(x)=k space forall x in [a, b]$, any value of $c$ works.
+
+Otherwise, $exists x_0 in [a, b]$ s.t. $f(x_0) != k$. Since $f$ is continuous on $[a, b]$, it attains a maximum/minimum on $[a, b]$. 
+
+Since $f(x_0) != k ==> f(x_0)> k <--> f(a), f(b)$ are not maximum, or $f(x_0)<k <--> f(a), f(b)$ are not minimum. So one of maximum or minimum is in $(a, b)$, thus differentiable at some $c$. 
+
+By Fermat's Theorem, $f'(c)=0$ or $f'(c) = "DNE"$. But $f$ is differentiable on $(a, b) ==> f'(c)$ exists.\
+
+ $therefore f'(c) = 0$ 
+]
+
+#info[*Mean Value Theorem (Existence Thm)*\
+
+If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then $exists c in (a, b)$ s.t. $ f'(c) = frac(f(b)-f(a), b-a) $]
+
+#proof[
+Let $h(x)=f(x) - [f(a)+frac(f(b)-f(a), b-a)(x-a)] $\
+
+$h(a)= f(a)-[f(a)+ frac(f(b)-f(a), b-a) dot (a-a)]= 0$\
+
+$h(b) = f(b)- [f(a) + frac(f(b)-f(a), b-a) dot (b-a)] = 0$\
+
+Since $h(b) = h(a) ==>^("Rolle's Theorem") exists c in (a, b)$ s.t. $h'(c) = 0$\
+
+That is $h'(x) = f'(x) frac(f(b)-f(a), b-a) ==> f'(x) = frac(f(b)-f(a), b-a)$\
+
+Finally, $h'(c) = f'(c) - frac(f(b)-f(a), b-a) = 0 <--> f'(c) = frac(f(b)-f(a), b-a)$
+
+Tip: the construction of $[f(a)+frac(f(b)-f(a), b-a)(x-a)]$ is the linear approximation of $f(x)$ near $a$
+]
