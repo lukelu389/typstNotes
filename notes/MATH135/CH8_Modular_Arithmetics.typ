@@ -331,6 +331,9 @@ Examples:\
 
 3. If $r = s + k p$, then $a^r equiv a^(s+k) space (mod p)$
 
+
+== Chinese Remainder Theorem
+\
 #info[*Chinese Remainder Theorem*\
 
 For all integers $a_1$ and $a_2$, and positive integers $m_1$ and $m_2$, if $gcd(m_1, m_2) = 1$, then the simultaneous linear congruences 
@@ -363,3 +366,70 @@ Examples:\
   3. $x equiv 3 space (mod 11) $
 
   $x equiv 58 space (mod 77) ==> x equiv 443 space (mod 462)$
+\
+\
+\
+\
+3. Solve
+  1. $3x equiv 2 space (mod 5)$
+  2. $2x equiv 6 space (mod 7)$
+
+  ANS: Multiply (1) by 2 and (2) by 3. 
+  - $6x equiv 4 space (mod 5)$
+  - $6x equiv 18 equiv 4 space (mod 7)$
+  Let $y = 6x$\
+
+  Then $y equiv 4 space (mod 5)$, $y equiv 4 space (mod 7)$\
+  By CRT, $6x equiv 4 space (mod 35) ==> x equiv 24 space (mod 35)$
+\
+
+4. Solve
+  1. $x equiv 4 space (mod 6)$
+  2. $x equiv 2 space (mod 8)$
+
+  ANS: From (2), $x-2 = 8k$ for some $k in ZZ ==> x = 2+8k$\
+  (1) becomes $2+8k equiv 4 space (mod 6) ==> 2k equiv 2 space (mod 6)$.\
+  By inspection, $k=1$ is one solution, so $x = 2+8(1) = 10$ is a solution.\
+  Since $gcd(6, 8) = 2 != 1$. We then have $x equiv 10 space (mod 6)$ and $x equiv 10 space (mod 8) ==> x equiv 10 space (mod (lcm(6, 8))) ==> x equiv 10 space (mod 24)$.  
+
+5. Solve 
+  $x^12 equiv 5 space (mod 55)$\
+
+  We apply CRT in reverse to obtain the following simultaneous congruences:\
+
+  1. $x^12 equiv 5 space (mod 11) and x^12 equiv 0 space (mod 5)$\
+
+  2. $x^12 equiv 5 space (mod 11) ==>^("by CF"cal(l)"T") x^2 equiv 5 space (mod 11)$\
+
+  We got $x equiv 4 and x equiv 7 space (mod 11)$\
+
+  Table mod 11
+  #table(
+    columns: 12, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$x$], [0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
+    [$x^2$], [0], [1], [4], [9], [5], [3], [3], [5], [9], [4], [1]
+    )
+  For (1), $x equiv 0 space (mod 5)$\
+
+  We have one of these two congruences
+  3. $x equiv 4 space (mod 11) and x equiv 0 space (mod 5)$ 
+  4. $x equiv 7 space (mod 11) and x equiv 0 space (mod 5)$
+
+  $x equiv 15 space (55)$, so by CRT it is all solutions to (3) .\
+  $x equiv 40 space (mod 55)$, so by CRT is all soluions to (4).
+
+  $therefore x equiv 15, 40 space (mod 55)$ are solutions to $x^12 equiv 5 space (mod 55)$
+
+#info[*Splitting Modulus Theorem*\
+  
+  For all integers $a$ and positive integers $m_1$ and $m_2$, if $gcd(m_1, m_2) = 1$, then the simultaneous congruences
+  $ n equiv a space (mod m_1) $   $ n equiv a space (mod m_2) $ has exactly the same solutions as the single congruence   $ n equiv a space (mod m_1 m_2)$
+]
+
+Example:\
+
+For which integers $x$. is $x^5+x^3+2x^2+1$ is divisible by 6\
+ANS: No solutions. Idea: Table of Congruences
