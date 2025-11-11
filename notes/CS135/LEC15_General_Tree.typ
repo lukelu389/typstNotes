@@ -2,7 +2,7 @@
 
 #let Title = "CS 135 — L15: General Trees"
 #set-title(Title)
-#meta(title: Title, author: "CS 135 Notes")
+#meta(title: Title, author: "Luke Lu")
 
 == General Tree
 

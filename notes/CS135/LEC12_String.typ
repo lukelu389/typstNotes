@@ -2,7 +2,7 @@
 
 #let Title = "CS 135 — L12: String"
 #set-title(Title)
-#meta(title: Title, author: "CS 135 Notes")
+#meta(title: Title, author: "Luke Lu")
 
 == Characters
 Characters are like `char` in Java, with format `#\ character`\

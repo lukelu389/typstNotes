@@ -2,7 +2,7 @@
 
 #let Title = "CS 135 — L09: Efficiency Patterns"
 #set-title(Title)
-#meta(title: Title, author: "CS 135 Notes")
+#meta(title: Title, author: "Luke Lu")
 
 Website: #link("student.cs.uwaterloo.ca/~cs135")
 

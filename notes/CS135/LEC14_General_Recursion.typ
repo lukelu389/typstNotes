@@ -2,7 +2,7 @@
 
 #let Title = "CS 135 — L14: General Recursion"
 #set-title(Title)
-#meta(title: Title, author: "CS 135 Notes")
+#meta(title: Title, author: "Luke Lu")
 
 == Counting Up
 *Count Up Template* \
