@@ -185,3 +185,123 @@ Finally, $h'(c) = f'(c) - frac(f(b)-f(a), b-a) = 0 <--> f'(c) = frac(f(b)-f(a), 
 
 Tip: the construction of $[f(a)+frac(f(b)-f(a), b-a)(x-a)]$ is the linear approximation of $f(x)$ near $a$
 ]
+\
+== Antiderivative
+\
+#info[*Antiderivative*\
+
+Given a function $f(x)$, an *antiderivative* is a function $F(x)$ s.t. $F'(x) = f(x)$. If $F'(x) = f(x)$ for all $x in I$ for some interval $I$, then $F(x)$ is an antiderivative of $f(x)$ on $I$
+
+e.g. $dvs(-ln(cos x), x)) = -1/cos x sin x = - frac(-sin x, cos x) = tan x$
+
+Note: one function can have infinitely many antiderivatives, that is why we insist *an antiderivative* of $f(x)$
+]
+\
+\
+
+#info[*Constant Function Theorem*\
+Suppose that $f'(x) = 0 space forall x in I$ for some interval $I$. Then $exists alpha in RR$ s.t. $f(x) = alpha space forall x in I$
+]
+\
+\
+#proof[
+Let $x_1<x_2 in I$. \
+
+Since $f$ is differentiable on $I$, it is continuous on $[x_1, x_2]$ and differentiable on $(x_1, x_2)$.\
+
+ By MVT, $exists c in (x_1, x_2)$ s.t. $f'(c) = frac(f(x_2)-f(x_1), x_2-x_1)$ But $f'(c) = 0$ since $f'(x) = 0$ on $I$. 
+
+ Thus, $0 = frac(f(x_2)-f(x_1), x_2-x_1) and x_2-x_1 != 0 ==> f(x_2) - f(x_1) = 0 <==> f(x_2)=f(x_1)$.
+
+ Since $x_1, x_2$ are arbitrary, therefore $f$ is constant on $I$
+]
+
+#info[*Antiderivative Theorem*\
+
+Suppose that $F'(x) = G'(x) forall x in I$ for some interval $I$. Then there exists $alpha in RR$ s.t. $F(x)=G(x)+alpha forall x in I$
+
+]
+
+#proof[
+Let $h(x) = F(x)-G(x)$. Then $h'(x)=F'(x)-G'(x)= 0$ on $I$.
+
+By the CFT, $h(x) = alpha$ for some $alpha in RR$, so $F(x)-G(x) = alpha  ==>F(x)=G(x)+alpha quad (forall x in I)$
+]
+\
+== Behaviour of Functions
+\
+
+#info[*Definition of Increasing/Decreasing*\
+
+Let $I$ be in interval and $x_1, x_2 in I$, then f(x)
+- *increasing* on $I$ if $f(x_1)<=f(x_2) space forall x_1<x_2$
+- *decreasing* on $I$ if $f(x_1)>=f(x_2) space forall x_1<x_2$
+- *strictly increasing* on $I$ if $f(x_1)< f(x_2) space forall x_1<x_2$
+- *strictly decreasing* on $I$ if $f(x_1)> f(x_2) space forall x_1<x_2$
+
+Note: a constant function is both increasing and decreasing but not strictly
+]
+
+#info[*Increasing/Decreasing Function Theorem*\
+Let $I$ be an interval
+
+1. If $f'(x) >= 0 forall x in I$, then $f(x)$ is increasing on $I$ 
+2. If $f'(x) > 0 forall x in I$, then $f(x)$ is strictly increasing on $I$ 
+3. If $f'(x) <= 0 forall x in I$, then $f(x)$ is decreasing on $I$ 
+4. If $f'(x) < 0 forall x in I$, then $f(x)$ is strictly decreasing on $I$ 
+]
+\
+\
+\
+\
+\
+\
+#proof[ 
+Let $x_1<x_2 in I$. $f'(x)>0$ on $I$, so it exists on $I ==> f$ is differentiable on $(x_1, x_2)$, continuous on $[x_1, x_2]$. 
+
+By MVT, $exists c in (x_1, x_2)$ s.t. $f'(x) = frac(f(x_2)-f(x_1), x_2-x_1)$
+
+Given $f'(x)>0 space forall x in I "and" x_1<x_2 "and" f(x_1)<f(x_2)$
+
+Since $x_1, x_2$ are arbitrary, thus $f$ is strictly increasing on $I$
+]
+
+Proof for increasing, strictly decreasing and decreasing is similar thus be omitted.
+
+\
+Question: If $f$ is strictly increasing on $I ==> f'(x)>0 space forall x in I$?
+
+ANS: No, counterexample $f(x)=x^3$
+
+Question: If $f$ is strictly decreasing on $I ==> f'(x)<0 space forall x in I$?
+
+ANS: No, counterexample $f(x)= -root(3, x)$
+\
+\
+#info[*Bounded Derivative Theorem*\
+
+Let $f(x)$ be continuous on $[a, b]$ and differentiable on $(a, b)$. Suppose that $m<=f'(x)<=M space forall x in (a, b)$. Then $ f(a)+m(x-a)<=f(x)<=f(a)+M(x-a) $ $forall x in [a, b]$
+
+]
+
+#proof[
+Let $f(x)$ be continuous on $[a, b]$ and differentiable on $(a, b)$.
+
+It also applies to $[a, x_1]$. 
+
+Case1:
+
+For $x_1 in (a, b]$ \
+
+By MVT, $exists space c in (a, x_1)$ s.t. $f'(c)=frac(f(x_1)-f(a), x_1-a)$\
+
+Since $m <= f'(c) <=M$ so $m(x_1-a) <= f(x_1)-f(a)<=M(x_1-a)$.
+
+Then $m(x_1-a) + f(a) <= f(x_1)<=M(x_1-a) + f(a)$
+
+Case 2:
+
+When $x=a, m(x-a) + f(a) = f(a)$ and similar applies to $M(x-a)$. \
+
+Resulting to $f(a) <= f(a) <= f(a)$
+]
