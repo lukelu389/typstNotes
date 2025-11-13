@@ -33,3 +33,23 @@
 
 #align(center)[#image("../../pictures/scf3.png", width:10cm)]
 
+Examples:\
+
+1. 
+ - Loss on sale of land 
+ - Depreciation expense
+ - Increase in inventory
+ - Decrease in prepaid expense
+ - Decrease in accounts receivable
+ - Purchase of equipment
+ - Collection of cash from customers
+ - Increase in accounts payable
+ - Net income
+ - Payment of dividends
+ - Decrease in accrued liabilities
+ - Issuance of common shares
+ - Gain on sale of building
+ - Retained earnings
+2. 
+
+3. 
