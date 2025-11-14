@@ -228,9 +228,9 @@ Let $h(x) = F(x)-G(x)$. Then $h'(x)=F'(x)-G'(x)= 0$ on $I$.
 By the CFT, $h(x) = alpha$ for some $alpha in RR$, so $F(x)-G(x) = alpha  ==>F(x)=G(x)+alpha quad (forall x in I)$
 ]
 \
-== Behaviour of Functions
-\
 
+== First Derivatives
+\
 #info[*Definition of Increasing/Decreasing*\
 
 Let $I$ be in interval and $x_1, x_2 in I$, then f(x)
@@ -280,7 +280,9 @@ ANS: No, counterexample $f(x)= -root(3, x)$
 \
 #info[*Bounded Derivative Theorem*\
 
-Let $f(x)$ be continuous on $[a, b]$ and differentiable on $(a, b)$. Suppose that $m<=f'(x)<=M space forall x in (a, b)$. Then $ f(a)+m(x-a)<=f(x)<=f(a)+M(x-a) $ $forall x in [a, b]$
+Let $f(x)$ be continuous on $[a, b]$ and differentiable on $(a, b)$. 
+
+Suppose that $m<=f'(x)<=M space forall x in (a, b)$. Then $ f(a)+m(x-a)<=f(x)<=f(a)+M(x-a) $ $forall x in [a, b]$
 
 ]
 
@@ -303,5 +305,83 @@ Case 2:
 
 When $x=a, m(x-a) + f(a) = f(a)$ and similar applies to $M(x-a)$. \
 
-Resulting to $f(a) <= f(a) <= f(a)$
+Resulting to $f(a) <= f(a) <= f(a)$]
+\
+\
+\
+\
+\
+
+Example:\
+
+Prove that $sqrt(51) in [7+1/8, 7+1/7]$.\
+
+Let $f(x) = sqrt(x)$ and let $[a, b]$ be [49,64] \
+
+Since $f(x)$ is continuous on $[49, 64]$ and differentiable on $[49, 64]$\
+
+By Bounded Derivative Theorem, $f(a)+m(x-a) <= f(x)<=f(a)+M(x-a)$ \
+
+where $m <= f'(x)<= M$ on $[49, 64] space forall x$.\
+
+$f'(x) = 1/(2sqrt(x)), 1/sqrt(64) <= 1/(2sqrt(x))<= 1/(2sqrt(49)) ==> 7 + 1/2 dot 1/8 (51-49) <= sqrt(51) <= sqrt(49) + 1/2 dot 1/7 (51-49)$\
+
+$ ==> 7+1/8 <= sqrt(51)<= 7 + 1/7$
+
+#info[*Comparison via First Derivative Theorem*\
+
+Assume $f(x)$ and $g(x)$ are continuous at $x=a$ with $f(a)=g(a)$. Then
+
+- $f$ and $g$ are differentiable for $x > a$ and $f'(x)<=g'(x) space forall x>a ==> f(x)<=g(x) space forall x > a$
+
+- $f$ and $g$ are differentiable for $x < a$ and $f'(x)<=g'(x) space forall x<a ==> f(x)>=g(x) space forall x < a$
 ]
+
+Example: \
+
+Show that $x-1/2 x^2 < ln(1+x) space forall x > 0$
+
+Let $f(x) = x-1/2 x^2, g(x) = ln(1+x)$\
+
+At $x = 0, f(0) = 0, g(0) = 0$, that is $f(0) = g(0)$\
+
+All functions are differentiable on $(0, oo)$\
+
+$f'(x) = 1-x, g'(x)= 1/(1+x)$.\
+
+Since $x>0, (1-x)(1+x) < 1 ==> 1-x^2 < 1 ==> -x^2 < 0$\
+
+Thus by CFDT, $x-1/2 x^2 < ln(1+x) space forall x > 0$
+
+== Second Derivatives
+
+#info[*Concavity and Second Derivative Theorem*\
+
+1.  We say $f$ is *concave up* on an interval $I$ if for all $a, b in I$, the secant line between $(a, f(a))$ and $(b, f(b))$ lies *above* the graph of $f(x)$.
+
+2. We say $f$ is *concave down* on an interval $I$ if for all $a, b in I$, the secant line between $(a, f(a))$ and $(b, f(b))$ lies *below* the graph of $f(x)$.
+
+3. If $f''(x)>0 space forall x$ in an inverval $I$ then $f(x)$ is *concave up* on $I$
+
+4. If $f''(x)<0 space forall x$ in an inverval $I$ then $f(x)$ is *concave down* on $I$
+]
+
+Example:\
+
+$f(x) = |x|$ is neither concave up nor concave down as the secant line lies on the graph if $a$ and $b$ are same side of the absolute function. 
+
+#info[*Point of Inflection*\
+
+A point $(c, f(x))$ is called a *point of inflection* of $f(x)$ if $f(x)$ is continuous at $x = c$ and the concavity of $f(x)$ changes at $x = c$
+
+If $f''(x)$ is continuous at $c$ and $(c, f(c))$ is a point of inflection, then $f''(x) = 0 "or DNE"$ 
+]
+
+However, the converse is false: $f(x) = x^4, f''(0) = 0$, but the concavity does not change
+
+== Derivative Tests
+
+== Optimization
+
+== L'Hôpital Rule
+
