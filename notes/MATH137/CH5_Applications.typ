@@ -379,9 +379,101 @@ If $f''(x)$ is continuous at $c$ and $(c, f(c))$ is a point of inflection, then 
 
 However, the converse is false: $f(x) = x^4, f''(0) = 0$, but the concavity does not change
 
+Examples:\
+
+1. $f(x)=x^3, f'(x)=3x^2, f''(x) = 6x$\
+
+$ f''(x)<0 space forall x in (-oo, 0)$, concave down
+
+$ f''(x)>- space forall x in (0, oo)$, concave up
+
+$f''(x) = 0 ==> 6x = 0 ==> x = 0$. 
+
+2. $g(x)= 1/x, g'(x) = -1/x^2, g''(x) = 2/x^3$.
+
+$ g''(x)<0 space forall x in (-oo, 0)$, concave down
+
+$ g''(x)>- space forall x in (0, oo)$, concave up
+
+$g''(x)$ is discontinuous at $x = 0$, therefore, $x=0$ is not an infleciton point.
+
+#warn[If a function is concave down before $x = c$, and concave up after $x = c$, it is not necessary that there exists an infleciton point. Notably: $f(x) =1/x$]
+\
+\
 == Derivative Tests
+
+#info[*First Derivative Test*\
+Let $f(x)$ has a critical point at $x = c$ and suppose that $f(x)$ is continuous at $c$. If there is an interval $(a, b)$ containing $c$ s.t.
+
+1. $f'(x)>=0$ on $(a, c)$ and $f'(x)<=0$ on $(c, b)$, then $f$ has a local maximum at $c$
+
+2. $f'(x)<=0$ on $(a, c)$ and $f'(x)>=0$ on $(c, b)$, then $f$ has a local minimum at $c$
+
+Otherwise $c$ is neither a local maximum nor a local minimum
+]
+
+#info[*Second Derivative Test*\
+Suppose that $f'(c)=0$ and $f''(x)$ is continuous at $c$, then
+
+1. if $f''(c) < 0$, then there is a local maximum for $f$ a $c$
+2. if $f''(c) > 0$, then there is a local minimum for $f$ at $c$
+3. if $f''(x) = 0$, then it is inconclusive, that is, there might be a local maximum, a local minimum, or neither.
+]
+\
+\
+\
+\
+*Comparison*:
+
+FDT: 
+- Requires an interval, that is points around $c$
+- Requires lesser steps of differentiation
+- Conclusive as long as the constraints are satisfied
+
+
+SDT:
+- Requires an interval, that is the point at $c$
+- Requires more steps of differentiation
+- Inconclusive in some certain cases $f''(x) = 0$
+
+
+Examples:\
+
+1. Classify all critical points of $f(x)=x^3 - 13x+12$
+
+  $f'(x) = 3x^2-13, f''(x) = 6x$
+
+  $f'(x) = 3x^2-13 ==> f'(x)>=0 space forall x in (-oo, -sqrt(13/3)] union [sqrt(13/3), oo)$ \
+
+  and $f'(x)<=0 space forall x in [-sqrt(13/3), sqrt(13/3)$
+
+  $f'(0) < 0, f'(3) > 0, f'(-3)> 0$
+
+  That is, by FDT, we have a local maximum at $x = -sqrt(13/3)$ and a local minimum at $x = sqrt(13/3)$\
+
+
+  $f''(x) = 6x, f''(x)< 0 space forall x in (-oo, 0), f''(x) > - space forall x in (0, oo)$. \
+
+
+  By SDT, we have a local maximum at $x = -sqrt(13/3)$ and a local minimum at $x = sqrt(13/3)$\
+
+
+
+2. Find all extrema of $f(x) = x root(3, x-4)$ on interval $[0, 5]$\
+
+
+  $f'(x) = root(3, x-4)+ 1/3 x (x-4)^(-2/3) $\
+  
+  $ f''(x) = 1/3(x-4)^(-2/3) + 1/3 (x-4)^(-2/3) - 2/9 (x-4)^(-5/3) = 2/3(x-4)^(-2/3)(1-x/(3(x-4)))$\
+
+  $f'(4) = "DNE"$, $f'(x) = 0 <==> 1+x/(3(x-4))<==> x = 3$
+
+  $f'(2), f'(5), f'(3.5)$
+
 
 == Optimization
 
 == L'Hôpital Rule
+
+
 
