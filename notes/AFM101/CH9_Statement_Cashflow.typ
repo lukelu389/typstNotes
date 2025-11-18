@@ -43,9 +43,9 @@ ANS From Slides
   stroke: 0.5pt,
   inset:6pt,
   [O+], [O-], [I], [F], 
-  [Loss on sale of land], [Increase in inventory], [Purchase of equipment], [Increase in A/P], 
+  [Loss on sale of land], [Increase in inventory], [Purchase of equipment], [Increase in N/P], 
   [Depreciation Expense], [Decrease in Accrued Liability], [Collection of Cash], [Paid Dividend],
-  [Decrease in Prepaid Expense], [Gain on sale of Building], [], [Issuance of Common Shares],
+  [Decrease in Prepaid Expense], [Gain on sale of Building], [Acquisaiton of Equipment], [Issuance of Common Shares],
   [Decrease in A/R], [], [], [], [Net Income]
  )
  Retained Earning (N)
@@ -64,8 +64,8 @@ ANS From Slides
   [Cash from Operating Activities], [],
   [$quad $Net Income], [81000],
   [$quad quad$ Depreciation Expense], [8000],
-  [$quad quad$ Current Assets], [(30000)],
-  [$quad quad$ Current Liability], [(50000)],
+  [$quad quad$ Increase Current Assets], [(30000)],
+  [$quad quad$ Decrease Current Liability], [(50000)],
   [Net Cash From Operating Activities], [54000],[],[],
   [Investing Activities], [],
   [$quad quad$ Sales on Land], [60000],
@@ -94,8 +94,8 @@ ANS From Slides
   [Cash from Operating Activities], [],
   [$quad $Net Income], [70000],
   [$quad quad$ Depreciation Expense], [500],
-  [$quad quad$ Current Assets], [(29000)],
-  [$quad quad$ Current Liability], [10000],
+  [$quad quad$ Increase Current Assets], [(29000)],
+  [$quad quad$ Increase Current Liability], [10000],
   [Net Cash From Operating Activities], [56000],[],[],
   [Investing Activities], [],
   [$quad quad$ Sales on Land], [27000],
@@ -108,5 +108,60 @@ ANS From Slides
   [$quad quad$ Repurchase of Common Share], [(7000)],
   [Net Cash From Financing Activitie],[(25100)],[],[],
   [Net Increase in Cash], [15900]
+  
+  )]
+
+4. 
+#align(center)[
+  AFT \
+  Statement of Cash Flow \
+  For Month of 20XX August
+  #table(
+  columns: 2,
+  align: left,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Cash from Operating Activities], [],
+  [$quad $Net Income], [25000],
+  [$quad quad$ Depreciation Expense], [5000],
+  [$quad quad$ Increase Current Assets], [(20900)],
+  [$quad quad$ Increase Current Liability], [99000],
+  [Net Cash From Operating Activities], [(80000)],
+  
+  )]
+
+  This indicates a problem as the net cash flow for operating activities show a negative number.\
+
+  Account Receivable, Account Payable, and inventory are too high
+\
+\
+
+  5. 
+  #align(center)[
+  Northern Movie Theatre Corp. \
+  Statement of Cash Flow \
+  For Year Ended 20XX March 31
+  #table(
+  columns: 2,
+  align: left,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Cash from Operating Activities], [],
+  [$quad$ Net Income], [50000],
+  [$quad quad$ Depreciation Expense], [17300],
+  [$quad quad$ Decrease in Current Assets], [4000],
+  [$quad quad$ Increase in Current Liability], [5600],
+  [Net Cash From Operating Activities], [76900],[],[],
+  [Investing Activities], [],
+  [$quad quad$ Sales on long-term investment], [13700],
+  [$quad quad$ Purchase Building],[(47000)],
+  [$quad quad$ Purchase Equipment],[(78700)],
+  [Net Cash From Investing Activities], [(112000)],[],[],
+  [Financing Activities], [],
+  [$quad quad$ Payment of Dividend],[(30000)],
+  [$quad quad$ Issuance of Common Share], [11000],
+    [$quad quad$ Issuance of long-term NP],[50000],
+  [Net Cash From Financing Activitie],[31000],[],[],
+  [Net Increase in Cash], [(4100)]
   
   )]
