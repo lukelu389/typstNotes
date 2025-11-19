@@ -245,10 +245,10 @@ Note: a constant function is both increasing and decreasing but not strictly
 #info[*Increasing/Decreasing Function Theorem*\
 Let $I$ be an interval
 
-1. If $f'(x) >= 0 forall x in I$, then $f(x)$ is increasing on $I$ 
-2. If $f'(x) > 0 forall x in I$, then $f(x)$ is strictly increasing on $I$ 
-3. If $f'(x) <= 0 forall x in I$, then $f(x)$ is decreasing on $I$ 
-4. If $f'(x) < 0 forall x in I$, then $f(x)$ is strictly decreasing on $I$ 
+1. If $f'(x) >= 0 space forall x in I$, then $f(x)$ is increasing on $I$ 
+2. If $f'(x) > 0 space forall x in I$, then $f(x)$ is strictly increasing on $I$ 
+3. If $f'(x) <= 0 space forall x in I$, then $f(x)$ is decreasing on $I$ 
+4. If $f'(x) < 0 space forall x in I$, then $f(x)$ is strictly decreasing on $I$ 
 ]
 \
 \
@@ -468,12 +468,89 @@ Examples:\
 
   $f'(4) = "DNE"$, $f'(x) = 0 <==> 1+x/(3(x-4))<==> x = 3$
 
-  $f'(2), f'(5), f'(3.5)$
+  $f'(0) < 0, f'(5) >0, f'(3.5) > 0$
 
+  By FDT, $x=3$ is a local minimum 
 
-== Optimization
+  SDT is inconclusive as $x=4$ as $f''(4) = "DNE"$ 
+
+  $f(0) = 0, f(3)=-3, f(4)=0, f(5)=5$
+
+  The global maximum is at $x=5$ and global minimum at $x=3$ on the interval [0, 5]
 
 == L'Hôpital Rule
+
+#info[*Indeterminate Forms*\
+1. $0/0$
+
+2. $(plus.minus oo)/(plus.minus oo)$
+
+3. $0 dot plus.minus oo$
+
+4. $oo - oo$
+
+5. $1 ^ (oo)$
+
+6.  $oo^0$
+
+7. $0^0$
+
+These forms signal to apply L'Hôpital. 
+
+1 and 2 are classic form, 3 to 7 need to be manipulated into classical form to apply L'Hôpital
+]
+
+#info[*L'Hôpital Rule*\
+
+Suppose that $f'(x), g'(x)$ exists near $a$, except possibly at $x=a$, and that $g'(x)!=0$ near $a$, except possibly at $x=a$. 
+
+Suppose that $lim_(x->a) f(x)/g(x)$ is of indeterminate form $0/0$ or $(plus.minus oo)/(plus.minus oo)$ then $ lim(x->a) f(x)/g(x) = lim_(x->a) (f'(x))/ (g'(x)) $ whenever the right side exists or equals $plus.minus oo$
+
+You need to write $=^("LHR")$ just for the sake of this course
+]
+
+#warn[*Case do not use LHR*\
+
+$lim_(x->0) (sin x)/x =^("LHR") = lim_(x->0) cos x = 0$ *WRONG, CIRCULAR LOGIC, REMEMBER FUNDAMENTAL TRIG LIMIT*
+]
+
+Examples:
+
+1. $lim_(x->pi) (x^2-pi^2)/(sin x) =^("LHR") = lim_(x->pi) = 2x/(cos x) = 2pi/(-1)= -2pi$
+\
+
+2. $lim_(x->oo) frac(ln x, x) =^("LHR") = lim_(x->oo) 1/x/1 = 1/x = 1/(oo) = 0$
+\
+
+3. $lim_(x->0^+) frac(1/x^2, ln x) =^("LHR") lim_(x->0^+) frac(-2/x^3, 1/x) = lim_(x->0^+) = -2/x^2 = -2/0 = -oo$
+
+#info[*$0 dot plus.minus oo$*\
+$ lim_(x->a) f(x)g(x) = ^(0 dot plus.minus oo) = lim_(x->a) 1/(f(x))/g(x) =_((plus.minus oo)/(plus.minus oo))^("LHR") ... $
+]
+
+Examples:
+
+1. $lim_(x->0^+) x ln x = lim_(x->0^+) = frac(ln x, 1/ x) =^("LHR") = lim_(x->0^+) frac(1/x, -1/x^2) = -x^2/x = 0 $ \
+
+
+2. $lim_(x->-oo) x^(5/3) dot e^x = lim_(x->-oo) frac(x^(5/3), e^(-x)) =^("LHR") = lim_(x->-oo) frac(5x^(2/3)/3, -e^(-x)) = ^("LHR") $\
+
+  $lim_(x->-oo)frac(10x^(-1/3)/9, e^(-x)) = 10/9 lim_(x->-oo) e^x/(x^(1/3)) = 0/(-oo)=0$
+
+#info[*$oo-oo$* \
+$lim_(x->a) f(x)-g(x)$ needed to be alegraically manipulated using one of two
+
+1. Using $ln$
+
+2. Using conjugate/fractions
+]
+
+Example:\
+
+$lim_(x->oo)ln x + ln (67/(x+1)) = lim_(x->oo) ln (67 x/(x+1) = ln (lim_(x->oo) 67 x/(x+1)) = ln 67$
+#info[*$1^oo$*]
+== Curve Sketching
+== Optimization
 
 
 

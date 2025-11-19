@@ -157,3 +157,138 @@ $therefore x = -2/3 ==> z = -2/3+0i$
 #info[*Complex Conjugate*\
 The complex *conjugate* of a complext number $z=x+y i$ written $overline(z)$ is the complex number $ overline(z) = x - y i $
 ]
+
+#info[*Properties of Conjugate*\
+
+For the complex conjugate, the following properties hold $forall z, w in CC$
+
+1. $overline((overline(z))) = z$
+
+2. $overline(z+w) = overline(z)+overline(w)$
+
+3. $z+overline(z) = 2 Re(z)$ and $z-overline(z) = 2 Im(z)i$
+
+4. $overline(z w) = overline(z) dot overline(w)$
+
+5. If $z!=0, overline((z^(-1))) = (overline(z))^(-1)$
+
+6. If $w!=0, overline((z/w)) = overline(z)/overline(w)$
+]
+
+#proof[
+Part 3 \
+
+$z+overline(z) = 2 Re(z)$ and $z-overline(z) = 2 Im(z)i$
+
+Let $z = x+y i $
+
+$ z + overline(z) = (x+y i) + (x - y i) = 2 x + 0 i = 2 Re(z)$
+
+$z - overline(z) = (x+y i) - (x - y i) = 0 x + 2 i = 2 Im(z)$
+
+Part 4 \
+
+$overline(z w) = overline(z) dot overline(w)$
+
+Let $z = x + y i, w = a + b i$\
+
+$overline(z w) = overline((x+y i)(a+b i)) = overline((x a-y b) +(x b + y a) i) = (x a-y b)  - (x b + y a) i$
+
+$overline(z) overline(w) = overline(x+y i) overline(a + b i) = (x-y i) (a- b i) = (x a - (-y)(-b)) + (x(-b)+(-y)a) i \
+=  (x a-y b)  - (x b + y a) i$
+
+Thus $overline(z w) = overline(z) dot overline(w)$
+
+]
+#align(right)[$square$]
+Examples:
+
+1. Prove $z in RR <==> z = overline(z)$
+
+  Let $z = x+y i space forall x, y in RR$ 
+
+  $==>$ 
+
+  Suppose $z in RR$, then $y = 0$, so that $z = x+ 0 i = x in RR$. 
+
+T. hen $overline(z) = x - 0i = x$
+
+  $therefore z = overline(z)$
+
+  $<==$
+
+  Suppose $z = overline(z)$, then $x+y i = x - y i$
+
+  This implies $x = x, y = -y$. Thus $y = 0$
+
+  $therefore z = x + 0i = x in RR$
+
+2. Prove that $z$ is purely imaginary $<==> z = - overline(z)$
+
+3. Solve $z^2 = i overline(z)$\
+  Let $z = x + y i$. Then $z^2 = (x+y i)^2 = x^2 - y^2 +2x y i$
+
+  and $i overline(z) = i (x-y i)= i x - i^2 y = x i + y$
+
+  Then the equation becomes $x^2 - y^2 +2x y i = x i+y$
+
+  $==> cases(x^2 - y^2 = y, 2x y  = x ) ==> x = 0 and  y = 1/2 ==> cases(x^2 - 1/4 = 1/2, -y^2 = 0) ==> z = {0, -i, plus.minus (sqrt(3)/2) + 1/2 i}$
+
+\
+
+== Modulus of Complex Numbers
+\
+#info[*Modulus of Complex Number*\
+
+The *modulus* of the complex number $z = x+y i$, written $|z|$, is the non-negative real number $ |z| = sqrt(x^2 + y^2) $
+]
+
+#info[*Properties of Modulus*\
+
+For the modulus, the following properties $forall z, w in CC$:
+
+1. $|z| = 0 <==> z = 0$
+
+2. $|overline(z)| = |z|$
+
+3. $overline(z) z = |z|^2$
+
+4. $|z w| = |z||w|$
+
+5. If $z!=0$ then $|z^(-1)| = |z|^(-1)$
+
+Side note: for $z!=0, z^(-1) = overline(z)/ (|z|^2)$\
+
+6. If $w!=0, z/w = z dot overline(w)/(|w|^2)$
+
+7. $|z+w|^2 + |z-w|^2 = 2(|z|^2 +|w|^2)$
+
+8. $overline(sum z_i) = sum overline((z_i))$
+
+9. $overline(product z_i) = product overline((z_i))$
+
+10. $|product z_i| = product (|z_i|)$
+
+
+]
+
+#proof[
+Part 3\
+
+$overline(z) z = |z|^2$\
+
+Let $z = a+b i, forall a, b in RR$
+
+then $overline(z)z = (a-b i)(a+ b i)= (a^2 -(-b)(b)) + (a b + (-b)a)i $
+
+$= a^2+b^2 +0i = (sqrt(a^2+b^2))^2 = |z|^2$
+]
+
+#align(right)[$square$]
+
+== The Complex Plane and Polar Form
+
+
+#tip[Graphical Properties\
+$z and overline(z)$ are reflection of each other over real axis
+]
