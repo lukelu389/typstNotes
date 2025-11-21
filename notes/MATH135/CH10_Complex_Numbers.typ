@@ -287,8 +287,100 @@ $= a^2+b^2 +0i = (sqrt(a^2+b^2))^2 = |z|^2$
 #align(right)[$square$]
 
 == The Complex Plane and Polar Form
+\
+=== Complex Plane
 
+#tip[*Geometric Interpretation and Graphical Properties*\
 
-#tip[Graphical Properties\
-$z and overline(z)$ are reflection of each other over real axis
+- $z $ and $ overline(z)$ are reflection of each other over real axis
+
+- Modulus is the distance from the point $z$ to origin
+
+- For addition, it is similar to vector addition that is the parallelogram rule, $z + w $
+
+- For subtraction, consider $z+w - w = z$ and the rest is same for addition
 ]
+
+#info[*Triangle Inequality*\
+For all $z , w in CC$, we have
+$ |z+w| <= |z| + |w| $
+
+Note that $|z|$ is the modulus of z, not absolute value
+]
+
+#proof[
+Let $z = x + y i, w = u + v i$, where $x, y, u, v in RR$
+\
+
+$|z+w| = |(x+u)+(y + v)i| = sqrt((x+u)^2 +(y+v)^2)$\
+
+
+$= sqrt((x-(-u))^2 +(y- (-v))^2) \
+\
+
+ ("The Euclidean distance formulat between" (x, y) "and" (-u, -v))$ 
+
+Consider thr triangle ABC constructed from points
+
+$A: (0, 0); space B(x, y) = (z = x + y i); space C:(-u, -v) = (-w = -u - v i)$
+
+Let $l_(A B) = "length of side AB", l_(B C) "and" l_(A C)$ have the similar constructed
+
+From geometric perspective, $l_(B C)<= l_(A B) + l_(A C)$
+
+Note that $l_(A B) = sqrt(x^2 + y^2) = |z|, l_(A C) = sqrt((-u)^2 + (-v)^2) = |w| $
+
+$ l_(B C) = sqrt((x-(-u))^2 + (y-(-v))^2) = |z+w|$
+
+Therefore $|z+w|<= |z|+|w|$
+
+]#align(right)[$square$]
+
+Exercise: \
+
+Let $z!= plus.minus i$. Prove that $z/(1+z^2)$ is real $<==> z in RR$ or $|z=1|$
+\
+
+
+=== Polar Form
+\
+#info[*Polar Form*\
+
+A *polar form* of a complex number $z$ is denoted
+
+$ z = r(cos theta +i sin theta) $
+
+where $r >=0$, being the modulus of $z$ and angle $theta in RR$ be an *argument* of $z$
+
+- $theta$ is not unique unless given restriction of $theta in [0, 2pi)$
+
+Notice that in standard form $z = x + y i$
+
+- $x = r cos theta$
+
+- $y = r sin theta$
+
+- $r = |z| = sqrt(x^2+y^2)$
+
+- $theta = arctan(y/x)$
+]
+
+Examples:\
+
+Convert polar form to standard form
+
+1. $z = 3 (cos pi/4 + i sin pi/4) = (3sqrt(2))/2 + (3sqrt(2))/2i$
+
+2. $z = cos 15/6 pi + i sin 15/6 pi = 0+1i = i$
+
+Convert from standard form to polar form
+
+3. $z = sqrt(6) + sqrt(2)i$
+
+  $r = sqrt((sqrt(6))^2 +(sqrt(2))^2) = 2sqrt(2)$
+
+  $theta = arctan(1/sqrt(3)) = pi/6$ is one possibility as the angle is not unique
+
+  $z = 2sqrt(2) (cos pi/6 + i sin pi/6)$
+
+4. $z = -3 sqrt(2)+ 3sqrt(6)i = 6 sqrt(2)(cos 3/2 pi + i sin 3/2pi)$

@@ -514,6 +514,10 @@ You need to write $=^("LHR")$ just for the sake of this course
 $lim_(x->0) (sin x)/x =^("LHR") = lim_(x->0) cos x = 0$ *WRONG, CIRCULAR LOGIC, REMEMBER FUNDAMENTAL TRIG LIMIT*
 ]
 
+#warn[*Determinate Form*\
+$0^oo$, $0/oo$, and $oo^oo$ are determinate forms
+]
+
 Examples:
 
 1. $lim_(x->pi) (x^2-pi^2)/(sin x) =^("LHR") = lim_(x->pi) = 2x/(cos x) = 2pi/(-1)= -2pi$
@@ -545,11 +549,93 @@ $lim_(x->a) f(x)-g(x)$ needed to be alegraically manipulated using one of two
 2. Using conjugate/fractions
 ]
 
-Example:\
+Examples:\
 
-$lim_(x->oo)ln x + ln (67/(x+1)) = lim_(x->oo) ln (67 x/(x+1) = ln (lim_(x->oo) 67 x/(x+1)) = ln 67$
-#info[*$1^oo$*]
+1. $lim_(x->oo)ln x + ln (67/(x+1)) = lim_(x->oo) ln (67 x/(x+1) = ln (lim_(x->oo) 67 x/(x+1)) = ln 67$
+
+2. $lim_(x->0^+) 1/(sin x)-1/x = lim_(x->0^+) frac(x-sin x, x sin x) =^("LHR") lim_(x->0^+) frac(1-cos x, sin x + x cos x) =^("LHR") = lim_(x->0^+) frac(sin x, 2cos x -x sin x) = 0/2=0$
+
+#info[*$1^oo, oo^0, 0^0$*\
+$lim_(x->a)f^g(x) (x) = e^ (lim_(x->oo) g(x) ln(f(x)))$
+
+Then evaluate $lim_(x->oo) g(x) ln(f(x)) = L$ the final answer of the entire limit is $e^L$
+]
+
+Examples:\
+
+1. $lim_(x->oo) (1+1/x)^x = lim_(x->oo)e^(x ln (1+1/x)) = e^(lim_(x->oo) frac(ln(1+1/x), 1/x)) =^("LHR") $
+
+$e^(lim_(x->oo) frac(1/(1+1/x) dot -1/x^2, -1/x^2)) = e^(lim_(x->oo) 1/(1+1/x)) = e^1 = e$
+
+
+2. $lim_(x->0^+) x^(frac(1, ln(-ln x)))  = e^(lim_(x->0^+) frac(ln x, ln(-ln x))) =^("LHR") e^(lim_(x->0^+) frac(1/x, 1/(-ln x) (-1/x)))= e^(lim_(x->0^+) ln x) = e^(-oo)= 0$
+
 == Curve Sketching
+
+#info[*Graph Sketching Procedure* \
+1. Determine the *domain* of the functions and the values at the endpoints
+
+2. Find the $x, y$ *intercepts*
+
+3. Find the *horizontal asymptotes* by checking $lim_(x->plus.minus oo) f(x)$
+
+4. Find the *vertical asymptotes* by computing $lim_(x->a^(plus.minus) f(x))$
+
+5. Find all the *critical points* $f'(x) = 0$ or $f'(x) = "DNE"$
+
+6. Find all candidates for *points of inflection* $f''(x) = 0$ or $f''(x) = "DNE"$
+
+7. Find the shape of the function via intervals of increase/decrease and concavity between the points form steps 5-6 plus discontinuous
+
+8. Find local *extrema* and points of inflection using the information from step 7
+
+9. *Plot* the $x$-intercept, $y$-intercepts, point of inflection, critical points, and extrema
+
+10. Connect everything together
+
+]
+
+Examples:
+
+$f(x)= frac(x^2-1, x^2+3x), f'(x)= frac(3x^2+2x+3, x^2(x+3)), f''(x) = frac(-6x(x+1)(x^2+3), x^3(x+3)^3)$
+
+1. Domain is $x in (-oo, -3) union (-3, 0) union (0, oo)$
+
+
+2. 
+ - The $y$-intercept DNE as 0 is not in domain
+
+ - $x$-intercept at $x=plus.minus 1$
+
+3. 
+ - $lim_(x->oo) frac(x^2-1, x^2+3x) = 1$
+
+ - $lim_(x->-oo) frac(x^2-1, x^2+3x) = 1$
+
+4. 
+ - $lim_(x->0^+) frac(x^2-1, x^2+3x) = -1/0 = -oo$
+
+ - $lim_(x->0^-) frac(x^2-1, x^2+3x) = -1/(-0) = oo$
+
+ - $lim_(x->3^+) frac(x^2-1, x^2+3x) = -1/0 = -oo$
+
+ - $lim_(x->3^-) frac(x^2-1, x^2+3x) = -1/(-0) = oo$
+
+5. $f'(x)= frac(3x^2+2x+3, x^2(x+3)) = 0$
+
+ - $3x^2+2x+3 = 0$, no real solution
+
+ - $x^2(x+3) = 0, x=0, -3$ but not in domain
+
+ - no critical points
+
+6. $ f''(x) = frac(-6x(x+1)(x^2+3), x^3(x+3)^3) = 0$
+
+ - $-6x(x+1)(x^2+3) = 0, x = 0, -1$ 
+
+ - $x^3(x+3)^3 = 0, x = 0, -3$ 
+
+ - $x=-1$ is inflection point
 == Optimization
 
 
