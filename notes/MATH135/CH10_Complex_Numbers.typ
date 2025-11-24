@@ -211,7 +211,7 @@ Examples:
 
   Suppose $z in RR$, then $y = 0$, so that $z = x+ 0 i = x in RR$. 
 
-T. hen $overline(z) = x - 0i = x$
+  Then $overline(z) = x - 0i = x$
 
   $therefore z = overline(z)$
 
