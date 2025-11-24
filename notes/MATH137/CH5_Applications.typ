@@ -597,45 +597,122 @@ $e^(lim_(x->oo) frac(1/(1+1/x) dot -1/x^2, -1/x^2)) = e^(lim_(x->oo) 1/(1+1/x)) 
 
 Examples:
 
-$f(x)= frac(x^2-1, x^2+3x), f'(x)= frac(3x^2+2x+3, x^2(x+3)), f''(x) = frac(-6x(x+1)(x^2+3), x^3(x+3)^3)$
+1. $f(x)= frac(x^2-1, x^2+3x), f'(x)= frac(3x^2+2x+3, x^2(x+3)), f''(x) = frac(-6(x+1)(x^2+3), x^3(x+3)^3)$
 
-1. Domain is $x in (-oo, -3) union (-3, 0) union (0, oo)$
+  1. Domain is $x in (-oo, -3) union (-3, 0) union (0, oo)$
 
 
-2. 
- - The $y$-intercept DNE as 0 is not in domain
+  2. 
+   - The $y$-intercept DNE as 0 is not in domain
 
- - $x$-intercept at $x=plus.minus 1$
+   - $x$-intercept at $x=plus.minus 1$
 
-3. 
- - $lim_(x->oo) frac(x^2-1, x^2+3x) = 1$
+  3. 
+   - $lim_(x->oo) frac(x^2-1, x^2+3x) = 1$
 
- - $lim_(x->-oo) frac(x^2-1, x^2+3x) = 1$
+   - $lim_(x->-oo) frac(x^2-1, x^2+3x) = 1$
 
-4. 
- - $lim_(x->0^+) frac(x^2-1, x^2+3x) = -1/0 = -oo$
+  4. 
+   - $lim_(x->0^+) frac(x^2-1, x^2+3x) = -1/0 = -oo$
 
- - $lim_(x->0^-) frac(x^2-1, x^2+3x) = -1/(-0) = oo$
+   - $lim_(x->0^-) frac(x^2-1, x^2+3x) = -1/(-0) = oo$
 
- - $lim_(x->3^+) frac(x^2-1, x^2+3x) = -1/0 = -oo$
+   - $lim_(x->3^+) frac(x^2-1, x^2+3x) = -1/0 = -oo$
 
- - $lim_(x->3^-) frac(x^2-1, x^2+3x) = -1/(-0) = oo$
+   - $lim_(x->3^-) frac(x^2-1, x^2+3x) = -1/(-0) = oo$
 
-5. $f'(x)= frac(3x^2+2x+3, x^2(x+3)) = 0$
+  5. $f'(x)= frac(3x^2+2x+3, x^2(x+3)) = 0$
 
- - $3x^2+2x+3 = 0$, no real solution
+   - $3x^2+2x+3 = 0$, no real solution
 
- - $x^2(x+3) = 0, x=0, -3$ but not in domain
+   - $x^2(x+3) = 0, x=0, -3$ but not in domain
 
- - no critical points
+   - no critical points
 
-6. $ f''(x) = frac(-6x(x+1)(x^2+3), x^3(x+3)^3) = 0$
+  6. $ f''(x) = frac(-6(x+1)(x^2+3), x^3(x+3)^3) = 0$
 
- - $-6x(x+1)(x^2+3) = 0, x = 0, -1$ 
+ - $-6(x+1)(x^2+3) = 0, x = -1$ 
 
  - $x^3(x+3)^3 = 0, x = 0, -3$ 
 
  - $x=-1$ is inflection point
+ \
+  7.
+    Increasing/Decreasing \
+    $f'(1) > 0 ==>$ increasing\
+    $f'(-1) > 0 ==>$ increasing\
+    $f'(-4) > 0 ==>$ increasing\
+
+    Concavity \
+    $f''(1) = < 0 ==>$ concave down\
+    $f''(-1/2) > 0 ==>$ concave up \
+    $f''(-2) < 0 ==>$ concave down \
+    $f''(-4) > 0 ==>$ concave up\
+
+  8. \
+   No local extrema\
+
+   Point of inflection at $x==1$
+
+  9.
+    Vertical asymptotes at $x=-3, x = 0$\
+    Horizontal asymptote at $ y = 1$\
+    Increasing on $(-oo, -3) union (-3, 0) union (0, oo)$\
+    Concave up on $(-oo, -3) union [-1, 0)$\
+    Concave down on $(-3, -1] union (0, oo)$
+  10.
+
+  #align(center)[#image("../../pictures/graphplot1.png", width: 10cm)]
+
+2. $f(x)=frac(e^x (x-2), x^2-2x), f'(x) = frac(e^x(x-1)(x-2), x^3-2x^2), f''(x)= frac(e^x (x^2-2x+2)(x-2), x^4-2x^3)$
+
+  1. Domain $x in (-oo, 0) union (0, 2) union (2, oo)$
+  2. \
+    - The $y$-intercept DNE as 0 is not in domain
+    - The $x$-intecerpt DNE as $f(x)$ has no solution
+  3. Horizontal asymptote
+     - $lim_(x->oo) frac(e^x (x-2), x^2-2x) = e^x/x = oo$
+
+     - $lim_(x->-oo) frac(e^x (x-2), x^2-2x) = e^x/x = 0/oo = 0$ 
+\
+\
+\
+\
+  4.
+    Vertical asymptotes\
+
+     - $lim_(x->2) frac(e^x (x-2), x^2-2x) =e^2/2$ is a removable discontinuity
+
+     - $lim_(x->0^+) frac(e^x (x-2), x^2-2x) oo$
+
+     - $lim_(x->0^-) frac(e^x (x-2), x^2-2x) -oo$
+
+ 5. 
+  $f'(x) = frac(e^x (x-1)(x-2), x^3-2x^2) = 0$ \
+  $x = 0, 1, 2$\
+  Critical point at $x = 1$\
+  DNE at $x = 0, 2$
+
+ 6. 
+  $f''(x)=frac(e^x (x^2-2x+2)(x-2), x^4-2x^3)=0$\
+
+  $x^2-2x+2$ has no solutions
+
+  No point of inflection as $x=0, 2$ are not in domain
+   
+7. 
+
+ Increasing/Decreasing
+
+ $f'(-1)= <0 ==>$ decreasing \
+
+ $f'(1/2) < 0 ==>$ decreasing \
+
+ $f'(3/2) >0 ==>$ increasing\
+
+ Concavity
+
+    
 == Optimization
 
 

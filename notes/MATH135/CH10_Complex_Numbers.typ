@@ -343,7 +343,7 @@ Let $z!= plus.minus i$. Prove that $z/(1+z^2)$ is real $<==> z in RR$ or $|z=1|$
 
 
 === Polar Form
-\
+
 #info[*Polar Form*\
 
 A *polar form* of a complex number $z$ is denoted
@@ -384,3 +384,57 @@ Convert from standard form to polar form
   $z = 2sqrt(2) (cos pi/6 + i sin pi/6)$
 
 4. $z = -3 sqrt(2)+ 3sqrt(6)i = 6 sqrt(2)(cos 3/2 pi + i sin 3/2pi)$
+\
+#info[*Polar Multiplication for $CC$*\
+For all complex numbers $z_1 = r_1 (cos theta_1 + i sin theta_1), z_2 = r_2 (cos theta_2 + i sin theta_2)$, then their product is $ z_1 z_2 = r_1 r_2 (cos theta (theta_1 + theta_2) + i sin (theta_1 + theta_2)) $
+]
+
+#proof[
+Let $z_1 = r_1 (cos theta_1 + i sin theta_1), z_2 = r_2 (cos theta_2 + i sin theta_2) in CC$
+
+$z_1 z_2  = r_1 (cos theta_1 + i sin theta_1) (cos theta_2 + i sin theta_2)$
+
+$= r_1 r_2 (cos theta_1 cos theta_2 - sin theta_1 sin theta+2) + i(cos theta_1 sin theta_2 + sin theta_1 cos theta_2)$
+
+$= r_1 r_2 (cos theta (theta_1 + theta_2) + i sin (theta_1 + theta_2))$
+]
+#align(right)[$square$]
+
+Examples:\
+
+1. Compute $(i+1) i = sqrt(2) (cos pi/4 + i sin pi/4) dot (cos pi/2 + i sin pi/2) =^("By PM"CC) sqrt(2) (cos (3pi)/4 i sin (3pi)/4) $
+
+ $= sqrt(2)(-1/(sqrt(2))+i/sqrt(2)) = -1 + i$
+
+2. Find $(sqrt(6)+sqrt(2)i) (-3sqrt(2)+3sqrt(6)i)$
+
+  $ =2sqrt(2) (cos pi/6 + i sin pi/6) dot 6sqrt(2)(cos (2pi)/3 + i sin (2pi)/3) = 24 (cos (5pi)/6 +i sin (5pi)/6) = 24(-sqrt(3)/2 + i/2)$
+  
+  $ = -12 sqrt(3)+12 i$
+== De Moivre's Theorem
+
+#info[*De Moivre's Theorem (DMT)*\
+$forall theta, n in RR$, $ (cos theta + i sin theta)^n = cos n theta + i sin n theta $
+]
+
+#info[*Corollary of DMT*\
+For all complex number $z = r (cos theta + i sin theta)$ and integer $n$, except $|z|=r=0$ and $n<0$ we have $ z^n = r^n (cos n theta + i sin n theta) $
+]
+
+Examples:\
+
+1. $(sqrt(3)-i)^10 = [2 (cos -pi/6 + i sin -pi/6)]^10 = 1024 (cos -(10pi)/6 + i sin -(10pi)/6) = 512 + 512 sqrt(3
+)i$
+
+
+2. Prove that $cos 4 theta = 8 cos^4 theta - 8 cos^2 theta +1$ (Hint: Consider $(cos theta + i sin theta)^4$ expand normally and apply DMT then compare real parts)
+
+3. Prove that $forall n in ZZ$ if $w in CC, |w|=1$ and $theta$ is an argument of $w$, then $-i/2 (w^n-w^(-n) = sin (n theta))$
+#info[*Additional Information*\
+
+For notation, we write $"cis"(theta) = cos theta + i sin theta$ notation wise
+
+Also, $"cis"(theta) = e^(i theta)$ that is having the similar properties of exponentials
+
+$e^(i pi) = "cis"(pi)=-1 ==> e^(i pi) + 1=0$ which is the Euler's Formula
+]
