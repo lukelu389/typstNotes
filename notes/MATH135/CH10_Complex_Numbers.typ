@@ -363,6 +363,8 @@ Notice that in standard form $z = x + y i$
 - $r = |z| = sqrt(x^2+y^2)$
 
 - $theta = arctan(y/x)$
+
+- $overline(z) = r (cos (-theta) + i sin (-theta))$
 ]
 
 Examples:\
@@ -437,4 +439,66 @@ For notation, we write $"cis"(theta) = cos theta + i sin theta$ notation wise
 Also, $"cis"(theta) = e^(i theta)$ that is having the similar properties of exponentials
 
 $e^(i pi) = "cis"(pi)=-1 ==> e^(i pi) + 1=0$ which is the Euler's Formula
+]
+
+Examples:
+
+1. How many square roots does 64 has $in CC$?
+
+  ANS: Write $z = "cis"(theta), 64 = 64(1+0i) = 64(cos 0 +i sin 0)$. 
+  
+  Then $z^2 = r^2 "cis"(2theta) ==> 64 "cis"(0)$ thus $r^2= 64$ and $2 theta = 0 + 2pi k, space forall k in ZZ$.
+
+  $r = 8$ since $r>=0$ being the modulus. $theta = pi k ==>$ 
+  only two unique positions in circle
+
+  $therefore r = 8, theta = 0, pi$ we get two solution. that is $z_1 = 8 "cis"(0) = 8, z_2 = 8 "cis"(pi) = -8$
+
+\
+\
+\
+2. How many cube roots does 64 has $in CC$
+  
+  ANS: $z^3 = 64 ==> r^3 "cis"(3 theta), r^3 = 64, 3 theta = 0 + 2pi k, space forall k in ZZ$
+
+  $==> r =4, theta = (2pi)/3 k = 0, plus.minus (2pi)/3, plus.minus (4pi)/3, plus.minus 2pi$
+
+  Three unique positions: $theta = 0, (2pi)/3, (4pi)/3$
+
+  $therefore z_1 = 4 "cis"(0) = 4, z_2 = 4 "cis"((2pi)/3) = -2 + 2sqrt(3)i, z_3 = 4 "cis"((4pi)/3) = -2 - 2sqrt(3)i$
+
+#info[*Complex $n$-th Root Theorem*\
+
+For a complex number $a$ and positive integer $n$, the complex numbers $z$ that satisfy the equation $ z^n = a $ are called the *complex $n$th root* of $a$
+
+
+For all complex numbers $a = r (cos theta + i sin theta)$ and natural numbers $n$, the complex $n$-th root of $a$ are given by $ root(n, r) (cos (frac(theta+2k pi, n))+i sin (frac(theta+2k pi, n))), quad k=0, 1, 2, 3, ..., n - 1 $
+]
+
+Examples:
+
+1. Find all $z in CC$ that satisfy $z^4 = -27 overline(z)$
+  
+  Let $z = r "cis"(theta)$ then $overline(z) = r (cos theta -i sin theta) =r(cos(-theta) + i sin(-theta))=r "cis"(-theta)$
+
+  $r^4 "cis"(4theta) = -27 dot r "cis"(-theta)$
+
+  $r = 0 ==> z_1 = 0 "cis"0 = 0$
+
+  for $z!= 0, r!=0 ==> r^3 "cis"(4theta) = - 27 "cis"(-theta) ==> r^3 "cis"(5theta) = 27 "cis"(0) = 27 "cis"(pi) $
+
+  $r = 3, 5theta = pi + 2pi k, space forall k in ZZ$
+
+  $theta = (pi+2pi k)/5 = pi/5, (3pi)/5, pi, (7pi)/5, (9pi)/5$ are unique poisitions on the circle
+
+  $z_2 = 3 "cis"(pi/5), z_3 = 3 "cis"((3pi)/5), z_4 = 3 "cis"(pi),z_5  3 "cis"((7pi)/5), z_6 = 3 "cis"((9pi)/5)$
+
+
+2. $z^8 = 1$
+  
+  ANS: $z in {"cis"((k pi)/4), forall k in {0, 1, 2, 3, 4, 5, 6, 7}}$
+  
+
+#info[*Quadratic Formula for $CC$*\
+For all complex numbers $a, b, c$ with $a!=0$, the solution to $a z^2+ b z + c = 0$ are given by $ z = frac(-b plus.minus w, 2a) $ where $w$ is a solution to $w^2 = b^2 -4 a c$
 ]

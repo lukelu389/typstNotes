@@ -712,8 +712,83 @@ Examples:
 
  Concavity
 
-    
+ $f''(-1) = frac(e^x (x^2-2x+2)(x-2), x^4-2x^3) < 0 ==>$ concave down 
+
+ $f''(1) = frac(e^x (x^2-2x+2)(x-2), x^4-2x^3) > 0 ==> $ concave up
+
+8. 
+
+  Local minimum at $x=1$
+   
+  No point of inflection
+
+9. 
+
+  Decreasing on $(-oo, 0), (0, 1]$ as an arbitrary point on left inverval and right interval will be increasing
+
+  Increasing on $[1, 2) union (2, oo)$
+  
+  Concave up on $(0, 2) union (0, oo)$
+
+  Concave down on $(-oo, 0)$
+
+  Vertical asymptotes at $x = 0$
+
+  Horizontal asymptote at $y = 0$
+
+10.
+  #align(center)[#image("../../pictures/graphplot2.png", width: 8cm)]
+
 == Optimization
+
+Example:
+
+Minimize $x^2 + y^2 $ given $x-y = 10$
+
+  ANS: $x^2 + y^2, y = x-10 ==> x^2 + (x-10)^2 = x^2 +y^2$
+
+  $f(x)= x^2 + (x-10)^2 = 10, f'(x)= 2x + 2(x-10) = 0 ==> x = 5$
+
+  $f'(4) < 0, f'(6) > 0$, by FDT, $x = 5$ is a local minimum
+
+  $5-y = 10, y = -5 ==> 5^2 + (-5)^2 = 50$
+
+
+#info[*Optimization* \
+1. Determine maximizing or minimizing
+2. Identitfy constraints
+3. Draw diagram
+4. Create objective function
+5. Rewrite objective function using constraing in single variable
+6. Differentiation with FDT or SDT
+7. Ending statement
+
+Acronym: divorce
+]
+
+Examples:
+
+A rectangular garden is to be set up with a river on one side and fencing on the other three sides. If the area of the garden must be 200 $m^2$, determine the dimensions that will minimize the fencing required.
+
+1. Minimize perimeter of fence
+2. $x y = 200 ==> y = 200/x$
+3. Picture is a three sided rectangle with one side is next to rive
+4. $2x + y $
+5. $2x + 200/x$
+6. $f'(x)= 2 - 200/(x^2) $
+
+   $f'(x) = 0 ==> x = 10$
+
+   $f'(5) = 2-200/25  = 2 - 8 = -6 $
+
+   $f'(20) = 2-200/(400) = 2 - 1/2 = 3/2$
+
+   By FDT, $x=10$ is a global minimum
+
+7. $y = 200/10 = 20$
+
+  The dimension of the fence is $2 dot 10 m * 20m$
+
 
 
 
