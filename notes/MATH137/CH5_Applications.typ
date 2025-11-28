@@ -768,27 +768,91 @@ Acronym: divorce
 
 Examples:
 
-A rectangular garden is to be set up with a river on one side and fencing on the other three sides. If the area of the garden must be 200 $m^2$, determine the dimensions that will minimize the fencing required.
+1. A rectangular garden is to be set up with a river on one side and fencing on the other three sides. If the area of the garden must be 200 $m^2$, determine the dimensions that will minimize the fencing required.
 
-1. Minimize perimeter of fence
-2. $x y = 200 ==> y = 200/x$
-3. Picture is a three sided rectangle with one side is next to rive
-4. $2x + y $
-5. $2x + 200/x$
-6. $f'(x)= 2 - 200/(x^2) $
+  1. Minimize perimeter of fence
+  2. $x y = 200 ==> y = 200/x$
+  3. Picture is a three sided rectangle with one side is next to rive
+  4. $2x + y $
+  5. $2x + 200/x$
+  6. $f'(x)= 2 - 200/(x^2) $
 
-   $f'(x) = 0 ==> x = 10$
+    $f'(x) = 0 ==> x = 10$
 
-   $f'(5) = 2-200/25  = 2 - 8 = -6 $
+    $f'(5) = 2-200/25  = 2 - 8 = -6 $
 
-   $f'(20) = 2-200/(400) = 2 - 1/2 = 3/2$
+    $f'(20) = 2-200/(400) = 2 - 1/2 = 3/2$
 
-   By FDT, $x=10$ is a global minimum
+    By FDT, $x=10$ is a global minimum
 
-7. $y = 200/10 = 20$
+  7. $y = 200/10 = 20$
 
-  The dimension of the fence is $2 dot 10 m * 20m$
+  The dimension of the fence is $ 10 m dot 20m$
+
+\
+\
+\
+\
+
+2. Peter's Packaging is working on designing a new, cutting-edge box. Peter takes a piece of cardboard, which has dimensions 25 cm by 10 cm, and cuts out squares from each corner. He then folds the net he has made to create an open-top box. What side length of square should Peter cut from each corner to maximize the volume of the resulting box?
+
+ 1. Maxmize volume of the box
+ 2. 25 cm and 10 cm
+ 3. $s$ is the side length of small squares and height of volume
+ 4. $l w s$
+ 5. $(10-2s)(25-2s)s = (250 - 70s + 4s^2)s = 250s - 70s^2+4s^3$
+ 6. $f'(x) = 12s^2 - 140s + 250$\
+   $f'(x) = 2 (6s^2-70s+125) = 0 ==> x = frac(35 plus.minus 5 sqrt(19), 6)$
+
+   $x = frac(35 - 5 sqrt(19), 6)$ is the only working point as $10-2s >0$
+
+   $f'(1) = 61 > 0$
+
+   $f'(3) = -31 < 0$
+
+   By FDT, $x = s = frac(35 - 5 sqrt(19), 6)$ is local maximum
 
 
+ 7. The side length of the square is $frac(35 - 5 sqrt(19), 6)$ cm
 
 
+3. An island is 2 km due north of its closest point along a straight shoreline. A visitor is staying at a cabin on the shore that is 6 km west of that point. The visitor is planning to go from the cabin to the island. Suppose the visitor runs at a rate of 8 km/h and swims at a rate of 3 km/h. How far should the visitor run before swimming to minimize the time it takes to reach the island?
+
+ 1. Minimize travel time
+ 2. 2km north, 6km east, run: 8km/h, swim: 3km/h
+ 3. Right triangle with 2km height and $6-r$ km base \
+  $r$ is the distance of running and $s$ is the distance of swimming
+
+ 4. $r/8 + s/3$
+
+ 5. $r/8 + sqrt((6-r)^2 + 4)/3$
+
+ 6. $f'(r) = 1/8 + (r-6)/(3(40-12r+r^2)^(1/2)) ==> r = 6plus.minus 6/sqrt(55) ==> 6 - 6/sqrt(55)$ is a valid point
+
+  Note that there is no DNE point for $f'(x)$
+   
+   $f'(4) < 0$
+
+   $f'(7) > 0$
+
+   By FDT, $r= 6 minus 6/sqrt(55)$ is a local minimum
+
+
+ 7. The person should run $6-6/sqrt(55)$ km before start swimming
+\
+\
+\
+\
+
+
+4. In information theory, the self-information of an event $x_i$ which occurs with probability $p_i$ is given by $- log_2(p_i)$. The entropy H of an distribution $X$ with options $x_i$ is thus given by the weighted sum $H(X) = ∑_i -p_i log_2 pi$. Find the probability with which a single event $xi$ contributes the minimum possible value to this entropy.
+
+  Minimize $-p_i log_2 p_i$ \
+
+  Let $x = 1/p_i space forall x in [1, oo)$
+
+  $-p_i log_2 p_i = -1/x log_2(1/x) = (ln x)/(x ln 2)$
+
+  $h'(x) = (1-ln x)/x^2 = 0==> x = e$
+
+  $p_i$ is minimized at $p_i = 1/e$

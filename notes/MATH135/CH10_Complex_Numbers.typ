@@ -1,4 +1,6 @@
 #import "../../preamble.typ": *
+#import "@preview/peano:0.2.1": *
+
 
 #let Title = "CH 10 - Complex Numbers"
 #set-title(Title)
@@ -122,7 +124,7 @@ Thus $(u v) z = u(v z) = (a x c - b d x - a d y - b c y) + (a c y - b d y + a d 
 
 #align(right)[$square$]
 
-#info[Other Arithemtic of Complex Numbers\
+#info[Other Arithmetic of Complex Numbers\
 For $z in CC$
 
 
@@ -502,3 +504,67 @@ Examples:
 #info[*Quadratic Formula for $CC$*\
 For all complex numbers $a, b, c$ with $a!=0$, the solution to $a z^2+ b z + c = 0$ are given by $ z = frac(-b plus.minus w, 2a) $ where $w$ is a solution to $w^2 = b^2 -4 a c$
 ]
+
+Examples:\
+
+1. $z^2 - 2z + 6 - 12i = 0$\
+  ANS: $z = 3+3i, -1-3i$
+
+#info[*Polynomials*\
+
+An expression in form $ a_n x^n + a_(n-1) x^(n-1) + ... + a_2 x^2 + a_1 x + a_0 $
+
+Where $a_i in RR ("or" CC) space forall i in NN union {0} $ 
+
+We denote $RR[x] "or" CC[x]$ be a Polynomials.
+
+The polynomial where $x^n$ has coefficient non-zero, then we say the degree of polynomial is $n$.
+
+Zero polynomial has all coefficients equal to zero with degree undefined.
+
+A constant polynomial is either the zero polynomial or polynomial of degree zero.
+
+Two polynomials are equal if and only if all coefficients are equal
+]
+
+#info[*Arithmetic*\
+
+Let $f(x) = sum_(i=0) ^(m) a_i x^i$ and $g(x) = sum_(j=0) ^(n) b_j x^j$
+
+- Addition $ f(x)+g(x) = sum_(k=0) ^(max(m, n)) (a_k + b_k) x^k $
+
+- Multiplication$ f(x)g(x) = sum_(l=0) ^(m+n) (a_l b_(m+n-l)) x^l $
+]
+
+Example:
+
+Consider $f(x)=i x^3 + 4x^2- i x+6$ and $g(x) = x-3i$, prove that $g(x)$ is a factor of $f(x)$ and find the complex polynomial $h(x)$ s.t. $f(x)=g(x)h(x)$\
+
+ANS:  $h(x)=(i x^3 + 4x^2 - i x+6) / (x-3i) = i x^2 + x + 2i$
+
+
+== Roots of Polynomial / Factoring Polynomial
+
+#info[*Factoring Theorem*\
+
+For all polynomial $f(x) in RR[x] ( "or "CC[x])$ and all $c in RR ("or" CC)$, the linear polynomial $x-c$ is a factor of polynomial $f(x)$ if and only if $f(c)=0$ (equivalently, $c$ is a root of the polynomial $f(x)$)
+
+]
+
+Examples:\
+
+1. Determine if $x=1$ is a root of $f(x)=x^3-2x^2+4x-5$
+
+  $f(1) = -2 != 0 ==>$ not a root
+
+2. Proof that there does not exist a real linear factor of $f(x)=x^8+x^3+1$
+
+  Consider interval $x in [0, oo), (-oo, -1], (-1, 0)$ separately
+
+  - $[0, oo): f(0) = 1 >0$ then $f(x) >= 1 space forall x in [0, oo)$
+
+  - $(-oo, -1]: f(x)= x^3 (x^5+1)+1 ==> (<= -1)(<=0) + 1 ==> (>=0) + 1 ==> >= 0$
+
+  - $(-1, 0):$ \
+    Notice that $-1< x^3 < 1 space forall x in (-1, 0)$ and $x^8 > 0 space forall x in (-1, 0)$.  \
+    So that $x^3 + 1 > 0 space forall x in (-1, 0)$ thus $f(x) >= 0 space forall x in (-1, 0)$
