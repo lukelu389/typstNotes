@@ -568,3 +568,85 @@ Examples:\
   - $(-1, 0):$ \
     Notice that $-1< x^3 < 1 space forall x in (-1, 0)$ and $x^8 > 0 space forall x in (-1, 0)$.  \
     So that $x^3 + 1 > 0 space forall x in (-1, 0)$ thus $f(x) >= 0 space forall x in (-1, 0)$
+
+
+#info[*FUndamental Theorem of Algebra*\
+For all complex polynomial $f(z)$ with degree greater than 1, there exists a $z_0 in CC$ s.t. $f(z_0) = 0$
+]
+
+#info[*Complex Polynomial of Degree $n$ have $n$ roots*\
+For all integers $n>=1$ and all complex polynomials $f(z)$ of degree $n$, there exist complex numbers $c!=0$ and $c_1, c_2, c_3, ..., c_n$ s.t. $ f(z)= c(z-c_1)(z-c_2)...(z-c_n) $
+
+Moreover, the roots of $f(z)$ are $c_1, c_2, c_3, ..., c_n$
+
+For all integers $n>=$ and all real or complex polynomials $f(x)$ degree $n$, the polynoial f(x) has at most $n$ roots
+]
+
+Examples:
+
+
+1. 
+  - $x^2+1$ is irreducible in $RR[x]$,
+  - Can be reduced in $CC[x]: (x-i)(x+i)$
+
+2. 
+  - $x^4+2x^2+1$ is reducible but has no real roots
+  - $x^4+2x^2+1$  is reducible and has real roots: $(x-i)^2(x+i)^2$
+
+#info[*Conjugate Roots Theorem*\
+ For all olynomials $f(x)$ with real coefficient, if $c in CC$ is a root of $f(x)$, then $overline(c) in CC$ is a root of $f(x)$
+ ]
+
+#proof[
+Let $f(x)$ be a polynomail with real coefficients.
+
+Suppose $c in CC$ is a root of $f(x)$.
+
+We write $f(x)=a_n x^n + a_(n-1)x^(n-1)+...+a_2x^2+a_1x+a_0$ where $a_n, a_(n-1), ..., a_1,a_0 in RR$.
+
+Since $c$ is a root of $f(x)==>f(c)=0$
+
+$a_n c^n +a_(n-1)c^(n-1)+...+a_2c^2+a_1c+a_0 = 0$
+
+$overline(a_n c^n +a_(n-1)c^(n-1)+...+a_2c^2+a_1c+a_0) = overline(0)$
+
+$overline(a_n c^n) +overline(a_(n-1)c^(n-1))+...+overline(a_2c^2)+overline(a_1c)+overline(a_0) = 0$
+
+$a_n overline(c)^n +a_(n-1)overline(c)^(n-1)+...+a_2overline(c)^2+a_1overline(c)+a_0 = 0$
+
+Therefore $overline(c)$ is a root of $f(x)$
+]
+\
+
+Example:
+
+Express $x^4-5x^3+16x^2-9x-13$ as a product of irreducible factors given $2-3i$ is a root \
+  
+  By CJRT, $2+3i$ is also a root, so $(x-2-3i), (x-2+3i)$ are factors of this polynomial
+
+  $(x-2-3i)(x-2+3i) = x^2-4x+13$ is a factor of the polynomial
+
+  $frac(x^4-5x^3+16x^2-9x-13 ,x^2-4x+13) = x^2-x-1 = (x-(frac(1+sqrt(5), 2)))(x-frac(1-sqrt(5), 2))$
+
+  $(x-2-3i)(x-2+3i)(x-(frac(1+sqrt(5), 2)))(x-frac(1-sqrt(5), 2)) in CC[x]$ \
+
+  $ = (x^2-4x+13) (x-frac(1+sqrt(5), 2))(x-frac(1-sqrt(5), 2)) in RR[x]$
+  
+
+#info[Lemma\
+For all complex number $c, (x-c)(x-overline(c)) in RR[x]$
+]
+
+#info[*Real Factors or Real Polynomials*\
+For all real polynomial $f(x)$ of positive degree, $f(x)$ can be written as a product of real linear and real quadratic factors
+]
+
+Example:
+
+One root of the polynomial $f(x)=3x^5-14x^4+14x^3+32x^2-69x+30$ is $2+i)$. Write $f(x)$ as a product of irreducible polynomials in $RR[x]$ and $CC[x]$
+
+Given $2+i$ is a root $==> (x-(2+i))(x-(2-i))=x^2-4x+5$ is a factor. 
+
+$f(x)=(x^2-4x+5)(3x^3-2x^2-9x+6)=(x^2-4x+5)(3x-2)(x-sqrt(3))(x+sqrt(3)) in RR[x]$
+
+$f(x)=(x-2-i)(x-2+i)(3x-2)(x-sqrt(3))(x+sqrt(3)) in CC[x]$
