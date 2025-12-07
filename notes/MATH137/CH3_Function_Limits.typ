@@ -262,9 +262,9 @@ Examples:
 = Horizontal Asymptotes and the Fundamental Log Limit
 \
 #info[*Limit at $plus.minus infinity$* \
-Let $L in RR$. We say that $lim_(x->infinity)$ if $forall epsilon > 0, exists N in RR "s.t. if " x> N, "then" |f(x)-L|< epsilon.$
+Let $L in RR$. We say that $lim_(x->infinity) f(x) = L$ if $forall epsilon > 0, exists N in RR "s.t. if " x> N, "then" |f(x)-L|< epsilon.$
 
-Similarly, $lim_(x->-infinity)$ if $forall epsilon > 0, exists N in RR "s.t. if " x < N, "then" |f(x)-L|< epsilon.$
+Similarly, $lim_(x->-infinity f(x)=L)$ if $forall epsilon > 0, exists N in RR "s.t. if " x < N, "then" |f(x)-L|< epsilon.$
 ]
 
 #info[*Horizontal Asymptotes* \
