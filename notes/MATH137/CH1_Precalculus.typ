@@ -7,7 +7,7 @@
 == Real and Transcendental Functions
 
 === Real-Valued Functions
-Let $X$ and $Y$ be sets. A function $f$ assigns to each $x \in X$ exactly one $y = f(x) \in Y$:
+Let $X$ and $Y$ be sets. A function $f$ assigns to each $x in X$ exactly one $y = f(x) in Y$:
 $ f: X -> Y, x -> f(x). $
 
 
@@ -51,7 +51,7 @@ $(g compose f): X -> Z,  (g compose f)(x) = g(f(x))$
 
 \
 ==== Inverse
-$f: X -> Y$ is invertible if there exists $f^{-1}: Y -> X$ with
+$f: X -> Y$ is invertible if there exists $f^(-1): Y -> X$ with
 $ f^(-1)(f(x)) = x "for" x in X, f(f^(-1)(y)) = y  "for" y in Y. $
 
 ==== Piecewise (absolute value)

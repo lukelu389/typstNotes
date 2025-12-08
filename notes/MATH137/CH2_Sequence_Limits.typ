@@ -190,7 +190,7 @@ Prove the Sum of Sequences Rule
 #proof[
   $a_n -> a, b_n->b$\
   $forall epsilon > 0, exists M , N in RR, forall n > M, n > N, |a_n-a|<epsilon, |b_n-b|< epsilon$\
-  $|(a_n+b_n)-(a+b)| = |(a_n-a)+(b_n-b)| <= |a_n-a| + |b_n+b|< epsilon/2 + epsilon/2 = epsilon$
+  $|(a_n+b_n)-(a+b)| = |(a_n-a)+(b_n-b)| <= |a_n-a| + |b_n-b|< epsilon/2 + epsilon/2 = epsilon$
 ]
 \
 #important[

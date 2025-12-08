@@ -262,9 +262,11 @@ Examples:
 = Horizontal Asymptotes and the Fundamental Log Limit
 \
 #info[*Limit at $plus.minus infinity$* \
-Let $L in RR$. We say that $lim_(x->infinity) f(x) = L$ if $forall epsilon > 0, exists N in RR "s.t. if " x> N, "then" |f(x)-L|< epsilon.$
+Let $L in RR$. 
 
-Similarly, $lim_(x->-infinity f(x)=L)$ if $forall epsilon > 0, exists N in RR "s.t. if " x < N, "then" |f(x)-L|< epsilon.$
+We say that $lim_(x->infinity) f(x) = L$ if $forall epsilon > 0, exists N in RR "s.t. if" x> N, "then" |f(x)-L|< epsilon.$
+
+Similarly, $lim_(x->-infinity f(x)=L)$ if $forall epsilon > 0, exists N in RR "s.t. if" x < N, "then" |f(x)-L|< epsilon.$
 ]
 
 #info[*Horizontal Asymptotes* \
@@ -315,8 +317,8 @@ $lim_(x->0^+) x^p/ln(x) quad quad ("Let" u = 1/x)$ \
 $lim_(u->oo) 1/(u^p) dot ln(1/u) = 0$
 
 #info[*Vertical Asymptotes*\
-1. $lim_(x->a^+) f(x) = infinity$ if for every $m>0, exists delta > 0$ s.t. if $a<x<a+d+delta$ then $f(x) > m$
-2. $lim_(x->a^-) f(x) = infinity$ if for every $m<0, exists delta > 0$ s.t. if $a<x<a+d+delta$ then $f(x) < m$
+1. $lim_(x->a^+) f(x) = infinity$ if for every $m>0, exists delta > 0$ s.t. if $a<x<a+delta$ then $f(x) > m$
+2. $lim_(x->a^-) f(x) = infinity$ if for every $m>0, exists delta > 0$ s.t. if $a-delta<x<a$ then $f(x) > m$
 3. $lim_(x->a^+) f(x) = lim_(x->a^-) f(x) = infinity ==> lim_(x->a) f(x) = infinity$
 4. If $lim_(x->a^plus.minus) f(x) = plus.minus infinity$ then there is a vertical asymptote at $x = a$
 ]
