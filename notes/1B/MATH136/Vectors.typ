@@ -13,7 +13,7 @@ The set $RR^n$ is defined as ${accent(x, arrow) = mat(x_1; ...; x_n): x_1, ..., 
 
 A *vector* is an element $accent(x, arrow) = mat(x_1; ...; x_n)$ of $RR^n$
 
-The row notation of $accent(v, arrow) = mat(v_1; v_2; ...; v_n)$ is $accent(v, arrow)=[v_1 space v_2 space v_3]^T$
+The row notation of $vec(v) = mat(v_1; v_2; ...; v_n)$ is $vec(v)=[v_1 space v_2 space v_3]^T$
 ]
 
 
@@ -21,38 +21,38 @@ The row notation of $accent(v, arrow) = mat(v_1; v_2; ...; v_n)$ is $accent(v, a
 \
 #info[*Equality* \
 
-We say that vectors $accent(u, arrow) = mat(u_1; u_2; ...; u_n)$ and $accent(v, arrow)=mat(v_1; v_2; ...; v_n)$ in $RR^n$ are *equal* if $u_i = v_i forall space i = 1, 2, ..., n.$ Denoted $accent(u, arrow) = accent(v, arrow)$ 
+We say that vectors $vec(w) = mat(u_1; u_2; ...; u_n)$ and $vec(v)=mat(v_1; v_2; ...; v_n)$ in $RR^n$ are *equal* if $u_i = v_i forall space i = 1, 2, ..., n.$ Denoted $vec(w) = vec(v)$ 
 ]
 
 #info[*Addition and Properties*\
 
-Let $accent(u, arrow) = mat(u_1; u_2; ...; u_n), accent(v, arrow) = mat(v_1; v_2; ...; v_n), accent(w, arrow) = mat(w_1; w_2; ...; w_n) in RR^n$. \
+Let $vec(w) = mat(u_1; u_2; ...; u_n), vec(v) = mat(v_1; v_2; ...; v_n), vec(w) = mat(w_1; w_2; ...; w_n) in RR^n$. \
 
-Then $accent(u, arrow)+accent(v, arrow) = mat(u_1; u_2; ...; u_n) + mat(v_1; v_2; ...; v_n) = mat(u_1+v_1; u_2+v_2; ...; u_n+v_n)$
+Then $vec(w)+vec(v) = mat(u_1; u_2; ...; u_n) + mat(v_1; v_2; ...; v_n) = mat(u_1+v_1; u_2+v_2; ...; u_n+v_n)$
 
-1. $accent(u, arrow)+accent(v, arrow) = accent(v, arrow) + accent(u, arrow)$
-2. $accent(u, arrow)+accent(v, arrow)+accent(w, arrow) = accent(u, arrow)+(accent(v, arrow)+accent(w, arrow))$
+1. $vec(w)+vec(v) = vec(v) + vec(w)$
+2. $vec(w)+vec(v)+vec(w) = vec(w)+(vec(v)+vec(w))$
 3. There is a zero *vector*, $accent(0, arrow)= [0 space 0 space 0 space ...  space 0]^T in RR^n$
-4. $accent(v, arrow) + accent(0, arrow) = accent(v, arrow)$
+4. $vec(v) + accent(0, arrow) = vec(v)$
 ]
 
 #info[*Additive Inverse*\
 
-Let $accent(u, arrow) = mat(u_1; u_2; ...; u_n), accent(v, arrow) = mat(v_1; v_2; ... ;v_n) in RR^n$. The additive inverse of $accent(u, arrow)$ denoted $-accent(u, arrow)$ is defined as $ -accent(u, arrow)=mat(-u_1; -u_2; ...; -u_n) $
+Let $vec(w) = mat(u_1; u_2; ...; u_n), vec(v) = mat(v_1; v_2; ... ;v_n) in RR^n$. The additive inverse of $vec(w)$ denoted $-vec(w)$ is defined as $ -vec(w)=mat(-u_1; -u_2; ...; -u_n) $
 
-$ accent(u, arrow) - accent(u, arrow) = accent(u, arrow) + (-accent(u, arrow)) = accent(0, arrow) $
+$ vec(w) - vec(w) = vec(w) + (-vec(w)) = accent(0, arrow) $
 
-$ accent(v, arrow)-accent(u, arrow) = accent(v, arrow) + (-accent(u, arrow)) = mat(v_1-u_1; v_2-u_2; ...; v_n-u_n) $
+$ vec(v)-vec(w) = vec(v) + (-vec(w)) = mat(v_1-u_1; v_2-u_2; ...; v_n-u_n) $
 ]
 
 #info[*Scalar Multiplication*\
 
-Let $accent(v, arrow) = mat(v_1; v_2; ... ;v_n), accent(u, arrow) in RR^n, c, d in RR.$ Then the scalar product $c accent(v, arrow) = mat(c v_1; c v_2; ...; c v_n) $
+Let $vec(v) = mat(v_1; v_2; ... ;v_n), vec(w) in RR^n, c, d in RR.$ Then the scalar product $c vec(v) = mat(c v_1; c v_2; ...; c v_n) $
 
-1. $(c+d) accent(v, arrow) = c accent(v, arrow) + d accent(v, arrow)$
-2. $c (accent(u, arrow) + accent(v, arrow)) = c accent(u, arrow) + c accent(v, arrow)$
-3. $0 accent(u, arrow) = accent(0, arrow)$
-4. If $c accent(v, arrow) = accent(0, arrow)$ then $c = 0 or accent(v, arrow) = 0$
+1. $(c+d) vec(v) = c vec(v) + d vec(v)$
+2. $c (vec(w) + vec(v)) = c vec(w) + c vec(v)$
+3. $0 vec(w) = accent(0, arrow)$
+4. If $c vec(v) = accent(0, arrow)$ then $c = 0 or vec(v) = 0$
 ]
 
 #info[*Standard Basis*\
@@ -61,7 +61,7 @@ In $RR^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 
 
 (i.e. $RR^3 "is" {accent(e_1, arrow), accent(e_2, arrow), accent(e_3, arrow)} = {mat(1; 0; 0), mat(0; 1; 0), mat(0; 0; 1)}$)
 
-If $accent(v, arrow) = mat(v_1; v_2; ...; v_n) = v_1 accent(e_1, arrow) + v_2 accent(e_2, arrow) + ... + v_n accent(e_n, arrow)$ then we call $v_1, v_2, ..., v_n$ the *components of* $accent(v, arrow)$
+If $vec(v) = mat(v_1; v_2; ...; v_n) = v_1 accent(e_1, arrow) + v_2 accent(e_2, arrow) + ... + v_n accent(e_n, arrow)$ then we call $v_1, v_2, ..., v_n$ the *components of* $vec(v)$
 ]
 
 
@@ -80,14 +80,78 @@ In $CC^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 
 
 #info[*Dot Product*\
 
-Let $accent(u, arrow) = mat(u_1; u_2; ...; u_n)$, $accent(v, arrow) = mat(v_1; v_2; ...; v_n)$, $accent(w, arrow) = mat(w_1; w_2; ...; w_n)$ be vectors in $RR^n$. We defined their *dot product* by 
+Let $vec(w) = mat(u_1; u_2; ...; u_n)$, $vec(v) = mat(v_1; v_2; ...; v_n)$, $vec(w) = mat(w_1; w_2; ...; w_n)$ be vectors in $RR^n$. We defined their *dot product* by 
 
-$ accent(u, arrow) dot accent(v, arrow) = u_1 v_1 + u_2 v_2 + ... + u_n v_n $
+$ vec(w) dot vec(v) = u_1 v_1 + u_2 v_2 + ... + u_n v_n $
 
-1. $accent(u, arrow) dot accent(v, arrow) = accent(v, arrow) dot accent(u, arrow)$
-2. $(accent(u, arrow) + accent(v, arrow)) dot accent(w, arrow) = accent(u, arrow) dot accent(w, arrow) + accent(v, arrow) dot accent(w, arrow)$
-3. $(c accent(u, arrow)) dot accent(v, arrow) = c (accent(u, arrow) dot accent(v, arrow))$
-4. $accent(u, arrow) dot accent(u, arrow) >= 0,$ with $accent(u, arrow) dot accent(u, arrow) = 0 <==> accent(u, arrow) = 0$
-5. The length of vector $accent(u, arrow) in RR^n "is" ||accent(u, arrow)|| = sqrt(accent(u, arrow) dot accent(u, arrow))$
-6. If $c in RR, accent(u, arrow) in RR^n$, then $||accent(u, arrow)|| = |c| ||accent(u, arrow)||$  
+1. $vec(w) dot vec(v) = vec(v) dot vec(w)$
+
+2. $(vec(w) + vec(v)) dot vec(w) = vec(w) dot vec(w) + vec(v) dot vec(w)$
+
+3. $(c vec(w)) dot vec(v) = c (vec(w) dot vec(v))$
+
+4. $vec(w) dot vec(w) >= 0,$ with $vec(w) dot vec(w) = 0 <==> vec(w) = 0$
+
+]
+
+#info[*Vector Unit Basics*
+
+Let $vec(v), vec(w) in RR^n$
+
+1. The *length* of vector $vec(w) "is" ||vec(w)|| = sqrt(vec(w) dot vec(w))$
+
+2. If $c in RR, vec(w) in RR^n$, then $||vec(w)|| = |c| ||vec(w)||$  
+
+3. $vec(v)$ is a *unit vector* if $||vec(v)|| = 1$ 
+
+4. *Normalization* is when some $vec(v)$ is a non-zero vector, $ accent(v, hat) = frac(vec(v) ,||vec(v)||) $ in the direction of $vec(v) $ by scaling $vec(v)$
+
+5. With $vec(v) , vec(v) $ non-zero vectors. The angle $theta, 0 <= theta<=pi$ between $vec(v)$ is such that $ vec(w) dot vec(v) =||vec(w)||||vec(v)|| cos theta "that is" theta = arccos((vec(w) dot vec(v)) / (||vec(w)||||vec(v)|| )) $
+
+6. $vec(w), vec(v)$ are *orthogonal/perpendicular* if $vec(w) dot vec(v) = 0$
+]
+
+== Projection
+
+#info[*Projection*\
+
+Let $vec(v), vec(w) in RR^n$ with $vec(w) !=0$. 
+
+1. The *projection* of $vec(v)$ onto $vec(w)$ is defined by $ proj_vec(w) (vec(v)) = frac(vec(v) dot vec(w), ||vec(w)||^2) vec(w) = frac(vec(v) dot vec(w), vec(w) dot vec(w)) vec(w) $
+
+ We also refer to this as the *projection of $vec(v)$ in the $vec(w)$ direction*
+
+ Illustration of $proj_vec(w) (vec(v))$:
+ #align(center)[#image("../../../pictures/lineara1.png")]
+
+
+2. We refer to the quantity $ ||vec(v)|| cos theta = vec(v) dot accent(w, hat) $ as the *component* (or scalar component) *of $vec(v)$ along $vec(w)$*
+
+3. The *perpendicular* of $vec(v)$ onto $vec(w)$ is defined by $"perp"_vec(w) (vec(v)) = vec(v) - proj_vec(w) (vec(v))$
+
+4. The projection and the perpendicular of a vector $vec(v)$ onto $vec(w)$ are orthogonal; that is $ "perp"_vec(w) (vec(v)) dot proj_vec(w) (vec(v)) = 0 $
+]
+
+== Standard Inner Product in $CC^n$
+
+#info[*Standard inner product*\
+
+Let $c in CC "and" vec(u), vec(v), vec(w) in CC^n$
+
+
+The *standard inner product* of $vec(v) = mat(v_1; v_2; ...; v_n), vec(w) = mat(w_1; w_2; ...; w_n)$ is $ ip(vec(v), vec(w)) = v_1 overline(w_1) + v_2 overline(w_2) + ... + v_n overline(w_n) $
+
+1. $ip(vec(u), vec(w)) = overline(ip(vec(v), vec(w)))$
+
+2. $ip(vec(u)+vec(v), vec(w)) = ip(vec(u), vec(w)) + ip(vec(v), vec(w))$
+
+3. $ip(c vec(u), vec(v)) = c ip(vec(u), vec(v))$
+
+4. $ip(vec(v), vec(v)) >= 0$, with $ip(vec(v), vec(v)) = 0$ if and only if $vec(v) = vec(0)$
+
+5. The length: $||vec(v)|| = sqrt(ip(vec(v), vec(v)))$
+
+6. $vec(w), vec(v)$ are *orthogonal/perpendicular* if $ip(vec(w), vec(v)) = 0$
+
+7. With $vec(w)!=0$. The *projection of $vec(v)$ onto $vec(w)$* is defined by $ proj_vec(w) (vec(v)) = frac(ip(vec(v), vec(w)), ||vec(w)||^2) = ip(vec(v), vec(w)) accent(w, hat) $
 ]

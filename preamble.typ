@@ -18,6 +18,8 @@
   #v(12pt)
 ]
 
+
+
 #let note-box(body) = box(
   fill: luma(98%),
   stroke: (paint: luma(70%), thickness: 0.7pt),
@@ -87,3 +89,8 @@
     ..rows.map(r => ([r.at(0)], [r.at(1)])),
   )
 ]
+
+#let vec(v) = $accent(#v, arrow)$
+#let op(name) = math.op(name)
+#let proj(w, v) = $"proj"_(#w)(#v)$
+#let ip(x, y) = $langle #x, #y rangle$
