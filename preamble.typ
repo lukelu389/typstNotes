@@ -92,5 +92,5 @@
 
 #let vec(v) = $accent(#v, arrow)$
 #let op(name) = math.op(name)
-#let proj(w, v) = $"proj"_(#w)(#v)$
-#let ip(x, y) = $langle #x, #y rangle$
+#let proj = $"proj"$
+#let ip(x, y) = $chevron.l #x, #y chevron.r$

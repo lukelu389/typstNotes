@@ -155,3 +155,32 @@ The *standard inner product* of $vec(v) = mat(v_1; v_2; ...; v_n), vec(w) = mat(
 
 7. With $vec(w)!=0$. The *projection of $vec(v)$ onto $vec(w)$* is defined by $ proj_vec(w) (vec(v)) = frac(ip(vec(v), vec(w)), ||vec(w)||^2) = ip(vec(v), vec(w)) accent(w, hat) $
 ]
+
+== The Cross Product in $RR^3$
+
+#info[*Cross Products*
+Let $vec(u) = mat(u_1; u_2; u_3), vec(v) = mat(v_1;v_2;v_3) in RR^3$. 
+
+The *cross product* of $vec(u), vec(v)$ is defined to be the vector in $RR^3$ given by $ vec(u) times vec(v) = mat(u_2 v_3 - u_3 v _2; -(u_1; v_3 - u_3 v_1); u_1 v_2 - u_2 v_1) $
+
+Let $vec(z) = vec(u) times vec(v)$
+
+1. $vec(z) dot vec(u) = vec(z) dot vec(v) = 0$
+
+2. $vec(v) times vec(u) = -vec(z) = - vec(u) times vec(v)$
+
+3. If $vec(u) != vec(0)$ and $vec(v) != vec(0)$, then $||vec(u) times vec(v)|| = ||vec(u)||||vec(v)|| sin theta$ where $theta$ is the angle between $vec(u)$ and $vec(v)$ 
+]
+
+#info[*Linearity of the Cross Product*
+
+Let $c in RR$ and $vec(u), vec(v), vec(w) in RR^3$, then 
+
+1. $(vec(u)+vec(v)) vec(w) = (vec(u) times vec(w)) + (vec(v) times vec(w))$
+
+2. $(c vec(u)) times vec(v) = c(vec(u) times vec(v))$
+
+3. $vec(u) times (vec(v) + vec(w)) = (vec(u) times vec(v)) + (vec(u) times vec(w))$
+
+4. $vec(u) times c(vec(v)) = c(vec(u) times vec(v))$
+]
