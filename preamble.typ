@@ -94,3 +94,8 @@
 #let op(name) = math.op(name)
 #let proj = $"proj"$
 #let ip(x, y) = $chevron.l #x, #y chevron.r$
+#let conf(doc) = {
+  set math.mat(delim: "[")
+  doc
+}
+

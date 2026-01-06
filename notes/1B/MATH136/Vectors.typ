@@ -1,40 +1,48 @@
 #import "../../../preamble.typ": *
+#show: conf
 
-#let Title = "CH 1 — Vectors"
+#let Title = "CH 1 — Vectors in Euclidean Space"
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-== Introduction
+== Vector Addition and Scalar Multiplication
 \
 #info[*Vector* \
 
-The set $RR^n$ is defined as ${accent(x, arrow) = mat(x_1; ...; x_n): x_1, ..., x_n in RR}$
+The set $RR^n$ is defined as ${accent(x, arrow) = mat(x_1; ...; x_n) |  x_1, ..., x_n in RR}$
 
-
+\
 A *vector* is an element $accent(x, arrow) = mat(x_1; ...; x_n)$ of $RR^n$
 
+\
 The row notation of $vec(v) = mat(v_1; v_2; ...; v_n)$ is $vec(v)=[v_1 space v_2 space v_3]^T$
 ]
-
-
-== Operations
 \
 #info[*Equality* \
 
-We say that vectors $vec(w) = mat(u_1; u_2; ...; u_n)$ and $vec(v)=mat(v_1; v_2; ...; v_n)$ in $RR^n$ are *equal* if $u_i = v_i forall space i = 1, 2, ..., n.$ Denoted $vec(w) = vec(v)$ 
+We say that vectors $vec(w) = mat(u_1; u_2; ...; u_n) in RR^m$ and $vec(v)=mat(v_1; v_2; ...; v_n)$ in $RR^n$ are *equal* 
+
+if $n = m "and" u_i = v_i forall space i = 1, 2, ..., n.$ 
+
+We denote it: $vec(w) = vec(v)$ 
 ]
 
 #info[*Addition and Properties*\
+\
 
 Let $vec(w) = mat(u_1; u_2; ...; u_n), vec(v) = mat(v_1; v_2; ...; v_n), vec(w) = mat(w_1; w_2; ...; w_n) in RR^n$. \
 
+\
+
 Then $vec(w)+vec(v) = mat(u_1; u_2; ...; u_n) + mat(v_1; v_2; ...; v_n) = mat(u_1+v_1; u_2+v_2; ...; u_n+v_n)$
+
 
 1. $vec(w)+vec(v) = vec(v) + vec(w)$
 2. $vec(w)+vec(v)+vec(w) = vec(w)+(vec(v)+vec(w))$
 3. There is a zero *vector*, $accent(0, arrow)= [0 space 0 space 0 space ...  space 0]^T in RR^n$
 4. $vec(v) + accent(0, arrow) = vec(v)$
 ]
+
 
 #info[*Additive Inverse*\
 
@@ -54,6 +62,23 @@ Let $vec(v) = mat(v_1; v_2; ... ;v_n), vec(w) in RR^n, c, d in RR.$ Then the sca
 3. $0 vec(w) = accent(0, arrow)$
 4. If $c vec(v) = accent(0, arrow)$ then $c = 0 or vec(v) = 0$
 ]
+
+#info[*Linear Combination*\
+
+For $vec(v_1), ..., vec(v_k) in RR^n$, and $c_1, ..., c_k in RR$ we call the expression $ c_1 vec(v_1) + c_2 vec(v_2) + ... + c_k vec(v_k) $ a *linear combination* of $vec(v_1), ..., vec(v_k)$.
+]
+
+Examples:\
+
+1. Let $vec(u) = mat(2; 7), vec(v) = mat(-1; 3)$ then $2 vec(u) - 3 vec(v) = mat(4; 14) -+mat(3; -9) = mat(7; 5)$
+
+2. Let $vec(u)= mat(1; 1), vec(v) = mat(2; 0)$. Is $vec(x) = mat(3; 2)$ a linear combination of $vec(u) "and" vec(v)$?
+
+  We set $vec(x) = c_1 vec(u) + c_2 vec(v)$ and try to solve for $c_1, c_2$
+
+  That is $mat(3; 2) = mat(c_1 + 2 c_2; c_1)$, we obtain $c_1 = 2, c_2 = 1/2$. So $vec(x)$ is a linear combination of $vec(u), vec(v)$
+
+== Bases
 
 #info[*Standard Basis*\
 
