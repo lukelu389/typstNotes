@@ -98,4 +98,3 @@
   set math.mat(delim: "[")
   doc
 }
-

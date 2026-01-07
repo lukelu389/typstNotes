@@ -41,6 +41,7 @@ Then $vec(w)+vec(v) = mat(u_1; u_2; ...; u_n) + mat(v_1; v_2; ...; v_n) = mat(u_
 2. $vec(w)+vec(v)+vec(w) = vec(w)+(vec(v)+vec(w))$
 3. There is a zero *vector*, $accent(0, arrow)= [0 space 0 space 0 space ...  space 0]^T in RR^n$
 4. $vec(v) + accent(0, arrow) = vec(v)$
+5. $vec(v) + (- vec(v)) = 0$
 ]
 
 
@@ -61,6 +62,7 @@ Let $vec(v) = mat(v_1; v_2; ... ;v_n), vec(w) in RR^n, c, d in RR.$ Then the sca
 2. $c (vec(w) + vec(v)) = c vec(w) + c vec(v)$
 3. $0 vec(w) = accent(0, arrow)$
 4. If $c vec(v) = accent(0, arrow)$ then $c = 0 or vec(v) = 0$
+5. $c(d vec(v)) = (c d) vec(v)$
 ]
 
 #info[*Linear Combination*\
@@ -80,6 +82,31 @@ Examples:\
 
 == Bases
 
+#info[*Span*\
+
+Let $cal(B) = {vec(v_1), ..., vec(v_k)}$ be a set of vectors in $RR^n$. We define the *span* of $cal(B)$ by $ "Span" cal(B) = {c_1 vec(v_1) + c_2 vec(v_2) + ... + c_k vec(v_k) | c_1, c_2, ... c_l in RR} $ We say that the set Span $cal(B)$ is spanned by $cal(B)$ adn that $cal(B)$ is a spanning set for Span $cal(B)$
+
+Span might not cover the entire plane if
+
+  - Vectors are linear dependent to each other
+  - One of them is $vec(0)$
+\
+Let $vec(v_1), ..., vec(v_k) in RR^n$. Some vector $vec(v_i), 1<=i<=k,$ can be written as a linear combination of $vec(v_1), ..., vec(v_(i-1)), ..., vec(v_k)$ if and only if $ "Span"{vec(v_1), ..., vec(v_k)} = "Span"{vec(v_1), ..., vec(v_(i-1)), ..., vec(v_k)}$ 
+]
+
+
+Example:
+
+Consider $vec(v_1) = mat(1;0), vec(v_2) = mat(0;1)$ 
+
+Describe Span $vec(v_1), vec(v_2)$ geometrically.
+
+$"Span" {vec(v_1), vec(v_2)} = "Span" {mat(1; 0), mat(0; 1)} = {c_1 mat(1; 0) + c_2 mat(1; 0) | c_1, c_2 in RR} = {mat(c_1; c_2) | c_1, c_2 in RR} = RR^2$  
+\
+\
+
+
+
 #info[*Standard Basis*\
 
 In $RR^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 1 with all other components 0. The set $Epsilon = {accent(e_1, arrow), accent(e_2, arrow), ..., accent(e_n, arrow)}$ is called the *standard basis for* $RR^n$
@@ -90,16 +117,7 @@ If $vec(v) = mat(v_1; v_2; ...; v_n) = v_1 accent(e_1, arrow) + v_2 accent(e_2, 
 ]
 
 
-== Vectors in $CC^n$
 
-#info[*Vectors in $CC^n$*\
-
-The set $CC^n$ is defined as ${accent(z, arrow) = mat(z_1; ...; z_n): z_1, ..., z_n in CC}$
-
-The *vector* is an element $accent(z, arrow) = mat(z_1; ...; z_n) "of" CC^n$
-
-In $CC^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 1 with all other components 0. The set ${accent(e_1, arrow), accent(e_2, arrow), ..., accent(e_n, arrow)}$ is called the *standard basis for* $CC^n$
-]
 
 == Dot Product
 
@@ -155,6 +173,17 @@ Let $vec(v), vec(w) in RR^n$ with $vec(w) !=0$.
 3. The *perpendicular* of $vec(v)$ onto $vec(w)$ is defined by $"perp"_vec(w) (vec(v)) = vec(v) - proj_vec(w) (vec(v))$
 
 4. The projection and the perpendicular of a vector $vec(v)$ onto $vec(w)$ are orthogonal; that is $ "perp"_vec(w) (vec(v)) dot proj_vec(w) (vec(v)) = 0 $
+]
+
+== Vectors in $CC^n$
+
+#info[*Vectors in $CC^n$*\
+
+The set $CC^n$ is defined as ${accent(z, arrow) = mat(z_1; ...; z_n): z_1, ..., z_n in CC}$
+
+The *vector* is an element $accent(z, arrow) = mat(z_1; ...; z_n) "of" CC^n$
+
+In $CC^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 1 with all other components 0. The set ${accent(e_1, arrow), accent(e_2, arrow), ..., accent(e_n, arrow)}$ is called the *standard basis for* $CC^n$
 ]
 
 == Standard Inner Product in $CC^n$
