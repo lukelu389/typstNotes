@@ -50,7 +50,7 @@ $f(x)$ defined on $x in [a, b]$ with regular partition with n subintervals
 The definite integral of $f(x)$ on $[a, b]$ is defined
 
 
-$ integral_a^b f(x) dif x = lim_(x->oo) sum_(i=1)^n f(x^*_i) Delta x $
+$ integral_a^b f(x) dif x = lim_(x->oo) sum_(i=1)^n f(x^*_i) Delta x  = lim_(n->oo) sum_(i=1)^n f(a+i Delta x) Delta x $
 
 A function is integrable on $x in [a, b]$ provided that the limit of Riemann Sum exists and has the same value regardless of the choice of $x^*_i$
 
@@ -72,7 +72,7 @@ Examples:
 
 2. $f(x) = cases(2 "if" x <= 3, 1 "if" x > 3)$, note that $f(x)$ is discontinuous
 
-3. $f(x)= cases(1 "if" x in QQ, 0 "if" x in.not QQ)$ on $[0, 1]$
+3. $f(x)= cases(1 "if" x in QQ, 0 "if" x in.not QQ) space$ on $[0, 1]$
  - $x^*_i$ is rational
 
   $integral_0^1 f(x) dif x = lim_(n->oo) sum_(i=1)^n f(x^*+i) Delta x = 1$ 
@@ -87,12 +87,13 @@ For geometric interpretation, Riemann Sums and Definite Integrals measures the "
 
 - A negative result of $w$ implies the area under the curve under $x$-axis is $w$
 
-#info[*Properties of Definite Integrals*\
-Let $f(x)$ be integrable on $[a, b]$
+#info[*Parity of Functions and Definite Integrals*\
+Let $f(x)$ be bounded and integrable on $[-a, a]$
 
-1. $integral_(-a)^a f(x) dif x = 0$ if $f(x)$ is odd function
+1. If $f(x)$ is odd function, then $ integral_(-a)^a f(x) dif x = 0 $ 
 
-2. $integral_(-a)^a f(x) dif x = 2 w$ where $integral_0^a f(x) dif x = w$ if $f(x)$ is even function
+2. If $f(x)$ is even function where $integral_0^a f(x) dif x = w$ $ integral_(-a)^a f(x) dif x = 2 w $ 
+
 ]
 
 Examples:
@@ -103,3 +104,37 @@ $= lim_(n->oo) sum_(i=1)^n (-frac(4 i, n^2)+frac(8 i^2, n^3)-4/n) = -10/3$
 
 2. $integral_0^5 x^3 - 2 dif x = lim_(n->oo) sum_(i=1)^n f(i 5/n) 5/n = lim_(n->oo) sum_(i=1)^n [(5/n)((i 5 /n)^3 - 2)] = 583/4$
 
+
+#info[*Basic Property of Definite Integral*\
+\
+
+Let $f(x), g(x)$ be integrable on $[a, b]$
+\
+
+1. For any $c in RR$, the function $c f(x)$ is integrable and $ integral_a^b c f(x) dif x = c integral_a^b f(x) dif x $ 
+
+2. The function $f + g$ is integrable and $ integral_a^b (f+g)(x) dif x = integral_a^b f(x) dif x + integral_a^b g(x) dif x $ 
+
+3. If $m, M in RR$ and $m <= f(x) <= M forall x in [a, b]$, then $ m(b-a)<= integral_a^b f(x) dif x <= M(b-a) $
+
+4. If $f(x)>=0 forall x$, then $ integral_a^b f(x) dif x >=0 $
+
+5. If $f(x) <= g(x) forall x in [a, b]$, then $ integral_a^b f(x) dif x <= integral_a^b g(x) dif x $
+
+6. The function $|f|$ is integrable on $[a, b]$ and $ abs(integral_a^b f(x) dif x)<= integral_a^b |f(x)| dif x $
+
+7. Bound fliping $ integral_a^b f(x) dif x = - integral _b^a f(x) dif x $
+
+8. $ integral_a^a f(x) dif x = 0 $ 
+
+]
+
+#info[*Separation of Domain of Definite Integral*\
+
+If $f(x)$ is also integrable on an interval containing $a, b, c$, then $ integral_a^b f(x) dif x = integral_a^c f(x) dif x + integral_c^b f(x) dif x $
+]
+#info[*Average Value of Function*\
+
+Let $f$ be a function that is continuous on an interval $[a, b]$ with $a<b$. The *average calue of $f$ on $[a, b]$* is defined as $ f_"avg" = frac(1, b-a) integral_a^b f(x) dif x $
+
+]

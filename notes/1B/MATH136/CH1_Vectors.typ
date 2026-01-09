@@ -91,8 +91,13 @@ Span might not cover the entire plane if
   - Vectors are linear dependent to each other
   - One of them is $vec(0)$
 \
+
+*Theorem*\
+
 Let $vec(v_1), ..., vec(v_k) in RR^n$. Some vector $vec(v_i), 1<=i<=k,$ can be written as a linear combination of $vec(v_1), ..., vec(v_(i-1)), ..., vec(v_k)$ if and only if $ "Span"{vec(v_1), ..., vec(v_k)} = "Span"{vec(v_1), ..., vec(v_(i-1)), ..., vec(v_k)}$ 
 ]
+
+#proof[]
 
 
 Example:
@@ -104,7 +109,65 @@ Describe Span $vec(v_1), vec(v_2)$ geometrically.
 $"Span" {vec(v_1), vec(v_2)} = "Span" {mat(1; 0), mat(0; 1)} = {c_1 mat(1; 0) + c_2 mat(1; 0) | c_1, c_2 in RR} = {mat(c_1; c_2) | c_1, c_2 in RR} = RR^2$  
 \
 \
+#info[*Linear Dependence/Independence*\
 
+A set of vectors ${vec(v_1), ..., vec(v_k)} in RR^n$ is said to be *linearly dependent* if there exist coefficients $c_1, ..., c_k$ not all zero such that $ vec(0) = c_1 vec(v_1) + ... + c_k vec(v_k) $
+
+A set of vectors ${vec(v_1), ..., vec(v_k)} in RR^n$ is said to be *linearly Independent* if the only solution to $c_1, ..., c_k$ not all zero such that $ vec(0) = c_1 vec(v_1) + ... + c_k vec(v_k) $ is $c_1 = c_2 = ... = c_k =0$ (called *trivial solution*)
+]
+
+Examples:
+
+1. Let $vec(u), vec(v) in RR^n$. Prove that ${vec(u), vec(v)}$ is linearly dependent $<==>$ at least one of $vec(u), vec(v)$ is a scalar multiple of the other.
+
+\
+\
+\
+
+  #proof[
+  Let $vec(u), vec(v) in RR^n$
+
+  1. Assume ${vec(u), vec(v)}$ is linearly dependent. Then $exists c_1, c_2 in RR$, not both zero s.t. $ c_1 vec(u) + c_2 vec(v) = vec(0) $
+   WLOG, assume $c_1 !=0$ Then, $c_1 vec(u) = - c_2 vec(v) ==> vec(u) = - c_2/c_2 vec(v)$. Thus $vec(u)$ is a scalar multiple of $vec(v)$
+
+  2. Assume WLOG $vec(u)$ is a scalar multiple of $vec(v)$. Then $exists a in RR$ s.t. $ vec(u) = a vec(v) ==> 1 vec(u)-a vec(v) = vec(0) $ Since $1!= 0, {vec(u), vec(v)}$ is linearly dependent.
+
+ #align(right)[$square$] 
+
+]
+
+2. Is the set ${mat(1; 2; 0), mat(1; -1; 1). mat(2; 1; 1)}$ linearly independent? 
+
+  \
+
+  Consider the equation $c_1 mat(1; 2; 0) + c_2 mat(1; -1; 1)+ c_3 mat(2; 1; 1) = mat(0; 0; 0)$
+  
+  Which gives $cases(c_1 + c_2 + 2c_3 = 0, 2 c_1 -c_2+c_3 = 0, c_2+c_3 = 0)$
+  \
+
+  $ ==> c_2 = c_1 = -c_3$\. Thus we get a solution for any $c_3$. Pick $c_3 = -1 ==> c_2 = c_1 = 1$.
+
+  Thus the set is linearly dependednt.
+
+
+#info[*Linear Dependence Theorem*\
+A set of vectors ${vec(v_1), ..., vec(v_k) in RR^n}$ is linearly dependent if and only if $ vec(v_i) in "Span" {vec(v_1), ..., vec(v)_(i-1), vec(v)_(i+1), ..., vec(v_k)} "for some" i, 1<=i<=k $
+]
+
+#info[*Zero Vector and Linear Dependence*\
+If a set of vectors ${vec(v_1), ..., vec(v_k)}$ contains the zero vecot, then it is linearly dependent.
+
+Proof: 
+
+Let $vec(v_i) = vec(0)$
+
+$ 0 vec(v_1) + ... + 0 vec(v)_(i-1) + vec(v)_i + 0 vec(v)_(i+1) + 0 vec(v_k) = vec(0) $
+
+#align(right)[$square$]
+]
+
+
+CUTOFF
 
 
 #info[*Standard Basis*\
@@ -115,8 +178,6 @@ In $RR^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 
 
 If $vec(v) = mat(v_1; v_2; ...; v_n) = v_1 accent(e_1, arrow) + v_2 accent(e_2, arrow) + ... + v_n accent(e_n, arrow)$ then we call $v_1, v_2, ..., v_n$ the *components of* $vec(v)$
 ]
-
-
 
 
 == Dot Product
