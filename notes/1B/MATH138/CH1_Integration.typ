@@ -1,4 +1,5 @@
 #import "../../../preamble.typ": *
+#import "@preview/diverential:0.2.0": *
 
 
 #let Title = "CH 1 — Integration"
@@ -137,4 +138,35 @@ If $f(x)$ is also integrable on an interval containing $a, b, c$, then $ integra
 
 Let $f$ be a function that is continuous on an interval $[a, b]$ with $a<b$. The *average calue of $f$ on $[a, b]$* is defined as $ f_"avg" = frac(1, b-a) integral_a^b f(x) dif x $
 
+]
+
+Examples:
+
+1. Determine the average value of $f(x)=1-x^2$ on [-1, 1]
+
+ $f_"avg" = 1/(1-(-1)) integral_(-1)^1 f(x) dif x = integral_(0)^1 f(x) dif x = lim_(x->oo) sum_(i=1)^n (1-(i/n)^2) /n$
+
+ $lim_(n->oo) 1/n sum_(i=1)^n 1- i^2/n^2 = lim_(n->oo)1/n (n-1/n^2(frac(n (n+1) (2n+1), 6))) = 1 - 1/3 = 2/3$
+
+2. Suppose that $f, g$ are integrable on $[-1, 1], integral_1^(-1) f(t) dif t = 5$, and $g$ is an evern function with $integral_0^1 g(t) dif t = 2$. 
+
+  $integral_(-1)^1 3f(x)-g(x) dif x = 3 integral_(-1)^1 f(x) dif x - integral_(-1)^1 g(x) dif x = -3 integral_1^(-1) f(x) dif x - 2 integral_0^1 g(x) dif x = -19$
+
+\
+#info[*Fundamental Theorem of Calculus (FTC - 1)*\
+
+Let $a in RR$. If $f$ is continuous on an open interval $I$ containing $a$, then the funciton $ G(x) = integral_a^x f(t) dif t $ is differentiable $forall x in I$ and $G'(x) = f(x)$. That is, $ dvs(integral_a^x f(t) dif t, x) = f(x) $
+]
+
+#proof[
+Given $x in I$, from the definition of the derivative, we have $ G'(x) &= lim_(h->oo) frac(G(x+h)-G(x), h) \
+&= lim_(h->0) frac(integral_a^(x+h) f(t) dif t - integral_a^x f(t) dif t, h) &= lim_(h->0) frac(integral_a^(x) f(t) dif t + integral_x^(x+h) f(t) dif t - integral_a^x f(t) dif t, h) &= lim_(h->0) 1/h integral_x^(x+h) f(t) dif t$.
+
+For all $h!=0$, sufficiently close to 0, and $h>0$ $f$ is continuous on $[x, x+h]$. 
+
+$forall h, exists c = c(h)$ in $[x, x+h]$ s.t. $ f(c(h)) = 1/h integral_x^(x+h) f(t) dif t $
+
+Since $x<=c(h)<= x+h$, by Squeeze Theorem, $lim_(h->0) c_h = x$, thus $ G'(x) = lim_(h->0) 1/h integral_x^(x+h) f(t) dif t = lim_(h->0) (c_h) = f(x) $
+
+#align(right)[$square$]
 ]

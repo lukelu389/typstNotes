@@ -94,7 +94,7 @@ Span might not cover the entire plane if
 
 *Theorem*\
 
-Let $vec(v_1), ..., vec(v_k) in RR^n$. Some vector $vec(v_i), 1<=i<=k,$ can be written as a linear combination of $vec(v_1), ..., vec(v_(i-1)), ..., vec(v_k)$ if and only if $ "Span"{vec(v_1), ..., vec(v_k)} = "Span"{vec(v_1), ..., vec(v_(i-1)), ..., vec(v_k)}$ 
+Let $vec(v_1), ..., vec(v_k) in RR^n$. Some vector $vec(v_i), 1<=i<=k,$ can be written as a linear combination of $vec(v_1), ..., vec(v)_(i-1), ..., vec(v_k)$ if and only if $ "Span"{vec(v_1), ..., vec(v_k)} = "Span"{vec(v_1), ..., vec(v)_(i-1), ..., vec(v_k)}$ 
 ]
 
 #proof[]
@@ -120,6 +120,7 @@ Examples:
 
 1. Let $vec(u), vec(v) in RR^n$. Prove that ${vec(u), vec(v)}$ is linearly dependent $<==>$ at least one of $vec(u), vec(v)$ is a scalar multiple of the other.
 
+\
 \
 \
 \
@@ -155,7 +156,7 @@ A set of vectors ${vec(v_1), ..., vec(v_k) in RR^n}$ is linearly dependent if an
 ]
 
 #info[*Zero Vector and Linear Dependence*\
-If a set of vectors ${vec(v_1), ..., vec(v_k)}$ contains the zero vecot, then it is linearly dependent.
+If a set of vectors ${vec(v_1), ..., vec(v_k)}$ contains the zero vector, then it is linearly dependent.
 
 Proof: 
 
@@ -170,14 +171,63 @@ $ 0 vec(v_1) + ... + 0 vec(v)_(i-1) + vec(v)_i + 0 vec(v)_(i+1) + 0 vec(v_k) = v
 CUTOFF
 
 
-#info[*Standard Basis*\
+#info[*Basis and Standard Basis*\
+
+*Basis*\
+
+Let $S$ be a subset of $RR^n$. If ${vec(v_1), ..., vec(v_k)}$ is a linearly independent set of vectors in $RR^n$ s.t. $S = "Span"{vec(v_1), ..., vec(v_k)}$, then the set ${vec(v_1), ..., vec(v_k)}$is called a *basis* for $S$. 
+
+We define a basis for the set ${vec(0)}$ to be the empty set
+
+*Standard Basis*
 
 In $RR^n$, let $accent(e_i, arrow)$ be the vector whose $i^("th")$ component is 1 with all other components 0. The set $Epsilon = {accent(e_1, arrow), accent(e_2, arrow), ..., accent(e_n, arrow)}$ is called the *standard basis for* $RR^n$
 
 (i.e. $RR^3 "is" {accent(e_1, arrow), accent(e_2, arrow), accent(e_3, arrow)} = {mat(1; 0; 0), mat(0; 1; 0), mat(0; 0; 1)}$)
 
 If $vec(v) = mat(v_1; v_2; ...; v_n) = v_1 accent(e_1, arrow) + v_2 accent(e_2, arrow) + ... + v_n accent(e_n, arrow)$ then we call $v_1, v_2, ..., v_n$ the *components of* $vec(v)$
+
 ]
+
+\
+Examples:
+
+Is $B$ is a basis for $RR^2$
+
+1. $B = {mat(1;0), mat(0; 1)}$. This set of vectors is linearly independent, thus is a standard basis for $RR^2$. 
+
+ That is $"Span"{mat(1; 0), mat(0; 1)} = {c_1 mat(1; 0) + c_2 mat(0; 1)| c_1, c_2 in RR} = {mat(c_1; c_2) | c_1, c_2, in RR} = RR^2$
+
+2. $B = {mat(1; 2), mat(3; 6)}$. Note that this set of vectors is linearly dependent as one is a scalar multiple of another, thus cannot be considered as a basis for $RR^2$
+
+3. $B= {mat(1; 2), mat(3; 4)}$ is linearly independent since neither scalar multiple of another. We need to prove:
+
+  - $"Span" B subset.eq RR^2$, which is obvious, since the vectors in $B$ are in $RR^2$ the linear combinatin of these will be $RR^2$
+  - $RR^2 subset.eq "Span" B$, consider an arbitrary $vec(x) in RR^2 = mat(x_1; x_2) = c_1 mat(1; 2) + c_2 mat(3; 4)$ that is $mat(x_1; x_2) = mat(c_1+3 c_2; 2c_1 4c_2)$. 
+  
+    We obtain $cases(c_1 + 3c_2 = x_1, 2c_1 - 4c_2 = x_2) ==> c_1 = x_1 - 3c_2 ==> 2(x_1-3c_2) + 4c_2 = x_2 ==> c_2 = -1/2x_2+x_1 ==>$
+
+    $c_1 = x-3(-1/2 x_2 + x_1 = -2x_1 + 3/2 x_2)$
+
+    Therefore $RR^2 subset.eq "Span"B$
+
+  That is $B$ is a standard basis for $RR^2$
+
+\
+\
+
+#info[*Theorem*\
+
+If $cal(B) = {vec(v_1), ..., vec(v_k)}$ is a basis for a subset $S$ of $RR^n$, then every vector $vec(x) in S$ can be written as a unique linear combination of the vectors in $cal(B)$
+]
+
+#proof[
+ Let $vec(x) in S$ and assume $exists c_1,..., c_k, d_1, ..., d_k in RR$ s.t. $ vec(x) = c_1 vec(v_1) + ... + c_k vec(v_k)$ and $vec(x) = d_1 vec(v_1) + ... + d_k vec(v_k)$.
+
+ Subtracting these two equations: $vec(0) = (c_1 - d_1) vec(v_1)+ ... + (c_k-d_k) vec(v_k)$, with ${vec(v_1), ..., vec(v_k)}$ is basis, thus linearly independent, so there is $(c_1-d_1) = ... = (c_k-d_k) = 0$, thus $vec(x)$ can be written as a uniue linear combination.
+ #align(right)[$square$]
+]
+
 
 
 == Dot Product
