@@ -27,7 +27,7 @@ if $n = m "and" u_i = v_i forall space i = 1, 2, ..., n.$
 We denote it: $vec(w) = vec(v)$ 
 ]
 
-#info[*Addition and Properties*\
+#info[*Addition Properties*\
 \
 
 Let $vec(w) = mat(u_1; u_2; ...; u_n), vec(v) = mat(v_1; v_2; ...; v_n), vec(w) = mat(w_1; w_2; ...; w_n) in RR^n$. \
@@ -39,8 +39,8 @@ Then $vec(w)+vec(v) = mat(u_1; u_2; ...; u_n) + mat(v_1; v_2; ...; v_n) = mat(u_
 
 1. $vec(w)+vec(v) = vec(v) + vec(w)$
 2. $vec(w)+vec(v)+vec(w) = vec(w)+(vec(v)+vec(w))$
-3. There is a zero *vector*, $accent(0, arrow)= [0 space 0 space 0 space ...  space 0]^T in RR^n$
-4. $vec(v) + accent(0, arrow) = vec(v)$
+3. There is a zero *vector*, $vec(0)= [0 space 0 space 0 space ...  space 0]^T in RR^n$
+4. $vec(v) + vec(0) = vec(v)$
 5. $vec(v) + (- vec(v)) = 0$
 ]
 
@@ -168,9 +168,6 @@ $ 0 vec(v_1) + ... + 0 vec(v)_(i-1) + vec(v)_i + 0 vec(v)_(i+1) + 0 vec(v_k) = v
 ]
 
 
-CUTOFF
-
-
 #info[*Basis and Standard Basis*\
 
 *Basis*\
@@ -226,6 +223,93 @@ If $cal(B) = {vec(v_1), ..., vec(v_k)}$ is a basis for a subset $S$ of $RR^n$, t
 
  Subtracting these two equations: $vec(0) = (c_1 - d_1) vec(v_1)+ ... + (c_k-d_k) vec(v_k)$, with ${vec(v_1), ..., vec(v_k)}$ is basis, thus linearly independent, so there is $(c_1-d_1) = ... = (c_k-d_k) = 0$, thus $vec(x)$ can be written as a uniue linear combination.
  #align(right)[$square$]
+]
+== Subspace 
+
+#info[*Definition*\
+A subset $SS$ of $RR^n$ is called a *subspace* of $RR^n$ if for every $vec(x), vec(y), vec(w) in SS$  and $c, d in RR$ we have 
+
+1. $vec(x) + vec(y) in SS$
+
+2. $(vec(x)+vec(y)) + vec(w)= vec(x)+(vec(y)+vec(w))$
+
+3. $vec(x)+vec(y) = vec(y)+vec(x)$
+
+4. $exists vec(0) in SS$ s.t. $vec(x) + vec(0) = vec(x) space forall vec(x) in SS$
+
+5. For every $vec(x)in SS, exists (-vec(x) in SS)$ s.t. $vec(x)+(-vec(x))=vec(0)$
+
+6. $c vec(x) in SS$
+
+7. $c (d vec(x)) = (c d) vec(x)$
+
+8. $(c+d) vec(x) = c vec(x) + d vec(x)$
+
+9. $c (vec(x)+vec(y)) = c vec(x) + c vec(y)$
+
+10. $1 vec(x) = vec(x)$
+]
+
+#info[*Subspace Test*\
+Let $SS$ be a *non-empty* subset of $RR^n$. If $vec(x)+vec(y) in SS$ and $c vec(x) in SS space forall vec(x), vec(y) in SS$ and $c in RR$, then $SS$ is a subspace of $RR^n$
+
+Be aware that $vec(0) in SS$
+]
+Examples:
+
+1. Let $vec(u), vec(w) in RR^n$ and let $SS = "Span"{vec(u), vec(w)}$. Is $SS$ a subspace of $RR^n$?
+  #proof[
+  - Note that $vec(0) in SS$ since $vec(0) = 0 vec(u) + 0 vec(w) space forall vec(u), vec(w) in RR^n$.
+
+  - Let $vec(x), vec(y) in SS, exists c_1, c_2, d_1, d_2 in RR $ s.t. $vec(x) = c_1 vec(u) + c_2vec(w), vec(y)= d_1 vec(u) + d_2 vec(w)$. 
+    Then $vec(x) + vec(y) = c_1 vec(u) + c_2 vec(w)+ d_1 vec(u) + d_2 vec(w) = (c_1 + d_1) vec(u) + (c_2+d_2) vec(w)$. 
+    
+    Therefore $vec(x) + vec(y) in SS$
+
+  - Let $c in RR$, then $c vec(x)= c (c_1 vec(u))+ (c_2 vec(w)) = (c c_1) vec(u) + (c c_2) vec(u) in SS$
+
+  By Subspace Test, $SS in RR^n$
+  #align(right)[$square$]
+  
+  ]
+
+\
+2. Let $SS = {vec(x) in RR^2 | vec(x)= r mat(1; 2) + mat(3; 4), r in RR}$. Is $SS$ a subsapce of $RR^2$?
+
+  False
+
+  #proof[
+
+   For contradiction, assume $vec(0) in SS$, then $vec(0) = r mat(1; 2) + mat(3; 4)$
+
+   That is $cases(r + 3 = 0, 2 r+ 4 = 0) ==> r = -3 and r = -2==>$ contradiction. Since $-3 != -2$, therefore $vec(0) in.not SS$
+
+   Hence $SS$ is not a subspace of $RR^2$]
+
+   #align(right)[$square$]
+   
+
+3. Let $SS = {mat(x_1; x_2; x_3) in RR^3 | x_1+2 x_2 = 0}.$ Is $SS$ a  subspace of $RR^3$?
+
+  True
+  
+  #proof[
+
+    - Note that $vec(0) = mat(0; 0; 0) "and" 0 + 2(0) = 0$, so $vec(0) in SS$
+
+    - Let $vec(x)=mat(x_1; x_2; x_3), vec(y) = mat(y_1; y_2; y_3) in SS, c in RR$, then $x_1 + 2 x_2 = 0$ and $y_1 + 2 y_2 = 0$. 
+     Then $vec(x)+vec(y) = mat(x_1+y_1; x_2+y_2; x_3+y_3)$ and $vec(x_1)+vec(y_1) + 2 (vec(x_1)+vec(y_1)) = vec(x_1) + vec(2x_2) + vec(y_1) + vec(2 y_2) = 0 ==> vec(x) + vec(y) in SS $
+
+
+    - $c vec(x) = mat(c x_1; c x_2; c x_3) ==> c (x_1 + 2x_2) = c dot 0 = 0 ==> c vec(x) in SS$
+
+  By Subspace Test, $SS in RR^3$ #align(right)[$square$]]
+
+#info[*Theorem* 
+
+If $vec(v_1), ..., vec(v_k) in RR^n, "then" SS = "Span"{vec(v_1), ..., vec(v_k)}$ is a subspace of $RR^n$
+
+Note that the converse is also true. The proof will be given in CH5
 ]
 
 

@@ -156,6 +156,13 @@ Examples:
 #info[*Fundamental Theorem of Calculus (FTC - 1)*\
 
 Let $a in RR$. If $f$ is continuous on an open interval $I$ containing $a$, then the funciton $ G(x) = integral_a^x f(t) dif t $ is differentiable $forall x in I$ and $G'(x) = f(x)$. That is, $ dvs(integral_a^x f(t) dif t, x) = f(x) $
+
+*General Extended FTC 1*\
+
+
+Let $f$ be continuous, $g, h$ be differentiable
+
+$ dvs(integral_g(x)^h(x) f(t) dif t, x) = f'(h(x))h'(x) - f'(g(x))g'(x) $
 ]
 
 #proof[
@@ -170,3 +177,77 @@ Since $x<=c(h)<= x+h$, by Squeeze Theorem, $lim_(h->0) c_h = x$, thus $ G'(x) = 
 
 #align(right)[$square$]
 ]
+
+Examples
+
+1. $G(x) = integral_0^x frac(1, 1+t^2) dif t$
+
+  Since $f(t) = frac(1, 1+t^2)$ is continuous on $RR$, by FTC 1
+
+  $G'(x) = dvs(integral_0^x frac(1, 1+t^2) dif t, x) = frac(1, 1+t^2)$
+
+2. $H(x) = integral_2^(e^x) cos(t^2) dif t$
+
+  Since $f(t) = cos(t^2)$ is continuous on $RR$, by FTC 1
+
+  $H'(u) = dvs(integral_2^(u) cos(t^2) dif t, u) dot dv(u, x) =  dv(u, x) cos(u^2) =^(u = e^x) e^x cos(e^(2x))$
+
+3. Assume $f$ is continuous and $g, h$ differentiable
+
+  $G(x) = f_g(x)^h(x)f(t) dif t = integral_g(x)^0 f(t) dif t + integral_0^h(x)f(t) dif t = -integral_0^g(x) f(t) dif t + integral_0^h(x)f(t) dif t$
+
+  $G'(x) = -dvs(integral_0^g(x) f(t) dif t, x) + dvs(integral_0^h(x)f(t) dif t, x) =^("by FTC 1") -f'(g(x))g'(x) + f'(h(x))h'(x)$
+#info[*Fundamental Theorem of Calculus (FTC - 2)*\
+
+If $f, F$ are continuous on $[a, b]$ and $F'(x) = f(x) space forall x in (a, b)$, then $ integral_a^b f(x)dif x = F(b) - F(a) $
+]
+
+#proof[
+  Let $F$ be any antiderivative of $f$. Then $F(x)$ and the antiderivative $G(x) = f_a^x f(t) dif t$ have the relation that $G(x) = F(x) + C$
+
+  $ integral_a^b f(x) dif x &= integral_a^b f(t) dif t - integral_a^a f(t)dif t \
+  &= G(b) - G(a) \
+  &= [F(b)+C] - [F(a)+C] \
+  &= F(b) - F(a) $
+
+#align(right)[$square$]
+]
+
+Example 
+
+If $H(x) = integral_5^x x^2 dif x$, $integral_1^2 = H(2) - H(1) = integral_5^2 x^2dif x - integral_5^1 x^2 dif x = integral_1^2 x^2 dif x$
+
+#info[*Basic Integraion Rules*\
+
+$ integral x^r dif x= x^(r+1)/(r+1) + C space forall r !=-1 $
+
+$ integral x^-1 dif x= ln|x| + C $
+
+$ integral sin x dif x = -cos x + C $
+
+$ integral cos x dif x = sin x + C $
+
+$ integral sec^2 x dif x = tan x + C $
+
+$ integral -csc^2 x dif x = cot x + C $
+
+$ integral sec x tan x dif x= sec x + C $ 
+
+$ integral csc x cot x dif x= - csc x + C $
+
+$ integral e^x dif x = e^x + C $
+
+$ integral -1/sqrt(1-x^2) dif x= arccos x + C $
+
+$ integral 1/sqrt(1-x^2) dif x= arcsin x + C $
+
+$ integral 1/1+x^2 dif x= arctan x + C $
+
+$ integral a^x dif x= a^x / (ln a) + C $
+]
+
+Examples:
+
+1. $integral e^(5x) dif x = e^(5x) / 5 + C$
+
+2. $integral frac(t, t+1) dif t = integral 1 - 1/ (t+1)dif t = t -ln|t+1|+C$
