@@ -98,3 +98,14 @@
   set math.mat(delim: "[")
   doc
 }
+
+#let eval(body, lower, upper: none, size: 2%) = {
+  let content = if size == auto { body } else {
+    box(height: size, width: 0pt) + body
+  }
+  if upper == none {
+    $ lr(#content |)_#lower $
+  } else {
+    $ lr(#content |)_#lower^#upper $
+  }
+}

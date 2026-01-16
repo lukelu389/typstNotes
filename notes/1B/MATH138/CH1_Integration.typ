@@ -1,6 +1,6 @@
 #import "../../../preamble.typ": *
 #import "@preview/diverential:0.2.0": *
-
+#let strut(h) = box(height: h, width: 0pt)
 
 #let Title = "CH 1 — Integration"
 #set-title(Title)
@@ -241,7 +241,7 @@ $ integral -1/sqrt(1-x^2) dif x= arccos x + C $
 
 $ integral 1/sqrt(1-x^2) dif x= arcsin x + C $
 
-$ integral 1/1+x^2 dif x= arctan x + C $
+$ integral 1/(1+x^2) dif x= arctan x + C $
 
 $ integral a^x dif x= a^x / (ln a) + C $
 ]
@@ -251,3 +251,54 @@ Examples:
 1. $integral e^(5x) dif x = e^(5x) / 5 + C$
 
 2. $integral frac(t, t+1) dif t = integral 1 - 1/ (t+1)dif t = t -ln|t+1|+C$
+
+Examples:
+
+1. $ integral_0^4 2x^2 - x dif x = eval(2/3 x^3 - x^2/2, 0, upper:4) = 2/3(4)^2 - 4^3/2 - 0 = 128/3 - 8 = 104/3 $
+
+2. $ integral_1^3 frac(x+|x-2|, x) dif x &= integral_1^2 frac(2, x) dif x + integral_2^3 frac(2x-2, x) dif x \
+  &=  eval(2 ln|x|, 1, upper:2) + integral_2^3 2-2/x dif x \
+  &= 2 ln 2 + eval( 2x - 2 ln|x|, 2, upper:3) \
+  &= 2 ln 2 + 6 - 2ln 3 - 4 + 2 ln 2 \
+  &= 4ln 2 + 2 - 2 ln 3 $
+
+
+== Substitution Rule / U-Substitution
+
+#info[*U-Substitution*\
+
+Let $f, g$ be functions s.t. $g'(x)$ is continuous on $a, b]$ and $f$ is continuous on range of $g$
+
+$ integral f(g(x))g(x) dif x = integral f(u) dif u $
+
+]
+
+Example:
+
+1. $integral 2x sqrt(1+x^2) dif x $
+
+  Let $u = 1+x^2 ==>dif u = 2x dif x ==> dif x = frac(dif u, 2x) $ \
+
+  $ ==>^(u=1+x^2) integral u^(1/2) dif u = eval(2/3 u^(3/2), u=1+x^2)+C = 2/3(1+x^2)^(3/2) + C$
+
+
+2. $integral x^2 e^x^3 dif x $\
+
+  Let $u =x^3 ==> dif u = 3x^2 dif x ==> dif x = frac(dif u, 3x^2)$
+
+  $==>^(u=x^3) integral 1/3 e^u dif u = eval(1/3 e^u, u=x^3) + C= 1/3e^x^3 + C$
+
+3. $integral frac(cos(ln x), x) dif x $
+
+  Let $u = ln x ==> dif u = 1/x dif x ==> dif x = x dif u$
+
+  $==>^(u=ln x) integral cos u dif u = eval(sin u, u=ln x)+ C = sin (ln x) + C$
+
+4. $integral frac(x, 3 root(3,x+2)) dif x$
+
+  Let $u = x+2==>dif u = dif x $
+
+  $==>^(u = x+2) integral frac(u-2, root(3, u)) dif$
+== Integration by Parts 
+
+

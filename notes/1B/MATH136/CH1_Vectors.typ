@@ -312,15 +312,34 @@ If $vec(v_1), ..., vec(v_k) in RR^n, "then" SS = "Span"{vec(v_1), ..., vec(v_k)}
 Note that the converse is also true. The proof will be given in CH5
 ]
 
+Example:
+
+Find $SS = {mat(a; b; c; d) | a-b+c=c} $
+
+1. An arbitrary element $vec(x) in SS$ has form
+
+ $vec(x) = mat(a; b; c; d) = mat(a; b; c; a-b+c) = mat(a; 0; 0; a) + mat(0; b; 0; -b) + mat(0; 0; c; c)  
+ = a mat(1; 0; 0; 1) + b mat(0; 1; 0; -1) + c mat(0; 0; 1; 1)$
+
+ Therefore $SS = "Span" B "where" B = {mat(1; 0; 0; 1), mat(0; 1; 0; -1), mat(0; 0; 1; 1)}$
+
+2. We set $c_1 mat(1; 0; 0; 1) + c_2 mat(0; 1; 0; -1) + c_3 mat(0; 0; 1; 1)= mat(0; 0; 0; 0)$
+
+  $==> c_1 = c_2 = c_3 = 0$
+
+  Thus $B$ is linearly independent
+
+Therefore $B$ is a basis for $SS$, that is dim$(B)$ =3 (since there are 3 vectors)
+
 
 
 == Dot Product
 
 #info[*Dot Product*\
 
-Let $vec(w) = mat(u_1; u_2; ...; u_n)$, $vec(v) = mat(v_1; v_2; ...; v_n)$, $vec(w) = mat(w_1; w_2; ...; w_n)$ be vectors in $RR^n$. We defined their *dot product* by 
+Let $vec(u) = mat(u_1; u_2; ...; u_n)$, $vec(v) = mat(v_1; v_2; ...; v_n)$, $vec(w) = mat(w_1; w_2; ...; w_n)$ be vectors in $RR^n$. We defined their *dot product* by 
 
-$ vec(w) dot vec(v) = u_1 v_1 + u_2 v_2 + ... + u_n v_n $
+$ vec(u) dot vec(v) = u_1 v_1 + u_2 v_2 + ... + u_n v_n = sum_(i=1)^n u_i v_i $
 
 1. $vec(w) dot vec(v) = vec(v) dot vec(w)$
 
@@ -332,23 +351,48 @@ $ vec(w) dot vec(v) = u_1 v_1 + u_2 v_2 + ... + u_n v_n $
 
 ]
 
-#info[*Vector Unit Basics*
+Example:
+
+Let $vec(x) = mat(1; 2; 3; 4), y = mat(-1; 0; 1; 2), "then the dot product" vec(x) dot vec(y) = (1)(-1) + (2)(0) + (3)(1) + (4)(2)= 10$
+
+#info[*Norms*
 
 Let $vec(v), vec(w) in RR^n$
 
-1. The *length* of vector $vec(w) "is" ||vec(w)|| = sqrt(vec(w) dot vec(w))$
+1. The *length* of vector $vec(w) "is" ||vec(w)|| = sqrt(vec(w) dot vec(w)) = sqrt(w_1^2 + ... + w_n^2)$
 
 2. If $c in RR, vec(w) in RR^n$, then $||vec(w)|| = |c| ||vec(w)||$  
 
 3. $vec(v)$ is a *unit vector* if $||vec(v)|| = 1$ 
 
-4. *Normalization* is when some $vec(v)$ is a non-zero vector, $ accent(v, hat) = frac(vec(v) ,||vec(v)||) $ in the direction of $vec(v) $ by scaling $vec(v)$
 
-5. With $vec(v) , vec(v) $ non-zero vectors. The angle $theta, 0 <= theta<=pi$ between $vec(v)$ is such that $ vec(w) dot vec(v) =||vec(w)||||vec(v)|| cos theta "that is" theta = arccos((vec(w) dot vec(v)) / (||vec(w)||||vec(v)|| )) $
+4. Properties of norm
+  1. $||vec(v)|| >=0$ and $||vec(v)|| = 0 <==> vec(v) = 0$
 
-6. $vec(w), vec(v)$ are *orthogonal/perpendicular* if $vec(w) dot vec(v) = 0$
+  2. $||c vec(v)|| = |c| ||vec(v)||$
+
+  3. $|vec(v) dot vec(w)| <= ||vec(v)||||vec(w)||$
+
+  4. $||vec(v)+vec(w)|| <= ||vec(v)|| + ||vec(w)||$
 ]
 
+Examples:
+
+1. Let $vec(x) = mat(1; 2; 3; 4), "then" ||vec(x)|| = sqrt(1^2+2^2+3^2+4^2) = sqrt(30)$
+\
+
+2. Let $vec(e_i) = mat(0; 0; ...; 0; 1; 0; ...; 0), "then" ||e_i|| = 1$
+
+  This is an unit vector since all standard basis vectors are unit vectors
+
+#info[*Orthogonality/Angle*\
+
+1. *Normalization* is when some $vec(v)$ is a non-zero vector, $ accent(v, hat) = frac(vec(v) ,||vec(v)||) $ in the direction of $vec(v) $ by scaling $vec(v)$
+
+2. With $vec(v) , vec(v) $ non-zero vectors. The angle $theta, 0 <= theta<=pi$ between $vec(v)$ is such that $ vec(w) dot vec(v) &=||vec(w)||||vec(v)|| cos theta, \ theta &= arccos((vec(w) dot vec(v)) / (||vec(w)||||vec(v)|| )) $
+
+3. $vec(w), vec(v)$ are *orthogonal/perpendicular* if $vec(w) dot vec(v) = 0$
+]
 == Projection
 
 #info[*Projection*\
