@@ -1,5 +1,6 @@
 #import "../../../preamble.typ": *
 #let Title = "CH 2- Supply and Demand"
+#import "@preview/diverential:0.2.0": *
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
@@ -79,7 +80,57 @@ $-->$ coefficient of price in the $q_s$ function will always positive
 $-->$ supply curve will always be upward sloping
 ]
 
-#image("../../../pictures/econ1_ch2_3.png")
+#image("../../../pictures/econ1_ch2_3.png", width:8cm)
+
+#info[*Equilibrium*\
+
+The intersection of the 2 curves is the Equilibrium which is a state where no agents could become better off by changing their action. (\~Nash Equilibrium in Game Theory)
+]
+
+#info[*Surplus & Efficiency*
+- Consumer Surplus
+ - A measure of "happiness" of consumer
+
+ - Difference between a consumer would have paid and what they end up paying.
+
+ - Graphically, CS can be found in the Supply-Demand graph above the vertical line of the Price of Equilibrium and below the Demand curve. $integral_0^50 x - 50 dif x$ graphically speaking.
+
+- Firm Surplus(Producer Supply)
+
+ - A measure of "happiness" of firm
+
+ - Difference between a firm would have sold for and what they ended up selling.
+
+ - Graphically, FS can be found in the Supply-Demand graph below the veritcal line of the Price of Equilibrium and above the Supply curve. $integral_0^50 50 - x dif x$ graphically speaking.
 
 
+To the right of the Equilibrium are people that are not participating in the market.
+]
 
+Assume that we have a quota on goods for $q_"quota" = 60$
+\
+\
+\
+
+Is this quota efficient?: Inefficient
+
+  - Maximizing total Surplus
+
+  - Tota Surplus $=$ Consumer Surplus + Producer Surplus + Government 
+
+#image("../../../pictures/econ1_ch2_5.png", width:8cm)
+Red: Consumer Surplus \
+Green: Producer Surplus\
+Orange: Deadweight loss\
+Purple: Compensated loss
+
+Assume that we have a quota on goods for $q_"quota" = 40$
+What about a negative quota?: Inefficient
+
+Loss on efficiency $==>$ Deadweight loss which comes from both consumer surplus and producer surplus
+
+#image("../../../pictures/econ1_ch2_4.png", width:8cm)
+
+Red: Consumer Surplus \
+Green: Producer Surplus\
+Purple: Deadweight loss

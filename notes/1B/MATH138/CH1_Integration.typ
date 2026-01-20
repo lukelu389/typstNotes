@@ -269,7 +269,7 @@ Examples:
 
 Let $f, g$ be functions s.t. $g'(x)$ is continuous on $a, b]$ and $f$ is continuous on range of $g$
 
-$ integral f(g(x))g(x) dif x = integral f(u) dif u $
+$ integral f(g(x))g(x) dif x = eval(integral f(u) dif u, u=g(x)) $
 
 ]
 
@@ -277,28 +277,64 @@ Example:
 
 1. $integral 2x sqrt(1+x^2) dif x $
 
-  Let $u = 1+x^2 ==>dif u = 2x dif x ==> dif x = frac(dif u, 2x) $ \
-
-  $ ==>^(u=1+x^2) integral u^(1/2) dif u = eval(2/3 u^(3/2), u=1+x^2)+C = 2/3(1+x^2)^(3/2) + C$
+  Let $u = 1+x^2 ==>dif u = 2x dif x ==> dif x = frac(dif u, 2x) ==>^(u=1+x^2) integral u^(1/2) dif u = 2/3 u^(3/2) ==>^(u=1+x^2)+C $
+  
+  $=2/3(1+x^2)^(3/2) + C$
 
 
 2. $integral x^2 e^x^3 dif x $\
 
-  Let $u =x^3 ==> dif u = 3x^2 dif x ==> dif x = frac(dif u, 3x^2)$
-
-  $==>^(u=x^3) integral 1/3 e^u dif u = eval(1/3 e^u, u=x^3) + C= 1/3e^x^3 + C$
+  Let $u =x^3 ==> dif u = 3x^2 dif x ==> dif x = frac(dif u, 3x^2) ==>^(u=x^3) integral 1/3 e^u dif u = 1/3 e^u ==>^(u=x^3) + C= 1/3e^x^3 + C$
 
 3. $integral frac(cos(ln x), x) dif x $
 
-  Let $u = ln x ==> dif u = 1/x dif x ==> dif x = x dif u$
-
-  $==>^(u=ln x) integral cos u dif u = eval(sin u, u=ln x)+ C = sin (ln x) + C$
+  Let $u = ln x ==> dif u = 1/x dif x ==> dif x = x dif u ==>^(u=ln x) integral cos u dif u = sin u ==>^(u=ln x)+ C = sin (ln x) + C$
 
 4. $integral frac(x, 3 root(3,x+2)) dif x$
 
   Let $u = x+2==>dif u = dif x $
 
-  $==>^(u = x+2) integral frac(u-2, root(3, u)) dif$
-== Integration by Parts 
+  $==>^(u = x+2) integral frac(u-2, root(3, u)) dif u = integral u^(2/3) dif u - 2 integral u^(-1/3) dif u = 3/5 u^(5/3) + 3 u^(2/3) ==>^(u=x+2) + C= (x+2)^(5/3) + 3 (x+2)^(2/3) + C$
+
+5. $integral_0^(pi/2) frac(cos x, 1 + sin x) dif x$
+
+  Let $u = 1 + sin x ==> dif u = cos x dif x ==> dif x = frac(dif u, cos x) ==>integral_1^2 1/u dif u = eval(ln u, 1, upper:2) = ln 2 $
+
+6. $integral_(0)^(pi/3) tan x dif x = integral_0^(pi/3) frac(sin x, cos x) dif x$
+
+  Let $u = cos x ==> dif u = - sin x dif x ==> integral_1^(1/3) -1/u dif u = eval(ln u, 1/3, upper:1)=- ln 1/3$
 
 
+#info[*$f(a x)$*\
+Let $a in RR, a!=0$ If $integral f(x) dif x = F(x) + C$, then $ integral f(a x) dif x = 1/a F(a x) + C $
+]
+
+== Trigonometry Substitution
+\
+#info[*Trig-Sub*\
+#align(center)[#image("../../../pictures/cal2ch1_1.png")]
+]
+
+#tip[*Half-Angle*\
+$ cos^2 x = (1+cos(2x))/2 $
+
+$ sin^2 x = (1+sin(2x))/2 $
+]
+
+Example:
+
+1. $integral_0^1 sqrt(1-x^2) dif x$
+
+  Let $u = arcsin x ==> x = sin u, forall u in [-pi/2, pi/2] ==> dif x = cos u dif u ==> $
+  
+  $integral_0^(pi/2) sqrt(1-sin^2 u) cos u dif u = integral_0^(pi/2) cos^2 u dif u = integral_0^(pi/2) 1/2 (1+cos(2 u)) dif u eval(1/2(u+sin(2u)), 0, upper:pi/2) = pi/4$
+
+2. $integral sqrt(1-x^2) dif x$
+
+  Let $u = arcsin x ==> x = sin u, forall u in [-pi/2, pi/2] ==> dif x = cos u dif u ==> $
+
+ $integral sqrt(1-sin^2 u) cos u dif u = integral cos^2 u dif u = integral frac(1+cos 2x, 2) dif u ==>^(u = arcsin x) 1/2(arcsin x + sqrt(1-x^2))) + C$
+
+3. $integral frac(1, sqrt(x^2+9))$
+
+  Let $x = 3 tan theta ==> dif x = 3 sec^2 theta dif theta ==> integral frac(1, sqrt(9tan^theta + 9)) 3 sec^2 theta dif theta$

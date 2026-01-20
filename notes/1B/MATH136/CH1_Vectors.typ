@@ -384,15 +384,85 @@ Examples:
 2. Let $vec(e_i) = mat(0; 0; ...; 0; 1; 0; ...; 0), "then" ||e_i|| = 1$
 
   This is an unit vector since all standard basis vectors are unit vectors
-
+\
 #info[*Orthogonality/Angle*\
 
 1. *Normalization* is when some $vec(v)$ is a non-zero vector, $ accent(v, hat) = frac(vec(v) ,||vec(v)||) $ in the direction of $vec(v) $ by scaling $vec(v)$
 
-2. With $vec(v) , vec(v) $ non-zero vectors. The angle $theta, 0 <= theta<=pi$ between $vec(v)$ is such that $ vec(w) dot vec(v) &=||vec(w)||||vec(v)|| cos theta, \ theta &= arccos((vec(w) dot vec(v)) / (||vec(w)||||vec(v)|| )) $
+2. With $vec(v) , vec(w) $ non-zero vectors. The angle $theta, 0 <= theta<=pi$ between $vec(v)$ is such that $ vec(w) dot vec(v) &=||vec(w)||||vec(v)|| cos theta, \ theta &= arccos((vec(w) dot vec(v)) / (||vec(w)||||vec(v)|| )) $
 
-3. $vec(w), vec(v)$ are *orthogonal/perpendicular* if $vec(w) dot vec(v) = 0$
+3. $vec(w), vec(v) in RR^n$ are *orthogonal/perpendicular* if $vec(w) dot vec(v) = 0$
+
+  - Note that $vec(0)$ is orthogonal to any vector
+
+4. A set of vectors $vec(v_1), ..., vec(v_k) in RR^n$ is called an orthogonal set if $vec(v_i) dot vec(v_j) = 0 space forall space i != j$
+
+  - Any set of standard basis is an *orthonormal* set because the elements are orthogonal and their norm are all 1 
 ]
+
+== The Cross Product in $RR^3$
+
+#info[*Cross Products* 
+\
+
+Let $vec(u) = mat(u_1; u_2; u_3), vec(v) = mat(v_1;v_2;v_3), vec(w) = ... in RR^3$. 
+
+The *cross product* of $vec(u), vec(v)$ is defined to be the vector in $RR^3$ given by $ vec(u) times vec(v) = mat(u_2 v_3 - u_3 v _2; u_3 v_1 - u_1 v_3; u_1 v_2 - u_2 v_1) $
+
+]
+
+#tip[Tricks for the Cross Product
+
+\
+- 1st coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 1")$ compute the difference of the diagonals $ v_2 w_3 - v_3 w_2$ 
+\
+- 2nd coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 2")$ compute the difference of the diagonals $ v_1 w_3 - v_3 w_1$ 
+
+\
+- 3rd coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 3")$ compute the difference of the diagonals $ v_1 w_2 - v_2 w_1$ 
+
+]
+
+#warn[*Cross Product*\
+
+Let $vec(u), vec(v) in RR^3$
+
+$ vec(u) times vec(v) != vec(v) times vec(u) $
+]
+
+Example:
+
+Given vectors $vec(v), vec(w) in RR^3$ we want to find a vector $vec(n) in RR^3$ which is orthogonal to both.
+
+What is, we want $vec(v) dot vec(n) = vec(w) dot vec(n) = 0 ==> vec(n) = mat(v_2 w_3 - v_3 w_2; v_3 w_1 - v_1 w_3; v_1 w_2 - v_2 w_1)$
+
+#info[*Linearity of the Cross Product*
+
+
+Let $c in RR$ and $vec(u), vec(v), vec(w) in RR^3$, then 
+
+1. If $vec(n) = vec(v) times vec(u)$ then for any $vec(y) in "Span" {vec(v), vec(w)}$ we have $vec(y) dot vec(n) = 0$
+
+2. $vec(v) times vec(u) = - vec(u) times vec(v)$
+
+3. $vec(v) times vec(v) = vec(0)$
+
+4. $vec(v) times vec(w) = vec(0)$ if and only if either $vec(v) = vec(0)$ or $vec(w)$ is a scalar multiple of $vec(v)$
+
+5. $vec(u) times (vec(v) + vec(w)) = (vec(u) times vec(v)) + (vec(u) times vec(w))$
+
+6. $vec(u) times c(vec(v)) = c(vec(u) times vec(v))$
+
+7. $||vec(u) times vec(v)|| = ||vec(u)||||vec(v)|| |sin theta|$ where $theta$ is the angle between $vec(u)$ and $vec(v)$ 
+
+]
+
+
+== Scalar Equation of a plane
+
+#info[*Definition of Scalar Equation of a Plane*
+Let $vec(v), vec(w), vec(b) in RR^3$ with ${vec(v), vec(w)}$ being linearly independent and let $P$ be a plane in $RR^3$ with vector equation $vec(x) = s vec(v)+ t vec(w)+vec(b), s, t, in RR$. If $vec(n) = vec(v) times vec(w)$, then an qeuation for the plane is $ (vec(x)- vec(b)) dot vec(n) = 0 $
+ ]
 == Projection
 
 #info[*Projection*\
@@ -449,31 +519,3 @@ The *standard inner product* of $vec(v) = mat(v_1; v_2; ...; v_n), vec(w) = mat(
 7. With $vec(w)!=0$. The *projection of $vec(v)$ onto $vec(w)$* is defined by $ proj_vec(w) (vec(v)) = frac(ip(vec(v), vec(w)), ||vec(w)||^2) = ip(vec(v), vec(w)) accent(w, hat) $
 ]
 
-== The Cross Product in $RR^3$
-
-#info[*Cross Products*
-Let $vec(u) = mat(u_1; u_2; u_3), vec(v) = mat(v_1;v_2;v_3) in RR^3$. 
-
-The *cross product* of $vec(u), vec(v)$ is defined to be the vector in $RR^3$ given by $ vec(u) times vec(v) = mat(u_2 v_3 - u_3 v _2; -(u_1; v_3 - u_3 v_1); u_1 v_2 - u_2 v_1) $
-
-Let $vec(z) = vec(u) times vec(v)$
-
-1. $vec(z) dot vec(u) = vec(z) dot vec(v) = 0$
-
-2. $vec(v) times vec(u) = -vec(z) = - vec(u) times vec(v)$
-
-3. If $vec(u) != vec(0)$ and $vec(v) != vec(0)$, then $||vec(u) times vec(v)|| = ||vec(u)||||vec(v)|| sin theta$ where $theta$ is the angle between $vec(u)$ and $vec(v)$ 
-]
-
-#info[*Linearity of the Cross Product*
-
-Let $c in RR$ and $vec(u), vec(v), vec(w) in RR^3$, then 
-
-1. $(vec(u)+vec(v)) vec(w) = (vec(u) times vec(w)) + (vec(v) times vec(w))$
-
-2. $(c vec(u)) times vec(v) = c(vec(u) times vec(v))$
-
-3. $vec(u) times (vec(v) + vec(w)) = (vec(u) times vec(v)) + (vec(u) times vec(w))$
-
-4. $vec(u) times c(vec(v)) = c(vec(u) times vec(v))$
-]
