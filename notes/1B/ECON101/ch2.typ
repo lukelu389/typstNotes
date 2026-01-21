@@ -119,10 +119,10 @@ Is this quota efficient?: Inefficient
   - Tota Surplus $=$ Consumer Surplus + Producer Surplus + Government 
 
 #image("../../../pictures/econ1_ch2_5.png", width:8cm)
-Red: Consumer Surplus \
+Red + Purple Trapezoid: Consumer Surplus \
 Green: Producer Surplus\
-Orange: Deadweight loss\
-Purple: Compensated loss
+Orange Triangle: Deadweight loss\
+Lower Purple Triangle: Compensated loss
 
 Assume that we have a quota on goods for $q_"quota" = 40$
 What about a negative quota?: Inefficient
@@ -134,3 +134,42 @@ Loss on efficiency $==>$ Deadweight loss which comes from both consumer surplus 
 Red: Consumer Surplus \
 Green: Producer Surplus\
 Purple: Deadweight loss
+
+\
+Limitation to when we can use the Supply & Demand Model
+ 1. Identical goods
+
+ 2. Full Information
+
+ 3. Ease of entry/exit
+
+ 4. Low/No friction
+   - Cost of trading are Low
+
+BIG Assumption: Everyone is a pricetaker
+
+Example analysis (take note that the graph is hard to draw):
+
+$q_d = 250 - 4p$
+
+$q_s = 50+p$
+
+1. Find Equilibrium
+  - $E(40, 90)$
+  - Given Quota: 120
+
+2. Find surpluses
+  - $P_"Producer" = 32.5$
+  - $P_"Consumer" = 62.5$
+
+  - CS Triangle: 1800
+
+  - PS Triangle : 1625 + 528.125 = 2153.125 - 703.125 = 1450
+
+  - Firm losses: 703.125
+
+  - Total Surplus = 3250
+
+  - Deadweight loss: 562.5
+
+  - Pre-Quota Surplus = 3250 + 562.5 = 3812.5

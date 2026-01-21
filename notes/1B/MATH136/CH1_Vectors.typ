@@ -457,13 +457,32 @@ Let $c in RR$ and $vec(u), vec(v), vec(w) in RR^3$, then
 
 ]
 
+CUTOFF
 
 == Scalar Equation of a plane
 
 #info[*Definition of Scalar Equation of a Plane*
-Let $vec(v), vec(w), vec(b) in RR^3$ with ${vec(v), vec(w)}$ being linearly independent and let $P$ be a plane in $RR^3$ with vector equation $vec(x) = s vec(v)+ t vec(w)+vec(b), s, t, in RR$. If $vec(n) = vec(v) times vec(w)$, then an qeuation for the plane is $ (vec(x)- vec(b)) dot vec(n) = 0 $
+Let $vec(v), vec(w), vec(b) in RR^3$ with ${vec(v), vec(w)}$ being linearly independent and let $P$ be a plane in $RR^3$ with vector equation $vec(x) = s vec(v)+ t vec(w)+vec(b), s, t, in RR$. If $vec(n) = vec(v) times vec(w)$, then an equation for the plane is $ (vec(x)- vec(b)) dot vec(n) = 0 $
  ]
-== Projection
+
+#info[*Normal Vector Scalar Equation*\
+Let $P$ be a plane in $RR^3$ that passes thrgough the point $B(b_1, b_2, b_3).$ If $vec(n) = mat(n_1; n_2; n_3) in RR^3$ is a vector s.t. $ n_1 x_1 + n_2 x_2 + n_3 x_3 &= b_1 n_1 + b_2 n_2 + b_3 n_3 $ is an euation for $P$, then $vec(n)$ is called a *normal vector* for $P$. We can the euation a *scalar equation*
+]
+
+Example:
+
+1. Find a scalar equation of the plane in $RR^3$ given by vector equation $vec(x) = s mat(1; 2; 3) + t mat(-1; 1; 2)+mat(5; 1; 2)$
+
+  Let $vec(n) = mat(1; 2; 3) times mat(-1; 1; 2) = mat(1; -5; 3)$
+
+  Therefore, by definition, the scalar equation for this plane is $x_1 - 5 x_2 +3x_3 = 5 -5 + 6  ==> x_1 -5x_2+3x_3 = 6$
+
+2. Let $P$ be the plane in $RR^3$ given by the scalar equation $2x_1 - 3x_2+407x_3 = pi$. Find a normal vector to $P$.
+
+  By observation, we obtain that $vec(n) = mat(2; -3; 407)$
+
+
+== Projections
 
 #info[*Projection*\
 

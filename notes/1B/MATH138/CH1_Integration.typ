@@ -244,6 +244,9 @@ $ integral 1/sqrt(1-x^2) dif x= arcsin x + C $
 $ integral 1/(1+x^2) dif x= arctan x + C $
 
 $ integral a^x dif x= a^x / (ln a) + C $
+
+$ integral sec x dif x = ln|sec x + tan x| +C $
+$ integral csc x dif x = -ln|csc x + cot x| + C $
 ]
 
 Examples:
@@ -331,10 +334,55 @@ Example:
 
 2. $integral sqrt(1-x^2) dif x$
 
-  Let $u = arcsin x ==> x = sin u, forall u in [-pi/2, pi/2] ==> dif x = cos u dif u ==> $
+  Let $u = arcsin x ==> x = sin u space forall u in [-pi/2, pi/2] ==> dif x = cos u dif u ==> $
 
  $integral sqrt(1-sin^2 u) cos u dif u = integral cos^2 u dif u = integral frac(1+cos 2x, 2) dif u ==>^(u = arcsin x) 1/2(arcsin x + sqrt(1-x^2))) + C$
 
 3. $integral frac(1, sqrt(x^2+9))$
 
-  Let $x = 3 tan theta ==> dif x = 3 sec^2 theta dif theta ==> integral frac(1, sqrt(9tan^theta + 9)) 3 sec^2 theta dif theta$
+  Let $x = 3 tan theta space forall theta in (-pi/2, pi/2) ==> dif x = 3 sec^2 theta dif theta ==> integral frac(1, sqrt(9tan^theta + 9)) 3 sec^2 theta dif theta = integral sec theta dif theta$ \
+  \
+
+  $integral sec theta dot frac(sec theta + tan theta, sec theta + tan theta) dif theta = integral frac(sec^2 theta + sec theta tan theta, sec theta+tan theta) dif theta ==>^(u= sec theta + tan theta) integral 1/u dif u = ln |sec theta + tan theta| + C $
+
+  $==>^(theta = arctan x/3) ln|sec arctan x/3 +tan arctan x/3|+ C = ln(sqrt(x^2+9)/3 +x/3)+C$ 
+
+4. $integral_1^2 sqrt(x^2-1)/x dif x$
+
+  Let $x = sec theta space forall theta in [0, pi/2) union [pi, 3pi/2) $
+
+  $= integral_0^(pi/3) sqrt(sec^2 theta-1)/(sec theta) sec theta tan theta dif theta = integral_0^(pi/3) tan^2 theta dif theta= integral_0^(pi/3) sec^2 theta -1 dif theta = eval(tan theta - theta, 0, upper:pi/3) = sqrt(3)-pi/3$
+
+5. $integral frac(1, (5-4x-x^2)^(5/2)) dif x = integral 1/(1-(2-x)^2)^(5/2) dif x$
+
+  Let $2-x = sin theta, space forall theta in [-pi/2, pi/2] ==> dif x = - cos theta dif theta$
+
+  $= integral (-cos theta)/(1-(sin theta)^2)^(5/2) dif theta=integral frac(- cos theta, cos^5 theta) dif theta = integral - sec^4 theta dif theta = - integral (sec^2theta)^2 dif theta = -2/7 sec^(7/2) theta + C = -2/7 (1/sqrt(5-4x-x^2))^(7/2)+C$ 
+
+== Integration By Parts
+
+#info[*Integration by Parts*\
+
+If $f$ and $g$ are differentiable functions of $x$, then $ integral f(x)g'(x) dif x = f(x)g(x) - integral f'(x)g(x) dif x $
+
+The rule of choosing parts being $f(x)$ is
+1. Logarithmic
+
+2. Inverse trigonometric 
+3. Algebraic
+4. Trigonometric
+5. Exponential
+]
+
+Examples
+
+1. $integral x e^x dif x$
+
+
+  Let $cases(u = x, dif v=e^x dif x) ==> cases(dif u = dif x, v = e^x) ==> x e^x -integral e^x =x e^x -e^x +C$
+
+2. $integral x^2 sin x dif x$
+
+  Let $cases(u = x^2, dif v = sin x dif x) ==> cases(dif u = 2x dif x, v = -cos x) ==> -x^2cos x + 2 integral x cos x dif x = -x^2cos x+2(x sin x + cos x)+C = -x^2 cos x+ 2x sin x + 2 cos x + C$
+
+3. 
