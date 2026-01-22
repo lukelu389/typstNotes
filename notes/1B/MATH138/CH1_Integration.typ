@@ -203,7 +203,7 @@ If $f, F$ are continuous on $[a, b]$ and $F'(x) = f(x) space forall x in (a, b)$
 ]
 
 #proof[
-  Let $F$ be any antiderivative of $f$. Then $F(x)$ and the antiderivative $G(x) = f_a^x f(t) dif t$ have the relation that $G(x) = F(x) + C$
+  Let $F$ be any antiderivative of $f$. Then $F(x)$ and the antiderivative $G(x) = integral_a^x f(t) dif t$ have the relation that $G(x) = F(x) + C$
 
   $ integral_a^b f(x) dif x &= integral_a^b f(t) dif t - integral_a^a f(t)dif t \
   &= G(b) - G(a) \
@@ -221,7 +221,7 @@ If $H(x) = integral_5^x x^2 dif x$, $integral_1^2 = H(2) - H(1) = integral_5^2 x
 
 $ integral x^r dif x= x^(r+1)/(r+1) + C space forall r !=-1 $
 
-$ integral x^-1 dif x= ln|x| + C $
+$ integral x^(-1) dif x= ln|x| + C $
 
 $ integral sin x dif x = -cos x + C $
 
@@ -270,7 +270,7 @@ Examples:
 
 #info[*U-Substitution*\
 
-Let $f, g$ be functions s.t. $g'(x)$ is continuous on $a, b]$ and $f$ is continuous on range of $g$
+Let $f, g$ be functions s.t. $g'(x)$ is continuous on $[a, b]$ and $f$ is continuous on range of $g$
 
 $ integral f(g(x))g(x) dif x = eval(integral f(u) dif u, u=g(x)) $
 
