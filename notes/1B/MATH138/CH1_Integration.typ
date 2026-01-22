@@ -162,7 +162,7 @@ Let $a in RR$. If $f$ is continuous on an open interval $I$ containing $a$, then
 
 Let $f$ be continuous, $g, h$ be differentiable
 
-$ dvs(integral_g(x)^h(x) f(t) dif t, x) = f'(h(x))h'(x) - f'(g(x))g'(x) $
+$ dvs(integral_g(x)^h(x) f(t) dif t, x) = f(h(x))h'(x) - f(g(x))g'(x) $
 ]
 
 #proof[
