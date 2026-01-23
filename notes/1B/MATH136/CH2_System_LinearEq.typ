@@ -1,5 +1,6 @@
 #import "../../../preamble.typ": *
 #show: conf
+
 #let Title = "CH 2 — System of Linear Equations"
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
@@ -18,4 +19,6 @@
 #info[*Linear Solutions System*\
 If the system of linear equations has two distinct solutions $vec(s) = mat(s_1; ...; s_n), vec(t) = mat(t_1; ...; t_n)$, then for every $c in RR, vec(s) + c(vec(s)-vec(t))$ is a solution, and furthermore these solutions are all distinct.
 ]
+
+== Solving Systems of Linear Equations
 

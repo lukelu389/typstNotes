@@ -383,6 +383,69 @@ Examples
 
 2. $integral x^2 sin x dif x$
 
-  Let $cases(u = x^2, dif v = sin x dif x) ==> cases(dif u = 2x dif x, v = -cos x) ==> -x^2cos x + 2 integral x cos x dif x = -x^2cos x+2(x sin x + cos x)+C = -x^2 cos x+ 2x sin x + 2 cos x + C$
+  Let $cases(u = x^2, dif v = sin x dif x) ==> cases(dif u = 2x dif x, v = -cos x) ==> -x^2cos x + 2 integral x cos x dif x = $
+  
+  $-x^2cos x+2(x sin x + cos x)+C = -x^2 cos x+ 2x sin x + 2 cos x + C$
 
-3. 
+3. $integral x ln x dif x$
+
+  Let $cases(u = ln x, dif v = x dif x) ==> cases(dif u = 1/x dif x, v = x^2/2) ==>x^2/2 ln x - 1/2 integral x dif x= x^2/2 ln x - x^2/4+C$
+
+4. $integral_1^e ln x dif $
+
+ Let $cases(u = ln x, dif v = dif x)==>cases(dif u = 1/x dif x, x)==> eval(x ln x, 1, upper:e) - integral_1^e dif x = e-(e-1)=1$
+
+5. $integral_0^1 e^x cos x dif x$
+
+  Let $cases(u = cos x, dif v =e^x dif x) ==> cases(dif u = -sin x dif x, e^x) = eval(e^x cos x, 0, upper:1) + integral_0^1 e^x sin x $
+
+  Let $cases(a = sin x, dif b = e^x dif x) ==> cases(dif a = cos x dif x, b = e^x) = eval(e^x sin x, 0, upper:1) - integral_0^1 e^x cos x dif x$
+
+  $integral_0^1 e^x cos x dif x= eval(e^x cos x, 0, upper:1) + eval(e^x sin x, 0, upper:1) - integral_0^1 e^x cos x $
+  
+  $ ==> integral_0^1 e^x cos x dif x = 1/2(eval(e^x cos x, 0, upper:1) + eval(e^x sin x, 0, upper:1))= 1/2 e sin(1) + 1/2e cos(1)-1/2$
+== Partial Fractions
+
+#info[*Partial Fractions*\
+
+For rational functions which is $P(x)/(Q(x)) space forall P(x), Q(x)$ be polynomials and $P(x)!=0$
+
+1. Perform long division to ensure the topside is in irreducibe linear/quadratic term\
+  i.e.
+
+  $ frac(x^2+1, x^2 + 3x + 4) $
+
+2. Rewrite the rational function into individual irreducible linear/quadratic terms (there are exceptions for duplicate terms)
+  $ frac(U x^2 + V x + W, E x^2 + F x + G) = frac(A x, (K x + L)^k) + frac(A x, (K x + L)^(k-1)) + ... + frac(B, H x + I) + C/(J x + M) $
+
+3. Solve for system of equations to determine $A, B, C$
+
+4. Integrate individually
+]
+
+#tip[*Breakdown of Irreducible Linear/Quadratic terms*\
+
+#align(center)[#image("../../../pictures/cal2ch1_2.png", width: 12cm)]
+
+Note that $n$ is the time the term that has appeared in the fully factorized numerator and denominator.
+]
+\
+
+Examples
+
+1. $integral frac(x^4+x^3+2x^2+4x+2, x^3+x) dif x$
+
+  $= integral$
+
+2. $integral frac(1, x(x-1)^2) dif x$
+
+3. $integral frac(x^2+2, 4x^5+4x^3+x) dif x$
+== Improper Integrals
+
+== Area
+
+== Volume
+
+=== Washer Method
+
+=== Cylindrical Shell Method
