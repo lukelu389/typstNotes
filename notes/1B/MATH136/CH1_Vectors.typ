@@ -503,7 +503,35 @@ Let $vec(v), vec(w) in RR^n$ with $vec(w) !=0$.
 4. The projection and the perpendicular of a vector $vec(v)$ onto $vec(w)$ are orthogonal; that is $ "perp"_vec(w) (vec(v)) dot proj_vec(w) (vec(v)) = 0 $
 ]
 
-== Vectors in $CC^n$
+Example:
+
+Let $vec(u) = mat(1; 2), vec(v) = mat(1; -1)$
+
+Find $proj_vec(v)(vec(u)) = frac(vec(u) dot vec(v), ||vec(v)||^2) vec(v) = mat(-1/2; 1/2)$
+
+$"perp"_vec(v)(vec(u)) = vec(u) - proj_(vec(v))(vec(u)) = mat(3/2; 3/2)$
+
+
+
+#align(center)[#image("../../../pictures/linearach1_2.png", width:10cm)]
+
+We project instead on a plane, we project onto the normal vector $vec(n)$. Then we use the fact that a normal vector is orthogonal to the plane $P$
+
+#info[*Projection onto Plane*\
+
+Let $P$ be a plane in $RR^3$ that passes through the origin and has normal $vec(n)$. 
+
+The *projection* of $vec(x) in RR^3$ onto $P$ is defined by $ proj_P(vec(v)) = "perp"_vec(n)(vec(x)) $ The *perpendicular* of $vec(x)$ onto $P$ is defined by $ "perp"_P(vec(x)) = proj_vec(n)(vec(x)) $
+]
+
+Example:
+
+Let $P$ be the plane Span${mat(1; 0 ;0), mat(0; 1; 0)}, vec(u)= mat(2;1 ; 7)$, find $proj_P (vec(u))$ 
+
+$vec(n) = mat(1; 0; 0) times mat(0; 1; 0) = mat(0; 0; 1)$, $proj_P (vec(u)) = "perp"_vec(n)(vec(u)) = vec(u) - proj_(vec(n))(vec(u)) = vec(u) - frac(vec(u) dot vec(n), ||vec(n)||^2) vec(n) = mat(2; 1; 7) - 7 mat(0; 0; 1) = mat(2; 1; 0)$
+\
+\
+== Complex Euclidean Space (TBD at the end of term)
 
 #info[*Vectors in $CC^n$*\
 
