@@ -416,7 +416,7 @@ The *cross product* of $vec(u), vec(v)$ is defined to be the vector in $RR^3$ gi
 \
 - 1st coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 1")$ compute the difference of the diagonals $ v_2 w_3 - v_3 w_2$ 
 \
-- 2nd coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 2")$ compute the difference of the negative of the diagonals $ v_1 w_3 - v_3 w_1$ 
+- 2nd coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 2")$ compute the difference of the negative of the diagonals $ -(v_1 w_3 - v_3 w_1)$ 
 
 \
 - 3rd coordinate: $mat(v_1 space w_1; v_2 space w_2; v_3  space w_3) ==>^("Ignore row 3")$ compute the difference of the diagonals $ v_1 w_2 - v_2 w_1$ 
