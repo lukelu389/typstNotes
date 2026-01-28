@@ -173,3 +173,21 @@ $q_s = 50+p$
   - Deadweight loss: 562.5
 
   - Pre-Quota Surplus = 3250 + 562.5 = 3812.5
+
+
+Other cases 
+
+Post-Policy: We restrict the prices for $\$30$
+
+#align(center)[#image("../../../pictures/econ1_ch2_6.png", width:8cm)]
+
+Orange: Consumer Surplus $= 1800$\
+Green: Producer Surplus $= 1950$\
+Total Surplus $= 3750$\
+
+Better than the production quota, more efficient\
+Better policy is the production quota in context wise as the market is for food.
+
+This model has a higher elasticity on the consumer side
+
+The model that has a smaller elasticity on the producer side

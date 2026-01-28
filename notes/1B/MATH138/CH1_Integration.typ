@@ -435,17 +435,90 @@ Examples
 
 1. $integral frac(x^4+x^3+2x^2+4x+2, x^3+x) dif x$
 
-  $= integral$
 
 2. $integral frac(1, x(x-1)^2) dif x$
 
 3. $integral frac(x^2+2, 4x^5+4x^3+x) dif x$
+
 == Improper Integrals
 
-== Area
+#info[*Improper Integral (Type I)*\
+
+1. Let $f$ be integrable on $[a, t] space forall t >= a$. 
+
+ If $lim_(t->oo) integral_a^t f(x) dif x$ exists, we say that Type I improper integral $integral_a^oo f(x) dif x $ converges and define $ integral_a^oo f(x) dif x = lim_(t->oo) integral_a^t f(x) dif x $
+
+  If $lim_(t->oo) integral_a^t f(x) dif x$ does not exist, we say $integral_a^oo f(x) dif x$ diverges
+
+2. Let $f$ be integrable on $[t, b] space forall t <= b$. 
+
+ If $lim_(t->-oo) integral_a^t f(x) dif x$ exists, we say that Type I improper integral $integral_a^(-oo) f(x) dif x $ converges and define $ integral_a^(-oo) f(x) dif x = lim_(t->-oo) integral_a^t f(x) dif x $
+
+  If $lim_(t->-oo) integral_a^t f(x) dif x$ does not exist, we say $integral_a^(-oo) f(x) dif x$ diverges
+
+3. Let $f$ be integrable on $[a, b] space forall a, b in RR$ with $a<=b$. 
+
+  $ integral_(-oo)^oo f(x) dif x = integral_(-oo)^0 f(x) dif x + integral_0^oo f(x) dif x$ 
+
+  If $integral_(-oo)^0 f(x) dif x "and" integral_0^oo f(x) dif x$ both converges, then $integral_(-oo)^oo f(x) dif x$ converges.
+
+  If one of the improper integrals diverges, $integral_(-oo)^oo f(x) dif x$ diverges
+]
+
+#tip[*$p$-Integrals*\
+If $p >1$, the improper integral $integral_1^oo 1/x^p dif x$ converges and $ integral_1^oo 1/x^p dif x = 1/(p-1) $
+
+If $p <= 1$, the improper integral $integral_1^oo 1/x^p dif x$ diverges.
+
+]
+
+Examples:
+
+1. $integral_(-oo)^oo sin x dif x = integral_(-oo)^0 sin x dif x + integral_0^oo sin x dif x$
+
+  $ forall t in RR, integral_0^t sin x dif x = eval(-cos x, 0, upper:t) = 1- cos t ==> lim_(t->oo) 1-cos t = "DNE" $ 
+  
+  Therefore $integral_(-oo)^oo sin x dif x$ diverges
+
+  *Note that $lim_(t->oo) integral_t^t sin x dif x = 0 != integral_(-oo)^oo sin x dif x$*
+
+  The explanation is that there $oo$ is not a number, there are always $oo$ that is bigger. However, if we have $t = oo ==> -oo = t$ enforces the same $oo$, resulting into a symmetry 
+
+2. $integral_(-oo)^0 1/(1+4x^2) dif x$
+
+  $ forall t in RR, integral_t^0 frac(1, 1+4x^2) = eval(1/2 arctan(2x), t, upper:0) = -1/2(arctan 2t) $
+
+  $lim_(t->-oo)-1/2(arctan 2t) = pi/4 $
+
+  Therefore, the improper integral converges
+
+
+#info[*Improper Integrals (Type II)*\
+Let $a, b in RR, a<b$
+
+1. Let $f$ b integrable on $[t, b] space forall t in (a, b]$ and suppose that $f$ has an infinite discontinuity at $x = a$. If $lim_(x->a^+) integral_t^b f(x) dif x$ exists, we say that the Type II improper integral $integral_a^b f(x) dif x$ converges and define $ integral_a^b f(x) dif x = lim_(t->a^+) integral_t^b f(x) dif x $
+
+  If $lim_(t->a^+) integral_t^b f(x) dif x $ does not exist, we say $ integral_a^b f(x) dif x$ diverges
+
+2. Let $f$ b integrable on $[a, t] space forall t in [a, b)$ and suppose that $f$ has an infinite discontinuity at $x = b$. If $lim_(x->b^-) integral_a^t f(x) dif x$ exists, we say that the Type II improper integral $integral_a^b f(x) dif x$ converges and define $ integral_a^b f(x) dif x = lim_(t->b^-) integral_a^t f(x) dif x $
+
+  If $lim_(t->b^-) integral_a^t f(x) dif x $ does not exist, we say $ integral_a^b f(x) dif x$ diverges
+
+3. Suppose that $f$ has an infinite discontinuity at $x = c, a<c<b$. We say that the Type II improper integral $integral_a^b f(x) dif x$ converges if both  $integral_a^c f(x) dif x "and" integral_c^b f(x) dif x$ converges. Defined $  integral_a^b f(x) dif x = integral_a^c f(x) dif x + integral_c^b f(x) dif x$
+
+If one of the improper integrals diverges, $integral_a^b f(x) dif x$ diverges
+
+]
+
+== Area 
+
+Self-learn
 
 == Volume
 
 === Washer Method
 
 === Cylindrical Shell Method
+
+
+
