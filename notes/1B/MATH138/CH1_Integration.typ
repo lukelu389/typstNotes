@@ -504,21 +504,87 @@ Let $a, b in RR, a<b$
 
   If $lim_(t->b^-) integral_a^t f(x) dif x $ does not exist, we say $ integral_a^b f(x) dif x$ diverges
 
-3. Suppose that $f$ has an infinite discontinuity at $x = c, a<c<b$. We say that the Type II improper integral $integral_a^b f(x) dif x$ converges if both  $integral_a^c f(x) dif x "and" integral_c^b f(x) dif x$ converges. Defined $  integral_a^b f(x) dif x = integral_a^c f(x) dif x + integral_c^b f(x) dif x$
-
-If one of the improper integrals diverges, $integral_a^b f(x) dif x$ diverges
+3. Suppose that $f$ has an infinite discontinuity at $x = c, a<c<b$. We say that the Type II improper integral $integral_a^b f(x) dif x$ converges if both  $integral_a^c f(x) dif x "and" integral_c^b f(x) dif x$ converges. We can have that  $  integral_a^b f(x) dif x = integral_a^c f(x) dif x + integral_c^b f(x) dif x $
+  
+  If one of the improper integrals diverges, $integral_a^b f(x) dif x$ diverges
 
 ]
 
+Example:
+
+$ integral_0^3 frac(1, sqrt(|x-2|)) dif x &= integral_0^2 frac(1, sqrt(-(x-2))) dif x + integral_2^3 frac(1, sqrt(x-2)) dif x \
+
+&= lim_(t->2^-) integral_0^t frac(1, sqrt(2-x)) dif x + lim_(s->2^+)integral_t^3 frac(1, sqrt(x-2)) dif x \
+
+&= lim_(t->2^-) eval(-2sqrt(2-x), 0, upper:t) + lim_(s->2^+) eval(2sqrt(x-2), s, upper:3) \
+
+&= lim_(t->2^-) (-2 sqrt(2-t)+2sqrt(2)) + lim_(s->2^+) (2 - 2sqrt(s-2))\
+
+&= 2sqrt(2) + 2
+
+$
+
+The integral converges
+
 == Area 
 
-Self-learn
+#info[*Area Between Curves*\
+
+Let $f, g$ be integrable functions defined on $[a, b]$. If $f(x)>=g(x) space forall x in [a, b],$ then the area between the graphs of $f$ and $g$ for $x in [a, b]$ is given by $ integral_a^b (f(x)-g(x)) dif x $
+]
+
+An alternate way of expressing is let $y = y_"upper"(x)$ be the upper curve and $y = y_"lower"(x)$ for $x in [a, b]$. $ "Area" = integral_(x=a)^(x=b) (y_"upper"(x) - y_"lower"(x)) dif x $
+
+#info[*Area Between Curves interms of Y*\
+
+If a region is bounded between a rightmost curve $x = x_r(y)$ and a leftmost curve $x=x_l(x)$ for $y in [c, d]$. The area of the region can be expressed as $ A = integral_(y=c)^(y=d) (x_r(y) - x_l(y)) dif y $
+]
+
 
 == Volume
 
 === Washer Method
+#info[*Disk Method* \
 
+Let $f(x)$ be an integrable function on $[a, b]$
+
+#align(center)[#image("../../../pictures/cal2ch1_3.png", width:6cm)]
+
+We have the function $f(x)$ rotate around the $x$-axis
+
+Notice $Delta x$ is the thickness of the disk expressed as *$A(x) = pi f(x)^2$*
+
+Hence the volume using the disk method is $ V =  integral_a^b A(x) dif x = integral_a^b pi f(x)^2 $
+
+]
+
+The Washer Method is when there is a vaccum area inside the disk. A trick we can do is have to compute the outer disk volume subtract the inner disk volume
+
+#info[*Washer Method*\
+
+Let $R(x), r(x)$ be integrable functions on $[a, b]$ where $R(x)>=r(x) space forall x in [a, b]$ 
+
+The volume obtained by the area bounded by $R(x), r(x)$, around the $x$-axis is $ integral_a^b pi (R(x)^2 - r(x)^2) dif x $
+
+The idea is to have the *outer function squared subtract the inner function squared* to be the Area function
+]
+
+Example:
+
+Consider the region bounded by the curve $y = 2x-x^2$ and the lines $y=0, x=0, x=1$
+
+1. The volume of the solid obtained by revolving about the $x$-axis
+
+  $integral_0^1 pi (2x-x^2)^2 dif x = pi integral_0^1(4x^2-4x^3+x^4) dif x = pi (eval(4/3x^3-x^4+x^5/5, 0, upper:1)) = (8 pi)/15$
+
+2. The volume of the solid obtained by revolving about the $y$-axis
+
+  $integral_0^1 pi (1 - (1-sqrt(1-y))^2) dif y = integral_0^1 pi (1+ 2sqrt(1-y) +(1-y)) dif y $
 === Cylindrical Shell Method
 
 
+#tip[*Summary*\
 
+#align(center)[#image("../../../pictures/cal2ch1_4.png", width:8cm)]
+
+]

@@ -91,4 +91,41 @@ A matrix $R$ is said to be RREF if
 4. A leading one is the only non-zero entry in its column
 
 
-If $A$ is row equivalent to a matrix $R$ in RREF, then we say that $R$ is RREF of $A$]
+If $A$ is row equivalent to a matrix $R$ in RREF, then we say that $R$ is RREF of $A$
+
+
+If $A$ is a matrix, then $A$ has *a unique* RREF $R$
+]
+
+Examples:
+
+1. $mat(1, 2, 0, 6; 0, 1, 2, 3; 0, 0, 0, 0)$ is not in RREF, row 2 has a leading zero where there are also non-zero entry in its column
+
+\
+2. $mat(1, 0, 2, 0; 0, 1, 1, 0; 0, 0, 0, 1)$  is in RREF, note the second 1 in row to is not a leading 1
+\
+3. $mat(1, 0, 0, 1; 0, 1, 3, 2; 0, 0, 1, 1)$ is not in REFF, similar to example 1
+\
+4. Solve the linear system:
+
+  $cases(x_1+2x_2+3x_3 = 5, 2x_1+3x_2-x_3 = 1, 3x_1+5x+2x_3=6) ==> mat(1, 2, 3, 5; 2, 3, -1, 1; 3, 5, 2, 6 ;augment:#3) quad R_2-2R_1 quad mat(1, 2, 3, 5; 0, -1, -7, -9; 3, 5, 2, 6; augment:#3) quad R_3 - 3R_1 quad mat(1, 2, 3, 5; 0, -1, -7, -9; 0, -1, -7, -9; augment:#3)$
+
+  $R_3 - R_2 quad mat(1, 2, 3, 5; 0, -1, -7, -9; 0, 0, 0, 0; augment:#3) quad (-1)R_2 quad mat(1, 2, 3, 5; 0, 1, 7, 9; 0, 0, 0, 0; augment:#3) quad R_1 - 2R_2 quad mat(1, 0, -11, -13; 0, 1, 7, 9; 0, 0, 0, 0; augment:#3)$
+
+  The system the RREF represents is $cases(x_1 -11x_3 = -13, x_2+7x_2 = 9)$ and $x_3$ can be anything, let $t = x_3$.
+
+  $ vec(x) = t mat(1; -7; 0) + mat(-13; 9; 0) space forall t in RR $
+
+5. Solve 
+
+  $cases(x_1 + 2x_2 +3x_3 = 1, 4x_1+5x_2+6x_3 = 2, 7x_1+8x_2+9x_3)$
+  $ space ==>mat(1, 0, -1, -1/3; 0, 1, 2, 2/3; 0, 0, 0, 0; augment:#3) space  ==>vec(x) = s mat(1, 2, 1) - mat(-1/3; 2/3; 0) space forall s in RR$
+
+
+6. Solve \
+  $cases(x_1+x_2 = 3, 2x_1+2x_2 = 4) space ==> mat(1, 1, 3; 0, 0, -2; augment: #2)$ inconsistent system, no solution
+
+\
+#tip[*Gauss-Jordan Elimination* - An algorithm of obtaining RREF of a matrix]
+
+
