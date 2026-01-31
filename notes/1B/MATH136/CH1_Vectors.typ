@@ -199,7 +199,7 @@ Is $B$ is a basis for $RR^2$
 
 3. $B= {mat(1; 2), mat(3; 4)}$ is linearly independent since neither scalar multiple of another. We need to prove:
 
-  - $"Span" B subset.eq RR^2$, which is obvious, since the vectors in $B$ are in $RR^2$ the linear combinatin of these will be $RR^2$
+  - $"Span" B subset.eq RR^2$, which is obvious, since the vectors in $B$ are in $RR^2$ the linear combination of these will be $RR^2$
   - $RR^2 subset.eq "Span" B$, consider an arbitrary $vec(x) in RR^2 = mat(x_1; x_2) = c_1 mat(1; 2) + c_2 mat(3; 4)$ that is $mat(x_1; x_2) = mat(c_1+3 c_2; 2c_1 4c_2)$. 
   
     We obtain $cases(c_1 + 3c_2 = x_1, 2c_1 - 4c_2 = x_2) ==> c_1 = x_1 - 3c_2 ==> 2(x_1-3c_2) + 4c_2 = x_2 ==> c_2 = -1/2x_2+x_1 ==>$
