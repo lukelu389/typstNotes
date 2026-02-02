@@ -457,7 +457,6 @@ Let $c in RR$ and $vec(u), vec(v), vec(w) in RR^3$, then
 
 ]
 
-CUTOFF
 
 == Scalar Equation of a plane
 

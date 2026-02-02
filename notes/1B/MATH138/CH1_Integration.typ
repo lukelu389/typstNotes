@@ -404,6 +404,15 @@ Examples
   $integral_0^1 e^x cos x dif x= eval(e^x cos x, 0, upper:1) + eval(e^x sin x, 0, upper:1) - integral_0^1 e^x cos x $
   
   $ ==> integral_0^1 e^x cos x dif x = 1/2(eval(e^x cos x, 0, upper:1) + eval(e^x sin x, 0, upper:1))= 1/2 e sin(1) + 1/2e cos(1)-1/2$
+
+
+#tip[*Reduction Formula for $integral cos^n x dif x$*\
+
+For any $n>=2$
+
+$ integral cos^n x dif x = 1/n cos^(n-1) sin x + frac(n-1, n) integral cos^(n-2) x dif x $
+]
+
 == Partial Fractions
 
 #info[*Partial Fractions*\
@@ -579,10 +588,27 @@ Consider the region bounded by the curve $y = 2x-x^2$ and the lines $y=0, x=0, x
 
 2. The volume of the solid obtained by revolving about the $y$-axis
 
-  $integral_0^1 pi (1 - (1-sqrt(1-y))^2) dif y = integral_0^1 pi (1+ 2sqrt(1-y) +(1-y)) dif y $
+  $integral_0^1 pi (1 - (1-sqrt(1-y))^2) dif y = frac(5 pi, 6)$
+
+3. The volume of the solid obtained by the region enclosed by $y=x, y=x^2$ about $y = 1$
+
+  $integral_0^1 pi [(1-x^2)^2 - (1-x)^2] dif x$
+
+4. The volume of the solid obtained by the region enclosed by $y=x, y=x^2$ about $y = -1$
+
+  $integral_0^1 pi [(x+1)^2 - (x^2+1)^2] dif x$
 === Cylindrical Shell Method
 
+#info[*Cylindrical Shell*\
 
+Let $f(x)$ be an integrable function on $[a, b]$
+#align(center)[#image("../../../pictures/cal2ch1_5.png", width:8cm)]
+
+We have the function $f(x)$ rotate around the $y$-axis
+
+The formula $ V = integral_a^b 2 pi x f(x) dif x $
+
+]
 #tip[*Summary*\
 
 #align(center)[#image("../../../pictures/cal2ch1_4.png", width:8cm)]

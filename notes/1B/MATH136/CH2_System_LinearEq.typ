@@ -90,16 +90,19 @@ A matrix $R$ is said to be RREF if
 
 4. A leading one is the only non-zero entry in its column
 
+\
 
-If $A$ is row equivalent to a matrix $R$ in RREF, then we say that $R$ is RREF of $A$
+- If $A$ is row equivalent to a matrix $R$ in RREF, then we say that $R$ is RREF of $A$
 
 
-If $A$ is a matrix, then $A$ has *a unique* RREF $R$
+- If $A$ is a matrix, then $A$ has *a unique* RREF $R$
+
+- If $j$-th column does not contain a leading one, then $x_j$ is considered as a free variable where it can be any value.
 ]
 
 Examples:
 
-1. $mat(1, 2, 0, 6; 0, 1, 2, 3; 0, 0, 0, 0)$ is not in RREF, row 2 has a leading zero where there are also non-zero entry in its column
+1. $mat(1, 2, 0, 6; 0, 1, 2, 3; 0, 0, 0, 0)$ is not in RREF, row 2 has a leading zero where there are non-zero entry in its column
 
 \
 2. $mat(1, 0, 2, 0; 0, 1, 1, 0; 0, 0, 0, 1)$  is in RREF, note the second 1 in row to is not a leading 1
@@ -118,7 +121,7 @@ Examples:
 
 5. Solve 
 
-  $cases(x_1 + 2x_2 +3x_3 = 1, 4x_1+5x_2+6x_3 = 2, 7x_1+8x_2+9x_3)$
+  $cases(x_1 + 2x_2 +3x_3 = 1, 4x_1+5x_2+6x_3 = 2, 7x_1+8x_2+9x_3=3)$
   $ space ==>mat(1, 0, -1, -1/3; 0, 1, 2, 2/3; 0, 0, 0, 0; augment:#3) space  ==>vec(x) = s mat(1, 2, 1) - mat(-1/3; 2/3; 0) space forall s in RR$
 
 
@@ -129,3 +132,57 @@ Examples:
 #tip[*Gauss-Jordan Elimination* - An algorithm of obtaining RREF of a matrix]
 
 
+#info[*Homogeneous Systems of Linear Equation*\
+
+A linear equation in $n$ variables is called *homogeneous* if the constant term is zero: $ a_1 x_1 + ... + a_n x_n = 0 $
+
+A systerm of linear equations is said to be a *homogeneous* systerm if the constant terms are all zero. $[A | vec(0)]$.
+\
+
+*Homogeneous *systems are always *consistent* at $vec(0) in RR^n$
+
+The solution set of a homogeneous system of $m$ linear equation in $n$ variables is a subspace of $RR^n$
+
+Let system $[A | vec(b)]$ where $vec(b) != vec(0)$, then $[A | vec(0)]$ is the associated homogeneous system.
+
+\
+Let $S_b$ be the solution set of the system $[A | vec(b)]$ and let $S_0$ be the solution set of the associated homogeneous system $[A | vec(0)].$ Then if $vec(x_p)$ is any particular solution in $S_b$, $ S_b = {vec(x_p)+ vec(s) | vec(s) in S_0} $
+
+Note: Since all constant terms are all zero, the last column of the augmented matrix will remain zero regardless of elementary row operation applied. It is thus often ignored, that is, we use the coefficient matrix for simplicity.
+]
+
+Example:
+
+1. $cases(x_1+x_2=0, 2x_1-x_2 = 0) ==> mat(1, 1, 0; 2, -1, 0; augment:#2) quad R_2 - 2R_1 quad mat(1, 1, 0; 0, -3, 0; augment:#2) quad -1/3 R_2 quad mat(1, 1, 0; 0, 1, 0; augment:#2) quad R_1 - R_2 quad mat(1, 0, 0; 0, 1, 0; augment:#2)$
+
+  $x_1 = x_2 = 0 ==> vec(x) = vec(0)$
+
+\
+
+2. $cases(x_1+2x_2 +3x_3 = 0, 4x_1 + 5x_2+6x_3, 7x_1 + 8x_2 + 9x_3) ==> mat(1, 2, 3; 4, 5, 6; 7, 8, 9) ==> mat(1, 0, -1; 0, 1, 2; 0, 0, 0) ==> x_1 = x_3 = t, x_2 = -2x_3 = -2t $
+
+  $==> vec(x) = t mat(1; -2; 1), forall t in RR$
+
+
+== Rank
+\
+#info[*Rank*\
+
+The *rank* of a matrix $A$ is the number of leading ones in the RREF of the matrix and is denoted rank $A$
+
+For any $m times n$ matrix $A$, $ "rank" A <= min(m, n) $
+]
+
+#info[*System-Rank Theorem*\
+
+Let $A$ be the coefficient matrix of a system of $m$ linear equations in $n$ unknowns $[A | vec(b)]$
+
+1. The system $[A | vec(b)]$ is inconsistent if and only if rank $A$ < rank $[A | vec(b)]$
+
+2. If the system $[A | vec(b)]$ is consistent, then the system contains ($n-$rank $A$) free variables.
+]
+
+== Linear Independence
+
+\
+*MIDTERM CUTOFF*

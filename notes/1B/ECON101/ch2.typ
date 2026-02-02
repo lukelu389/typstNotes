@@ -107,6 +107,9 @@ The intersection of the 2 curves is the Equilibrium which is a state where no ag
 To the right of the Equilibrium are people that are not participating in the market.
 ]
 
+Examples:
+\
+
 Assume that we have a quota on goods for $q_"quota" = 60$
 \
 \
@@ -175,8 +178,6 @@ $q_s = 50+p$
   - Pre-Quota Surplus = 3250 + 562.5 = 3812.5
 
 
-Other cases 
-
 Post-Policy: We restrict the prices for $\$30$
 
 #align(center)[#image("../../../pictures/econ1_ch2_6.png", width:8cm)]
@@ -191,3 +192,42 @@ Better policy is the production quota in context wise as the market is for food.
 This model has a higher elasticity on the consumer side
 
 The model that has a smaller elasticity on the producer side
+\
+\
+== Review
+\
+Think of the model as a tool we use to run experiments
+
+\
+Which is more elastic:
+
+#align(center)[#image("../../../pictures/econ1_ch2_7.png", width:8cm)]
+
+The red one. There is a bigger shift in quantity with lowering in price for the red one than the green one.
+
+Point elasticity: $frac(Delta q, Delta p)$
+
+Arcelaticity: $frac(Delta % p, Delta % q)$
+
+Question:
+
+Assume a mode in equilibrium
+
+Give it a quota decrease and a price decrease
+
+#align(center)[#image("../../../pictures/econ1_ch2_8.png", width:8cm)]
+
+Green: Producer Surplus \
+Red: Consumer Surplus \
+Purple: Deadweight loss\
+
+Question:
+
+1. We have a price control downward
+2. Reduction in Demand
+
+#align(center)[#image("../../../pictures/econ1_ch2_9.png", width:8cm)]
+
+Green: Producer Surplus \
+Red: Consumer Surplus \
+Purple: Deadweight loss\
