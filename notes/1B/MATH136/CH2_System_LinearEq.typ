@@ -159,9 +159,9 @@ Example:
 
 \
 
-2. $cases(x_1+2x_2 +3x_3 = 0, 4x_1 + 5x_2+6x_3, 7x_1 + 8x_2 + 9x_3) ==> mat(1, 2, 3; 4, 5, 6; 7, 8, 9) ==> mat(1, 0, -1; 0, 1, 2; 0, 0, 0) ==> x_1 = x_3 = t, x_2 = -2x_3 = -2t $
+2. $cases(x_1+2x_2 +3x_3 = 0, 4x_1 + 5x_2+6x_3=0, 7x_1 + 8x_2 + 9x_3=0) ==>^("coefficient matrix") mat(1, 2, 3; 4, 5, 6; 7, 8, 9) ==>^("RREF") mat(1, 0, -1; 0, 1, 2; 0, 0, 0) ==> x_1 = x_3 = t, x_2 = -2x_3 = -2t $
 
-  $==> vec(x) = t mat(1; -2; 1), forall t in RR$
+  $==> vec(x) = t mat(1; -2; -1), forall t in RR$
 
 
 == Rank
@@ -184,5 +184,48 @@ Let $A$ be the coefficient matrix of a system of $m$ linear equations in $n$ unk
 
 == Linear Independence
 
+#info[*Linear Independence and Matrix Rank*\
+
+Let ${vec(v_1), ..., vec(v_k)}$ be a set of vectors in $RR^n$ and leet $A = [vec(v_1) ... vec(v_k)]$. Then ${vec(v_1), ..., vec(v_k)}$ is linearly independent if and only if rank $A = k$
+]
+
+Examples:
+
+1. Is the set $B = {mat(1;4;7), mat(2; 5;8), mat(3; 6; 9)}$ linearly independent
+
+  By the definition of linear independence, we obtain $cases(c_1+2c_2+3c_3 = 0, 4c_1+5c_2+6c_3 = 0, 7c_1+ 8c_2+ 9c_3 = 0) ==>mat(1, 2, 3; 4, 5, 6; 7, 8, 9) ==> mat(1, 0, -1; 0, 1, 2; 0, 0, 0) ==> x_1 = x_3 = t, x_2 = -2x_3 = -2t $
+
+  $==> vec(x) = t mat(1; -2; -1), forall t in RR$, we have infinitely many solutions. This implies $B$ is linearly dependent
+
+2. Is $B = {mat(1; 2; 3), mat(1; 0; 7)}$
+
+  $A = mat(1, 1; 2, 0; 3, 7) ~mat(1, 0; 0, 1; 0, 0)$, by the above theorem, $B$ is linearly independent  
+
+#info[*Span and Matrix Rank*\
+
+Let ${vec(v_1), ..., vec(v_k)}$ be a set of vectors in $RR^n$ and leet $A = [vec(v_1) ... vec(v_k)]$. Then ${vec(v_1), ..., vec(v_k)}$ spans $RR^n$ if and only if rank $A = n$
+]
+
+Examples:
+1. Does $B = {mat(1;2), mat(2;2), mat(0;1)}$ spans $RR^2$
+
+  Let $vec(x) in RR^2$
+
+  $c_1 mat(1;2) + c_2 mat(2; 2)+c_3mat(0;1) = mat(x_1;x_2) ==> mat(1, 2, 0, x_1; 2, 2, 1, x_2; augment:#3) ~ mat(1, 0, 1, x_2-x_1; 0, 1, -1/2, x_1-1/2 x_2; augment:#3)$ 
+
+  The system is consistent no matter what $x$ is, so $B$ spans $RR^2$
+
+2. Does ${mat(1; 4; 7), mat(2; 5; 8), mat(3; 6; 9)}$ spans $RR^3$?
+
+  Recall that when we get the RREF: $A = mat(1, 0, -1, ...; 0, 1, 2, ...; 0, 0, 0, ...)$.
+
+  By the above theorem, we get rank $A != 3$, hence no
 \
+
+#info[*Span and Linear Independence*\
+
+A set of $n$ vectors ${vec(v_1), ..., vec(v_n)} in RR^n$ is linearly independent if and only if it spans $RR^n$
+
+It follows from the above statement that a set of vectors ${vec(v_1), ..., vec(v_n)} in RR^n$ is a basis for $RR^n$ if and only if rank $A = n$ where $A = [vec(v_1) ... vec(v)n)]$
+]
 *MIDTERM CUTOFF*

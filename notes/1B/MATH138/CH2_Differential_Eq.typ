@@ -59,9 +59,86 @@ Thus $y = -1-x+C e^x$, for $C in RR$ is always a solution
   $cases(x'(t) = k cos(k t), x''(t) = -k^2 sin(k t)) ==> -k^2 sin k t &= 02 sin k t \ (k^2-2)sin(k t) &= 0  \  k = plus.minus sqrt(2), k = 0$
 
 
-
 == Direction Fields
+
+#info[*Direction Field*\
+
+A direction field for the different equation $y' = F(x)$ displays short line segments of slope$F(x, y)$ at various points in the Cartesian plane
+]
+
+#tip[Direction field plotter for DE: #link("https://www.desmos.com/calculator/p7vd3cdmei")]
+
+Examples:
+
+1. $dv(y, x) = x/y$
+  #align(center)[#image("../../../pictures/cal2ch2_1.png", width:6cm)]
+
+  We can obtain this when plugging-in numbers. 
+  
+  At $(-2, 1), eval(dv(y, x), (x, y) = (-2, 1)) = eval(x/y, (x, y) = (-2, 1))  ==> -2/1 = -2$ 
+  
+  Hence a slope of $-2$ at $(-2, 1)$ and other points have the same method
+\
+2. $y'x = x+y$ 
+   #align(center)[#image("../../../pictures/cal2ch2_3.png", width:4cm)]
+
+3. $y' = x y$
+     #align(center)[#image("../../../pictures/cal2ch2_2.png", width:4cm)]
+
+4. $y' = y$
+  #align(center)[#image("../../../pictures/cal2ch2_4.png", width:4cm)]
 
 == Separable Differential Equations
 
+#info[*Separable Differential Equation*\
+
+A first order differential equation is said to be separable if it is written in format $ dv(y, x)= g(x)h(x) $
+]
+
+Examples:
+
+1. $y' = sin x$
+
+2. $y' = x/y$
+
+3. $y' = 5y$
+
+4. $y^2 y' = 2y + x y$
+
+5. $y' = x+y$ is not separable but linear, see in Linear First Order DEs
+
+#tip[*Solving Separable DE*
+We have two cases
+
+1. Determine any solution $y$ with $h(y) = 0$
+
+2. Find the solutions $y$ where $h(y)equiv.not 0$ by evaluating $ integral 1/h(y) dif y = integral g(x) dif x $ If possible, isolate $y$ as a function of $x$ in the resulting equation. 
+
+The general solution is the collection of all solutions obtained in Case 1 together with all solutions obtained in Case 2.
+]
+
+Examples:
+
+1. $y' = y$ \
+
+  Case 1: $y = 0$
+
+
+  Case 2: $ integral 1/y dif y &= integral 1 dif x \
+    ln |y|  &= x + C_1 \
+    |y| &= e^(x+C_1)
+    y &= plus.minus e^(C_1) e^x = plus.minus C e^x, space C in RR
+  $
+  
+  The general solution is $y = A e^x, space A in RR$
+  
+2. $y' = x/y$\
+
+  Case 1: $h(y) = 1/y != 0$ \
+
+  Case 2: 
+  $ integral y dif y &= integral x dif x \
+  y^2/2 &= x^2/2 + C \ y^2 &= x^2 + 2C \ y &= plus.minus sqrt(x^2+ 2C) $
+
+  The general solution $y &= plus.minus sqrt(x^2+ D), space D in RR$
 == Linear First-Order Differential Equations
