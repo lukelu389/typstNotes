@@ -231,3 +231,9 @@ Question:
 Green: Producer Surplus \
 Red: Consumer Surplus \
 Purple: Deadweight loss\
+
+#warn[*Elasticity*\
+The steeper the curve, the more *inelastic* it is.
+
+The flatter the curve, the more *elastic* it is.
+]
