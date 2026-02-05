@@ -604,9 +604,9 @@ Consider the region bounded by the curve $y = 2x-x^2$ and the lines $y=0, x=0, x
 Let $f(x)$ be an integrable function on $[a, b]$
 #align(center)[#image("../../../pictures/cal2ch1_5.png", width:8cm)]
 
-We have the function $f(x)$ rotate around the $y$-axis
+We have the function $f(x)$ rotate around the $x = p$.
 
-The formula $ V = integral_a^b 2 pi x f(x) dif x $
+The formula $ V = integral_a^b 2 pi r(x) f(x) dif x,  quad r(x) = (x-p) $
 
 ]
 #tip[*Summary*\
