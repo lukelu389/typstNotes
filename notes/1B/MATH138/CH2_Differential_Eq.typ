@@ -141,4 +141,62 @@ Examples:
   y^2/2 &= x^2/2 + C \ y^2 &= x^2 + 2C \ y &= plus.minus sqrt(x^2+ 2C) $
 
   The general solution $y &= plus.minus sqrt(x^2+ D), space D in RR$
+
+3. $y' = x y^2, y(0)=3$
+
+  Case 1: $h(y) = 0 ==>y equiv 0$
+
+  Case 2: $ integral 1/y^2 dif y &= integral x dif x ==> -1/y = x^2/2 +C ==> y = -2 frac(2, x^2+2 C) $
+
+  The general solution is $y equiv 0$ or $y = frac(-2, x^2+D), space D in RR$
+
+  For $y (0) = 3 ==> -2/D = 3 ==> D= -2/3$ ==> the unique solution is $y = frac(-2, x^2-2/3)$
+
+4. $y' -x^2 -y^2 -2x y +1 = 0 ==> y' = (x+y)^2 - 1 ==>^(v = x+y) v' = v^2$
+  
+  Case 1: $h(v) = v^2 equiv 0 ==> v equiv 0$
+
+  Case 2: $integral 1/v^2 dif v = x ==> -1/v = x+C ==> v = -1/(x+C), C in RR$
+
+  The general solution $v equiv 0$ or $v = -1/(x+C), C in RR$
+
+  $y=-x $ or $y = -x-1/(x+C), C in RR$
+
+
+
 == Linear First-Order Differential Equations
+#info[*First-Order Linear Differential Equation*
+
+First order Linear DE has the form $ A_0(x) y + A_1(x)y' = B(x) quad A_1(x)equiv.not 0 $
+
+Such an equation can be written inthe form $y'+ P(x)y = Q(x)$ called the standard form.
+]
+
+
+
+#info[*Integrating Factor*\
+Given a DE of the form $y'+P(x)y = Q(x)$,
+
+$ mu = e^(integral P(x) dif x) $ is called the integrating factor for the DE.
+]
+
+#tip[*Solving First-Order Linear DE*\
+Given $A_1(x)y' +A_0(x)y = B(x)$
+
+1. Divide by $A_1(x)$ to rewrite the DE in standard form
+
+2. Multiply the equation by the integrating factor.
+3. Rewrite LHS as $(mu(x)y)'$
+
+4. Integrate in respext to x
+
+5. Isolate $y$
+]
+CUTOFF Q5
+== Applications
+
+
+#tip[*Formula - Mixing Problem*\
+
+$ dv(A, t) = ("rate of substance in") - ("rate of substance out") $
+]
