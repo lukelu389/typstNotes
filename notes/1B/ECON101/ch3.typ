@@ -29,7 +29,7 @@ Effect on the model
 1. Equation
   - $M =$ income
   - $p_i =$ price for product $i$
-  - $q_ =$ quantity for product $i$
+  - $q_i =$ quantity for product $i$
 
   $ M =  p_1 q_1+p_2 q_2 $
 
@@ -55,7 +55,7 @@ Effect on the model
 
   Orange: original line\
   Green: $p_2$ decreases\
-  RedL $p_2$ increases\
+  Red: $p_2$ increases\
   Black: $M$ increases
 ]
 
@@ -64,7 +64,33 @@ Preference often/always intangible and non-numeric.
 
 Force intangible to have inherent structure like numbers
 
-"Happiness" \~ "Utility"
+"Happiness" is equivalent "Utility"
 
-An assumption is that of deminishing marginal utility, but still positive
+An assumption is that of deminishing marginal utility, but still positive.
+
+Due to the continuously deminishing marginal utility (continuously deminishing rate of trade), the curve will not be linear like the budget(constant rate of trade).
+
+*Graph*
+
+  #align(center)[#image("../../../pictures/econ1_ch3_2.png", width:6cm)]
+
+- Every point above the curve is better, more utility: (i.e. yellow area)
+
+- Every point below the curve is worse, less utility: (i.e. grey area)
+
+- Every point on the curve is equivalent to marginal utility
+
+- The green curve is also called *Indifference Curve*
+]
+
+#info[*Utility length*\
+
+The area enclosed by the utility curve and the budget curve. (i.e. red area)
+
+There always exists another parallel utility curve that is better than the previous one. 
+
+ #align(center)[#image("../../../pictures/econ1_ch3_3.png", width:6cm)]
+
+
+
 ]

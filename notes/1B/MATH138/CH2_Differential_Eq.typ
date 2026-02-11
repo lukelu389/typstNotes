@@ -241,10 +241,71 @@ General solution $A = 300+ B e^(-t/100), B in RR$
 $B = -200$ since $A(0) = 100$
 
 Particular solution $A = 300 - 200e^(-t/100)$
+
+
 \
 
-=== Newton Heat
+=== Newton's Law of Heating/Cooling
+#tip[*Formula Newton's Law*
+
+$T(t)$ represents the temperature of an object at time $t$, and $T_s$ is the constant temperature of tis surroundings, then theres exists a constant $k>0$ $ dv(T, t) = -k(T - T_s) $
+
+The general solution to this DE is given $ T(t) = T_s + A e^(-k t), space A in RR $
+
+If $T(0)> T_s$, the object will cool. 
+
+An equality suggests no change.
+
+
+]
+
+$dv(T, t) = -k(T - T_s)$
+
+1. Constant solution: $T equiv T_s$
+
+2. $integral 1/(T-T_s) dif T = integral -k dif t ==> ln|T-T_s| = -k t + C $
+
+  $= T = plus.minus e^(-k t + C) + T_s = plus.minus e^(-k t) e^C + T_s =  A e^(-k t) + T_s, space A in RR$
+
+General Solution: $ T_s + A e^(-k t), space A in RR $
+
+Q2:
+
+A cup of coffee has a temperature of 98˚C in a room of 20˚C. After 1 minute, the temperature of the coffee is 96˚C. How long will it reach 80˚C?
+
+$T_s = 20, exists k > 0$ s.t. $dv(T, t) = -k(T - 20)$ holds.
+
+Initial conditions, $T(0) = 98, T(1) = 96$
+
+The general solution will be $T = 20+ A e^(-k t)$
+
+With initial condition, we obtain $T = 20 + 78e^(ln 38/39 t)$
+
+$80 = 20 + 78e^(ln(38/39) t) ==> t = ln(10/13) / ln(38/39) approx 10.1$ min
 
 === Population Growth
 
+#tip[*Exponential Growth/Decay*\
+
+The general solution to the exponential growth DE $dv(P, t) = k P$ is given $ P(t) = A e^(k t), space A = P(0) $
+
+- $k > 0$ for growth
+
+- $k < 0$ for decay
+]
+
+#tip[*Logistic Growth*\
+
+- If $P$ is significantly smaller than $M$, $dv(P, t) approx k P$
+
+- If $P approx M, dv(P, t) approx 0$
+
+- If $P > M, dv(P, t) < 0$ 
+
+*Formula*
+
+$ dv(P, t) = k P(1-P/M) $
+
+General Solution: $  $
+]
 MIDTERM CUTOFF
