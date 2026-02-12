@@ -107,7 +107,7 @@ Examples:
 
 5. $y' = x+y$ is not separable but linear, see in Linear First Order DEs
 
-#tip[*Solving Separable DE*
+#tip[*Solving Separable DE*\
 We have two cases
 
 1. Determine any solution $y$ with $h(y) = 0$
