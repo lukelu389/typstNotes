@@ -306,6 +306,47 @@ The general solution to the exponential growth DE $dv(P, t) = k P$ is given $ P(
 
 $ dv(P, t) = k P(1-P/M) $
 
-General Solution: $  $
+General Solution: $ P(t) = frac(M, 1+A e^(-k t)), space A in RR $.
+
+If $P_0 = P(0)$ is the initial population, then $A = frac(M-P_0, P_0)$
 ]
+
+Q3:Scientists placed 100 geese in a nature preserve.
+After 1 year, the population increased to 150.
+\
+1. Assume that the population grows according to the law of natural growth.
+ -  Determine the population function, P (t).
+ - After how many years will the population reach 500 geese?
+2. Assume that the population grows according to the logistic model with a carrying capacity of 1500.
+ - Determine the population function, P (t).
+ - After how many years will the population reach 500 geese?
+
+
+1. IVP: $dv(P, t) = k P, P(0)=100, P(1)=150$
+
+ - The general solution is $P(t) = A e^(k t), A in RR$
+
+   $P(0) = A e^0 = A = 100$
+
+   $P(1) = 100 e^(k)= 150 ==> e^k = 3/2 ==> k = ln 3/2$
+
+   $P(t) = 100 e^(ln (3/2)t) = 100 (3/2)^t$
+
+ - $P(t) = 100 (3/2)^t=500 ==> t = log_(3/2) 5 approx 4.0$ 
+
+   Therefore, the population reaches 500 after around 4 years.
+
+2. IVP: $dv(P, t) = k P (1-P/1500)$
+  - The general solution is $P(t) = frac(1500, 1 + A e^(-k t)), A in RR$
+
+   $A = (M - P(0))/P(0) = 14$
+
+   $P(1) = frac(1500, 1+14e^(-k))=150 ==> e^(-k) = 9/14 ==> k = ln(9/14)$
+
+   Particular solution: $P(t) = frac(1500, 1+14 (9/14)^t)$
+
+  - $P(t) = frac(1500, 1+14 (9/14)^t) = 500 ==> t = log_(9/14) 1/7 approx 4.4$
+
+  Therefore, the population reaches 500 after around 4.4 years
+
 MIDTERM CUTOFF
