@@ -321,7 +321,7 @@ Let $a in RR, a!=0$ If $integral f(x) dif x = F(x) + C$, then $ integral f(a x) 
 #tip[*Half-Angle*\
 $ cos^2 x = (1+cos(2x))/2 $
 
-$ sin^2 x = (1+sin(2x))/2 $
+$ sin^2 x = (1-cos(2x))/2 $
 ]
 
 Example:
