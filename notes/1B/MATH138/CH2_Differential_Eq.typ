@@ -92,7 +92,7 @@ Examples:
 
 #info[*Separable Differential Equation*\
 
-A first order differential equation is said to be separable if it is written in format $ dv(y, x)= g(x)h(x) $
+A first order differential equation is said to be separable if it is written in format $ dv(y, x)= g(x)h(y) $
 ]
 
 Examples:
@@ -349,4 +349,3 @@ After 1 year, the population increased to 150.
 
   Therefore, the population reaches 500 after around 4.4 years
 
-MIDTERM CUTOFF
