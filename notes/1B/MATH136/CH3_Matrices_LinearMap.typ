@@ -299,5 +299,73 @@ Let $L:RR^2 ->RR^2$ be defined by $L(mat(x_1; x_2)) = mat(x_2; -x_1)$. Is $L$ li
 
 Every linear mapping $L:R^n -> RR^m$ can be represented as a matrix mapping with matrix whose $i$-th column is the image of the $i$-th standard basis vector of $RR^n$ under $L$ for all $1<=i<=n$. That is, $L(vec(x)) = [L] vec(x)$ where $ [L] = [L(vec(e)_1) space ... space L(vec(e)_n)] $
 
-Let $L:RR^n ->RR^m$ e a linear mapping. The amtrix $[L]= [L(vec(e)_1) space ... space L(vec(e)_n)]$ is called the *standard matrix* of $L$. It satisfies $L(vec(x)) = [L]vec(x)$
+Let $L:RR^n ->RR^m$ a linear mapping. The matrix $[L]= [L(vec(e)_1) space ... space L(vec(e)_n)]$ is called the *standard matrix* of $L$. It satisfies $L(vec(x)) = [L]vec(x)$
 ]
+Example:
+
+Let $L: RR^3 -> RR^3$ be the mapping given by $L(vec(x)) = proj+(vec(a))(vec(x)), vec(a) = mat(1; 3; 6)$. Find $[L]$
+
+$L(vec(e)_1) = proj_(vec(a))(vec(e_1)) = frac(vec(a) dot vec(e)_1, ||vec(a)||^2) vec(a) = 1/46 mat(1; 3; 6)$
+
+$L(vec(e)_2) = proj_(vec(a))(vec(e_2)) = frac(vec(a) dot vec(e)_2, ||vec(a)||^2) vec(a) = 3/46 mat(1; 3; 6)$
+
+$L(vec(e)_3) = proj_(vec(a))(vec(e_3)) = frac(vec(a) dot vec(e)_3, ||vec(a)||^2) vec(a) = 6/46 mat(1; 3; 6)$
+
+Therefore $L = 1/46 mat(1, 3, 6; 3, 9, 18; 6, 18, 36)$
+
+=== Rotation
+#info[*Rotations in $RR^2$*
+
+Let $R_theta = RR^2 -> RR^2$ denote the funciton that rotates a vector $vec(x) in RR^2$ about the orgin through an angle $theta$. We can show:
+
+$ R_theta (x_1,x_2) = (x_1 cos theta-x_2 sin theta, x_1 sin theta+_2 cos theta)
+ $
+
+We can get the standard matrix of $R_theta$:  $ R_theta = mat(cos theta, - sin theta; sin theta, cos theta) $
+
+#align(center)[#image("../../../pictures/linearch3_1.png", width: 4cm)]
+
+If $R_theta : RR^2 -> RR^2$ is a rotation with rotation matrix $A = [R_theta]$, then column of $A$ are orthogonal unit vectors.
+]
+
+Example:
+
+$vec(x) = mat(4;2)$ rotated about the origine by angle $theta = pi/6$
+
+$R_(pi/6) (vec(x)) = mat(cos pi/6, -sin pi/6; sin pi/6, cos pi/6) mat(4; 2)= mat(sqrt(3), -1/2; 1/2, sqrt(3))mat(4;2) = mat(2 sqrt(3)-1; 2 + sqrt(3))$
+
+=== Reflection
+#info[*Reflections*\
+
+Let $"refl"_P :RR^n -> RR^n $denote the mapping that sends a vector $vec(x)$ to its mirror image in the hyperplane $P$ with normal vector $vec(n)$. $ "refl"_P (vec(x)) = vec(x) - 2 proj_(vec(n))(vec(x)) $
+
+#align(center)[#image("../../../pictures/linearch3_2.png", width: 4cm)]
+]
+
+== Special Subspaces
+
+#info[*Range*\
+
+Let $L:RR^n -> RR^n$ be a linear mapping. The *range* of $L$ is defined by $ "Range"(L) = {L(vec(x)) in RR^m | vec(x) in RR^n} $
+
+If $L:RR^n ->RR^m$ is a linear mapping, then $"Range"(L)$ is a subspace of $RR^m$
+]
+
+Example:
+
+Let $L:RR^2 -> RR^3$ be given by $L(x_1, x_2) = (x_1+2x_2, x_2-x_1, 0)$
+
+It is linear.
+
+1. Is $vec(v) = mat(2; 2; 0) in "Range"(L)$? (i.e. Does there exist $vec(x) in RR^2$ s.t. $vec(v) = L(vec(x))$?)\
+
+  Set $mat(2; 2; 0) = mat(x_1+2x_2; x_2-x_1; 0) ==> cases(2 = x_1+2x_2, 2=x_2-x_1) ==> mat(1, 2, 2; -1, 1, 2; 0, 0, 0; augment:#2) ~ mat(1, 0, -2/3; 0, 1, 4/3; 0, 0, 0; augment:#2)$
+
+  Therefore there exists $vec(x) in RR^2$ s.t. $L(vec(x)) = vec(v) ==> vec(v) in "Range"(L)$
+
+  
+
+2. Is $vec(u) = mat(2; 1; 3) in "Range"(L)$
+
+  No, because $3!=0$
+

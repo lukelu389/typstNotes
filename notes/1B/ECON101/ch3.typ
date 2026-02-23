@@ -19,7 +19,7 @@ Effect on the model
 - Preference
  - Weak axiom of reveald preference: if choosing between $A$, $B$, if one of the two becomes unavailable. The remaining choice must contain $A$ to remain a rational choice.
 
-- Income/Budget
+- Income/Budget (next page)
 
 
 ]
@@ -68,7 +68,10 @@ Force intangible to have inherent structure like numbers
 
 An assumption is that of deminishing marginal utility, but still positive.
 
-Due to the continuously deminishing marginal utility (continuously deminishing rate of trade), the curve will not be linear like the budget(constant rate of trade).
+Marginal rate of Substitution(MRS) : The rate of which the consumer would trade between $q_1, q_2$
+
+Due to the continuously deminishing MRS (continuously deminishing rate of trade), the curve will not be linear like the budget(constant rate of trade).
+
 
 *Graph*
 
@@ -85,12 +88,28 @@ Due to the continuously deminishing marginal utility (continuously deminishing r
 
 #info[*Utility length*\
 
-The area enclosed by the utility curve and the budget curve. (i.e. red area)
+Length of opportunity: the area enclosed by the utility curve and the budget curve. (i.e. red area)
 
 There always exists another parallel utility curve that is better than the previous one. 
 
  #align(center)[#image("../../../pictures/econ1_ch3_3.png", width:6cm)]
 
+]
 
+#info[*Relationships between the curves*
+
+The budget line becomes a tangent line of the utility curve at exactly the optimal point.
+
+MRS = slope of the budget curve = Ratio of prices = $frac(M_u_1, M_u_2) = frac(p_1, p_2) ==> frac(M_u_1, p_1)= frac(M_u_2, p_2)$
+
+The marginial utility per dollar is equivalent at the optimal point
+
+If $frac(M_u_1, p_1) > frac(M_u_2, p_2)$, then item 1 brings more utility.
+
+  - Buy item 1, thus $M_u_1$ decreases 
+
+  - To afford item 1, sell item 2, and $M_u_2$ increases
 
 ]
+
+Since MRS is deminishing, thus explaining the price of luxury goods are hight as essentials have lower MRS as they are deminishing since we have obtained enough of it.
