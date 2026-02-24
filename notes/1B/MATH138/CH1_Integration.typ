@@ -482,7 +482,7 @@ Examples
   If $p <= 1$, the improper integral $integral_1^oo 1/x^p dif x$ diverges.
 
 
-2. If $p < 1$, the improper integral $integral_0^1 1/x^p dif x$ converges and $ integral_0^1 1/x^p dif x = 1/(p-1) $
+2. If $p < 1$, the improper integral $integral_0^1 1/x^p dif x$ converges and $ integral_0^1 1/x^p dif x = 1/(1-p) $
 
   If $p >= 1$, the improper integral $integral_0^1 1/x^p dif x$ diverges.
 
