@@ -267,9 +267,9 @@ $ f(b vec(x)+c vec(y)) = b f(vec(x)) + c f(vec(y)) $
 
 #info[*Linear Mapping*\
 
-A function $L:RR^n -> RR^m$ is said to be *linear mapping* if for every $vec(x), vec(y) in RR^n; b, c in RR$ we have $ L(b vec(x))+ c vec(y) = b L(vec(x)) + c L(vec(y)) $
+A function $L:RR^n -> RR^m$ is said to be *linear mapping* if for every $vec(x), vec(y) in RR^n; b, c in RR$ we have $ L(b vec(x)+ c vec(y)) = b L(vec(x)) + c L(vec(y)) $
 
-Two linear mappings $L:RR^n -> RR^m$ and $M : RR^n -> RR^m$ are said to be *equal *if $L(vec(x)) = M(vec(x)), space forall vec(x) in RR^n$, that is$ L = M$.
+Two linear mappings $L:RR^n -> RR^m$ and $M : RR^n -> RR^m$ are said to be *equal *if $L(vec(x)) = M(vec(x)), space forall vec(x) in RR^n$, that is $ L = M$.
 
 A linear mapping $L:RR^n -> RR^n$ is somtimes called a *linear operator*. This is often done when we wish to stress the fact that the domain and codomain of the linear mapping are thhe same.
 
@@ -297,13 +297,13 @@ Let $L:RR^2 ->RR^2$ be defined by $L(mat(x_1; x_2)) = mat(x_2; -x_1)$. Is $L$ li
 
 #info[*Standard Matrix*\
 
-Every linear mapping $L:R^n -> RR^m$ can be represented as a matrix mapping with matrix whose $i$-th column is the image of the $i$-th standard basis vector of $RR^n$ under $L$ for all $1<=i<=n$. That is, $L(vec(x)) = [L] vec(x)$ where $ [L] = [L(vec(e)_1) space ... space L(vec(e)_n)] $
+Every linear mapping $L:RR^n -> RR^m$ can be represented as a matrix mapping with matrix whose $i$-th column is the image of the $i$-th standard basis vector of $RR^n$ under $L$ for all $1<=i<=n$. That is, $L(vec(x)) = [L] vec(x)$ where $ [L] = [L(vec(e)_1) space ... space L(vec(e)_n)] $
 
 Let $L:RR^n ->RR^m$ a linear mapping. The matrix $[L]= [L(vec(e)_1) space ... space L(vec(e)_n)]$ is called the *standard matrix* of $L$. It satisfies $L(vec(x)) = [L]vec(x)$
 ]
 Example:
 
-Let $L: RR^3 -> RR^3$ be the mapping given by $L(vec(x)) = proj+(vec(a))(vec(x)), vec(a) = mat(1; 3; 6)$. Find $[L]$
+Let $L: RR^3 -> RR^3$ be the mapping given by $L(vec(x)) = proj_(vec(a))(vec(x)), vec(a) = mat(1; 3; 6)$. Find $[L]$
 
 $L(vec(e)_1) = proj_(vec(a))(vec(e_1)) = frac(vec(a) dot vec(e)_1, ||vec(a)||^2) vec(a) = 1/46 mat(1; 3; 6)$
 
@@ -369,3 +369,82 @@ It is linear.
 
   No, because $3!=0$
 
+#info[*Onto(Surjective)*\
+A linear mapping $L:RR^n -> RR^m$ is called *onto* if Range($L$) $= RR^m$
+]
+
+We can say that $L$ is not onto since $vec(u) in.not "Range"(L)$
+
+=== Kernel
+
+#info[*Kernel*\
+
+Let $L:RR^n -> RR^m$ be a linear mapping. The *kernel* (nullspace) of $L$ is the set of all vectors in the domain which are mapped to the zero vector in the codomain.
+
+$ "Ker"(L) = {vec(x)in RR^n | L(vec(x)) = vec(0)} $
+
+If $L:RR^n -> RR^m$ is a linear mapping, then $"Ker"(L)$ is a subspace of $RR^n$
+
+A linear mapping $L$ is called *one-to-one* if $"Ker"(L)={vec(0)}$
+]
+
+Example:\
+
+1. Let $L:RR^2 -> RR^3$ be given by $L(x_1, x_2) = (x_1+2x_2, x_2-x_1, 0)$
+
+ Find $"Ker"(L)$
+
+ We set $mat(0;0;0) = mat(x_1+2x_2; -x_1+x_2; 0) ==> mat(1, 2, 0; -1, 1, 0; 0, 0, 0; augment:#2) ~ mat(1, 0, 0; 0, 1, 0; 0, 0, 0; augment:#2)$
+
+$==> x_1 = 0, x_2 = 0$, so the only solution, is $"Ker"(L) = vec(0)$
+
+
+2. Let $M(x, x_2) = (x_1+2x_2, 2x_1+4x_2, 0)$
+
+
+  $mat(1, 2, 0; 2, 4, 0; 0, 0, 0; augment:#2) ~ mat(1, 2, 0; 0, 0, 0; 0, 0, 0; augment:#2) ==> vec(x) = t mat(-2; 1), space t in RR$
+
+  $==>"Ker"(M) = {t mat(-2; 1)| t in RR} = "Span"{mat(-2; 1)} ==> {mat(-2; 1)}$ is a basis for $"Ker"(M)$
+
+3. A kernel can never be empty, it has at least $vec(0)$
+
+4. $M$ from E2 is not "one-to-one", but $L$ from E1 is "one-to-one"
+
+#info[*One-To-One(Injective)*\
+
+Let $L:RR^n->RR^m$ be a linear mapping. $L$ is one-to-one if and only if for every $vec(u), vec(v)in RR^n$ s.t. $L(vec(u)) = L(vec(v))$, we must have $vec(u)=vec(v)$
+
+If a mapping is both injective and surjective, it is bijective
+]
+
+
+
+#info[*The Column Space and Nullspace of a Matrix*\
+
+
+Let $L:RR^n->RR^m$ be a linear mapping with standard marix $[L]$. Then, $vec(x) in "Ker"(L)$ if and only if $[L]vec(x)=vec(0)$
+
+Let $A in M_(m times n) (RR)$. The set ${vec(x)in RR^n | A vec(x) = vec(0)}$ is a subspace of $RR^n$
+]
+
+#info[*Nullspace*\
+
+1. Let $A$ be an $m times n$ matrix. The *nullspace* (kernel) of $A$ is defined by $ "Null"(A) = {vec(x) in RR^n | A vec(x) = vec(0)} $
+
+2. Let $A$ be an $m times n$ matrix. Suppose that the vector equation of the solution set of $A vec(x) = vec(0)$ as determined by the Gauss-Jordan algorithm is given by $ vec(x) = t_1 vec(v)_1 + t_2 vec(v)_2 + ... + t_k vec(v)_k, quad t_1, ..., t_k in RR $
+
+ Then ${vec(v)_1, ..., vec(v)_k}$ is a basis for $"Null"(A)$
+
+
+3. If $A$ be an $m times n$ matrix, then $ dim"Null"(A) = n - "rank"(A) $
+
+
+4. Let $A$ be an $m times n$ matrix. The *nullity* of $A$ is defined by $ "nullity" A =  dim "Null"(A) $
+]
+
+If $L:RR^n->RR^m$ is a linear mapping with standard matrix $[L]=A=[vec(a_1) space ... space vec(a)_n]$, then $ "Range"(L) = "Span"{vec(a)_1, ..., vec(a)_n} $
+
+#info[*Column Space*\
+
+Let $A = [vec(a)_1 space ... space vec(a)_m] in M_(m times n)(RR)$. The *column space* of $A$, denoted by $"Col"(A)$, is the subspace of $RR^m$ spanned by the columns of $A$. That is, $ "Col"(A) = "Span"{vec(a)_1, ..., vec(a)_2} $
+]

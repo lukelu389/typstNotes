@@ -112,4 +112,77 @@ If $frac(M_u_1, p_1) > frac(M_u_2, p_2)$, then item 1 brings more utility.
 
 ]
 
+
 Since MRS is deminishing, thus explaining the price of luxury goods are hight as essentials have lower MRS as they are deminishing since we have obtained enough of it.
+
+Example:
+
+Given
+
+$P_1 = 10$, $P_2=5$, $M = 40$
+
+#table(
+    columns: 3, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Item 1], [$M_u$], [$M_u/P$], [1], [40], [4], [2], [20], [2], [3], [10], [1], [4], [5], [0.5])
+
+#table(
+    columns: 3, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Item 2], [$M_u$], [$M_u/P$], [1], [20], [4], [2], [15], [3], [3], [10], [2], [4], [5], [1])
+
+#table(
+    columns: 4,
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Table], [Item], [Cost], [Gain], [1], [1], [10], [40], [2], [2], [5], [20], [3], [2], [5], [15], [4], [1], [10], [20], [5], [2], [5], [10], [6], [2], [5], [5], [Total], [], [\$40], [110 Utility])
+
+\
+\
+\  
+What happens if the price of Item 1 decreases by half: $P_1 = 5$
+
+Red: initial curve\
+Green: new curve\
+Purple: initial utility curve\
+Black: new utility curve
+
+#align(center)[#image("../../../pictures/econ1_ch3_4.png", width:8cm)]
+
+What if the income rises
+
+Red: initial curve\
+Green: new curve\
+Purple: initial utility curve\
+Black: new utility curve
+
+#align(center)[#image("../../../pictures/econ1_ch3_5.png", width:6cm)]
+
+
+How could depict inferior goods (i.e. instant ramen)
+
+Red: initial curve\
+Green: new curve\
+Purple: initial utility curve\
+Black: new utility curve
+Orange: prediction on possible new curve
+#align(center)[#image("../../../pictures/econ1_ch3_6.png", width:6cm)]
+
+
+What if curves lean but at constant rate?
+
+For one extreme, the other extreme is the higher, that is the line passes through the intersection of the utility curve and budget line have slope $>1$
+
+
+Red: initial curve\
+Green: new curve\
+Purple: initial utility curve\
+Black: new utility curve
+Orange: prediction on possible new curve
+#align(center)[#image("../../../pictures/econ1_ch3_7.png", width:8cm)]
+

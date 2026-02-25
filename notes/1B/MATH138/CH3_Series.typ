@@ -39,16 +39,17 @@ $a$ is called the first term of the geometric series and $r$ is the ratio of the
 
 The partial sum $ S_m = sum_(n=0)^m a r^n = a + a r+ a r^2 + ...+ a r^m = a (frac(1-r^(m+1), 1-r)) $ where $r!=1$ 
 
-\
 
-*Geometric Series Test*
+]
+
+#info[
+*Geometric Series Test*\
 
 Let $sum_(n=0)^oo a r^n $be a geometric series, where $a!=0$
 
 1. If $|r| <1$, then $sum_(n=0)^oo a r^n$ converges and $sum_(n=0)^oo a r^n = frac(a, 1-r)$
 
-2. If $|r|>=1$, then $sum_(n=0)^oo a r^n)$ diverges
-]
+2. If $|r|>=1$, then $sum_(n=0)^oo a r^n)$ diverges]
 
 Examples:
 
@@ -93,7 +94,22 @@ Let ${a_n}_(n=1)^oo$ be a sequnce and let $j$ denote a positive integer.
 
 If $sum_(n=1)^oo a_n$ converges, then $lim_(n->oo) a_n = 0$.
 
-The converse is false]
+The converse is false, the contrapositive is called the *Divergence Test*]
+
+#info[*Divergence Test*\
+
+If $lim_(n->oo) a_n != 0$, then $sum_(n=1)^oo a_n$ diverges.
+
+]
+
+Examples:
+
+1. $sum_(n=0)^oo frac((-3)^(2 n), 2^(3n -3)) = sum_(n=0)^oo 8 (9/8)^n, "since"(|9/8| >1)$, divergent by GST
+
+2. $sum_(n=1)^oo (-2)^n 5^(2-n) = sum_(n=1)^oo 25(-2/5)^n = sum_(n=0)^oo -10 (-2/5)^n$, since $|-2/5| <1$, converging to 
+
+ $-10/(1+2/5) = -50/7$
+
 === Telescoping Series
 Example:
 
@@ -104,4 +120,58 @@ $S_1 = a_1 = 1- 1/2$
 $S_2 = a_1+a_2 = (1-1/2) + (1/2 - 1/3) = 1-1/3$
 
 By induction, we can prove that $forall m in NN, S_m = 1- 1/(m+1)$
-=== Alternating Series
+
+== Convergence Tests for series with Nonnegative Terms
+
+#warn[*Positive Series*\
+
+We call a series $sum_(n=1)^oo a_n$ positive if $a_n>=0, forall n>=1$
+
+If there is some positive integer $j$ s.t. $a_n>=0, forall n>=j$, then the series is said to be eventually positive. The sequence of partial sum is a montone sequence that is non-decreasing.
+
+1. If the sequence is bounded above, the series converges
+2. If the sequence is not bounded above, the series diverges to $oo$
+]
+
+#info[*Integral Test*\
+
+Let $f$ be a function that is defined on the infinite interval $[1,∞)$. Suppose that $f$ is continuous, positive, and *decreasing* on the subinterval $[k,∞)$ for some positive integer $k$. Then the following statements hold.
+
+1. If $integral_k^oo f(x) dif x$ converges, then the series $sum_(n=1)^oo f(n)$ converges
+
+2. If $integral_k^oo f(x) dif x$ diverges, then the series $sum_(n=1)^oo f(n)$ diverges to $oo$
+]
+
+Examples:
+
+
+1. $sum_(n=1)^oo 1/n$. Let $f(x) = 1/n$. We have $integral_1^oo 1/x dif x$ have the same behaviour as of the series. 
+
+ $lim_(t->oo) integral_1^t 1/x dif x = lim_(t->oo) eval(ln x, 1, upper:oo) = oo$. Since the limit of the integral diverges, the series diverges to $oo$ by the Integral Test
+
+2. $sum_(n=1)^oo 1/n^2$. Let $f(x) = 1/n^2$. We have $integral_1^oo 1/x^2 dif x$ have the same behaviour as of the series. 
+
+   $lim_(t->oo) integral_1^t 1/x^2 dif x = lim_(t->oo) eval(-1/x, 1, upper:oo) = 0 - (-1) = 1$. Since the limit of the integral converges, the series converges by the Integral Test
+
+#info[*Integral Test Estimation Theorem*\
+
+Suppose that a function $f$ is continuous, positive, and decreasing on the infinite interval $[k, oo)$ for some positive integer $k$. Further suppose that $ integral_k^oo f(x) dif x$ converges so that $sum_(n=1)^oo f(n) = S$ for some real number $S$ by the Integral Test. Let $S_m = sum_(n=1)^m f(n)$ denote the $m-$th partial sum. Then for any integer $m>=k$, we have $ integral_(m+1)^oo f(x) dif x<= S-S_m <= integral_m^oo f(x) dif x $
+]
+
+#info[*$p$-Series Test*\
+
+
+
+]
+
+#info[*Direct Comparison Test*]
+
+#info[*Limit Comparison Test*]
+
+#info[*Alternating Series Test*]
+
+
+
+#info[*Ratio Test*]
+
+#info[*$n$-th Root Test*]
