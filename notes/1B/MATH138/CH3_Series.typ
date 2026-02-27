@@ -220,12 +220,12 @@ We obtain $lim_(n->oo) frac(a_n, b_n) = L$
 2. $L = 0$, then 
  - if $sum_(n=1)^oo b_n$ converges, $sum_(n=1)^oo a_n$ converges
 
- - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo b_n$ diverges
+ - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo a_n$ diverges
 
 3. $L = oo$, then 
- - if $sum_(n=1)^oo b_n$ converges, $sum_(n=1)^oo a_n$ converges
+ - if $sum_(n=1)^oo a_n$ converges, $sum_(n=1)^oo b_n$ converges
 
- - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo b_n$ diverges
+ - if $sum_(n=1)^oo a_n$ diverges, $sum_(n=1)^oo b_n$ diverges
 
 Note that if the limit is DNE and not $oo$, it is inconclusive (i.e. oscillating)
 ]
