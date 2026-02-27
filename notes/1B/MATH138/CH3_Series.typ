@@ -158,15 +158,77 @@ Examples:
 Suppose that a function $f$ is continuous, positive, and decreasing on the infinite interval $[k, oo)$ for some positive integer $k$. Further suppose that $ integral_k^oo f(x) dif x$ converges so that $sum_(n=1)^oo f(n) = S$ for some real number $S$ by the Integral Test. Let $S_m = sum_(n=1)^m f(n)$ denote the $m-$th partial sum. Then for any integer $m>=k$, we have $ integral_(m+1)^oo f(x) dif x<= S-S_m <= integral_m^oo f(x) dif x $
 ]
 
+
+Example:
+
+
+$sum_(i=1)^oo frac(ln n, n)$.
+
+Let $f(x) = frac(ln x, x)$
+
+$f$ is continuous on $(0, oo)$ and that $f(x)>=0$ on $[1, oo)$. 
+
+Note that $f'(x)<0$ on $[e, oo)$
+
+We choose $k = 3$
+
+$lim_(t->oo)integral_3^t frac(ln x, x) dif x = lim_(t->oo) eval(1/2 ln^2(x),3, upper:t) = oo$.
+
+Therefore the series diverges by Integral Test
+
 #info[*$p$-Series Test*\
 
+If $p>1$, then the $p-$series $sum_(n=0)^oo 1/n^p$ converges
 
-
+If $p<=1$, then the $p-$series $sum_(n=0)^oo 1/n^p$ diverges
 ]
 
-#info[*Direct Comparison Test*]
+#info[*Direct Comparison Test*\
 
-#info[*Limit Comparison Test*]
+Let $k$ be a positive integer. Suppose ${a_n}_(n=1)^oo , {b_n}_(n=1)^oo$ be two sequences satisfying 
+
+$0<=a_n<=b_n, "for ever" n>=k$
+
+If $sum_(n=1)^oo b_n$ converges, $sum_(n=1)^oo a_n$ converges
+
+If $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo a_n$ diverges
+]
+
+Example:
+
+1. $sum_(n=1)^oo frac(n, n^3+1)$
+
+  Choose $b_n = 1/n^2$
+
+  Since $sum_(n=1)^oo 1/n^2 $ converge by $p$-series test, therefore $sum_(n=1)^oo frac(n, n^3+1)$ converges by DCT
+
+2. $sum_(n=0)^oo frac(3^n+1, 2^(n+1)-1)$
+
+  Choose $b_n = 1/2 (3/2)^n < frac(3^n+1, 2^(n+1)-1)$
+
+  SInce $sum_(n=0)^oo b_n = 1/2 (3/2)^n $ diverges by GST with $|3/2| > 1$, therefore $sum_(n=0)^oo frac(3^n+1, 2^(n+1)-1)$ diverges by DCT
+
+#info[*Limit Comparison Test*\
+Let ${a_n}_(n=1)^oo , {b_n}_(n=1)^oo$ be sequences and suppose that there is a positive integer $k$ s.t. 
+
+$a_n>=0$ and $b_n>=0, forall n>=k$
+
+We obtain $lim_(n->oo) frac(a_n, b_n) = L$
+
+1. $0<L<oo$ then $sum_(n=1)a_n$ and $sum_(n=1)^oo b_n$ both converges or both diverges
+
+2. $L = 0$, then 
+ - if $sum_(n=1)^oo b_n$ converges, $sum_(n=1)^oo a_n$ converges
+
+ - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo b_n$ diverges
+
+3. $L = oo$, then 
+ - if $sum_(n=1)^oo b_n$ converges, $sum_(n=1)^oo a_n$ converges
+
+ - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo b_n$ diverges
+
+Note that if the limit is DNE and not $oo$, it is inconclusive (i.e. oscillating)
+]
 
 #info[*Alternating Series Test*]
 

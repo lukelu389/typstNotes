@@ -446,5 +446,67 @@ If $L:RR^n->RR^m$ is a linear mapping with standard matrix $[L]=A=[vec(a_1) spac
 
 #info[*Column Space*\
 
-Let $A = [vec(a)_1 space ... space vec(a)_m] in M_(m times n)(RR)$. The *column space* of $A$, denoted by $"Col"(A)$, is the subspace of $RR^m$ spanned by the columns of $A$. That is, $ "Col"(A) = "Span"{vec(a)_1, ..., vec(a)_2} $
+Let $A = [vec(a)_1 space ... space vec(a)_n] in M_(m times n)(RR)$. The *column space* of $A$, denoted by $"Col"(A)$, is the subspace of $RR^m$ spanned by the columns of $A$. That is, $ "Col"(A) = "Span"{vec(a)_1, ..., vec(a)_n} $
+
+If $L:RR^n->RR^m$ bis a linear mapping with standard matrix $[L]. = A [vec(a))_1 space ... space vec(v_n)]$, then $ "Range"(L) = "Col"([L]) $
+
+Let $A = [vec(a)_1 space ... space vec(a)_n] "be an" m times n$ matrix. Suppose that $"rank"A = r$ and that the RREF of $A$ has leading ones in columns $j_1, ..., j_r$. Then ${vec(a)_j_1, ..., vec(a)_j_r}$ is a basis for $"Col"(A)$
+
+$ dim "Col"(A) = "rank"(A) $
+
+Let $A$ be a $m times n$ matrix and let $vec(b) in RR^m$. Then $vec(b) in "Col"(A)$ if and only if the system $[A | vec(b)]$ is consistent.
+
+]
+
+Example:
+
+Let $A = mat(1, 2, 0; 3, 1, 2)$
+
+1. Find a basis for $"Null"(A)$\
+
+  $mat(1, 2, 0; 3, 1, 2) ~ mat(1, 0, 4/5; 0, 1, -2/5) ==> x_1 = -4/5 x_3, x_2 = 2/5 x_3 ==>t = x_3 ==> vec(x) = mat(-4/5; 2/5; 1)t, t in RR$
+
+  $B = {mat(-4/5; 2/5; 1)}$ is a basis for $"Null"(A)$, nullity of $A = 1$
+
+2. Find a basis for $"Col"(A)$ \
+
+  $mat(1, 2, 0; 3, 1, 2) ~ mat(1, 0, 4/5; 0, 1, -2/5)$ Columns 1 and 2 of $A$ forms a basis for $"Col"(A):  e = {mat(1;3), mat(2; 1)}$ is a basis.
+
+
+#info[*Rank-Nullity Theorem*\
+
+If $A$ is a $m times n$ matrix, then $ "rank"(A) + "nullity"(A) = n $
+]
+
+#tip[Theorem \
+
+Let $A$ be a $m times n$ matrix\
+
+
+$"rank" A = "rank" A^T$
+]
+
+== Operations on Linear Mappings
+
+#info[*Operations on Linear Mappings*\
+
+*Addition and Scalar Multiplication*
+
+Let $L, M in LL(RR^n, RR^m)$. We define $L+M : RR^n->RR^m$ and $c L:RR^n->RR^m, c in RR$
+
+$ (L+M)(vec(x)) = L(vec(x))+M(vec(x)) $
+
+$ (c L)(vec(x)) = c L (vec(x)) $
+
+
+*Composition*
+
+
+Let $L:RR^n->RR^m$ and $M :RR^m->RR^p$ be linear mappings. The *composition* of $M, L$ is the function $M compose L:RR^n ->RR^p$ $ (M compose L)(vec(x))= M(L(vec(x))) = ([M][L]) vec(x) ==> [M compose L] = [M][L] $
+]
+
+#info[*Identity Mapping*\
+
+The linear mapping $"Id":RR^n->RR^m$ defined by $"Id"(vec(x))=vec(x)$
+
 ]
