@@ -448,7 +448,7 @@ If $L:RR^n->RR^m$ is a linear mapping with standard matrix $[L]=A=[vec(a_1) spac
 
 Let $A = [vec(a)_1 space ... space vec(a)_n] in M_(m times n)(RR)$. The *column space* of $A$, denoted by $"Col"(A)$, is the subspace of $RR^m$ spanned by the columns of $A$. That is, $ "Col"(A) = "Span"{vec(a)_1, ..., vec(a)_n} $
 
-If $L:RR^n->RR^m$ bis a linear mapping with standard matrix $[L]. = A [vec(a))_1 space ... space vec(v_n)]$, then $ "Range"(L) = "Col"([L]) $
+If $L:RR^n->RR^m$ bis a linear mapping with standard matrix $[L]. = A [vec(a)_1 space ... space vec(a_n)]$, then $ "Range"(L) = "Col"([L]) $
 
 Let $A = [vec(a)_1 space ... space vec(a)_n] "be an" m times n$ matrix. Suppose that $"rank"A = r$ and that the RREF of $A$ has leading ones in columns $j_1, ..., j_r$. Then ${vec(a)_j_1, ..., vec(a)_j_r}$ is a basis for $"Col"(A)$
 

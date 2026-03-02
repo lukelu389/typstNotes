@@ -186,3 +186,69 @@ Black: new utility curve
 Orange: prediction on possible new curve
 #align(center)[#image("../../../pictures/econ1_ch3_7.png", width:8cm)]
 
+=== Fully closed utility curve - Perfect Complements
+
+#align(center)[#image("../../../pictures/econ1_ch3_8.png", width:7cm)]
+
+Can *never* be represented by a T-table
+
+
+=== Perfect substitute
+
+#align(center)[#image("../../../pictures/econ1_ch3_9.png", width:6cm)]
+
+Purple: lens of opportunity
+
+Consumer will buy Item 1
+
+The goods still diminish im marginal utility because the perfect substitutes diminish each other by the same amounts.
+
+
+#table(
+    columns: 3, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Item 1], [$M_u$], [$M_u/P$], [1], [10], [1], [2], [5], [0.5], [3], [2.5], [0.25])
+
+$P_1 10$
+
+
+#table(
+    columns: 3, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Item 2], [$M_u$], [$M_u/P$], [1], [5], [0.5], [2], [2.5], [0.25], [3], [1.25], [0.125])
+
+$P_2 = 10$
+
+For these 2 tables, they both represent normal goods. We can buy 2 item 1 before getting 1 item 2.
+
+
+#info[*Price-Effect Decomposition*
+
+When price changes
+
+1. Ratio of prices change
+
+  - This changes "bang-for-the-buck" \
+  - Substitution Effect
+
+
+2. We become richer/poorer\
+  - Change in purchasing power \
+  - Income effect (Perfect compliments, purely income effect)
+
+]
+
+$Q_1$ becomes half as expensive.
+
+- Isolate the substitution effect by rotating the budget to the new slope. Keep it on the same utility curve
+
+- Isolate the income effect by shifting the budget up to new correct location
+
+
+Substitution effect: if item 1 gets cheaper, item 1 consumed more item 2 consumed less
+
+Income effect: if item 1 gets cheaper, both items consumed more
