@@ -230,10 +230,84 @@ We obtain $lim_(n->oo) frac(a_n, b_n) = L$
 Note that if the limit is DNE and not $oo$, it is inconclusive (i.e. oscillating)
 ]
 
-#info[*Alternating Series Test*]
+#info[*Alternating Series Test*\
+
+Let ${a_n}_(n=1)^oo$ be a sequence. If
+
+1. $lim_(n->oo) a_n = 0$
+
+2. and there is a positive integer $k$ s.t. $a_n>=a_(n+1)>0, forall n >=k$
+
+then the series $sum_(n=1)^oo (-1)^(n-1) a_n "and" sum_(n=1)^oo (-1)^n a_n$ both converge.
+]
+
+We prove this for $sum_(n=1)^oo (-1)^(n-1) n$ and $k=1$.
+
+Suppose that 
+
+- $a_n >-, forall n>= 1$
+
+- $a_n >= a_(n+1), forall n >=1$
+
+- $lim_(n->oo) a_n = 0$
+
+For $k>=2$:
+
+$ S_(2k) = S_(2k-2)+a_(2k-1)-a_2k >=S_(2k-2)$
+
+$S_(2k) = a_1 - a_2+a_3-a_4+... - a_(2k-2)+a_(2k-1)-a_(2k)$
+
+$  = a_1 - (a_2-a_3) - (a_4-a_5)- ... -(a_(2k-2)-a_(2k-1)) - a_(2k) <= a_1$
+
+So we have $S_2<=S_4<=...<= S_(2k)<=...<=a$
+
+By MCT, this sequence converges 
+
+For $k>=1$:
+
+$ S_(2k+1) = S_(2k)+a_(2k+1)$
+
+$lim_(k->oo) S_(2k+1) = L$
+
+By MCT, this sequence converges 
+
+#info[*Alternating Series Estimation*\
+
+Let ${a_n}_(n=1)^oo$ be a sequence. If
+
+1. $lim_(n->oo) a_n = 0$
+
+2. and there is a positive integer $k$ s.t. $a_n>=a_(n+1)>0, forall n >=k$
+
+Let $S_m = sum_(n=1)^oo (-1)^(n-1) a_n "and" S = sum_(n=1)^oo (-1)^n a_n$
+
+Then for all integers $m>=k$, we have the following:
+
+4. $|S-S_m|<= a_(m+1)$
+
+5. If $m$ is even, then $S_m$ is an underestimate of $S$
+
+6. If $m$ is odd, then $S_m$ is an underestimate of $S$
+
+Note: for series $T_m = sum_(n=1)^oo (-1)^(n-1) a_n "and" T = sum_(n=1)^oo (-1)^n a_n$, #5 becomes odd and #6 becomes even.
+]
+
+Example:
+
+$sum_(n=1)^oo frac((-1)^(n-1), n)$
+
+Is proven to be convergent by AST 
+
+For $m = 5: |S-S_5|<=a_6 = 1/6$. It is an overestimation.
+
+To guarantee an error be $0.001, 1/(m+1)<=1/1000 ==> m>=999$
 
 
+#info[*Absolute Convergence Test*\
+If the series $sum_(n=1)^oo |a_n|$ converges, then the series $sum_(n=1)^oo a_n$ converges.
 
+A series is absolutely convergent if the series's absolute value converges.
+]
 #info[*Ratio Test*]
 
 #info[*$n$-th Root Test*]

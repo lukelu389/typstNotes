@@ -234,11 +234,13 @@ When price changes
 
   - This changes "bang-for-the-buck" \
   - Substitution Effect
+   - If item 1 gets cheaper, item 1 consumed more item 2 consumed less
 
 
 2. We become richer/poorer\
   - Change in purchasing power \
   - Income effect (Perfect compliments, purely income effect)
+    - If item 1 gets cheaper, both items consumed more
 
 ]
 
@@ -249,6 +251,17 @@ $Q_1$ becomes half as expensive.
 - Isolate the income effect by shifting the budget up to new correct location
 
 
-Substitution effect: if item 1 gets cheaper, item 1 consumed more item 2 consumed less
+\
+\
+\
 
-Income effect: if item 1 gets cheaper, both items consumed more
+Curvature controls the rate at which marginal untility diminishes
+
+- This affects how consumers react to price changes(i.e. elasiticity)
+
+By breaking the price change into 2 movements, we can isolate two effects.
+
+1. Substitution effect: rotating without chaninging utility
+
+2. Income effect: raise temporary boudget line up to trivial point
+
