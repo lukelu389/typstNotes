@@ -49,7 +49,7 @@ Let $sum_(n=0)^oo a r^n $be a geometric series, where $a!=0$
 
 1. If $|r| <1$, then $sum_(n=0)^oo a r^n$ converges and $sum_(n=0)^oo a r^n = frac(a, 1-r)$
 
-2. If $|r|>=1$, then $sum_(n=0)^oo a r^n)$ diverges]
+2. If $|r|>=1$, then $sum_(n=0)^oo a r^n$ diverges]
 
 Examples:
 
@@ -215,17 +215,17 @@ $a_n>=0$ and $b_n>=0, forall n>=k$
 
 We obtain $lim_(n->oo) frac(a_n, b_n) = L$
 
-1. $0<L<oo$ then $sum_(n=1)a_n$ and $sum_(n=1)^oo b_n$ both converges or both diverges
+1. $0<L<oo$ then $sum_(n=1)^oo a_n$ and $sum_(n=1)^oo b_n$ both converges or both diverges
 
 2. $L = 0$, then 
  - if $sum_(n=1)^oo b_n$ converges, $sum_(n=1)^oo a_n$ converges
 
- - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo a_n$ diverges
+ - if $sum_(n=1)^oo a_n$ diverges, $sum_(n=1)^oo b_n$ diverges
 
 3. $L = oo$, then 
  - if $sum_(n=1)^oo a_n$ converges, $sum_(n=1)^oo b_n$ converges
 
- - if $sum_(n=1)^oo a_n$ diverges, $sum_(n=1)^oo b_n$ diverges
+ - if $sum_(n=1)^oo b_n$ diverges, $sum_(n=1)^oo a_n$ diverges
 
 Note that if the limit is DNE and not $oo$, it is inconclusive (i.e. oscillating)
 ]
@@ -306,8 +306,90 @@ To guarantee an error be $0.001, 1/(m+1)<=1/1000 ==> m>=999$
 #info[*Absolute Convergence Test*\
 If the series $sum_(n=1)^oo |a_n|$ converges, then the series $sum_(n=1)^oo a_n$ converges.
 
-A series is absolutely convergent if the series's absolute value converges.
-]
-#info[*Ratio Test*]
+Note that the converse is false.
 
-#info[*$n$-th Root Test*]
+A series is *absolutely convergent* if the $sum_(n=1)^oo |a_n|$ converges.
+
+A series is *conditionally convergent* if it converges but $sum_(n=1)^oo |a_n|$ diverges
+]
+
+#tip[*Series Classification*\
+
+1. Try Divergence Test
+
+2. Test $sum |a_n|$
+
+3. Test $sum a_n$
+
+]
+Examples:
+
+1. $sum_(n=0)^oo cos(n)/n^2 $ is absolutely convergent
+
+2. $sum_(n=1)^oo (-1)^n arctan (n/(n+1))$
+
+  $lim_(n->oo) (-1)^n arctan (n/(n+1)) = "DNE(oscillating)"$
+
+  The series diverges by Divergence Test
+
+\
+\
+3. $sum_(n=1)^oo (-2/3)^n $
+
+  Divergence Test fails
+
+  $sum_(n=1)^oo |(-2/3)^n| = sum_(n=1)^oo (2/3)^n$
+  
+  The series is geometric, converges by GST and is absolutely convergent.
+
+4. $sum_(n=1)^oo frac((-1)^n sqrt(n^2+n), n^(3/2))$
+
+  Divergence Test fails
+
+  $sum_(n=1)^oo |frac((-1)^n sqrt(n^2+n), n^(3/2))|  ==> lim_(n->oo) frac(frac(sqrt(n^2+n), n^(3/2)),  1/sqrt(n)) = 1$ 
+  
+  diverges by LCT.
+
+  $sum_(n=1)^oo frac((-1)^n sqrt(n^2+n), n^(3/2))$ converves by AST
+
+
+#info[*Ratio Test*\
+Let $k$ be a positive integer. Suppose that ${a_n}_(n=1)^oo$ is a sequence satisfying $a_n !=0$ for every $n >=k$. Let $ L = lim_(n->oo) |frac(a_(n+1), a_n)| $
+
+Further, supose that either $L in RR$ or $L = oo$
+
+1. If $L<1$, then $sum_(n=1)^oo a_n$ converges absolutely.
+
+2. If $L>1$ or if $L = oo$, then $sum_(n=1)^oo a_n$ diverges.
+
+3. If $L = 1$, then $sum_(n=1)&oo a_n$ is *inconclusive*
+]
+
+Examples:
+
+1. $sum_(n=1)^oo frac((-1)^n 2^n, n^2 3^n)$
+
+  $lim_(n->oo) |frac((-1)^(n+1) 2^(n+1), (n+1)^2 3^(n+1)) dot frac(n^2 3^n, (-1)^n 2^n)| = lim_(n->oo) frac(2 n^2, 3 (n+1)^2) = 2/3 < 1$
+
+  Converges absolutely by Ratio Test
+
+2. $sum_(n=1)^oo b^n / n!$
+
+  $lim_(n->oo) |frac(b^(n+1), (n+1)!) dot frac(n!, b^n)| = lim_(n->oo) b/(n+1) = 0<1$
+
+  Converges absolutely by Ratio Test
+
+3. $sum_(n=1)^oo n^n/n!$
+
+  $lim_(n->oo) |frac((n+1)^(n+1), (n+1)!) dot frac(n!, n^n)| = lim_(n->oo) (frac( n+1, n))^n = 1$
+
+  Inconclusive by Ratio Test
+#info[*$n$-th Root Test*\
+Let $L = lim_(n->oo) root(n, |a_n|)$ and suppose that $L in RR$ or $L = oo$
+
+1. If $L<1$, then $sum_(n=1)^oo a_n$ converges absolutely.
+
+2. If $L>1$ or if $L = oo$, then $sum_(n=1)^oo a_n$ diverges.
+
+3. If $L = 1$, then $sum_(n=1)&oo a_n$ is *inconclusive*
+]

@@ -159,7 +159,7 @@ $E = mat(1, 0, 0, ..., 0; 0, 1, 0, ..., 0; ..., ..., ..., ..., ...; 0, 0, c, ...
 Row $i$ has $e_(i i) = 1$, $e_(i j) = c$ and everywhere else is $0$
 
 
-$A = mat(a_(11), a_(12), ..., a_(1 k) ... a_(1 n); a_(21), a_(22), ..., a_(2 k) ... a_(2 n); ..., ..., ..., ..., ...; a_(j 1), a_(j 2), ..., a_(j  k) ... a_(j n); a_(i 1), a_(i 2), ..., a_(i  k) ... a_(i n); ..., ..., ..., ..., ..., a_(m 1), a_(m 2), ..., a_(m  k) ... a_(m n);)$
+$A = mat(a_(11), a_(12), ..., a_(1 k), ... ,a_(1 n); a_(21), a_(22), ..., a_(2 k), ..., a_(2 n); ..., ..., ..., ..., ... , ...; a_(j 1), a_(j 2), ..., a_(j  k), ..., a_(j n); a_(i 1), a_(i 2), ..., a_(i  k), ..., a_(i n); ..., ..., ..., ..., ..., ...,;a_(m 1), a_(m 2), ..., a_(m  k), ..., a_(m n);)$
 ]
 
 
@@ -173,3 +173,74 @@ Note that the order of $E_i$ matters
 
 If $E$ is an elementary matrix, its transpose is also an elementary matrix
 ]
+
+== Determinants
+
+#info[*Determinants*\
+
+Let $A = mat(a, b; c, d)$. The *determinant* of $A$ is $ "det" A = a d - b c $
+
+Let $A = mat(a, b, c; d, e, f; g, h, i)$. The *determinant* of $A$ is $ "det" A &= a "det" mat(e, f; h, i) - d "det" mat(b, c; h, i) + g "det" mat(b, c; e, f) \
+
+&= a(e i- f h) - d (b i - c h) + g(b f - c e)
+
+$
+
+Let $A$ be a $n times n$ matrix with $n>=2$. 
+
+1. The *determinant* of $A$ is defined $ "det" A = sum_(i=1)^n a_(i 1) C_(i 1) $ where the determinant of a $1 times 1$ matrix is defined by $"det"[c] = c$
+
+2. For any $1<=i<=n$ $ "det" A = sum_(k=1)^n a_(i k) C_(i k) $ called thee *cofactor expansion across the i-th row*, 
+
+3. For any $1 <=j<=n$ $ "det" A = sum_(k=1)^n a-(k j) C_(k j) $ called *cofactor expansion across the j-th column*
+
+
+]
+\
+
+Examples:
+
+1. Let $A = mat(1, 2; 3, 4), "det" A = 1 dot 4 - 2dot 3 = -2$
+
+2. Let $A = mat(1, 2, 3; 4, 5, 6; 7, 8, 9)$. 
+
+  $"det" A = 1(-1)^(1+1) "det" A(1, 1) + 4(-1)^(2+1) "det" A(2, 1) + 7 (-1)^(3+1) "det" A(3, 1) = 0$
+
+
+#info[*Cofactor*\
+
+Let $A$ be a $ n times n$ matrix with $n>=2$. Let $A(i, j)$ e then $(n-1) times (n-1)$ matrix obtained from $A$ by deleting the $i$-th row and $j$-th column. The *cofactor* of $a_(i j)$ is $ C_(i j)(A) = (-1)^(i+j) "det" A(i, j) $
+]
+\
+\
+\
+\
+
+Examples:
+
+1. Let $A = mat(1, 2, 3; 4, 5, 6; 7, 8, 9)$
+
+  $A(1, 1) = mat(5, 6; 8, 9), A(3, 2) = mat(1, 3; 4, 6)$
+
+  $C_11 = (-1)^(1+1) "det" A(1, 1) = 5 dot 9 - 6 dot 8=-3$
+
+  $C_32 = (-1)^(3+2) "det" A(3, 2) = -(6-12)=6$
+
+2. $A = mat(1, 2, 0; 3, -1, 6; 5, -2, 0)$
+
+  $"det" A = a_13 C_13 + a_23 C_23+a_33 C_33 = 0 + 6 C_23 + 0 =6 (-1)^(2+3)(-2-10)=72$
+
+
+#info[*Triangular*\
+
+A $m times n$ matrix $U$ is said to be *upper triangular* if $u_(i j) = 0$ whenever $ i>j$. 
+
+A $m times n$ matrix $L$ is said to be *lower triangular* if $l_(i j) = 0$ whenever $ i<j$
+
+]
+Example
+
+
+Let $A = mat(2, 0, 0, 0, 0; 1, -1, 0, 0, 0; 3, 5, 2, 0, 0; 6, 2000, 5, 1, 0; pi, e, 7, -3, 5)$
+
+  $"det" A = 2 (-1)^(1+1) "det" mat(-1, 0, 0, 0; 5, 2, 0, 0; 2000, 5, 1, 0; e, 7, -3, 5 ) = 2 (-1) "det" mat(2, 0, 0; 5, 1, 0; 7, -3, 5) = (2)(-1)(2) "det" mat(1, 0,; -3, 5) = (2)(-1)(2)(5) = -20$
