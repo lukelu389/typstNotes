@@ -237,10 +237,91 @@ A $m times n$ matrix $U$ is said to be *upper triangular* if $u_(i j) = 0$ whene
 
 A $m times n$ matrix $L$ is said to be *lower triangular* if $l_(i j) = 0$ whenever $ i<j$
 
+If a $n times n "matrix" A$ is an upper or lower triangular, then  $ "det" A = a_11 a_22 a_33 ... a_(n n) $
+
 ]
-Example
+Examples:
+
+1. Compute $"det" A$
+
+  Let $A = mat(2, 0, 0, 0, 0; 1, -1, 0, 0, 0; 3, 5, 2, 0, 0; 6, 2000, 5, 1, 0; pi, e, 7, -3, 5)$
+
+    $"det" A = 2 (-1)^(1+1) "det" mat(-1, 0, 0, 0; 5, 2, 0, 0; 2000, 5, 1, 0; e, 7, -3, 5 ) = 2 (-1) "det" mat(2, 0, 0; 5, 1, 0; 7, -3, 5) = (2)(-1)(2) "det" mat(1, 0,; -3, 5) = (2)(-1)(2)(5) = -20$
+\
+\
+
+2. Compute $"det" A$
+
+  Let $A = mat(2, 0, 6; -1, 5, 3; 1, 2, 1)$. 
+
+  We expand across the first row:
+
+  $"det" A &= a_11 c_11+ a_12 c_12 + a_13 c_13 \
+  
+  &= 2(-1)^(1
+  
+  +1) "det"mat(5, 3; 2, 1) + 0 + 6(-1)^(3+1) "det"mat(-1, 5; 1, 2) = -2 -42 = -44$
+
+3. Compute $"det" B$
+
+  Let $B = mat(1, 0, 0, 0; 306, 7, 0, 0; 812, pi, -1, 0; 4, -2, 18, 5)$
+
+  $"det" B = (1)(7)(-1)(5) = -35 $
 
 
-Let $A = mat(2, 0, 0, 0, 0; 1, -1, 0, 0, 0; 3, 5, 2, 0, 0; 6, 2000, 5, 1, 0; pi, e, 7, -3, 5)$
+#info[*Determinants and Row Operations*\
 
-  $"det" A = 2 (-1)^(1+1) "det" mat(-1, 0, 0, 0; 5, 2, 0, 0; 2000, 5, 1, 0; e, 7, -3, 5 ) = 2 (-1) "det" mat(2, 0, 0; 5, 1, 0; 7, -3, 5) = (2)(-1)(2) "det" mat(1, 0,; -3, 5) = (2)(-1)(2)(5) = -20$
+
+1. Row multiplication \
+  If $A$ is a $n times n$ matrix and $B$ is the matrix obtained from $A$ by multiplying one row of $A$ by $c in RR$, then $ "det" B = c "det A" $ 
+
+2. Row swap
+
+  If $A$ is a $n times n$ matrix and $B$ is the matrix obtained from $A$ by swaping one row of $A$ to another, then $ "det" B = - "det A" $ 
+
+  - If $A$ has two identical rows, then $"det" A = 0$
+  
+3. If $A$ is a $n times n$ matrix and $B$ is the matrix obtained from $A$ by adding a multiple of one row of $A$ to another, then $ "det" B =  "det A" $ 
+
+]
+
+Concept of Proof for Row multiplication:
+
+If $A = mat(a_11, a_12, a_13; a_21, a_22, a_32; a_31, a_32, a_33)$
+
+We multiply $c R_2$ to $B ==> mat(a_11, a_12, a_13; c a_21,  c a_22, c a_32; a_31, a_32, a_33)$
+
+$"det" B = C_21  b_21 + C_22 b_22 + C_32 b_32 = c (C_21 a_21,  C_22 a_22, C_32 a_32)= c "det" A$ 
+
+\
+\
+\
+\
+\
+Example:
+
+$"det" mat(2, 1, 7; 3, 1, 2; 1, -1, 0) R_1 <-> R_2 = - "det" mat(1, -1, 0; 3, 1, 2; 2, 1, 7) R_2 - 3R_1, R_3 - 2R_1 \
+
+= - "det" mat(1, -1, 0; 0, 4, 2; 0, 3, 2) 1/4 R_2 = -4 "det" mat(1, -1, 0; 0, 1, 1/2; 0, 3, 7) R_1+R_2, R_3 - 3 R_2 = -4 "det" mat(1, 0, 1/2; 0, 1, 1/2; 0, 0, 11/2) = -22$
+
+Or you can stop at step at $- det  mat(1, -1, 0; 0, 4, 2; 0, 3, 2)$ to use cofactor by taking advantage of the zeros in the first column.
+
+#info[*Determinants and Elementary Matrices*\
+1. If $A$ is a $n times n$ matrix and $E$ is an $n times n$ elementary matrix, then $ "det" E A = "det"E "det"A $
+
+2. A $n times n$ matrix $A$ is invertible if and only if $"det A" !=0$
+
+3. If $A, B$ are $n times n$ matrices, then $"det"(A B) = "det"A "det"B$
+
+4. If $A$ is an invertible matrix, then $"det" A^(-1) = 1/ ("det"A)$
+
+5. If $A$ is a $n times n$ matrix, $"det"A = "det" A^T $
+]
+
+Concept for Proof of theorem 1 from above
+
+$ I = mat(1, 0, 0; 0, 1, 0; 0, 0, 1) c R_2 ~ mat(1, 0, 0; 0, c, 0; 0, 0, 1) c ==> "det" E = c$ 
+
+$ I = mat(1, 0, 0; 0, 1, 0; 0, 0, 1) R_2 <-> R_1 ~ mat(0, 1, 0; 1, 0, 0; 0, 0, 1) c ==> "det" E = -1$ 
+
+$ I = mat(1, 0, 0; 0, 1, 0; 0, 0, 1) R_1 + c R_2 ~ mat(1, c, 0; 0, 1, 0; 0, 0, 1) c ==> "det" E = 1$ 

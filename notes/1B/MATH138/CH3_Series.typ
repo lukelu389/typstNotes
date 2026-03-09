@@ -393,3 +393,7 @@ Let $L = lim_(n->oo) root(n, |a_n|)$ and suppose that $L in RR$ or $L = oo$
 
 3. If $L = 1$, then $sum_(n=1)&oo a_n$ is *inconclusive*
 ]
+
+=== Summary
+
+#align(center)[#image("../../../pictures/cal2_ch3.png", width:12cm)]

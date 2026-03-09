@@ -66,11 +66,11 @@ Force intangible to have inherent structure like numbers
 
 "Happiness" is equivalent "Utility"
 
-An assumption is that of deminishing marginal utility, but still positive.
+An assumption is that of diminishing marginal utility, but still positive.
 
 Marginal rate of Substitution(MRS) : The rate of which the consumer would trade between $q_1, q_2$
 
-Due to the continuously deminishing MRS (continuously deminishing rate of trade), the curve will not be linear like the budget(constant rate of trade).
+Due to the continuously diminishing MRS (continuously diminishing rate of trade), the curve will not be linear like the budget(constant rate of trade).
 
 
 *Graph*
@@ -113,7 +113,7 @@ If $frac(M_u_1, p_1) > frac(M_u_2, p_2)$, then item 1 brings more utility.
 ]
 
 
-Since MRS is deminishing, thus explaining the price of luxury goods are hight as essentials have lower MRS as they are deminishing since we have obtained enough of it.
+Since MRS is diminishing, thus explaining the price of luxury goods are hight as essentials have lower MRS as they are diminishing since we have obtained enough of it.
 
 Example:
 
@@ -265,3 +265,123 @@ By breaking the price change into 2 movements, we can isolate two effects.
 
 2. Income effect: raise temporary boudget line up to trivial point
 
+
+=== Possible Exam questions: 
+
+*Trading vs Buying*
+
+- Main difference is that with trading there is no price
+ - What will buyer prefer: preference/given/trading, only marginal utility matters
+ - What will buyer buy : purchases, price matters
+
+
+Say we have two consumers with identical preferences
+ 
+#table(
+    columns: 2, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Item 1], [$M_u$], [1], [40], [2], [20], [3], [10], [4], [5],  [5], [2])
+\
+\
+\
+ 
+#table(
+    columns: 2, 
+    align: center,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Item 2], [$M_u$], [1], [40], [2], [20], [3], [10], [4], [5],  [5], [2])
+
+Consumer 1: 4 item 1, 0 item 2, Total Utility: 75
+
+Consumer 2: 0 item 1, 3 item 2, Total Utility: 70
+
+Market Utility: 145
+
+Can these consumer become better off?
+
+Yes, by trading
+
+Consumer 1: 2 item 1, 2 item 2, Total Utility: 120
+
+Consumer 2: 1 item 1, 2 item 2, Total Utility: 100
+
+Market Utility : 220
+
+How to find the trade price limits
+
+- Look at what the consumer is losing and see how they need to be given in exchange to feel equal or better off
+
+#align(center)[#image("../../../pictures/econ1_ch3_10.png", width:10cm)]
+
+*Total Utility per Dollar*
+
+$ "Total Utility" / "Total ollar Spent" $
+
+Example:
+
+Consumer buys a bundle (1, 3) at cost of \$10 for 110 total utility, then Total Utility per Dollar is 11
+ \
+ \
+ \
+ \
+ \
+ \
+Salary
+- Living
+- Disposable income
+ - Spend
+  - Dinner with friends (11 Utility per Dollar)
+   - Orange juice (1 juice)
+   - Nacho (3 nachos)
+  - Others (11 Utility per Dollar)
+ - Save
+
+Each decision, total utility per dollar is previous decision's marginal utility per dollar
+
+
+== Exam Question Overview
+
+Consumer preference model
+  1. Budget: limit of optimization
+    - $M$, total budget: $M$ changes effects and graphically
+
+    - $P_1/P_2$, price ration, graphically and effects
+    - Manipulate budget 
+
+  2. Utility Curves
+
+    - What is a utility curve
+
+     - Utility surface
+
+    - Objective preference
+    - Rate of diminishing marginal utility (Openness vs Closeness)
+     - Type of preference (substitute vs compliment)
+
+     - Elasticity
+
+     - Relation with Substitution effects and Income effects
+
+    - inferior/Superior/Normal goods, graphically
+
+    - Slope of MRS substitution
+
+  3. Combine to solve the model
+
+    - Lens of opportunity(getting rid of it to solve)
+
+      - If utility is curved, tangency
+       
+       - $frac(M U_1, P_1) = frac(M U_2, P_2)$
+      
+      - T-table
+
+        Facilitate trading
+    - Find total Utility 
+    
+    - Price effects and Decomposition (substitution vs income)
+
+Can you read the model given a graph 
