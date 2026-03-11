@@ -325,3 +325,91 @@ $ I = mat(1, 0, 0; 0, 1, 0; 0, 0, 1) c R_2 ~ mat(1, 0, 0; 0, c, 0; 0, 0, 1) c ==
 $ I = mat(1, 0, 0; 0, 1, 0; 0, 0, 1) R_2 <-> R_1 ~ mat(0, 1, 0; 1, 0, 0; 0, 0, 1) c ==> "det" E = -1$ 
 
 $ I = mat(1, 0, 0; 0, 1, 0; 0, 0, 1) R_1 + c R_2 ~ mat(1, c, 0; 0, 1, 0; 0, 0, 1) c ==> "det" E = 1$ 
+
+== Determinants and Systems of Equations
+
+Consider $A = mat(a, b; c, d)$ also invertible.
+
+Compute all possible cofactors:
+
+$C_11 = (-1)^(1+1) "det"mat(d) = d$
+
+$C_12 = (-1)^(2+1) "det"mat(c) = -c$
+
+$C_21 = (-1)^(2+1) "det"mat(b) = -b$
+
+$C_22 = (-1)^(2+2) "det"mat(a) = a$
+
+Consider a matrix of cofactors:
+
+$"Cof"(A) = mat(C_11, C_12; C_21, C_22) = mat(d, -c; -b, a)$
+
+Notice that $A^(-1) = frac(1, a d - b c) mat(d, -b; -c, a) = 1/("det"A) "Cof"(A)$
+
+#info[*Inverse by Cofactors*\
+
+1. If $A$ is a $n times n$ matrix with cofactors $C_(i j)$ and $i!=j$, then $ sum_(k=1)^n (A)_(i k) C_(j k) = 0 $
+
+  Note that this is different from the way of computing the determinant due to the index $j$
+
+2. If $A$ is a $n times n$ matrix, then $ (A^(-1))_(i j) = 1/("det"A) C_(j i) $
+]
+
+#info[*Cofactor Matrix and Adjugate*\
+Let $A$ is a $n times n$ matrix. The *cofactor matrix*, $"cof" A$, of $A$ is the matrix whose entry is the $i j-$th cofactor of $A$. $ ("cof"A)_(i j) = C_(i j) $
+
+The *adjugate* of $A$ is the matrix defined by $ ("adj" A)_(i j) = C_(j i) $
+
+In particular, $"adj" A = ("cof"A)^T$
+]
+
+Example:
+
+Let $A = mat(-1, 0, 1; 0, 1, 2; 2, 1, 3)$
+
+  $"det" A = (-1)(-1)^(1+1) "det" mat(1, 2; 1, 3) + 0 + 1 (-1)^(3+1) "det" mat(0, 1; 2, 1) = -1 + - 2 = -3$
+
+  $C_11 = 1$
+
+  $C_12 = (-1)^(2+1) "det"mat(0, 2; 2, 3) = 4$
+
+  $C_13 = (-1)^(3+1) "det"mat(0, 1; 2, 1) = -2$
+
+  $C_21 = (-1)^(2+1) "det"mat(0, 1; 1, 3) = 1$
+
+  $C_22 = (-1)^(2+2) "det"mat(-1, 1; 2, 3) = -5$
+
+  $C_23 = (-1)^(2+3) "det"mat(-1, 0; 2, 1) = 1$
+
+  $C_31 = (-1)^(3+1) "det"mat(0, 1; 1, 2) = -1$
+
+  $C_32 = (-1)^(3+2) "det"mat(-1, 1; 0, 2) = 2$
+
+  $C_33 = (-1)^(3+3) "det"mat(-1, 0; 0, 1) = -1$
+
+  $A^(-1) = -1/3 mat(1, 1, -1; -1, -5, 2; -2, 1, -1)$
+
+
+=== Cramer's Rule
+\
+Let $A = mat(-1, 0, 1; 0, 1, 2; 2, 1, 3)$
+
+  Let $vec(b) = mat(-3; 0; 6)$
+
+  Solve $A vec(x) = vec(b)$
+
+  Since $A$ is invertible, we will left-multiply both sides by $A^(-1)$
+
+  $A^(-1) A vec(x) = A^(-1) vec(b)$
+
+  $vec(x) &= A^(-1) vec(b) \ 
+
+  &= -1/3 mat(1, 1, -1; -1, -5, 2; -2, 1, -1) mat(-3; 0; 6) \
+
+  &= mat(1, 1, -1; -1, -5, 2; -2, 1, -1) mat(-1; 0; 2) \
+
+  &= mat(4; 0; 0)
+  
+  $
+
+== CUTOFF QUIZ
