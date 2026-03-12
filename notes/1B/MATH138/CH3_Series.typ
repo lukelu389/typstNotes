@@ -279,17 +279,17 @@ Let ${a_n}_(n=1)^oo$ be a sequence. If
 
 2. and there is a positive integer $k$ s.t. $a_n>=a_(n+1)>0, forall n >=k$
 
-Let $S_m = sum_(n=1)^oo (-1)^(n-1) a_n "and" S = sum_(n=1)^oo (-1)^n a_n$
+Let $S_m = sum_(n=1)^oo (-1)^(n-1) a_n "and" T = sum_(n=1)^oo (-1)^n a_n$
 
 Then for all integers $m>=k$, we have the following:
 
 4. $|S-S_m|<= a_(m+1)$
 
-5. If $m$ is even, then $S_m$ is an underestimate of $S$
+5. If $m$ is even, then $S_m$ is an underestimate of $S$ and $T_m$  is an overestimate of $T$
 
-6. If $m$ is odd, then $S_m$ is an underestimate of $S$
+6. If $m$ is odd, then $S_m$ is an underestimate of $S$ and $T_m$  is an underestimate of $T$
 
-Note: for series $T_m = sum_(n=1)^oo (-1)^(n-1) a_n "and" T = sum_(n=1)^oo (-1)^n a_n$, #5 becomes odd and #6 becomes even.
+
 ]
 
 Example:
