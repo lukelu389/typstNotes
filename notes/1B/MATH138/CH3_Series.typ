@@ -287,7 +287,7 @@ Then for all integers $m>=k$, we have the following:
 
 5. If $m$ is even, then $S_m$ is an underestimate of $S$ and $T_m$  is an overestimate of $T$
 
-6. If $m$ is odd, then $S_m$ is an underestimate of $S$ and $T_m$  is an underestimate of $T$
+6. If $m$ is odd, then $S_m$ is an overestimate of $S$ and $T_m$  is an underestimate of $T$
 
 
 ]
