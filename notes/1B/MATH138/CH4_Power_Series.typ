@@ -79,5 +79,71 @@ Let $R_f$ and $R_g$ be the radii of convergence for $f, g$ respectively. Let $I_
 
   Then the radius of convergence for $p(x) = R_f$ and the interval of convergence for $p(x) = I_f$
 
-3.
+3. Suppose that $a = 0$, i.e., $f(x) = sum_(n=0)^oo c_n x^n$ is a power series centred at $x = 0$
+
+  Let $q(x) = f(b x^k) = sum_(n=0)^oo c_n b^n x^(k n), b in RR \ {0}, k in RR^+$
+
+  Then the radius of convergence for $q(x)$ is $R(frac(R_f, |b|)^(1/k))$
+
+  The interval of convergence for $q(x)$ is ${x in RR | b x^k in I_f}$
 ]
+
+Examples:
+
+Given $1/(1-x) = sum_(n=0)^oo x^n "with" I = (-1, 1), R = 1$
+
+1. $f(x) = 1/(2-x) = 1/2 (1/(1-x/2)), "center at" x = 0$
+
+  $1/2 (1/(1-x/2)) = 1/2sum_(n=0)^oo (x/2)^n = sum_(n=0)^oo 1/2^(n+1) x^n$
+
+  $I = (-2, 2), R = 2$
+
+2. $f(x) =x^2 / (x+3) = x^2/3 (1/(1- (-x/3))), "center at" x = 0$
+
+  $x^2/3 (frac(1, 1-(-x/3))) = sum_(n=0)^oo (-x/3)^n x^2/3 = sum_(n=0)^oo frac((-1)^n x^(n+2), 3^(n+1))$
+
+  $I = (-3, 3), R = 3$
+
+
+
+== Differentiation and Integration on Power Series
+\
+#info[*Differentiation and Integration on Power Series*\
+
+Let $f(x) = sum_(n=0)^oo c_n (x-a)^n$ be a power series function with the radius of convergence $R>0$
+
+Then $f(x)$ is differentiable on the interval $(a-R, a+R)$
+
+Moreover, the following statements hold.
+
+1. $ f'(x) = sum_(n=1)^oo c_n n (x-a)^(n-1), quad quad forall x in (a-R, a+R) $
+  
+  Note: Interval of convergence might change when $R<oo$ at the endpoints.
+
+2. $ integral f(x) dif x = C+ sum_(n=0)^oo c_n frac((x-a)^(n+1), n+1), quad quad forall x in (a-R, a+R), C in RR $
+  Note: Interval of convergence might change when $R<oo$ at the enpoints.
+
+3. The above power series for $f'(x)$ and $integral f(x) dif x$ both have the same radius of convergence of $R$
+
+4. For any subinterval $[b, d] subset (a-R, a+R)$, we have 
+
+$ integral_b^d f(x) dif x = sum_(n=0)^oo c_n integral_b^d (x-a)^n dif x = sum_(n=0)^oo c_n eval(frac((x-a)^(n+1), n+1), b, upper: d) $
+
+All four statements continue to hold when the radius of convergence is $R = oo$, in which we replace the interval with $RR$
+]
+
+Examples:
+
+Given $1/(1-x) = sum_(n=0)^oo x^n "with" I = (-1, 1), R = 1$
+
+1. $f(x) = ln(x+1)$ centered at $x = 0$
+
+  $dvs(ln(x+1), x) = 1/(1+x) = 1/(1- (-x))$
+
+  $1/(1-(-x)) = sum_(n=0)^oo (-1)^n x^n$
+
+  $integral 1/(1+x) dif x = integral sum_(n=0)^oo (-1)^n x^n dif x = sum_(n=0)^oo integral (-1)^n x^n dif x = C+ sum_(n=0)^oo (-1)^n x^(n+1)/(n+1)$
+
+  $ln(x+1) = sum_(n=0)^oo (-1)^n x^(n+1)/(n+1)$
+
+  $R = 1, I = (-1, 1]$
