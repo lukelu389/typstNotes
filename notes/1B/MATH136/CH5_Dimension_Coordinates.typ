@@ -32,7 +32,16 @@ Every subspace $SS$ of $RR^n$ has a basis.
 3. Let $SS$ be a subspace of $RR^n$. If $B = {vec(v_1), ..., vec(v)_k}$ is a basis for $SS$, then we say: $ "dim" SS = k $\
   If $SS = {vec(0)}$ is a trivial subspace, then $"dim" SS = 0$.
 
-4.
+4. If $"dim" SS = k$
+  1. A set of more than $k$ vectors in $SS$ must be linearly dependent.
+
+  2. A set of more than $k$ vectors in $SS$ cannot span $SS$.
+
+  3. A set of $k$ vectors in $SS$ is linearly independent if and only if it spans $SS$
+
+5. If $SS$ is a $k$ dimensional subspace of $RR^n$ and ${vec(v)_1, ..., vec(v)_l}$ is a linearly independent set in $SS$ with $l<k$, then there exist vectors $vec(w)_(l+1), ..., vec(w)_k in SS$ s.t. ${vec(v)_1, ..., vec(v)_l ,vec(w)_(l+1), ..., vec(w)_k}$ is a basis for $SS$.
+
+6. Let $SS_1, SS_2$ be subspace of $RR^n$ s.t. *$SS_1 subset.eq SS_2$*. Then $"dim" SS_1 <= "dim" SS_2$. Moreover $SS_1 = SS_2$ if and only if $"dim" SS_1 = "dim" SS_2$
 
 ]
 
@@ -87,6 +96,23 @@ $==> c = {vec(w)_1, ..., vec(w)_m}$ is linearly dependent.
 ]
 
 #align(right)[$square$]
+
+#info[*Coordinates*\
+
+1. If $B = {vec(v)_1, ..., vec(v)_k}$ is a basis for a subspace $SS$ of $RR^n$, then every $vec(v) in SS$ can be written as a unique linear combination of the vectors in $B$
+
+2. Let $B = {vec(v)_1, ..., vec(v)_k}$ be a basis for a subspace $SS$ of $RR^n$. If $vec(v)= b_1 vec(v)_1 + ... + b_k vec(v)_k$, then $b_1, ..., b_k$ are called the *B-coordinates* of $vec(v)$, and we define the *B-coordinate vector* by $ [vec(v)]_B = mat(b_1; ...; b_k) $
+
+3. If $SS$ is a subspace of $RR^n$ with basis $B = vec(v)_1, ..., vec(v)_k$, then for any $vec(v), vec(w) in SS$, $s, t in RR$ $ [s vec(v)+ t vec(w)]_B = s[vec(v)]_B +t[vec(w)]_B $
+
+*Note*: the order of basis matter(i.e. ${vec(e)_1, vec(e)_2} != {vec(e)_2, vec(e)_1}$ )
+]
+
+Concept:
+
+For an arbitrary $vec(x) = mat(x_1; x_2; ...; x_n) in RR^n$, we can write $vec(x) = x_1 vec(e)_1 + ... +. x_n vec(e)_n$
+
+Which leads to #2.
 
 
 

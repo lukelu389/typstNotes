@@ -147,3 +147,45 @@ Given $1/(1-x) = sum_(n=0)^oo x^n "with" I = (-1, 1), R = 1$
   $ln(x+1) = sum_(n=0)^oo (-1)^n x^(n+1)/(n+1)$
 
   $R = 1, I = (-1, 1]$
+
+2. $f(x) = frac(x, (1-2x)^2)$
+
+  $dvs(1/(1-x), x) = frac(1, (1-x)^2)$
+
+  $frac(1, (1-2x)^2) = sum_(n=0)^oo n 2^(n-1) x^(n-1), quad|2x|<1 ==> |x|<1/2$
+
+  $frac(x, (1-2x)^2) =  sum_(n=0)^oo n 2^(n-1) x^n$
+
+  $R = 1$
+
+\
+3. Consider $f(x) = sum_(n=0)^oo frac(x^n, n!) , x in RR$, and this function is the IVP $y' = y, y(0)=1$
+
+  $f'(x) = sum_(n=1)^oo frac(n x^(n-1), (n-1)!) =  sum_(n=0)^oo frac(x^n, n!)$
+
+  $f(0) = 1$
+
+  $f(x) = e^x =  sum_(n=0)^oo frac(x^n, n!), x in RR$
+  
+
+
+== Taylor Series
+
+#info[*Taylor Series*\
+
+*Uniqueness of Power Series*
+Suppose that $f(x) =  sum_(n=0)^oo c_n (x-a)^n, forall x in (a-R, a+R), R > 0$. 
+
+Then for every $n >0$, we have $c_n = frac(f^(n)(a), n!)$
+
+*Taylor Series*
+
+Let $f(x)$ be a infinitely differentiable function 
+
+Its Taylor Series centered at $x = a$ is $ f(x) = sum_(n=0)^oo frac(f^(n) (a)(x-a)^n, n!) $
+
+*Maclaurin Series*
+
+$ f(x) = sum_(n=0)^oo frac(f^(n) (0)x^n, n!) $ is a Maclaurin series for $f(x)$
+
+]

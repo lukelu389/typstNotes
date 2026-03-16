@@ -62,7 +62,7 @@ $B$ is unique.
 
 If $A, B$ are invertible matrices and $c in RR$ with $c != 0$, then 
 
-1. $ (c A)^-1 = 1/c A^(-1)$
+1. $ (c A)^(-1) = 1/c A^(-1)$
 
 2. $(A^T)^(-1) = (A^(-1))^T$
 
@@ -192,7 +192,7 @@ Let $A$ be a $n times n$ matrix with $n>=2$.
 
 2. For any $1<=i<=n$ $ "det" A = sum_(k=1)^n a_(i k) C_(i k) $ called thee *cofactor expansion across the i-th row*, 
 
-3. For any $1 <=j<=n$ $ "det" A = sum_(k=1)^n a-(k j) C_(k j) $ called *cofactor expansion across the j-th column*
+3. For any $1 <=j<=n$ $ "det" A = sum_(k=1)^n a_(k j) C_(k j) $ called *cofactor expansion across the j-th column*
 
 
 ]
@@ -375,7 +375,7 @@ Let $A = mat(-1, 0, 1; 0, 1, 2; 2, 1, 3)$
 
   $C_13 = (-1)^(3+1) "det"mat(0, 1; 2, 1) = -2$
 
-  $C_21 = (-1)^(2+1) "det"mat(0, 1; 1, 3) = 1$
+  $C_21 = (-1)^(2+1) "det"mat(0, 1; 1, 3) = -1$
 
   $C_22 = (-1)^(2+2) "det"mat(-1, 1; 2, 3) = -5$
 
@@ -387,7 +387,7 @@ Let $A = mat(-1, 0, 1; 0, 1, 2; 2, 1, 3)$
 
   $C_33 = (-1)^(3+3) "det"mat(-1, 0; 0, 1) = -1$
 
-  $A^(-1) = -1/3 mat(1, 1, -1; -1, -5, 2; -2, 1, -1)$
+  $A^(-1) = -1/3 mat(1, 4, -2; -1, -5, 1; -1, 2, -1)$
 
 
 === Cramer's Rule
@@ -404,9 +404,9 @@ Let $A = mat(-1, 0, 1; 0, 1, 2; 2, 1, 3)$
 
   $vec(x) &= A^(-1) vec(b) \ 
 
-  &= -1/3 mat(1, 1, -1; -1, -5, 2; -2, 1, -1) mat(-3; 0; 6) \
+  &= -1/3 mat(1, 4, -2; -1, -5, 1; -1, 2, -1) mat(-3; 0; 6) \
 
-  &= mat(1, 1, -1; -1, -5, 2; -2, 1, -1) mat(-1; 0; 2) \
+  &= mat(1, 4, -2; -1, -5, 1; -1, 2, -1) mat(-1; 0; 2) \
 
   &= mat(3; 0; 0)
   
