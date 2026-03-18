@@ -180,12 +180,68 @@ Then for every $n >0$, we have $c_n = frac(f^(n)(a), n!)$
 
 *Taylor Series*
 
-Let $f(x)$ be a infinitely differentiable function 
+Let $f(x)$ be a $m$ degree polynomial function 
 
-Its Taylor Series centered at $x = a$ is $ f(x) = sum_(n=0)^oo frac(f^(n) (a)(x-a)^n, n!) $
+Its Taylor Series centered at $x = a$ is $ f(x) = T_(m, a)(x) = sum_(n=0)^m frac(f^(n) (a)(x-a)^n, n!) $
+
+
+- For every integer $j in {0, 1, 2, 3, ..., m}, T_(m, a)^(j)(a) = f^(j)(a)$
 
 *Maclaurin Series*
 
 $ f(x) = sum_(n=0)^oo frac(f^(n) (0)x^n, n!) $ is a Maclaurin series for $f(x)$
 
+]
+
+Examples:
+
+1. $f(x)=sin x, a = 0$
+
+  $f(0) = 0, f'(0)=1, f''(0) = 0, f'''(0) = -1, f^(4) = 0$
+
+  $sin (x) = sum_(n=0)^oo frac((-1)^(n) x^(2n+1), (2n+1)!), quad forall x in RR$
+
+  $lim_(n->oo)| frac((-1)^(n+1) x^(2n+3), (2n+3)!) dot frac( (2n+1)!, (-1)^(n) x^(2n+1))| = lim_(n->oo) (|x|^2) / (2n+2)(2n+3) = |x|^2 dot 0 = 0 < 1$. 
+    
+  Converges by Ratio Test. 
+
+  The power series converges for all $x in RR$
+
+2. $f(x)= cos(x), a = 0$
+
+  Since $dvs(sin x, x) = cos x$. 
+
+  $cos(x) = sum_(n=0)^oo frac((-1)^(n) x^(2n), (2n)!), quad forall x in RR$
+
+#info[*Lagrange's Remainder Formula*\
+
+Let $m$ be a nonnegative integer. Suppose that $f^(m+1)$ is continuous on an open interval $I$ that contains $a$. If $x in I$, then there is a real number $c$ between $a$ and $x (i.e., c in [a, x], x>=a or c in [x, a], x<a)$ s.t. $ f(x) - T_(m, a)(x) = frac(f^(m+1)(c), (m+1)!) (x-a)^(m+1) $
+]
+
+
+Examples:
+
+1. $f(x) = sin(x), a = 0$
+
+#proof[
+Let $x in RR, m in NN$.
+
+  Since $f^(m+1)(x)$ is one of $plus.minus cos(x), plus.minus sin(x), f^(m+1)(x)$ is continuous on $RR$
+
+  By LRF, $exists c in [0, x]$ s.t. $sin(x) - T_(m, 0)(x) = frac(f^(m+1)(c), (m+1)!) x^(m+1) $.
+
+  Thus $|f^(m+1)(c)| <=1 ==> |sin (x) - T_(m, 0) (x)| = |frac(f^(m+1)(c), (m+1)!) x^(m+1)| <= frac(|x|^(m+1), (m+1)!)$. 
+
+  Since $lim_(n->oo) frac(|x|^(m+1), (m+1)!) = 0$, by Squeeze Theorem, $lim_(n->oo) |sin(x)- T_(m, 0)(x)| = 0$.
+
+  Therefore $f(x) = lim_(n->oo) T_(m, 0) = sum_(n=0)^oo frac((-1)^(n) x^(2n+1), (2n+1)!)$
+]
+
+
+
+#align(right)[$square$]
+#info[*Taylor's Inequality*\
+Let $m$ be a nonnegative integer. Suppose that $f^(m+1)$ is continuous on an open interval $I$ that contains $a$.
+
+If $|f^(m+1)|<=K$ for every $x in I$, then for every $x in I$, $ |f(x)- T_(m, a)(x)| <= frac(K|x-a|^(m+1), (m+1)!) $
 ]

@@ -117,3 +117,14 @@ Total production : 52.5 $x$ and 105 $y$ on market
 
 All countries get an increase in $x$
 
+
+Gains from trade fro specialization, we will get the country with absolute advantage to produce just enough $y$ that the post-specialization production equation pre-specialization.
+
+Then trade.
+
+
+#align(center)[#image("../../../pictures/econ1_ch4_2.png", width: 4cm)]
+Comparative advantage is all needed for gains from trade
+- So long as PPFs(green dotted line) are not parallel, there is gains from trade.
+
+- Absolute advantage limits how much we can specialize

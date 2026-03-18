@@ -21,3 +21,4 @@ Scheduled OH preceeding exams (\~1 week)
 Midterm format
 
 30 MC for 80 mins
+
