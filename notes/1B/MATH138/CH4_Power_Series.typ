@@ -219,9 +219,9 @@ Let $m$ be a nonnegative integer. Suppose that $f^(m+1)$ is continuous on an ope
 ]
 
 
-Examples:
+Example:
 
-1. $f(x) = sin(x), a = 0$
+$f(x) = sin(x), a = 0$
 
 #proof[
 Let $x in RR, m in NN$.
@@ -245,3 +245,23 @@ Let $m$ be a nonnegative integer. Suppose that $f^(m+1)$ is continuous on an ope
 
 If $|f^(m+1)|<=K$ for every $x in I$, then for every $x in I$, $ |f(x)- T_(m, a)(x)| <= frac(K|x-a|^(m+1), (m+1)!) $
 ]
+
+Example:
+
+Let $f(x) = sqrt(1+x)$
+
+$f(x) = (1+x)^(1/2) ==> f(0)=1$
+
+$f'(x) = 1/2 (1+x)^(-1/2) ==> f'(0) = 1/2$
+
+$f''(x) = -1/4 (1+x)^(-3/2) ==> f''(0)=-1/4$
+
+$f'''(x) = 3/8 (1+x)^(-5/2) $
+
+$T_(2, 0)(x) = 1+ 1/2 x - frac(1, 4 dot 2!) x^2$
+
+$T_(2, 0)(1) = 11/8$
+
+$|f^(3)(c)| <= |f^(3)(0)| = 3/8$
+
+Therefore $|f(1)-T_(2, 0)(1)| <= (3/8)/6 = 1/16$
