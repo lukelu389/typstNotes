@@ -246,9 +246,9 @@ Let $m$ be a nonnegative integer. Suppose that $f^(m+1)$ is continuous on an ope
 If $|f^(m+1)|<=K$ for every $x in I$, then for every $x in I$, $ |f(x)- T_(m, a)(x)| <= frac(K|x-a|^(m+1), (m+1)!) $
 ]
 
-Example:
+Examples:
 
-Let $f(x) = sqrt(1+x)$
+1. Let $f(x) = sqrt(1+x)$
 
 $f(x) = (1+x)^(1/2) ==> f(0)=1$
 
@@ -265,3 +265,57 @@ $T_(2, 0)(1) = 11/8$
 $|f^(3)(c)| <= |f^(3)(0)| = 3/8$
 
 Therefore $|f(1)-T_(2, 0)(1)| <= (3/8)/6 = 1/16$
+\
+\
+
+2. Find Taylor Polynomial for $f(x) = x^2 + x+1$ centered at $x = 1$
+
+  $3 + 3(x-1) + (x-1)^2$
+
+3. Suppose that $T_(3, -1)(x)$ for a function $f$ is given by $T_(3, -1) =2 - 3(x+1)^2 + 1/5 (x+1)^3 $. 
+  
+  Find $f'(-1), f''(-1)$
+
+  $f'(-1) = 0$
+
+  $f''(-1) = -3 * 3! = -6$
+
+4. $f(x) = x^3 e^x^2, f^(63) (0)$
+
+  $e^x = sum_(n=0)^oo x^n / n! ==> x^3 e^x^2 = sum_(n=0)^oo x^(2n+3) / n!$, which is the Maclaurin Series for the given function which is unique.
+
+  $f'(63)(0)/ 63! ==> 1/30! ==> 30!/63!$
+
+5. Let $f(x) = x^(2/3)$. Determine $T_(2, 8)(x)$ to determine an upper bound on the error in using $T_(2, 8)$ to estimate $f(x), x in (5, 11)$
+
+  Let $f(x) = x^(2/3), f'(x) = 2/3 x^(-1/3), f''(x) = -2/9 x^(-4/3), f'''(x) = 8/27 (x)^(-7/3)$
+
+  $T_(2, 8) = 4 + 1/3 (x-8) - 1/144 (x-8)^2$
+
+  Note that $f'''(x)$ is continuous on $I = (5, 11)$ containing 8.
+
+  $|f^(3)(x)| = f^(3)(x) <= f^(3)(5) = 8/27 dot 1/5^(7/3)$
+
+  Therefore, for all $x in I$, $|f(x) - T_(2, 8)(x)| <= frac(8/27 dot 1/5^(7/3), 3!) |x-8|^3 < frac(8/27 dot 1/5^(7/3), 3!) 3^3 = 4/(3 dot 5^(7/3))$
+
+== Binomial Series
+
+#info[*Binomial Coefficient*\
+
+Let $alpha$ be a real number and let $n$ be some positive integers
+
+$ binom(alpha, n) = frac((alpha)(alpha-1)(alpha-2) ... (alpha - n + 1), n!) = frac(alpha!, n! (alpha - n)!) $
+
+Note:
+
+$binom(alpha, 0) = 1, binom(alpha, -n) = 0$
+
+$binom(alpha, n+1)(n+1) + binom(a, n) n = binom(alpha, n) alpha$
+]
+
+#info[*Generalized Binomial Theorem*\
+
+Let $alpha$ be a real number. If $|x|<1$, then $ (1+x)^alpha = sum_(n=0)^oo binom(alpha, n)x^n = 1+ alpha x + frac(alpha (alpha-1), 2)x^2 + ...$
+
+If $|x|>1$ and $alpha$ is a nonnegative integer, then the series diverges
+]

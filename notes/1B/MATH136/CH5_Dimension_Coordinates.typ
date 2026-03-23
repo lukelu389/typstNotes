@@ -119,7 +119,7 @@ Which leads to Theorem 2.
 
 #info[*Change of Coordinates Matrix*\
 
-1. Let $B = {vec(v)_1, ..., vec(v)_n}$ and $C$ both be bases for a subspace $SS$. The change of coordinates matrix from $B-$coordinates to $C$-coordinates is defined as $ #v(0em)_C P_B = [[vec(v)_1]c ... [vec(v)_n]c] $ and for any $x in SS$, we have $ [vec(x)_c = #v(0em)_C P_B [vec(x)]_B] $
+1. Let $B = {vec(v)_1, ..., vec(v)_n}$ and $C$ both be bases for a subspace $SS$. The change of coordinates matrix from $B-$coordinates to $C$-coordinates is defined as $ #v(0em)_C P_B = [[vec(v)_1]c ... [vec(v)_n]c] $ and for any $x in SS$, we have $ [vec(x)]_c = #v(0em)_C P_B [vec(x)]_B $
 
 2. If $B$ and $C$ are bases for a $k$-dimensional subspace $SS$, then the change of coodinates matrices $#v(0em)_C P_B, #v(0em)_B P_C$ satisfy $ #v(0em)_C P_B #v(0em)_B P_C = I = #v(0em)_B P_C #v(0em)_C P_B $
 
