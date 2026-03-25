@@ -128,3 +128,41 @@ Comparative advantage is all needed for gains from trade
 - So long as PPFs(green dotted line) are not parallel, there is gains from trade.
 
 - Absolute advantage limits how much we can specialize
+
+#info[*Competitive Model*\
+
+- So called be cause we use it to study different market structures: $"Competitive" <-> "Non-competitive"$
+
+- Fundamentally, all of our model have been following the same idea:
+
+ - $"Marginal Benefit" > "Marginal Cost"$
+
+- Firms & Companies exist to make profit:
+    - $"Revenue" > "Cost"$
+
+- Marginal Revenue $~$ Price $P$
+
+ - Price depends on market structures (i.e. Number of firms, Easy with which firms can enter the market, Easy with which products can be differentiable, Market information, Friction, etc.)
+
+- Marginal Cost($M C$)
+
+    - Cost function $C(q) = A q^2 + B q + C$
+
+    - Fixed cost: does not scale with production
+
+    - Variable cost: scale with production
+
+    - $C(q)$ change if $q$ goes up by 1.
+
+- Optimal point: $P = M C$
+
+- Profit: $frac(C(q), q)$
+
+Graph (Assume Perfect Competition)
+
+#align(center)[#image("../../../pictures/econ1_ch4_3.png", width: 6cm)]
+
+
+
+
+]

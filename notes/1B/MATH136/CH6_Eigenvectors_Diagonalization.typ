@@ -157,7 +157,8 @@ $
 $==> A vec(v)_1 = lambda_i vec(v)_i, forall i = 1, 2, ..., n$
 
 Meaning that the effect of multiplying $A$ by $vec(v)_i$ is the same as scaling $vec(v)_i$ by some $lambda_i$
-
+\
+\
 
 #info[*Eigenvalues, Eigenvectors, Eigenpairs*\
 
@@ -174,3 +175,55 @@ We need $vec(v) != vec(0)$ s.t. $A vec(v) = lambda vec(v)$
 $A vec(v) - lambda vec(v) = vec(0) ==> = (A - lambda I) vec(v) = vec(0)$
 
 To get non-zero $vec(v)$ solution, $"det"(A - lambda I) = 0$
+
+\
+
+Examples:
+
+1. Let $A = mat(0, 1; 2, 1), vec(v) = mat(1;2)$
+
+  $A vec(v) = mat(0, 1; 2, 1) mat(1;2) = mat(2;4)= 2 mat(1;2)$ = 2 vec(v).
+
+  $lambda = 2$ is an eigenvalue of $A$ correspoind to the eigenvector $vec(v) = mat(1;2)$
+
+\
+2. Let $A = mat(0, 1; 3, -2)$, find eigenvalues and eigenvectors of $A$
+
+  $0 &= "det" (A - lambda I) = "det" (mat(0, 1; 3, -2) - mat(lambda, 0; 0, lambda)) = mat(-lambda, 1; 3, -2-lambda) \
+  
+  &= -lambda (-2-lambda) - 3 = (lambda +3)(lambda-1) = 0 \
+
+  ==> lambda_1 = 1, lambda_2 = -3$
+
+  $A- lambda_1 I = mat(-1, 1; 3, -3) ~ mat(1, -1; 0, 0) ==> vec(v)_1 = t mat(1;1), t in RR \\{0}$
+
+
+  $A- lambda_2 I = mat(3, 1; 3, 1) ~ mat(1, 1/3; 0, 0) ==> vec(v)_2 = s mat(-1; 3), s in RR \\{0}$
+
+#info[*Eigenspace*\
+
+Let $A$ be a $n times n$ matrix with eigenvalue $lambda$. We call the nullspace of $A - lambda I$ the *eigenspace* of $lambda$, denoted $E_lambda$
+
+Let $A$ be a $n times n$ matrix with eigenvalue $lambda_1$.
+
+- *Algebraic Multiplicity*
+  - The algebraic multiplicity of $lambda_1$, denoted $a_lambda_1$, is the number of times that $lambda_1$ is a root of the characteristic polynomial $C(lambda)$. That is, if $C(lambda) = (lambda - lambda-1)^k C_1(lambda)$, where $C_1 (lambda_1) != 0$, then$a_lambda_1 = k$
+- *Geometric Multiplicity*
+ - The geometric multiplicity of $lambda_1$, denoted $g_lambda_1$, is the dimension of its eigenspace, $g_lambda_1 = "dim"(E_lambda_1)$
+
+]
+
+Examples:
+
+1. Let $A = mat(0, 1, 1; 1, 0, 1; 1, 1,0)$. Find the eigenvalues of $A$, bases for the corresponding eigenspace, state the geometric and algebraic multiplicity of each eigenvalue.
+  
+  $0 &= "det"(A - lambda I) = "det" (mat(-lambda, 1, 1; 1, -lambda, 1; 1, 1, -lambda))\
+  
+     &= - lambda "det" mat(-lambda, 1; 1, -lambda) - "det" mat(1, 1; 1, -lambda) + "det" mat(1, -lambda; 1, 1) = -lambda (lambda-1)(lambda+1) + (lambda+1) + (lambda+1) \
+     
+     &= -(lambda+1)(lambda^2 - lambda - 2) = -(lambda+1)^2(lambda-2)
+     $
+  $==> lambda_1 = -1, lambda_2 = 2$
+
+  $A - lambda_1 I = mat(1, 1, 1; 1, 1, 1;, 1, 1, 1) ~ mat(1, 1, 1; 0, 0, 0; 0, 0, 0) ==> s mat(-1; 1; 0) + t mat(-1;0; 1) ==> B_lambda_1 {mat(-1; 1; 0), mat(-1; 0; 1)}$. Bases for $lambda_1 = "Span" B_lambda_1$
+

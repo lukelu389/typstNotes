@@ -319,3 +319,11 @@ Let $alpha$ be a real number. If $|x|<1$, then $ (1+x)^alpha = sum_(n=0)^oo bino
 
 If $|x|>1$ and $alpha$ is a nonnegative integer, then the series diverges
 ]
+
+Examples:
+
+1. Use the generalized binomial theorem to derive the power series representation of $f(x) = frac(1, 1-x)$ centered at $x = 1$
+
+  Note that using the binomial theorem for $|x|<1, (1+x)^(-1) = sum_(n=0)^oo binom(-1, n) x^n$
+
+  $==> frac(1, 1-x) = sum_(n=0)^oo binom(-1, n) (-1)^n x^n = sum_(n=0)^oo frac((-1)(-2)...(-n), n!) (-1)^n x^n = sum_(n=0)^oo x^n$
