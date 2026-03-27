@@ -165,6 +165,8 @@ Meaning that the effect of multiplying $A$ by $vec(v)_i$ is the same as scaling 
 1. Let $A$ be $n times n$ matrix. If there exists a vector $vec(v)!= vec(0)$ s.t. $A vec(v) = lambda vec(v)$, then the scalar $lambda$ is the *eigenvalue* of $A$ and $vec(v)$ is called *eigenvectors* of $A$ corresponding to $lambda$. The pair $(lambda, vec(v))$ is called an *eigenpair*
 
 2. Let $L:RR^n -> RR^n$ be a linear operator. If there exists a vector $vec(v) != vec(0)$ s.t. $L(vec(v)) = lambda vec(v)$, then $lambda$ is caled an *eigenvalue* of $L$ and $vec(v)$ is called an *eigenvector* of $L$ corresponding $lambda$
+
+3. A scalar $lambda$ is an eigenvalue of a $n times n$ matrix $A$ if and only if $C_A(lambda) = 0$
 ]
 
 How to find Eigenvalues
@@ -211,11 +213,16 @@ Let $A$ be a $n times n$ matrix with eigenvalue $lambda_1$.
 - *Geometric Multiplicity*
  - The geometric multiplicity of $lambda_1$, denoted $g_lambda_1$, is the dimension of its eigenspace, $g_lambda_1 = "dim"(E_lambda_1)$
 
+
+1. Let $A$ and $B$ be similar matrices, then $A$ and $B$ have the same characteristic polynomial, and hence the same eigenvalue.
+
+2. If $A$ is a $n times n$ matrix with the eigenvalue $lambda_1$, then $1<= g_lambda_1 <=a_lambda_1$
+
 ]
 
 Examples:
 
-1. Let $A = mat(0, 1, 1; 1, 0, 1; 1, 1,0)$. Find the eigenvalues of $A$, bases for the corresponding eigenspace, state the geometric and algebraic multiplicity of each eigenvalue.
+Let $A = mat(0, 1, 1; 1, 0, 1; 1, 1,0)$. Find the eigenvalues of $A$, bases for the corresponding eigenspace, state the geometric and algebraic multiplicity of each eigenvalue.
   
   $0 &= "det"(A - lambda I) = "det" (mat(-lambda, 1, 1; 1, -lambda, 1; 1, 1, -lambda))\
   
@@ -225,5 +232,57 @@ Examples:
      $
   $==> lambda_1 = -1, lambda_2 = 2$
 
-  $A - lambda_1 I = mat(1, 1, 1; 1, 1, 1;, 1, 1, 1) ~ mat(1, 1, 1; 0, 0, 0; 0, 0, 0) ==> s mat(-1; 1; 0) + t mat(-1;0; 1) ==> B_lambda_1 {mat(-1; 1; 0), mat(-1; 0; 1)}$. Bases for $lambda_1 = "Span" B_lambda_1$
+  $A - lambda_1 I = mat(1, 1, 1; 1, 1, 1;, 1, 1, 1) ~ mat(1, 1, 1; 0, 0, 0; 0, 0, 0) ==> s mat(-1; 1; 0) + t mat(-1;0; 1) ==> B_lambda_1 {mat(-1; 1; 0), mat(-1; 0; 1)}$. 
+  
+  Bases for $lambda_1 = "Span" B_lambda_1$
 
+  
+  $A - lambda_2 I  ==> r mat(1; 1; 1) ==> B_lambda_2 {mat(1; 1; 1)}$. 
+  
+  Bases for $lambda_2 = "Span" B_lambda_2$
+
+
+  For $lambda_1 = -1, a_lambda_1 = 2, g_lambda_1 = 2$
+
+  For $lambda_2 = 2 , a_lambda_1 = 1, g_lambda_1 = 1$
+
+#proof[
+
+Eigenspace Theorem 1
+
+Suppose that $exists P ("invertible")$ s.t. $B = P^(-1) A P$, then 
+
+$B - lambda I &= P^(-1) A P - lambda I = P^(-1) A P - lambda P^(-1) P \
+
+&= P^(-1) A P - lambda P^(-1) I P = P^(-1) (A P - lambda I P ) = P^(-1) ((A - lambda I)P) = A - lambda I
+$
+
+Thus $"det" B - lambda I = "det" A- lambda I$
+
+]
+
+#align(right)[$square$]
+
+== Diagonalization
+
+#info[*Diagonalization Theorem*\
+
+A $n times n$ matrix $A in M_(n times n)(RR)$ is said to be *diagonalizable* if $A$ is similar to a diagonal matrix $D in M_(n times n)(RR)$. If $P^(-1) A P = D$, then $P$ diagonalizes $A$.
+
+- A $n times n$ matrix $A$ is diagonalizable (over $RR$) if and only if there exists a basis ${vec(v)_1, ..., vec(v)_n}$ for $RR^n$ of eigenvector of $A$
+
+- If $A$ is a $n times n$ matrix with eigenpairs $(lambda_1, vec(v)_1), ..., (lambda_k, vec(v)_k)$ where $lambda_i != lambda_j$ for $i != j$, then ${vec(v)_1, ..., vec(v)_k}$ is linearly independent.
+
+- If $A$ is a $n times n$ matrix with distinct eigenvalues $lambda_1, ..., lambda_k$ and $B_i = {vec(v)_(i, 1), ..., vec(v)_(i, g_lambda_i)}$ is a basis for the eigenspace of $lambda_i$ for $1<=i<=k$, then $B_1 union B_2 union ... union B_k$ is a linearly independent set
+
+- If $A$ is a $n times n$ matrix with $n$ distinct eigenvalues, then $A$ is diagonalizable.
+
+*Diagonalizability Test*
+
+If $A$ is a $n times n$ matrix whose characteristic polynomial factors as $ C_A (lambda) = (lambda-lambda_1)^(a_lambda_1) ... (lambda - lambda_k)^(a_lambda_k) $,
+
+where $lambda_1, ..., lambda_k$ are the distinct eigenvalues of $A$, then $A$ is diagonalizable if and only if $g_lambda_i = a_lambda_i$ for $1<= i <= k$.
+
+
+
+]

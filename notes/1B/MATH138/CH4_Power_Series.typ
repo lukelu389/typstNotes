@@ -338,3 +338,49 @@ Examples:
   Note that using the binomial theorem for $|x|<1, (1+x)^(-1) = sum_(n=0)^oo binom(-1, n) x^n$
 
   $==> frac(1, 1-x) = sum_(n=0)^oo binom(-1, n) (-1)^n x^n = sum_(n=0)^oo frac((-1)(-2)...(-n), n!) (-1)^n x^n = sum_(n=0)^oo x^n$
+
+
+2. Determine Maclaurin series for $f(x) = sqrt(1+x)$
+
+  $(1+x)^(1/2) &= sum_(n=0)^oo binom(1/2, n) x^n \ 
+  
+  &= 1+ sum_(n=1)^oo frac((1/2)(1/2-1) ... (1/2 - (n-1)), n!) x^n = 1+1/2 + sum_(n=2)^oo frac((-1)^(n-1) (2n-3) ,2^n) x^n / n!$
+
+  We often write the product $(2n-3) times (2n-5) times ... 3 times 1 = (2n-3)!!$ meaning that all the terms in the entire factorial have the same parity (even or odd) as the given term
+
+3. Compute $f^(6)(0), f^(7)(0)$ for $f(x) = x sqrt(1+x^3)$
+
+  $x (1+x^3)^(1/2) &= sum_(n=0)^oo binom(1/2, n) x^(3n+1)$
+
+  $3n+1 = 6, n in.not NN ==> f^(6) (0)= 0$
+
+  $(f^(7) (0))/n!  ==> n = 2 ==> binom(1/2, 2) = frac(-1/4, 2!) = -1/8 ==> f^7 (0) = -1/4$
+
+ 
+
+== Applications of Taylor Series
+
+Examples:
+
+1. Finding sum of given series
+
+  - $sum_(n=1)^oo frac(2^n, n!) = sum_(n=0)^oo frac(2^n, n!) - 1 = e^2 - 1$
+
+  - $sum_(n=0)^oo frac((-1)^n pi^(2 n), 4^n (2n)!)  = sum_(n=0)^oo frac((-1)^n,(2n)!) (pi/2)^(2n)= cos(pi/2)=0$
+
+  - $sum_(n=0)^oo frac(1, n 3^n) = sum_(n=1)^oo frac((-1)^(2n-1), n)(1/3)^n= sum_(n=1)^oo frac(-1, n)(1/3)^n= -ln(2/3) = ln 3 - ln 2$
+
+  - $sum_(n=0)^oo frac(n+1, n!) x^n, forall x in RR$
+
+2. Express $integral sin(x^2) dif x$
+
+  $sin(x) &= sum_(n=0)^oo frac((-1)^n x^(2n+1), (2n+1)!) $
+
+  $sin(x^2) = sum_(n=0)^oo frac((-1)^n x^(4n+2), (2n+1)!)$
+
+  $integral sin(x^2)dif x = C +sum_(n=0)^oo frac((-1)^n , (2n+1)!) frac(x^(4n+3), 4n+3) = C +sum_(n=0)^oo frac((-1)^n , (2n+1)! dot 4n+3 )x^(4n+3)$
+
+3. Express numerical series of $integral_0^1 sin(x^2) dif x$
+
+  $integral_0^1 sin(x^2) dif x = sum_(n=0)^oo [integral_0^1 frac((-1)^n x^(4n+2), (2n+1)!)] = sum_(n=0)^oo eval((frac((-1)^n x^(4n+3), (2n+1)! dot (4n+3))),0, upper: #1) = sum_(n=0)^oo frac((-1)^n, (2n+1)! dot (4n+3))$
+  
