@@ -279,10 +279,64 @@ A $n times n$ matrix $A in M_(n times n)(RR)$ is said to be *diagonalizable* if 
 
 *Diagonalizability Test*
 
-If $A$ is a $n times n$ matrix whose characteristic polynomial factors as $ C_A (lambda) = (lambda-lambda_1)^(a_lambda_1) ... (lambda - lambda_k)^(a_lambda_k) $,
+If $A$ is a $n times n$ matrix whose characteristic polynomial factors as $ C_A (lambda) = (lambda-lambda_1)^(a_lambda_1) ... (lambda - lambda_k)^(a_lambda_k) $
 
 where $lambda_1, ..., lambda_k$ are the distinct eigenvalues of $A$, then $A$ is diagonalizable if and only if $g_lambda_i = a_lambda_i$ for $1<= i <= k$.
 
+*Lemma*
 
+If $A$ is a $n times n$ matrix with $n$ distinct eigenvalues, then $A$ is diagonalizable.
+
+*Theorem*
+
+- If $lambda_1, ..., lambda_n$ are all the $n$ eigenvalues of a $n times n$ matrix $A$(repeated according to algebraic multiplicity), then $ "det" A = (lambda_1) ... (lambda_n) "and" "tr" A = lambda_1 + ... + lambda_n $
+]
+
+Example:
+
+Let $A = mat(2, 2, 2; 2, -2, 0; 2, 0, 1)$
+
+  Diagonalize $A$ if possible, that is, for an invertible matrix $P$ and a diagonal matrix $D$ s.t. 
+  
+  $P A P^(-1) = D$
+
+  $C(lambda) = 0 ==> 0 = "det"(A - lambda I) = "det"mat(2-lambda, 2, 2; 2, -2-lambda, 0; 2 , 0, 1-lambda) = -lambda (lambda - 4)(lambda +3)$
+  
+  $==> lambda_1 = 0, lambda_2 = 4, lambda_3 = -3$ are eignvalues of $A$
+
+  Since $A$ has 3 distinct eigenvalues, thus it is diagonalizable
+
+  $lambda_1 = 0 ==>mat(2, 2, 2; 2, -2, 0; 2, 0, 1) ~ mat(1, 0, 1/2; 0, 1, 1/2; 0, 0, 0) ==> vec(v) = s mat(1; 1;-2), s in RR$
+
+  $B_1 = {mat(1; 1; -2)}$ is a basis for $E_lambda_1$
+
+  $lambda_2 = 4 ==>mat(-2, 2, 2; 2, -6, 0; 2, 0, -3) ~ mat(1, 0, -3/2; 0, 1, -1/2; 0, 0, 0) ==> vec(v) = t mat(3; 1;2), t in RR$
+
+  $B_2 = {mat(3; 1; 2)}$ is a basis for $E_lambda_2$
+
+  $lambda_3 = -3 ==>mat(5, 2, 2; 2, 1, 0; 2, 0, 4) ~ mat(1, 0, 2; 0,1, -4; 0, 0, 0) ==> vec(v) = q mat(-2; 4; 1), q in RR$
+
+  $B_3 = {mat(-2; 4; 1)}$ is a basis for $E_lambda_3$
+
+  Let $P = [vec(v)_1 space vec(v)_2 space vec(v)_3] = mat(1, 3, -2; 1, 1, 4; -2, 2, 1)$, $D = mat(0, 0, 0; 0, 4, 0; 0, 0, -3)$
+
+== Powers of Matrices
+
+#info[*Powers of Matrices*\
+Let $A$ be a $n times n$ matrix. If there exists a matri $P$ and diagonal matrix $D$ s.t. $ P^(-1) A P = D$, then $ A^k = P D^k P^(-1) $
 
 ]
+
+#proof[
+$D = P^(-1) A P ==> A = P D P^(-1) ==> \
+
+A^k = (P D P^(-1))^k = (P D P^(-1)) (P D P^(-1))  (P D P^(-1)) ... (P D P^(-1)) = P D (P^(-1)  P) D (P^(-1) P)  ... (P^(-1)P)D P^(-1) $
+
+$= P D^k P^(-1)$
+]
+
+#align(right)[$square$]
+
+== Complex Diagonalization
+
+== END OF FINAL

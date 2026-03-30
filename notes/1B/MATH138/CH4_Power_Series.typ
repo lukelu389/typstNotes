@@ -372,6 +372,8 @@ Examples:
 
   - $sum_(n=0)^oo frac(n+1, n!) x^n, forall x in RR$
 
+    $sum_(n=0)^oo frac(n, n!) x^n + sum_(n=0)^oo frac(1, n!) x^n = sum_(n=1)^oo frac(n, n!) x^n + e^x  = sum_(n=0)^oo frac(x^(n+1), n!)  = x e^x + e^x$
+
 2. Express $integral sin(x^2) dif x$
 
   $sin(x) &= sum_(n=0)^oo frac((-1)^n x^(2n+1), (2n+1)!) $
@@ -383,4 +385,43 @@ Examples:
 3. Express numerical series of $integral_0^1 sin(x^2) dif x$
 
   $integral_0^1 sin(x^2) dif x = sum_(n=0)^oo [integral_0^1 frac((-1)^n x^(4n+2), (2n+1)!)] = sum_(n=0)^oo eval((frac((-1)^n x^(4n+3), (2n+1)! dot (4n+3))),0, upper: #1) = sum_(n=0)^oo frac((-1)^n, (2n+1)! dot (4n+3))$
+
+4. Use power series to evaluate $lim_(x->0) frac(e^x - 1, x)$
+
+  $lim_(x->0) (sum_(n=0)^oo x^n/n! - 1)/x = lim_(x->0) (sum_(n=0)^oo x^n/n! - 1)/x = lim_(x->0) (sum_(n=0)^oo  x^(n-1)/n!)= 1$ 
+
+
+== Big-O Notation
+
+#info[*Big-O Notation*\
+
+Let $a$ denote a real number or $oo$. Assume that $f(x)$ and $g(x)$ are two functions that are defined for all real $x$ values that are near $a$ but are not necessarily defined when $x = a$. More precisely, if $a in RR$, we assume that $f(x)$ and $g(x)$ are both defined for all $x$ in the union $ I = (a- delta, a) union (a, a+delta) = {x in RR | 0< |x-a|<delta}, $
+
+where $delta$ is some strictly positive real number. If $a = oo$, we assume that $f(x)$ and $g(x)$ are both defined for all $x$ in some open interval $I = (c, oo)$, where $c in RR$ denoted $ f(x) = O(g(x)) "as" x->a $
+
+if there exists a real constant $M>0$ s.t. $ |f(x)|<=M|g(x)| $ for every $x in I$.
+]
+Examples:
+
+1. $x = O(x^2) "as" x->oo$. 
+
+  Let $M = 1$ and $D = (1, oo)$. Then $|x|=1|x|<|x||x|=|x|^2 = 1|x^2|, x in D$
+
+2. $x^2 = O(x) "as" x->0$. 
+
+  Let $M = 1$ and $D = (-1, 0) union (0, 1)$. Then $|x^2| = |x|^2= |x||x| < 1|x|, x in D$
+
+
+#info[*Theorems*\
+
+1. Let $a$ denote a real number or $oo$. If $f(x)=O(g(x))$ as $x->a$ and $g(x) = O(h(x))$ as $x->a$, then $f(x)=O(h(x))$ as $x->a$
+
+2. Let $a, b$ be real numbers or $oo$. Assume that $f(x) =O(g(x))$ as $x->a$, and $lim_(x->b) h(x)=a$. If $a$ is a real number, further assume that $h(x)!=a$ for every $x$ sufficiently close to $b$. (More precisely, if $b in RR$, assume that $h(x)!=a$ for every $x$ satisfying $0<|x-b|<delta$ for some constant $delta>0$. If $b = oo$, assume $h(x)!=a$ for every $x$ satisfying $x>c in RR$). Then $f(h(x)) = O(g(h(x)))$ as $x->b$
+]
+
+#info[*Properties*]
+
+#info[*Taylor's Inequality, Big-O*]
+
+
   

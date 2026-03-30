@@ -156,13 +156,63 @@ Comparative advantage is all needed for gains from trade
 
 - Optimal point: $P = M C$
 
-- Profit: $frac(C(q), q)$
+- Average cost: $frac(C(q), q)$
 
 Graph (Assume Perfect Competition)
 
 #align(center)[#image("../../../pictures/econ1_ch4_3.png", width: 6cm)]
 
-
-
-
+Blue: price\
+Orange: marginal cost\
+Black: average cost
 ]
+
+Example:
+
+$C(q) = 700+12q+5q^2 $
+
+Marginal Cost: $C'(q) = 12+10q$
+
+Let $p = 250$, $M R = M C ==> p = M C ==> 250 = 12+10q ==> q = 23.8$
+
+
+1. Long-run Competitive ($P > A C$)
+    $pi ("Profit") = "Revenue" - "Cost" \
+
+    = p q - (700+12q+5q^2) ==> 250(23.8) - (700+12(23.8)+5(23.8)^2) = 2132.2$
+
+    $A C(q^*) = C(q^*)/q^* = 160.41$ 
+
+    $(250-160.41) * 23.8 = 2132.2$ 
+
+    #align(center)[#image("../../../pictures/econ1_ch4_4.png", width: 6cm)]
+    Orange: profit \
+    Green: Cost
+
+    $M C$ intersects $A C$ at $A C$'s lowest point
+
+    Note that the minimum of average cost is meaningless
+
+2. Short-run Competitive ($A C > P > A V C$)
+    Observe that the cost of producing nothing is higher than the cost of producing something.
+
+    So $C(0) = 700, pi(0) = 0-700 = -700$
+
+    But then, producing at the optimal is $pi(q*) = -300 > -700$, losing less if producing at the optimal then producing nothing.
+
+    The for some existing companies, producing while lossing money can benefit the companies from lossing less.
+
+    So, Average Variable Cost: $(V C)/q = 12+5q$
+
+        #align(center)[#image("../../../pictures/econ1_ch4_5.png", width: 6cm)]
+
+\
+\
+\
+3. Shutdown ($A C > A V C > P$)
+    #align(center)[#image("../../../pictures/econ1_ch4_6.png", width: 6cm)]
+
+
+Long-run means that we can change anything
+
+Short-run means we can only change variable cost
