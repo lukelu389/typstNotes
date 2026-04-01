@@ -1,5 +1,5 @@
 #import "../../../preamble.typ": *
-#let Title = "CH 4 - "
+#let Title = "CH 4 - Competition"
 #import "@preview/diverential:0.2.0": *
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
@@ -200,7 +200,7 @@ Let $p = 250$, $M R = M C ==> p = M C ==> 250 = 12+10q ==> q = 23.8$
 
     But then, producing at the optimal is $pi(q*) = -300 > -700$, losing less if producing at the optimal then producing nothing.
 
-    The for some existing companies, producing while lossing money can benefit the companies from lossing less.
+    Theefore, some existing companies, producing while lossing money can benefit the companies from lossing less.
 
     So, Average Variable Cost: $(V C)/q = 12+5q$
 
@@ -216,3 +216,36 @@ Let $p = 250$, $M R = M C ==> p = M C ==> 250 = 12+10q ==> q = 23.8$
 Long-run means that we can change anything
 
 Short-run means we can only change variable cost
+
+The firm always produces at $p = M C$
+
+
+#info[*Monopolistic Production*\
+
+- One producer/one opponent producer
+
+- Non-competitive market
+
+- They can set price with a limit of the demand side of the market.
+    - $"Marginal Benefit" > "Marginal Cost"$
+
+    - $"Marginal Revenue" > "Marginal Cost"$
+
+    - $"Marginal Revenue" = p - Delta p(q-1)$, is also the downward rotation of demand
+
+Model:
+\
+
+#align(center)[#image("../../../pictures/econ1_ch4_7.png", width: 6cm)]
+
+
+Green: Demand\
+Blue: Marginal Revenue\
+Purple: Marginal Cost\
+Optimum at black dot
+
+]
+
+Monopoly: use Demand = MR
+
+Competitive: use p = MR

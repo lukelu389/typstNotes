@@ -337,6 +337,74 @@ $= P D^k P^(-1)$
 
 #align(right)[$square$]
 
-== Complex Diagonalization
+Example:
 
+Let $A = mat(1, 2; 2, 1)$. Diagonalize $A$ and compute $A^307$
+
+  It can be show that $lambda_1 = -1, lambda_2 = 3$ are eigenvalues of $A$ with corresponding eigenvectors $vec(v)_1 = mat(1; -1), vec(v)_2 = mat(1; 1)$ respectively.
+
+  Let $P = [vec(v)_1 space vec(v)_2] = mat(1, 1; -1, 1)$, $D = mat(lambda_1, 0; 0, lambda_2) = mat(-1, 0; 0, 3)$
+
+  Then $D = P^(-1)A P$, $P^(-1) = 1/2 mat(-1, -1; 1, 1), D^(307) = mat(-1, 0;0, 3^307)$
+
+  $A^307 = mat(1, 1; -1, 1) mat(-1, 0; 0, 3^307) 1/2 mat(1, -1; 1, 1) = 1/2 mat(-1+3^307, 1+3^306; 1+3^307, -1+3^307)$
+== Complex Numbers 
+
+Definitions for Complex Numbers\
+
+$CC^n = {mat(z_1; z_2; ...; z_n) | z_1, z_2, ..., z_n in CC}$
+
+Additional and scalar multiplication in the same ways as $RR^n$
+
+$M_(m times n)(CC)$ is the set of all $m times n$ matrices with complex entries.
+
+For $A in M_(m times n)(CC)$, $overline(A)$ is defined by $(overline(A)_(i j)) = overline(a)_(i_j)$
+
+For $vec(z) in CC^n$, $overline(vec(z)) = mat(overline(z_1); ...; overline(z_n))$
+
+$A = [vec(a)_1 space vec(a)_2 space ... space vec(a)_n], overline(A vec(z)) = overline(z_1 vec(a)_1 + ... + z_n vec(a)_n) = overline(z_1 vec(a)_1) + ... + overline(z_n)vec(a)_n = overline(z_1) overline(vec(a)_1) + ... + overline(z_n) overline(vec(a)_n)$
+
+$ = [overline(vec(a)_1) space ... space overline(vec(a)_n)] mat(overline(z_1); ...; overline(z_n)) $
+
+Examples:
+
+1. Let $A = mat(1, -1; 1, 1)$, diagonalize $A$ over $CC$
+
+  $0 "det"(A - lambda I) = "det" mat(1-lambda,-1; 1, 1-lambda) = (1-lambda)^2 +1$
+
+  $-1 = (1-lambda)^2 ==> 1-lambda = plus.minus i ==> lambda = 1 plus.minus i$
+
+  $A- lambda_1 I = mat(i, -1; 1, i) (-i) R_1~ mat(1, i; 1, 1) ~ mat(1, 0; 0, 0) ==> x_1 = -i x_2 = -i t ==> vec(x)=t mat(-i; 1), t in CC$
+
+  $B_1 = {mat(-i;1)}$ is a basis for $E_lambda_1$
+
+  Similarily, $A - lambda_2 I$ have the same process.
+
+  $B_2 = {mat(i; 1)}$ is a basis for $E_lambda_2$
+
+  Let $P = mat(-i, i; -1, 1), D = mat(lambda_1, 0; 0, lambda_2) = mat(1-i, 0; 0, 1+i)$
+
+  These satisfy $D = P^(-1) A P$
+
+2. Compute $A^100$ from (1)
+
+  $A^100 = P D^100 P^(-1)$
+
+  $P^(-1) &= 1/(-2i) mat(1, -i; -1, -i) \
+
+  &=^(1/i = -i) 1/2 mat(i, 1; -i, 1)
+  $
+
+  $D^100 = mat(sqrt(2) (cos 25pi - i sin 25pi), 0; 0, sqrt(2)( cos 25pi + sin 25pi)) = mat(-2^50, 0; 0, -2^50)$
+
+  $A^100 = mat(-i,i; 1, 1) mat(-2^50, 0; 0, -2^50) 1/2 mat(i, 1; -i, 1) = mat(-2^50, 0; 0, -2^50)$
+  \
+  
+
+#info[*Theorem*\
+
+Let $A in M_(n times n)(RR)$. If $lambda$ is a non-real eigenvalue of $A$ with corresponding eigenvector $vec(z)$, then $overline(lambda)$ is also an eigenvalue of $A$ with eigenvector $overline(vec(z))$
+
+Also, if $n$ is odd, $A$ has at least one real eigenvalue.
+]
 == END OF FINAL

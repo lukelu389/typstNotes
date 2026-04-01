@@ -416,12 +416,61 @@ Examples:
 
 1. Let $a$ denote a real number or $oo$. If $f(x)=O(g(x))$ as $x->a$ and $g(x) = O(h(x))$ as $x->a$, then $f(x)=O(h(x))$ as $x->a$
 
-2. Let $a, b$ be real numbers or $oo$. Assume that $f(x) =O(g(x))$ as $x->a$, and $lim_(x->b) h(x)=a$. If $a$ is a real number, further assume that $h(x)!=a$ for every $x$ sufficiently close to $b$. (More precisely, if $b in RR$, assume that $h(x)!=a$ for every $x$ satisfying $0<|x-b|<delta$ for some constant $delta>0$. If $b = oo$, assume $h(x)!=a$ for every $x$ satisfying $x>c in RR$). Then $f(h(x)) = O(g(h(x)))$ as $x->b$
+2. If $f(x) = O(g(x))$ as $x->a$ and $lim_(x->b) h(x)=a$, then $ f(h(x)) = O(g(h(x))) "as" x->b $
 ]
 
-#info[*Properties*]
+#info[*Properties*\
+Let $m, n$ be nonnegative integers. As $x ->0$, the following statements hold.
 
-#info[*Taylor's Inequality, Big-O*]
+1. $O(x^m) dot O(x^n) = O(x^(m_n))$
 
+2. $O(x^m) plus.minus O(x^k), k = min{m, n}$
+
+3. $x dot O(x^n) = O(x^(n+1))$
+
+4. $1/x dot O(x^n) = O(x^(n-1)), n >=1$
+
+5. $C dot O(x^n) = O(C x^n) = O(x^n), C in RR$
+
+6. $lim_(x->0) O(x^n) = 0, n>=1$
+]
+
+#info[*Taylor's Inequality, Big-O*\
+
+Let $m$ be a nonnegative integer. Suppose that $f^(m+1)$ is continuous on an open interval $I$ that contains $a in RR$. If there is a real constant $K > 0$ s.t. $|f^(m+1)(x)|<=K$ for every $x in I$ $ f(x) - T_(m, a) (x) = O((x-a)^(m+1)) $
+
+as $x ->a$. Moreover, if $P(x)$ is a polynomial of degree less than or equal to $m$ with the property that $f(x)-p(x) = O((x-a)^(m+1))$ as $x->a$, then $p(x) = T_(m, a)(x)$
+]
+
+Examples:
+
+1. Show that $sin x = O(x), x->0; sin x !=O(x^2), x->0$
+
+  $sin x - T_(0, 0)(x) = O(x), x->0$
+
+  Since $T_(0, 0) = sin 0 = 0 ==> sin x = O(x), x->0$
+
+  Suppose that $sin x = O(x^2), x->0$
+
+  Then, $p(x) equiv 0 ==> sin x - p(x) = O(x^2), x->0$
+
+  $T_(1, 0)(x)=x!= p(x)$, by contradiction, $sin x != O(x^2), x->0$
+
+  
+2. Show that $arctan 5x^2 = 5x^2 -125/5 x^6 + O(x^10), x->0$
+
+3. 
+
+  - $lim_(x->0) frac(cos x - 1, x^2)$
+
+    $cos x -T_(3, 0)(x) = O(x^4), x->0$
+
+    $cos x = (1-x^2/2) + O(x^4), x->0$
+
+    $frac(cos x - a, x^2) = -1/2 + O(x^2) = -1/2$
+
+    $lim_(x->0) frac(cos x - 1, x^2) = -1/2$
+
+  - $lim_(x->0) frac(sin x cos x^2 - x, x^3)$
 
   
