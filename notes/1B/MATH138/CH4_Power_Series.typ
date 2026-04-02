@@ -328,7 +328,7 @@ Therefore $|f(1)-T_(2, 0)(1)| <= (3/8)/6 = 1/16$
 
   Let $alpha$ be a real number. If $|x|<1$, then $(1+x)^alpha = sum_(n=0)^oo binom(alpha, n)x^n = 1+ alpha x + frac(alpha (alpha-1), 2)x^2 + ...$
 
-  If $|x|>1$ and $alpha$ is a nonnegative integer, then the series diverges
+  If $|x|>1$ and $alpha$ is a not nonnegative integer, then the series diverges
 ]
 
 Examples:
