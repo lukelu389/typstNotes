@@ -222,6 +222,10 @@ Examples:
 
   $ e^x = sum_(n=0)^oo frac(x^n, n!) $
 
+  $ 1/(1-x) = sum_(n=0)^oo x^n $
+
+  $ ln(1+x) = sum_(n=0)^oo (-1)^n x^n / n$
+
 ]
 
 #info[*Lagrange's Remainder Formula*\
