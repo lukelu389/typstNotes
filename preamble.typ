@@ -64,20 +64,51 @@
 
 // ——— Callout ———
 #let callout(body, kind: "info", title: none) = [
-  #let bg = if kind == "warn" { luma(92%) } else if kind == "tip" { luma(96%) } else { luma(94%) }
-  #let accent = if kind == "warn" { rgb("#f59e0b") } else if kind == "tip" { rgb("#10b981") } else { rgb("#3b82f6") }
-  #let ico = if kind == "warn" { "⚠️" } else if kind == "tip" { "💡" } else {"🐳"}
-  #let label = if title == none { if kind == "warn" { "Warning" } else if kind == "tip" { "Tip" } else { "Info" } } else { title }
+  #let bg = (
+    if kind == "warn" { rgb("#fef3c7") }
+    else if kind == "tip" { rgb("#ecfdf5") }
+    else if kind == "def" { rgb("#fef2f2") }
+    else { rgb("#eff6ff") }
+  )
 
-  #box(fill: bg, inset: 10pt, radius: 8pt, stroke: (paint: accent, thickness: 0.8pt), width: 100%)[
-    #ico  *#label* — #body
+  #let accent = (
+    if kind == "warn" { rgb("#f59e0b") }
+    else if kind == "tip" { rgb("#10b981") }
+    else if kind == "def" { rgb("#dc2626") }
+    else { rgb("#3b82f6") }
+  )
+
+  #let ico = (
+    if kind == "warn" { "⚠️" }
+    else if kind == "tip" { "💡" }
+    else if kind == "def" { "📘" }
+    else { "🐳" }
+  )
+
+  #let label = (
+    if title == none {
+      if kind == "warn" { "Warning" }
+      else if kind == "tip" { "Tip" }
+      else if kind == "def" { "Definition" }
+      else { "Info" }
+    } else { title }
+  )
+
+  #box(
+    fill: bg,
+    inset: 10pt,
+    radius: 8pt,
+    stroke: (paint: accent, thickness: 0.8pt),
+    width: 100%,
+  )[
+    #ico #h(0.4em) *#label* — #body
   ]
 ]
-#let tip(body)  = callout(body, kind: "tip")
+
+#let tip(body) = callout(body, kind: "tip")
 #let warn(body) = callout(body, kind: "warn")
 #let info(body) = callout(body, kind: "info")
-#show raw: block.with(inset: 6pt, fill: luma(97%), radius: 6pt)
-#let note(body) = box(fill: luma(98%), stroke: (paint: luma(70%), thickness: 0.7pt), inset: 10pt, radius: 8pt)[#body]
+#let defn(body) = callout(body, kind: "def")
 
 
 #let simple-table = (lhead, rhead, rows) => [
