@@ -10,7 +10,7 @@
 - Two types: 
 1. Known amounts :
 #align(center)[
-  #image("../../../pictures/Liabilities1.png", width: 10cm)
+  #image("../../../pictures/sem1/Liabilities1.png", width: 10cm)
   ]
 
 
@@ -31,7 +31,7 @@ ANS: Interest accrued $= \$8000 dot 3/12 dot 10% = \$200$
 
 - Show what Encore would report on its February Balance Sheet and Income Statement.
 
-ANS: #align(center)[#image("../../../pictures/Liabilities3.png", width:8cm)]
+ANS: #align(center)[#image("../../../pictures/sem1/Liabilities3.png", width:8cm)]
 
 3. GM of Canada Ltd. guarantees automobiles against defects for 5 years, or 160,000km, whichever comes first.  Suppose GM expects warranty costs during the 5-year period to add up to 3% of sales. Assume that Forbes Motors in Waterloo, Ont. had sales of \$2,000,000 on their Buick line during 2020. Forbes received cash for 10% of the sales and took notes receivable for the remainder. Payments to satisfy customer warranty claims totaled \$50,000 during 2020. \
 
@@ -39,7 +39,7 @@ ANS: #align(center)[#image("../../../pictures/Liabilities3.png", width:8cm)]
 - Post to the Estimated Warranty Payable T-account. The beginning balance was \$40,000.  At the end of 2020, how much in estimated warranty payable does Forbes owe its customers?
 - What amount of warranty expense will Forbes report during 2020? Does the warranty expense for the year equal the year's cash payments for warranties?  Explain the relevant accounting principle as it applies to measuring warranty expense.
 
-ANS: #align(center)[#image("../../../pictures/Liabilities2.png", width:8cm)]
+ANS: #align(center)[#image("../../../pictures/sem1/Liabilities2.png", width:8cm)]
 
 \
 == Financial Business Activities:

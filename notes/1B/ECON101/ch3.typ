@@ -45,7 +45,7 @@ Effect on the model
 
 2. Graph
 
-  #align(center)[#image("../../../pictures/econ1_ch3_1.png", width:8cm)]
+  #align(center)[#image("../../../pictures/sem1/econ1_ch3_1.png", width:8cm)]
 
   Area below the curve is the Inefficient distribution of budget.
 
@@ -75,7 +75,7 @@ Due to the continuously diminishing MRS (continuously diminishing rate of trade)
 
 *Graph*
 
-  #align(center)[#image("../../../pictures/econ1_ch3_2.png", width:6cm)]
+  #align(center)[#image("../../../pictures/sem1/econ1_ch3_2.png", width:6cm)]
 
 - Every point above the curve is better, more utility: (i.e. yellow area)
 
@@ -92,7 +92,7 @@ Length of opportunity: the area enclosed by the utility curve and the budget cur
 
 There always exists another parallel utility curve that is better than the previous one. 
 
- #align(center)[#image("../../../pictures/econ1_ch3_3.png", width:6cm)]
+ #align(center)[#image("../../../pictures/sem1/econ1_ch3_3.png", width:6cm)]
 
 ]
 
@@ -152,7 +152,7 @@ Green: new curve\
 Purple: initial utility curve\
 Black: new utility curve
 
-#align(center)[#image("../../../pictures/econ1_ch3_4.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_4.png", width:8cm)]
 
 What if the income rises
 
@@ -161,7 +161,7 @@ Green: new curve\
 Purple: initial utility curve\
 Black: new utility curve
 
-#align(center)[#image("../../../pictures/econ1_ch3_5.png", width:6cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_5.png", width:6cm)]
 
 
 How could depict inferior goods (i.e. instant ramen)
@@ -171,7 +171,7 @@ Green: new curve\
 Purple: initial utility curve\
 Black: new utility curve
 Orange: prediction on possible new curve
-#align(center)[#image("../../../pictures/econ1_ch3_6.png", width:6cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_6.png", width:6cm)]
 
 
 What if curves lean but at constant rate?
@@ -184,18 +184,18 @@ Green: new curve\
 Purple: initial utility curve\
 Black: new utility curve
 Orange: prediction on possible new curve
-#align(center)[#image("../../../pictures/econ1_ch3_7.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_7.png", width:8cm)]
 
 === Fully closed utility curve - Perfect Complements
 
-#align(center)[#image("../../../pictures/econ1_ch3_8.png", width:7cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_8.png", width:7cm)]
 
 Can *never* be represented by a T-table
 
 
 === Perfect substitute
 
-#align(center)[#image("../../../pictures/econ1_ch3_9.png", width:6cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_9.png", width:6cm)]
 
 Purple: lens of opportunity
 
@@ -314,7 +314,7 @@ How to find the trade price limits
 
 - Look at what the consumer is losing and see how they need to be given in exchange to feel equal or better off
 
-#align(center)[#image("../../../pictures/econ1_ch3_10.png", width:10cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch3_10.png", width:10cm)]
 
 *Total Utility per Dollar*
 

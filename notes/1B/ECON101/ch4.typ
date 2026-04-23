@@ -35,7 +35,7 @@ Total: 45 item $x$, 105 item $y$
 
 ]
 
-#align(center)[#image("../../../pictures/econ1_ch4_1.png", width: 6cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch4_1.png", width: 6cm)]
 Country $A$ costs $1/2$ item $x$ to produce item $y$; Country $B$ costs $1/3$ item $x$ to produce item $y$
 
 Let $A$ only produce item $x$ and $B$ only produce item $y$
@@ -123,7 +123,7 @@ Gains from trade fro specialization, we will get the country with absolute advan
 Then trade.
 
 
-#align(center)[#image("../../../pictures/econ1_ch4_2.png", width: 4cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch4_2.png", width: 4cm)]
 Comparative advantage is all needed for gains from trade
 - So long as PPFs(green dotted line) are not parallel, there is gains from trade.
 
@@ -160,7 +160,7 @@ Comparative advantage is all needed for gains from trade
 
 Graph (Assume Perfect Competition)
 
-#align(center)[#image("../../../pictures/econ1_ch4_3.png", width: 6cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch4_3.png", width: 6cm)]
 
 Blue: price\
 Orange: marginal cost\
@@ -185,7 +185,7 @@ Let $p = 250$, $M R = M C ==> p = M C ==> 250 = 12+10q ==> q = 23.8$
 
     $(250-160.41) * 23.8 = 2132.2$ 
 
-    #align(center)[#image("../../../pictures/econ1_ch4_4.png", width: 6cm)]
+    #align(center)[#image("../../../pictures/sem1/econ1_ch4_4.png", width: 6cm)]
     Orange: profit \
     Green: Cost
 
@@ -204,13 +204,13 @@ Let $p = 250$, $M R = M C ==> p = M C ==> 250 = 12+10q ==> q = 23.8$
 
     So, Average Variable Cost: $(V C)/q = 12+5q$
 
-        #align(center)[#image("../../../pictures/econ1_ch4_5.png", width: 6cm)]
+        #align(center)[#image("../../../pictures/sem1/econ1_ch4_5.png", width: 6cm)]
 
 \
 \
 \
 3. Shutdown ($A C > A V C > P$)
-    #align(center)[#image("../../../pictures/econ1_ch4_6.png", width: 6cm)]
+    #align(center)[#image("../../../pictures/sem1/econ1_ch4_6.png", width: 6cm)]
 
 
 Long-run means that we can change anything
@@ -236,7 +236,7 @@ The firm always produces at $p = M C$
 Model:
 \
 
-#align(center)[#image("../../../pictures/econ1_ch4_7.png", width: 6cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch4_7.png", width: 6cm)]
 
 
 Green: Demand\

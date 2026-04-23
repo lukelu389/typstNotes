@@ -60,5 +60,5 @@ MB: Red line\
 MC: Blue line
 MB $=$ MC at the green line
 
-#align(center)[#image("../../../pictures/econ1_ch1_1.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch1_1.png", width:8cm)]
 

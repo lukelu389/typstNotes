@@ -8,11 +8,11 @@
 
 == 1. Tangible Assets
 
-#image("../../../pictures/tangibleAsset.png", width: 10cm)
+#image("../../../pictures/sem1/tangibleAsset.png", width: 10cm)
 
 == 2. Intangible Assets
 
-#image("../../../pictures/intangibleAsset.png", width: 10cm)
+#image("../../../pictures/sem1/intangibleAsset.png", width: 10cm)
 Amortization is similar to depreciation but for intangible assets.
 
 #tip[ Sum of all the costs incurred to bring the asset to its location and intended use]
@@ -54,7 +54,7 @@ Note that the parking lot is not included because it is not the land.
 - Installation and testing
 
 Example:
-#image("../../../pictures/lumpSum.png", width: 11cm)
+#image("../../../pictures/sem1/lumpSum.png", width: 11cm)
 
 == Capital Expenditure vs Expenses
 1. *Capital Expenditure: (Balance Sheet)*
@@ -135,13 +135,13 @@ Typically, lease agreements for fixed assets usually result in both the “right
 Examples for each method: \
 
 *Straight Line*
-#image("../../../pictures/straightline.png", width: 8cm)
+#image("../../../pictures/sem1/straightline.png", width: 8cm)
 \
 *Unit of Production*
-#image("../../../pictures/unitOfProd.png", width: 8cm)
+#image("../../../pictures/sem1/unitOfProd.png", width: 8cm)
 \
 *DDB*
-#image("../../../pictures/ddb.png", width: 8cm)
+#image("../../../pictures/sem1/ddb.png", width: 8cm)
 
 
 == Depreciaiton for Partial Years
@@ -173,7 +173,7 @@ On year 5, the depreciation on that year will increase to \$12000, that is twice
 - - Record expense up to date of sale
 - Remove asset and related accumulated depreciation account from the books
 \
-#align(center)[#image("../../../pictures/diposingEquip.png", width: 12cm)]
+#align(center)[#image("../../../pictures/sem1/diposingEquip.png", width: 12cm)]
 
 - Selling PPE *greater than* carrying amount $==>$ GAIN
 - Selling PPE *less than* carrying amount $==>$ LOSS

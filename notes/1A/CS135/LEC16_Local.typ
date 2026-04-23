@@ -1,4 +1,4 @@
-#import "../../preamble.typ": *
+#import "../../../preamble.typ": *
 
 #let Title = "CS 135 — L16: Local and Application"
 #set-title(Title)
@@ -35,7 +35,7 @@ Heron's Formula\
 3. Lift the definition to the top level.
 4. Replace `(local [...] expression)` with just the expression.
 
-Stepper example: #image("../../pictures/lec16.png")
+Stepper example: #image("../../../pictures/sem1/lec16.png")
 \
 \
 \

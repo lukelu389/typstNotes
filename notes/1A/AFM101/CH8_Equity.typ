@@ -37,10 +37,10 @@
 == Issuing Shares
 \
 1. For Cash
-#align(center)[#image("../../../pictures/equity1.png", width: 10cm)]
+#align(center)[#image("../../../pictures/sem1/equity1.png", width: 10cm)]
 \
 2. For Non-Cash Assets
-#align(center)[#image("../../../pictures/equity2.png", width: 10cm)]
+#align(center)[#image("../../../pictures/sem1/equity2.png", width: 10cm)]
 
 Some Companies want to purchase their own shares because:
 
@@ -67,11 +67,11 @@ Before a company can pay a cash dividend it must have:
 
 *The Process of Cash Dividends*:
 
-1. #align(center)[#image("../../../pictures/equity3.png", width: 10cm)]
+1. #align(center)[#image("../../../pictures/sem1/equity3.png", width: 10cm)]
 \
 2. No Journal Records
 
-3. #align(center)[#image("../../../pictures/equity4.png", width: 10cm)]
+3. #align(center)[#image("../../../pictures/sem1/equity4.png", width: 10cm)]
 
 
 == Stock Dividends
@@ -87,7 +87,7 @@ Before a company can pay a cash dividend it must have:
 *The Process of Stock/Share Dividends*
 
 
-#align(center)[#image("../../../pictures/equity5.png", width: 12cm)]
+#align(center)[#image("../../../pictures/sem1/equity5.png", width: 12cm)]
  \
 
 == Preferred Share Dividends
@@ -107,14 +107,14 @@ Example:\
 The preferred shares of Pinecraft are cumulative. Suppose the company passed the 20X1 preferred dividend of \$150,000.
 In 20X2, the company declares a \$500,000 dividend.
 
-#align(center)[#image("../../../pictures/equity6.png", width: 10cm)]
+#align(center)[#image("../../../pictures/sem1/equity6.png", width: 10cm)]
 
 == Stock Split
 1. Results in an increase or decrease in the number of issued and outstanding shares, but does not affect any financial statement balances
 2. Increases or decreases market value per share
 
 == Summary
-#align(center)[#image("../../../pictures/equity7.png", width: 12cm)]
+#align(center)[#image("../../../pictures/sem1/equity7.png", width: 12cm)]
 
 == Ratio 
 

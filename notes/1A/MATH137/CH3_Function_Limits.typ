@@ -239,7 +239,7 @@ $lim_(x->0) cos(x) = lim_(x->0) sqrt(1 - sin^2(x)) = 1$
 #warn[*The Fundamental Trig Limit*: $ lim_(x->0) sin(x)/x = 1 $
 ]
 
-#image("../../../pictures/fundamental_trig.png")
+#image("../../../pictures/sem1/fundamental_trig.png")
 
 We have that $1/2 cos(x)sin(x) <= 1/2 x <= 1/2 tan(x) ==> cos(x) <= x/sin(x) <= 1/cos(x)$.
 

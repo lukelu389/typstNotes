@@ -315,7 +315,7 @@ Let $a in RR, a!=0$ If $integral f(x) dif x = F(x) + C$, then $ integral f(a x) 
 == Trigonometry Substitution
 \
 #info[*Trig-Sub*\
-#align(center)[#image("../../../pictures/cal2ch1_1.png")]
+#align(center)[#image("../../../pictures/sem1/cal2ch1_1.png")]
 ]
 
 #tip[*Half-Angle*\
@@ -434,7 +434,7 @@ For rational functions which is $P(x)/(Q(x)) space forall P(x), Q(x)$ be polynom
 
 #tip[*Breakdown of Irreducible Linear/Quadratic terms*\
 
-#align(center)[#image("../../../pictures/cal2ch1_2.png", width: 12cm)]
+#align(center)[#image("../../../pictures/sem1/cal2ch1_2.png", width: 12cm)]
 
 Note that $n$ is the time the term that has appeared in the fully factorized numerator and denominator.
 ]
@@ -566,7 +566,7 @@ If a region is bounded between a rightmost curve $x = x_r(y)$ and a leftmost cur
 
 Let $f(x)$ be an integrable function on $[a, b]$
 
-#align(center)[#image("../../../pictures/cal2ch1_3.png", width:6cm)]
+#align(center)[#image("../../../pictures/sem1/cal2ch1_3.png", width:6cm)]
 
 We have the function $f(x)$ rotate around the $x$-axis
 
@@ -611,7 +611,7 @@ Consider the region bounded by the curve $y = 2x-x^2$ and the lines $y=0, x=0, x
 #info[*Cylindrical Shell*\
 
 Let $f(x)$ be an integrable function on $[a, b]$
-#align(center)[#image("../../../pictures/cal2ch1_5.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/cal2ch1_5.png", width:8cm)]
 
 We have the function $f(x)$ rotate around the $x = p$.
 
@@ -620,6 +620,6 @@ The formula $ V = integral_a^b 2 pi r(x) f(x) dif x,  quad r(x) = (x-p) $
 ]
 #tip[*Summary*\
 
-#align(center)[#image("../../../pictures/cal2ch1_4.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/cal2ch1_4.png", width:8cm)]
 
 ]

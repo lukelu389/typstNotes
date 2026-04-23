@@ -396,4 +396,4 @@ Let $L = lim_(n->oo) root(n, |a_n|)$ and suppose that $L in RR$ or $L = oo$
 
 === Summary
 
-#align(center)[#image("../../../pictures/cal2_ch3.png", width:12cm)]
+#align(center)[#image("../../../pictures/sem1/cal2_ch3.png", width:12cm)]

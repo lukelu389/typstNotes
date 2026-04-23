@@ -31,7 +31,7 @@ $(a, f(a))$ is the *point of tangency*
 \
 \
 
-#align(center)[#image("../../../pictures/tangentLine.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/tangentLine.png", width:8cm)]
 \
 
 
@@ -210,7 +210,7 @@ Examples:\
   
 2. What factors could affect the error in linear  approximation?
  - The distance from $x$ to $a$. (e.g. $f(x) = sin(x), x = 3pi/2, a = pi/4$.)
- #align(center)[#image("../../../pictures/derivative1.png", width: 8cm)]
+ #align(center)[#image("../../../pictures/sem1/derivative1.png", width: 8cm)]
  - The curvature (e.g. $f(x)= e^x, g(x)=e^(x/10)$)
 
 3. Find a upper bound on the error in using $L_9$ to appriximate $f(x) = sqrt(x)$ on $[5, 13]$\
@@ -250,7 +250,7 @@ Note that NM converges faster than Bisection Method
 
 The Visualization of the procedure
 \
- #align(center)[#image("../../../pictures/derivative2.png", width: 8cm)]
+ #align(center)[#image("../../../pictures/sem1/derivative2.png", width: 8cm)]
 \
  #tip[*Root Finding Formula for NM*\
  $ x_(n+1) = x_n-f(x_n)/(f'(x_n)) $

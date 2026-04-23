@@ -323,7 +323,7 @@ $ R_theta (x_1,x_2) = (x_1 cos theta-x_2 sin theta, x_1 sin theta+_2 cos theta)
 
 We can get the standard matrix of $R_theta$:  $ R_theta = mat(cos theta, - sin theta; sin theta, cos theta) $
 
-#align(center)[#image("../../../pictures/linearch3_1.png", width: 4cm)]
+#align(center)[#image("../../../pictures/sem1/linearch3_1.png", width: 4cm)]
 
 If $R_theta : RR^2 -> RR^2$ is a rotation with rotation matrix $A = [R_theta]$, then column of $A$ are orthogonal unit vectors.
 ]
@@ -339,7 +339,7 @@ $R_(pi/6) (vec(x)) = mat(cos pi/6, -sin pi/6; sin pi/6, cos pi/6) mat(4; 2)= mat
 
 Let $"refl"_P :RR^n -> RR^n $denote the mapping that sends a vector $vec(x)$ to its mirror image in the hyperplane $P$ with normal vector $vec(n)$. $ "refl"_P (vec(x)) = vec(x) - 2 proj_(vec(n))(vec(x)) $
 
-#align(center)[#image("../../../pictures/linearch3_2.png", width: 4cm)]
+#align(center)[#image("../../../pictures/sem1/linearch3_2.png", width: 4cm)]
 ]
 
 == Special Subspaces

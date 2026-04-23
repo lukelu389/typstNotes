@@ -30,7 +30,7 @@ Changes however on $P$ will be along the curve.
 
 (i.e. $q_d = 100-P $)
 
-#align(center)[#image("../../../pictures/econ_ch2_1.png", width:6cm)
+#align(center)[#image("../../../pictures/sem1/econ_ch2_1.png", width:6cm)
 ]
 
 #warn[While solving for the slope, the traditional method of slope mathematically is reciprocal of the graphical representation of the economic model]
@@ -53,7 +53,7 @@ where $q_s$ is the quantity supply.
 ]
 
 (i.e. $q_s = P$)
-#align(center)[#image("../../../pictures/econ1_ch2_2.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch2_2.png", width:8cm)]
 
 A positive in government intervention shifts the graph to the right whereas to the left
 
@@ -80,7 +80,7 @@ $-->$ coefficient of price in the $q_s$ function will always positive
 $-->$ supply curve will always be upward sloping
 ]
 
-#image("../../../pictures/econ1_ch2_3.png", width:8cm)
+#image("../../../pictures/sem1/econ1_ch2_3.png", width:8cm)
 
 #info[*Equilibrium*\
 
@@ -121,7 +121,7 @@ Is this quota efficient?: Inefficient
 
   - Tota Surplus $=$ Consumer Surplus + Producer Surplus + Government 
 
-#image("../../../pictures/econ1_ch2_5.png", width:8cm)
+#image("../../../pictures/sem1/econ1_ch2_5.png", width:8cm)
 Red + Purple Trapezoid: Consumer Surplus \
 Green: Producer Surplus\
 Orange Triangle: Deadweight loss\
@@ -132,7 +132,7 @@ What about a negative quota?: Inefficient
 
 Loss on efficiency $==>$ Deadweight loss which comes from both consumer surplus and producer surplus
 
-#image("../../../pictures/econ1_ch2_4.png", width:8cm)
+#image("../../../pictures/sem1/econ1_ch2_4.png", width:8cm)
 
 Red: Consumer Surplus \
 Green: Producer Surplus\
@@ -180,7 +180,7 @@ $q_s = 50+p$
 
 Post-Policy: We restrict the prices for $\$30$
 
-#align(center)[#image("../../../pictures/econ1_ch2_6.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch2_6.png", width:8cm)]
 
 Orange: Consumer Surplus $= 1800$\
 Green: Producer Surplus $= 1950$\
@@ -201,7 +201,7 @@ Think of the model as a tool we use to run experiments
 \
 Which is more elastic:
 
-#align(center)[#image("../../../pictures/econ1_ch2_7.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch2_7.png", width:8cm)]
 
 The red one. There is a bigger shift in quantity with lowering in price for the red one than the green one.
 
@@ -215,7 +215,7 @@ Assume a mode in equilibrium
 
 Give it a quota decrease and a price decrease
 
-#align(center)[#image("../../../pictures/econ1_ch2_8.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch2_8.png", width:8cm)]
 
 Green: Producer Surplus \
 Red: Consumer Surplus \
@@ -226,7 +226,7 @@ Question:
 1. We have a price control downward
 2. Reduction in Demand
 
-#align(center)[#image("../../../pictures/econ1_ch2_9.png", width:8cm)]
+#align(center)[#image("../../../pictures/sem1/econ1_ch2_9.png", width:8cm)]
 
 Green: Producer Surplus \
 Red: Consumer Surplus \

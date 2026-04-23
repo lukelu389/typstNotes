@@ -15,15 +15,15 @@
 
 === Operating
 
-#align(center)[#image("../../../pictures/scf1.png", width:10cm)]
+#align(center)[#image("../../../pictures/sem1/scf1.png", width:10cm)]
 
 === Inversting
 
-#align(center)[#image("../../../pictures/scf2.png", width:10cm)]
+#align(center)[#image("../../../pictures/sem1/scf2.png", width:10cm)]
 
 === Financing
 
-#align(center)[#image("../../../pictures/scf3.png", width:10cm)]
+#align(center)[#image("../../../pictures/sem1/scf3.png", width:10cm)]
 
 
 

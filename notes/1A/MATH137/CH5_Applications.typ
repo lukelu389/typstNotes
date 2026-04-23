@@ -662,7 +662,7 @@ Examples:
     Concave down on $(-3, -1] union (0, oo)$
   10.
 
-  #align(center)[#image("../../../pictures/graphplot1.png", width: 10cm)]
+  #align(center)[#image("../../../pictures/sem1/graphplot1.png", width: 10cm)]
 
 2. $f(x)=frac(e^x (x-2), x^2-2x), f'(x) = frac(e^x(x-1)(x-2), x^3-2x^2), f''(x)= frac(e^x (x^2-2x+2)(x-2), x^4-2x^3)$
 
@@ -737,7 +737,7 @@ Examples:
   Horizontal asymptote at $y = 0$
 
 10.
-  #align(center)[#image("../../../pictures/graphplot2.png", width: 8cm)]
+  #align(center)[#image("../../../pictures/sem1/graphplot2.png", width: 8cm)]
 
 == Optimization
 
