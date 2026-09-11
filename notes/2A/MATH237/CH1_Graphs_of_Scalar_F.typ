@@ -1,12 +1,13 @@
 #import "../../../preamble.typ": *
 #show: conf
-
+#import "@preview/diverential:0.2.0": *
+#let strut(h) = box(height: h, width: 0pt)
 #let Title = "CH 1 — Graphs of Scalar Functions"
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
 == 1.0 Parametric Curves 
-
+\
 
 We have seen functions that are either explicit or implicit
 1. $y=f(x)$
@@ -37,8 +38,83 @@ Practices:
   
   Same curve as Q2 but has two different parametrizations. Twice as the speed as the Q2.
 
+
 \
-== 1.1 Scalar Functions
+== 1.1 Vector -Valued Functions
+
+#defn[*Vector-Valued Funciton*\
+
+It is a funciton whose domain is a subset of the $RR$ and whose output is a vector
+
+]
+
+*Note*: a vector-valued funciton is a convenient way to collect scalar functions
+
+Examples:
+
+1. In $RR^2, vec(x)(t) = mat(x(t); y(t))$
+\
+
+2. In $RR^3, vec(x)(t) = mat(x(t); y(t); z(t))$
+\
+\
+\
+\
+\
+
+
+3. Let $vec(x) (t) = (cos t, sin 2t)$ repsent the position of a particle at time $t$. Sketch $vec(x)(t), 0<= t<=2pi$
+
+  We have $x= cos t, y = sin 2t, 0 <=t <= 2pi$
+
+  #align(center)[ #image("../../../pictures/yr2/cal3ch1_1.png", width: 8cm)]
+
+
+#defn[*Velocity* \
+  
+  Velocity = $vec(v)(t) = dv(x(t), t)$]
+
+Examples:
+
+1. $vec(x)(t) = (cos t, sin 2t)$
+
+  velocity $= dv(vec(x)(t), t) = (- sin t, 2 cos 2t)$
+
+  At $t = 0, vec(v)(0) = (0, 2)$
+  At $t = pi/2, vec(v)(pi/2) = (-1, 0)$
+
+2. Let $vec(x)_1(t) = (cos t, sin t)$ and $vec(x)_2(t) = (cos 3t, sin 3t)$ be the paths of two particles, find the velocity of each particle when $t = 0$
+
+  $dv(vec(x_1)(t), t) = (-sin t, cos t)$, 1 revolution of unit circle radius 1 unit
+
+  $dv(vec(x_2)(t), t) = (-3 sin 3t, 3 cos 3 t)$, 3 revolutions of unit circle radius 1 unit
+
+  $vec(x_1)'(0) = (0, 1), vec(x_2)'(0) = (0, 3)$
+
+#defn[*Tangent vector*\
+
+Given the curve defined by $ vec(x)(t) = (x(t), y(t)) $ its *tangent vector* at $t = t_0$ is $ vec(t) = eval(dv(vec(x), t), t=t_0) = (x'(t_0), y'(t_0)) $ whenever $dv(vec(x), t), t=t_0) != vec(0)$ exists.
+]
+
+*Note*: $vec(t)$ lies on the tangent line and points in the direction of travel
+
+Example: 
+
+Consider the curve $vec(x)(t) = (t^3, t^2)$ and its tangent vector.
+
+Notice that if $x = t^3 --> t = x^(1/3) --> y = x^(2/3)$
+
+$dv(vec(x)(t),t) = (3t^2, 2t)$
+
+$t = 1, vec(x)(1) = (1, 1), vec(v)(1) = (3, 2)$
+
+$t = 0, vec(x)(1) = (0, 0), vec(v)(1) = (0, 0) = vec(0)$ We cannot define the tangent vector as the function at the point is not differentiable
+
+#align(center)[ #image("../../../pictures/yr2/cal3ch1_2.png", width: 8cm)]
+  
+
+\
+== 1.2 Scalar Functions
 
 Recall:
  
@@ -58,7 +134,7 @@ $f:A->B$ is a function
 
 ]
 
-== 1.2 Geometric Interpretation of $z = f(x, y)$
+== 1.3 Geometric Interpretation of $z = f(x, y)$
 
 #defn[*Levels*\
 
