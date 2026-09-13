@@ -30,10 +30,9 @@ Let f(n) be the sum of natural numbers up to n. Observe:
 - A *recursive function* calls itself with a “smaller” argument until a *base case*.  
 - For Naturals in this course: “smaller” = `sub1`, base test = `zero?`.
 
-#note[
-*The “Tripod” of Computation (Turing completeness in our model):*  
+*Note*: *The “Tripod” of Computation (Turing completeness in our model):*  
 1) Arbitrarily large numbers • 2) Conditionals • 3) Recursion.
-]
+
 
 = Rules for Recursion (version 1)
 

@@ -20,7 +20,7 @@ Linear example:
   (cond [(empty? lst) 0]
         [else (add1 (len (rest lst)))]))
 ```
-#note[Built-ins like `length`, `append`, and `reverse` should be treated as *linear* in the size of their input lists for complexity reasoning.]
+*Note*: *Built-ins like `length`, `append`, and `reverse` should be treated as *linear* in the size of their input lists for complexity reasoning.
 
 == Spotting Quadratic Work
 ```racket
