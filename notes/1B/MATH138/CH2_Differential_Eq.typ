@@ -71,7 +71,7 @@ A direction field for the different equation $y' = F(x)$ displays short line seg
 Examples:
 
 1. $dv(y, x) = x/y$
-  #align(center)[#image("../../../pictures/cal2ch2_1.png", width:6cm)]
+  #align(center)[#image("../../../pictures/sem1/cal2ch2_2.png", width:6cm)]
 
   We can obtain this when plugging-in numbers. 
   
@@ -80,13 +80,13 @@ Examples:
   Hence a slope of $-2$ at $(-2, 1)$ and other points have the same method
 \
 2. $y'x = x+y$ 
-   #align(center)[#image("../../../pictures/cal2ch2_3.png", width:4cm)]
+   #align(center)[#image("../../../pictures/sem1/cal2ch2_3.png", width:4cm)]
 
 3. $y' = x y$
-     #align(center)[#image("../../../pictures/cal2ch2_2.png", width:4cm)]
+     #align(center)[#image("../../../pictures/sem1/cal2ch2_2.png", width:4cm)]
 
 4. $y' = y$
-  #align(center)[#image("../../../pictures/cal2ch2_4.png", width:4cm)]
+  #align(center)[#image("../../../pictures/sem1/cal2ch2_4.png", width:4cm)]
 
 == Separable Differential Equations
 

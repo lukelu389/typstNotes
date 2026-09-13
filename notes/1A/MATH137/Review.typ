@@ -1,13 +1,13 @@
-#import "../../preamble.typ": *
+#import "../../../preamble.typ": *
 #import "@preview/diverential:0.2.0": *
 
 #let Title = "Review"
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-1. $lim_(x->oo) frac(sin x, x) =^("Squeeze Thm") 0 $
+1. $lim_(x->oo) frac(sin x, x) =^("Squeeze Thm") 0$
 
-2. $(ln 2)' = 0$ 
+2. $(ln 2)' = 0$
 
 3. $dvs(f^(-1) (2), x) = 1/(f'(f^(-1)(1))) = 1/4$
 
@@ -24,9 +24,9 @@
 9. The derivative of implicit curve $x^2+6x+2y^2+3y +11 = 0$ which is DNE: \
   $(x+3)^2 + 2(y^2+3y/2+9/16)+14/16 != 0$
 
-10. If $f(x)=a x^2 + b x + c$ then $|f(x)-L_p ^f (x)|<=a(x-p)^2$
+10. If $f(x)=a x^2 + b x + c$ then $|f(x)-L_p^f (x)|<=a(x-p)^2$
 
-  Note that $M = 2a ==> (2a)/2 (x-p)^2$ 
+  Note that $M = 2a ==> (2a)/2 (x-p)^2$
 
 11. Bounded Derivative Theorem
 
