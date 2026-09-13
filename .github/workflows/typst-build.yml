@@ -1,10 +1,10 @@
-name: Build Typst PDFs
+name: Build Changed Typst PDFs
 
 on:
   push:
     branches: [ main ]
     paths-ignore:
-      - "pdf/**"           # avoid running when only PDFs change
+      - "pdf/**"
   pull_request:
     paths-ignore:
       - "pdf/**"
@@ -12,29 +12,65 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Typst
         uses: typst-community/setup-typst@v3
-        # You can pin a specific version:
-        # with:
-        #   typst-version: v0.12.0
 
-      - name: Compile PDFs into pdf/
+      - name: Find and compile changed Typst files
+        id: compile
+        shell: bash
         run: |
           set -eux
-          shopt -s globstar nullglob
-          for f in notes/**/*.typ; do
+
+          # Determine which commits to compare
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+
+          HEAD="${{ github.sha }}"
+
+          echo "Comparing:"
+          echo "BASE=$BASE"
+          echo "HEAD=$HEAD"
+
+          # Find only added or modified .typ files under notes/
+          mapfile -t files < <(
+            git diff --name-only \
+              --diff-filter=AM \
+              "$BASE" "$HEAD" \
+              -- 'notes/**/*.typ'
+          )
+
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo "No changed Typst files."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          for f in "${files[@]}"; do
+            echo "Compiling $f"
+
             rel="${f#notes/}"
             out="pdf/${rel%.typ}.pdf"
+
             mkdir -p "$(dirname "$out")"
+
             typst compile --root . "$f" "$out"
           done
 
-      - name: Upload PDFs artifact
+      - name: Upload changed PDFs
+        if: steps.compile.outputs.changed == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: pdfs
+          name: changed-pdfs
           path: pdf/**
