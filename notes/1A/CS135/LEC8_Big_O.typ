@@ -7,7 +7,7 @@
 Website: #link("student.cs.uwaterloo.ca/~cs135")
 
 #v(8pt)
-  
+
 == List Abbreviations
 `(list 1 2 3)` is shorthand for `(cons 1 (cons 2 (cons 3 empty)))`.
 
@@ -20,7 +20,7 @@ Linear example:
   (cond [(empty? lst) 0]
         [else (add1 (len (rest lst)))]))
 ```
-*Note*: *Built-ins like `length`, `append`, and `reverse` should be treated as *linear* in the size of their input lists for complexity reasoning.
+*Note*: Built-ins like `length`, `append`, and `reverse` should be treated as *linear* in the size of their input lists for complexity reasoning.
 
 == Spotting Quadratic Work
 ```racket
@@ -30,5 +30,5 @@ Linear example:
 ```
 
 == Exercises
-1. Classify the complexity of `map`, `filter`, `increasing?`, `insert`.  
+1. Classify the complexity of `map`, `filter`, `increasing?`, `insert`.
 2. Rewrite `rev-bad` using an accumulator to get linear time.
