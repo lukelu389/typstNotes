@@ -40,7 +40,7 @@
   3. *Balance Sheet* (BS)
   4. *Statement of Cash Flows* (SCF)
 
-#note[The *output* of one statement is the *input* to another: IS → RE → BS → SCF reconciliation of ending cash.]
+Note: The *output* of one statement is the *input* to another: IS → RE → BS → SCF reconciliation of ending cash.
 
 = Income Statement (Performance over a Period)
 
