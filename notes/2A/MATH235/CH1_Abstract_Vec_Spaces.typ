@@ -5,8 +5,8 @@
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-
-Ideas: $RR^n$ is useful. There re other objects that "behave" and "look" like $RR^n$
+== 1.1 Vector Spaces
+Ideas: $RR^n$ is useful. There are other objects that "behave" and "look" like $RR^n$
 
 Examples:
 
@@ -65,7 +65,7 @@ Examples:
   4. $c(t vec(x)) = c t (vec(x))$
   5. $(s+t) dot vec(x) = s dot vec(x) + t dot vec(x)$
   6. $1 dot vec(x) = vec(x)$
-  7. $exists$ some  $ vec(0) in V$ s.t. $vec(x) + vec(0) = vec(x)$
+  7. $exists vec(0) in V$ s.t. $vec(x) + vec(0) = vec(x)$
   8. $forall vec(x) in V, exists - vec(x) in V$ s.t. $vec(x) + (-vec(x)) = vec(0)$ 
 ]
 
@@ -75,7 +75,7 @@ Examples:
 
 *Additive Inverse $-vec(x)$* are not the vector with every entry being the negation of its origin entry. Refer to the Axiom to determine the corresponding additive inverse
 
-Both $vec(0) "and" -vec(x)$ are unique in their corresponding vector space
+Both $vec(0) "and" -vec(x)$ are *unique* in their corresponding vector space
 ]
 
 *Note*: 
@@ -90,7 +90,7 @@ Examples:
 
 1. $V = FF^n = {mat(x_1; ...; x_n) : x_i in FF}$,  $V = M_(m times n)(FF) = {mat(a_11, ..., a_(1 n); ..., ..., ...; a_(m 1), ..., a_(m n)): a_(i j). in FF}$, \
 
-  and $V = P_n(FF) = {a_0+a_1x++...+a_n x^n : a_i in FF}$ with addition and scalar multiplication be usual operations.
+  and $V = P_n (FF) = {a_0+a_1x++...+a_n x^n : a_i in FF}$ with addition and scalar multiplication be usual operations.
 
   Here, $vec(0) = mat(0; ...; 0) mat(0, ..., 0; ..., ..., ...; 0, ..., 0), 0+0x+...+0x^n$
 
@@ -98,8 +98,6 @@ Examples:
   
   Here, $vec(0) = $the zero function, i.e. $z(x)=0$
   
-  \
-  \
   \
   \
   \
@@ -147,18 +145,102 @@ Examples:
     
     then $vec(x)+vec(z) = vec(0) <==> mat(x_1; x_2) + mat(z_1; z_2) = mat(1; -1) <==> mat(x_1+z_1-1; x_2+z_2+1) = mat(1; -1)==> vec(z) = mat(x_1+2; x_2-2)$
 
+    $- vec(x) = mat(-x_1 -2; -x_2 +2)$
+
 5. Proof uniqueness of $vec(0)$
 
   Let $V$ be a vector space. Suppose $vec(0)_1, vec(0)_2 in V$ satisfy \
 
-  $vec(0)_1+vec(x) = vec(x), vec(x) in V$
+  $vec(0)_1+vec(x) = vec(x), vec(x) in V$ 
   
   $vec(0)_2+vec(x) = vec(x), vec(x) in V$
 
   We want $vec(0)_1 = vec(0)_2$
 
   #proof[
+    $vec(0)_2 + vec(x) + vec(0)_1 = vec(x) ==> vec(0)_2 + vec(0)_1 = vec(0)_1 $
 
+    $vec(0)_1 + vec(x) + vec(0)_2 = vec(x) ==> vec(0)_1 + vec(0)_2 = vec(0)_2$
+
+    Together, $vec(0)_1 + vec(0)_2 = vec(0)_2 + vec(0)_1 = vec(0)_1 = vec(0)_2$
   ]
-  
+  #align(right)[$square$]
     
+    \
+6. Proof $0 vec(x) = vec(0), forall vec(x) in V$ 
+  
+  $0 vec(x) = (0+0) vec(x)= 0 vec(x)+ 0vec(x) ==> vec(0) = 0vec(x)$
+
+\
+== 1.2 Subspaces and Spans
+
+\
+
+#defn[*Subspace*\
+
+Let $V$ be a vector space over $FF$ and $W subset.eq V$. We say *subspace* of $V$ if $W$ is also a vector space ofver $FF$ with same addition and scalar multiplication as for $V$
+]
+
+#info[*Subspace Test* \ 
+  Let $V$ be a vector space over $FF$. Let $W subset.eq V$. 
+  
+  Then $W$ is a subspace of $V$ if and only if:
+
+  1. $vec(0) in W$
+
+  2. $W$ is closed under addition (if $vec(x), vec(y) in W, vec(x)+vec(y) in W$)
+
+  3. $W$ is closed under scalar multiplicaiton(if $vec(x)in W, c in FF, c vec(x) in W$)
+]
+
+\
+Example: 
+
+1. Let $W = {p(x) in P_0 (RR): p'(0) = 0}$
+
+  $W$ is a vector space with usual $+$ and $dot$ of polynomials
+
+  Must of the axioms are obvious for all polynomials.
+
+  We need to check axioms that are less intuitive:
+
+  1. Is the zero vector in $W$? 
+  2. Is $W$ closed under addition?
+  3. Is $W$ closed under scalar multiplication?
+  #proof[
+    Let $V in P_n (RR)$
+
+    1. Is the zero vector in $W$? 
+
+      $0+0x+...+0x^n = z(vec(x))$
+
+      Clearly, $z'(0) = 0$ So $z(vec(x)) in W$
+
+    2. Is $W$ closed under addition?
+
+      Let $p(x), q(x) in W$
+
+      $(p+q)'(0) =  p'(0) + q'(0) = 0 in W$
+    3. Is $W$ closed under scalar multiplication?
+
+      Let $p(x) in W, s in RR$.
+
+      $(s p)'(0) = s (p'(0)) = s 0 = 0 in W$
+  ]
+  #align(right)[$square$]
+
+2. Let $V$ be any vector space. 
+
+  $W = V$ is a subspace. $W{vec(0)}$ is a subspace.
+
+3. $V = FF^n$
+
+  The origin is a subspace. \
+  The lines pass through origin are subspace. \
+  The planes pass through origin are subspace. \
+
+4. $V = M_(2 times 2)(FF)$, $W = {A in M_(2 times 2) : "trace"(A) = 0}$
+
+  Recall that $"trace"(A)$ is the sum of the diagonal(i.e. $mat(a, b; c, d) ==> "trace"(A) = a+d$)
+
+  Claim $W$ is a subspace of $V$

@@ -40,7 +40,7 @@ Practices:
 
 
 \
-== 1.1 Vector -Valued Functions
+== 1.1 Vector-Valued Functions
 
 #defn[*Vector-Valued Funciton*\
 
@@ -63,7 +63,7 @@ Examples:
 \
 
 
-3. Let $vec(x) (t) = (cos t, sin 2t)$ repsent the position of a particle at time $t$. Sketch $vec(x)(t), 0<= t<=2pi$
+3. Let $vec(x) (t) = (cos t, sin 2t)$ represent the position of a particle at time $t$. Sketch $vec(x)(t), 0<= t<=2pi$
 
   We have $x= cos t, y = sin 2t, 0 <=t <= 2pi$
 
@@ -93,7 +93,7 @@ Examples:
 
 #defn[*Tangent vector*\
 
-Given the curve defined by $ vec(x)(t) = (x(t), y(t)) $ its *tangent vector* at $t = t_0$ is $ vec(t) = eval(dv(vec(x), t), t=t_0) = (x'(t_0), y'(t_0)) $ whenever $dv(vec(x), t), t=t_0) != vec(0)$ exists.
+Given the curve defined by $ vec(x)(t) = (x(t), y(t)) $ its *tangent vector* at $t = t_0$ is $ vec(t) = eval(dv(vec(x), t), t=t_0) = (x'(t_0), y'(t_0)) $ whenever $dv(vec(x), t), t=t_0 != vec(0)$ exists.
 ]
 
 *Note*: $vec(t)$ lies on the tangent line and points in the direction of travel
@@ -127,14 +127,82 @@ $f:A->B$ is a function
 
 4. The subset of $B$ consisting of all $f(a)$ is called the *range* of $f$, denoted by $R(f)$
 
+5. Single variable scalar functions are $f:RR -> RR$
+
 
 #defn[*Scalar Function*\
-  A *scalar function* $f(x_1, ..., x_n)$ of $n-$variables is a function whose domain is a subset of $RR^n$ and whose range is a subset of $RR$
-
-
+  A *scalar function* $f(x_1, ..., x_n)$ of $n$-variables is a function whose domain is a subset of $RR^n$ and whose range is a subset of $RR$
 ]
 
+Examples:
+
+1. $f(x, y) = x^2+ y^2 -> f(1, 1) = 1^2+1^2 = 2$
+
+2. $f(x, y) = sin(x+y) -> f(0, pi/2) = sin(pi/2) = 1$
+
+3. $f(x, y, z) = e^(x+y+z) -> f(1, 2, 1) = e^(1+2+1) = e^4$
+
+*Notation*: We can write $vec(x) = (x_1, x_2, ..., x_n)$ so that $f(vec(x)) = f(x_1, x_2, ..., x_n)$
+
+Our independent variables don't have to be $x, y, z$, etc... Multivariable functions can be used to model many different physical situations
+
+Example: write down a multivariable funciton which calculates the volume of a cylinder.
+
+$V = pi r^2 h --> V(r, h) = pi r^2 h$
+
+#defn[*Domain and Range*\
+
+*Domain* is the largest subset of $RR^n$ for which the funciton is defined
+
+*Range* is a set of all possible values which are subset of $RR$
+]
+
+Examples: 
+
+1. Find the domain and range of $f(x, y) = sqrt(x y)$
+
+  We need $x y >= 0 ==> cases(x >= 0 "and" y>=0, x <= 0 "and" y <=0)$
+
+  $"dom"(f)= {(x, y) in RR^2 : x>=0, y>=0} union  {(x, y) in RR^2 : x<=0, y<=0}$
+
+  #align(center)[ #image("../../../pictures/yr2/cal3ch1_3.png", width: 6cm)]
+
+  We know that $sqrt(x y) >=0, space forall x, y in "dom"(f)$ \
+
+  Let $c in RR, c >=0$, be an arbitrary non-negative real number.
+
+  Notice that $f(c^2, 1) = sqrt(c^2) = abs(c) = c$ since $c>=0$ 
+
+  For any $c in RR, c>=0, exists$ inputs in the domain of $f$ s.t. $c$ is a valid output $-> c in "ran"(f): RR_(>=0)$ 
+
+2. Find the domain and range of $g(x, y) = frac(x^2 - y^2, |x| + |y|)$
+
+  We need $|x|+|y| != 0$ which is true $forall x, y in RR "both note zero" $ since $|x| > 0, |y|> 0$
+
+  $"dom"(g) = {(x, y): x, y in RR \\ {(0, 0)}}$
+
+  Consider case $x > y$: $x^2 - y^2 > 0, |x|+|y| >0 ==> g(x,y)>0$
+
+  Consider case $x = y$: $x^2 - y^2 = 0, |x|+|y| = 2x ==> g(x,y)=0$
+
+  Consider case $x < y$: $x^2 - y^2 < 0, |x|+|y| >0 ==> g(x,y)<0$
+
+  or alternatively
+
+  Let $c in RR, c>0, g(c, 0) = frac(c^2 - 0, |c| + 0) = |c| = c, c > 0$
+
+  Let $d in RR, d<0, g(0, d) =frac(0-d^2, 0 + |d|) = |d| = d, d < 0$
+
+  Let $a, b in RR, a = b, g(a, b) = frac(a^2 - b^2, |a|+|b|) = frac(a^2 - a^2, |a|+|a|) = 0/(2 a) = 0 $
+
+  Thus $"ran"(g) = RR$
+
+
 == 1.3 Geometric Interpretation of $z = f(x, y)$
+
+Question: How we can graph $z = f(x, y)$
+
+ANS: We graph $(a, b, f(a,b))$. We think of $f(a, b)$ as height above the $x y$-plane
 
 #defn[*Levels*\
 

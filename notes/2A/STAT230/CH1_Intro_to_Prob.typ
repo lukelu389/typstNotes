@@ -5,7 +5,12 @@
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-== Mathematical Probability Model
+
+== 1.1 Definition of Probability
+
+
+
+== 1.2 Mathematical Probability Model
 
 #defn[*Baisc Definitions*\
 
@@ -38,6 +43,37 @@ The odds against in favour of an event are defined as $frac(1-P(A), P(A))$
 ]
 
 
+== 1.3 Counting Rules
 
+#info[*Counting Rules*
 
+  *Addition rule*: if we can do job 1 in $p$ ways and job 2 in $q$ ways, then we can do job 1 *or* 2 in *$p+q$* ways.
+  
+  *Multiplication rule*: if we can do job 1 in $p$ ways and job 2 in $q$ ways, then we can do job 1 *and* 2 is *$p q$* ways
+
+  *Sampling WITH replacement*: can select the same object multiple times. 
+  
+  - The sample space size is $n^k$
+
+  *Sample WITHOUT replacement*: cannot select the same object multiple times. 
+
+  *Permutation*: sample without replacement *with order*
+
+   - The sample space size is $n^("("k")"): (n)(n-1)...(n-k+1) "or" product_(i=0)^(k-1) (n-i)$
+]
+
+\
+
+Example:
+1. Of the 36 outomes when two 6-sided dice are rolled, how many ways are there to have equal values on both dices or a total of 5? \
+
+  ANS: 10
+
+2. In Texas poker. Say you already have 6, 7, 9, 10. What of the probability of pulling 8? If not on turn, what about next two to obtain 8?
+
+  ANS: $4/47, 4/46, 4/45, (4/47 times 43/46+ 43/47 times 4/46+ 4/47 times 3/46) $
+
+3. IP address is 4 numbers between 0-255. How many potential IP exsits? Probability at least one is even? Probability of all numbers are different
+
+  ANS: $256^4, 1-1/2^4, 246^("("4")") = 255/256 times 254/256 times 253/256$
 
