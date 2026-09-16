@@ -204,16 +204,71 @@ Question: How we can graph $z = f(x, y)$
 
 ANS: We graph $(a, b, f(a,b))$. We think of $f(a, b)$ as height above the $x y$-plane
 
-#defn[*Levels*\
+#defn[*Level Curves*\
 
-  1. The *level curves* of a function $f(x, y)$ are the curves $ f(x, y) = k $ where $k$ is a constant in the range of $f$
+The *level curves* of a function $f(x, y)$ are the curves $ f(x, y) = k $ where $k$ is a constant in the range of $f$
 
-  2. A *level surface* of a scalar function $f(x,y,z)$ is defined by $ f(x, y, z) = k, quad k in R(f) $
+    - *Alternate definition*: curves along which the height of the graph $z=f(x,y)$ is constant
 
-  3. A *level set* a scalar function $f(x), x in RR^n$ is defined by $ f(x) = k, quad k in R(f) $
+    - A collection of *level curves* are called a *contour map*
+
+    - There are *exceptional level curves* because it looks different from the other level curves.
+
 ]
-
+\
 #defn[*Cross Sections*\
-  A *cross section* pf a surface $z= f(x, y)$ is the intersection of $z=f(x, y)$ with a plane
+  A *cross section* of a surface $z= f(x, y)$ is the intersection of $z=f(x, y)$ with a plane
 ]
+
+Examples:
+
+1. Sketch $x+2y+z=3$
+
+  We can rewrite this as $z = 3-x-2y = f(x, y)$
+
+  #align(center)[ #image("../../../pictures/yr2/cal3ch1_4.png", width: 6cm)]
+
+  Sketch and write down an equation which is the level curves for the above and sketch these level curves for a different $k$
+
+  Level curve: $ 3-x-2y =k, k in RR ==> y = -1/2 x+1/2(3-k)$
+
+2. Sketch $f(x, y)= x^2+y^2$
+
+  Level curves: $x^2+y^2 = k, k >= 0$ (red circle below)
+
+  #align(center)[ #image("../../../pictures/yr2/cal3ch1_5.png", width: 6cm)] 
+
+  This is a parabloid(grey "cone-like" shape)
+
+3. $z = x^2+y^2$
+
+  $x = c ==> z = c^2+y^2$
+
+  #align(center)[ #image("../../../pictures/yr2/cal3ch1_6.png", width: 6cm)] 
+
+  $y = d ==> z = x^2+d^2$ (Similar like above)
+
+
+4. $z = x^2-y^2$
+
+  $"dom"(f) = RR, "ran"(f) = RR$
+
+  Level curves: $x^2 - y^2 = k, k in RR$ (hyperbolas)
+
+    #align(center)[ #image("../../../pictures/yr2/cal3ch1_7.png", width: 6cm)] 
+  Red lines $k>0$ \
+  Green lines $k<0$ \
+  Blue lines $k=0$
+  
+
+
+
+
+#defn[*Levels*
+
+1. A *level surface* of a scalar function $f(x,y,z)$ is defined by $ f(x, y, z) = k, quad k in R(f) $
+
+2. A *level set* a scalar function $f(x), x in RR^n$ is defined by $ f(x) = k, quad k in R(f) $
+]
+
 

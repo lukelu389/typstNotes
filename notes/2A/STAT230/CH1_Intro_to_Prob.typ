@@ -1,5 +1,7 @@
 #import "../../../preamble.typ": *
+#import "@preview/combo:0.1.0"
 #show: conf
+
 
 #let Title = "CH 1 — Introduction to Probability"
 #set-title(Title)
@@ -60,7 +62,12 @@ The odds against in favour of an event are defined as $frac(1-P(A), P(A))$
   *Permutation*: sample without replacement *with order*
 
    - The sample space size is $n^("("k")"): (n)(n-1)...(n-k+1) "or" product_(i=0)^(k-1) (n-i)$
-]
+
+  *Combination*: ways of selecting $k$ objects from $n$ without replacement, and order does not matter
+
+  - $frac(n^("("k")"), k!) = binom(n, k) = #v(0em)_n C_k$ 
+  
+  ]
 
 \
 
@@ -76,4 +83,29 @@ Example:
 3. IP address is 4 numbers between 0-255. How many potential IP exsits? Probability at least one is even? Probability of all numbers are different
 
   ANS: $256^4, 1-1/2^4, 246^("("4")") = 255/256 times 254/256 times 253/256$
+
+4. Lotto 6/49. Each ticket has 6 numbers choosen fro 1-49. 
+  - How many possible tickets are there?
+
+    No repetition where order does not matter: $binom(49, 6) = 13983816$
+
+  - Number of tickets that match 5 of 6 numnbers
+
+    5/6 are winning numbers, and 1 number should be 1 of 43 non-winning numbers: $binom(6, 5) binom(43, 1)$
+  
+5. A lock as a 4-digit code
+  - How many have all different numbers?
+    
+    $binom(10, 4) times binom(9, 3) times binom(8, 2) times binom(7, 1)$
+
+  - How many odd numbers over 9000?
+
+  - How many include 3 different numbers
+*Pascal Triangle*:
+  - $binom(n, k) = binom(n-1, k-1) + binom(n-1, k)$
+  - Symmetrical, $binom(n, k) = binom(n, n-k)$
+  - Start and end with 1, $binom(n, 0) = binom(n, n) = 1$
+  - Rows' sum is in form $2^n$, $sum_(k=0)^n binom(n, k) = 2^k$
+  - $n$-th row is the coefficient of each term of expanded form $(a+b)^n$
+  
 

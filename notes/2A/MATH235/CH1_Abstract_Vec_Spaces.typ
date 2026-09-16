@@ -178,7 +178,7 @@ Examples:
 
 #defn[*Subspace*\
 
-Let $V$ be a vector space over $FF$ and $W subset.eq V$. We say *subspace* of $V$ if $W$ is also a vector space ofver $FF$ with same addition and scalar multiplication as for $V$
+Let $V$ be a vector space over $FF$ and $W subset.eq V$. We say *subspace* of $V$ if $W$ is also a vector space over $FF$ with same addition and scalar multiplication as for $V$
 ]
 
 #info[*Subspace Test* \ 
@@ -200,7 +200,7 @@ Example:
 
   $W$ is a vector space with usual $+$ and $dot$ of polynomials
 
-  Must of the axioms are obvious for all polynomials.
+  Most of the axioms are obvious for all polynomials.
 
   We need to check axioms that are less intuitive:
 
@@ -239,8 +239,99 @@ Example:
   The lines pass through origin are subspace. \
   The planes pass through origin are subspace. \
 
-4. $V = M_(2 times 2)(FF)$, $W = {A in M_(2 times 2) : "trace"(A) = 0}$
+4. $V = P_3 (FF)$, $W = {a+b x+c x^2+ d x^3:b>=0}$
 
-  Recall that $"trace"(A)$ is the sum of the diagonal(i.e. $mat(a, b; c, d) ==> "trace"(A) = a+d$)
+  $W$ is not a subspace: not closed under scalar multiplicaiton.
+  
+  $2x in W, -1(2 x) in.not W$
+
+4. $V = P_n (FF), W = {p(x) in V: p''(1)+p'(2) = 2}$
+  
+  $W$ is not a subspace since $vec(0) in.not W$
+
+*Note*:
+
+- A tip is that *non-homogeneous and equations* are usually *not* a subspace
+
+- *Linear homogeneous* equations are usually a subspace
+
+#defn[*Span* \ 
+
+Let $V$ be a vector space. Let $vec(v)_1, vec(v)_2, ..., vec(v)_k in V$.
+
+Then the *span* of $vec(v)_1, ..., vec(v)_k$ is the set 
+
+$ W = "span"{vec(v)_1, ..., vec(v)_k} = {a_1 vec(v)_1 + ... + a_k vec(v)_k: a_i in FF} $
+
+*Theorem*
+
+Let $V$ be a vector space, let $vec(v)_1, ..., vec(v)_k$ then $W = "span"{vec(v)_1, ..., vec(v)_k}$ is a subspace of $V$
+]
+
+*Note*: the example (1) below gives a second proof that ${A in M_(2 times 2): "tr"(A) = 0}$ is a subspace of $M_(2 times 2) (FF)$
+
+
+Example:
+
+1. $V = M_(n times n)(FF)$, $W = {A in M_(n times n) : "trace"(A) = 0}$
+
+  Recall that $"trace"(A)$ is the sum of the diagonal (i.e. $mat(a, b; c, d) ==> "trace"(A) = a+d$)
 
   Claim $W$ is a subspace of $V$
+
+  Recall that 
+   - $"trace"(A+B) = "trace"(A) + "trace"(B) $
+
+   - $"trace"(c A) = c "trace"(A), c in RR$
+
+  #proof[
+    1. $vec(0) = mat(0, ..., 0; ..., ..., ...; 0, ..., 0), "trace"(vec(0)) = 0+...+0 = 0 ==> vec(0) in W$
+
+    2. Let $A, B in W, c in FF$. 
+
+      $"trace"(c A + B) = "trace"(c A)+ "trace"(B) = c "trace"(A)+ "trace"(B) = 0$ since $A, B in W$
+
+      Thus $c A + B in W$, closed by addition and scalar multiplication.
+#align(right)[$square$]
+  ]
+
+  Take $W = {A in M_(2 times 2) (FF): "trace"(A) = 0}$
+
+  For an arbitrary $A = mat(a, b; c, d) in W$
+  
+  $ <==> "trace"(A) = 0 <==> a+d = 0 <==> d = -a <==> A = mat(a, b; c, d) = mat(a, b; c, -a) (a, b, c in FF)$ 
+
+  So $W = {mat(a, b; c, -a) : a, b, c in FF} = {mat(a, 0; 0, -a) + mat(o, b; 0, 0)+mat(0, 0; c, 0): a, b, c in FF}$ 
+
+  $==> W = "span"{mat(1, 0; 0, -1), mat(0, 1; 0, 0), mat(0, 0; 1, 0)}$
+
+  We can conclude that most of the time *imposing condition decreases degrees of freedom*
+
+
+*Note*: differentiation and equation are *linear* operations
+
+2. $V = P_2 (RR), W = {p(x) in V: p'(1) = p(-1)}$
+
+  For $W$, an arbitrary $p(x) = a + b x + c x^2 in W $
+
+  $p'(x) = b + 2 c x ==> p'(1) = b+2c, p(-1)= a-b+c$
+
+  Then $p'(1) = p(1) <==> b + 2 c = a-b+c <==> a-2b+c = 0$
+
+  $<==> a = 2b+c <==> p(x) = a + b x+ c x^2 = (2b+c)^2+ b x+ c x^2$
+
+  Now $W = {(2b+c)+b x+ c x^2:b, c in FF} = {b(2 + x) + c(1+x^2): b, c in FF}$
+
+  So $W = "span"{2+x, 1+x^2}$
+
+  Note:
+  
+  1. Writing a subspace $W$ in the form $W = "span"{vec(v)_1, ..., vec(v)_k}$ is that it is easier to write down vectors in $W$
+
+  2. Having $W = "span"{vec(v)_1, ..., vec(v)_k}$ allows us to detect the $"dim"W$. Here is a catch, some spanning set are better than others
+
+    (i.e. $W = "span"{2+x, 1+x^2}$, instead someone came up with 
+
+    $W="span"{2+x, 1+x^2, 3+x+x^2}$, the latter one, the span is linearly dependent)
+
+  
