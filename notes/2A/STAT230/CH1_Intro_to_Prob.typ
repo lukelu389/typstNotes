@@ -61,7 +61,7 @@ The odds against in favour of an event are defined as $frac(1-P(A), P(A))$
 
   *Permutation*: sample without replacement *with order*
 
-   - The sample space size is $n^("("k")"): (n)(n-1)...(n-k+1) "or" product_(i=0)^(k-1) (n-i)$
+   - The sample space size is $n^("("k")"): (n)(n-1)...(n-k+1) "or" frac(n!, (n-k)!)$
 
   *Combination*: ways of selecting $k$ objects from $n$ without replacement, and order does not matter
 
@@ -96,16 +96,57 @@ Example:
 5. A lock as a 4-digit code
   - How many have all different numbers?
     
-    $binom(10, 4) times binom(9, 3) times binom(8, 2) times binom(7, 1)$
+    $10^("("4")") = 10dot 9 dot 8 dot 7 = 5040$
 
   - How many odd numbers over 9000?
+    
+    $1 dot 10 dot 10 dot 5 = 500$
+    
+  - Both at the same time?
 
-  - How many include 3 different numbers
+    $1 dot 8 dot 7 dot 4 = 224$
+
+  - Strictly decreasing order?
+    
+    $binom(10, 4) dot 1 = 210$
+  - How many include 3 different digits?
+    
+    $10 dot 9 dot 8 dot binom(4, 2) = 4320$, 10 choices for pairs, $9 dot 8$ for remaining digits choice. There are $binom(4, 2)$ ways of positioning those pairs as they do not have to be consective
+
+    or $binom(10, 3) times binom(3, 1) times binom(4, 2) times 2$, pick 3 out of 10 numbers, 3 different numbers, $binom(4, 2)$ ways of positioning pairs, 2 ways of ordering the singles
+
+    or $10 times binom(9, 2) times frac(4!, 2!1!1!)$
+
+
+#defn[
 *Pascal Triangle*:
   - $binom(n, k) = binom(n-1, k-1) + binom(n-1, k)$
+
   - Symmetrical, $binom(n, k) = binom(n, n-k)$
   - Start and end with 1, $binom(n, 0) = binom(n, n) = 1$
   - Rows' sum is in form $2^n$, $sum_(k=0)^n binom(n, k) = 2^k$
   - $n$-th row is the coefficient of each term of expanded form $(a+b)^n$
+]
+
+Ways of positioning "STATISTICS"
+  We have $binom(10, 3)$ ways of putting "S"
+
+  We have then $binom(7, 3)$ ways of putting "T"
+
+  We have $binom(4, 2)$ ways of putting "I"
+
+  We have $binom(2, 1)$ ways of putting "A"
+
+  We have $binom(1, 1)$ way of putting "C"
+
+  $binom(10, 3) times binom(7, 3) times binom(4, 2) times binom(2, 1) = frac(10!, 3! 7!) times frac(7!, 3! 4!) times frac(4!, 2!2!) times frac(2!, 1! 1!) times frac(1!, 1! 0!) = frac(10!, 3!3!2!1!1!)$
   
+#defn[*Multinomial coefficient* \
+If we arrange $n$ objects of $k$ types where there are $n_1$ of type 1, ..., $n_k$ of type $k$. There are $ frac(n!, n_1 ! ... n_k! ) $ ways of result could look like. This quantity is the multinomial coefficient.
+]
+  
+  
+
+
+
 

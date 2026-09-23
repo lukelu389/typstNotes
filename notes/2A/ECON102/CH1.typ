@@ -82,7 +82,7 @@ But the paradox of thrift may not always apply. Saving rate and aggregated savin
 
 #defn[*Measures of the Economy* \
 
-  1. *Real GDP*: total production adjusted for price changes
+  1. *Real GDP*: total production adjusted for price changes 
 
   2. *Unemployment rate*: the share of the labour force without work and actively seeking it
 
@@ -103,14 +103,86 @@ But the paradox of thrift may not always apply. Saving rate and aggregated savin
 *Acyclical* variable is not affected by real GDP
 
 #defn[*Recession* \ 
-*Expansion*: output is rising
 
 *Peak*: the expansion ends and activity to fell
 
-*Recession*: activity declines from the peak to the trough
-
 *Through*: the recession ends and activity begins to rise
 
+*Real GDP*(in this context): actual real output/aggregate demand
+
+*Potential Growth Rate*(potential growth rate): aggregate supply
+
 *Recovery* : the early expansion before output regains its previous peak
+
+*Expansion*: adtivity increases from the trough to peak
+
+*Recession*: activity declines from the peak to the trough
+
 ]
 
+#align(center)[ #image("../../../pictures/yr2/econ2ch1_1.png", width:10cm)] 
+
+#warn[*Recession* \
+
+Two consectuve quarters of falling real GDP are a widely used shorthand, not a complete definition of a recession
+
+- Two small quarterly declines may not signal a broad contraction
+
+- A deep collapse can begin and wnd within one quarter
+
+- Buesiness cycle dating committees examine duration, depth and breath together
+]
+
+In Canada the C.D. Howe Institute Business Cycle Council was established in 2012. They are independent from the government.
+
+*Leading Indicators*
+- Peak/trough before GDP
+- Stock prices, building permits, consumer confidence, and new orders
+
+*Lagging Indicators*
+- Peak/trough after GDP
+- Unempoloyment rate, balance ot trade, corporate profits, and unit labour cost
+\
+
+$ "Leading Indicators change" --> "Real GDP changes" --> "Lagging Indicators respond" $
+
+Example:
+
+At date A, actual output is above potnetial but begins to fall. At date B, output reaches its trough while still below potential
+
+- When does the recession begin and end?
+  
+  Recession starts at A and endes in B.
+
+- Is the output gap negative throughout recession?
+
+  No, from A to to the middle of A and B, it is postivive.
+
+- Does the negative output gap necessarily end when recession ends?
+
+  No, after B, it is called recovery.
+\
+A *model* is used for:
+- Explanation: identify mechanisms that could account for observed economic outcomes
+
+- Policy analysis: examine counterfactual questions such as what might happen under a different policy
+
+- Forecasting: produce conditional statements about how the economy may evolve(exchange rate is extremely hard to forcast)
+
+
+#defn[ *Model*
+
+*General equilibrium*: the markets and agents represented in the model are analysed together(inderdependence), and their decisions must be mutually consistent. 
+
+*Dynamic*: choices and conditions today affect outcomes in later periods.
+
+*Positive Statement*: a *positive* statement makes a claim that can, in principle, be evaluated against evidence.
+
+*Normative Statement*: concerns what ought to be done and depdends partly on values.
+
+*Efficiency*: optimize the use of resources that are limited.
+
+*Equity*: outcomes are fair.
+
+*Opportunity cost*: best forgone alternative.
+]
