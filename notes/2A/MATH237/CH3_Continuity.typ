@@ -7,7 +7,6 @@
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-== 1.1 Continuous Functions
 
 #defn[*Continuity* \ 
 
@@ -57,6 +56,7 @@ Example:
   By continuity theorems, this is continuous at $(1, 0)$, therefore $lim_((x, y)->(1, 0)) frac(x^2 ln x - x^3 cos y, x^3+y^5) = -1$
 
 
+Theorem
 #tip[*Applications with Squeeze Theorem*
 When using the Squeeze Theorem to prove a limit exists, we should try to find an upper bound $B(x, y)$ which is continuous so that $ lim_((x, y)->(a, b)) B(x, y) $ is easy to evaluate]
 
@@ -84,4 +84,18 @@ Example:
   
   The limit depedents on $m$, so the limit does not exist.Therefore, $f$ is not continuous at $(0, 0)$
 
+3. $f(x) = cases(frac(|y-x|, y-x) quad x!=y, 0 quad x = y)$
 
+  If $x!=y$, then by continuity theorems, $f(x, y)$ is continuous
+
+  Let $a in RR$ s.t. $(a, a)$ is an arbitrary point on the line $y=x$
+
+  Does $lim_((x, y)->(a, a)) f(x, y) = 0$?
+
+  Consider approaching along $y > x: lim_((x, y)->(a, a)) f(x, y) = lim_((x, y)->(a, a)^+) frac(y-x, y-x) = 1$
+
+  Consider approaching along $y < x: lim_((x, y)->(a, a)) f(x, y) = lim_((x, y)->(a, a)^-) frac(x-y, y-x) = -1$
+
+  Since $lim_((x, y)->(a, a)^-) f(x, y) != f(x, y) != lim_((x, y)->(a, a)^+) f(x, y) <==> -1 !=0 != 1$
+
+  $f(x)$ is not continuous at $(x, y) = (0, 0)$

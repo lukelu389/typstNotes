@@ -600,7 +600,8 @@ Example:
       }
       int y = 10;
       inc(y);
-      cout<<y;
+
+      cout<<y; //prints 11
       ```]
 )
 
@@ -608,12 +609,290 @@ So the answer the signature of the `cin >> x` is
 
 ```cc
 std::istream &operator>>(std::istream &in, int &n){}
+```
+- streams cannot be copied
 
-//streams cannot be copied
+- integer is passed by reference so that changes to n as visible to caller
 
-//integer is passed by reference so that changes to n as visible to caller
+- return type is cascadeing to others, stream cannot be copied
 
-//return type is cascadeing to others, stream cannot be copied
+```cc
+struct uwstudents{};
+
+uwstudents all{}; //takes a lot of memory
+
+void computeStandings(uwstudents student){}
+computeStandings(all);
+```
+- Pass by value will be expensive
+- Passing a pointer to `all` would be efficient 
+```cc
+void computeStandings_v2(uwstudents &student){}
+computeStandings_v2(all);
+
+```
+Removing `&` is not a legal function overload
+
+- Passing a reference would be efficient
+- `student` is an alias to `all`
+
+```cc
+void printStudentOnCNDP(const uwstudents &s){}
+```
+- efficient
+- `s` is an alias to `all`
+- `s` cannot be mutated
+
+#tip[Prefer to pass by reference to `const`] \ 
+
+```cc
+void f(int &n){}
+void g(const int &n){}
+
+f(5); //ILLEGAL
+g(y+y); //ILLEGAL
+
+g(5); //LEGAL
+g(y+y); //LEGAL
 ```
 
+*Note*: `const` allows to pass by reference with r-values.
 
+== Dynamic/Heap Memory
+
+\
+
+- Anytime allocated must deallocate after use
+- For `malloc()`, use `free()`, banned for 246
+
+- For `new`, use `delete`
+
+```cc
+int main(){
+  struct Node{
+    int data;
+    Node *next
+  };
+
+  Node *np1 = malloc(sizeof(Node)); //Banned for CS246
+  Node *np2 = new Node; //Functionally identical
+  Node n;
+
+  int *arr1 = malloc(3*sizeof(int));
+  int arr2[3];
+  int *arr3 = new int[3]; 
+
+  free(np1);
+  delete np2;
+  //n is in stack, no need to free
+
+  free(arr1);
+  //arr2 is in stack, no need to free
+  delete [] arr3;
+
+}
+```
+
+#table(
+    columns: 2, 
+    align: left,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Stack Frame], [Heap Memory],
+    [`np1`], [data],
+    [], [next],
+    [`np2`], [data],
+    [], [next],
+    [`n`
+    - data
+    - next], [],
+    [`arr1`], [0],
+    [], [1],
+    [], [2],
+    [`arr`2
+    - 0
+    - 1
+    - 2], [],
+    [`arr3`], [0],
+    [], [1],
+    [], [2]
+  )
+
+```cc
+
+int **p = new int*[5]; //An array of 5 Arrays
+
+for(int i = 0; i < 5; i++){
+  p[i] = new int[i+1];
+}
+
+for(int i = 0; i< 5; i++){
+  delete [] p[i];
+}
+
+delete [] p;
+
+```
+\
+Suppose
+#table(
+    columns: 3, 
+    align: left,
+    stroke: 0.5pt,
+    inset: 6pt,
+  [Return By Value],  [ILLEGAL], [ILLEGAL],
+  [```cc
+    Node getNode(){
+      Node n;  
+      return n;
+    }
+    ```],  [```cc Node *getNode(){
+                Node n; 
+                return &n;
+              }
+              ```], [```cc Node &getNode(){
+                            Node n;
+                            return n;
+                          }
+                          ```],
+
+  [- Return by value
+
+  - Copies from the callee
+  - Stack frame to the caller], [Dangling pointer], [Out of scope]
+)
+
+\
+== Operator Overloading
+\
+
+C++ allows to specify the behaviour of operators for user defined types
+
+```cc
+struct vector{int x; inty;};
+vector v1{}, v2{};
+vector v3 = add(v1, v2);
+vector v3 =  v1+ v2; //C++ allows for implementation
+vector v4 = 3 * v1;
+```
+
+We can implement operator `+` as a function
+
+  - Arg1: left-hand-side(pass by reference to `const`)
+  - Arg2: right-hand-side(pass by reference to `const`)
+  - Return type: vector by value(after function call, it is no longer in stack frame)
+
+
+```cc
+
+vector operator+(const vector &v1, const vector &v2){
+  return {v1.x+v2.x; v1.y+v2.y};
+}
+
+vector operator*(int s, const vector &v1){
+  return {s * v1.x; s*v1.y};
+}
+```
+
+*Note*: after these implementations, ```cc vector v5 = v1 * 3``` is no longer valid
+
+So we create another ```cc *``` as a function using the previous ```cc *```
+
+```cc
+vector operator*(const vector &v1, int s){
+  return s * v1;
+}
+```
+
+Overload `<<` and `>>`
+
+```cc
+struct Grade{int grade;};
+Grade g{};
+cin >> g;
+cout << g <<endl;
+```
+```cc 
+
+ostream &operator<<(ostream &out, const Grade &g){ //need to put down flags when error
+  out << q.grade << "%";
+  return out;
+}
+
+istream &operator>>(istream &in, Grade &g){
+  in >> g.grade;
+  if (g.grade < 0) g.grade = 0;
+  if (g.grade > 100) g.grade = 100; 
+  return in;
+}
+```
+It is legal because `ostream` is a global variable
+
+\
+
+== C++ Modules/Separate Compilations
+
+\
+*Interface*: type definitions, function declarations 
+
+*Implementation*: function definitions 
+
+In C and old C++, interface files are `.h` files, implementation files are `.c / .cc` files
+
+\
+\
+\
+\
+*C++ Modules*
+
+Example:
+
+Interface file: `vector.cc`
+
+```cc
+export module vector; //creates a module
+
+export struct vector{
+  int x;
+  int y;
+}
+
+export vector &operator+(const vector &, const vector &);
+
+```
+
+Client file: `main.cc`
+
+```cc
+import vector;
+import <iostream>; //<> tells compiler the module is a system module
+
+int main(){
+  vector v{1, 2};
+  vector v2 = v+v;
+}
+```
+
+Implementation file `vector-impl.cc`, you can have multiple implementation file.
+
+```cc
+module vector; //part of the existing vector module
+
+vector &operator+(const vector &v1, cosnt vector &v2){
+  return vector {v1.x+v2.x, v1.y+v2.y};
+}
+
+//ILLEGAL to have type definition as in the interface file, resulting to error
+```
+
+*Compiling*
+
+```bash 
+g++20h iostream sstream fstream...
+
+g++20 -c vector.cc ... #should be compile first because others dependents on it
+g++20 -c vector-impl.cc main.cc ... 
+#b/c the order does not matter for vector-impl.cc and main.cc, we can put it in one line, but not together with vector.cc
+
+g++20 main.o vector-impl.o vector.o
+```

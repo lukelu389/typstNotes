@@ -84,7 +84,7 @@ Example:
 
   ANS: $256^4, 1-1/2^4, 246^("("4")") = 255/256 times 254/256 times 253/256$
 
-4. Lotto 6/49. Each ticket has 6 numbers choosen fro 1-49. 
+4. Lotto 6/49. Each ticket has 6 numbers choosen from 1-49. 
   - How many possible tickets are there?
 
     No repetition where order does not matter: $binom(49, 6) = 13983816$

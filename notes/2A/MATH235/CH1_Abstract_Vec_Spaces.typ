@@ -655,7 +655,115 @@ The $B-"coordinates"$ vector of $vec(v)$ is $[vec(v)]_B = mat(a_1; ...; a_n)$
 
 Examples:
 
-Let $V = P_3 (RR), B = {1, x, x^2, x^3}$
+1. Let $V = P_3 (RR), B = {1, x, x^2, x^3}$
 
-Then $p(x) = 1-x^3 = 1+0 x+ 0x^2-x^3$
+  Then $p(x) = 1-x^3 = 1+0 x+ 0x^2-x^3$
 
+2. $V = M_(2 times 2) (RR), B = {mat(1, 0; 0, 0), mat(0, 1; 0, 0), mat(0, 0; 1, 0), mat(0, 0; 0, 1)}$
+
+  $A = mat(1, 1; 0, 3) = E_11 + E_12 + 0 E_21 + 3 E_22 ==>[A]_B = mat(1; 1; 0; 3)$
+
+3. $V = {A in M_(2 times 2) (FF): "tr" A = 0}$
+  $B = {mat(1, 0;  0, -1), mat(0, 1; 0, 0), mat(0, 0; 1, 0)}$
+
+  $A = mat(2, 3; 5, -2) = 2 mat(1, 0;  0, -1) + 3 mat(0, 1; 0, 0) + 5 mat(0, 0; 1, 0) ==?[A]_B = mat(2; 3; 5)$
+
+#defn[*Uniqueness of Coordinate Vector* \
+
+Let $B = {vec(v)_1, ..., vec(v)_n}$ be a basis for $V$. If $vec(v) in V, exists "unique" c_1, ..., c_n in FF$ s.t. $ vec(v)= c vec(v)_1 + ...+ c_n vec(v)_n $
+]
+
+#proof[
+  Suppose $vec(v) = c_1 vec(v)_1 + ... + c_n vec(v)_n = d_1 vec(v)_1 + ... + d_n vec(v)_n, c_i in FF, d_i in FF, i in NN$
+
+  Then $vec(v)- vec(v) = vec(0) = (c_1-d_1) vec(v)_1 + ... + (c_n-d_n) vec(v)_n$
+
+  By linear independence, $cases(c_1 - d_1 = 0, c_2 - d_2 = 0, ..., c_n - d_n = 0) ==>c_i = d_i,  forall i$
+]
+#align(right)[$square$]
+
+#defn[*Linearity of Coordinates* \ 
+Let $B$ be a basis for $V$, then
+
+1. $[vec(0)]_B = mat(0; ...; 0) in FF^n$
+
+2. $[vec(x)+vec(y)]_B = [vec(x)]_B + [vec(y)])_B in FF^n$
+
+3. $[c vec(x)]_B = c [vec(x)]_B in FF^n$
+]
+
+#proof[
+  Let $B = {vec(v)_1, ..., vec(v)_n}$ 
+
+  1. $vec(0) = 0 vec(v)_1 + ... + 0 vec(v)_n$
+
+    By uniqueness, $[vec(0)]_B = mat(0; ...; 0)$
+
+  2. Suppose $vec(x) = c_1 vec(v)+ ...+ c_n vec(v)_n, vec(y) = d_1 vec(v)_1 + ... + d_n vec(v)_n$
+
+    Then $vec(x)+vec(y) = (c_1+d_1) vec(v)_n + ... +(c_n + d_n) vec(v)_n$
+
+    Thus $[vec(x)+vec(y)]_B = mat(c_1 + d_1; ...; c_n+d_n) = mat(c_1; ...; d_1) + mat(d_1; ...; d_n) [vec(x)]_B + [vec(y)])_B$
+
+  3. Similar to (2)
+]
+#align(right)[$square$]
+
+Example:
+
+1. Let $B = {vec(v)_1, ..., vec(v)_n}$ be a basis for $V$. Let $S = {vec(x)_1, ..., vec(x)_n} subset.eq V$
+
+  1. $S$ is linearly independent in $V$ if and only if ${[vec(x)_1]_B, ..., [vec(v)_n]_B}$ is linearly independent in $FF^n$
+
+  2. $S "spans" V$ if and only if $overline(S) = {[vec(x)_1]_B, ..., [vec(v)_n]_B} "spans" FF^n$
+
+  #proof[
+1. Found in solution of lecture exercise 8
+
+2. We want to show that $"span" S = V$ if and only if $overline(S) "span" = FF^n$
+
+  $==>$ Assume $"span" S = V$. 
+  
+  $overline(S) subset.eq FF^n$ is trivial
+
+  Conversely, let $mat(a_1; ...; a_n) in FF^n$. We want to show that $mat(a_1; ...; a_n) in "span" overline(S)$
+
+  Consider $vec(v) = a_1 vec(v)_1 + ... + a_n vec(v)_n in V = "span" S$, then we know that $vec(v) = c_1 vec(x)_1 + ... + c_n vec(x)_n$
+
+  $[vec(v)]_B= [c_1 vec(x)_1 + ... + c_n vec(x)_n]_B ==> mat(a_1; ...; a_n) = c_1 [vec(x)_1]_B + ...+ c_n [vec(x)_n]_B$
+
+  $<==$ Assume $overline(S) "span" FF^n$
+
+  We want $"span" S = V$
+
+  $S subset.eq V$ as given
+
+  Conversely, if $vec(v) in V, "we want "vec(v) in "span" S$
+
+  Consider $[vec(v)]_B in FF^n = "span" overline(S)$
+
+  $[vec(v)]_B &= c_1 [vec(x)_1]_B + ...+ c_n [vec(x)_n]_B = [c_1 vec(x)_1 + ... + c_n vec(x)_n]_B quad quad quad &("By linearity") \
+  
+  vec(v) &=c_1 vec(x)_1 + ... + c_n vec(x)_n  quad &("By uniqueness of coordinates")$
+
+  So $vec(v) in "span"{vec(x)_1, ..., vec(x)_n}$
+]
+
+\
+\
+2. Show $B = {-x+2x+2x^2, 2+x^2, -3+x}$ is a basis for $P_2 (RR)$
+
+  Consider $overline(B) = {mat(-1; 2; 2), mat(2; 0; 1), mat(-3; 0; 1)}$
+
+  We want to show that $overline(B)$ is linearly independent as it has 3 elements in a 3 dimensional space.
+
+  Suppose $"dim" V = n$ and let $S subset.eq V$ have $|S| = n$.
+
+  Then $S$ is linearly independent $<==> S "span" V <==> S "is basis for" V$
+  
+
+  Find $[1+x+x^2]_B$
+
+
+
+  
