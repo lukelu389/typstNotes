@@ -303,7 +303,111 @@ Example:
   By rank-nullity theorem, $"nullity" L = "dim"FF^2 - "rank" L = 0$
 
   
+\
+Given $L:V->W$ a linear map, we can build a matrix for it as:
 
+1. Choose basis $B = {v_i, ..., v_n}$ for $V$
 
+2. Choose basis $C = {w_i, ..., w_m}$ for $W$
 
+3. Let $#v(0em)_C [L]_B = [[L(v_1)]_C space [L(v_2)]_C ... [L(v_n)]]_C $
 
+#defn[*Proposition* \ 
+
+$ L(v) = w <==> [L(v)]_C = [w]_C <==> [L]_B [v]_B = [w]_C $
+
+That is $[L(v)]_C = #v(0em)_C [L]_B [v]_B$
+
+]
+\ 
+
+Example:
+
+1. $L:P_2(RR)-> M_(2 times 2)(RR), a+b x+c x^2 -> mat(c, b; a, 0)$
+
+  $B = {1, x, x^2}, C = {E_11, E_12, E_21, E_22}$
+
+  We can view it as a linear map $T:RR^3 ->RR^4, vec(x) mat(a; b; c) -> T(vec(x)) = A vec(x) =mat(c; b; a; 0)$
+
+  $A = mat(0, 0, 1; 0, 1, 0; 0, 0, 1; 0, 0, 0) "and" T(vec(x)) = A vec(x)$
+
+2. $L:P_2 (FF) -> P_2 (FF), L(p(x)) = p(x+1)$. Find $#v(0em)_B [L]_B$ where $B= {1, x, x^2}$ 
+
+  $[L]_B &= [[L(1)]_B space [L(x)]_B space [L(x^2)_B] = [[1]_B space [x+1]_B space [x^2+2x+1]_B] 
+  
+  &= mat(1, 1, 1; 0, 1, 2; 0, 0, 1)$
+
+  Use the above matrix to show $L(3+x) = 4+x$
+
+  $[L(3+x)]_B = [L]_B [3+x]_B = mat(1, 1, 1; 0, 1, 2; 0, 0, 1)mat(3; 1; 0) = mat(4; 1; 0)$
+
+  $L(3+x) = 4 dot 1 +1 dot x + 0 dot x^2 = 4+x$
+
+#defn[*Proposition* \ 
+
+Let $L:V->W$ be linear map, let $A = #v(0em)_C [L]_B$ where $B$ is basis for $V$ and $C$ be basis for $W$
+
+1. $v in "Ker" L  <==> [v]_B in "Null"(A) $
+
+2. $w in "Range" L <==> [w]_C in "Col"(A)$
+
+3. $v_1, ..., v_k$ is a basis for $"Ker" L$ if and only if $[v_1]_B, ..., [v_k]_B$ is a basis for $"Null"(A)$
+
+4. $w_1, ..., w_l$ is a basis for $"Range" L$ if and only if $[w_1]_C, ..., [w_l]_C$ is a basis for $"Col"(A)$
+
+5. $"nullity" L = "nullity" A = "dim null" A$
+
+6. $"rank" L = "rank" A = "number of pivots of RREF"(A) $
+
+*Warn*: this proposition DID NOT claim $"Ker" L = "Null"(A), "Range" L = "Col"(A)$
+]
+
+#proof[
+
+1.
+$v in "Ker" L &<==> L(v) = 0  \
+  &<==> [L(v)]_C = [0]_C quad quad ("by Uniquness of Coordinates") \
+  
+  &<==> #v(0em)_C [L]_B [v]_B = [0]_C \
+
+  &<==> A[v]_B = vec(0) <==> w in "Null"(A)
+$
+\
+4. $w_1, ..., w_l$ is a basis for $"Range" L$ if and only if $[w_1]_C, ..., [w_l]_C$ is a basis for $"Col"(A)$
+
+$==>$: 
+
+Assume $w_1, ..., w_n$ is abasis for $"Range" L$.
+
+Claim: $Z = {[w_1]_C , ..., [w_r]_C}$ is linear independent
+
+Consider $a_1 [w_1]_C + ... + a_r [w_r]_C = vec(0)$
+
+By linearity of coordiantes, $[a_1 w_1 + ... +a_r w_r] = mat(0; ...; 0) ==> a_1 w_1 + ... + a_r w_r = 0 \
+
+==> a_1 = ... = a_r = 0 "since" Z "is linearly independent"$
+
+$Z "spans Col"(A) =  {A vec(x) : vec(x)in FF^n}$
+
+$Z subset.eq "Col"(A)$ is trivial
+
+$"Col"(A) subset.eq Z$, let $A vec(x) in "Col"(A)$
+
+Note $A vec(x) = #v(0em)_C [L]_B [vec(v)]_B = [L(vec(v))]_C$, where $L(vec(v)) in "Range"(L)$
+
+We can write $A vec(x) = [L(vec(v))]_C =  [sum (a_i w_i)]_C = sum a_i [w_i]_C in Z$
+
+$<==$: the same argument applies in reverse order.
+]
+#align(right)[$square$]
+
+Example:
+
+Consider $L:RR^3->P_2(RR), mat(a; b; c) -> (a+2b-c) + (2a+2b)x +(3a+2b+c)x^2$
+
+Find rank and nullity of $L$
+
+$A = #v(0em)_C [L]_B ==> A = [[L(mat(1; 0; 0))]_C [L(mat(0; 1; 0))]_C [L(mat(0; 0; 1))]_C] 
+
+\
+= [[1+2x+3x^2]_C ][2x+2x^2]_C [-1+2x+x^2]_C] = mat(1, 2 ,-1; 2, 0, 2; 3, 2, 1)$

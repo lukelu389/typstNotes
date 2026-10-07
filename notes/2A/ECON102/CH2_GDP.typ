@@ -58,10 +58,7 @@ Domestic production: production counts where it occurs, regardless of ownership
 )
 
 Own house $-->$ Imputed rent $-->$ Net amount $-->$ GDP
-
 *Note*: GDP records current housing production and services, not changes in the value of existing property
-\
-\
 \
 \
 
@@ -87,9 +84,9 @@ The Circular Flow Connects the Three Approaches
 
 $ "Gross calue added" - "value of output" - "cost of intermediate inputs" $
 
-- Intermediate inputs are goods and services purchased from other firmst and used to produce current output
+- Intermediate inputs are goods and services purchased from other firms and used to produce current output
 
-- Adding the value created at each stage of domestic production measures otoal value added without counting indermediate inputs more than once. 
+- Adding the value created at each stage of domestic production measures total value added without counting intermediate inputs more than once. 
 
 *From valued added to GDP*: StatCan adds taxes on products and subtracts subsidies on productws when calculating the published GDP total
 ]

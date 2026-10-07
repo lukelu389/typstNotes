@@ -5,7 +5,7 @@
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-== 1.1
+== 1.1 Recession
 
 #defn[*Recession* \
 
