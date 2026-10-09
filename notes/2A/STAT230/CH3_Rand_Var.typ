@@ -200,3 +200,50 @@ According to StatCan, the pmf of $X = "number of kids"$ is
   )
 
 $E[x] = 1.79$
+
+We noticed that for every class selected, the average is always higher than the published result.
+
+The one of the strongest reason is that the class selected is already complete while the published data family could be expanding.
+
+That is whenever selecting a model, make sure that it is representative.
+
+#defn[*Expected Value of Function*
+
+The *Expected Value* of a funciton of a discrete random variable $X$ of $g(x)$
+ is $ E[g(x)] = sum_(x) g(x)f(x) $
+
+We can visualize as let $Y = g(y)$, $ E[g(X)] = E[Y] = sum_(y) y f_Y (y) = sum_y sum_x f_X(x) = sum_y sum_x y f_X(x) = sum_y g(x) f_X (x) $
+
+Expectation is a linear operator.
+
+For $a, b in RR$ and discrete random variable $X$
+
+$ E[a X+ b] &= a E[x] +b =sum_x (a x+b)f(x) \
+
+&= sum_x a x f(x) +sum_x b f(x) =a sum_x x f(x) + b sum_x f(x) \
+
+&= a E(x) + b $
+]
+
+#warn[*Common Mistakes*
+
+  $ E[g(x)] != g(E(x)) $
+]
+
+Example: Roulette
+
+38 slots with 18 Black, 18 Red, and 2 Green
+
+You can bet on a 
+- single number pays 35:1
+- two numbers pays 17:1
+- four numbers pays 8:1
+- column of 1/3 numbers pays 2:1
+- colour, parity, 1/2 number pays 1:1
+
+Stragety 1: 100 on single number
+
+if $X = "number rolled"$, $g_1 (X) = cases(3600 "with probability" 1/38,  0 "with probability" 37/38)$
+
+$E[g_1(X)] = 3600 dot 1/38 +0 dot 37/38  = 94.74$
+

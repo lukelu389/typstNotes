@@ -277,7 +277,7 @@ Let $L: V->W$ be linear mapping
 
 2. $L$ is *surjective*(onto) $<==>"Range"L = W <==> "rank" L = "dim"W$
 
-3. $L$ is an *isomorphism* if and only if $"Ker"L= {0}$ and $"Range"L = W $
+3. $L$ is an *isomorphism* if and only if $"Ker"L= {0}$ and $"Range" L = W $, that is both injective and surjective
 ]
 
 Example:
@@ -401,13 +401,135 @@ $<==$: the same argument applies in reverse order.
 ]
 #align(right)[$square$]
 
+Examples: \
+
+
+1. Consider $L:RR^3->P_2(RR), mat(a; b; c) -> (a+2b-c) + (2a+2b)x +(3a+2b+c)x^2$
+
+  Find rank and nullity of $L$
+
+  $A = #v(0em)_C [L]_B ==> A = [[L(mat(1; 0; 0))]_C [L(mat(0; 1; 0))]_C [L(mat(0; 0; 1))]_C] 
+
+  \
+  = [[1+2x+3x^2]_C ][2x+2x^2]_C [-1+2x+x^2]_C] = mat(1, 2 ,-1; 2, 0, 2; 3, 2, 1)$
+
+
+We say $V "and" W$ are *isomorphic*, denoted as $V tilde.equiv W$
+
 Example:
 
-Consider $L:RR^3->P_2(RR), mat(a; b; c) -> (a+2b-c) + (2a+2b)x +(3a+2b+c)x^2$
+1. If $"dim" V = n$, then $V tilde.equiv FF^n$
 
-Find rank and nullity of $L$
+  Pick a basis $B$ for $V$ and consider coordinates map
+  $[]_B :V ->FF^n$ is both injective and surjective, therefore is an isomorphism
 
-$A = #v(0em)_C [L]_B ==> A = [[L(mat(1; 0; 0))]_C [L(mat(0; 1; 0))]_C [L(mat(0; 0; 1))]_C] 
+2. Even though $P_2 RR RR^3$
+
+  Not every $L: P_2 (RR) -> RR^3$ is isomorphism
+
+  For example, $L(a+b x+ c x^2) = mat(0; 0; 0)$ is not isomorphism.
+
+3. Let $U subset.eq RR^3$ be a plane through origin, say with equation $x+y+z =0$
+
+  Then by example 1, $U tilde.equiv RR^2$ because $"dim" U = 2$. 
+
+  An explicit ismorphism : $L:U ->RR^2$
+
+  Find a basis for $U$, $B = {mat(1; -1; 0), mat(1; 0; -1)}$
+
+  Define $L:U->RR^2$ by $L(a mat(1; -1; 0) + b mat(1; 0; -1)) = mat(a; b)$
+
+  Note we can also write an inverse map: $mat(a; b) |-> a mat(1; -1; 0) + b mat(1; 0; -1)$
+
+#defn[*Linear Map and Isomorphism*
+
+1. $L:V->W$ is an isomorphism if and only if $L$ has an inverse $L^(-1) :W->V$
+
+2. Let $B, C$ be basis for $V$ and $W$, Let $A = #v(0em)_C [L]_B, L$ is isomorphism is and only if $A$ is invertible
+]
+
+#proof[
+
+  1. $L$ is an isomorphism if and only if $L$ is injective and surjective
+
+  if and only if every $w in W$ where $v in V$ s.t. $L(w) = W$
+
+  Define $L^(-1) V$, check $L^(-1) W = w, L^(-1) V = v$, $L^(-1)$ is linear
+
+  2. $L$ is isomorphism if and only if 
+  
+  $L^(-1)$ exists so $L compose L^(-1) = "Id" ==> #v(0em)_C [L compose L^(-1)]_C = #v(0em)_C ["Id"]_C = #v(0em)_C [L]_B #v(0em)_B [L^(-1)]_C$
+
+  Therefore $L$ is isomorphism if and only if 
+  
+  $exists L^(-1)$ s.t $L compose L^(-1) = "Id" <==> L^(-1) "s.t." [L][L^(-1)] = I <==> A "has an inverse"$
+]
+#align(right)[$square$]
 
 \
-= [[1+2x+3x^2]_C ][2x+2x^2]_C [-1+2x+x^2]_C] = mat(1, 2 ,-1; 2, 0, 2; 3, 2, 1)$
+*Note*: $#v(0em)_C [L]_B #v(0em)_B [T]_D = #v(0em)_C [L compose T]_D$
+
+\
+
+Example: 
+
+Consider $L:P_2 RR-> RR^3, a+ b x+c x^2 |-> mat(a+b+c; b+c; c)$
+
+Choose $B = {1, x, x^2}, C = {mat(1; 0; 0), mat(0; 1; 0), mat(0; 0; 1)}$
+
+Then $#v(0em)_C [L]_B = [[L(1)]_C [L(x)]_C [L(x^2)]_C] = mat(1, 1, 1; 0, 1, 1; 0, 0, 1)$ which is invertible
+
+Therefore $L$ is an isomorphism
+
+#defn[*Isomorphism and Dimensions* 
+
+Let $V, W$ be vector spaces over the same $FF$. Then $V W <==> "dim" V = "dim" W$
+
+In fact, bot are isomorphic to $FF^("dim" V)$
+]
+
+\
+Examples:
+
+1. $M_(2 times 2) (RR), P_2 (RR)$ are not isomorphic because $"dim" M_(2 times 2) = 4 != 3 = "dim" P_2 (RR)$
+
+2. $M_(2 times 2)(RR) tilde.equiv RR^4 P tilde.equiv P_3 (RR)$
+
+
+#warn[Isomorphism and Field
+
+  $ M_(2 times 2) tilde.equiv.not CC^4 $
+]
+
+*Change of Coordinates*
+
+Let $V$ be a vector space, let $B = {b_1, ..., b_n}, C = {c_1, ..., c_n}$ be basis for $V$, let $v in V$
+
+How are $[v]_B, [v]_C$ related?
+
+$FF^n <- V -->FF^n$
+
+$[v]_C <-| V |-> [v]_B$
+
+The composition (take $B$-coordinates) $compose$ (take $C$-coordinates) is a linear map from $FF^n -> FF^n$. Therefore it has a standard $n times n$ matrix
+
+$#v(0em)_B I_C = [L(e_1) space L(e_2) space ... space L(e_n)] = [[c_1]_B space [c_2]_B space ... [c_n]_B]$
+
+#defn[
+
+  If $B = {b_1, ..., b_n}, C = {c_1, ..., c_n}$ be basis for $V$
+
+  We define the change from $C$ coordinates to $B$-coordinates matrix to be 
+
+  $#v(0em)_B I_C = [[c_1]_B space [c_2]_B  space ... [c_n]_B]$
+
+]
+
+
+Example:
+
+$S = {1, x, x^2}, B = {2+2x-x^2, -2+3x+2x^2, -1+x+x^2}$ be bases for $P_2 FF$
+
+Then $#v(0em)_C I_B = [[b_1]_S [b_2]_S ... [b_3]_S]$
+
+and $#v(0em)_B I_C  = (#v(0em)_C I_B)^(-1)$

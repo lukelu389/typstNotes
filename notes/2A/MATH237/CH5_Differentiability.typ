@@ -193,3 +193,84 @@ Examples
   $f_x = lim_(h->0) frac(f(h, 0) - f(0, 0), h) = lim_(h->0) frac(sqrt(h^2), h) = lim_(h->0) frac(|h|, h) = "DNE"$
 
   $f_x (0, 0)$ does not exist, thus the linearization does not exist at $(0, 0)$. So $f(x, y)$ is not differentiable at $(0, 0)$
+
+#defn[*Mean Value Theorem* 
+
+If $f(t)$ is contnuous on the closed interval $[t_1, t_2]$, $f$ is differentiable on the open
+interval $(t_1, t_2)$,  then there exists $t_0 ∈ (t_1, t_2)$ such that
+$ f (t_2)- f (t_1)= f'(t_0) (t_2- t_1) $
+]
+
+#defn[*Continuity Theorem* \
+
+If the partial derivatives $f_x (x, y)$ and $f_y (x, y)$ are continuous at $(a, b)$, then $f(x, y)$ is differentiable at $(a, b)$]
+
+#proof[
+  $R_(1, (a, b)) = f(x, y) - f(a, b) - f_x (a, b)(x-a) - f_y (a, b) (y-b)$
+  
+  $f_x, f_y$ are continuous at $(a, b)$, so $f_x, f_y$ are defined in some neighbourhood of $(a, b), N(a, b)$
+  For $(x, y) in N(a, b)$
+
+  $f(x, y)- f(a, b) = [f(x, y) - f(a, y)] + [f(a, y) - f(a, b)]$
+
+
+
+  $[f(x, y) - f(a, y)] &= f_x (overline(x), y) (x-a) \
+  
+  &= f_x (overline(x), y) (x-a) + f_x (a, b) (x-a) - f_x (a, b) (x-a) quad quad overline(x) in (x, a)  \
+
+  &= f_x (a, b) (x-a)  + A(x-a) \
+
+  ==> A &= f_x (overline(x), y) - f_x (a, b)
+
+  \
+
+  [f(x, y) - f(a, y)] &= f_y (a, overline(y)) (y-b) \
+  
+  &= f_x (a, overline(y)) (y-b) + f_y (a, b) (y-b) - f_y (a, b) (y-b) quad quad overline(y) in (y, b)  \
+
+  &= f_y (a, b) (y-b) +B(y-b) \
+
+  ==> B &= f_y (a, overline(y)) - f_y (a, b)
+
+  $
+  
+  $ R_(1, (a, b)) (x, y) &=  f_x (a, b) (x-a)  + A(x-a) + f_y (a, b) (y-b) +B(y-b) - f_x (a, b) (x-a) - f_y (a, b) (y-b)  \
+  
+  &= A (x-a) +B(y-b)$ 
+  \
+
+  $abs(frac(|R_(1, (a, b)) (x, y)|, ||(x, y) - (a, b)||) - 0) &= abs(frac(|R_(1, (a, b)) (x, y)|, ||(x, y) - (a, b)||))  = abs(A (x-a) +B(y-b)) /(sqrt((x-a)^2+(y-b)^2)) = frac(|A||x-a|, (sqrt((x-a)^2+(y-b)^2))) + frac(|B||y-b|, (sqrt((x-a)^2+(y-b)^2)))  \
+  
+  &= frac(|A|sqrt((x-a)^2), (sqrt((x-a)^2+(y-b)^2))) + frac(|B|sqrt((y-b)^2), (sqrt((x-a)^2+(y-b)^2))) <= frac(|A|s(sqrt((x-a)^2+(y-b)^2)), (sqrt((x-a)^2+(y-b)^2))) + frac(|B|(sqrt((x-a)^2+(y-b)^2)), (sqrt((x-a)^2+(y-b)^2)))  \
+   &= |A| + |B|$
+
+  Since $f_x, f_y$ is continuous at $(a, b)$, $lim_((x, y)->(a, b)) f_x (overline(x), y) = f_x (a, b)$,
+  
+   $lim_((x, y)->(a, b)) f_y (a, overline(y)) = f_y (a, b)$
+
+  $==> lim_((x, y)->(a, b)) A = 0, lim_((x, y)->(a, b)) B = 0 ==>lim_((x, y)->(a, b)) |A| + |B| = 0$
+
+  By Squeeze Theorem, $lim_((x, y)->(a, b)) frac(|R_(1, (a, b)) (x, y)|, ||(x, y) - (a, b)||) = 0$ so $f "is differentiable at" (a, b)$
+]
+#align(right)[$square$]
+
+Example:
+
+$f(x, y) = sqrt(x^2+y^2)$ is differentiable $forall (x, y)!= (0, 0)$
+
+For $(x, y) != (0, 0)$
+
+$f_x = x/sqrt(x^2+y^2), f_y = y/sqrt(x^2+y^2)$
+
+By continuity theorem, $f_x, f_y$ are continuous $(x, y) != (0, 0)$, therefore differentiable $(x, y) != (0, 0)$
+
+
+\
+*Notation*: if the $k$-th order partial derivatives of $f(vec(x))$ are continuous, $f in C^k$
+
+If $f(x, y) in C^k ==> f_x, f_y$ are continuous therefore $f$ is differentiable
+
+
+$f(x, y) = cases((x^2+y^2) sin(1/sqrt(x^2+y^2)) "if" (x, y)!=(0, 0), 0 "if" (x, y) = (0, 0))$
+Notice $f$ is differentiable at $(0, 0)$ and has a horizontal tangent plane. But $f_x, f_y$ are discontiuous due to rapid oscillation

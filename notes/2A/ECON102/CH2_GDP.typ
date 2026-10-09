@@ -82,7 +82,7 @@ The Circular Flow Connects the Three Approaches
 
 *Value-added Method*
 
-$ "Gross calue added" - "value of output" - "cost of intermediate inputs" $
+$ "Gross value added" = "value of output" - "cost of intermediate inputs" $
 
 - Intermediate inputs are goods and services purchased from other firms and used to produce current output
 

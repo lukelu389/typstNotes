@@ -257,6 +257,70 @@ Node *q = new Node{*p}; //copy constructor
 \
 \
 \
+
+#defn[*Destructor*\
+
+Every class has *exactly one* destructor
+
+- cannot overload destructor
+
+- takes no parameters
+
+- For a class `T`, its destructor is written as 
+
+  ```cc
+  ~T(){}
+  ```
+- no return type
+
+- default destructor body is empty
+
+- sometimes the default destructor is not correct
+]
+
+When an object is destroyed, the destructor is called
+
+When are objects destroyed:
+
+  - When a stack allocated object goes out of scope
+
+  - When call `delete` on the address of a healp allocated object
+
+Steps for object destruction
+
+1. Destructor body runs
+
+2. Fields that are objects are destroyed (by calling their destructor)
+
+3. Spaces are reclaimed
+
+
+Example:
+
+```cc
+
+Node *p  = new Node{1, new Node{2, new Node{3, nullptr}}}; //p->1->2->3->Null
+
+//If we do nothing, we leak 3 node memory
+//Note p is not leaked b/c it is in stack as it stores the address to the first node.
+//If we write `delete p;`, we are destroying node 1 only, leaking node 2, 3
+
+
+//Destructor
+
+Node::~Node(){delete next;}
+
+delete p;
+//calls delete node 1 -> delete node 2 -> delete node 3 -> delete nullptr
+//then space for node 3 reclaimed -> reclaimed node 2 -> reclaimed node 1
+
+Node m{1, new Node{2, nullptr}};
+// `m` will be deleted automatically and leak no memory because it is on stack
+Node n{3, &m};
+// `n` will cause error b/c m is on stack, but C++ expects a node in heap memory
+
+
+```
 #defn[*Copy Assignment Operator* \ 
 
 Assignment operator 
@@ -269,7 +333,6 @@ Assignment operator
 ]
 
 Example:
-
 1. Copy constructor vs Assignment operator
 
   ```cc
@@ -287,13 +350,53 @@ Example:
   n1 = n2 = n3; //assignment cascades, so operator= must return a Node reference
 
   Node &Node::operator=(const Node &other){
-    
-    if(this == &other) return *this; //self-assignment check
-    data = other.data;
-    delete next;//avoid memory leak, since `next` could be pointing somewhere
+    if(this == &other) return *this; //self-assignment check, avoid dangling pointer
+    data = other.data
+    delete next;
     next = other.next?new Node{*other.next}:nullptr;
+    //if `new` fails to allocate memory, `next` will not be updated
+    //this will cause `next` to be a dangling pointer
+    //it would be better to have "all or nothing" behaviour which will be discussed in future
+    return *this; //or return others;
 
+  //corrected
+  Node &Node::operator=(const Node &other){
+    if(this == &other) return *this; 
+    Node *temp{next}; 
+    next = other.next?new Node{*other.next}:nullptr;
+    data = other.data;
+    delete temp;
     return *this; //or return others;
   }
-  
+
+  //another way, Copy and Swap Idiom
+  import<utility>; //for swap()
+  void Node::swap(Node &other){
+    using std::swap;
+    swap(data, other.data);
+    swap(next, other.next);
+  }
+  Node &Node::operator=(const Node &other){
+    Node temp{other};
+    swap(temp); //swap method from Node
+    //DO NOT write delete temp;, temp is in stack
+  }
+
   ```
+#defn[*Move Constructor* \ 
+
+]
+
+Refer to "lectures/10-rvalue/node.cc"
+
+Calling `oddsOrEvens` results in 6 basic constructor calls
+
+Returning `evens` will result in 3 copy constructors
+
+*Copy Elision*: C++ allows(sometimes requires) that extra copies be avoided
+
+An *rvalue* reference is a reference to a temporary value on an object that is about to be destroyed.
+
+#defn[*Move Assignment Operator* \ 
+
+]

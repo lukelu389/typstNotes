@@ -224,3 +224,28 @@ $60000/156 dot 100 = 38462, 62400/161 dot 100 = 38758$, real wage increased by 0
 $ A_t = A_0 ("CPI"_t / "CPI"_0) $
 
 The ratio measures the change in the price level.
+
+Example:
+
+1. Year 1, worker earns 70000 and CPI is 100. Year 2, the worker earns 80500 and CPI is 112. Express in year 1 dollar and find the percentage change in real salary.
+
+    Real for year 1: $70000 / 100 * 100 = 70000$
+    Real for year 2: $80500/112 * 100 = 72875$
+    Percentage change: $72875-70000 / 70000 * 100 approx 4.1%$
+
+2. At beginning year 1, person deposits 10000 when CPI is 100. Interest rate is 4% per year compounded. CPI at end of year 1 is 102. CPI at end of year 2 is 107.1. Find the nominal balance at the end of year 2. What is real value in beginning of year 1. What is cumulative real return percentage.
+
+    Year 1 :$10000 * 1.04 = 10400$
+    Year 2 :$10000 * (1.04)^2 = 10816$
+
+    Real value in year1: $10816 / 107.1 * 100 approx 10098.97$
+    Return: $(10098.97 - 10000)/10000 * 100 approx 0.99%$
+
+3. In year1, worker earns 48000 and CPI is 120. Salary for year2 is 48000 and CPI is 126. Year3 salary is constant and CPI is 132.
+    Real salary in year1 = $48000 * 100/120 = 40000$
+    Real salary in year2 = $48000 * 100/126 approx 38095.24$
+    Percentage increase = $(38095.24-40000)/40000 * 100 approx -4.76%$
+
+    Nominal salary for year 3 = $48000 * 132/120 = 52800$
+
+
