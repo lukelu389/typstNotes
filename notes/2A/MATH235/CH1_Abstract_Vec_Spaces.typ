@@ -17,7 +17,7 @@ Examples:
   Additive property
   $ a_0+a_1x++...+a_n x^n + b_0+b_1x++...+b_n x^n = (a_0+b_0) + (a_1+b_1)x+...+(a_n+b_n) x^n $
 
-  Scalar Multiplicative property
+  Scalar Multiplicative property 
 
   $ c(a_0+a_1x+...+a_n x^n ) = c a_0 +c a_1x +...+c a_n x^n $
 
