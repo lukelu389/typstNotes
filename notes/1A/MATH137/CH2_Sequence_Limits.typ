@@ -226,7 +226,7 @@ Since $a_n$ consists of non-negative terms, thus its limit converges to a value 
 \
 \
 \
-#info[
+#thm[
   *Squeeze Theorem*:\
    If $a_n>= b_n>=c_n$ for all $n in NN$ with $n >= M$ for some $M in RR$ and $lim_(n->oo) a_n = L = lim_(n->oo)c_n$ for some $L in RR$, then $lim_(n->oo) b_n = L$ 
   ]
@@ -277,7 +277,7 @@ Greatest lower bound and least upper bound do not have be in part of the set
 \
 \
 
-#info[
+#thm[
   *Theorem(Monotone Convergence Theorem)*: \
   Let ${a_n}$ be an increasing sequence. If ${a_n}$ is bounded above, it converges to its least upper bound, otherwise to $infinity$
   That is, if a sequence is bounded and monotonic, the sequence converges.

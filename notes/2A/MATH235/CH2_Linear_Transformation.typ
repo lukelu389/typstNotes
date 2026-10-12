@@ -142,7 +142,7 @@ $L = []_B ==> L:V -> FF^n$
   $"Range"(L) = {[vec(x)]_B: vec(x) in V} = FF^n$
 
 
-#defn[*Nullity-Rank Theorem* \ 
+#thm[*Nullity-Rank Theorem* \ 
 
 The *nullity* of $L$ is $ "nullity" L = "dim"("Ker" L) $
 

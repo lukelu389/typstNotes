@@ -88,7 +88,7 @@ Short-hand notations \
 ]
 
 \
-#defn[*Clairaut's Theorem* \ 
+#thm[*Clairaut's Theorem* \ 
 
 If $f_(x y)$ and $f_(y x)$ are defined in some neighbourhood of $(a, b)$ and are continuous at $(a, b)$
 

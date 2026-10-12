@@ -49,7 +49,7 @@ Take $delta < min(1, epsilon/6)$
 #align(right)[$square$]
 
 
-#info[
+#thm[
   *Sequential Characterization of Limits Theorem* \
   Let $a in RR$. let the function $f(x)$ be defined on an open interval containing $a$, expect possibly at $x = a$ itself. Then the following are equivailent:
   1. $lim_(x->a)f(x) = L$
@@ -182,7 +182,7 @@ $=>  =^[frac(0, 0)] lim_(x->-3) frac((x+3)(x-1)(x+8), (x+3)(x-7)) = lim_(x->-3) 
 \
 \
 
-#info[
+#thm[
   *Squeeze Theorem(Functions)*:
 
    If $g(x)<=f(x)<=h(x)$ be functions defined in an open interval $I$ around $a$ except possibly at $a$. 
@@ -211,7 +211,7 @@ By Squeeze Theorem, $lim_(x->0) x^2 cos(1/x) = 0$
 
 2. We say that $L$ is the *left side limit* of $f$ at $a$, and write $lim_(x->a^-) f(x) = L$ if $forall epsilon > 0, exists delta >0$ s.t. if $|x-a|<delta$ and $x<a$ then $|f(x)-L|< epsilon$ 
 \
-#info[*Theorem* \
+#thm[*Theorem* \
 $lim_(x->a) f(x) = L <==> lim_(x->a^-) f(x) = lim_(x->a^+) f(x) = L$
 ]
 
@@ -282,7 +282,7 @@ If $lim_(x->infinity) f(x) = L "or" lim_(x->-oo)f(x) = L$ for some $L in RR$ the
 4. We say that $lim_(x->-oo) f(x) = -oo$ if, $forall M < 0, exists N in RR$ s.t. if $x<N$ we have $f(x)<M$.
 ]
 
-#info[*Squeeze Theorem at $plus.minus oo$*\
+#thm[*Squeeze Theorem at $plus.minus oo$*\
 If $g(x)<= f(x)<=h(x) forall x >= N$ for some $N in RR$, and if \ $lim_(x->oo) g(x) = L = lim_(x->oo) h(x), "then" lim_(x->oo) f(x) = L$
 
 ]
@@ -411,7 +411,7 @@ $therefore f "is continuous on" [0, oo) $
 
 \
 
-#info[*Intermediate Value Theorem (IVT)*\
+#thm[*Intermediate Value Theorem (IVT)*\
 If $f$ is continuous on a closed interval $[a, b]$ and $alpha in RR$ is such that either $f(a) < alpha < f(b)$ or $f(a) > alpha > f(b)$, then $exists c in (a, b)$ s.t. $f(c) = alpha$
 ]
 

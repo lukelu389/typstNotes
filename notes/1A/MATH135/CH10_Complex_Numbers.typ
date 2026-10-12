@@ -417,7 +417,7 @@ Examples:\
   $ = -12 sqrt(3)+12 i$
 == De Moivre's Theorem
 
-#info[*De Moivre's Theorem (DMT)*\
+#thm[*De Moivre's Theorem (DMT)*\
 $forall theta, n in RR$, $ (cos theta + i sin theta)^n = cos n theta + i sin n theta $
 ]
 
@@ -469,7 +469,7 @@ Examples:
 
   $therefore z_1 = 4 "cis"(0) = 4, z_2 = 4 "cis"((2pi)/3) = -2 + 2sqrt(3)i, z_3 = 4 "cis"((4pi)/3) = -2 - 2sqrt(3)i$
 
-#info[*Complex $n$-th Root Theorem*\
+#thm[*Complex $n$-th Root Theorem*\
 
 For a complex number $a$ and positive integer $n$, the complex numbers $z$ that satisfy the equation $ z^n = a $ are called the *complex $n$th root* of $a$
 
@@ -545,7 +545,7 @@ ANS:  $h(x)=(i x^3 + 4x^2 - i x+6) / (x-3i) = i x^2 + x + 2i$
 
 == Roots of Polynomial / Factoring Polynomial
 
-#info[*Factoring Theorem*\
+#thm[*Factoring Theorem*\
 
 For all polynomial $f(x) in RR[x] ( "or "CC[x])$ and all $c in RR ("or" CC)$, the linear polynomial $x-c$ is a factor of polynomial $f(x)$ if and only if $f(c)=0$ (equivalently, $c$ is a root of the polynomial $f(x)$)
 
@@ -570,7 +570,7 @@ Examples:\
     So that $x^3 + 1 > 0 space forall x in (-1, 0)$ thus $f(x) >= 0 space forall x in (-1, 0)$
 
 
-#info[*FUndamental Theorem of Algebra*\
+#thm[*FUndamental Theorem of Algebra*\
 For all complex polynomial $f(z)$ with degree greater than 1, there exists a $z_0 in CC$ s.t. $f(z_0) = 0$
 ]
 
@@ -593,7 +593,7 @@ Examples:
   - $x^4+2x^2+1$ is reducible but has no real roots
   - $x^4+2x^2+1$  is reducible and has real roots: $(x-i)^2(x+i)^2$
 
-#info[*Conjugate Roots Theorem*\
+#thm[*Conjugate Roots Theorem*\
  For all olynomials $f(x)$ with real coefficient, if $c in CC$ is a root of $f(x)$, then $overline(c) in CC$ is a root of $f(x)$
  ]
 

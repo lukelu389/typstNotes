@@ -57,7 +57,7 @@ A function is integrable on $x in [a, b]$ provided that the limit of Riemann Sum
 
 ]
 
-#info[*Integrability Theorem for Continuous Functions*\
+#thm[*Integrability Theorem for Continuous Functions*\
 
 Integrability: $lim_(n->oo) R_n = lim_(n->oo) L_n$
 
@@ -153,7 +153,7 @@ Examples:
   $integral_(-1)^1 3f(x)-g(x) dif x = 3 integral_(-1)^1 f(x) dif x - integral_(-1)^1 g(x) dif x = -3 integral_1^(-1) f(x) dif x - 2 integral_0^1 g(x) dif x = -19$
 
 \
-#info[*Fundamental Theorem of Calculus (FTC - 1)*\
+#thm[*Fundamental Theorem of Calculus (FTC - 1)*\
 
 Let $a in RR$. If $f$ is continuous on an open interval $I$ containing $a$, then the funciton $ G(x) = integral_a^x f(t) dif t $ is differentiable $forall x in I$ and $G'(x) = f(x)$. That is, $ dvs(integral_a^x f(t) dif t, x) = f(x) $
 
@@ -197,7 +197,7 @@ Examples
   $G(x) = f_g(x)^h(x)f(t) dif t = integral_g(x)^0 f(t) dif t + integral_0^h(x)f(t) dif t = -integral_0^g(x) f(t) dif t + integral_0^h(x)f(t) dif t$
 
   $G'(x) = -dvs(integral_0^g(x) f(t) dif t, x) + dvs(integral_0^h(x)f(t) dif t, x) =^("by FTC 1") -f'(g(x))g'(x) + f'(h(x))h'(x)$
-#info[*Fundamental Theorem of Calculus (FTC - 2)*\
+#thm[*Fundamental Theorem of Calculus (FTC - 2)*\
 
 If $f, F$ are continuous on $[a, b]$ and $F'(x) = f(x) space forall x in (a, b)$, then $ integral_a^b f(x)dif x = F(b) - F(a) $
 ]

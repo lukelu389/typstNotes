@@ -265,7 +265,7 @@ Thus $"det" B - lambda I = "det" A- lambda I$
 
 == Diagonalization
 
-#info[*Diagonalization Theorem*\
+#thm[*Diagonalization Theorem*\
 
 A $n times n$ matrix $A in M_(n times n)(RR)$ is said to be *diagonalizable* if $A$ is similar to a diagonal matrix $D in M_(n times n)(RR)$. If $P^(-1) A P = D$, then $P$ diagonalizes $A$.
 
@@ -401,7 +401,7 @@ Examples:
   \
   
 
-#info[*Theorem*\
+#thm[*Theorem*\
 
 Let $A in M_(n times n)(RR)$. If $lambda$ is a non-real eigenvalue of $A$ with corresponding eigenvector $vec(z)$, then $overline(lambda)$ is also an eigenvalue of $A$ with eigenvector $overline(vec(z))$
 

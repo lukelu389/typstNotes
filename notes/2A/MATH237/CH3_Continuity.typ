@@ -21,7 +21,7 @@ If $f$ is continuous at every point in $D subset.eq RR^2$, then $f$ is continuou
   3. $lim_((x, y)->(a, b)) f(x, y) = f(a, b)$
 ]
 
-#defn[*Continuity Theorems*\
+#thm[*Continuity Theorems*\
 
 If $f (x, y)$ and $g(x, y)$ are scalar functions and $(x, y) in D( f ) inter D(g)$, then:
 \

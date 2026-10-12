@@ -68,6 +68,7 @@
     if kind == "warn" { rgb("#fef3c7") }
     else if kind == "tip" { rgb("#ecfdf5") }
     else if kind == "def" { rgb("#fef2f2") }
+    else if kind == "thm" { rgb("#f5f3ff") }
     else { rgb("#eff6ff") }
   )
 
@@ -75,6 +76,7 @@
     if kind == "warn" { rgb("#f59e0b") }
     else if kind == "tip" { rgb("#10b981") }
     else if kind == "def" { rgb("#dc2626") }
+    else if kind == "thm" { rgb("#7c3aed") }
     else { rgb("#3b82f6") }
   )
 
@@ -82,6 +84,7 @@
     if kind == "warn" { "⚠️" }
     else if kind == "tip" { "💡" }
     else if kind == "def" { "📘" }
+    else if kind == "thm" { "📐" }
     else { "🐳" }
   )
 
@@ -90,6 +93,7 @@
       if kind == "warn" { "Warning" }
       else if kind == "tip" { "Tip" }
       else if kind == "def" { "Definition" }
+      else if kind == "thm" { "Theorem" }
       else { "Info" }
     } else { title }
   )
@@ -109,6 +113,7 @@
 #let warn(body) = callout(body, kind: "warn")
 #let info(body) = callout(body, kind: "info")
 #let defn(body) = callout(body, kind: "def")
+#let thm(body) = callout(body, kind: "thm")
 
 
 #let simple-table = (lhead, rhead, rows) => [

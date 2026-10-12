@@ -173,7 +173,7 @@ The *rank* of a matrix $A$ is the number of leading ones in the RREF of the matr
 For any $m times n$ matrix $A$, $ "rank" A <= min(m, n) $
 ]
 
-#info[*System-Rank Theorem*\
+#thm[*System-Rank Theorem*\
 
 Let $A$ be the coefficient matrix of a system of $m$ linear equations in $n$ unknowns $[A | vec(b)]$
 

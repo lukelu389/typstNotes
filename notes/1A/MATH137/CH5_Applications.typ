@@ -78,7 +78,7 @@ Examples:\
 
   - The global extrema DNE as $lim_(x->0^-) 1/x = -oo$ and $lim_(x->0^+) 1/x = oo$. 
 
-#info[*Extreme Value Theorem (Existence Thm)*\
+#thm[*Extreme Value Theorem (Existence Thm)*\
 
 Assume that $f(x)$ is continuous on the closed interval $[a, b]$. Then *there exist* two numbers $c_1, c_2 in [a, b]$ s.t. $f(c_1)<= f(x)<=f(c_2) space forall x in [a, b]$. 
 
@@ -100,7 +100,7 @@ If $c$ is an endpoint of the domain of $f$, c can never be a local extremum, eve
 ]
 
 
-#info[*Fermat's Theorem*\
+#thm[*Fermat's Theorem*\
 
 If there is a local extremum for $f(x)$ at $x=c$ and $f'(c)$ exists, hence $f'(c)= 0$. That is we cannot put an open interval around the point.
 ]
@@ -147,7 +147,7 @@ $f(x)=1/3 x^3- 3 root(3, x)$ on [-8, 1]
 \
 \
 
-#info[*Rolle's Theorem (Existence Thm)*\
+#thm[*Rolle's Theorem (Existence Thm)*\
 \
 If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$ and $f(a)=f(b) = k in RR$, then there exists $c in (a, b)$ s.t. $f'(c) = 0$
 ]
@@ -166,7 +166,7 @@ By Fermat's Theorem, $f'(c)=0$ or $f'(c) = "DNE"$. But $f$ is differentiable on 
  $therefore f'(c) = 0$ 
 ]
 
-#info[*Mean Value Theorem (Existence Thm)*\
+#thm[*Mean Value Theorem (Existence Thm)*\
 
 If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then $exists c in (a, b)$ s.t. $ f'(c) = frac(f(b)-f(a), b-a) $]
 
@@ -199,7 +199,7 @@ Note: one function can have infinitely many antiderivatives, that is why we insi
 \
 \
 
-#info[*Constant Function Theorem*\
+#thm[*Constant Function Theorem*\
 Suppose that $f'(x) = 0 space forall x in I$ for some interval $I$. Then $exists alpha in RR$ s.t. $f(x) = alpha space forall x in I$
 ]
 \
@@ -216,7 +216,7 @@ Since $f$ is differentiable on $I$, it is continuous on $[x_1, x_2]$ and differe
  Since $x_1, x_2$ are arbitrary, therefore $f$ is constant on $I$
 ]
 
-#info[*Antiderivative Theorem*\
+#thm[*Antiderivative Theorem*\
 
 Suppose that $F'(x) = G'(x) forall x in I$ for some interval $I$. Then there exists $alpha in RR$ s.t. $F(x)=G(x)+alpha forall x in I$
 
@@ -242,7 +242,7 @@ Let $I$ be in interval and $x_1, x_2 in I$, then f(x)
 Note: a constant function is both increasing and decreasing but not strictly
 ]
 
-#info[*Increasing/Decreasing Function Theorem*\
+#thm[*Increasing/Decreasing Function Theorem*\
 Let $I$ be an interval
 
 1. If $f'(x) >= 0 space forall x in I$, then $f(x)$ is increasing on $I$ 
@@ -278,7 +278,7 @@ Question: If $f$ is strictly decreasing on $I ==> f'(x)<0 space forall x in I$?
 ANS: No, counterexample $f(x)= -root(3, x)$
 \
 \
-#info[*Bounded Derivative Theorem*\
+#thm[*Bounded Derivative Theorem*\
 
 Let $f(x)$ be continuous on $[a, b]$ and differentiable on $(a, b)$. 
 
@@ -328,7 +328,7 @@ $f'(x) = 1/(2sqrt(x)), 1/sqrt(64) <= 1/(2sqrt(x))<= 1/(2sqrt(49)) ==> 7 + 1/2 do
 
 $ ==> 7+1/8 <= sqrt(51)<= 7 + 1/7$
 
-#info[*Comparison via First Derivative Theorem*\
+#thm[*Comparison via First Derivative Theorem*\
 
 Assume $f(x)$ and $g(x)$ are continuous at $x=a$ with $f(a)=g(a)$. Then
 
@@ -355,7 +355,7 @@ Thus by CFDT, $x-1/2 x^2 < ln(1+x) space forall x > 0$
 
 == Second Derivatives
 
-#info[*Concavity and Second Derivative Theorem*\
+#thm[*Concavity and Second Derivative Theorem*\
 
 1.  We say $f$ is *concave up* on an interval $I$ if for all $a, b in I$, the secant line between $(a, f(a))$ and $(b, f(b))$ lies *above* the graph of $f(x)$.
 

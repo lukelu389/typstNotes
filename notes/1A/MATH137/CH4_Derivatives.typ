@@ -286,7 +286,7 @@ $x^2-4x-7$ at $x=5$ to nearest thousandth\
 \
 
 == Derivatives of Inverse Functions
-#info[*Inverse Function Theorem*\
+#thm[*Inverse Function Theorem*\
 Assume that $f(x)$ is a continuous and invertible with inverse $f^(-1) (x)$ on $[c, d]$ and differentiable at $a in (c, d)$, where $f'(a) != 0$. Then $f^(-1)(x)$ is differentiable at $b = f(a)$ and 
 $ (f^(-1))'(b) = 1/(f'(a)) = 1/(f'(f^(-1)(b))) $
 

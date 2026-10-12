@@ -101,7 +101,7 @@ $A^(-1) = mat(-2, 1; 3/2, -1/2)$
 Let $A = mat(a, b; c, d) in M_(2 times 2)(RR)$. Then $A$ is invertible if and only if $a d - b c !=0$. Moreover, if $A$ is invertible $ A^(-1) = frac(1, a d - b c) mat(d, -b; -c , a) $
 ]
 
-#info[*Invertible Matrix Theorem*\
+#thm[*Invertible Matrix Theorem*\
 
 For any $n times n$ matrix $A$, the following are equivalent:
 

@@ -153,7 +153,7 @@ Examples:
 
    $lim_(t->oo) integral_1^t 1/x^2 dif x = lim_(t->oo) eval(-1/x, 1, upper:oo) = 0 - (-1) = 1$. Since the limit of the integral converges, the series converges by the Integral Test
 
-#info[*Integral Test Estimation Theorem*\
+#thm[*Integral Test Estimation Theorem*\
 
 Suppose that a function $f$ is continuous, positive, and decreasing on the infinite interval $[k, oo)$ for some positive integer $k$. Further suppose that $ integral_k^oo f(x) dif x$ converges so that $sum_(n=1)^oo f(n) = S$ for some real number $S$ by the Integral Test. Let $S_m = sum_(n=1)^m f(n)$ denote the $m-$th partial sum. Then for any integer $m>=k$, we have $ integral_(m+1)^oo f(x) dif x<= S-S_m <= integral_m^oo f(x) dif x $
 ]

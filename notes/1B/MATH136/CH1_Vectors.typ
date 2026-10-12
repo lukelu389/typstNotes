@@ -151,7 +151,7 @@ Examples:
   Thus the set is linearly dependednt.
 
 
-#info[*Linear Dependence Theorem*\
+#thm[*Linear Dependence Theorem*\
   A set of vectors ${vec(v_1), ..., vec(v_k) in RR^n}$ is linearly dependent if and only if $ vec(v_i) in "Span" {vec(v_1), ..., vec(v)_(i-1), vec(v)_(i+1), ..., vec(v_k)} "for some" i, 1<=i<=k $
 ]
 
@@ -213,7 +213,7 @@ Is $B$ is a basis for $RR^2$
 \
 \
 
-#info[*Theorem*\
+#thm[*Theorem*\
 
   If $cal(B) = {vec(v_1), ..., vec(v_k)}$ is a basis for a subset $S$ of $RR^n$, then every vector $vec(x) in S$ can be written as a unique linear combination of the vectors in $cal(B)$
 ]
@@ -305,7 +305,7 @@ Examples:
 
     By Subspace Test, $SS in RR^3$ #align(right)[$square$]]
 
-#info[*Theorem*
+#thm[*Theorem*
 
   If $vec(v_1), ..., vec(v_k) in RR^n, "then" SS = "Span"{vec(v_1), ..., vec(v_k)}$ is a subspace of $RR^n$
 

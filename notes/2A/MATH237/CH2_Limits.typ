@@ -115,7 +115,7 @@ Examples:
 
   Notice that $0 != 1/2$. Thus the limit does not exists.
 
-#defn[*Squeeze Theorem* \ 
+#thm[*Squeeze Theorem* \ 
 
 If there exists a function $B(x, y)$ s.t. $ |f(x, y)- L|<= B(x, y), space forall (x, y) != (a, b) $ in some neighborhood of $(a, b)$ and $ lim_((x, y)->(a, b)) B(x, y) = 0 $then $ lim_((x, y)->(a, b)) f(x, y) = L $
 ]

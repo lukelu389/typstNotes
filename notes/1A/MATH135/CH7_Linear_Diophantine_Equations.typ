@@ -27,7 +27,7 @@ $ 253x + 143y = d, d = gcd(253, 143) $
 
 #tip[Simplest Linear Diophantine Equation: $a x = b$]\
 \
-#info[*Linear Diophantine Equation Theorem, Part 1 (LDET 1)*\
+#thm[*Linear Diophantine Equation Theorem, Part 1 (LDET 1)*\
 For all integers $a, b, "and" c$, with $a$, $b$ both not zero, the linear Diophantine equation $ a x + b y = c $ (in variable $x$ and $y$) has integer solution if and only if $d divides c, "where" d = gcd(a, b)$
 ]
 
@@ -44,7 +44,7 @@ For all integers $a, b, "and" c$, with $a$, $b$ both not zero, the linear Diopha
 ]
 #align(right)[$square$]
 
-#info[*Linear Diophantine Equation Theorem, Part 2 (LDET 2)*\
+#thm[*Linear Diophantine Equation Theorem, Part 2 (LDET 2)*\
 Let $a, b, c$ be integers with $a, b$ both not zero, and define $d = gcd(a, b)$. If $x = x_0$ and $y=y_0$ is one particular integer solution to the linear Diophantine equation $a x+ b y = c$, then the set of all solutions is given by $ {(x, y): x = x_0 + b / d n, y = y_0 + a/d n, n in ZZ} $
 ]
 

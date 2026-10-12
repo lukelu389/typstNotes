@@ -130,7 +130,7 @@ Examples:
 
    $A vec(x) = mat(-9;-1; 7; -3)$
 
-#info[*Column Extraction Theorem*\
+#thm[*Column Extraction Theorem*\
 
 If $vec(e)_i$ is the $i$-th standard basis and $A=[vec(a_1) space ... space vec(a_n)]$ then $ A vec(e)_i = vec(a)_i $
 ]
@@ -155,7 +155,7 @@ By subspace test, $S$ is a subspace of $RR^n$
   #align(right)[$square$]
 ]
 
-#info[*Transpose - Dot Product Theorem*\
+#thm[*Transpose - Dot Product Theorem*\
 If $vec(x), vec(y) in RR^n$ $ vec(x)^T vec(y) = vec(x) dot vec(y) $
 
 ]
@@ -213,7 +213,7 @@ Examples:
 
   $B A = mat(0, 1; -1, 3)mat(5, 1; 2, 6) = mat(2, 6; 1, 17)$
 
-#info[*Matrix Equality Theorem*\
+#thm[*Matrix Equality Theorem*\
 If $A$ and $B$ are $m times n$ matrices s.t. $A vec(x) = B vec(x)$ for every $vec(x) in RR^n$, then $A= B$
 
 ]
@@ -473,12 +473,12 @@ Let $A = mat(1, 2, 0; 3, 1, 2)$
   $mat(1, 2, 0; 3, 1, 2) ~ mat(1, 0, 4/5; 0, 1, -2/5)$ Columns 1 and 2 of $A$ forms a basis for $"Col"(A):  e = {mat(1;3), mat(2; 1)}$ is a basis.
 
 
-#info[*Rank-Nullity Theorem*\
+#thm[*Rank-Nullity Theorem*\
 
 If $A$ is a $m times n$ matrix, then $ "rank"(A) + "nullity"(A) = n $
 ]
 
-#tip[Theorem \
+#thm[Theorem \
 
 Let $A$ be a $m times n$ matrix\
 

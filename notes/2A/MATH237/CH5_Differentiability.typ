@@ -194,14 +194,14 @@ Examples
 
   $f_x (0, 0)$ does not exist, thus the linearization does not exist at $(0, 0)$. So $f(x, y)$ is not differentiable at $(0, 0)$
 
-#defn[*Mean Value Theorem* 
+#thm[*Mean Value Theorem* 
 
 If $f(t)$ is contnuous on the closed interval $[t_1, t_2]$, $f$ is differentiable on the open
 interval $(t_1, t_2)$,  then there exists $t_0 ∈ (t_1, t_2)$ such that
 $ f (t_2)- f (t_1)= f'(t_0) (t_2- t_1) $
 ]
 
-#defn[*Continuity Theorem* \
+#thm[*Continuity Theorem* \
 
 If the partial derivatives $f_x (x, y)$ and $f_y (x, y)$ are continuous at $(a, b)$, then $f(x, y)$ is differentiable at $(a, b)$]
 

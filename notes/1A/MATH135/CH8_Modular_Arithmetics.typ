@@ -170,7 +170,7 @@ A relation of the form $ a x equiv c space (mod m) $
 is called a *linear congruence* in the variable $x$. A solution to such linear congruence is an integer $x_0$ s.t. $ a x_0 equiv c space (mod m) $
 ]
 
-#info[*Linear Congruence Theorem*\
+#thm[*Linear Congruence Theorem*\
 For all integers $a, c$ where $a!=0$, the linear congruence $ a x equiv c space (mod m) $ 
 has a solution if and only if $d divides c$, where $d = gcd(a, m)$. Moreover, if $x=x_0$ is one particular solution to this congruence, then the set of all solutions \is given by $ {x in ZZ: x equiv x_0 space (mod m/d)} $
 
@@ -274,7 +274,7 @@ Construct a table for $ZZ_4$\
       [[2]], [[0]], [[2]], [[0]], [[2]],
       [[3]], [[0]], [[3]], [[2]], [[1]])]
 
-#info[*Modular Arithmetic Theorem*\
+#thm[*Modular Arithmetic Theorem*\
 
 For all integers $a$ and $c$, with $a$ non-zero, the equation $ [a][x] = [c] $ in $ZZ_m$ has a solution if and only if $d divides c$, where $d = gcd(a, m)$. Moreover, when $d divides c$, there are $d$ solutions, given by 
 $ [x_0], [x_0+m/d], [x_0+2m/d], ... , [x_0+(d-1)m/d] $
@@ -301,7 +301,7 @@ In $ZZ_10$, solve the following: \
 
     Also by MAT, there are 5 solutions: ${[1], [3], [5], [7], [9]}$
 
-#info[*Fermat's Little Theorem*\
+#thm[*Fermat's Little Theorem*\
 
 For all prime numbers $p$, integers $a$ not divisible by $p$ and $a!=0$, we have $ a^(p-1) equiv 1 space (mod p) $
 ]
@@ -334,7 +334,7 @@ Examples:\
 
 == Chinese Remainder Theorem
 \
-#info[*Chinese Remainder Theorem*\
+#thm[*Chinese Remainder Theorem*\
 
 For all integers $a_1$ and $a_2$, and positive integers $m_1$ and $m_2$, if $gcd(m_1, m_2) = 1$, then the simultaneous linear congruences 
 $ n equiv a_1 space (mod m_1) $ $ n equiv a_2 space (mod m_2) $
@@ -423,7 +423,7 @@ Examples:\
 
   $therefore x equiv 15, 40 space (mod 55)$ are solutions to $x^12 equiv 5 space (mod 55)$
 
-#info[*Splitting Modulus Theorem*\
+#thm[*Splitting Modulus Theorem*\
   
   For all integers $a$ and positive integers $m_1$ and $m_2$, if $gcd(m_1, m_2) = 1$, then the simultaneous congruences
   $ n equiv a space (mod m_1) $   $ n equiv a space (mod m_2) $ has exactly the same solutions as the single congruence   $ n equiv a space (mod m_1 m_2)$

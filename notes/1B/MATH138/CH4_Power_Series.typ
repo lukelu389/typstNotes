@@ -56,7 +56,7 @@ Suppose $sum_(n=0)^oo c_n (x-2)^n$ diverges when $x = -1$ and converges $x = 4$.
 
 == Representing Functions as Power Series
 
-#info[*Abel's Theorem*\
+#thm[*Abel's Theorem*\
 
   Let $I$ denote the interval of convergence for the power series function $f(x) = sum_(n=0)^oo c_n (x-a)^n$.
 
@@ -328,7 +328,7 @@ Therefore $|f(1)-T_(2, 0)(1)| <= (3/8)/6 = 1/16$
   $binom(alpha, n+1)(n+1) + binom(a, n) n = binom(alpha, n) alpha$
 ]
 
-#info[*Generalized Binomial Theorem*\
+#thm[*Generalized Binomial Theorem*\
 
   Let $alpha$ be a real number. If $|x|<1$, then $(1+x)^alpha = sum_(n=0)^oo binom(alpha, n)x^n = 1+ alpha x + frac(alpha (alpha-1), 2)x^2 + ...$
 
@@ -416,7 +416,7 @@ Examples:
   Let $M = 1$ and $D = (-1, 0) union (0, 1)$. Then $|x^2| = |x|^2= |x||x| < 1|x|, x in D$
 
 
-#info[*Theorems*\
+#thm[*Theorems*\
 
 1. Let $a$ denote a real number or $oo$. If $f(x)=O(g(x))$ as $x->a$ and $g(x) = O(h(x))$ as $x->a$, then $f(x)=O(h(x))$ as $x->a$
 

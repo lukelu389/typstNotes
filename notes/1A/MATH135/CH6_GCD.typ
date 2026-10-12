@@ -89,7 +89,7 @@ $ = 11 dot 735 - 16 (1239 - 735) $
 $ = -16 dot 1239 + 27 dot 735 $
 $therefore -16 dot 1239 + 27 dot 735 = 21$
 
-#info[*GCD Characterization Theorem*\
+#thm[*GCD Characterization Theorem*\
   $forall a, b in ZZ$ and non negative integer $d$, if
   1. $d$ is a common divisor of $a$ and $b$
   2. there exist integers $s$ and $t$ s.t. $a s + b t = d$ \
@@ -222,7 +222,7 @@ Examples:\
 \
 #tip[ Two integers $a, b$ are *comprime* if $gcd(a, b) = 1$] \
 
-#info[*Coprimeness Characterization Theorem*\
+#thm[*Coprimeness Characterization Theorem*\
   $ forall a, b in ZZ, gcd(a, b) = 1 <==> exists s, t in ZZ "s.t." a s + b t = 1 $]
 
 #info[*Division by the GCD*\
