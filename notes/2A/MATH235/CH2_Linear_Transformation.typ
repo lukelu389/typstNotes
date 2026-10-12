@@ -144,7 +144,7 @@ $L = []_B ==> L:V -> FF^n$
 
 #defn[*Nullity-Rank Theorem* \ 
 
-The *nuliity* of $L$ is $ "nullity" L = "dim"("Ker" L) $
+The *nullity* of $L$ is $ "nullity" L = "dim"("Ker" L) $
 
 The *rank* of $L$ is $ "rank" L = "dim"("Range" L) $
 
@@ -200,7 +200,7 @@ Examples:
 
   #proof[
 
-    $"Ker" D &= {p(x) in P_n (FF) : D(p(x)} = vec(0)} = {a_1 + a_2 x + ... + a_n x^n} = {0 + 0 x + ... + 0x^n} quad (a_1 = a_2 = ... = a_n = 0 )\
+    $"Ker" D &= {p(x) in P_n (FF) : D(p(x) = vec(0)} = {a_1 + a_2 x + ... + a_n x^n} = {0 + 0 x + ... + 0x^n} quad (a_1 = a_2 = ... = a_n = 0 )\
 
     &= {a_1 + 0x^2 + ... + 0x^n : a_i in FF} = "span" {1} in P_n (FF)
 
@@ -296,7 +296,7 @@ Example:
   
   We suspect that $L$ cannot be surjective
 
-  $"Range" L = {mat(a+b, a; b, a-b): a, b in FF} ={a mat(1,1; 0, 1)} + b mat(1, 0; 1, -1): a, b in FF} = "span" {mat(1, 1; 0, 1), mat(1, 0; 1, -1)}$
+  $"Range" L = {mat(a+b, a; b, a-b): a, b in FF} ={a mat(1,1; 0, 1) + b mat(1, 0; 1, -1): a, b in FF} = "span" {mat(1, 1; 0, 1), mat(1, 0; 1, -1)}$
 
   $"rank"L != "dim Range" L$, so $L$ is not surjective 
 
@@ -423,7 +423,7 @@ Example:
   Pick a basis $B$ for $V$ and consider coordinates map
   $[]_B :V ->FF^n$ is both injective and surjective, therefore is an isomorphism
 
-2. Even though $P_2 RR RR^3$
+2. Even though $P_2 (RR) tilde.equiv RR^3$
 
   Not every $L: P_2 (RR) -> RR^3$ is isomorphism
 

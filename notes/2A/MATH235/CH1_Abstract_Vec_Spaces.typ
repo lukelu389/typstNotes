@@ -10,7 +10,7 @@ Ideas: $RR^n$ is useful. There are other objects that "behave" and "look" like $
 
 Examples:
 
-1. $V=P_b (FF) = {a_0 + a_1x +a_2 x^2 + ... + a_n x^n : a_i in FF}$
+1. $V=P_n (FF) = {a_0 + a_1x +a_2 x^2 + ... + a_n x^n : a_i in FF}$
 
   Polynomial degree $<= n$: 
   
@@ -554,7 +554,7 @@ Let $V$ be a vector space with basis $B$ of size $n$
 
 #defn[*Dimension* \ 
 
-Let $V$ be finite-dimensional. Then the *dimension* of $V$ $"dim" V$ is the size of any basis for $V$
+Let $V$ be finite-dimensional. Then the *dimension* of $V$, $"dim" V$, is the size of any basis for $V$
 ]
 
 *Remark*: By the theorem, $"dim" V$ is well-defined
