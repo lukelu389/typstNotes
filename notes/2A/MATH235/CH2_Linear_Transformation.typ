@@ -113,9 +113,9 @@ Examples of non-linear maps:
 
 Let $L:V -> W$ be a linear map. 
 
-1. $"Ker"(L) = {vec(v) in V : L(vec(v) = vec(0)_W}$ is a subspace of $V$
+1. $"Ker"(L) = {vec(v) in V : L(vec(v)) = vec(0)_W}$ is a subspace of $V$
 
-2. $"Range"(L) = {vec(w)in W: vec(w) = L(vec(v)))}$ is a subspace of $W$
+2. $"Range"(L) = {vec(w)in W: vec(w) = L(vec(v))}$ is a subspace of $W$
 ]
 
 \
@@ -485,7 +485,7 @@ Therefore $L$ is an isomorphism
 
 Let $V, W$ be vector spaces over the same $FF$. Then $V tilde.equiv W <==> "dim" V = "dim" W$
 
-In fact, bot are isomorphic to $FF^("dim" V)$
+In fact, both are isomorphic to $FF^("dim" V)$
 ]
 
 \
