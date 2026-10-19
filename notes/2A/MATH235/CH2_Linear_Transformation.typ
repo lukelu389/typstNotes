@@ -137,7 +137,7 @@ Example:
 
 $L = []_B ==> L:V -> FF^n$
 
-  $"Ker"(L) = {vec(x) in V: [vec(x)]_B = mat(0; ...; 0)} = {vec(0)_V}$, by the Uniqueness of B-coordinates
+  $"Ker"(L) = {vec(x) in V: [vec(x)]_B = mat(0; ...; 0)} = {vec(0)_V}$, by the Uniqueness of Coordinates
 
   $"Range"(L) = {[vec(x)]_B: vec(x) in V} = FF^n$
 
@@ -200,9 +200,10 @@ Examples:
 
   #proof[
 
-    $"Ker" D &= {p(x) in P_n (FF) : D(p(x) = vec(0)} = {a_1 + a_2 x + ... + a_n x^n} = {0 + 0 x + ... + 0x^n} quad (a_1 = a_2 = ... = a_n = 0 )\
+      $"Ker" D &= {p(x) in P_n (FF) : D(p(x)) = vec(0)} = {a_0 + a_1 x + ... + a_n x^n} = {0 + 0 x + ... + 0x^n} \ 
+     
 
-    &= {a_1 + 0x^2 + ... + 0x^n : a_i in FF} = "span" {1} in P_n (FF)
+    &= {0 + 0x + ... + 0x^(n-1) : a_i in FF} => "span" {1} in P_(n-1) (FF)
 
     $ \ 
 
