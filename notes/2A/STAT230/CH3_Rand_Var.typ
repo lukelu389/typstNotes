@@ -241,9 +241,60 @@ You can bet on a
 - column of 1/3 numbers pays 2:1
 - colour, parity, 1/2 number pays 1:1
 
-Stragety 1: 100 on single number
+Strategy 1: 100 on single number
 
 if $X = "number rolled"$, $g_1 (X) = cases(3600 "with probability" 1/38,  0 "with probability" 37/38)$
 
 $E[g_1(X)] = 3600 dot 1/38 +0 dot 37/38  = 94.74$
+\
 
+#defn[*Variance* \ 
+
+We define the *variance*, $ "Var"(X) = sigma^2 =E[(X-mu)^2] = E[(X-E[X]^2)]$
+
+In practice, we can evaluate the variance in *DISCRETE* random variable by $ "Var"(X) &= E[(X-mu)^2] = E[X^2] - 2 mu E[X] + mu^2  \
+
+&= E[X^2] - mu^2 = E[X^2] - E[X]^2 $
+]
+
+#defn[*Standard Deviation* \ 
+
+We define the *standard deviation*, $ sigma(X) = sqrt("Var(X)") $
+]
+Example:
+
+Roulette
+
+$X = cases(36 "with" 1/38, 0 "with" 37/38)$
+
+$"Var"(X) = E[(X-mu)^2] = E[X^2] - E[X]^2 = 34.105-0.94737^2 approx 33.207 "$"^2$
+
+$sigma(X) = sqrt("Var"(X)) approx 5.76"$"$
+
+\
+Let $Y = cases(2 "with" 18/38, 0 "with" 20/38)$
+
+$"Var"(Y) = E[Y^2] - E[Y]^2 = 2^2 dot 18/38 - 0.94737^2 approx 0.99723$
+
+$sigma approx 0.99861$
+
+Let $Z = cases(1 "with" 36/38, 0 "with" 2/28)$
+
+$"Var"(Z) = E[Z^2] - E[Z]^2 = 36/38 - 0.94737^2 approx 0.04986$
+ 
+$sigma approx 0.2233$
+
+#warn[*Variance, Standard deviation*
+
+*Variance* is NOT a linear operator.
+
+$ "Var"(a X+b) &= E[((a X +b)- E[a X +b])^2]  \
+
+&= E[(a X +b-a E(X)-b)^2] = E[(a X - a E([X])^2)] \
+
+&= a^2 E[(X- E(X))^2] = a^2 "Var"(X) $
+
+*Standard deviation*
+
+$sigma(a X+b) = |a|sigma(X)$
+]

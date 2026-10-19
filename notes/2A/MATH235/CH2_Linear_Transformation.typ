@@ -208,7 +208,7 @@ Examples:
 
     Since ${1}$ is a basis for $"Ker" D ==> "dim"("Ker" D) = 1 $
  \
-
+ 
 
     $"Range"(D) = {q(x) in P_(n-1) (RR) : q(x) = D(p(x)), "for some" p(x) in P_n (RR)} \
 
@@ -483,7 +483,7 @@ Therefore $L$ is an isomorphism
 
 #defn[*Isomorphism and Dimensions* 
 
-Let $V, W$ be vector spaces over the same $FF$. Then $V W <==> "dim" V = "dim" W$
+Let $V, W$ be vector spaces over the same $FF$. Then $V tilde.equiv W <==> "dim" V = "dim" W$
 
 In fact, bot are isomorphic to $FF^("dim" V)$
 ]
@@ -491,14 +491,14 @@ In fact, bot are isomorphic to $FF^("dim" V)$
 \
 Examples:
 
-1. $M_(2 times 2) (RR), P_2 (RR)$ are not isomorphic because $"dim" M_(2 times 2) = 4 != 3 = "dim" P_2 (RR)$
+1. $M_(2 times 2) (RR), P_2 (RR)$ are not isomorphic because $"dim" M_(2 times 2) (RR) = 4 != 3 = "dim" P_2 (RR)$
 
 2. $M_(2 times 2)(RR) tilde.equiv RR^4 P tilde.equiv P_3 (RR)$
 
 
 #warn[Isomorphism and Field
 
-  $ M_(2 times 2) tilde.equiv.not CC^4 $
+  $ M_(2 times 2) (RR) tilde.equiv.not CC^4 $
 ]
 
 *Change of Coordinates*
@@ -515,7 +515,7 @@ The composition (take $B$-coordinates) $compose$ (take $C$-coordinates) is a lin
 
 $#v(0em)_B I_C = [L(e_1) space L(e_2) space ... space L(e_n)] = [[c_1]_B space [c_2]_B space ... [c_n]_B]$
 
-#defn[
+#defn[Coordinate Matrix
 
   If $B = {b_1, ..., b_n}, C = {c_1, ..., c_n}$ be basis for $V$
 
