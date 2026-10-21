@@ -7,7 +7,7 @@
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-== 3.1 Eigenvectors and Diagonalization
+
 
 Warm Up Question
 
@@ -90,14 +90,94 @@ Example:
 
 If $B, C$ are bases for $V$ and if $L:V->V$ is linear, then $#v(0em)_B [L]_B ~ #v(0em)_C [L]_C$ 
 
-since $#v(0em)_B [L]_B = #v(0em)_B I_C #v(0em)_C [L]_S (#v(0em)_B I_C)^(-1), P = #v(0em)_S I_D $
+since $#v(0em)_B [L]_B = #v(0em)_B I_C #v(0em)_C [L]_C (#v(0em)_B I_C)^(-1), P = #v(0em)_B I_C $
 
-QUESTION: Given $L:V->V, exists D "s.t." [L]_D$ is diagonalizable?
+QUESTION: Is $[L]_B$ for any choice of $B$, similar to a diagonal matrix?
+
+Warm Up
+
+Suppose $D = v_1, ..., v_n$ is a diagonalizable basis for $L$. That is suppose $[L]_D = mat(lambda_1, ..., 0; ..., ..., ...; 0, ..., lambda_n)$
+
+$<==> [[L(v_1)]_D ... [L(v_n)]_D] = mat(lambda_1, 0, ..., 0; 0, lambda_2, ..., 0; ..., ..., ..., ...; 0, ..., 0, lambda_n)$
+
+Equating cols, $[L(v_1)] = mat(lambda_1; 0; ...; 0) <==> L(v_1) = lambda_1 v_1 + 0 v_2+ ... + 0_n, therefore L(v_1) = lambda_1 v_1$
+
+Similarly, $L(v_1) = lambda_i v_i, i = 1, 2, ..., n$
+
+So: $D = {v_1, ..., v_n}$ is a diagonalizable basis for $L$ if and only $L(v_1) = lambda_i v_i, forall i$ if and only $v_i$ is an eigenvector for $L$ with eigenvalue $lambda$
+
+#defn[*Eigenbasis* \ 
+  An *eigenbasis* for $L$ is a basis ${v_1, ..., v_n}$ where the $v_i$ are Eigenvectors. 
+  
+  (In this case $[L]_D =  mat(lambda_1, ..., 0; ..., ..., ...; 0, ..., lambda_n)$ and the i-th diagonal entry $lambda_i$ is the eigenvalue of $v_i$)
+]
+
+Examples:
+
+1. $R:RR^2->RR^2$ reflection across $y = 3x$
+
+  We found $v_1 = mat(1; 3)$ is on the line and $R(v_1) = v_1$, so $v_1$ is an eigenvector with $lambda_1 = 1$
+
+  Also, $v_2 = mat(-3; 1)$ is perpendicular to the line and $R(v_2) =- v_2$ is an eigenvector with $lambda_2 =-1$
+
+  Therefore, $D = {v_1, v_2}$ is an eigenbasis. We computed $[L]_D =mat(1, 0; 0, -1)$ as expected.
+
+2. Let $T:RR^2->RR^2$ be rotation by $theta != pi, 2pi, 0<theta<2pi$
+
+  Then $T$ has no eigenvectors so $T$ has no eigenbasis and $T$ is not diagonalizable
+  
+
+3. Let $D:P_2(RR)->P_2(RR), D(p(x)) = p'(x)$ 
+  
+  Does $D$ have any Eigenvectors
+
+  Yes, if $p(x) = c, D(p(x)) = 0 = 0 dot p(x)$ is an eigenvector with $lambda = 0$
+
+  If $"deg" p >1$, then $D(p) != lambda p, lambda !=0$. 
+
+  The only possible eigenvalue is $lambda = 0$ when eigenvector are constant.
+  
+  $therefore D$ is not diagonalizable.
+
+  Note, if $D:"functions" -> "functions"$, $D(e^(lambda x)) = lambda e^(lambda x)$
+  
+
+4. Let $D:P_2(RR)->P_2(RR), D(p(x)) = p'(x)$ 
+  
+  We work with matrix, $S= {1, x, x^2}$
+
+  $[D]_S = [[D(1)]_S space [D(x)]_S space [D(x^2)]_S] = mat(0, 1, 0;0, 0, 2; 0, 0, 0)$
+  
+  What is the relationship between eigenvectors and eigenvalues of $D$ and those of $A = [D]_S$?
+
+  $D(p) = lambda p ==> [D(p)]_S = [lambda p]_S <==> [D]_S [p]_S = lambda [p]_S <==> A [p]_S = lambda [p]_S$
+
+  $therefore D(p) = lambda p <==> A [p]_S = lambda[p]_S$
+
+#thm[ \
+
+Let $L:V->V$ be an operator. Let $B$ be a basis for $V$, $A = [L]_B$
+
+Then $v in V$ is an eigenvector for $L$ with eigenvalue $lambda <==> [v]_B$ is an eigenvector for $A$ with eigenvalue $lambda$
+]
 
 
+#tip[Linear Operators
 
-== 3.2
+Whenever struggling to solve a question with linear operators, translate into matrix language and attempt to solve it.
+]
 
-== 3.3
+Example:
 
-== 3.4
+$D:P_2(RR)->P_2(RR), A = [D]_S = mat(0, 1, 0; 0, 0, 2; 0, 0, 0)$. 
+
+Notice this is a triangular matrix, the eigenvalue are the diagonal entries. 
+
+$lambda = 0$ is the only eigenvalue for $A$
+
+Therefore $lambda=0$ is the only eigenvalue for $D$
+
+$A v = lambda v <==> A v - lambda v = 0 <==> (A-lambda I)v = 0 <==> v in "Null"(A = lambda I)$
+
+Eigenvectors $mat(c; 0; 0)$
+

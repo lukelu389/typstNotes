@@ -298,3 +298,58 @@ $ "Var"(a X+b) &= E[((a X +b)- E[a X +b])^2]  \
 
 $sigma(a X+b) = |a|sigma(X)$
 ]
+
+== 3.4 Moment Generating Functions
+
+#defn[*Moment* 
+
+The $k$-th moment of a random variable $X$ is $E[X^k], "for" k = 1, 2, 3, ...$
+
+First moment is $E[X]$, is the mean
+
+Second moment is $E[X^2]$, needed for computation of variance
+
+Third moment is $E[X^3]$, needed for computation of skewness
+
+Fourth moment is $E[X^4]$, needed for computation of kurtosis.
+
+]
+
+#defn[*Moment Generating Function * \
+
+The MGF of a random variable defined as $X$ is $M_X (t) = E[e^(t x)]$ where it exists in some region around $t = 0$
+
+
+- It uniquely determines a distribution.
+
+- Can easily prove relationships between random variables.
+
+- Determine the moments more quickly then using the $f(x)$ or $F(x)$
+
+In general $ E[X^k] = M_X^((k)) (0) = eval(d/(dif t) M_X (t), t=0) $
+]
+
+Properties of MGF
+
+- $M_X(0) = 1, space forall X$
+
+- $M'_X (t) = d/(dif t) E[e^(t x)] = d/(dif t) = E[1+X+(t X)^2/2! + (t X)^3/3! + ...] = E[0+X+t X^2+ 1/2 t^2 X^3+...]$
+
+- $M'_X (0) = E[X]$
+
+- $M''_X (t) = E[0+0+X^2+ t X^3+ ...]$
+
+- $M''_X (t) = E[X^2]$
+
+Example:
+
+Suppose we roll a fair six-sided die until to get 6. Let $X = "number of non-six rolled"$. Use MGF to find the mean.
+
+$f(x) = (5/6)^x (1/6), x = 0, 1, 2, 3, 4, ...$
+
+$M_X (t) = E[e^(t x)] = sum_(X = 0)^oo e^(t x)(5/6)^x (1/6) = 1/6 sum_(X = 0)^oo (5/6 e^t)^x = 1/6 1/(1-5/6e^t), "where" |5/6e^t|<1$
+
+$M'_X (0) = eval((6-5e^t)^(-1), t = 0)= eval(5 e^t (6-5e^t)^(-2), t = 0) = 5 $
+
+Let $Y = a X+b$, $M_Y (t) = E[e^(t a X + b t)] = E[e^(t a X) e^(b t)] = e^(b t) E[e^(t a X)] = e^(b t) M_X (a t)$
+

@@ -383,20 +383,144 @@ Example:
   }
 
   ```
-#defn[*Move Constructor* \ 
-
-]
+#defn[*Move Constructor*]
 
 Refer to "lectures/10-rvalue/node.cc"
 
 Calling `oddsOrEvens` results in 6 basic constructor calls
 
-Returning `evens` will result in 3 copy constructors
+Returning `evens` will result in 3 copy constructors due to copy elision.
 
 *Copy Elision*: C++ allows(sometimes requires) that extra copies be avoided
 
-An *rvalue* reference is a reference to a temporary value on an object that is about to be destroyed.
+An *r-value* reference is a reference to a temporary value on an object that is about to be destroyed.
 
-#defn[*Move Assignment Operator* \ 
+If we know that the RHS of a copy is a r-value, then instead of copying we could hijack/steal in hopes of being more efficient. 
 
-]
+
+```cc
+Node::Node(Node &&other): data {other.data}, next {other.next} {
+  other.next = nullptr;
+}
+```
+
+After this implementation, it will only call 1 copy constructor.
+
+
+#defn[*Move Assignment Operator*]
+
+Refer to "lectures/10-rvalue/node.cc"
+
+```cc
+Node m = ...;
+m = oddsOrEvens();
+
+//say other is 1->3->5, and m is ?->?->?->? and the goal is to make m be 1->3->5
+
+Node &Node::operator=(Node &&other){
+  using std::swap;
+  swap(data, other.data);
+  swap(next, other.next);
+  return *this;
+}
+```
+
+If a move constructor or a move assignment operator has been implemented, the compiler will choose it whenever the RHS is a r-value or a l-value that is about to be destroyed.
+
+If not, it will use the copy constructor and copy assigntment operator.
+
+*Copy/Move Elision*
+
+C++ allows/requires copy/move operations even if this changes observable behaviours.
+
+```cc 
+Vec makeVec(){return {4, 5};}
+
+Vec v = makeVec();// one basic constructor call, no copy/move constructor
+
+
+void foo(Vec v){...}
+
+foo(makeVec()); //one basic constructor, no copy/move constructor
+
+```
+
+*Important* to know that copy or move elision can happen, not required to memorize situations if when it is required or optional
+
+
+#tip[*Rule of Five* \ 
+
+If implement a custome version of any of the Big Five, custom versions of all five are typically needed.]
+
+
+== Operator overloading
+
+C++ requires some operators to be overloaded as methods:
+
+- `operator=`
+
+- `operator[]`
+
+- `operator->`
+
+- `operator()`
+
+- `operator T()`
+
+It is best to implement I/O operator as standalone functions
+
+```cc
+struct Vec{
+  int x;
+  int y;
+
+  Vec operator+(const Vec &rhs){
+  // `this` represents the LHS
+  return {x+rhs.x, y+rhs.y};
+  }
+
+  Vec operator*(const int k){
+    return {k * x, k * y};
+  }
+}
+//Standalone function because `int` is not class `Vec`
+Vec operator*(const int k, const Vec &rhs){
+  return {rhs * k};
+}
+
+Vec v1;
+Vec v2;
+Vec v3 = v1+v2;
+Vec v4 = v1 * 3;
+Vec v5 = 3 * v1;//must be implemented as a standalone function
+```
+
+== Arrays of Object
+
+```cc
+
+struct Vec{
+  int x, y;
+  Vec(int x, int y);
+
+};
+
+//No default constructor since we wrote 2 parameter constructor
+Vec arr1[10];
+Vec *arr2 = new Vec[10]; 
+//This will not compule since when an array of objects is constructed, each object is default constructed(by default constructor)
+```
+
+Option1: Provide a default constructor.
+
+Option2: Stack array: initialize each object explicitly: ```cc Vec arr1[] = {Vec(1, 2), ...};```
+
+Option3(Most Common): Create array of pointers to objects: 
+
+```cc 
+
+Vec *arr1[10] //Stack array
+
+vec **p = new Vec *[10]; //Heap array
+``` 
+
