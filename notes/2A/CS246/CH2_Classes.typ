@@ -524,3 +524,157 @@ Vec *arr1[10] //Stack array
 vec **p = new Vec *[10]; //Heap array
 ``` 
 
+== Constant objects and Methods
+
+```cc 
+struct Student {
+  int assign, mt, final;
+  //allowed to mutate in constant methods
+  mutable int numcalls;
+
+  float grade() {
+    ++ numcalls;
+    return assign*0.4+mt*0.2+final*0.4;
+    }
+
+};
+
+const Student s1{80, 90, 90};
+//cannot modify the fields of s1
+
+s1.grade();
+//ILLEGAL, s1 is constant and `grade` would have access the fields of s1 via `this`
+
+//Instead mark the method constant using the `const` keyworld
+//Promised not to change the field of `*this`, the compiler will confirm later
+
+float Student::grade() const {
+  ++numcalls;
+  return assign*0.4+mt*0.2+final*0.4;
+  }
+
+//Suppose we want to add a varaible called `numcalls` that records the number of calls of `grade`, now `grade` is no longer valid because mutation in const methods.
+
+//We use `mutatable` in definition of variable
+
+```
+
+\
+== Static Fields and Methods
+
+#defn[*Static* \ 
+
+A *static* field is associated with the class, not instance of the class
+
+A *static method* does not need an instance of the class to be called.
+  - there is no "`this`" pointer within the static funciton
+
+A *static function* can call other static functions in the same static field.
+]
+
+
+\
+```cc
+
+struct Student {
+  int assign, mt, final;
+  static int numobjs;
+  Student(assign, mt, final) assign{assign}, mt{mt}, final{final}{
+    ++numobjs;
+    }
+  
+  static int getStudentCount(){return numobjs;}
+};
+
+int main(void){
+  Student s1{...}, s2{...};
+  cout <<Student::numobs; //prints 2
+
+  cout<<getStudentCount(); //prints 2
+}
+```
+
+Ways of initializing `numobjs`
+
+1. In "student-impl.cc", ```cc static int numobjs = 0;```
+
+2. initialize in the interface with ```cc inline static int num objs = 0;```
+
+== Compare Objects/values
+
+```cc
+
+if (s1 < s2){...}
+else if(s2 > s1){...}
+else{...}
+```
+In C, we only need one $O(n)$comparison ```c int n = strcmp(s1, s2)```,
+but two $O(n)$ comparisons in C++
+
+Now C++ supports ```cc <=>``` operator
+
+
+A comparison is defined for "`std::strong-ordering`" and the value `_::less/equal/greater`
+
+We can replace "`auto`" to *automatically* infer to the type of the object.
+
+```cc
+import <compare>;
+
+// std::strong-ordering n = s1 <=> s2;
+auto n = s1 <=>s2;
+
+if (n < 0){//s1 is smaller than s2}
+else if(n> 0){//s1 is greater the s2}
+else{//s1 and s2 are equals}
+
+//attempts to answer the question `s1` is greater than, less than, equal, or unordered compared to `s2` when they are strings
+
+```
+
+
+```cc
+struct Vec{
+  int x, y;
+  std::strong-ordering operator<=>(const Vec&other) const{
+    auto result = x <=> other.x;
+    if(result !=0){return result;}
+    return result y <=> other.y;
+  }
+}
+```
+
+When implement ```cc <=> ```, we get ```cc <, <=, >, >=, >``` for free. 
+
+When implement ```cc ==``` as well, you get ```cc !=``` for free.
+
+We get ```cc <=>``` for free, but it does ordered lexiographic comparison of fields, like the "`Vec`" implementation.
+
+We can signal to the compiler that we are using the "`default`", and we get all comparison operators for free including  "```cc ==```"."
+
+```cc
+struct Vec {
+  //...
+  auto operator<=>(const Vec&other)= default;
+};
+
+ ```
+
+```cc 
+
+struct Node{
+  int data;
+  Node *next;
+
+  std::strong-ordering operator<=>(const Node &other) const{
+    auto n = data <=> other.data;
+    if(n != 0) return n;
+    if (!next && !other.next) return n;
+    if(!next) return strong-ordering::less;
+    if(!other.next) return strong-ordering::greater;
+    return *next <=> *other.next;
+  }
+};
+
+
+```

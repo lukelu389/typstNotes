@@ -38,7 +38,7 @@ $lim_(x->a) frac(|R_(1, a) (x)|, |x-a|)  = lim_(x->a) |frac(g(x)-g(a), x-a) - g'
 
 #defn[*Differentiability* \ 
 
-$f(x)$ is differentiable at $x=a$ if $ lim_(x-a) frac(|R_(1,a) (x)|, |x-a|) = 0 $
+$f(x)$ is differentiable at $x=a$ if $ lim_(x->a) frac(|R_(1,a) (x)|, |x-a|) = 0 $
 
 $f(x, y)$ is differentiable at $(x, y) = (a, b)$ if $ lim_((x, y)->(a, b)) frac(|R_(1,a) (x, y)|, ||(x, y)-(a, b)||) = 0 $
 ]

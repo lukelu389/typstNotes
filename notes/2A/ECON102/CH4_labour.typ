@@ -74,10 +74,10 @@ underlying labour-market conditions easier to see.
 - Long spells bring larger income losses and may make re-employment more diffcult
 
 *Note*: the unemployment rate along does not tell how quickly workers enter and leave unemployment.
-
+ 
 #defn[*Types of Unemployment* \ 
-#table(
-    columns: 3, 
+#table( 
+    columns: 3,  
     align: center,
     stroke: 0.5pt,
     inset: 6pt,
