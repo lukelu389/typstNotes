@@ -70,7 +70,6 @@ where $x(t)=t, y(t)=t^2, z(t) = t^3$. If $grad f(1, 1, 1) = (2, 1/2, 1)$, find $
 
 $g'(t) = grad f(vec(x)(t)) dot dv(vec(x)(t), t) ==>^(t=1) g'(1) = grad f(vec(x)(1)) dot dv(vec(x)(1), t)  = grad f(1, 1, 1) dot mat(1;2;3) = mat(2; 1/2; 1) dot mat(1;2;3) = 6$
 
-== 6.3 Graphic Method
 
 Consider $T(x) = f(x(t), y(t))$
 
@@ -156,3 +155,25 @@ Examples:
 
   $pdv(u, t)$ on the RHS which is can be denoted for holding $v, w$ constant: $(pdv(u, t))_(v, w)$
   
+== Chain Rule for Second Order Partial derivatives
+
+We can also use the chain rule to calculate higher order partial derivatives, but it can get a bit complicated. 
+
+Examples:
+
+1. $z= f(x(t)), dv(#v(0em)^2z, t^2)$
+
+  $dv(#v(0em)^2z, t^2) &= dv(z, x) dv(x, t) = f'(x(t))dot x'(t) = dvs(f'(x(t)) dot x'(t), x) \
+    &= dvs(f'(x(t)), t)x'(t) + f'(x(t)) x''(t) = f''(x(t))(x'(t))^2 +f'(x(t))x''(t) $
+
+\
+2. $z=g(u, v) = f(x(u, v), y(u, v))$ Find $z_(u v)$
+
+  $z_u = f'(x(u, v), y(u, v))(x'(u, v) + y'(u, v))(u') = pdv(f, x)pdv(x, u)+pdv(f, y)pdv(y, u)= f_x x_u + f_y y_u$
+
+
+  $z_(u v) &= pdv(z_u, v) = pdv(f_x x_u + f_y y_u, v) = pdv(f_x, v) x_u + f_x pdv(x_u, v) +pdv(f_y, v)y_u + f_y pdv(y_u, v) \
+  
+   &= (f_(x x)dot  x_v + f_(y x) dot y_v)f_x dot x_(u v) + (f_(y x) dot x_v + f_(y y) dot y_v) f_y dot y_(u v)$
+
+   

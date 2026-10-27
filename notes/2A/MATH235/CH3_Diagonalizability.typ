@@ -107,7 +107,7 @@ Similarly, $L(v_1) = lambda_i v_i, i = 1, 2, ..., n$
 So: $D = {v_1, ..., v_n}$ is a diagonalizable basis for $L$ if and only $L(v_1) = lambda_i v_i, forall i$ if and only $v_i$ is an eigenvector for $L$ with eigenvalue $lambda$
 
 #defn[*Eigenbasis* \ 
-  An *eigenbasis* for $L$ is a basis ${v_1, ..., v_n}$ where the $v_i$ are Eigenvectors. 
+  An *eigenbasis* for $L$ is a basis ${v_1, ..., v_n}$ where the $v_i$ are eigenvectors. 
   
   (In this case $[L]_D =  mat(lambda_1, ..., 0; ..., ..., ...; 0, ..., lambda_n)$ and the i-th diagonal entry $lambda_i$ is the eigenvalue of $v_i$)
 ]
@@ -181,3 +181,97 @@ $A v = lambda v <==> A v - lambda v = 0 <==> (A-lambda I)v = 0 <==> v in "Null"(
 
 Eigenvectors $mat(c; 0; 0)$
 
+
+#defn[*Eigenspace* \
+
+The *eigenspace* of $L$ with eigenvalue $lambda$ is $ E_lambda (L) = {v in V: L(v)=lambda v} $ for all $lambda$-eigenvectors and $vec(0)$
+
+The eigenspace of $A in M(n times n)(FF)$ with eigenvalue $lambda$ is $ E_lambda (A) = {x in FF^n: A x = lambda x} $
+
+$E_lambda (L)$ is subspace of $V$
+
+$E_lambda (A)$ is a subspace of $FF^n$
+]
+
+#thm[*Isomorphic Eigenspaces* \ 
+
+*Proposition*
+
+Suppose $L:V->V$ is linear and let $A = [L]_B$ then $E_lambda(L) tilde.equiv E_lambda(A)$ 
+
+*Corrollary*
+1. $"dim" E_lambda (L) = "dim" E_lambda (A)$ is the geometric multiplicity of $lambda$
+
+2. $B = {v_1, ..., v_n}$ is a basis for $E_lambda (L) <==> {[v_1]_B, ..., [v_n]_B}$ is a basis for $E_lambda(A)$
+]
+
+#proof[
+  Define $[]: E_lambda(L) -> E_lambda(A), v |-> [v]_B$. This has an inverse by untaking coordinates. So this map is an isomorphism
+]
+#align(right)[$square$]
+
+Let $A in M_(n times n) (FF)$ That is we want $P = [v_1 space ... space v_n]$ and $D = mat(lambda_1, ..., 0; ..., ..., ...; o, ..., lambda_n)$ so that $A = P D P^(-1)$.
+
+$v_i, lambda_i$ are eigenvectors and eigenvalues. 
+We need eigenvalues to build $D$ and linear independent eigenvectors for $P$
+
+\
+\
+Steps
+\
+
+1. Calculaet and factor the characteristic polynomial of $A$
+
+  $C_A (lambda) = "det"(A- lambda I) = ...$. If cannot factor into linear terms. Then $A$ is not diagonalizable. STOP.
+
+  The roots of $C_A (lambda)$ are eigenvalues: ${lambda_1, lambda_1, ..., lambda_1}, ..., {lambda_n, lambda_n, ..., lambda_n}$. The number of times each distinct eigenvalues appear is the algebraic multiplicity.
+
+  Example: $C_(lambda) (A) = "det"(A - lambda I) = (lambda)^3 (lambda-1)^2 (lambda-5)$. Thus $a_0 = 3, a_1 = 2, a_2 = 1$
+
+  Then we obtain $D = mat(lambda_1, ...,0, 0; 0, lambda_1, ..., 0; ..., ..., ..., ...; 0, ..., 0, lambda_n)$
+
+2. Determine the eigenspaces. $E_lambda(A) = {x: (A - lambda I)  x = 0} = "Null"(A- lambda I)$
+
+  If $g_lambda != a_lambda$, STOP, $A$ is not diagonalizable
+  
+  If $g_lambda = a_lambda, forall lambda$, $A$ is diagonalizable
+
+  Find bases for each eigenspaces and put them down as columns in $P$
+
+Example:
+
+1. $D:P_2 -> P_2$ is differentiation
+
+  If $S = {1, x, x^2}, "then" [D]_S = mat(0, 1, 0; 0, 0, 2; 0, 0, 0), lambda = 0, 0, 0$
+
+  We also saw that $E_0(D)= "Null"(D - 0 I) - "Null"(D) = "span"{1}, g_lambda = 1 != a_lambda = 3$
+
+  $D$ not diagonalizable.
+
+2. $L:P_2 (RR)-> P_2 (RR), L(p(x))|->p(1)(1+x)$
+
+  $S = {1, x, x^2}, A = mat(2, 1, 1; 1, 2, 1; 0, 0, 1)$
+
+  $C_A (lambda) = "det"(A-lambda I) = "det"mat(2-lambda, 1, 1; 1, 2-lambda, 1; 0, 0, 1-lambda) = (lambda-3)(lambda-1)^2, lambda = 1, 1, 3 ==> a_1 = 2, a_3 = 1$
+
+  $lambda = 1$, find basis for $E_lambda (A) = "Null"(A- lambda I) = "Null"(A-I) = "Null"(mat(1, 1, 1; 1, 1, 1; 0, 0, 0)) $
+
+  ${mat(1; -1; 0), mat(1; 0; -1)} ==> g_1 = 2 = a_2; A v = lambda v ==>mat(2, 1, 1 ; 1, 2, 1; 0, 0, 1)mat(1; -1; 0) = mat(1; 1; 0)$
+
+  $lambda = 3$, $E_lambda (A) = "Null"(A - 3 I) = "Null"(mat(-1, 1, 1; 1, -1, 1; 0, 0, -2)) ==> {mat(1; 1; 0)}==>g_3 = 1=a_1$
+
+
+
+  $L:P_2 (RR)->P_2 (RR):$ untake $S-$coordinates, we get eigenbasis $D = {1-x, 1-x^2, 1+x}$
+
+  $[L]_D = mat(1, 0, 0; 0, 1, 0; 0, 0, 3)$
+
+  #tip[*Diagonalization Problems* \
+  
+  1. Always check calculation, whenever found a new outcome, verify it. (i.e. whenever obtain basis, check if $A v = lambda v$) to avoid mistake
+
+  2. When $a_lambda = 1$, then $g_lambda = 1$. In general, $1<=g_lambda <= a_lambda$. Except that if all eigenvalues are distinct, then $L$ is diagonalizable.
+
+  3. If $[L]_B$ is triangular, and eigenvalues are distinct, then diagonalizable.
+
+]

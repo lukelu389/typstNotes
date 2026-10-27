@@ -317,7 +317,7 @@ Fourth moment is $E[X^4]$, needed for computation of kurtosis.
 
 #defn[*Moment Generating Function * \
 
-The MGF of a random variable defined as $X$ is $M_X (t) = E[e^(t x)]$ where it exists in some region around $t = 0$
+The MGF of a random variable defined as $X$ is $M_X (t) = E[e^(t x)] = sum_x e^(t x) f(x)$ where it exists in some region around $t = 0$
 
 
 - It uniquely determines a distribution.
@@ -331,7 +331,7 @@ In general $ E[X^k] = M_X^((k)) (0) = eval(d/(dif t) M_X (t), t=0) $
 
 Properties of MGF
 
-- $M_X(0) = 1, space forall X$
+- $M_X (0) = 1, space forall X$
 
 - $M'_X (t) = d/(dif t) E[e^(t x)] = d/(dif t) = E[1+X+(t X)^2/2! + (t X)^3/3! + ...] = E[0+X+t X^2+ 1/2 t^2 X^3+...]$
 
@@ -353,3 +353,95 @@ $M'_X (0) = eval((6-5e^t)^(-1), t = 0)= eval(5 e^t (6-5e^t)^(-2), t = 0) = 5 $
 
 Let $Y = a X+b$, $M_Y (t) = E[e^(t a X + b t)] = E[e^(t a X) e^(b t)] = e^(b t) E[e^(t a X)] = e^(b t) M_X (a t)$
 
+\
+
+== 3.5 Distributions
+\
+
+#defn[*Discrete Uniform Distribution* \
+
+A *discrete uniform distribution* is a random variable of $X$ which takes on values in the set $A= {a,a + 1,a + 2,..., b}$, where $a$ and $b$ are integers such that $a ≤b$. Suppose that all values in $A$ are equally likely. 
+
+We write $X~"DU"(a,b)$ as a shorthand for “$X$ is distributed according to a discrete uniform distribution with parameters $a$ and $b$”.
+
+]
+
+
+The PMF: $ sum_(x=a)^b f(x) = c (b-a+1) = 1$ if $f(x) = c, c in RR $
+
+Thus the probability mass function of the distribution is in form $ f(x) = 1/(b-a+1) $
+
+The CDF: $ F(x) = sum_(u=a)^x f(u) = (1/(b-a+1))sum_(u=a)^x 1 = frac(x-a+1, b-a+1) $
+
+Thus the cumulative density function of the distribution is in  form $ F(x) = cases(0 "if" x<a, frac(x-a+1, b-a+1) "if" a<=x<=b, 1 "if" x>b) $
+
+The MGF: $ M_X (t) = sum_(x=a)^b e^(t x) f(x) = 1/(b-a+1) (e^(a t) + e^(a+1)t + ...  + e^(b t)) $
+
+Mean: $ E[X] = sum_(x=a)^b x f(x) = 1/(b-a+1) (a+ (a+1) + ... + b) = 1/2 1/(b-a+1) (a+b)(b-a+1) = (a+b)/2 $
+
+Variance: $ "Var"(X) = frac((b-a+1)^2-1, 12) $
+
+#defn[*Hypergeometric Distribution* \ 
+
+We have $N$ objects, of which $r$ are successes and $N-r$ are failures. We select $n$ objects without replacement and $X = "number of successes selected"$. $X ~ "HG"(N, r, n)$
+]
+
+Example:
+
+Testing a subset of products, some of which are defective/good. The number of defects found. 
+
+The PMF: $ f(x) = P(x "successes and " n-x "failures") = binom(r, x)binom(N-r, n-x)/binom(N, n),  quad max(0, n-N+r) <=x<=min(n, r) $
+
+Mean: $ E[X] = (n r)/N $
+
+
+*Bernoulli trials*: a sequence of trials with 
+
+- each outcome is a success or a failures
+
+- the probability of success is constant
+
+- trials are independent
+
+#defn[*Binomial Distribution* \ 
+
+
+We perform $n$ Bernoulli trials with $P(S) = p$ and let $X = "the number of sucesses obtained"$. $X ~ "Bin"(n, p)$
+]
+
+
+PMF: $ f(x) = binom(n, x) p^x (1-p)^(n-x) $
+
+MGF: $ M_X(t) = E[e^(t X)] = sum_(x=0)^n e^(t x) binom(n, x) p^x (1-p)^(n-x)=sum_(x=0)^n binom(n, x) (p e^t)^x (1-p)^(n-x) = (p e^t + 1-p)^n $
+
+Mean: $ E[X] = sum_(x=0)^n x binom(n, x) p^x (1-p)^(n-x) =^(y=x-1) n p sum_(y=0)^(n-1) binom(n-1, y) p^y (1-p)^(n-1-y) =n p $
+
+  Notice that it ressmbles $"Bin"(n-1, p)$
+
+Variance: $ "Var"(X) = n p (1-p) $ 
+
+Examples
+
+Error-correcting codes
+
+Suppose we send a sequence of bits over a noisy connection with probability of 0.1 of each bit being flipped independently. We will send 4 bit message. The probability of message received correctly.
+
+Let $X = "numbers of flipped bits" ~ "Bin"(4, 0.1)$
+
+We want $P(X = 0) = binom(4, 0) (0.1)^0 (0.9)^(4) approx 0.6561$
+
+Now suppose we add 3 parity bits that allow the received to detect and correct one error. Find the new probability
+
+Let $Y = "numbers of flipped bits" ~ "Bin"(7, 0.1)$
+
+$P(Y<=1) = binom(7, 0)(0.1)^0 (0.9)^7 + binom(7, 1)(0.1)^1 (0.9)^6 approx 0.8503$
+
+*Binomial and Hypergeometric relationships*
+
+- both involve doing something $n$ times with  possible outcomes and counting the number of successes.
+
+- Bin is with replacement and Hyp is without replacement.
+
+- For $N,r$ being sufficiently large compared to $n$, we would be unlikely to get the same object twice regardless of sampling method. 
+
+- We can approximate a $"HG" (N, r, n)$ by $"Bin"(n, r/N)$
