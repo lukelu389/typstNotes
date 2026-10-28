@@ -600,7 +600,7 @@ Ways of initializing `numobjs`
 
 2. initialize in the interface with ```cc inline static int num objs = 0;```
 
-== Compare Objects/values
+== Compare Objects/Values
 
 ```cc
 
@@ -676,5 +676,252 @@ struct Node{
   }
 };
 
+
+```
+== Class Invariants
+```cc
+
+struct Node{
+  int data;
+  Node *next;
+  Node(int data, Node *next)
+  ~Node{delete next;}
+};
+
+void foo(){
+  Node n1{1, new Node {7, nullptr}};
+  Node n2{2, n1.next}; // n1.next might have been already destroyed
+  Node n3{3, &n2}; //ERROR attempt to free stack object
+}
+
+```
+
+Node class assumed that `next` is either `nullptr` or points into the heap and Nodes are not shared.
+
+Some assumption/requirements that needs to hold true for the progrma to work as expected
+
+Examples:
+
+Binary Search Tree invariants:
+
+- Left child node has value less than root
+- Right child node has value greater than root
+
+
+Stack invariants:
+- Last in First out
+
+It is difficult to reason about program correctness if we cannot guarantee invariants.
+
+== Encapsulation
+
+#defn[*Encapsulaiton* \ 
+- Treats objects as black boxes as capsules
+
+- Hide implementation details
+
+- Expose some selected methods that clients can use
+]
+
+Key words: ```cc public, private, class, protected, friend``` are used for Encapsulaiton
+
+#tip[*General Advise*
+  
+1. Having one `public` section and one `private` section
+
+2. Keep fields `private` and select some methods to be `public` for client 
+]
+
+
+Example
+```cc
+struct Vec{
+  Vec(int, x, int y);
+
+  private: 
+    int x, y;
+
+  public:
+    Vec operator+(const Vec &other){
+      return {x+other.x, y+other.y};
+    }
+
+};
+
+int main(){
+  Vec v{1, 2}; //LEGAL
+  Vec v1 = v+v; //LEGAL constructor and + are both public
+  cout << v1.x << v1.y; //ILLEGAL, attempt accessing private fields
+}
+```
+
+Ideally, we should have default visibility of `private` so that we consciously decide what to make public, but since C++ inherited `struct` from C which have default visibility being `public`.
+
+Classes created with keyword `class` have default visibility of `private`.
+
+#warn[*Classes*
+
+`struct` defined ARE still CLASSES with default visibility being `private`.
+]
+
+Examples:
+
+
+Refer back to the `Vec` class
+```cc
+class Vec{
+  int x, y;
+  public:
+    Vec(int x, int y);
+    Vec operator+(const Vec &other){return {x+other.x, y+other.y};}
+};
+
+```
+
+Node Encapsulation 
+
+- Wrap Node objects within a list class
+
+- Clients never get access to Nodes
+
+
+```cc
+//list.cc
+export module list;
+export class List{
+  struct Node; //private nested classes declaration
+  Node *theList = nullptr;
+  public:
+    void addToFront(int i);
+    int &ith(int i);
+    ~List();
+};
+
+//list-impl.cc
+module list;
+struct List::Node{
+  int data;
+  Node *next;
+  Node(int data, Node next): data{data}, next{next} {}
+  ~Node(){delete next;}
+};
+
+void List::addToFront(int i){
+  theList = new Node(i, theList);
+}
+
+List::~List(){delete theList;}
+int &List::ith(int i){//assumption that at least i nodes in list
+  Node *cur = theList;
+  for(int j = 0; j<i &&cur; ++j, cur = cur.next);
+  return cur->data;
+}
+
+//List::Node::~List{delete theList;} //LEGAL;
+
+```
+
+List traversal
+
+```cc
+for(int j = 0; j < listLength; ++j){
+  cout <<list.ith(j); //another for-loop for `ith` method.
+}
+//O(n^2)
+```
+
+We want `O(n)` traversal
+
+```cc
+
+Node *cur = theList; //Start
+while(cur != nullptr){//Compare, End
+  ...=cur->data;//Access
+  cur = cur->next;//Update
+}
+
+
+int *begin = arr;//Begin
+int *end = arr+arr_len;//End
+for(int *p = begin; p!= end; ++p){//Compare, Update
+  cout <<*p;//Access
+}
+
+```
+
+#tip[*Iterator Design Patter* \ 
+
+- $O(n)$ treversal of an encapsulated class
+- Always keep track of where we are within the iteration
+
+- Always requires Begin, End, Compare, Access, and Update
+]
+
+We need
+
+
+```cc
+List::begin();//Begin
+List::end();//End
+List::Iterator();
+Iterator::operator++; //Update
+Iterator::operator *(); //Access
+Iterator::operator!=(); //Compare
+```
+
+To use *Ranged-Based For-Loops* in C++
+
+Refer back to the previous implementation
+```cc
+//list.cc
+export module list;
+export class List{
+  struct Node; //private nested classes declaration
+  Node *theList = nullptr;
+  public:
+    void addToFront(int i);
+    int &ith(int i);
+    ~List();
+    class Iterator{
+      Node *cur;
+      public:
+        explicit Iterator(Node *curr) cur{cur}{}
+        Iterator &operator++(){
+          cur = cur->next;
+          return *this;
+        }
+
+        int &operator*(){return cur->data;}
+
+        bool operator!=(const Iterator &other){
+          return cur != other.cur;
+        }
+    };//End of Iterator
+
+    Iterator begin(){return Iterator{theList};}
+    Iterator end(){return Iterator{nullptr};}
+};
+
+//list-impl.cc
+module list;
+struct List::Node{
+  int data;
+  Node *next;
+  Node(int data, Node next): data{data}, next{next} {}
+  ~Node(){delete next;}
+};
+
+void List::addToFront(int i){
+  theList = new Node(i, theList);
+}
+
+List::~List(){delete theList;}
+int &List::ith(int i){//assumption that at least i nodes in list
+  Node *cur = theList;
+  for(int j = 0; j<i &&cur; ++j, cur = cur.next);
+  return cur->data;
+}
+
+//List::Node::~List{delete theList;} //LEGAL;
 
 ```

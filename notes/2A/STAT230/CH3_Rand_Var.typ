@@ -250,16 +250,16 @@ $E[g_1(X)] = 3600 dot 1/38 +0 dot 37/38  = 94.74$
 
 #defn[*Variance* \ 
 
-We define the *variance*, $ "Var"(X) = sigma^2 =E[(X-mu)^2] = E[(X-E[X]^2)]$
+We define the *variance*, $ "Var"[X]= sigma^2 =E[(X-mu)^2] = E[(X-E[X]^2)]$
 
-In practice, we can evaluate the variance in *DISCRETE* random variable by $ "Var"(X) &= E[(X-mu)^2] = E[X^2] - 2 mu E[X] + mu^2  \
+In practice, we can evaluate the variance in *DISCRETE* random variable by $ "Var"[X]&= E[(X-mu)^2] = E[X^2] - 2 mu E[X] + mu^2  \
 
 &= E[X^2] - mu^2 = E[X^2] - E[X]^2 $
 ]
 
 #defn[*Standard Deviation* \ 
 
-We define the *standard deviation*, $ sigma(X) = sqrt("Var(X)") $
+We define the *standard deviation*, $ sigma[X] = sqrt("Var"[X]) $
 ]
 Example:
 
@@ -267,20 +267,20 @@ Roulette
 
 $X = cases(36 "with" 1/38, 0 "with" 37/38)$
 
-$"Var"(X) = E[(X-mu)^2] = E[X^2] - E[X]^2 = 34.105-0.94737^2 approx 33.207 "$"^2$
+$"Var"[X]= E[(X-mu)^2] = E[X^2] - E[X]^2 = 34.105-0.94737^2 approx 33.207 "$"^2$
 
-$sigma(X) = sqrt("Var"(X)) approx 5.76"$"$
+$sigma(X) = sqrt("Var"[X]) approx 5.76"$"$
 
 \
 Let $Y = cases(2 "with" 18/38, 0 "with" 20/38)$
 
-$"Var"(Y) = E[Y^2] - E[Y]^2 = 2^2 dot 18/38 - 0.94737^2 approx 0.99723$
+$"Var"[Y] = E[Y^2] - E[Y]^2 = 2^2 dot 18/38 - 0.94737^2 approx 0.99723$
 
 $sigma approx 0.99861$
 
 Let $Z = cases(1 "with" 36/38, 0 "with" 2/28)$
 
-$"Var"(Z) = E[Z^2] - E[Z]^2 = 36/38 - 0.94737^2 approx 0.04986$
+$"Var"[Z] = E[Z^2] - E[Z]^2 = 36/38 - 0.94737^2 approx 0.04986$
  
 $sigma approx 0.2233$
 
@@ -288,15 +288,15 @@ $sigma approx 0.2233$
 
 *Variance* is NOT a linear operator.
 
-$ "Var"(a X+b) &= E[((a X +b)- E[a X +b])^2]  \
+$ "Var"[a X+b] &= E[((a X +b)- E[a X +b])^2]  \
 
 &= E[(a X +b-a E(X)-b)^2] = E[(a X - a E([X])^2)] \
 
-&= a^2 E[(X- E(X))^2] = a^2 "Var"(X) $
+&= a^2 E[(X- E(X))^2] = a^2 "Var"[X]$
 
 *Standard deviation*
 
-$sigma(a X+b) = |a|sigma(X)$
+$sigma[a X+b] = |a|sigma[X]$
 ]
 
 == 3.4 Moment Generating Functions
@@ -379,7 +379,7 @@ The MGF: $ M_X (t) = sum_(x=a)^b e^(t x) f(x) = 1/(b-a+1) (e^(a t) + e^(a+1)t + 
 
 Mean: $ E[X] = sum_(x=a)^b x f(x) = 1/(b-a+1) (a+ (a+1) + ... + b) = 1/2 1/(b-a+1) (a+b)(b-a+1) = (a+b)/2 $
 
-Variance: $ "Var"(X) = frac((b-a+1)^2-1, 12) $
+Variance: $ "Var"[X]= frac((b-a+1)^2-1, 12) $
 
 #defn[*Hypergeometric Distribution* \ 
 
@@ -418,7 +418,7 @@ Mean: $ E[X] = sum_(x=0)^n x binom(n, x) p^x (1-p)^(n-x) =^(y=x-1) n p sum_(y=0)
 
   Notice that it ressmbles $"Bin"(n-1, p)$
 
-Variance: $ "Var"(X) = n p (1-p) $ 
+Variance: $ "Var"[X]= n p (1-p) $ 
 
 Examples
 
@@ -445,3 +445,44 @@ $P(Y<=1) = binom(7, 0)(0.1)^0 (0.9)^7 + binom(7, 1)(0.1)^1 (0.9)^6 approx 0.8503
 - For $N,r$ being sufficiently large compared to $n$, we would be unlikely to get the same object twice regardless of sampling method. 
 
 - We can approximate a $"HG" (N, r, n)$ by $"Bin"(n, r/N)$
+
+#defn[*Geometric Distribution* \ 
+
+Perform Bernoulli trials until obtain a success and 
+
+let $X ="# of failures obtained before 1st success", X ~ "Geo"(p)$
+
+]
+
+PMF: $ f(x) = (1-p)^x p, quad x = NN_(>=0), p>0 $
+
+
+
+CDF: $ F(x) = sum_(i=0)^x p(1-p)^i = 1- sum_(i=x+1)^oo p(1-p)^i = 1-(1-p)^(x+1) = cases(0 "if" x<0, p(1-p)^(x+1)"if" x>=0) $
+
+MGF: $ M_(X)(t) =sum_(x=0)^oo e^(t x) p(1-p)^x = sum_(x=0)^oo p(e^t (1-p))^x = frac(p, 1-e^t (1-p)) quad t < ln(1/(1-p)) $
+
+Mean: $ E[X] = (1-p)/p $
+
+Variance: $ "Var"[X] = (1-p)/p^2 $
+
+#defn[*Negative Binomial Distribution* \ 
+
+Perform Bernoulli trials until obtain $k$ success and let 
+
+$X = "# of failures obtained before k-th success", X ~ "NB"(k, p)$
+
+]
+
+PMF: $ f(x) = binom(k+x-1, x)(1-p)^x p^k = binom(k+x-1, k-1)(1-p)^x p^k, quad x in NN_(>=0) $
+
+Mean: $ E[X] = k(1-p)/p $
+
+Variance: $ "Var"[X] = k(1-p)/p^2 $
+
+#defn[*Poisson Distribution* \
+
+
+
+]
+

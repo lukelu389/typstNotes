@@ -86,4 +86,120 @@ The *maturity* of a debt instrument is the time remaining until the issuer must 
     
 ]
 
+A *financial intermediary* operates between savers and borrowers
 
+- Non-bank intermediaries
+  - Pension funds invest contributions to provide retirement
+
+  - Mutual funds and exchange-traded funds
+
+  - Insurance companies invest premiums
+
+- *Deposit-taking institutions*
+
+  - Banks, credit unions, and caisses populaires
+
+  - Deposits serve as money and used to make payments
+  - Institutions promise to repay the face value
+
+
+== Banks
+
+*Banks' Fund destribution*
+#align(center)[
+  #table(
+      columns: 2, 
+      align: auto,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [Use of funds], [Sources of funds],
+      [Mortgages and business loans(illiquid, long-term)], [Chequing and saving deposits(liquid, shorterm)], [Consumer loans], [Guaranteed investment certificates], [Government securities], [Borrowing from financial markets], [Cash and settlement balances], [Shareholder capital]
+      )
+]
+
+#defn[*Acounting identity* \ 
+
+$ "Assets" = "Liabilities" + "Capital" $
+
+The equation always balances.
+]
+
+
+The *net-interest margin* is the difference between interest received and interest paid, relative to the bank's average interest earining assets.
+
+Example:
+
+Suppose a bank earns 5M in interest and pays 3M in interest on its funding. It holds 100M in average interest-earning assets
+
+$"Net interest margin" = (5-3)/100 =2%$ The 2M must cover operating costs and expected loans before contributing to profit.
+
+
+#align(center)[
+  #table(
+      columns: 3, 
+      align: auto,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [], [Retail deposits], [Wholesale funding],
+      [Providers], [Households and small businesses], [Institutional investors and markets],
+      [Examples], [Chequing, savings, and GIC], [Short-term instruments and bonds],
+      [Advantages], [Spread across many customers], [Funding beyond retail customers], 
+      [Risk], [Deposits may be withdrawn], [Maturing funding may not be renewed]
+      )
+]
+
+\
+*Liquidity and maturity transformation*
+
+Savers want (liquid, short-term):
+- Ready to access to their funds at face value
+- Flexibility b/c they may not know when they will need their money
+
+Borrowers want (illiquid, long-term):
+- Access to large amount of funding today
+- Stable financing that can be repaid gradually over several years
+
+Without an intermediary, savers may have to give up access to their funds, or borrowers may have to rely on short-term financing that must be renewed repeatedly.
+
+*Banks can satisfy both sets of needs, it creates a mismatch on their balance sheets*
+
+Liquidity transformation: a bank issues liquid liabilities, including deposits that can be withdrawn quickly, and uses the funds to hold illiquid assets such as mortgages and business loans.
+
+Maturity transformation: a bank finances longer-term assets with liabilities that mature sooner or can be withdrawn on demands.
+
+Example:
+
+100 customers deposits 1, so there are 100 as total deposits (2% liquid)
+
+10 are withdrawn everyday
+
+90 are lend to 10 with daily loan, and 80 long-term loan
+
+\
+\
+\
+
+*Asymmetric information* 
+
+A situation in which one party to a transaction knows relevant information that the other party does not know. This creates
+
+- *Moral hazards*, problem *after* a loan/mortgages has been made
+
+- *Adverse selection*, problem *before* a loan/mortgages has been made
+
+  - A lender that cannot distinguish safer applicants from riskier applicants may lend to the wrong borrowers or discourage safer borrowers. B/c both want to profit more from what they currently can offer.
+
+
+The banks reduce 
+
+- adverse selection by review, credit histories, income, ..., etc 
+
+- moral hazard by monitoring payment behaviour, ..., etc
+
+Beyond screening and monitoring borrowers, banks issue the deposits used for most everyday payments.
+
+Reserve requirement abolished after 1994
+
+*Bank create new deposit money when they make loans*
+
+Candian Regulators requires bank to hold a certain amount of capital compared to their loan portfolio.
