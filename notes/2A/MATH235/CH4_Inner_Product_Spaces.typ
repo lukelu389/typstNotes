@@ -118,3 +118,122 @@ Then, $ip(vec(x), vec(x)) = mat(i; 0; ...; 0) dot mat(i; 0; ...; 0) = i dot over
     There are infinitely many inner product
 ]
 
+\
+\
+\
+\
+Recall:
+
+1. $vec(x) dot vec(x) = x_1^2 + ...+ x_n^2 = ||vec(x)||^2$
+
+2. $"dist"(x, y) = ||vec(y)-vec(x)|| = sqrt((vec(x)-vec(y)) dot (vec(x)-vec(y)))$
+
+
+3. $vec(x) dot vec(y) = ||x||||y|| cos theta ==> theta = arccos frac(vec(x) dot vec(y), ||vec(x)||||vec(y)||)$
+
+
+#defn[*Norms, Distance, Angles* \
+
+Let $V$ be an inner product space(a vector space with a fixed choice of inner product)
+
+The *norm* of $vec(x) in V$ is $||vec(x)|| =  sqrt(ip(vec(x), vec(x)))$ is a non-negative real number
+
+The *distance* between $vec(x), vec(y) in V$ is $"dist"(vec(x), vec(y)) = sqrt(ip(vec(x), vec(y)))$ is non-negative real number
+
+]
+\
+*IMPORTANT: DO NOT FORGET THE SQUARE ROOT*
+
+Examples:
+
+1. If $V = RR^n$, $chevron.l, chevron.r$ be dot product. These definitions are the familiar ones from Euclidean Geomtery.
+
+2. $V = M_(2 times 2)(RR)$, $chevron.l, chevron.r$ be the Frobenius inner product
+
+  $||mat(1, 2; 3, 4)|| = sqrt(ip(A, A)) = sqrt(1^2+2^2+3^2+4^2) = sqrt(30)$
+
+3. $V = P_2 (RR), ip(p, q) = integral_0^1 p(x)q(x) dif x$
+
+  $"dist"(1-x^2, 2+3x+2x^2) &= sqrt(1-x^2 - 2-3x-2x^2) = sqrt(-1-3x-3x^2)  \
+  
+  &=sqrt(ip(-1-3x-3x^2, -1-3x-3x^2)) = sqrt(integral_0^1 (-1-3x-3x^2)^2 dif x) =
+sqrt(153/ 10)$
+
+#thm[*Properties of Norm* \ 
+
+Let $V$ be an inner product space
+
+1. $||vec(x)|| >=0$ and $||vec(x)|| = 0 <==> vec(x) = vec(0) quad$ (Positive-definite)
+
+2. $||c vec(x)|| = |c| ||vec(x)|| quad $ (Homogeneity)
+
+3. $||vec(x)+vec(y)|| <=||vec(x)|| +||vec(y)|| quad$ (Triangle Inequality)
+ 
+]
+
+#proof[
+  2. $||c vec(x)|| = sqrt(ip(c vec(x), c vec(x))) = sqrt(c overline(c) ip(vec(x), vec(x))) = sqrt(|c|^2 ip(vec(x), vec(x)))  = |c| sqrt(ip(vec(x), vec(x))) = |c| ||vec(x)||, quad c in FF$
+
+  3. $ ||vec(x)+vec(y)||^2 &= ip(vec(x)+vec(y), vec(x)+vec(y)) = ip(vec(x), vec(x)) + ip(vec(x), vec(y)) + ip(vec(y), vec(x)) + ip(vec(y), vec(y))  \
+
+  &= ||vec(x)||^2 + ip(vec(x), vec(y))+ overline(ip(vec(x), vec(y))) + ||vec(y)||^2 \ 
+   
+   &= ||vec(x)||^2+2 "Re"(ip(vec(x), vec(y))) + ||vec(y)||^2\
+
+   &<= ||vec(x)||^2 + 2|ip(vec(x), vec(y))| + ||vec(y)||^2 = ||vec(x)||^2 + 2||vec(x)|| ||vec(y)|| + ||vec(y)||^2   = (||vec(x)||+||vec(y)||)^2 \
+
+   \
+
+  ==>
+  ||vec(x)+vec(y)|| <=||vec(x)+vec(y)||
+   
+  $
+]
+#align(right)[$square$]
+
+
+ #thm[*Cauchy-Schwarz Inequality* \ 
+
+$ |ip(x, y)| <= ||x|| ||y|| $
+]
+
+Basic idea: if $chevron.l, chevron.r$ is dot product on $RR^n <=1$
+
+$|ip(x, y)| = |x dot y| = ||x|| ||y|| |cos theta| <=||x|| ||y||$
+
+#defn[ \
+
+If $x, y in V$ are non-zero, let the angle between them to be $theta = arccos(ip(x, y)/(||x||||y||))$
+
+$ ip(x, y)/(||x||||y||) <=1 $ by Cauchy-Schwarz
+
+]
+
+Question: when $theta = 90$?
+
+Ans: $ip(x, y)/(||x||||y||) = cos 90 = 0 ==> ip(x, y) = 0$
+
+#defn[*Orthogonal in Inner Product Space* \
+
+Let $V$ be an inner product space. We say $vec(x), vec(y) in V$ are orthogonal $ vec(x) perp vec(y) <==> ip(vec(x), vec(y)) = 0 $
+]
+
+Examples:
+
+1. $V in RR^2, chevron.l, chevron.r = "dot product"$. $e_1 perp e_2 <==> ip(mat(1; 0), mat(0;1)) = 0$
+
+2. $V = P_2 (RR), ip(p, q) = integral_0^1 p(x)q(x) dif x$
+
+  $p = 1, q = x$ are not orthogonal b/c  $ip(p, q) = ip(1, x) = integral_0^1 x dif x = 1/2 !=0$
+
+  If we define $ip(p, q) = integral_(-1)^1 p q dif x$
+
+  Then $1 perp x <==> ip(1, x) = integral_(-1)^1 x dif x = 0$
+
+#thm[*Pythagorean Thm* \
+
+Let $V$ be an inner product space.
+
+If $ x perp y ==> ||vec(x)+vec(y)||^2 = ||vec(x)||^2 + ||vec(y)||^2 $
+
+]

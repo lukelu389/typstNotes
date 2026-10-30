@@ -371,7 +371,7 @@ The PMF: $ sum_(x=a)^b f(x) = c (b-a+1) = 1$ if $f(x) = c, c in RR $
 
 Thus the probability mass function of the distribution is in form $ f(x) = 1/(b-a+1) $
 
-The CDF: $ F(x) = sum_(u=a)^x f(u) = (1/(b-a+1))sum_(u=a)^x 1 = frac(x-a+1, b-a+1) $
+The CDF: $ F(x) = sum_(u=a)^x f(u) = (1/(b-a+1)) =frac(x-a+1, b-a+1) $
 
 Thus the cumulative density function of the distribution is in  form $ F(x) = cases(0 "if" x<a, frac(x-a+1, b-a+1) "if" a<=x<=b, 1 "if" x>b) $
 
@@ -480,9 +480,87 @@ Mean: $ E[X] = k(1-p)/p $
 
 Variance: $ "Var"[X] = k(1-p)/p^2 $
 
+
+Example: 
+
+Suppose we need 5 investors with $p =0.2$ independently yes.
+Find the mean asked and probability to ask 10
+
+Let $X = "# of investors approached", X !~ "NB"$
+
+Let $Y = "# of who said no before 5 yes", Y ~ "NB"(5, 0.2)$
+
+We want $E[X]$ and $P(X=10)$
+
+$X = Y+5$
+
+$E[X] = E[Y+5] = E[Y]+5 = 5 dot (0.8/0.2) = 20+5 = 25$
+
+$P(X= 10) = P(Y = 5)=binom(9, 4)(0.2)^5 (0.8)^5 approx 0.0132$
+
 #defn[*Poisson Distribution* \
 
+Comes from limiting case of binomial distribution and its own continuous-time process.
+
+Suppose we have $X ~"Bin"(n, p)$ and let $n->oo, p->0$ s.t. $n p = mu$ remains constant. Then, we denote $X~"Poi"(mu)$
 
 
+Alternatively, The Poisson process has events occur randomly in continuous time and space with 
+
+1. independence events
+
+2. individuality, events happen one at a time
+
+3. homogenity/uniformity, events happen at a constant rather
+
+  - $P(1 "event in" (0, Delta t)) = mu Delta t $
+
+If $X = "# of events in" t "units of time"$, $X ~ "Poi"(mu t)$
+
+
+]
+
+PMF: $ lim_(n->oo) f(x) &= lim_(n->oo) binom(n, x)p^x(1-p)^(n-x) = lim_(n->oo) frac(n!, x! (n-x)!)(mu/n)^x (1-mu/n)^(n-x) \
+
+&= mu^x/x! lim_(n->oo) [product_(u=0)^(x+1)(n-u)/n]  (1-mu/n)^(-x) (1-mu)^n \
+
+&= mu^x/x! lim_(n->oo) (1-mu/n)^n = mu^x/x!
+dot e^(-mu), quad x in NN_(>=0)
+$
+
+MGF:  $ M_X (t) = sum_(x=0)^oo e^(t x) frac(e^(-mu) mu^x, x!) = e^(-mu) sum_(x=0)^oo frac((mu e^t)^x, x!)= e^(mu(e^t-1)) $
+
+\
+\
+
+Mean: $ E[X] =mu $ 
+
+Variance: $ "Var"[X] = mu $  
+
+Note: we can approximate a $"Bin"(n, p)$ by $"Poi"(n p)$ when $n$ is sufficiently large and $p$ is sufficiently small
+
+Example of Poisson process:
+
+1. Cars passing through intersection
+
+2. Collisions in a reactor
+
+3. Lightining strikes
+
+4. Website hits, data breaches
+
+\
+
+How to distinguish distributions?
+
+#align(center)[
+  #table(
+      columns: 6, 
+      align: auto,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [$"DU"(a, b)$], [$"HG"(N, r, n)$], [$"Bin"(n, p)$], [$"Geo"(p)$], [$"NB"(k, p)$], [$"Poi"(mu)$],
+      [Equally likely, fair], [Population size, subset of successes and \# of sucesses, without replacement, selecting], [Bernoulli trials, \# of successes], [Bernoulli trials, waiting for \# of successes, until, $k=1$], [Bernoulli trials, it takes ... to get ..., $k>1$], [Bernoulli trials, binomial with large $n$ and small $p$, or Poisson process counting \# events], [], [Can be approximated by Bin with $n$ small big $N$], [Can be approximated by Poi $n$ large, $p$ small], 
+      )
 ]
 

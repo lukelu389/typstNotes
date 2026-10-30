@@ -202,4 +202,57 @@ Reserve requirement abolished after 1994
 
 *Bank create new deposit money when they make loans*
 
-Candian Regulators requires bank to hold a certain amount of capital compared to their loan portfolio.
+Canadian Regulators requires bank to hold a certain amount of capital compared to their loan portfolio.
+
+Transactions between banks go through settlement system (Lynx in Canada)
+
+*Mortgages* are repaid gradually and can be difficult to sell, their funding matters for bank stability. When a mortgage covers more than 80% of a home purchase price(that is down payment is $>= 20%$) generally requires insurance(2% of the house). It protects the lender against borrower, not houseowners.
+
+Canadian mortgages have a five-year term with fixed interest rate or variable prime rate.
+
+
+#align(center)[
+  #table(
+      columns: 2, 
+      align: auto,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [Liquidity], [Solvency], [No liquidity to finance activities $A > L$], [Capital will absorb some losses but not for all $A<L$ ]
+      )
+]
+
+$"Capital ratio" = "Capital"/"Risk-weighted assets" = "Capital"/"Loans and securities" >= 10.5%$
+
+The Diamond-Dybvig Model
+
+Suppose 
+
+1. Illiquid assets with \$2 ad the end at time 2
+
+2. Bank issues product with liquidity with \$1 deposit into \$1.28 upon withdrawn on time 1 and \$1.81 upon withdrawn on time 2
+
+So most people would choose to be patient to get maximum profit.
+
+Deposit insurance: 
+
+- US: Federal deposit Insurance corporation
+
+- CA: Canadian deposit Insurance corporation. 
+
+Which insurance deposits (chequing, savings, GICs) up to 100000 per depositor per banks.
+
+(Midterm-question) It causes banks to take risks to profit as much as possible as moral hazards.
+
+#align(center)[
+  #table(
+      columns: 3, 
+      align: auto,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [CDIC], [Prudential supervision], [],
+      [OSFI], [Deposit insurance and resolution], [],
+      [Bank of Canada], [Liquidity and stability], []
+      )
+]
+
+

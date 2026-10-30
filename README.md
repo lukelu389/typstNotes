@@ -1,4 +1,4 @@
-This note contains term 1A, 1B of UWaterloo's Honours Mathematics course notes
+This note contains term 1A, 1B, 2A of UWaterloo's Honours Mathematics course notes
 
 ## PDF builds
 

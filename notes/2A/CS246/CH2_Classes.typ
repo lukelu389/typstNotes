@@ -614,7 +614,7 @@ but two $O(n)$ comparisons in C++
 Now C++ supports ```cc <=>``` operator
 
 
-A comparison is defined for "`std::strong-ordering`" and the value `_::less/equal/greater`
+A comparison is defined for "`std::strong-ordering`" and the value `_::less/equal/greater` with `_::less == 0` is `true`
 
 We can replace "`auto`" to *automatically* infer to the type of the object.
 
@@ -871,7 +871,8 @@ Iterator::operator!=(); //Compare
 
 To use *Ranged-Based For-Loops* in C++
 
-Refer back to the previous implementation
+Refer to source "17-iterator/listiter.cc" and "17-iterator/listiter-impl.cc"
+
 ```cc
 //list.cc
 export module list;
@@ -902,6 +903,7 @@ export class List{
     Iterator end(){return Iterator{nullptr};}
 };
 
+
 //list-impl.cc
 module list;
 struct List::Node{
@@ -925,3 +927,157 @@ int &List::ith(int i){//assumption that at least i nodes in list
 //List::Node::~List{delete theList;} //LEGAL;
 
 ```
+After the implementation, we can use for loop to make iteration to be $O(n)$ while fufilling encapsulation.
+
+```cc
+int main(){
+  List lst;
+  lst.addToFront(1);
+  lst.addToFront(2);
+  lst.addToFront(3);
+// lst -> 3->2->1->nullptr;
+
+for(List::Iterator it = lst.begin(); it != lst.end(); ++it){
+  int n = *it;
+  cout << n <<endl;
+  }
+
+}
+
+```
+
+We decided to overload operators to utilize C++ "Range-Based" for-loops.
+
+#defn[*Ranged-Based For-loops* \ 
+
+A class `c1` can bs used in a ranged-based for-loop if 
+
+- `c1` implements methods `begin(), end()` that return `c2` object 
+
+- `c2` implements `operator*, operator++, operator!=`
+
+```cc
+for(auto n:lst){
+  cout << n << endl;
+}
+// n is a by value copy of the returned from *it in each iteration
+
+for(auto &n:lst){
+  n = 10;
+}
+// n is a reference to value returned by *it in each iteration
+```
+]
+
+Problem:
+
+Even with this, another problem is that default constructor of `Iterator` is `public`. We want to enforce the user to use only `begin(), end()`.
+
+We cannot directly put it the default constructor to `private` even though `List::Iterator` is a nested class, it cannot access `private` fields/methods of `Iterator`. `begin(), end()` cannot be initialized b/c they are in `List`
+
+Solution:
+
+We use keyword `friend` as it allows `List` to access `private` fields/methods of `Iterator`. 
+
+`friend` is one directional, `List` can access private of `Iterator` but the other way is not.
+
+*Friendship* weakens encapsulation
+
+`List` could break `Iterator` invariant, thus have as few as `friends` as possible.
+
+```cc
+export class List{
+  ...
+  public:
+    ...
+    class Iterator{
+      Node *cur;
+      explicit Iterator(Node *curr) cur{cur}{}
+      friend class List; //LINE ADDED
+      ...
+      public:
+        //operator overloads...
+    };
+};
+```
+
+== Accessors and Mutators
+
+Advice: keep fields private, then if we want client to read the data or change it. Then we have accessors(getters) and mutator(setters).
+
+\
+\
+\
+Example:
+```cc
+class Vec{
+  int x, y;
+  public:
+    int getX() const {return x;}
+    void setX(int x) {x = -x;} 
+};
+```
+
+== I/O operators (revisit)
+
+I/O operators 
+
+- makes sense to implement as standalone functions
+
+- they need read/write access to fields 
+
+- fields are private (problematic)
+
+Solutions:
+
+1. Provide appropriate accessors and mutators, but everyone(including clients) gets access now
+
+2. Make I/O operators `friend` of the class
+
+```cc
+class Vec{
+  int x, y;
+  public:
+    ...
+    friend ostream &operator<<(ostream &, const vec &);
+    //Vec declares that this function is a friend, IT IS NOT Vec's METHOD
+};
+
+ostream &operator<<(ostream &out, const vec &v){
+  out << v.x<<v.y; //Can access private fields due to friendship
+  return out;
+}
+```
+
+== List `==, <=>` (revisit)
+(Exam question: implementation/overloadding of spaceship operator)
+
+
+Lists typically implement a `length` method.
+
+1. Iterate over list and count -> $O(n)$
+
+2. Create a `length` field and keep it up to date -> $O(1)$
+
+If `length` can be obtained at constant time, we might have a way to use a shortcut for equality
+
+- If lengths are not equal, then the lists are not equal
+
+```cc
+std::strong-ordering List::operator<=>(const List &other) const {
+  if (!theList && !other.theList) return std::strong-ordering::equal;
+  if (!theList) return std::strong-ordering::less;
+  if (!other.theList) return std::strong-ordering::greater;
+  return *theList <=> *other.theList;
+  // call to Node spaceship operator, not recursion because we dereferenced
+}
+bool List::operator==(const List &other) const {
+  if (length != other.length) return false;
+  return (*this <=> *other) == 0;
+}
+
+```
+
+When implement your own `<=>`, we do not get `==` anymore.
+
+== MIDTERM CUTOFF
