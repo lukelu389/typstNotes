@@ -59,7 +59,7 @@ Larbour Force Particiaption Rate $"LFPR" = "LF"/"CIVPop" dot 100$
 
 $U$ is the number of unemployed, $"LF"$ is the labour force, $E$ is the number of employed people
 
-]
+] 
 
 
 $"CIVPop"$ is the civilian, non-instutitional population ageed 15+

@@ -68,12 +68,16 @@ To maximize, we want $theta = 0, hat(u) "points in the same direction" grad f(a,
 #thm[*Steepest Rate of Ascent*
 
 If $f(x, y)$ is differentiable at $(a, b)$ and $grad f(a, b) != (0, 0)$, then the largest value of $ D_hat(u) f(a, b)  = ||grad f(a, b)|| $ and it occurs when $hat(u) "points in the same direction as" grad f(a, b)$
+
+Additionally, $ hat(u) = frac(grad f(a, b), ||grad f(a, b)||) $
 ]
 
 \
 Question: Which direction minimizes $D_hat(u) f(a, b)$?
 
 ANS: $- grad f(a, b)$ is the direction of steepest descent.
+
+That is $hat(u)= -frac(grad f(a, b), ||grad f(a, b)||)$
 
 \
 Question: Which direction should we travel if we want to stay at the same height?

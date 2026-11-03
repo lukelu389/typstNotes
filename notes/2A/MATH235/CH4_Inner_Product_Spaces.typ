@@ -215,7 +215,7 @@ Ans: $ip(x, y)/(||x||||y||) = cos 90 = 0 ==> ip(x, y) = 0$
 
 #defn[*Orthogonal in Inner Product Space* \
 
-Let $V$ be an inner product space. We say $vec(x), vec(y) in V$ are orthogonal $ vec(x) perp vec(y) <==> ip(vec(x), vec(y)) = 0 $
+Let $V$ be an inner product space. We say $vec(x), vec(y) in V$ are orthogonal, denoted $ vec(x) perp vec(y) <==> ip(vec(x), vec(y)) = 0 $
 ]
 
 Examples:
@@ -230,10 +230,114 @@ Examples:
 
   Then $1 perp x <==> ip(1, x) = integral_(-1)^1 x dif x = 0$
 
-#thm[*Pythagorean Thm* \
+#thm[*Pythagorean Theorem* \
 
 Let $V$ be an inner product space.
 
 If $ x perp y ==> ||vec(x)+vec(y)||^2 = ||vec(x)||^2 + ||vec(y)||^2 $
+]
+
+#proof[
+
+By definition, $||x+y||^2 =ip(x+y, x+y) = ip(x, x) + ip(x, y)+ip(y, x)+ip(y, y) = ip(x, x)+ 0+ 0 +ip(y, y) = ||x||^2 +||y||^2$ since $x perp y$
+]
+
+#align(right)[$square$]
+
+#defn[*Generalized Orthogonal set and Pythagorean Theorem* \
+
+We say $S = {v_1, ..., v_k}$ is an orthogonal set if $v_i perp v_j, forall i!=j$
+
+
+If $S = {v_1, ..., v_k}$ is orthogonal, then $||(v_1+...)+v_k||^2 = ||v_1||^2+ ... + ||v_k||^2 $
+]
+
+*IMPORTANT*: Suppose $S = {v_1, ..., v_k}$ is orthogonal and $v_i != vec(0)$, then $S$ is linearly independent.
+
+#proof[
+Consider the equation $c_1 v_1 + ... + c_k v_k= 0, v_i in S$
+
+Take the equation and take the inner product on both sides by $v_i$
+
+$ ip(c_1 v_1 + ... + c_k v_k, v_i ) &= ip(0, v_i) \
+
+c_1 ip(v_1, v_i) + ... + c_i ip(v_i,v_i)+ ... + c_k ip(v_k, v_i )&= 0 \
+
+c_i ip(v_i, v_i) &= 0
+$
+
+$v_i !=0 ==>ip(v_i, v_i) != 0 ==> c_i = 0$, so $S$ is linearly independent
+]
+#align(right)[$square$]
+
+#defn[*Orthogonal Basis* \ 
+
+An *orthogonal basis* for $V$ is a basis that is an orthogonal set.
+]
+
+*IMPORTANT*: Coordinates with orthogonal are very easy to find
+
+Examples:
+
+1. Let $V = RR^2; chevron.r, chevron.l = "dot product", S = {e_1, e_2}$ is an orthogonal basis
+
+2. $B = {v_1 =mat(1;1), v_2 mat(-1; 1)}$ is an orthogonal basis.
+
+ Let $x = mat(a; b) in RR^2$. 
+
+  $c_1, c_2 in RR$ so that $x = c_1 mat(1;1)+ c_2 mat(-1; 1)$
+
+  Take inner product on both sides with $v_1$
+
+  $ip(x, v_1) = ip(c_1 v_1+c_2 v_2, v_1) = c ip(v_1, v_1) + c_2 (0) ==>c_1 = ip(x, v_1)/ip(v_1, v_1) = frac(mat(a;b) dot mat(1;1), mat(1; 1) dot mat(1;1)) = (a+b)/2$
+
+  Similarily for $v_2 ==> c_2 = ip(x, v_2)/ip(v_2, v_2) = frac(mat(a;b) dot mat(-1;1), mat(-1; 1) dot mat(-1;1)) = -(a+b)/2 $ 
+
+  Verify: $mat(a; b) = (a+b)/2 mat(1; 1) -(a+b)/2 mat(-1; 1) $
+
+
+\
+#defn[*Projection* \
+
+Let $vec(v)$ be non-zero and $vec(x) in V$. The *projection of $vec(v)$ onto $vec(x)$* is the vector $ "proj"_(vec(x)) vec(v) = frac(ip(vec(v), vec(x)), ip(vec(x), vec(x))) vec(x) $
 
 ]
+#thm[*Coordinates with Orthogonal Basis* \ 
+
+Suppose $B = {v_1, ..., v_n}$ is an orthogonal basis for $V$. Then for all $x in V$, $ x = sum_(i=1)^n frac(ip(x, v_i), ip(v_i, v_i)) v_i = sum_(i=1)^n "proj"_(vec(v)_i) vec(x) $
+
+*WARN*: This fails if $B$ is not orthogonal
+]
+
+Bad example: 
+
+$B = {v_1 = mat(1;1), v_2 = mat(1;2)}$ is a basis but not orthogonal
+
+Take $x = mat(3;4)$
+
+$"proj"_(v_1) x + "proj"_(v_2) x = ip(x, v_1)/ip(v_1, v_1) v_1 + ip(x, v_2)/ip(v_2, v_2) v_2 = mat(7/2+11/5; 7/2+22/5) != x $
+
+
+#defn[*Perpendicular* \
+
+Let $vec(x)!=vec(0), vec(v)$ be arbitrary. The perpendicular of $vec(v)$ to $vec(x)$ is $ "perp"_(vec(x)) vec(v) = vec(v)-"proj"_(vec(x)) vec(v) $
+
+1. $v = "proj"_(vec(x)) vec(v) + "perp"_(vec(x)) vec(v)$
+
+2. $"proj"_(vec(x)) vec(v) perp  "perp"_(vec(x)) vec(v)$
+
+3. $"proj"_(vec(x)) vec(v) in "span"{vec(x)}$
+
+]
+
+Question: Let $V$ be an inner product space. Does $V$ have an orthogonal basis?
+
+Ans: Yes
+
+If $"dim" V = 0, B = emptyset$ is orthogonal
+
+If $"dim" V = 1, B = {v}$ is orthogonal
+
+If $"dim" V = 2, B = {v_1, v_2}$, we can always fix $B$ to ba an orthogonal basis to $C = {w_1, w_2}$, take $w_1 = v_1, w_2 = "perp"_(v_2) v_1$
+
+If $"dim" V = 3$?

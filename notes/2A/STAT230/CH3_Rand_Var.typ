@@ -549,6 +549,16 @@ Example of Poisson process:
 
 4. Website hits, data breaches
 
+Poisson random variable examples:
+
+1. Number of drinks consumed at a 5-hour parity
+
+2. Number of people who showed up to a party of 20 invited
+
+3. Number of peanut candies in ahandful from a bag with 100 candies.
+
+
+
 \
 
 How to distinguish distributions?
