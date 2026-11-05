@@ -357,7 +357,7 @@ bool Text:isHeavy() const {return getLength() > 500;}
 bool Comic:isHeavy() const {return getLength() > 30;}
 ```
 
-*Method overriding*: eplacing an inherited method with a new implementation of the method 
+*Method overriding*: replacing an inherited method with a new implementation of the method 
 
 
 ```cc
@@ -391,6 +391,188 @@ pc->isHeavy(); //Comic::isHeavy() runs, gives out `true`
 
 Book *pb{&c1}; //VALID b/c `Comic` is a `Book`, the reverse is INVALID
 //No slicing occurred b/c the pointer is simply pointing to the location of `c1`
-pb->isHeavy(); //Book::isHeavy() runs, `false` in Java it would have been `true`
+pb->isHeavy(); //Book::isHeavy() runs, gives out `false`. Different from Java
 ```
-*C++ looks at the declared type of the object/pointer *to determine which method to run (by default)
+*C++ looks at the declared type of the object/pointer *to determine which method to run
+ (by default)
+
+Most often, we want to call the most specialized method based on the actual type of the object involved.
+#defn[*`virtual`*
+C++ introduced keyword `virtual`
+
+- Declare the method `virtual` in the base class
+
+- `override` the method as needed in subclasses, and it forces the compiler to confirm the method is an inherited method, it is not required to be used
+]
+Example:
+
+```cc
+class Book{
+  ...
+  public:
+    virtual bool isHeavy() const {...}
+};
+class Comic: public Book {
+  ...
+  public:
+    bool isHeavy() const override {...}
+};
+
+//In main.cc
+Comic *pc{&c};
+Book *pb{&b};
+Book &rb{c};
+
+pc->isHeavy();
+pb->isHeavy();
+rb->isHeavy();
+//All calls Comic::isHeavy
+```
+
+*Dynamic Disbatch*:
+
+The method is choosen when the program is running based on the runtime type of the object initialized 
+
+```cc
+//collection uses polymorphism, a polymorphic array
+Book *colleciton[100];
+...
+collection[0] = new Text()
+...
+collection[...] = new Comic()
+...
+for(int i = 0; i<100; ++i){
+  cout<< collection[i].isHeavy() <<endl;
+}
+```
+
+*Destructor Revisted*
+
+Updated 4 steps to object destruction:
+
+1. subclass destructor runs
+
+2. destructor runs for subclass fields that are objects
+
+3. Superclass part of object is destroyed(superclass destructor called)
+
+4. Space is reclaimed
+
+"lectures/19-inheritance/example5"
+
+```cc
+class X {
+  int *x;
+ public:
+  X(int n): x{new int [n]} {}
+  virtual ~X() { delete [] x; } //added virtual
+};
+
+class Y: public X {
+  int *y;
+ public:
+  Y(int n, int m): X{n}, y{new int [m]} {}
+  ~Y() { delete [] y; }
+};
+
+int main () {
+  X myX{5}; // Automatically triggering X destructor from Y destructor
+  Y myY{5, 10}; //First get reclaimed from Y destructor
+
+  X *p = new Y{5, 10}; 
+  delete p; //Memory leak
+  //X::~X() called, the Y part is leaked, solution: make destructor virtual
+}
+```
+
+#tip[*Destructor* \ 
+
+If a class have(or may have) a subclass, declare the destructor `virtual`
+]
+
+*`final` Keyword*
+
+If a class will never have a subclass, declare it to be `final`
+
+Example: ```cc class Y final: public X{...};```
+
+== Pure Virtual Methods
+
+(Goal: Abstract vs Concrete classes)
+
+```cc
+class Student {
+  ... 
+  public:
+    virtual int fees()=0; // PURE VIRTUAL METHOD
+    //We do not want to implement this, but without =0, it will not compile
+};
+
+class regular : public Student{
+  public:
+    int fees() override {...}
+};
+class coop : public Student{
+  public:
+    int fees() override {}
+}
+
+//main
+Student *allStudent[41000];
+allStudent->fees();
+```
+
+Virtual: subclass may have different behaviour\
+Pure Virtual: subclass must provide an implementation to be considered to a concrete class
+
+*Abstract vs Concrete*
+
+A class is abstract if either
+
+1. It declares a pure virtual method (i.e. Student in the bove example)
+
+2. Inherits a pure virtual method that it does not implement
+so that you cannot instantiate object of abstract classes. (i.e. cannot create a Student object in above)
+
+Representation of virtual in UML:
+
+- Virtual/Pure virtual methods: in italics
+
+- Abstract: Name of class \/\/
+
+- Static: underline
+
+- protected:  \#
+
+\
+
+== C++ Templates
+
+```cc
+template <typename T>
+class Stack {
+  T *contents;
+  int cap;
+  int size;
+  public:
+    Stack();
+    ~Stack();
+    void push(T x);
+    void pop();
+    T top();
+};
+
+//main
+
+Stack<int> sInts;
+sInts.push(1);
+Stack<String> sStrings;
+sStrings.push("hi");
+```
+C++ supports templates.
+
+A template class is a class parameterized on one or more types.
+
+- To create objects of the template class we need to provide the type as parameter
+
+

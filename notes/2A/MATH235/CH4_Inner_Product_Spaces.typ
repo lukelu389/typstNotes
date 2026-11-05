@@ -299,7 +299,7 @@ Examples:
 \
 #defn[*Projection* \
 
-Let $vec(v)$ be non-zero and $vec(x) in V$. The *projection of $vec(v)$ onto $vec(x)$* is the vector $ "proj"_(vec(x)) vec(v) = frac(ip(vec(v), vec(x)), ip(vec(x), vec(x))) vec(x) $
+Let $vec(v), vec(w) in V, vec(w) != 0$. The *projection of $vec(v)$ onto $vec(w)$* is the vector $ "proj"_(vec(w)) vec(v) = frac(ip(vec(v), vec(w)), ip(vec(w), vec(w))) vec(w) $
 
 ]
 #thm[*Coordinates with Orthogonal Basis* \ 
@@ -320,13 +320,13 @@ $"proj"_(v_1) x + "proj"_(v_2) x = ip(x, v_1)/ip(v_1, v_1) v_1 + ip(x, v_2)/ip(v
 
 #defn[*Perpendicular* \
 
-Let $vec(x)!=vec(0), vec(v)$ be arbitrary. The perpendicular of $vec(v)$ to $vec(x)$ is $ "perp"_(vec(x)) vec(v) = vec(v)-"proj"_(vec(x)) vec(v) $
+Let $vec(w)!=vec(0), vec(v)$ be arbitrary. The perpendicular of $vec(v)$ to $vec(w)$ is $ "perp"_(vec(w)) vec(v) = vec(v)-"proj"_(vec(w)) vec(v) $
 
-1. $v = "proj"_(vec(x)) vec(v) + "perp"_(vec(x)) vec(v)$
+1. $v = "proj"_(vec(w)) vec(v) + "perp"_(vec(w)) vec(v)$
 
-2. $"proj"_(vec(x)) vec(v) perp  "perp"_(vec(x)) vec(v)$
+2. $"proj"_(vec(w)) vec(v) perp  "perp"_(vec(w)) vec(v)$
 
-3. $"proj"_(vec(x)) vec(v) in "span"{vec(x)}$
+3. $"proj"_(vec(w)) vec(v) in "span"{vec(w)}$
 
 ]
 
@@ -338,6 +338,108 @@ If $"dim" V = 0, B = emptyset$ is orthogonal
 
 If $"dim" V = 1, B = {v}$ is orthogonal
 
-If $"dim" V = 2, B = {v_1, v_2}$, we can always fix $B$ to ba an orthogonal basis to $C = {w_1, w_2}$, take $w_1 = v_1, w_2 = "perp"_(v_2) v_1$
+If $"dim" V = 2, B = {v_1, v_2}$, we can always fix $B$ to ba an orthogonal basis to $C = {w_1, w_2}$, take $w_1 = v_1, "then" w_2 = "perp"_(v_2) v_1$.
+
+
+Additionally, $w_1 perp w_2, "span"{v_1, v_2} = "span"{w_1, w_2}$
+
+#proof[
+  It is sufficient to show that $v_1, v_2 in "span"{w_1, w_2}$
+
+  $v_1 = w_1, v_2 = v - frac(ip(v_2,w_1), ip(w_1, w_1)) w_1$
+
+  Similarily $w_1 = v_1, w_2 = v_2 - frac(ip(v_2,w_1), ip(w_1, w_1)) v_1 $
+]
 
 If $"dim" V = 3$?
+
+
+$"dim" V = 3$
+
+We have $B = {v_1, v_2, v_3}$, take $cases(w_1 = v_1, w_2 = v_2-"proj"_(v_1) (v_2), w_3 =v_3 - "proj"_(v_1)(v_3) - proj_(w_2)(v_3) = v_3-"proj"_W (v_3) "where" W = "span"{w_1, w_2} )
+$
+
+Claim:
+1. ${w_1, w_2, w_3}$ is an orthogonal set
+
+2. $"span"{w_1, w_2, w_3} = "span"{w_1, w_2, w_3} = V$
+
+Therefore, ${w_1, w_2, w_3}$ is an orthobasis for $V$
+
+#proof[
+  1. We want $ip(w_i, w_j) = 0 quad forall i !=j$
+
+    We know that $ip(w_1, w_2) = 0$
+
+    $w_3 = v_3 - alpha w_1 - beta w_2$
+
+    $ip(w_3, w_1) = ip(v_3, v_1) - alpha ip(v_1, v_1) - beta ip(v_2, v_1) = ip(v_3, v_1) - frac(ip(w_3, w_1), ip(w_1, w_1)) ip(w_1, w_1)=0$
+
+     $ip(w_3, w_2) = ip(v_3, v_2) - alpha ip(v_2, v_1) - beta ip(v_2, v_2) = ip(v_3, v_1) - frac(ip(w_3, w_2), ip(w_2, w_2)) ip(w_2, w_2)=0$
+
+]
+
+#defn[*Gram-Schmidt Process* \
+
+Suppose ${v_1, v_2, ..., v_n}$ is a basis for inner product space $V$.
+
+Define recursively ${w_1, w_2, ..., w_n}$ by 
+
+$ w_1 &= v_1  \
+
+w_2 &= v_2 - "proj"_(w_1) (v_2) \
+
+w_3 &= v_3 - "proj"_(w_1) (v_3) - "proj"_(w_2) (v_3) \
+
+... \
+
+w_n &= v_n - "proj"_(w_1) (v_n) - "proj"_(w_2) (v_n) - ... - "proj"_(w_(n-1)) (v_n)
+$
+
+
+Then ${w_1, w_2, ..., w_n}$ is an orthobasis for $V$
+
+*WARN: $w_i = v_i - sum_(j=1)^i "proj"_(w_j) (v_i)$, the subscript is $w$ not $v$*
+
+After each step, we can scale the vector by a scalar to eliminate fractions.
+
+]
+
+Example:
+
+Find an orthobasis for $V = "span"{mat(1;1;0;1), mat(1;2;0;0), mat(-1;1;0;2)}subset.eq RR^4, chevron.l, chevron.r = "dot product"$
+
+$w_1 = v_1 = mat(1;1;0;1)$
+
+$w_2 = v_2 - "proj"_(w_1) (v_2) = mat(0;1; 0;-1), mat(1;1;0;1) dot mat(0;1;0;-1) = 0$
+
+$w_3 = v_3 - "proj"_(w_1) (v_3) - "proj"_(w_2) (v_3) = 5/6 mat(-2;1;0;1), 5/6 mat(-2;1;0;1) dot mat(1;1;0;1) = 5/6 mat(-2;1;0;1) dot mat(0;1;0;-1)=0$
+
+$C = {mat(1;1;0;1), mat(0;1;0;-1), mat(-2;1;0;1)}$ is an orthobasis
+
+*Note* that 
+
+1. Gram-Schmidt depends on the order of $v_1, ..., v_n$. A different ordering will produce different orthobasis
+
+2. If there is a linear dependence relationship in $v_1,..., v_n$. Then Gram-Schmidt will have the vector as $w_i = 0$
+
+#defn[*Orthonormal Basis* \
+
+An *orthonormal basis* for $V$ is an orthogonal basis $B = {v_1, ..., v_n}$ for $V space forall ||v_i|| = 1$
+]
+
+#info[*Normalize Vector* \ 
+
+Let $vec(v)$ be a vector, a normalized $vec(v)$ is $ hat(v) = frac(vec(v), ||vec(v)||) $
+]
+
+Example:
+
+1. $C = {mat(1;1;0;1), mat(0;1;0;-1), mat(-2;1;0;1)}$ is orthogonal, we can normalize it 
+
+  $hat(C) = {1/sqrt(3) mat(1;1;0;1), 1/sqrt(2) mat(0;1;0;-1), 1/sqrt(6) mat(-2;1;0;1)}$
+
+2. Find an orthonormal basis for $P_2(RR)$ with $ip(p, q) = integral_0^1 p(x)q(x) dif x$
+
+
+

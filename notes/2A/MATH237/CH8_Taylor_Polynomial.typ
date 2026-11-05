@@ -121,7 +121,7 @@ Show that $x>=0, y>=0$ and $f(x, y) = ln(1+x+2y)$ $R_(1, (0, 0)) <=3(x^2+y^2)$
 
   In general we get the below theorem.
 
-#thm[*Corollary of Upper Bound of 2D Tayloyr Polynomial* \ 
+#thm[*Corollary of Upper Bound of 2D Taylor Polynomial* \ 
 If $f(x, y) in C^2$ in some neighbourhood $N(a, b)$ of $(a, b)$, then $exists M in RR_(>=0)$ s.t. 
 $ R_(1, (a, b))(x, y) <= M||(x, y)-(a, b)||^2 quad forall (x, y) in N(a, b) $
 
@@ -139,4 +139,22 @@ Examples:
 Let $f(x, y) = e^(-2x+y)$ Show that the error in $L_(1, 1)$ is at most $3e[(x-1)^2+(y-1)^2]$ \
 if $0<=x<=1, 0<=y<=1$
 
-#thm[*Generalized Talyor's Theorem*]
+$f_x = -2e^(-2x+y), f_y = e^(-2x+y); f_(x x)  = 4e^(-2x+y), f_(x y) = f_(y x) = -2e^(-2x+y), f_(y y) = e^(-2x+y)$
+
+$c, d = (0, 1)$
+
+$|f_(x x)(0, 1)| <= 4e^(-2(0)+1) = 4e$, $|f_(x y)(0, 1) <= 2e^(-2(0)+1)| = 2e$, $|f_(y y)(0, 1)| <= e^(-2(0)+1)= e$
+
+By Taylor's theorem, $exists (c, d)$ between $(1, 1)$ and $(x, y)$ s.t 
+
+$ R_(1, (1, 1))(x, y) &= 1/2|f_(x x) (c, d)(x-1)^2 + 2f_(x y) (c, d)(x-1)(y-1)+f_(y y) (c, d)(y-1)^2| \
+
+&<= 1/2 [ |f_(x x) (c, d)|(x-1)^2 + 2|f_(x y) (c, d)(x-1)(y-1)|+|f_(y y) (c, d)|(y-1)^2] \ 
+
+&<= 1/2 [ 4e(x-1)^2 + 4e|x-1||y-1| + e(y-1)^2]  \
+
+&<= e/2[4(x-1)^2 + 2(x-1)^2 + 2(y-1)^2+(y-1)^2] <= 3e[(x-1)^2+(y-1)^2]
+
+$
+
+

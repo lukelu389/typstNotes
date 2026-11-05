@@ -109,3 +109,18 @@ Prime-age workers are aged 25-54.
 
 *OECD harmonised employment rate* applies common definitions
 to improve comparisons across countries
+
+
+Example midterm questions:
+
+The labour force participate rate is 80%, the unemployment rate is 5%, and the working-age population is 25000. How many employed?
+
+We get labour force be $25000*0.8$
+
+Then we have $0.95 * (25000 * 0.8) = 19000$ is the total employed workers 
+
+A country has 18000 employed people, an UR = 10%, working-age population is 25000. What is LB-participation rate?
+
+$0.9 L B = 18000 -> L B = 20000$
+
+$20000/25000$ is the participation rate.

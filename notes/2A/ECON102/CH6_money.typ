@@ -194,14 +194,14 @@ The quantity of money that households and firms choose to hold at apoint in time
   )
 ]
 
-#defn[*Velocity of Money* \ 
+#defn[*Velocity of Money*(M2++) \ 
 
 $ V equiv (P Y) / M $
 
 $P Y$ is nominal GDP, $P$ is price level, $Y$ is goods produced
 
 
-$M$ is the quantity of money
+$M$ is the quantity of money (M2++)
 
 Income velocty excludes transactions in financial assets, used goods, and intermediate goods
 ]
@@ -226,10 +226,137 @@ where $overline(V)$ is the long-run velocity of money and $overline(Y)$ is the l
 If $P$ doubles, $M$ doubles
 ]
 
-*Neutrality of Money*:
-
 In long-run, if the the level of money changes by $x%$, the level of prices will also change by $x%$.
 
-Outputs/GDP and other real variables(employment) will not change
+#thm[*Neutrality of Money*
+
+In the long-run, since changes in the *level* of money affects only the level of prices and not the level of outputs. 
+]
+
+*Classical dichotomy:*
+
+In the long-run, changes in nominal variable affect nominal variables but leave real variables unchanged(employment, real GDP)
 
 *MIDTERM CUTOFF SLIDE47*
+
+*Superneutrality*: 
+
+In the long-run, changes in the *growth rate *of money affect only the growth rate of prices and not the growth rate of outputs.
+
+
+$ (Delta M)/M + (Delta V)/V approx (Delta P)/P + (Delta Y)/Y $
+
+$ "money growth" + "velocity growth" approx "GDP deflator inflation" + "real GDP growth" $
+
+
+Correlation between changes in the level of money and changes in the level of inflation should be 1. 
+Correlation between changes in the level of money and changes in the level of output should be 0.
+
+
+*Interest Rates*
+
+$ "Nominal Rate" - "Inflaiton" approx "Real Cost" $
+
+Example:
+
+A borrower pays $6%$ interests but repays in dollars that buy $3%$ less. 
+
+The exact real cost is $1.06/1.03 - 1 approx 2.9%$
+
+#thm[*Fischer Equation* \
+
+Let 
+
+$pi^e$ be Expected Inflation
+
+$pi$ be the observed equation
+
+$i$ be nominal interest rate
+
+$r$ be expected real value
+
+$ (1+i) = (1+r)(1+pi^e) $
+]
+
+*Note*:
+
+When contracts is *signed*: $r_("ex ante") = i-pi^e$
+
+After *inflation* is observed $r_("ex post") = i-pi$
+
+There is a redistribution of wealth happening:
+
+
+If $pi>pi^e$, then lender loses and borrower wins.
+
+If $pi<pi^e$, then the lender wins and borrower loses
+
+Example:
+
+A bond pays 8% and expecting an inflation to be 2%
+
+Thus $r_("ex ante") = 8%-2% = 6%$
+
+If actual inflation turns out to be 10%
+
+Therefore, $r_("ex post") = 8%-10% = -2%$
+
+\
+#defn[*Hyperinflation* \ 
+A monthly inflation rate above 50%. Prices double about every seven weeks,
+and 50% a month compounds to about 13,000% a year
+]
+
+#defn[*Seigniorage* \
+Revenue obtained from issuing money. It can exist
+even when inflation is zero.
+
+*Seigniorage Revenue*
+
+Government provide liquidity by increasing settlement balances to buy the equivalent amount of government bonds from banks. Banks hold these settlement balances.
+
+#align(center)[
+  #table(
+      columns: 2, 
+      align: auto,
+      stroke: 0.5pt,
+      inset: 6pt,
+      [Assets], [Liabilities],
+      [Government bonds \$1000], [New settlement \$1000],
+      [Interest of bonds \$50 ], [Equity \$50]
+
+      )
+  ]
+
+]
+
+\
+Example:
+
+Zimbabwe $->$ prints money $->$ buy goods and services (seigniorage revenue)
+
+*Inflation Tax*: Decrease of real value because of inflation
+
+*Costs of Inflation*:
+
+- Expected inflation/inconvenience costs:
+  - Shoe-leather costs: expected inflation raise the nominal rate, the cost of holding money, so people hold smaller balances
+
+  - Menu costs: firms dupdate price lists and point-of-sale systems more often which uses real resources when inflation is high
+
+  - Relative price noise: firms reprice at different times, so relative prices vary unpredictably around each round of changes
+
+- Misallocation of resources
+  - When inflation is high or unpredictabl, the price signal gets noisy, so firms and consumers make worse choices about what to produce, what to buy, and where to invest
+
+*Deflation* is sustained fall in the general price level and creates its own set of economic problems
+
+*Debt deflation*:
+
+Falling prices raised real debt burdens and increased defaults.
+$ "Higher real debt burden" <-> "Lower spending" <->"Further price declines" $
+
+
+- Delay: consumers who expect lower prices postpone purchases
+- Wage rigidity: workers resist nominal wage cuts, so falling prices raise real wages and firms cut employment
+- Room to cut rates: a 2% target leaves more room to lower interest rates before they reach the effective lower bound

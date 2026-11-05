@@ -74,3 +74,87 @@ The JPMF of $X_1, X_2$ is $f_(1, 2) (x_1, x_2) = sum_(X_3) ... sum_(X_n) f(x_1, 
 We say two random variables $X, Y$ are independent if and only if $ f(x, y) = P(X = x, Y = y) = P(X=x) P(Y = y) = f_X (x)+f_Y (y) $
 ]
 
+Example:
+
+Let $X = "# days between texts from A to B"$ and $Y = "# days between texts from B to A"$
+
+The joint PMF be $f(x, y) = 1/16 (1/2)^x (7/8)^y, "for" x, y = 0, 1, 2, ...$
+
+Find the marginal PMF:
+
+$f_X (x) = 1/16 (1/2)^x sum_(y) (7/8)^y  = 1/16(1/2)^x 8 = (1/2)^(x+1)$
+
+$X ~ "Geo"(1/2)$
+
+$f_Y (y) = 1/16 (7/8)^y sum_(x) (1/2)^x  = 1/16(7/8)^x 2 = 1/8 (7/8)^y$
+
+$Y ~ "Geo"(1/8)$
+
+$f(x, y) = f_X (x) f_Y (y) = (1/2)^(x+1)  1/8 (7/8)^y = 1/16 (1/2)^x (7/8)^y$, thus $X, Y$ are independent
+
+== 4.2 Functions of $2^+$ random variables
+
+We may be interested in $U = g(X, Y)$
+
+Examples:
+
+1. Let $X = "# marks gained"$, $Y = "# marks lost"$
+
+  #table(
+        columns: 5, 
+        align: auto,
+        stroke: 0.5pt,
+        inset: 6pt,
+        [$y$ \\ $x$], [0], [1], [2], [3], 
+        [0], [0.18], [0.34], [0.03], [0.02],
+        [1], [0.09], [0.09], [0.06], [0.08],
+        [2], [0.01], [0.01], [0.06], [0.03]
+        )
+    
+  If $U$ is the overall impact, $U = g(X, Y) = X-Y$
+
+  PMF of $U$:
+
+    #table(
+        columns: 7, 
+        align: auto,
+        stroke: 0.5pt,
+        inset: 6pt,
+        [$u$], [$-2$], [$-1$], [$0$], [$1$], [$2$], [$3$],
+        [], [0.01], [0.1], [0.33], [0.43], [0.11], [0.02]
+  )
+
+  In general, if $U = g(X, Y), f_U (u) = sum_(x) sum_y f(x, y)$
+
+  In the case of $U = g(X, Y) = X+Y$
+
+  $f_U (u) = sum_x sum_y f(x, y) = sum_(x)^u f(x, u-x)$
+
+
+\
+\
+2. Suppose $X ~ "Poi"(7), Y~ "Poi"(5)$ are independent
+
+  $U = X+Y$
+  
+  $f_U (u) = f_X (x) f_Y (y) = frac(e^(-7)7^x, x!) dot frac(e^(-5)5^y, y!) = sum_(x=0)^u f(u, u-x) = 1/e^12 sum_(x=0)^u = frac(7^x 5^(u-x), x! (u-x)!) \
+  
+  = e^(-12)/u! sum_(x=0)^u = binom(u, x) 7^x 5^(u-x)  = (e^(-12)12^x)/u!
+  $
+
+  $U ~ "Poi"(12)$
+
+\
+*Poisson random variables* are closed under convolution:
+  
+  $X~"Poi"(x), Y~"Poi"(y)$ are independent, $X+Y ~ "Poi"(x+y)$
+
+*Binomial random variables* are closed under convolution:
+
+  $X~"Bin"(n, p), Y~"Bin"(m, p)$ are independent, $X+Y~"Bin"(n+m, p)$
+
+*Geometric random variables* are closed under convolution:
+
+  $X~"Geo"(p), Y~"Geo"(p)$ are independent, $X+Y ~ "NB"(p)$
+
+  
