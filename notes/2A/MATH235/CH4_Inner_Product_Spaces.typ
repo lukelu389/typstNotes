@@ -154,9 +154,9 @@ Examples:
 
 3. $V = P_2 (RR), ip(p, q) = integral_0^1 p(x)q(x) dif x$
 
-  $"dist"(1-x^2, 2+3x+2x^2) &=sqrt(ip(-1-3x-3x^2, -1-3x-3x^2)) \
+  $"dist"(1-x^2, 2+3x+2x^2) &=sqrt(ip(-x^2, 2+3x+2x^2)) \
   
-  &= sqrt(integral_0^1 (-1-3x-3x^2)^2 dif x) =
+  &= sqrt(integral_0^1 (1-x^2)(2+3x+2x^2) dif x) =
 sqrt(153/ 10)$
 
 #thm[*Properties of Norm* \ 
