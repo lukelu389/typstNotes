@@ -194,7 +194,10 @@ Let $V$ be an inner product space
 
  #thm[*Cauchy-Schwarz Inequality* \ 
 
-$ |ip(x, y)| <= ||x|| ||y|| $
+Let $V$ be an inner product space. Then
+$ |ip(vec(v), vec(w))| <= ||vec(v)||||vec(w)||, space forall vec(v), vec(w) in V $
+
+with equality if and only if $vec(v)$ and $vec(w)$ are scalar multiples of each other
 ]
 
 Basic idea: if $chevron.l, chevron.r$ is dot product on $RR^n <=1$
