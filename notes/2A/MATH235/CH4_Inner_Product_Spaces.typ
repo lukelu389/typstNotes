@@ -444,5 +444,96 @@ Example:
 
 2. Find an orthonormal basis for $P_2(RR)$ with $ip(p, q) = integral_0^1 p(x)q(x) dif x$
 
+#thm[*Orthogonal Decomposition Theorem* \ 
+
+Let $W$ be a subspace of the inner product space $V$. Let $vec(v) in V$. Then $exists "unique" vec(p) in W$ and $vec(r) perp W, "that is" ip(vec(r), vec(w)) = 0, forall vec(w)in W$ s.t. $ vec(v) = vec(p)+vec(r) $
+] 
+
+#defn[*Projection on Subspace* \ 
+Let $ vec(v) = vec(p)+vec(r)$ be as in the above theorem. 
+
+Then call $vec(p)$ the *projection* of $vec(v)$ onto $W$: $vec(p) = "proj"_W vec(v)$
+
+Then call $vec(r)$ the *perpendicular* of $vec(v)$ onto $W$: $vec(r) = "perp"_W vec(v)$
+
+The theorem says $vec(v) = "proj"_W vec(v) + "perp"_W vec(v)$
+
+]
+
+Example:
+
+1. The Orthogonal Decomposition Theorem looks like  $vec(v) = "proj"_vec(w) vec(v) + "perp"_vec(w) vec(v), "where" vec(w) !=0$
+
+  If we let $W = "span"{vec(w)}$, then we need to get  $"proj"_W vec(v) = "proj"_vec(w) vec(v) "and"  "perp"_W vec(v) = "perp"_vec(w) vec(v)$
+
+2. Take $V = RR^3$. $W = "xy-plane" = {mat(x;y;0): x, y in RR} = "span"{e_1, e_21}$
+
+  Let $vec(v) = mat(a;b;c) in V$, then it is clear that $"proj"_W mat(a;b;c) = mat(a;b;0), "perp"_W mat(a;b;c) = mat(0;0;7)$
 
 
+*Observation*: ${e_1, e_2,e_3}$ is an orthonormal basis for $RR^3$
+
+  $==> vec(v) = "proj"_e_1 vec(v) + "proj"_e_2 vec(v) + "proj"_(e_2) vec(v) = ip(v_1, e_1)/ip(e_1, e_1) e_1 +ip(v_1, e_2)/ip(e_2, e_2) e_2 +ip(v_1, e_3)/ip(e_3, e_3) e_3 = mat(a;0;0) +mat(0;b;0) + mat(0;0;c)$
+
+*Question*: what is $W = {mat(x;y;z):2x-y=x=0}$?
+
+Idea: 
+1. Find the basis for $W$
+2. Apply Gram-Schmidt to the basis.
+3. Extend to the basis for $V$ 
+4. Apply Gram-Schmidt again
+ 
+*ANS*: 
+
+1. Basis be ${mat(1;2;0), mat(1;0;2)}$ by inspection
+
+2. The basis is ${mat(1;2;0), mat(2;-1;5)}$
+
+3. ${mat(1;2;0), mat(2;-1;5), mat(1;0;0)}$ by extending the standard basis 
+
+4. Orthonormal basis ${mat(1;2;0), mat(2;-1;5), mat(-2;1;1)}$
+
+Let ${w_1, w_2, n} =  {mat(1;2;0), mat(2;-1;5), mat(-2;1;1)}$
+
+$vec(v)= mat(1;2;3)$
+
+$vec(p) = "proj"_vec(w)_1 vec(v) +"proj"_vec(w)_2 vec(v) = 1/2 mat(4;3;5)$
+
+$vec(r) = "proj"_vec(n) vec(v) = 1/2 mat(-2;1;1)$
+
+#thm[*Lemma*
+
+Let $W$ be a subspace, then $exists$ an orthogonal basis of $V$ of the form ${w_1, ..., w_k, n_1, ..., n_l}$ where ${w_1, ..., w_k}$ is an orthobasis of $W$ and $n_1, ..., n_l perp W$]
+#proof[
+Lemma
+
+
+Let ${v_1, ..., v_k}$ be a basis for $W$ extend to a basis for $V = {v_1, ..., v_k, y_1, ..., y_l}$.
+
+Apply Gram-Schmidt to the basis to get the orthobasis ${w_1, ..., w_k, n_1, ..., n_l}$. Then we know $"span"{w_1, ..., w_k}= "span"{v_1, ..., v_k} = W$
+
+$therefore {w_1, ..., w_k}$ is an orthobasis for $W$
+
+Because linear independent as the outcome of Gram-Schmidt is already linearly independent since they are orthogonal and non-zero
+
+It suffices to shwo that $n_i perp w_j, forall i, j$ because $w_j "span" W, "b/c" {w_1, ..., w_n, n_1, ..., n_l}$ is an orthogonal set
+
+]
+#align(right)[$square$]
+
+
+#proof[
+Orthogonal Decomposition Theorem
+
+Existence: Choose an orthobasis ${w_1, ..., w_k, n_1, ..., n_l}$ like the lemma. 
+
+Given $vec(v)_i$, we can write $vec(v) = sum_(i=1)^k "proj"_w_i v (in W) + sum_(j=1)^l "proj"_w_i v (in W^perp)$
+
+This is a formula for $"proj"_W vec(v) + "perp"_W vec(v)$
+
+Uniqueness: Let $v = p+r = tilde(p)+tilde(r)$ where $p, tilde(p) in W "and" r, tilde(r) in W^perp$
+
+$==> p+r = tilde(p)+tilde(r) ==> p-tilde(p) in W = r-tilde(r) in W^(perp) ==> p - tilde(p) = 0, r-tilde(r)= 0$
+
+]
+#align(right)[$square$]

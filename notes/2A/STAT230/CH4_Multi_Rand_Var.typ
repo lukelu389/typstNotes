@@ -158,3 +158,61 @@ Examples:
   $X~"Geo"(p), Y~"Geo"(p)$ are independent, $X+Y ~ "NB"(p)$
 
   
+#defn[*Multinomial Random Variable* \ 
+
+Trials are conducted with 3 conditions:
+
+- $k$ possible outcomes on each Trials
+
+- probabilities are constant, $p_1, p_2, ..., p_k$
+
+- trials are independent
+
+We conduct $n$ trials and let $X_i = "# of outcome" i "observed", 1<=i<=k, k in NN_(>0)$
+
+$X_1, .., X_k ~ "MN"(n, p_1, ..., p_k) "where " sum_(i=0)^k p_i = 1 "and" sum_(i=1)^k X_i = n$
+
+$X_1, ..., X_(k-1) ~"MN"(n, p_1, ..., p_(k-1))$
+
+*WARN*: trials are independent, but variables are not independent
+
+]
+
+Examples of : 
+
+- \# of votes for candidates in election
+
+- \# outcomes on a dice roll
+
+- \# of each answer to survey/question
+
+Suppose roll 10 fair 6-sided dices and let 
+
+$X_1 = "# of "2, X_2 = "# of" 6, X_3 = "# of" 2 $
+
+What is the probability of $f(2, 6, 2) = (10!/(2!6!2!))(1/6)^2 (1/3)^6 (1/2)^2$
+
+Joint PMF: $ f(x_1, ..., x_k) = frac(n!, x_1!...x_k!)p_1^x_1 ... p_k^(x_k), space forall sum_(i=1)^k x_i = n \
+
+f(x_1, ..., x_(k-1)) = frac((n-1)!, x_1!...x_(k-1)! (n- sum_(i)^(k-1) x_i)!)p_1^x_1 ... p_(k-1)^(x_(k-1)) (sum_(i)^(k-1) x_i)^(n- sum_(i)^(k-1) x_i), space forall sum_(i=1)^k x_i = n 
+$
+\
+Marginal PMF: 
+
+$ f_X_1 (x_1) = sum_(x_2) ... sum_(x_k) f(x_1, ..., x_k) $
+
+Example, $k = 3$
+
+$f_X_1(x_1) = sum_(x_2=0)^(n-x_1) f(x_1, x_2) = sum_(x_2=0)^(n-x_1) frac(n!, x_1!x_2! (n-x_1-x_2)!) p_1^x_1 p_2^x_2 (1-p_1-p_2)^(n-x_1-x_2) \
+
+= binom(n, x_1)p_1 x^1 sum_(x_2=0)^(n-x_1) binom(n-x_1, x_2) p_2^x_2 (1-p_1-p_2)^(n-x_1-x_2) = binom(n, x_1)p_1^x_1 (1-p_1)^(n-x_1) $
+
+$X_1 ~ "Bin"(n, p_1), X_i ~ "Bin"(n, p_i)$
+
+If $U = X_1+X_2, k = 3$
+
+$f_U (u) = sum_(x_1=0)^u f(x, u-x_1) = sum_(x_1=0)^u frac(n!, x_1! (u-x_1)! (n-u)!) p_1^x_1 p_2^(u-x_1) (1-p_1 - p_2)^(n-u) \ 
+
+= binom(n, u) (p_1+p_2)^u (1-p_1-p_2)^(n-u)(p_1+p_2)^u
+$
+
