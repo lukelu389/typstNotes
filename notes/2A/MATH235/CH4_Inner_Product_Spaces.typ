@@ -447,6 +447,10 @@ Example:
 #thm[*Orthogonal Decomposition Theorem* \ 
 
 Let $W$ be a subspace of the inner product space $V$. Let $vec(v) in V$. Then $exists "unique" vec(p) in W$ and $vec(r) perp W, "that is" ip(vec(r), vec(w)) = 0, forall vec(w)in W$ s.t. $ vec(v) = vec(p)+vec(r) $
+
+Alternatively,
+
+If $W subset.eq V$ is a subpsace and if $vec(v) in V$, then $ vec(v) = "proj"_W vec(v) + "proj"_(W^perp) vec(v) $ 
 ] 
 
 #defn[*Projection on Subspace* \ 
@@ -516,7 +520,7 @@ $therefore {w_1, ..., w_k}$ is an orthobasis for $W$
 
 Because linear independent as the outcome of Gram-Schmidt is already linearly independent since they are orthogonal and non-zero
 
-It suffices to shwo that $n_i perp w_j, forall i, j$ because $w_j "span" W, "b/c" {w_1, ..., w_n, n_1, ..., n_l}$ is an orthogonal set
+It suffices to show that $n_i perp w_j, forall i, j$ because $w_j "span" W, "b/c" {w_1, ..., w_n, n_1, ..., n_l}$ is an orthogonal set
 
 ]
 #align(right)[$square$]
@@ -525,15 +529,113 @@ It suffices to shwo that $n_i perp w_j, forall i, j$ because $w_j "span" W, "b/c
 #proof[
 Orthogonal Decomposition Theorem
 
-Existence: Choose an orthobasis ${w_1, ..., w_k, n_1, ..., n_l}$ like the lemma. 
+Existence: 
 
-Given $vec(v)_i$, we can write $vec(v) = sum_(i=1)^k "proj"_w_i v (in W) + sum_(j=1)^l "proj"_w_i v (in W^perp)$
+Choose an orthobasis ${w_1, ..., w_k, n_1, ..., n_l}$ like the lemma. 
+
+Given $vec(v)_i$, we can write $vec(v) = sum_(i=1)^k "proj"_w_i v (in W) + sum_(j=1)^l "proj"_n_i v (in W^perp)$
 
 This is a formula for $"proj"_W vec(v) + "perp"_W vec(v)$
 
-Uniqueness: Let $v = p+r = tilde(p)+tilde(r)$ where $p, tilde(p) in W "and" r, tilde(r) in W^perp$
+Uniqueness: 
 
-$==> p+r = tilde(p)+tilde(r) ==> p-tilde(p) in W = r-tilde(r) in W^(perp) ==> p - tilde(p) = 0, r-tilde(r)= 0$
+Let $v = p+r = tilde(p)+tilde(r)$ where $p, tilde(p) in W "and" r, tilde(r) in W^perp$
+
+$==> p+r = tilde(p)+tilde(r) ==> p-tilde(p) (in W) = r-tilde(r) (in W^(perp)) \
+
+
+==> p - tilde(p) perp p - tilde(p) ==> ip(p - tilde(p), p - tilde(p)) = 0 <==> p - tilde(p) = 0 <==> p = tilde(p)\
+
+==>r-tilde(r) perp r-tilde(r) ==> ip(r-tilde(r), r-tilde(r)) = 0 <==> r-tilde(r) = 0 <==> r=tilde(r)$ by positive definite.
+
+
 
 ]
 #align(right)[$square$]
+
+#defn[*Proposition*
+
+Let $V$ be an inner product space and $W subset.eq V$ be a subspace.
+1. $W^(perp) in V$
+
+2. $W union W^(perp) = {vec(0)}$ by positive definite
+
+3. $"dim"W + "dim"W^perp = "dim" V$
+]
+
+Examples:
+
+1. $S = {vec(0)}, S^(perp)  = {vec(v) in V: vec(v) perp vec(0)} = V$
+
+2. $S = V, S^perp = {vec(v) in V: vec(v) perp V} = vec(0)$ by positive definite
+
+3. $W = {mat(x;y;z): 2x-y+5z=0} subset.eq RR^3$ with dot product
+
+  $W^perp = "span"{mat(2;-1;5)}$
+
+4. $W = "span"{mat(1, 1;1, 1), mat(1, 1; 0, 0)} in M_(2 times 2)(RR)$ with Frobenius inner product
+
+  It suffices to find all $A in V$ s.t. $ip(A, mat(1, 1;1 , 1)) = 0$ and $ip(A, mat(1, 1; 0, 0)) = 0$
+
+  Let A = $mat(a, b; c, d)$
+
+  $ip(A, B) = a+b+c+d = 0, ip(A, C)= a+b = 0$
+
+  $c = -d, a = -b ==> A = mat(-b, b; -d, d) = b mat(-1, 1; 0, 0)+ d mat(0, 0; -1, 1)$
+
+  $W^perp = "span"{mat(-1, 1; 0, 0), mat(0, 0; -1, 1)}$
+
+#thm[*Shortest Distance Theorem* \ 
+
+Let $W subset.eq V$ is a subspace. Let $vec(v) in V$ have orghogonal decomposition 
+$ vec(v) &= vec(p)+vec(r) \
+
+  vec(p) &= "proj"_(W) vec(v) \
+
+  vec(r) &= "proj"_(W^perp) vec(v)
+$
+
+Then $vec(p)$ is the vector in $W$ closest to $vec(v)$, i.e. $ "dist"(vec(v), vec(p)) &<= "dist"(vec(v), vec(w)) space forall vec(w) in W \
+
+||vec(v)-vec(p)|| &<= ||vec(v)-vec(w)||
+$]
+
+
+#proof[
+Shortest Distance Theorem
+
+Consider a right triangle and let $v, p, w$ be vertices. 
+
+Then $||v-w||^2 = ||v-p+p-w||^2 = ||(v-p)+ (p-w)||$ where $(v-p) perp (p-w)$
+
+$==> ||v-p||^2 + ||p-w||^2 >= ||v-p||^2$
+]
+#align(right)[$square$]
+
+\
+*Polynomial Approximation*
+
+Example:
+
+Let $V = {"be continuous functions" f:[-1, 1]->RR^2}$
+
+$W = "span"{1, x, x^2, ..., x^N}$
+
+Let $f in V$. Find a polynomial of degree at most $N$ that best approximates $f$.
+
+We want $p in W$ that is closest to $f = e^x$ and $p = "proj"_W_N f$
+
+We need to choose the inner product: $ip(f, g) = integral_(-1)^1 f g $
+
+We need an orthobasis, that is apply Gram-Schmidt to $W :{1, x, x^2, ..., x^N} ==> {1, x, 3x^2-1, ...}$
+
+$"proj"_(W_1) (e^x) = "proj"_(w_0) e^x + "proj"_(w_1) e^x  approx 1.175+1.104x$
+
+$"proj"_(W_2) (e^x) = "proj"_(w_0) e^x + "proj"_(w_1) e^x + "proj"_(w_2) e^x approx 0.996+1.104x+0.537x^2$
+
+$"proj"_(W_3) (e^x) = "proj"_(w_0) e^x + "proj"_(w_1) e^x + "proj"_(w_2) e^x+ "proj"_(w_3) e^x e^x approx 0.996+0.998x+0.537x^2+0.176x^3$
+
+
+
+*TEST2 CUTOFF*
+

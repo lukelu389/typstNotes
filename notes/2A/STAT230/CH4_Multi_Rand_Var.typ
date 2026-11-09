@@ -213,6 +213,53 @@ If $U = X_1+X_2, k = 3$
 
 $f_U (u) = sum_(x_1=0)^u f(x, u-x_1) = sum_(x_1=0)^u frac(n!, x_1! (u-x_1)! (n-u)!) p_1^x_1 p_2^(u-x_1) (1-p_1 - p_2)^(n-u) \ 
 
-= binom(n, u) (p_1+p_2)^u (1-p_1-p_2)^(n-u)(p_1+p_2)^u
+= binom(n, u) (p_1+p_2)^u (1-p_1-p_2)^(n-u)
 $
 
+== 4.3 Expectation, Covariance, Linear Correlation
+
+*Expectation*
+
+To find the expected value of a funciton of $X$ and $Y$, 
+
+we let $U = g(X, Y)$ and find $E[U]$, $E[g(X, Y)] = E[U] = sum_u u f_U (u) = sum_x sum_y g(x, y) f(x, y)$
+
+Properties:
+
+1. Linearity: $E[a g(X, Y)+ b h(X, Y) + c] = a E[g(X, Y)]+ b E[h(X, Y)] +c$
+
+2. Independence: $E[g(X) h(Y)] = E[g(X)] E[h(y)]$
+
+3. $(X_1, X_2, ..., X_N) ~ "MN"(n, p_1, p_2, ..., p_n)$
+
+  For $n>=2$
+
+  $E[X_i X_j] = n (n-1)p_1 p_2 $
+
+
+#defn[*Covariance* \ 
+
+The *covariance* of two random variables $X, Y$ is $ "Cov"(X, Y) = sigma_(X Y) = E[(X-mu_x)(Y-mu_Y)] = E[X Y] - mu_X mu_Y $
+
+If $"Cov"(X, Y) > 0$, indicates positive *linear* association
+
+If $"Cov"(X, Y) < 0$, indicates negative *linear* association
+]
+
+#thm[*Independence and Covariance*\ 
+
+If $X, Y$ are independent random variables, then
+
+$ "Cov"(X, Y) = 0 $
+
+*WARN* the converse is FALSE
+
+Zero covariance DOES NOT imply independence.
+]
+
+#defn[*Correlation* \ 
+
+$ "Corr"(X, Y) = rho_(X Y) = abs(frac("Cov"(X, Y), sigma(X) sigma(Y)))<=1 $
+
+We can interpret the magnitude as the strengh of the linear relationship. The bigger the absolute value, the stronger the relation.
+]

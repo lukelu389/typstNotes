@@ -41,7 +41,7 @@ If $f(a, b)$ is a local extrema of $f(x, y)$, then $ f_x (a, b)=0 "or DNE"  $ an
 
 A point $(a, b) in "dom"f$ is a critical point of $f$ if 
 
-$ f_x (a, b) = 0 "or DNE" $ and $ f_y(a, b)= 0 "or DNE" $
+$ f_x (a, b) = 0 "or DNE" $ and $ f_y (a, b)= 0 "or DNE" $
 
 A local extrema must occur at a critical point BUT the reverse is not true.
 ]
@@ -115,23 +115,78 @@ Let $H f=mat(f_(x x), f_(x y); f_(y x), f_(y y))$ be the Hessian matrix of $f in
 
 Example:
 
-$f(x, y) = 2(x-y)^2 - x^4 - y^4$ has critical points $(sqrt(2), -sqrt(2)), (-sqrt(2), sqrt(2)), (0, 0)$
+1. $f(x, y) = 2(x-y)^2 - x^4 - y^4$ has critical points $(sqrt(2), -sqrt(2)), (-sqrt(2), sqrt(2)), (0, 0)$
 
-$f_x = 4(x-y)-4x^3, f_y = 4(x-y)-4y^3$
+  $f_x = 4(x-y)-4x^3, f_y = 4(x-y)-4y^3$
 
-$f_(x x) = 4-12x^2, f_(x y) = f_(y x) = -4, f_(y y) = 4-12y^2$
+  $f_(x x) = 4-12x^2, f_(x y) = f_(y x) = -4, f_(y y) = 4-12y^2$
 
-$"det"(H f(sqrt(2), -sqrt(2)) )= "det"(mat(-20, -4;-4, -20)) > 0, -20>0 ==>$ local maximum
+  $"det"(H f(sqrt(2), -sqrt(2)) )= "det"(mat(-20, -4;-4, -20)) > 0, -20>0 ==>$ local maximum
 
-$"det"(H f(-sqrt(2), sqrt(2))) = "det"(mat(-20, -4; -4, -20)) >0, -20>0 ==>$ local maximum
+  $"det"(H f(-sqrt(2), sqrt(2))) = "det"(mat(-20, -4; -4, -20)) >0, -20>0 ==>$ local maximum
 
-$"det"(H f(0, 0)) = "det"(mat(4, -4; -4, 4)) = 0 ==>$ inconclusive. 
+  $"det"(H f(0, 0)) = "det"(mat(4, -4; -4, 4)) = 0 ==>$ inconclusive. 
 
-We will investigate the sign $f(x, y)-f(0,0) = 2(x-y)^2 - x^4 - y^4 -0$
+  We will investigate the sign $f(x, y)-f(0,0) = 2(x-y)^2 - x^4 - y^4 -0$
 
-If $y=0$, $f(x, 0) -f(0, 0) = 2(x)^2 - x^4 = x^2(2-x^2)>0, space 0<x^2<2$
+  If $y=0$, $f(x, 0) -f(0, 0) = 2(x)^2 - x^4 = x^2(2-x^2)>0, space 0<x^2<2$
 
-If $y=x$, $f(x, x) -f(0, 0) = - 2x^4 < 0, space forall x != 0$. Thus it is saddle point from the above discovery.
+  If $y=x$, $f(x, x) -f(0, 0) = - 2x^4 < 0, space forall x != 0$. Thus it is saddle point from the above discovery.
 
+2. Find and classify critical points of $f(x, y) = (3x+4x^3)(y^2+2y)$
+
+  $f_x = (y^2+2y)(3+12x^2), f_y = (3x+4x^3)(2y+2)$
+  
+  Case1, $y = 0 ==> x = 0 ==>(0, 0)$
+
+  Case2, $y = -2 ==> x = 0 ==> (0, -2)$
+
+  $f_(x x) = 24x(y^2+2y), f_(x y) = f_(y x) = (2y+2)(3+12x^2), f_(y y) = 2(3x+4x^3)$
+
+  $"det"(H f(0, 0))="det"(mat(0, 6; 6, 0) )< 0$, is a saddle point by SPDT
+
+  $"det"(H f(0, -2)) = "det"(mat(0, -6; -6, 0)) <0$, is a saddle point by SPDT
+
+
+#defn[*Bound* \ 
+
+A set $S subset.eq RR^2$ is said to be *bounded* if it is contained in some neighborhood of the origin. That is, every point in $S$ has finite distance from the origin.
+
+A point $(a, b)$ is said to be a *boundary point* of $S$ if in every neighborhood of $(a, b)$ contains a least one point in $S$ an one point not in $S$
+
+A set $S subset.eq RR^2$ is said to be *closed* if it contains all of *boundary points*.
+]
+
+Examples:
+
+1. $S = {(x, y) in RR^2 : x^2+y^2<1}$
+
+  #align(center)[#image("../../../pictures/yr2/cal3ch9_3.png", width:6cm)]
+
+  This set is *bounded*, but not *closed* b/c did not contain all of the *boundary points* 
+
+\
+2. $S ={(x, y) in RR^2: x>=0}$
+
+  #align(center)[#image("../../../pictures/yr2/cal3ch9_4.png", width:6cm)]
+
+  This set is *not bounded*, but *closed* by the vertical line $x = 0$
+
+
+
+#thm[*Extreme Value Theorem 2D* \ 
+
+  If $f(x, y)$ is a continuous on a closed and bounded subset of $S subset.eq RR^2$, then there exists $(a, b), (c, d)in S$ s.t. $ f(a, b)<=f(x, y)<=f(c, d) space forall (x, y) in S $
+  
+  where $f(a, b)$ is the absolute minimum and $f(c, d)$ is the absolute maximum
+]
+
+*Note*: A function $f(x, y)$ may have an absolute extrema on $S$ even if these conditions are not satisfied.
+
+Examplew:
+
+1. $f(x, y) = cases(1 "  if" y>=x, -1 "if" y<x)$ and $S = {(x, y) in RR^2: x>0, y>0}$
+
+  $f$ is discontinous on $S$ and $S$ is not closed and not bounded, but we have absolute extrema
 
 == 9.3 Proof of the Second Partial Derivative Test

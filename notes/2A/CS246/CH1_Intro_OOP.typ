@@ -84,9 +84,9 @@ hello.cc
 
 ```
 
-For this course, `include`, `stdio.h`, `printf` are banned. 
+For this course, `include`, `stdio.h`, `printf` are banned.
 
-Instead ```cc std::cout << value <<std::endl ``` is used. 
+Instead ```cc std::cout << value <<std::endl ``` is used.
 
 We can avoid ```cc std::``` by having ```cc using namespace std```
 
@@ -100,20 +100,28 @@ We can avoid ```cc std::``` by having ```cc using namespace std```
 Importing ```cc iostream``` gives access to three variables:
 
 #table(
-    columns: 3, 
-    align: center,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [`std::cout`], [type: `ostream`], [```cc cout << x;
-    //print values stoerd in x on stdout```],
-    [`std::cerr`],  [type: `ostream`], [```cc cerr << "Error" << error << endl;
-    //print error message to stderr```],
-    [`std::cin`], [type: `istream`], [```cc cin >> x;  
-    //reads from stdin to store in x ```]
+  columns: 3,
+  align: center,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [`std::cout`],
+  [type: `ostream`],
+  [```cc cout << x;
+  //print values stoerd in x on stdout```],
+
+  [`std::cerr`],
+  [type: `ostream`],
+  [```cc cerr << "Error" << error << endl;
+  //print error message to stderr```],
+
+  [`std::cin`],
+  [type: `istream`],
+  [```cc cin >> x;  
+  //reads from stdin to store in x ```],
 )
 
 Program "01-intro/plus.cc"
-```cc 
+```cc
 import <iostream>;
 
 using namespace std;
@@ -129,25 +137,25 @@ int main(){
 \
 \
 \
- 
+
 #info[*I/O information*
-- Reading ints ignores leading white spaces
-- After attempting to read, checking for success is important
-- If a reads fails, th expression "```cc cin.fail()```" will be true
-  - If a read fails, all the subsequent reads fails. (unless specified)
+  - Reading ints ignores leading white spaces
+  - After attempting to read, checking for success is important
+  - If a reads fails, th expression "```cc cin.fail()```" will be true
+    - If a read fails, all the subsequent reads fails. (unless specified)
 
-  - When a read fails, we most acknowledge the failure and to attempt resuming reading using 
-  
-    - ```cc cin.clear(); ``` to clear the flag
-    - ```cc cin.ignore(); ``` to ignore the one that caused the flag to be raised.
+    - When a read fails, we most acknowledge the failure and to attempt resuming reading using
 
-- If a read fails due to end of input(eof), the expression "```cc cin.eof()```" will be true
+      - ```cc cin.clear(); ``` to clear the flag
+      - ```cc cin.ignore(); ``` to ignore the one that caused the flag to be raised.
 
-\
+  - If a read fails due to end of input(eof), the expression "```cc cin.eof()```" will be true
 
-*Implicit/Automatic Conversion*: 
+  \
 
-C++ will automatically treat `cin` as a `boolean` value: ```cc !cin == cin.fail()```
+  *Implicit/Automatic Conversion*:
+
+  C++ will automatically treat `cin` as a `boolean` value: ```cc !cin == cin.fail()```
 ]
 
 \
@@ -155,7 +163,7 @@ Program "02-io/readInts.cc"
 
 Goal: Read and print all ints from stdin. Stop in case of failure.
 
-```cc 
+```cc
 import <iostream>;
 using namespace std;
 
@@ -175,7 +183,7 @@ Program "02-io/readInts5.cc"
 Goal: Read and print all ints from stdin. Ignore all non-ints. Stop at eof.
 
 
-```cc 
+```cc
 import <iostream>;
 using namespace std;
 
@@ -184,7 +192,7 @@ int main(){
   while(true){
     if(cin >> x){
       cout << x << endl;
-    }elif(cin.eof()){
+    }else if(cin.eof()){
       break;
     }else{
       cin.clear(); //clear the flag raised when reads fails for reading non-ints
@@ -195,7 +203,7 @@ int main(){
 ```
 
 *I/O manipulators*
-```cc 
+```cc
 int x = 95;
 cout << hex << x; //print in hexadecimal
 cout << dec; //go back to base-10
@@ -207,7 +215,7 @@ cout << dec; //go back to base-10
 
 *Strings*
 
-```cc 
+```cc
 import <string>;
 //Automatic memory managed
 
@@ -221,15 +229,15 @@ string s{"h"}; //Uniform Initialization of strings
 
 
 #table(
-    columns: 3, 
-    align: center,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [Operations], [C], [C++],
-    [Comparison], [```c strcmp(s1, s2)```], [```cc s1 == s2```],
-    [Length], [```c strlen() //O(n)``` ], [```cc s1.length()//O(1)```],
-    [Random Acess], [```c str[i] ```], [```cc str[i] ```],
-    [Concatenation], [```c strcat(s1, s2)```], [```cc s1 + s2```]
+  columns: 3,
+  align: center,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Operations], [C], [C++],
+  [Comparison], [```c strcmp(s1, s2)```], [```cc s1 == s2```],
+  [Length], [```c strlen() //O(n)``` ], [```cc s1.length()//O(1)```],
+  [Random Acess], [```c str[i] ```], [```cc str[i] ```],
+  [Concatenation], [```c strcat(s1, s2)```], [```cc s1 + s2```],
 )
 
 *Note*: in C++, operators can be recoded as functions
@@ -251,7 +259,7 @@ We can read from and write to other sources/destination
 ```cc
 import <fstream>;
 ```
-```cc ifstream```: reads from a failure
+```cc ifstream```: reads from a file
 
 ```cc ofstream```: writes to a file
 
@@ -267,16 +275,14 @@ string s;
 myfile >> s; //reads the first word from the file
 
 ```
-\
-\
-\
+
 *Note*:
 
 Everything we can do with `cin`(`iostream`), we can do with `ifstream` variable
 
 Everything we can do with `cout`(`iostream`), we can do with `ofstream` variable
 
-```cc 
+```cc
 import <iostream>;
 import <fstream>;
 using namespace std;
@@ -340,11 +346,12 @@ int main(){
 Program "01-intro/readInts5.cc" vs "01-intro/readIntsSS.cc"
 
 #table(
-    columns: 3, 
-    align: center,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [Inputs], [readInts5.cc], [readIntsSS.cc], [`Hello123`], [`123` as output], [no outputs]
+  columns: 3,
+  align: center,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Inputs], [readInts5.cc], [readIntsSS.cc],
+  [`Hello123`], [`123` as output], [no outputs],
 )
 
 == Arguments
@@ -352,7 +359,6 @@ Program "01-intro/readInts5.cc" vs "01-intro/readIntsSS.cc"
 *Command Line Argument*
 
 ```cc
-
 int main(int argc, char *argc[]){}
 
 // argc is the numbers of arguments to the program
@@ -381,10 +387,10 @@ printfile("file.txt"); //takes file.txt as input that replaces myfile.txt
   - The last parameter(or last `n` parameters can have default value)
 
   ```cc
-void foo(int x = 0, string temp);//ILLEGAL
+  void foo(int x = 0, string temp);//ILLEGAL
 
-void foo(string temp, int x = 0)); //LEGAL
-```
+  void foo(string temp, int x = 0)); //LEGAL
+  ```
 
 2. If we are going to rely on default values, we can leave out the last(or lthe last `n`) arguments
 
@@ -392,32 +398,27 @@ void foo(string temp, int x = 0)); //LEGAL
   void foo(int x = 0, string s = "bla"); 
 
   foo(5, "bar"); //LEGAL
-
   foo(5); //LEGAL
-
   foo(); //LEGAL
 
   foo("bar"); //ILLEGAL
-
   foo(, "bar"); //ILLEGAL
   ```
 
   ```cc foo``` acts as 3 different functions:
-  
-  ```cc 
+
+  ```cc
   void foo(int x, string s);
-
   void foo(int x);
-
-  void foo(void);
+  void foo();
   ```
 
 == Function Overloading
 
 #defn[*Function Overloading*
-- Can write function with same name as long as the number or types of parameters or order of parameters makes each function distinct
+  - Can write function with same name as long as the number or types of parameters or order of parameters makes each function distinct
 
-- Difference in the return type is not enough
+  - Difference in the return type is not enough
 ]
 \
 
@@ -429,9 +430,7 @@ Example:
 
 int x;
 cin >> x; //stream operator, imported
-
 //The above translates to operator>>(cin, x), which calls operator>>(istream, int)
-
 string s;
 cin >> s; //Tanslates to operator>>(cin, s), which calls operator>>(istream, string)
 
@@ -440,7 +439,7 @@ s1 + s2; //Translates to operator+(s1, s2), which calls operator+(string, string
 ```
 
 == Structs
-\
+
 In `C++`
 ```cc
 struct Node{
@@ -463,24 +462,21 @@ const Node n = {s, nullptr};
 //n cannot be modifiy, n.data cannot be modified, and n.next cannot be modified
 
 int n=5; int m = 10;
-const int *p = &n; //p is a pointer to a const int
+const int *p = &n; //p is a pointer to a constant integer
 
 p = &m; //LEGAL
 *p = 10; //ILLEGAL
 n = 10; //LEGAL
 
-int const* p = &n; //p is a constant pointer to an int
+int const* p = &n; //p is a pointer to a constant integer
 
-p = &m; //ILLEGAL
-*p = 10; //LEGAL
-
+p = &m; //LEGAL
+*p = 10; //ILLEGAL
 n=10; //LEGAL
 
 
 const int x = 5;
-
 int *p = &x; //ILLEGAL
-
 const int *p = &x; //LEGAL
 ```
 \
@@ -488,30 +484,30 @@ const int *p = &x; //LEGAL
 \
 *Parameter Passing*
 #table(
-    columns: 2, 
-    align: center,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [Pass by Value], [Pass by Pointer],
-    [```cc void inc(int x){
-          x = x+1;
-        }//Pass by value
+  columns: 2,
+  align: center,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Pass by Value], [Pass by Pointer],
+  [```cc void inc(int x){
+    x = x+1;
+  }//Pass by value
 
-        int y = 10;
-        inc(y);
+  int y = 10;
+  inc(y);
 
-        cout<<y; //prints 10```],
+  cout<<y; //prints 10```],
 
-    [```cc
-      void inc(int *x){
-        *x = *x+1;
-      }//Pass by reference
+  [```cc
+  void inc(int *x){
+    *x = *x+1;
+  }//Pass by reference
 
-      int y = 10;
-      inc(&y);
+  int y = 10;
+  inc(&y);
 
-      cout<<y; //prints 11
-      ```]
+  cout<<y; //prints 11
+  ```],
 )
 
 We do not need ```cc cin >> &x``` instead of ```cc cin >> x``` because of references
@@ -520,26 +516,26 @@ We do not need ```cc cin >> &x``` instead of ```cc cin >> x``` because of refere
 
 #defn[*L-Values and R-Values*\
 
-*L-Values* referes to a location
+  *L-Values* referes to a location
 
-- All variables are *L-Values*
+  - All variables are *L-Values*
 
-- Arrays and expressions of form `arr[i]` are *L-Values*
+  - Arrays and expressions of form `arr[i]` are *L-Values*
 
-- That appears on the left-hand-side of an assignment(informal definition)
+  - That appears on the left-hand-side of an assignment(informal definition)
 
-*R-Values* anything that are not *L-Values*
+  *R-Values* anything that are not *L-Values*
 
-- Temporary values or computations(i.e. `x+y`)
+  - Temporary values or computations(i.e. `x+y`)
 
-- `struct`
+  - `struct`
 ]
 
 *L-Value Reference*
 
 - Acts as an constant pointer with automatic dereference
 
-  ```cc 
+  ```cc
   int x = 10;
   int &y = x; //y is a l-value reference to x
   y = 15; //x becomes 15
@@ -568,44 +564,44 @@ Example:
 
 
 #table(
-    columns: 3, 
-    align: center,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [Pass by Value], [Pass by Pointer], [Pass by Reference],
-    [```cc void inc(int x){
-          x = x+1;
-        }//Pass by value
+  columns: 3,
+  align: center,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Pass by Value], [Pass by Pointer], [Pass by Reference],
+  [```cc void inc(int x){
+    x = x+1;
+  }//Pass by value
 
-        int y = 10;
-        inc(y);
+  int y = 10;
+  inc(y);
 
-        cout<<y; //prints 10```],
+  cout<<y; //prints 10```],
 
-    [```cc
-      void inc(int *x){
-        *x = *x+1;
-      }//Pass by reference
+  [```cc
+  void inc(int *x){
+    *x = *x+1;
+  }//Pass by reference
 
-      int y = 10;
-      inc(&y);
+  int y = 10;
+  inc(&y);
 
-      cout<<y; //prints 11
-      ```],
+  cout<<y; //prints 11
+  ```],
 
-    [```cc
-      void inc(int &n){
-        n =n+1; 
-        // n is another name for y 
-      }
-      int y = 10;
-      inc(y);
+  [```cc
+  void inc(int &n){
+    n =n+1; 
+    // n is another name for y 
+  }
+  int y = 10;
+  inc(y);
 
-      cout<<y; //prints 11
-      ```]
+  cout<<y; //prints 11
+  ```],
 )
 
-So the answer the signature of the `cin >> x` is 
+So the answer the signature of the `cin >> x` is
 
 ```cc
 std::istream &operator>>(std::istream &in, int &n){}
@@ -625,7 +621,7 @@ void computeStandings(uwstudents student){}
 computeStandings(all);
 ```
 - Pass by value will be expensive
-- Passing a pointer to `all` would be efficient 
+- Passing a pointer to `all` would be efficient
 ```cc
 void computeStandings_v2(uwstudents &student){}
 computeStandings_v2(all);
@@ -643,7 +639,7 @@ void printStudentOnCNDP(const uwstudents &s){}
 - `s` is an alias to `all`
 - `s` cannot be mutated
 
-#tip[Prefer to pass by reference to `const`] \ 
+#tip[Prefer to pass by reference to `const`] \
 
 ```cc
 void f(int &n){}
@@ -694,29 +690,35 @@ int main(){
 ```
 
 #table(
-    columns: 2, 
-    align: left,
-    stroke: 0.5pt,
-    inset: 6pt,
-    [Stack Frame], [Heap Memory],
-    [`np1`], [data],
-    [], [next],
-    [`np2`], [data],
-    [], [next],
-    [`n`
+  columns: 2,
+  align: left,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Stack Frame], [Heap Memory],
+  [`np1`], [data],
+  [], [next],
+  [`np2`], [data],
+  [], [next],
+  [`n`
     - data
-    - next], [],
-    [`arr1`], [0],
-    [], [1],
-    [], [2],
-    [`arr`2
+    - next
+  ],
+  [],
+
+  [`arr1`], [0],
+  [], [1],
+  [], [2],
+  [`arr`2
     - 0
     - 1
-    - 2], [],
-    [`arr3`], [0],
-    [], [1],
-    [], [2]
-  )
+    - 2
+  ],
+  [],
+
+  [`arr3`], [0],
+  [], [1],
+  [], [2],
+)
 
 ```cc
 
@@ -736,30 +738,36 @@ delete [] p;
 \
 Suppose
 #table(
-    columns: 3, 
-    align: left,
-    stroke: 0.5pt,
-    inset: 6pt,
-  [Return By Value],  [ILLEGAL], [ILLEGAL],
+  columns: 3,
+  align: left,
+  stroke: 0.5pt,
+  inset: 6pt,
+  [Return By Value], [ILLEGAL], [ILLEGAL],
   [```cc
-    Node getNode(){
-      Node n;  
-      return n;
-    }
-    ```],  [```cc Node *getNode(){
-                Node n; 
-                return &n;
-              }
-              ```], [```cc Node &getNode(){
-                            Node n;
-                            return n;
-                          }
-                          ```],
+  Node getNode(){
+    Node n;  
+    return n;
+  }
+  ```],
+  [```cc Node *getNode(){
+    Node n; 
+    return &n;
+  }
+  ```],
+  [```cc Node &getNode(){
+    Node n;
+    return n;
+  }
+  ```],
 
-  [- Return by value
+  [
+    - Return by value
 
-  - Copies from the callee
-  - Stack frame to the caller], [Dangling pointer], [Out of scope]
+    - Copies from the callee
+    - Stack frame to the caller
+  ],
+  [Dangling pointer],
+  [Out of scope],
 )
 
 \
@@ -778,9 +786,9 @@ vector v4 = 3 * v1;
 
 We can implement operator `+` as a function
 
-  - Arg1: left-hand-side(pass by reference to `const`)
-  - Arg2: right-hand-side(pass by reference to `const`)
-  - Return type: vector by value(after function call, it is no longer in stack frame)
+- Arg1: left-hand-side(pass by reference to `const`)
+- Arg2: right-hand-side(pass by reference to `const`)
+- Return type: vector by value(after function call, it is no longer in stack frame)
 
 
 ```cc
@@ -812,7 +820,7 @@ Grade g{};
 cin >> g;
 cout << g <<endl;
 ```
-```cc 
+```cc
 
 ostream &operator<<(ostream &out, const Grade &g){ //need to put down flags when error
   out << q.grade << "%";
@@ -833,9 +841,9 @@ It is legal because `ostream` is a global variable
 == C++ Modules/Separate Compilations
 
 \
-*Interface*: type definitions, function declarations 
+*Interface*: type definitions, function declarations
 
-*Implementation*: function definitions 
+*Implementation*: function definitions
 
 In C and old C++, interface files are `.h` files, implementation files are `.c / .cc` files
 
@@ -887,7 +895,7 @@ vector &operator+(const vector &v1, cosnt vector &v2){
 
 *Compiling*
 
-```bash 
+```bash
 g++20h iostream sstream fstream...
 
 g++20 -c vector.cc ... #should be compile first because others dependents on it
