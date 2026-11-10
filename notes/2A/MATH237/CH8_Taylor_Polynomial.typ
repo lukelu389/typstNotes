@@ -36,7 +36,7 @@ Examples:
   
   = 1.3+1/2((0.1)^2+2(0.1)(0.2)+(0.2)^2) = 1.3+(0.005+0.02+0.02) = 1.345$
 
-2. Use the linearizatio and second-order Taylor polynomial of $f(x, y) = 1/2 x -y+x^5$ at $(0, 0)$ to approximate $f(0.1, 0.1)$
+2. Use the linearization and second-order Taylor polynomial of $f(x, y) = 1/2 x -y+x^5$ at $(0, 0)$ to approximate $f(0.1, 0.1)$
 
   $L_(0, 0)(x, y) = 0+(1/2+5(0)^4)(x)+ (-1)(y) = 1/2x-y$
 
@@ -57,7 +57,7 @@ If $f''(x)$ exists on $[a, x]$, then $exists a in RR$ s.t $c in (a, x)$ and $ f(
 
 If $f(x, y) in C^2$ in some neighbourhood $N(a, b)$ of $(a, b)$, then $forall (a, b) in N(a, b), exists (c, d)$ on the line segment joining $(a, b)$ and $(x, y)$ s.t. $ f(x, y) = f(a, b)+f_x (a, b)(x-a)+f)y (a, b)(y-b)+R_(1, (a, b))(x, y) $ where 
 
-$ R_(1, (a, b)) (x, y)= 1/2[f_(x x)(c, d)(x-a)^2+2f_( x y) (c, d)(x-a)(y-b)+f_(y y)(c, d) (y-b)^2] $
+$ R_(1, (a, b)) (x, y)= 1/2[f_(x x)(a, b)(x-a)^2+2f_(x y) (a, b)(x-a)(y-b)+f_(y y)(a, b) (y-b)^2] $
 ]
 
 #proof[
@@ -88,7 +88,6 @@ $g'(0) = f_x (a, b)(x-a)+f_y (a, b)(y-b)$
 Let $(c, d) = L(tilde(c)) "point on the line segment"$
 
 $==> g''(tilde(c)) = f_(x x) (c, d)(x-a)^2 +2 f_(x y) (c, d)(x-a)(y-b)+f_(y y) (a, b)(y-b)^2$
-\
 \
 
 $f(x, y) = f(a, b)+f_x (a, b)(x-a)+f_y (a, b)(y-b)+ \
