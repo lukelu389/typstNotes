@@ -114,11 +114,11 @@ Previously,
 
 - No return type
 
-- Default constructor does not have brackets upon calling
+- Default constructor does not have brackets in the class
   
   ```cc 
   CON a constructor(); //ILLEGAL
-  CON b constructor; //LEGAL
+  CON b; //LEGAL
   ```
 ]
 
@@ -379,7 +379,7 @@ Example:
   Node &Node::operator=(const Node &other){
     Node temp{other};
     swap(temp); //swap method from Node
-    //DO NOT write delete temp;, temp is in stack
+    return *this;//DO NOT write delete temp;, temp is in stack
   }
 
   ```

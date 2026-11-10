@@ -568,11 +568,127 @@ Stack<int> sInts;
 sInts.push(1);
 Stack<String> sStrings;
 sStrings.push("hi");
+Stack<Stack<int>> s;
+s.push(sInts);
 ```
 C++ supports templates.
 
 A template class is a class parameterized on one or more types.
 
 - To create objects of the template class we need to provide the type as parameter
+
+== Standard Template Library (STL)
+
+- Many C++ template classes: `vector, array, set, map, etc.`
+
+*`vector`* is a dynamic array that automatically resizes as needed.
+
+Example:
+
+```cc
+import <vector>;
+vector<int> v{3, 4}; //[3, 4], vector object is on the STACK, automatically destroyed when going out of scope.
+v.emplace_back(5); //[3, 4, 5]
+// vector v{3, 4}; is still legal because it is auto inferred, but recommended to indicate
+
+for(int i = 0; i<v.size();++i){
+  cout << v[i] <<endl; //operator[] is overloaded
+}
+
+for(vector<int>::iterator it = v.begin(); it!=v.end(); ++it) cout << *it <<endl;
+for(auto n: v) cout<<n<<endl;
+for(vector<int>::reverse_iterator it = v.rbegin();it != v.rend(); ++it){
+  cout<< *it <<endl;
+}//reverse loop, rbegin() gives the last item, and rbegin() gives one before first element
+
+v.pop_back(); //removes last element
+```
+
+Many STL class methods take `Iterator` as parameter 
+
+Iterator supports some arithmetics: 
+```cc 
+v.erase(v.end()-1);
+v.erase(it+3);
+
+```
+
+Remove all `5` from the vector
+
+```cc
+for(auto it = v.begin(); it!= v.end()){
+  if (*it ==5) {
+    it = v.erase(it); //without it, it will skip the element after the erased element
+  }else{
+    ++it;
+  }
+}
+```
+
+*Note*:
+`erase()` may cause elements to shift internally
+- existing iterators may become invalid
+
+- returns an `Iterator` to the next element
+
+== Object Oriented Desgin Strategy
+
+- Create abstract classes to specify the interface
+
+- Use pointers of the base class to call interface methods
+
+- To change behaviour, change the ctual objects these pointers points to (virtual methods leading to dynamic dispatch to concrete implementation)
+
+*Iterator Desgin Pattern (revisted)*
+
+- Create an abstract iterator class
+
+An `AbsIter` can points ot a `List::Iterator` or a `Set::Iterator`
+```cc
+class AbsIter{
+  public:
+    virtual int &operator* const=0;
+    virtual AbsIter &operator++() =0;
+    virtual bool operator!=(const AbsIter &rhs) const =0;
+    virtual ~AbsIter(){}
+};
+
+class List{
+  ...
+  public:
+    class Iterator : public AbsIter{
+      ...
+    };
+    auto &start = l.begin();
+    foreach(start, l.end(); addFive);
+};
+class Set{
+  ...
+  public :
+    class Iterator : public AbsIter{
+      ...
+    };
+    auto &start = l.begin();
+    foreach(start, l.end(); addFive);
+};
+
+template <typename Fn>;
+void foreach(AbsIter &start, const AbsIter &end, Fn f){
+  while (start !=end){
+    f(*start);
+    ++start;
+  }
+}
+
+```
+
+*Observer Pattern*
+
+Subjsect/Publisher: generates events/data
+
+Observer/Subscriber: interested in notifications
+
+Subject $->$ Observer
+Concrete subject $<- $Concrete observer
 
 
