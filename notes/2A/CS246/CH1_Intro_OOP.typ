@@ -528,7 +528,6 @@ We do not need ```cc cin >> &x``` instead of ```cc cin >> x``` because of refere
 
   - Temporary values or computations(i.e. `x+y`)
 
-  - `struct`
 ]
 
 *L-Value Reference*
@@ -649,14 +648,12 @@ f(5); //ILLEGAL
 g(y+y); //ILLEGAL
 
 g(5); //LEGAL
-g(y+y); //LEGAL
 ```
 
 *Note*: `const` allows to pass by reference with r-values.
 
 == Dynamic/Heap Memory
 
-\
 
 - Anytime allocated must deallocate after use
 - For `malloc()`, use `free()`, banned for 246
@@ -847,10 +844,6 @@ It is legal because `ostream` is a global variable
 
 In C and old C++, interface files are `.h` files, implementation files are `.c / .cc` files
 
-\
-\
-\
-\
 *C++ Modules*
 
 Example:
