@@ -172,21 +172,3 @@ Examples:
 
   This set is *not bounded*, but *closed* by the vertical line $x = 0$
 
-
-
-#thm[*Extreme Value Theorem 2D* \ 
-
-  If $f(x, y)$ is a continuous on a closed and bounded subset of $S subset.eq RR^2$, then there exists $(a, b), (c, d)in S$ s.t. $ f(a, b)<=f(x, y)<=f(c, d) space forall (x, y) in S $
-  
-  where $f(a, b)$ is the absolute minimum and $f(c, d)$ is the absolute maximum
-]
-
-*Note*: A function $f(x, y)$ may have an absolute extrema on $S$ even if these conditions are not satisfied.
-
-Examplew:
-
-1. $f(x, y) = cases(1 "  if" y>=x, -1 "if" y<x)$ and $S = {(x, y) in RR^2: x>0, y>0}$
-
-  $f$ is discontinous on $S$ and $S$ is not closed and not bounded, but we have absolute extrema
-
-== 9.3 Proof of the Second Partial Derivative Test

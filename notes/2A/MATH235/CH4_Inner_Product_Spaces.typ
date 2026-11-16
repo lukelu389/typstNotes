@@ -612,7 +612,7 @@ $==> ||v-p||^2 + ||p-w||^2 >= ||v-p||^2$
 ]
 #align(right)[$square$]
 
-\
+
 *Polynomial Approximation*
 
 Example:
@@ -636,6 +636,81 @@ $"proj"_(W_2) (e^x) = "proj"_(w_0) e^x + "proj"_(w_1) e^x + "proj"_(w_2) e^x app
 $"proj"_(W_3) (e^x) = "proj"_(w_0) e^x + "proj"_(w_1) e^x + "proj"_(w_2) e^x+ "proj"_(w_3) e^x e^x approx 0.996+0.998x+0.537x^2+0.176x^3$
 
 
+*TEST 2 CUTOFF*
 
-*TEST2 CUTOFF*
 
+*Fourier Series*
+
+Basic Idea: approximate a continuous function w/ $sin$ and $cos$
+
+
+
+#defn[*Fourier Series*(Not Tested)
+
+Let $V = "vector space of continuous function"$ on $[-pi, pi]$
+
+$W_N = "span" B = "span"{1, cos x, cos 2x, ..., cos N x, sin x, sin 2x, ..., sin N x }$
+
+We choose an inner product, for example: $ip(f, g) = integral_(-pi)^pi f g$
+
+Since we have chosen that particular inner product, $B$ is orthongonal, therefore $B$ is an orthobasis for $W_N$ and we have 
+$ "proj"_W_N f &= "proj"_1 f +sum_(i =1)^N "proj"_(cos i x) f + sum_(j=1)^N "proj"_(sin j x) f \
+&= a_0 1+ sum_(i=1)^N a_i cos(i x) + sum_(j=1)^N b_j sin (j x) $ 
+
+where $a_0 = ip(f, 1)/ip(1, 1), a_i= ip(f, cos i x)/ip(cos i x, cos i x), b_j = ip(f, sin j x)/ip(sin j x, sin j x)$ are fourrier coefficient
+
+
+]
+
+Example:
+
+$f(x) = x$
+
+$a_i = 0, b_j = 1/j(-1)^(j+1) quad forall i >=0$
+
+Therefore, $x approx "proj"_W_N x = sum_(j=1)^N 2/j (-1)^(j+1) sin (j x)$
+
+
+*Method of Least Square*(Tested)
+
+Basic Idea: solve $(*) space A vec(x)= vec(b)$ for $vec(x)$, we know $(*)$ has a solution if and only if $vec(v) in "Col"A$
+
+What if it is not? Can we find an approximate solution?
+
+$x = x_0 ==> A vec(x)_0 approx vec(b) <==> ||A vec(x)_0-vec(b)|| $ that is as small as possible.
+
+#defn[*Least Square solution* \
+
+Find $vec(x)$ that minimizes $||A vec(x)-vec(b)||$, such $vec(x)$ is called the a *least square solution*
+
+\
+
+Since $||x|| = ip(x, x)= sqrt(x_1^2+ x_2^2 + ... + x_n^2)$
+
+]
+
+Example:
+
+Find the line $y = m x +b$ that best fit a dataset
+
+Then:
+
+$0 = (-2)m+b, 1 = (-1)m+b, 0=0m+b, 2= 0 m+b, 2=2m+b$
+
+$mat(-2, 1;-1, 1;0, 1;1, 1; 2, 1) mat(m; b) = mat(0;1;0;2;2)$, but this is inconsistent, so we need to find the least square solution. 
+
+That is, to minimize $||A vec(x)-vec(b)||$
+
+Let $vec(w) = A vec(x)$, we want $vec(w)$ that minimizes $||vec(w)-vec(b)||$. Note $vec(w)$ is an arbitrary element in $"Col"A$
+
+We want the vector in $"Col"A$ closest to $vec(b)$, that is $vec(w) = "proj"_("Col"A) vec(b)$
+
+We need to solve $A vec(x) = "proj"_("Col"A) vec(b)$
+
+Notice that, $A vec(x) = "proj"_("Col"A) vec(b) <==> vec(x)$ solves $A^T A vec(x) = A^T vec(b)$
+
+$mat(-2, -1, 0, 1, 2; 1, 1, 1, 1, 1) mat(-2, 1;-1, 1;0, 1;1, 1; 2, 1) mat(m;b) = mat(-2, -1, 0, 1, 2; 1, 1, 1, 1, 1) mat(0;1;0;2;2) ==> mat(10, 0; 0, 5) mat(m; b) = mat(5;5) ==> mat(m;b) = mat(1/2; 1)$ 
+
+so $f(x) = 1/2 x +1$
+
+#align(center)[#image("../../../pictures/yr2/la2_ch4_1.png", width:10cm)]

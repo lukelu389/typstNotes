@@ -262,4 +262,162 @@ Zero covariance DOES NOT imply independence.
 $ "Corr"(X, Y) = rho_(X Y) = abs(frac("Cov"(X, Y), sigma(X) sigma(Y)))<=1 $
 
 We can interpret the magnitude as the strengh of the linear relationship. The bigger the absolute value, the stronger the relation.
+
+1. $"Cov"(X, X) = 1$
+2. $"Cov"(X, Y) = "Cov"(Y, X)$
 ]
+
+== 4.4 Linear Combination of Random variables
+
+#thm[*Lemma* \ 
+
+Let $X$, $Y$, $Z, W$ be random variables and let $a, b ∈ R$. Then $ "Cov"(a X + b Y, c Z + d W ) = &a c"Cov"(X , Z) + a d "Cov"(X, W) \ \
++ space  &b c "Cov"(Y, Z) +  b d"Cov"(Y, W) $
+
+This implies: Large values of $"Cov"(X , Y )$ can be a result of the scale of $X$ and $Y$ .
+]
+
+From the above lemma, we can obtain 
+$ "Var"(a X+ b Y) &= "Cov"(a X + b Y, a X+ b Y) \
+
+&= a^2 "Var"(X) + b^2 "Var"(Y) + 2 a b"Cov"(X, Y) \ 
+
+&= a^2 sigma_X^2 + b^2 sigma_Y^2+2a b sigma_X sigma_Y
+$
+
+In general: $"Var"(sum_(i=1)^n c_i X_i) = sum_(i=1)^n c_i^2 sigma_i^2+ 2sum_(i=1)^(n-1) sum_(j=i+1)^n c_i c_i sigma_(i j)$
+
+*Expectaions*
+
+Suppose $overline(X) = frac(sum_(i=1)^n X_i, n) $ where $X_i$ have mean $mu$ and covaraince $sigma^2$
+
+$ E[overline(X)] = E[sum X_i/n] = mu $
+
+$ "Var"[overline(X)] = sigma^2/n + 2 sum sum "Cov"(X_i, Y_j) $
+
+If $X, Y$ are independent, then the covariance becomes 0, so $lim_(n->oo) sigma^2/n = 0$
+
+#defn[*Indicator Random Variable* \ 
+
+Let $I_A = cases(1 "if" A, 0 "if not" A)$, then $I_A ~ "Bin"(1, p)$, where $p = P(A)$
+
+1. $ E[I_A] = P(A)$
+
+2. $"Var"[I_A] = P(A) - [P(A)]^2$
+
+3. $"Cov"(I_A, I_B) = P(A inter B) - P(A)P(B)$
+]
+
+\
+Example:
+
+$#table(
+        columns: 4, 
+        align: auto,
+        stroke: 0.5pt,
+        inset: 6pt,
+        [$f(x, y)$], [0], [1], [$f_Y y$],
+        [0], [0.06], [0.22], [0.28],
+        [1], [0.24], [0.48], [0.72],
+        [$f_X x$], [0.3], [0.7], [1]
+  )$
+
+$E[X] = 0.7, "Var"[X]=0.21$
+
+$E[Y] = 0.72, "Var"[Y] = 0.2016$
+
+$"Cov"[X, Y] =0.48-0.7*0.72 = -0.024$
+
+$"Corr"(X, Y) = -0.1166$
+
+Examples of Indicator variables
+
+1. Binomial: $X ~ "Bin"(n, p)$, let $X_i = cases(1 "if trial is success", 0 "if trial is falure")$
+
+  $X = sum_(i=1)^n X_i ==> E[X_i] = p, "Var"(X_i) = p(1-p), "Cov"(X_i, X_j) = 0$ 
+
+  $E[X] = sum_(i=1)^n E[X_i] = n p$
+
+  $"Var"[X] = sum_(i=1)^n "Var"[X_i] + 2 (0) = n p (1-p)$
+
+2. Hypergeometric: $X~"HG"(N, r, n)$, let  $X_i = cases(1 "if trial is success", 0 "if trial is falure")$
+
+  $X = sum_(i=1)^n X_i ==> E[X_i] = r/N, "Var"(X_i) = r/N (1-r/N), "Cov"(X_i, X_j) < 0$ 
+
+  $E[X] = sum_(i=1)^n E[X_i] = n r/N$
+
+  $"Var"[X] = sum_(i=1)^n "Var"[X_i] - 2 sum sum"Cov"(X_i, X_j) = n r/N -(1-r/N) (N-n)/(N-1)$
+
+3. Given probability of receiving delivery is $1/N$. Let $X = "number delivered correctly"$ with range ${0, 1, ..., N}$
+
+  Let $X_i = cases(1 "if delivered right", 0 "if not delivered right")$
+
+  $X = sum_(i=1)^n X_i ==> E[X_i] = 1/N, "Var"(X_i) = 1/N (1-1/N), "Cov"(X_i, X_j) > 0$ 
+
+  $E[X] = sum_(i=1)^n E[X_i] = 1$
+
+  $"Var"[X] = sum_(i=1)^n "Var"[X_i] - 2 sum sum"Cov"(X_i, X_j) = 1-1/N +1/N$
+
+== 4.5 Markov's Inequality, Chebyshev's Inequality, and the Law of Large Numbers
+
+#thm[*Markov Inequality* \ 
+
+If $X$ is a random variable with $E[ |X| ]<oo$, then for any $epsilon > 0$,$ P(|X|>epsilon) <= 1/epsilon E[ |X| ] $
+]
+
+#thm[*Chebyshev's Inequality* \ 
+
+If $X$ is an random variable with $E[X] = mu, "Var"[X] = sigma^2$, then for any $epsilon > 0$, $ P(|X| > epsilon) <= E[X^2]/epsilon $ and $ P(|X-mu|> epsilon) <= sigma^2/epsilon^2 $
+]
+
+#proof[
+  Note if $|X|>epsilon$, then $X^2 > epsilon^2$, so $P(|X|>epsilon) = P(X^2>epsilon^2) <= E[X^2]/epsilon^2$ 
+  
+  and $P(|X-mu|>epsilon) <= E[(X-epsilon)^2]/epsilon^2 = sigma^2/epsilon^2$
+]
+
+#align(right)[$square$]
+
+#thm[*Weak Law of Large Numbers* \ 
+
+Let $overline(X) = frac(sum_(i=1)^n X_i, n)$ where $X_i$ have mean $mu$, variance $sigma^2$ and are uncorrelated. Then $ lim_(n->0) P(|overline(X)-mu| > epsilon) > 0 $ for $epsilon > 0$
+]
+
+#proof[
+  $0 <= P(|overline(X)-mu| > 0) <= "Var"(overline(X))/epsilon^2 = sigma^2 / (n epsilon^2) $.
+
+  $0<= lim_(n->oo) P(|overline(X)-mu|>epsilon)<=lim_(n->oo) sigma^2/(n epsilon^2) <= 0$
+]
+#align(right)[$square$]
+
+== 4.6 Conditional Random variables
+
+Recall for independence of random variables we used: $P (A B) = P(A)P(B)$
+
+$P(A |B) = P(A B) /P(B)$ 
+
+
+#defn[*Conditional PMF* \ 
+
+The conditional PMF of $X$ given $Y = y$ is $ f_(X|Y) (x|y) = P(X=x|Y=y) = frac(P(X=x, Y=y), P(Y=y)) = f(x, y)/f_Y(y) $ for all $x in$ range $X, y in$ range $Y$
+
+and the conditional PMF of $Y$ given $X=x$ is 
+$ f_(Y|X) = f(x, y)/(f_X (x)) $
+]
+
+*Important Result:*
+
+If $X_1, X_2, X_3 ~ "Mult"(n, p_1, p_2)$,  note$X_2 ~ "Bin"(n, p_2)$
+
+$P(X_1 | X_2 = x_2) = frac(f(x_1, x_2), f_(X_2) (x_2)) = frac((n-x_2)!, x_1!(n-x_1-x_2)!) (p_1/(1-p_2))^x (frac(1-p_1-p_2, 1-p_2))^(n-x_1-x_2) $
+
+$X_1 |X_2=x_2 ~ "Bin"(n-x_2, p_1/(1-p_2))$
+
+
+#defn[*Conditional Mean* \ 
+The conditional mean of $X|Y=y$ is $ E[X|Y=y] = sum_x x f_(X|Y) (x|y) $
+
+The conditional mean of $Y|X=x$ is $ E[Y|X=x] = sum_y y f_(Y|X) (y|x) $
+]
+
+$E[X_1 | X_2 =x_2] = (n-x_2)(p_1/(1-p_2))$

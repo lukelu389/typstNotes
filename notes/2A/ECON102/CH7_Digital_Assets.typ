@@ -7,7 +7,7 @@
 #set-title(Title)
 #meta(title: Title, author: "Luke Lu")
 
-Existing system: 
+Existing system:
 
 $ "Sender's bank" => "Intermediary banks" => "Foreign-exchange conversion" => "Recipient's bank" $
 
@@ -35,7 +35,7 @@ CBDC: digital forms of a country's official currency issued by central bank
 
 Tokenized assets: ral-wrolds assets represented as digital tokens on a blockchain
 
-#align(center)[#image("../../../pictures/yr2/econ2ch7_1.png", width:13cm)]
+#align(center)[#image("../../../pictures/yr2/econ2ch7_1.png", width: 13cm)]
 
 A *ledger* is a database that records who owns an asset and when it is transferred.
 
@@ -51,16 +51,16 @@ Permission ledger:
 
 *Both use cryptography to authorize transfers and protect the record.*
 
-#defn[*Stablecoin* \ 
+#defn[*Stablecoin* \
 
-A *stablecoin* is a crptoasset designed to maintain a stable value, usually \$1USD
+  A *stablecoin* is a crptoasset designed to maintain a stable value, usually \$1USD
 
-They are backed by cash reserves or short-term US securities. 
+  They are backed by cash reserves or short-term US securities.
 
-1. *Adequate reserves*: the issue holds enough cash and short-term treasuries to redeem every tokens
-2. *Credible redemption*: holder believe they can exchange each stablecoin for \$ 1 when needed
+  1. *Adequate reserves*: the issue holds enough cash and short-term treasuries to redeem every tokens
+  2. *Credible redemption*: holder believe they can exchange each stablecoin for \$ 1 when needed
 
-3. *Arbitrage stablizes the price*: if the stablecoin trades below \$1, traders buy it and redeem it for \$1. Their purchases push the market price back towards parity 
+  3. *Arbitrage stablizes the price*: if the stablecoin trades below \$1, traders buy it and redeem it for \$1. Their purchases push the market price back towards parity
 ]
 
 Whenever there decrease of price, the issuer can destroy stablecoins by purchasing those tablecoins from holders by reserves to reduce supply.
@@ -105,19 +105,19 @@ The main issue is because people lost trust on cryptocurrencies, Luna is one of 
 - *Concentration*: The failure of a large issuer or exchange can spread losses and disrupt payments.
 - *Cybersecurity*: The Binance attack shows how losses and suspended withdrawals at a large platform can undermine confidence in the wider system.
 
-#align(center)[#image("../../../pictures/yr2/econ2ch7_2.png", width:13cm)]
+#align(center)[#image("../../../pictures/yr2/econ2ch7_2.png", width: 13cm)]
 
-#defn[*Central Bank Digital Currency* \ 
+#defn[*Central Bank Digital Currency* \
 
-A *CDBC* is a digital liability of the central bank, like digital cash
+  A *CDBC* is a digital liability of the central bank, like digital cash
 
-- CBDC are public, stablecoins are privately issued
+  - CBDC are public, stablecoins are privately issued
 
-- CBDC is a direct claim to the central bank
+  - CBDC is a direct claim to the central bank
 
-- *Retail CBDC*: desgined for households and businesses
+  - *Retail CBDC*: desgined for households and businesses
 
-- *Wholesale CBDC*: desgined for payments between financial institutions
+  - *Wholesale CBDC*: desgined for payments between financial institutions
 ]
 
 Concerns on issuing CBDC:
@@ -128,14 +128,15 @@ Concerns on issuing CBDC:
 
 #align(center)[
   #table(
-      columns: 3, 
-      align: auto,
-      stroke: 0.5pt,
-      inset: 6pt,
-      [Users], [Account-based], [Token-based],
-      [Retail], [Records on balances], [Users hold and transfer digital tokens], [Wholesale],[similar to Lynx], [Shared ledger]
-      )
-  ]
+    columns: 3,
+    align: auto,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Users], [Account-based], [Token-based],
+    [Retail], [Records on balances], [Users hold and transfer digital tokens],
+    [Wholesale], [similar to Lynx], [Shared ledger],
+  )
+]
 
 *Advantages* about CBDC
 
@@ -160,27 +161,27 @@ Concerns on issuing CBDC:
 
 #defn[*Tokenization* \
 
-*Tokenization*   represents ownership or another claim on a real-world asset as digital token
+  *Tokenization*   represents ownership or another claim on a real-world asset as digital token
 
-*Advantages*
-1. Fractional ownership: investors can buy a small share of an expensive asset
+  *Advantages*
+  1. Fractional ownership: investors can buy a small share of an expensive asset
 
-2. Lower costs: shared records and smart contracts can reduce trnasaction and servicing costs
+  2. Lower costs: shared records and smart contracts can reduce trnasaction and servicing costs
 
-3. Faster settlement: near-isntant settlement can reduce counterparty exposure and epand market access
+  3. Faster settlement: near-isntant settlement can reduce counterparty exposure and epand market access
 
-*Limits*
+  *Limits*
 
-Tokenization can reduce the number of intermediaries, but custody, law, identity, and governance remain
+  Tokenization can reduce the number of intermediaries, but custody, law, identity, and governance remain
 ]
 
 #align(center)[
   #table(
-      columns: 3, 
-      align: auto,
-      stroke: 0.5pt,
-      inset: 6pt,
-      []
-      )
-  ]
+    columns: 3,
+    align: auto,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [],
+  )
+]
 

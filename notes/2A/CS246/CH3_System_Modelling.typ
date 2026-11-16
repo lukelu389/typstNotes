@@ -527,12 +527,15 @@ Pure Virtual: subclass must provide an implementation to be considered to a conc
 
 *Abstract vs Concrete*
 
+#defn[*Abstract Class*
+  
 A class is abstract if either
 
 1. It declares a pure virtual method (i.e. Student in the bove example)
 
 2. Inherits a pure virtual method that it does not implement
 so that you cannot instantiate object of abstract classes. (i.e. cannot create a Student object in above)
+]
 
 Representation of virtual in UML:
 
@@ -688,7 +691,72 @@ Subjsect/Publisher: generates events/data
 
 Observer/Subscriber: interested in notifications
 
-Subject $->$ Observer
-Concrete subject $<- $Concrete observer
+Subject(attach, detach, notify) $->$ Observer (notify)
 
+Concrete subject(getState) $<- $Concrete observer(notify)
 
+```cc
+class Subject{
+  vector<Observer *> obs;
+  public:
+    void attach(Observer *o){obs.emplace_back(o);}
+    void detach(Observer *o){//for loop, find iterator to o, then erase it}
+    void notify(){ for (auto &o: obs) o->notify();}
+    virtual ~Subject()=0; //make the destructor be virtual to make the class abstract
+};
+subject::~Subject(){}
+```
+
+Since superclass destructors are automatically called when subclass objects are destroyed, we must still implement ```cc ~Subject()```
+
+A pure virtual method *may not* have an implementation
+
+```cc 
+class Observer {
+  public:
+    virtual void notify()=0;
+    virtual ~Observer();
+};
+```
+*Decorater Pattern*
+
+Add/update/notify behaviours of an existing object
+
+#align(left)[
+  #table(
+    columns: 4,
+    align: auto,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [Plain Window], [Plain Window
+    +Scroll], [Plain Window
+    +Menu], [Plain Window
+    +Scroll+Menu],
+  )
+]
+```cc 
+Window *w = new PlainWindow;
+w = new Scroll(w); //Scroll IS a Window HAS a PlainWindow
+w = new Menu(w);
+w->draw();//dispactch to Menu's draw()=> Scroll's draw() => Plain Window's draw() => Window's draw()
+```
+ 
+Better example found in "lectures/25-decorator"
+
+\
+\
+== Exceptions
+```cc
+vector<int> v; 
+v.emplace_back(1);
+v[1]; //compiles with undefined behaviour
+try{
+  v.at(1);//checked access, if index is not in range, an expection is raised/thrown
+  cout<< "hi" <<endl; //not be run if exception
+}catch(out_of_range r){
+  cout << "my bad" << endl;
+}
+```
+
+*Default behaviour*:  \
+If an exception occur(raised/thrown), the program terminates unless there is code to handle/catch the exception.
