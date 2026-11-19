@@ -169,11 +169,20 @@ $A vec(x) = U D (U^(-1) vec(x))$
 
 \
 Looking back into the Spectral Theorem, we cannot extract much information from $A A^* = A^* A$
+
+#defn[*Normal* \ 
+
+We say $A in M_(n times n)(FF)$ is *normal* if $A A^* = A^* A$
+]
 #thm[*Schur's Triangularization Theorem* \ 
 
-Let $A in M_(n times n) (CC)$. There exist $U in M_(n times n)(CC)$ and upper/lower triangular matrix $T in M_(n times n) (CC)$ s.t. $ A = U T U^* $
+Let $A in M_(n times n) (CC)$. There exist unitary matrix $U in M_(n times n)(CC)$ and upper/lower triangular matrix $T in M_(n times n) (CC)$ s.t. $ A = U T U^* $
 
 Futhermore, $T = mat(lambda_1, ..., ?; 0, ..., ?; 0, ..., lambda_n)$ has eigenvalues be $lambda_i$ and repeatitions be the algebraic multiplicity.
+
+If $A in M_(n times n)(RR)$, this theorem can still be applied but $U, T$ can be complex.
+
+If $A$ has $n$ real eigenvalues, then we can find real $U, T$ (converse is true)
 ]
 
 Use Schur Theorem to write $ A = U T U^*$, then $A A^* = (U T U^*)(U T U^*)^* = U T T^* U = U T U^* T^*$
@@ -182,6 +191,42 @@ Therefore, from $A A^* = A^(*) A$ we get $U T T^* U^* = U T T^* U^*$
 
 For 2 by 2, $mat(t, s; 0, r) mat(overline(t), 0; overline(s), overline(r)) = mat(overline(t), 0; overline(s), overline(r)) mat(t, s; 0, r) $, $s = 0 ==> T = mat(t, 0; 0, r)$
 
+Example
+
+Let $A = mat(0, -1; 1, 0)$, note $A^* = A^T = mat(0, 1; -1, 0) = - A$
+
+  $therefore A A^* = A^* A = -A^2$ so $A$ is normal
+
+  We can unitarily diagonalize $A$. We calculate eigenvalues: $lambda = i, lambda = -i$
+
+  $E_i (A)= "span"{mat(-i;1)}, E_(-i) (A) = "span"{mat(i;1)}$
+
+  $therefore B = {mat(-i;1), mat(i;1)}$ is an eigenbasis, so $P = mat(-i, i; 1, 1)$ where $A = P mat(i, 0; 0, -i) P^(-1)$
+
+  But $P$ is not unitary diagonalizable b/c columns of $P$ are orthogonal but not unit length. We need normalize it.
+
+  $C = {1/sqrt(2) mat(-i; 1), 1/sqrt(2)mat(i;1)} ==>U = mat(-i/sqrt(2), i/sqrt(2); 1/sqrt(2), 1/sqrt(2))$ where $A = U mat(i, 0; 0, -i) U^T$
+
+Observations:
+
+1. $A$ was real but $U, D$ were not real. How can we guarantee unitary diagonalization over $RR$?
+
+2. For $A$, the eigenspaces $E_i, E_(-i)$ were orthogonal, is this coincidence? Ans: Not a coincidence!
+
+#thm[*Propositions for Normal Matrices* \ 
+
+Let $A in M_(n times n) (CC)$ be normal. $A A^* = A^* A$
+
+1. $forall vec(x) in CC^n, ||A vec(x)|| = ||A^* vec(x)||$
+
+2. $A vec(x) = lambda vec(x) ==> A^* vec(x) = overline(lambda) vec(x)$
+
+3. If $lambda !=u$ are eigenvalues of $A$, then $E_lambda (A) perp E_u (A)$
+]
+
+#proof[
+  1. $||A x||^2 = ip(A x, A x) = ip(x, A^* A x) = ip(x, A A^* x) = ip(A^* x, A^* x) = ||A^* x||^2$
+]
 
 
 

@@ -745,18 +745,293 @@ Better example found in "lectures/25-decorator"
 
 \
 \
-== Exceptions
+== Exceptions \
+
+
+Example:
 ```cc
 vector<int> v; 
 v.emplace_back(1);
 v[1]; //compiles with undefined behaviour
 try{
   v.at(1);//checked access, if index is not in range, an expection is raised/thrown
-  cout<< "hi" <<endl; //not be run if exception
+  cout<< v.at(1) <<endl; //not be run if exception
 }catch(out_of_range r){
-  cout << "my bad" << endl;
+  cerr << "Bad Range" << r.what() << endl;
 }
+cout << "Done" << endl;
+
+
 ```
+If an exception in `try`, it "aborts" the future lines and directly jumps to the `catch` block with matching exception if found. Afterwards it DO NOT go back to `try` block again.
+
 
 *Default behaviour*:  \
 If an exception occur(raised/thrown), the program terminates unless there is code to handle/catch the exception.
+To throw an exception, throw a value
+
+```cc
+throw(out_of_range("out of bound"));
+// out_of_range is a class and the above is a constructor being used
+```
+
+*Common exceptions*:
+- `bad-alloc`: if `new` fails
+- `length-error`: if string/vector resize fails
+
+the example in "exceptions/callChain.cc" is called *Stack Unwinding*
+
+#defn[*Stack Unwinding* \
+
+If a function cannot find a `catch` block for a thrown exception, stack frame is popped. Then repeat for the caller.
+]
+
+Catching by reference would avoid slicing and is more efficient
+
+ALWAYS catch by reference
+
+```cc 
+try{
+}catch(SomeExn s){
+  //partial recovery;
+  //we can throw an exception
+}
+```
+
+Options:
+
+1. Rethrow original exception `throw;`
+2. `throw s;`
+  - throwing type `SomeExn`
+  - object slicing might occur
+3. `throw SomeOtherExn{}`
+
+Error recovery can happen in stages.
+
+- C++ library exception classes all inherit from the `exception` class
+- User exceptions classes do not need to inherit from this base class.
+- Good practice is to create custom exception class if no C++ exception is appropriate.
+
+\
+```cc
+class BadInput{};
+int n;
+try{
+  if(!ein>>n) throw BadInput{};
+}catch(BadInput &b){n=0;}
+```
+
+In C++, anything can be thrown: \
+`throw 2;` is valid but not good practice
+
+ALL exceptions can be catched as below
+
+```cc
+try{}
+catch(...){}
+
+```
+The `...` within catch() means catch all types
+
+In "exceptions/exfib.cc" and "exceptions/exfact.cc" are interesting which are slower than recursion.
+
+*Exceptions and Destructors*
+
+Imagine an exception has occurred, the stack is unwinding
+- locals that are objects are going out of scope, destructors run automatically
+
+- if a destructor threw an exception, you would have to simultaneously deal with 2 live exceptions
+
+If a program throw two live exceptions, the program automatically terminates.
+
+By default, C++ considers all destructors to be a "noexcept"
+
+```cc
+~Node() noexcept(false){____}; //says destructors might throw
+```
+
+== Inheritance and Big Five
+
+Recall that when a subclass destructor called, superclass destructor is called automatically
+
+```cc
+class Book{};
+class Text:public Book{};
+
+Text a{_, _, _, _};
+Text b{a};
+
+//Book and Text both have a default copy constructor(the below are defaults):
+Book::Book(const Book &other): title{other.title}, author{other.author}, length{other.length}{}
+
+//Copy Ctor and Copy Assignment Operator
+Text::Text(const Text &other): Book(other), topic{other.topic}{}
+//calls the book constructor, then copy fields specific to Text
+
+Text &Text::operator=(const Text &other){
+  Book::operator=(other);
+  topic = other.topic;
+  return this;
+}
+```
+`Book` copy constructor does a field for field copy of all `Book`'fields
+
+```cc
+
+//INCORRECT
+//                   rvalue ref      lval          lval
+Text::Text(Text &&other): Book{other}, topic{other.topic} {}
+//                        calls c ctor,  string c ctor
+
+//CORRECT
+Text::Text(Text &&other): Book{std::move(other)}, topic{std::move(other.topic)}{}
+
+
+Text &Text::operator=(Text &&other){
+  Book::operatpr=(std::move(other));
+  topic = std::move(other.topic);
+  return *this;
+}
+```
+C++ provides `std::move(__)` which allow to convert lvalues to rvalues
+
+```cc
+class Book{
+  ......
+  virtual Book &operator=(const Book &other){___};
+};
+class Text:public Book{
+public:
+//               IMPORTANT, parameter type needs to match
+  Text &operator=(const Book &other){
+  ???
+  }
+};
+
+Text t1{"A1", _, _, "cs"}; 
+Text t2{"A2", _, _, "math"};
+Book *p1 = &t1;
+Book *p2 = &t2;
+*p1=*p2; //Object assignment through base class pointer
+//Boo::operator=() runs
+//t1 becomes {"A2", _, _, "cs"};
+
+Comic c1{___};
+t1 = c1;//Becomes valid since Comic is a Book which will trigger the above copy assignment operator
+```
+There is a partial assignment problem, we can fix it by making the `Book` Assigmnent operator to be `virtual`
+
+Then we have another problem where a `Text` can be assigned with `Comic`
+
+We can choose to allow `t1=c1;` to compile and solve by dynamic casting(discussed in the future)
+
+Alternatively we could disallow the assignment through base class pointers:
+
+1. Bad solution: make `Book::operator=` to be `private`, subclasses do not have access
+2. Bad solution: make `Book::operator=` to be `protected`, subclasses now have access but client code cannot perform `b1 = b2;`
+3. Good solution: make `Book` class to be `abstract`
+
+#tip[Base classes should be abstract for polymorphism]
+
+```cc
+class AbsBook {
+  string title, author;
+  int length;
+  protected:
+    AbsBook &operator=(const AbsBook &other){___};
+    virtual ~AbsBook()=0; //Pure virtual to make the class abstract, requires implementaton, can leave content to have nothing.
+};
+
+class NormalBook: public AbsBook{
+  public:
+    NormalBook &operator=(const AbsBook &NormalBook other){
+      AbsBook::operator=(other);
+      return *this;
+    }
+};
+
+NormalBook b1=___;
+NormalBook b2=___;
+b1=b2; //valid
+AbsBook *p1 = &b1;
+AbsBook *p2 = &b2;
+*p1 = *p2; //invalid, disallowed
+```
+
+== Factory Method Pattern
+Suppose we have a game consisting
+- Enemy:
+  - Turtle
+  - Bullet
+- Level:
+  - Normal, generate turtle
+  - Castle, generate Bullet
+
+We do not want to hard code enemy construction
+Want to delegate the enemy creation to the actual level
+
+```cc
+Player *p=___;
+Level *l=___;
+Enemy *e=___;
+
+while(p->notDead()){
+  //create enemy
+  e = l->createEnemy(); //pure virtual, act as a factor of enemies
+  //attack player 
+}
+
+class Level{
+  public:
+    virtual Enemy *createEnemy()=0;
+};
+
+class Normal:public Level{
+  public:
+    Enemy *createEnemy() override {//more turtles}
+};
+
+class Castle: public Level{
+  public:
+    Enemy *createEnemy() override {//More bullets}
+};
+```
+
+This design pattern is also called the "virtual constructor pattern"
+- Make the constructors of enemies `private`
+- Make the factory method/virtual constructor a `friend`
+Example of virtual constructors:
+```cc
+List::addToFront()
+
+//Virtual constructors for List Iterator
+List::begin();
+List::end();
+```
+
+== Template Method Pattern(No relation to C++ templates)
+
+A baseclass wants to fix some behaviour but allow subclasses to modify other behaviours
+
+Using the previous game as example:
+
+Two turtles: red and green
+```cc
+class Turtle{
+  void drawHead{___}
+  void drawFeet(___)
+  virtual void drawShell()=0; //left for subclass of red and green
+  public:
+    void draw(){
+      drawHead();
+      drawShell();
+      drawFeet();
+    }
+};
+class RedTurtle:public Turtle{
+  void drawShell() override {___}
+};
+```
+The only way of drawing turtle is to use the `draw()`, we can only draw the entire turtle because the related methods are `private` 
+
+The only control of the subclass is given to the color of the shell.
