@@ -226,7 +226,57 @@ Let $A in M_(n times n) (CC)$ be normal. $A A^* = A^* A$
 
 #proof[
   1. $||A x||^2 = ip(A x, A x) = ip(x, A^* A x) = ip(x, A A^* x) = ip(A^* x, A^* x) = ||A^* x||^2$
+
+  2. Assume $A x = lambda x$. We want to show that $A^* x -overline(lambda) x =0 ==> (A^*- overline(lambda) I)x = (A-lambda I)^* x = 0$
+
+    $(A - lambda I) x = 0  <==> ||(A-lambda I)^* x|| = ||(A-lambda I)x|| = 0$
+
+    We have to check $||A- lambda I)x|| = 0$ by assumption $A x= lambda x$
+
+  3. Let $x in E_lambda, y in E_mu$, so $A x= lambda x, A y = mu y$
+  
+    We want $ip(x, y)= 0$, we consider $lambda ip(x, y)$, then $ lambda ip(x, y) = ip(lambda x, y) = ip(A x, y) = ip(x, A^* y) = ip(x, overline(mu) y) = mu ip(x, y) $
+
+    But $lambda !=mu, therefore (lambda - mu)ip(x, y) = 0 ==> ip(x, y) = 0$
 ]
+#align(right)[$square$]
 
+*Unitary Diagonalization Algorithm*
 
+Given $A$, we want to unitarily diagonalizable
+
+1. Check if it is normal $A A^* = A^* A$, if not STOP
+
+2. Diagonalize $A$ and find distinct eigenvalues $lambda_1, ..., lambda_k$
+
+3. Find eigenbasis for $E_lambda_1, ..., E_lambda_k$
+
+4. Gram-Schmit and normalize for each eigenbasis, ensuring it does not exist its eigenspace
+
+5. Put all eigenvectors in an unitary matrix $U$, eigenvalues in diagonal matrix $D$ resulting in $U D U^*$(remember to match the order of eignvalue and eigenvector pairs)
+
+Example:
+
+Unitary diagonalize $A = mat(1, 2, 2; 2, 1, 2; 2, 2, 1)$
+
+1. $A A^* = A^* A$?
+
+  $A^* = A^T = A ==> A A^* = A^* A = A A$ is normal
+
+2. $"det"(mat(1-lambda, 2, 2; 2, 1-lambda, 2; 2, 2, 1-lambda))=0  ==> (lambda+1)^2(lambda-5)=0 $
+
+3. $E_(-1) = "span"{mat(-1;0;1), mat(-1;1;0)}, E_5 = "span"{mat(1;1;1)}$, note $E_(-1) perp E_5$ as expected
+
+4. $B_(-1) = {mat(-1;0;1), mat(-1;1;0)} ==>^("G-S") tilde(B)_(-1) = {mat(-1;0;1), mat(1;-2;1)} ==>^("normalize") C_5 ={1/sqrt(2) mat(-1;0;1), 1/sqrt(6)mat(1;-2;1)} $
+
+  $B_5 = {mat(1;1;1)} ==> C_5 = {1/sqrt(3) mat(1;1;1)}$
+
+5. $U = mat(-1/sqrt(2), 1/sqrt(6), 1/sqrt(3); 0, -2/sqrt(6), 1/sqrt(3); 1/sqrt(2), 1/sqrt(6), 1/sqrt(3)), D = mat(-1, 0, 0; 0, -1, 0; 0, 0, 5)$
+
+Notice that $A, U, D$ are real matrices
+
+#thm[*Spectral Theorem for $RR^2$* \ 
+
+Let $A in M_(n times n)(RR)$. Then $A$ is unitarily diagonalizable over $RR$ if and only if $A = A^T$
+]
 

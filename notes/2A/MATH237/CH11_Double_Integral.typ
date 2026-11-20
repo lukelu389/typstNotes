@@ -32,7 +32,7 @@ $ integral.double_D f(x, y) dif A = lim_(Delta P->0) sum_(i=0)^n f(x_i, y_i) dif
 
 == Interpretations on Double Integral
 
-1. *rea*
+1. *Area*
 
   Assume $f(x, y) = c$ for all $(x, y) in D, c in RR$
 
@@ -44,9 +44,10 @@ $ integral.double_D f(x, y) dif A = lim_(Delta P->0) sum_(i=0)^n f(x_i, y_i) dif
    $ integral.double_D f(x, y) dif A $ can be intepreted as $V(S), S ={(x, y, z):0<=z<=f(x, z), (x,y) in D}$
 
 3. *Mass*
+    
+    Given a mass density funciton $rho(x, y)$ of $D$
 
-
-  $ integral.double_D f(x, y) dif A $
+  $ integral.double_D rho(x, y) dif A $
 
 4. *Average Value of Function*
 
@@ -57,7 +58,7 @@ We can evaluate integrals as *iterated integrals*, stwo single integrals evaluat
 
 *Properties of Double Integral*
 
-If $D subset.eq RR^2$ is a closed and bounded set and $f$ and $g$ are two integrable functions on $D$ where $f(x, y)<=g(x, y) space forall (x, y) in D$, then for any constant $c$:
+If $D subset.eq RR^2$ is a closed and bounded set and $f$ and $g$ are two integrable functions on $D$ where $f(x, y)<=g(x, y) space forall (x, y) in D$, then for any constant $c in RR$:
 
 1. Linearity $ integral.double_D (c f+g) dif A = c integral.double_D f dif A + integral.double_D g dif A $
 
@@ -72,7 +73,7 @@ If $D subset.eq RR^2$ is a closed and bounded set and $f$ and $g$ are two integr
 
 Let $D subset.eq RR^2$ by $y_l (x) <= y <=y_u (x), x_l <=x<=x_u$ where $y_l (x), y_u (x)$ are continuous for $x_l <= x<=x_u$. If $f(x, y)$ is continuous on $D$ then $ integral.double_D f(x, y) dif A = integral_(x_l)^(x_u)integral_(y_l(x))^(y_(u) (x)) f(x, y) dif y dif x $
 ]
-
+\
 Example
 
 $ &integral_0^1 integral_0^x x^2+e^y dif y dif x \
@@ -83,6 +84,7 @@ $ &integral_0^1 integral_0^x x^2+e^y dif y dif x \
 The hard part becomes determining the boundes for apply double integration.
 
 We can sketch by visualizing easier
+
 
 Example:
 
@@ -120,3 +122,30 @@ $ integral.double_D sin(x/y) dif A$ where $D$ is the region bounded by $y$-axis,
 $integral integral sin(x/y) dif y dif x$, what is the $integral sin(x/y) dif y$...?
 
 So we will use instead $integral integral sin(x/y) dif x dif y$ which is easier
+
+$ &integral_0^pi integral_0^y^2 sin(x/y) dif x dif y = integral_0^pi eval(-y cos(x/y), 0, upper:y^2) = integral_0^pi (-y cos y + y) dif y = eval(-y sin y + cos y +y^2/2, 0, upper:pi)\
+
+ &= 2+pi^2/2 $
+
+Example:
+
+Given an annulus which between $x^2+y^2=R_2^2$ and $x^2+y^2=R_1^2, R_1< R_2$
+
+Let $D_1 = {(x,y) in RR^2:x^2+y^2<=R_1^2},D_2 = {(x, y) in RR^2:x^2+y^2<=R_2^2}$
+$ A = integral.double_D dif A ==> integral.double_D_2 dif A- integral.double_D_1 dif A =integral_(-R_2)^(R_2)integral_(-sqrt(R_2^2-x^2))^(sqrt(R_2^2-x^2)) dif y dif x - integral_(-R_1)^(R_1)integral_(-sqrt(R_1^2-x^2))^(sqrt(R_1^2-x^2)) dif y dif x $
+
+Which is hard, instead we can use polar coordinates
+
+#tip[Cartesian to Polar 
+
+Given $x = r cos theta, y = r sin theta, r = sqrt(x^2+y^2) >=0, tan theta = y/x$ \ 
+
+$ integral.double_D(x,y) g(x, y) dif A = integral.double_D(r, theta) g(r cos theta, r sin theta) r dif r dif theta $
+
+Note: 
+- $theta>0$ when measured counterclockwise from the positive $x$-axis
+- Representation of a point in polar coordinate is not unique
+- $dif A = r dif r dif theta$
+] 
+
+
