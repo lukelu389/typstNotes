@@ -275,8 +275,60 @@ Unitary diagonalize $A = mat(1, 2, 2; 2, 1, 2; 2, 2, 1)$
 
 Notice that $A, U, D$ are real matrices
 
-#thm[*Spectral Theorem for $RR^2$* \ 
+#thm[*Spectral Theorem for $RR^n$* \ 
 
 Let $A in M_(n times n)(RR)$. Then $A$ is unitarily diagonalizable over $RR$ if and only if $A = A^T$
 ]
+
+#defn[*Self Adjoint* \ 
+
+A is a *self-adjoint* if $A= A^*$
+
+$A$ is real symmetric if $A in M_(n times n)(RR)$ and $A = A^T$
+]
+
+Examples:
+
+1. $A = mat(1, 2, 3; 2, 4, 6; 3, 6, 9)$ is real symmetric, $A^T = A$, $A$ is self-adjoint, therefore $A$ is unitarily diagonalizable over $RR$
+
+2. $A = mat(1, i; -i, 1)$ is not symmetric, however $A^* = mat(1, i; -i, 1)^* = mat(1, -i; i, 1) = A$, so $A$ is self-adjoint, therefore $A$ is unitarily diagonalizable over $CC$, that is $A = U D U^*$ for some unitary $U$ and diagonal $D$, which must be real because $A$ is self-adjoint, so $D = D^* = mat(0, 0; 0, 2)$
+
+#thm[*Spectral Theorem for Self-Adjoint Matrices* \
+
+If $A in M_(n times n) (FF)$ is self-adjoint, then 
+
+1. $A$ is unitarily diagonalizable in form $A = U D U^*$ with $U$ unitary and $D$ diagonal.
+
+2. All eigenvalues of $A$ are real ($A = A^* ==> lambda = lambda^*$)
+]
+
+Table of Spectral Theorems:
+
+#align(center)[
+  #table(
+    columns: 2,
+    align: auto,
+    stroke: 0.5pt,
+    inset: 6pt,
+    [$A in M_(n times n)(CC)$], [$A = U D U^*$],
+    [Normal: $A A^* = A^* A$], [$U, D in M_(n times n)(CC)$],
+    [Self-Adjoint: $A = A^*$], [$U in M_(n times n) (CC), D in M_(n times n)(RR)$],
+    [Real Symmetric: $A = A^T$], [$U, D in M_(n times n)(RR), (U^(-1) = U^T)$],
+    [Skew-Adjoint: $A^* = -A$], [$U in M_(n times n)(CC), D$ is purely imaginary]
+  )
+]
+
+#defn[*Positive Definite* \
+ Let $A in M_(n times n) (FF)$, we say $A$ is *positive definite* if $A = A^*$ and $ip(A vec(x), vec(x)) > 0$ for all nonzero $vec(x) in FF^n$ (strictly positive eignvalues)
+]
+
+*IMPORTANT*:
+
+Every $z in CC$ is in form $x+i y = "real" + "purely imaginary"$
+
+1. Every normal matrix $A$ can be decomposed into self-adjoint and skew-adjoint parts: $ A = 1/2 (A +A^*) + 1/(2i)(A^*-A)  $
+
+2. Polar decomposition: every $z!=0$ in $r$ can be expressed in form $z = r e^(i theta)$, where $r = |z|$ \
+  and $theta = arg(z)$: $A = ("positive-definite") ("unitary")$
+
 

@@ -19,9 +19,11 @@ $lim_(Delta x->0) P(x-Delta x <= X<=x) = lim_(Delta x ->0) (F(x) - F(x-Delta x))
 
 #defn[*Probability Density Function* \ 
 
-PDF of a continuous random variable is $f(x)>0, integral_(-oo)^oo f(x) dif x = 1$
+PDF of a continuous random variable is $f(x)>0, integral_(-oo)^oo f(x) dif x = 1, space forall x in RR$
 
 Resulting $f(x) = F'(x)$
+
+For $x in (a, b), integral_a^b f(x) dif x = 1$
 ]
 
 Remember that $f(x)!= P(X=x)$, it is the relative likelihood of $X$ being near $X$
@@ -44,12 +46,13 @@ In particular, $x_0.5$ is the median which is the 2nd quartile
 
 == 5.2 Function of Random Variable
 
+#thm[*Proposition* \
 If $Y = g(X)$, we want the cdf and pdf of $Y$
 
 - Range $Y$ is $g(X)$ for $g(X)$ being 1-to-1 only
 - $F_Y (y) =P(Y<=y) =P(g(X)<Y)$
 - $f_Y (y) = F'_Y (y) = f_X(g^(-1)(y)) |dif/(dif y) g^(-1)(y)|$ for 1-to-1 functions
-
+]
 Example:
 
 Let $F(x)=cases(x/4 "for" 0<=x<=4, 0 "for" x <0, 1 "for" x>4), f(x) = cases(1/4 "for" 0<=x<=4, 0 "otherwise")$
@@ -59,3 +62,51 @@ Let $Y = 1/X$, the pdf of $Y$
 $F_Y (y) = P(Y<=y) = P(1/X <=y) = P(X>=1/y)  =1-F_X (1/y)$
 
 $F_Y (y) = 1-1/(4y), f_Y (y) = 1/(4y^2), y in (1/4, oo)$
+
+== 5.3 Expectation and Variance
+
+Let $X$ be a continuous random variable with pdf $f(x)$ and cdf $F(x)$.
+
+The *Expectation* (or *mean*) of $X$ is defined as:
+
+$ E[X] = mu =integral_(-oo)^(oo) x f(x) dif x $
+
+and also $ E[g(X)] = integral_(-oo)^(oo) g(x) f(x) dif x $
+
+The *variance* of $X$ is defined as:
+
+$"Var"(X) = E[X^2] - (E[X])^2 = integral_(-oo)^(oo) x^2 f(x) dif x - (E[X])^2$
+
+The *moment generating function* of $X$ is defined as:
+
+$ M_X (t) = E[e^(t X)] = integral_(-oo)^(oo) e^(t x) f_X (x) dif x $ if exists around $t=0$
+
+$ E[X^n] = integral_(-oo)^(oo) x^n f(x) dif x $
+
+Example:
+
+Suppose person leaves $X$ minutes before class where $f(x)= cases(0.04(5- |x-20|) "if" 15<=x<=25, 0 "otherwise")$
+
+$F(x) = integral_(-oo)^x f(t) dif t = cases(0 "if" x<15, 0.02(x-15)^2 "if" 15<=x<=20, 1-0.02(25-x)^2  "if" 20<x<=25, 1 "if" x>25)$
+
+$E[X] = integral_(-oo)^(oo) x f(x) dif x = cases(20 "if" x<15, 0.04(x-15)^3/3 "if" 15<=x<=20, 0.04(5-(25-x))^3/3 + 0.04(5) "if" 20<x<=25, 25 "if" x>25)$
+
+$"Var"(X) = E[X^2] - (E[X])^2 = integral_(-oo)^(oo) x^2 f(x) dif x - (E[X])^2 = cases(0 "if" x<15, 0.04(x-15)^4/4 "if" 15<=x<=20, 0.04(5-(25-x))^4/4 + 0.04(5) "if" 20<x<=25, 0 "if" x>25)$
+
+$sigma(X) = cases(0 "if" x<15, 0.04(x-15)^2 "if" 15<=x<=20, 0.04(5-(25-x))^2 + 0.04(5) "if" 20<x<=25, 0 "if" x>25)$
+== 5.4 Continuous Distribution
+
+#defn[*Uniform Distribution*
+
+A continuous random variable $X$ is said to have a *uniform distribution* on the interval $(a, b)$ if its pdf is given by:
+$ f(x, y )=cases( 1/(b-a) "if" a<x<b, 0 "otherwise") $
+
+The cdf is given by:
+$ F(x) = cases(0 "if" x<a, (x-a)/(b-a) "if" a<=x<b, 1 "if" x>=b) $
+
+The expectation is given by:
+$ E[X] = (a+b)/2 $
+The variance is given by:
+$ "Var"(X) = (b-a)^2/12 $
+]
+*Normal Distribution*

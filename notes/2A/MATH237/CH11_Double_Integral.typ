@@ -148,4 +148,18 @@ Note:
 - $dif A = r dif r dif theta$
 ] 
 
+Area of annulus: $ A= integral_0^(2pi) integral_(R_1)^(R_2) r dif r dif theta = integral_0^(2pi) (R_2^2/2 - R_1^2/2) dif theta = (R_2^2 - R_1^2)pi$
 
+Examples:
+
+1. Evaluate $ integral.double_D sqrt(x^2+y^2) dif A$ where $D$ is the region bounded $(x-1)^2+y^2<=1$
+
+  $r = sqrt(x^2+y^2), r in [0, 1]; space g(r cos theta, r sin theta) =r^2-r cos theta = 0 ==> r = 0, 2 cos theta$
+
+  $A = integral_(-pi/2)^(pi/2) integral_0^(2 cos theta) r^2 dif r dif theta = integral_(-pi/2)^(pi/2) (8/3 cos^3 theta) dif theta $
+
+2. Evaluate $integral_(-1)^1 integral_(-sqrt(1-x^2))^0 cos (x^2+y^2) dif y dif x $
+
+  $D = {(x, y) in RR^2: x^2+y^2<=1, y<=0}, r ^2 = x^2+y^2$
+
+  $integral_(-1)^1 integral_(-sqrt(1-x^2))^0 cos (x^2+y^2) dif y dif x &= integral_(pi)^(2pi) integral_0^(1) cos(r^2) r dif r dif theta = integral_(pi)^(2pi) (1/2 sin 1) dif theta  =pi/2 sin(1) $
