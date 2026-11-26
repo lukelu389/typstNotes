@@ -251,7 +251,7 @@ Given $A$, we want to unitarily diagonalizable
 
 3. Find eigenbasis for $E_lambda_1, ..., E_lambda_k$
 
-4. Gram-Schmit and normalize for each eigenbasis, ensuring it does not exist its eigenspace
+4. Gram-Schmit and normalize for each eigenbasis, ensuring it does not exit its eigenspace
 
 5. Put all eigenvectors in an unitary matrix $U$, eigenvalues in diagonal matrix $D$ resulting in $U D U^*$(remember to match the order of eignvalue and eigenvector pairs)
 

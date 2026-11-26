@@ -51,7 +51,7 @@ If $Y = g(X)$, we want the cdf and pdf of $Y$
 
 - Range $Y$ is $g(X)$ for $g(X)$ being 1-to-1 only
 - $F_Y (y) =P(Y<=y) =P(g(X)<Y)$
-- $f_Y (y) = F'_Y (y) = f_X(g^(-1)(y)) |dif/(dif y) g^(-1)(y)|$ for 1-to-1 functions
+- $f_Y (y) = F'_Y (y) = f_X (g^(-1)(y)) |dif/(dif y) g^(-1)(y)|$ for 1-to-1 functions
 ]
 Example:
 
@@ -94,11 +94,13 @@ $E[X] = integral_(-oo)^(oo) x f(x) dif x = cases(20 "if" x<15, 0.04(x-15)^3/3 "i
 $"Var"(X) = E[X^2] - (E[X])^2 = integral_(-oo)^(oo) x^2 f(x) dif x - (E[X])^2 = cases(0 "if" x<15, 0.04(x-15)^4/4 "if" 15<=x<=20, 0.04(5-(25-x))^4/4 + 0.04(5) "if" 20<x<=25, 0 "if" x>25)$
 
 $sigma(X) = cases(0 "if" x<15, 0.04(x-15)^2 "if" 15<=x<=20, 0.04(5-(25-x))^2 + 0.04(5) "if" 20<x<=25, 0 "if" x>25)$
+
+#align(center)[#image("../../../pictures/yr2/stat230_ch5.png", width:14cm)]
 == 5.4 Continuous Distribution
 
 #defn[*Uniform Distribution*
 
-A continuous random variable $X$ is said to have a *uniform distribution* on the interval $(a, b)$ if its pdf is given by:
+A continuous random variable $X$ is said to have a *uniform distribution* $(X ~ U(a, b))$ on the interval $(a, b)$ if its pdf is given by:
 $ f(x, y )=cases( 1/(b-a) "if" a<x<b, 0 "otherwise") $
 
 The cdf is given by:
@@ -108,5 +110,12 @@ The expectation is given by:
 $ E[X] = (a+b)/2 $
 The variance is given by:
 $ "Var"(X) = (b-a)^2/12 $
+
+The percentile can be obtained by: $ p(b-a)+a $
+
+$ M_X (t) = 1/(b-a)integral_a^b e^(t x) dif x = frac(e^(b t)-e^(a t), b-a)t, t!=0 $
 ]
-*Normal Distribution*
+Examples
+
+
+#defn[*Normal Distribution*]

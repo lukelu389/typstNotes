@@ -1035,3 +1035,266 @@ class RedTurtle:public Turtle{
 The only way of drawing turtle is to use the `draw()`, we can only draw the entire turtle because the related methods are `private` 
 
 The only control of the subclass is given to the color of the shell.
+
+*Non-virtual Interface(NVI)*
+
+Consider a public virtual method:
+
+- `public___` part of the interface, promises some behaviour to the client 
+
+- `virtual___` part of the interface, allows subclasses to modify some behaviour 
+
+What guarantees do we give regarding behaviour if subclasses can change the behaviour? 
+
+#defn[*Non-virtual Interface(NVI)* \
+
+NVI requires
+- all `public` methods to be non-`virtual`
+- all `virtual` methods are `private/protected`
+]
+
+Example
+```cc
+class DigitalMedia {
+  public:
+    virtual void play()=0; //Not NVI, has public method that is virtual
+};
+
+class DigitalMedia{
+  virtual doPlay()=0; //virtual method that is private
+  ___;
+  public:
+    void play(){
+      checkCopyright();
+      showClipart();
+      doPlay();
+    }
+};
+```
+
+#defn[*STL Map Class*
+
+*Map* is a template class, parametrized on two types: key and value.
+
+A non-ordered, implemented as a balanced binary search tree, associative container of key-value pairs.
+
+That is whenever traverse the map, the key-value pairs are traversed in order of the keys.
+]
+
+```cc 
+import <map>;
+map<string, int> m;
+m["abc"] = 5;
+m["def"] = 10;
+cout<<m["abc"]; //prints 5
+cout<<m["xyz"]; //prints 0, default value for int because ["xyz", 0] got inserted
+if (m.count("xyz")>0) {___;}
+m.erase("def"); // removes the key-value pair with key "def"
+for(auto &p:m){__} 
+//`&p` is a `std::pair<key, value>`, which is a `struct` in the `utility` module. 
+// We can direct access key-value pair using `p.first` and `p.second`
+for(auto &[key, value]:m){key ___; value ___;} // using structure binding
+```
+
+Structure binding example:
+```cc
+Vec v{1, 2}; //as struct
+int [x, y] = v;
+int a[] = {1, 2, 3};
+int [x, y, z] = a;
+```
+
+== Modules
+
+A module can have multiple class and other standalone functions
+
+*Coupling and Cohesion*
+
+*Coupling*: how much a module depends on another.
+
+  - Low coupling: if a module calls into another module passing and receiving basic values. 
+
+  - High coupling: methods communicate passing custom types/friends
+
+  - The goal is low coupling 
+
+*Cohesion*: how related are elements within a module.
+
+  - Low cohesion:  `<utility>`:  `std::pair, std::swap, std::move, ...`
+
+  - High cohesion: `<vector>`: all elements achieve a specific task
+
+  - The goal is high cohesion
+
+Looking at different *dependencies*:
+
+Impossible:
+
+```cc
+class A{int x; B b;};
+class B{bool y; A a;};
+```
+Size of `A` is the size of `int` and `B`, but the size of `B` is the size of `bool` and `A`. Thus code not compile.
+
+Possible:
+
+```cc
+class B;
+class A{int x; B *b;};
+class B{bool y; A *a;};
+```
+
+We cannot forward declare elements from another module. 
+- both classes need to be in the same module(above example)
+
+```cc
+class C{};
+class D:public C{___}; // D depends C
+class E{C c;}; // E depends C
+```
+It is possible to export `C, D, E` to separately but `C` must be compiled before `D` and `E`
+
+*Decouple Interface*
+
+```cc
+class ChessBoard{
+  //represents the state of the chess board;
+  cout << "Your turn";
+
+  //Fixes
+  ostream &out;
+  ChessBoard(ostream &out): out{out} {};
+  out <<"Your turn";
+};
+```
+Bad design 
+- hardcoded output to `stdout`, can store it in an `ostream` in a field and output to it.
+
+Single-Responsibility Principle: a class should have only one reason to change
+- chessboard will only maintain state
+- where does game logic go? how do you produce output?
+- `main` function is never an appropriate place to put code(game logic)
+
+*Model View Controller(MVC)*
+
+Model: maintain states \
+View: outout (text/graphical/...) \
+Controller: 
+  - maintains communication between the model and the view
+  - game logic
+
+View may subscribe to either model or Controller
+
+== Exception Safety
+
+Consider
+```cc
+void f(){
+  MyClass *p = new MyClass;
+  MyClass m; 
+  //Does not leak memory(stack allocated, automatically called when out of scope by calling its destructor. 
+  // During stack unwinding, stack objects are destroyed)
+  g(); //does not leak memory
+  delete p;
+}
+```
+
+This could leak memory. If `g` throws an exception `delete p;` never executes, leaking memory.
+
+Fix, but a bad way
+```cc
+void f(){
+  MyClass *p = new MyClass;
+  try{
+    MyClass m; 
+    g(); 
+  }catch(...){
+    delete p; //if exception occur
+    throw;
+  }
+  delete p; //if no exception occur
+}
+```
+
+*RAII: Resource Acquisition Is Initialization*
+
+Wrap every resource within a stack-allocaed object whose destructor releases/frees the resource.
+
+Use RAII on heap memory
+
+```cc
+import <memory>
+Template class std::unique_ptr<T>;
+```
+- takes and store a pointer of `T *`
+- destructor calls delete to the pointer
+- we can use `unique_ptr` *object* exactly how we would use a pointer to `T`(overload `*, ->`)
+
+
+Fix, but a bad way
+```cc
+void f(){
+  std::unique_ptr<MyClass> p {new MyClass}; //p is an object that act like pointer.
+  //auto p = make_unique<MyClass>(); is an alternative way
+  MyClass m;
+  g();
+}
+```
+
+The copy constructor and copy assignment operator are disabled since that would lead to double free.
+
+*Pointers and Ownership*
+
+- A `unique_ptr` object owns the pointer it wraps
+- We can still use "raw pointers" to the heap object always remember that we do not use that object.
+- `unique_ptr` supports a get method to access the raw pointer.
+
+```cc
+void f(unique_ptr<T> a){___} //caller transfered ownership to f
+//    move constructor 
+
+void g(T *b){___} //we used to do this, but know we cannot free b due to ownership
+
+unique_ptr<T> h(___){___} //ownership passed to caller
+
+T *i(){___} //raw pointer, caller do not have ownership
+```
+
+STL class: `std::shared_ptr<T>` 
+- allows multiple `shared_ptr` objects o point to the same heap object
+- reference counting, everytime a copy is made, a reference count is incremented
+- the destructor decrements the reference count 
+- the heap object is destroyed when the reference count is 0
+
+
+```cc
+void f(){
+  shared_ptr<MyClass> p{new MyClass};
+  {auto q{p}}; //copy constructing q to p in a scope
+  //q is out of scope, q will decrement reference count
+}
+//p is out of scope, p will decrement reference count, now count is 0, MyClass object is destroyed
+```
+
+Exception Safety levels
+
+1. Basic Guarantee: if an exception occurs, the program is in a valid but unsepcified state. No memory leak, no corrupted data structures, no broken invariant.
+
+2. Strong Guarantee: if an exexption occurs during execution a function, the program will be in the state as if the function is not called(atomicity)
+
+3. No-throw Guarantee: the function may have an exception but finishes the task
+
+
+```cc
+class A{__};
+class B{__};
+class C{
+  A a;
+  B b;
+  void foo(){
+    a.method1();//strong guarantees
+    b.method2();//strong guaratnees
+  }
+};
+```
+Does `foo` has a strong guarantee? No.
