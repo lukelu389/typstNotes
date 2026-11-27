@@ -62,3 +62,40 @@ Given the mapping from polar to Cartesian coordinates
 $(x, y) = F(r, theta) = (r cos theta, r sin theta)$. Find Jacobian $pdv((x, y), (r, theta))$
 
 $"det" mat(pdv(x, r), pdv(x, theta); pdv(y, r), pdv(y, theta))  = "det" mat(cos theta, -r sin theta ; sin theta, r cos theta) = r cos^2 theta + r sin^2 theta = r $
+
+#thm[*Change of Variable Theorem* \ 
+Let $D_(u v), D_(x y)$ be closed and bounded sets with piecewise smooth boundary curves. Let $ (x, y) = G(u, v) = (g(u, v), h(u, v)) $ be a one-to-one mapping of $D_(u v)$ onto $D_(x y)$, with $g, h in C^1$ and $pdv((x, y), (u, v))!=0$(except for possibly on a finite collection of piecewise smooth curves in $D_(u v)$)
+
+If $f(x, y)$ is continuous on $D_(x y)$, then $ integral.double_(D_(x y)) f(x, y)dif y dif x = integral.double_(D_(u v)) f(g(u, v), h(u, v)) abs(pdv((x, y), (u, v)))dif u dif v $
+
+]
+
+In order to use the Change of Variables Theorem, first we need to come up with a suitable mapping. It means mapping the original region to a *rectangular region*, boundes of integration are constant.
+
+Example:
+
+Let $D$ be the region bound by $cases(y=x, y=-x, y=-x+5, y=x-5)$. Find a mapping which maps $D$ to a rectangular region to evaluate $integral.double_D (x+y) dif A$
+
+
+We have boundary curve
+
+$cases(y=x, y=x-5) -> cases(y-x=0, y-x=-5) ->cases(x/5-y/5=0, x/5-y/5=1), u = x/5-y/5$ 
+
+$cases(y=-x, y=-x+5) -> cases(y+x=0, y+x=5) -> cases(x/5+y/5 = 0, x/5+y/5 = 1), v = x/5+y/5$
+
+$(u, v) = (x/5-y/5, x/5+y/5)$, the boundary curves becomes $u=0, u=1, v=0, v=1$
+
+$abs(pdv((x, y), (u, v))) = "det"mat(5/2, 5/2; -5/2, 5/2) = 25/2$
+
+$x+y = 5v ==> integral_0^1 integral_0^1  125/2v dif v dif u = integral_0^1 integral_0^1  125/4 v dif v dif u = integral_0^1 125/4 dif u = eval(125/4, 0, upper:1) = 125/4$
+
+#thm[*Inverse Property of Jacobian* \ 
+
+If $F(x, y)$ has continuous partial derivatives and $pdv((u, v), (x, y))!=0$ then the inverse mapping $F^(-1)(x, y)$ exists
+
+$ pdv((x, y), (u, v)) = 1/pdv((u, v), (x, y)) $
+
+$ "DF"^(-1)(vec(u)) "DF"(vec(x)) = I $
+
+]
+

@@ -115,7 +115,44 @@ The percentile can be obtained by: $ p(b-a)+a $
 
 $ M_X (t) = 1/(b-a)integral_a^b e^(t x) dif x = frac(e^(b t)-e^(a t), b-a)t, t!=0 $
 ]
-Examples
 
 
-#defn[*Normal Distribution*]
+#defn[*Exponential Distribution* \ 
+Suppose in a poisson process with rate $mu$, let $X$ be the waiting time until we observe an event with range $x in (0, oo)$. Then $X~"Exp"(theta)$ where $theta = 1/mu$
+
+The pdf is given by $ f(x) = cases(1/theta e^(-x/theta) "if" x>0, 0 "otherwise") $
+
+The cdf is given by $ F(x) = P(X<=x) = cases(0 &"if" x<=0, 1-e^(-x/theta) &"if" x>0) $
+
+The expected value $ E[X] = theta $
+
+The variance $ "Var"(X) = theta^2 $
+
+The moment generating function $ M_X (t) = 1/(1-theta t) $
+
+For percentiles, $ F(x_p) = p = 1-e^(-x_p/theta) => x_p=  - theta ln(1-p) $
+]
+
+Example of situations:
+
+- distance between flaws
+- time between events
+- lifetime of objects
+
+Memoryless property:
+
+
+It $X~"Exp"(theta)$, then for $a, b >=0$
+
+$ P(X<a+b | X>a) = P(X<b) \ 
+ P(X>a+b | X>a) = P(X>b)
+ $
+
+#defn[*Normal Distribution* \
+
+]
+
+#thm[*Central Limit Theorem* \
+
+]
+
